@@ -33,6 +33,17 @@ class CheckDocsTests(unittest.TestCase):
             (root / "README.md").write_text("[bad](../outside.md)")
             self.assertIn("escapes repository", checker.check(root)[0])
 
+    def test_personal_home_without_trailing_slash(self):
+        for prefix in ("Users", "home"):
+            for suffix in ("", "\n", "`", "/project"):
+                with self.subTest(prefix=prefix, suffix=suffix):
+                    with tempfile.TemporaryDirectory() as directory:
+                        root = Path(directory)
+                        (root / "README.md").write_text(
+                            "/" + prefix + "/alice" + suffix
+                        )
+                        self.assertTrue(checker.check(root))
+
     def test_personal_path(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

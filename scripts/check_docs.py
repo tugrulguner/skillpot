@@ -16,7 +16,7 @@ def check(root):
         if ".git" in path.relative_to(root).parts:
             continue
         text = path.read_text(encoding="utf-8")
-        if re.search(r"/(?:Users|home)/[A-Za-z0-9_.-]+/", text):
+        if re.search(r"/(?:Users|home)/[A-Za-z0-9_.-]+(?![A-Za-z0-9_.-])", text):
             errors.append(f"{path.relative_to(root)}: personal absolute path")
         for match in re.finditer(r"!?\[[^\]\n]*\]\(([^\s)]+)(?:\s+[^)]*)?\)", text):
             destination = match.group(1).strip("<>")
