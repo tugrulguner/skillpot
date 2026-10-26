@@ -1,7 +1,10 @@
 # Contributing to SkillPot
 
-Start with the [README](README.md) and [roadmap](ROADMAP.md). SkillPot is in development;
-there are no released skills, install commands, or established compatibility results yet.
+Start with the [README](README.md) and [roadmap](ROADMAP.md). SkillPot is in development.
+An experimental source skill and runnable browser fixture are available in
+[skills/project-to-demo/](skills/project-to-demo/SKILL.md) and
+[examples/project-to-demo/](examples/project-to-demo/README.md). No qualified skill
+release, host-installation result, or agent-compatibility result is established.
 
 ## Propose a real task
 
@@ -67,9 +70,11 @@ secrets comprehensively, agent activation, or task quality. Also:
 4. Run `git diff --check`.
 5. Describe the exact scope and verification in the pull request.
 
-Do not add product code or skills as incidental scaffolding to a documentation change.
-When executable skills arrive, their setup and canonical verification commands must be
-introduced alongside their actual implementation.
+Experimental code changes also require the example's tests (`npm ci` then `npm test`
+from `examples/project-to-demo/`) and a real capture/render through its documented
+commands. Inspect the final encoded frames and output; unit tests are not media or
+agent-activation qualification. Keep skill/runtime additions explicitly scoped rather
+than incidental scaffolding to a documentation change.
 
 ## Reviews and publishing
 

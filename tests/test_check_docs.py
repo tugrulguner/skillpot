@@ -21,6 +21,15 @@ class CheckDocsTests(unittest.TestCase):
             )
             self.assertEqual(checker.check(root), [])
 
+    def test_installed_dependencies_are_not_project_documents(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            dependency = root / "examples/demo/node_modules/dependency"
+            dependency.mkdir(parents=True)
+            (dependency / "README.md").write_text("[vendor link](not-in-package.md)")
+            (root / "README.md").write_text("# Project")
+            self.assertEqual(checker.check(root), [])
+
     def test_missing_destination(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

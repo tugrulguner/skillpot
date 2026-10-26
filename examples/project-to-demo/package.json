@@ -1,0 +1,12 @@
+{
+  "name": "skillpot-project-to-demo-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "capture": "node capture.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.58.2"
+  }
+}

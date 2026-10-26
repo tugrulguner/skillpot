@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def check(root):
     errors = []
     for path in sorted(root.rglob("*.md")):
-        if ".git" in path.relative_to(root).parts:
+        if {".git", "node_modules", ".venv"}.intersection(path.relative_to(root).parts):
             continue
         text = path.read_text(encoding="utf-8")
         if re.search(r"/(?:Users|home)/[A-Za-z0-9_.-]+(?![A-Za-z0-9_.-])", text):

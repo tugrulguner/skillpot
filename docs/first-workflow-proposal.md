@@ -1,7 +1,6 @@
 # First workflow proposal: working project → accurate demo
 
-Status: scoped design, not an implemented or released skill. This document is the
-maintainer implementation proposal; no separate contributor issue is required.
+Status: scoped proposal with one experimental source skill and manually exercised public fixture; not a qualified release. This document is the maintainer implementation proposal; no separate contributor issue is required.
 
 ## User and task
 
@@ -19,8 +18,8 @@ clean-install and task path is exercised. Do not infer compatibility with other 
 ## Representative task inputs
 
 Use repository-owned, public fixtures, never a private working project as the only
-reproduction case. The following are specifications to implement, not fixtures
-that already exist:
+reproduction case. The record-transformer fixture is implemented; the unit converter
+remains a reserved task specification, and agent-level trial cases remain unexecuted:
 
 1. **Primary case — small record transformer.** A local browser application accepts
    two rows with the same identifier, groups them, and shows one record containing
@@ -42,22 +41,10 @@ local production; missing authority to access inputs does.
 
 ## Toolchain boundary and current prerequisite
 
-Reuse a reviewed existing browser recorder and compositor. The maintainer's existing
-video kit is an audit candidate, not a public dependency: its current source is not
-available in this repository, and redistribution and clean-environment setup are not
-yet established. Do not put a personal path into the public skill or implement a
-parallel video engine to work around that gap.
+The first experimental implementation explicitly selects separately installed public Playwright recording and FFmpeg/ffprobe rendering. The public runnable fixture uses Playwright 1.58.2 with its Chromium browser, explicit 1280×720 recording size, and context closure to flush the video; FFmpeg converts WebM to silent H.264/yuv420p MP4. See the skill's `provenance.md` for official source documentation and license notes. External binaries are not redistributed, and the local FFmpeg build is GPL-enabled with libx264; users must check their own build and applicable obligations.
 
-Before implementation, choose a public, license-reviewed capture/render path and pin
-its version. The local kit README was recovered from a cloud placeholder during this
-audit; it documents Node.js, Python 3.11+, Playwright, Pillow, FFmpeg/ffprobe and separate
-capture/render commands. Its capture/render source and tests have not been audited in
-this change, and there is no public redistribution path established here. If extracting
-the existing kit, read and review its actual source,
-verify ownership/license, remove private recipes and paths, add clean setup instructions,
-and run its tests plus real capture/render. Otherwise make an explicit toolchain
-selection with the maintainer. Compare a relevant existing HyperFrames or Remotion
-workflow if applicable; neither is currently selected or tested.
+This selection lifts the private-kit blocker. The implementation is original and does not inspect, copy, or depend on any unpublished local kit. A source fixture was manually run, but clean installation, general product projects, host activation, usefulness, and distribution remain open qualification gates. No compositor, custom engine, installer, or private dependency is introduced.
+
 
 ## Deliverable contract
 

@@ -37,8 +37,7 @@
 </p>
 
 > [!IMPORTANT]
-> SkillPot is in development. This repository establishes the project direction,
-> roadmap, and identity. No installable skills or compatibility results are released yet.
+> SkillPot is in development. This repository now contains one experimental source skill and a manually exercised public fixture; neither is a qualified release. No clean-host installation, agent compatibility, or usefulness results are established.
 
 ## Why SkillPot?
 
@@ -72,9 +71,7 @@ agent will always follow instructions.
 
 **A working project → an accurate, polished demo.**
 
-The initial planned skill will help an agent inspect a functioning project, choose a
-small demonstrable user journey, capture real behavior, and produce a shareable demo
-without inventing features or results.
+The first experimental source skill and runnable fixture now exercise a small browser journey with public Playwright recording and FFmpeg rendering. The fixture records its own real behavior; it is not an evaluation of general task usefulness or a qualified release.
 
 | Input | Planned result |
 | --- | --- |
@@ -98,8 +95,8 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Project direction and first-workflow scope | Documented |
 | Public roadmap and contribution guidance | Available in this repository |
 | ModePot-family logo and editable artwork | Available in [assets/](assets/README.md) |
-| Installable skills and runnable examples | Not released |
-| Agent/tool compatibility matrix | Not established |
+| Experimental source skill and runnable fixture | Present; manually exercised, not a qualified release |
+| Clean installation or agent/tool compatibility | Not tested; not established |
 | Comparative task evaluations | Not published |
 | Standalone website, registry, or custom installer | Not provided |
 
@@ -109,11 +106,12 @@ than inferred from a logo or a folder name.
 
 ## Using SkillPot
 
-No skill is implemented yet. The [source audit](docs/source-audit.md) records existing
+The experimental [project-to-demo skill](skills/project-to-demo/SKILL.md) and its [runnable fixture](examples/project-to-demo/README.md) are available for source inspection and manual execution. They do not establish installation, host compatibility, activation, or usefulness. The [source audit](docs/source-audit.md) records existing
 project guidance and extraction boundaries. The [first-workflow proposal](docs/first-workflow-proposal.md)
 defines representative tasks and acceptance checks; the [authoring contract](docs/skill-contract.md)
 and [evaluation template](templates/task-evaluation.md) define how implementation will
-be packaged and judged. These are designs, not implemented skills or measured results.
+be packaged and judged. Those documents are design/protocol references; the experimental
+skill and fixture are source implementations, not comparative task results.
 See the [roadmap](ROADMAP.md) for the remaining gates, or propose a representative task
 in [GitHub Issues](https://github.com/tugrulguner/skillpot/issues).
 

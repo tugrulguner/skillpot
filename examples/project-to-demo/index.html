@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Record grouper — public fixture</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f4f7fb; color: #172536; font: 20px/1.4 system-ui, sans-serif; }
+    main { width: 100%; padding: 26px 64px; }
+    .label { color: #476783; font-size: 17px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 5px 0 8px; font-size: 34px; }
+    p { margin: 0 0 12px; }
+    .fixture { color: #526579; font-size: 17px; }
+    form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; margin: 14px 0 0; }
+    label { display: grid; gap: 5px; font-weight: 650; }
+    input { width: 100%; min-width: 0; padding: 11px 13px; border: 1px solid #9aabba; border-radius: 8px; font: inherit; }
+    .rows { display: grid; gap: 7px; margin: 12px 0; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 8px 14px; background: white; border: 1px solid #cdd8e3; border-radius: 8px; }
+    button { padding: 12px 18px; border: 0; border-radius: 9px; background: #155eef; color: white; font-size: 18px; font-weight: 700; cursor: pointer; }
+    #output { margin-top: 10px; padding: 12px 18px; min-height: 48px; background: #e8f7ef; border: 1px solid #a8dfbd; border-radius: 10px; }
+    #output:empty { background: white; border-color: #cdd8e3; }
+    pre { margin: 0; font: 17px/1.35 ui-monospace, monospace; white-space: pre-wrap; }
+    .status { margin-top: 6px; font-size: 17px; color: #176c3b; }
+    section.output-section { margin-top: 10px; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="label">Local demonstration fixture · not a SkillPot feature</div>
+  <h1>Group rows into records</h1>
+  <p>Rows sharing an identifier become one record with multiple items.</p>
+  <p class="fixture">Enter two items for the same identifier, then group the rows.</p>
+  <section aria-label="Input rows">
+    <div class="label">Input</div>
+    <form id="add-row">
+      <label for="identifier">Identifier<input id="identifier" name="identifier" required placeholder="e.g. demo-1"></label>
+      <label for="item">Item<input id="item" name="item" required placeholder="e.g. apples"></label>
+      <button type="submit">Add row</button>
+    </form>
+    <div class="rows" id="rows" aria-live="polite"></div>
+  </section>
+  <button id="group" type="button">Group rows</button>
+  <div id="status" class="status" role="status">Ready · no rows entered</div>
+  <section class="output-section" aria-label="Grouped output">
+    <div class="label">Actual output</div>
+    <div id="output" aria-live="polite"></div>
+  </section>
+</main>
+<script type="module">
+  import { groupRows } from './transform.mjs';
+  const rowsEl = document.querySelector('#rows');
+  const output = document.querySelector('#output');
+  const status = document.querySelector('#status');
+  const form = document.querySelector('#add-row');
+  const idInput = document.querySelector('#identifier');
+  const itemInput = document.querySelector('#item');
+  let rows = [];
+  function renderRows() {
+    rowsEl.replaceChildren(...rows.map((row, index) => {
+      const el = document.createElement('div'); el.className = 'row'; el.dataset.row = String(index + 1);
+      const id = document.createElement('span'); id.textContent = `Identifier: ${row.id}`;
+      const item = document.createElement('span'); item.textContent = `Item: ${row.item}`;
+      el.append(id, item); return el;
+    }));
+    status.textContent = rows.length ? `${rows.length} rows entered` : 'Ready · no rows entered';
+  }
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    rows.push({ id: idInput.value.trim(), item: itemInput.value.trim() });
+    itemInput.value = '';
+    renderRows();
+    itemInput.focus();
+  });
+  document.querySelector('#group').addEventListener('click', () => {
+    const result = groupRows(rows);
+    output.replaceChildren();
+    const pre = document.createElement('pre'); pre.textContent = JSON.stringify(result); output.append(pre);
+    status.textContent = `Grouped ${rows.length} rows into ${result.length} record`;
+  });
+  renderRows();
+</script>
+</body>
+</html>

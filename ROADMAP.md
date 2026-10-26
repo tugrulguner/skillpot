@@ -46,11 +46,10 @@ One public skill can be authored without depending on undisclosed local knowledg
 
 ### Working project → accurate demo
 
-The skill should take a functioning project and produce a focused, inspectable demo
-package. It should orchestrate existing tools rather than introduce a video engine.
+**Experimental source/example exists, not qualified:** [`skills/project-to-demo/`](skills/project-to-demo/SKILL.md) and [`examples/project-to-demo/`](examples/project-to-demo/README.md) use an original fixture with public Playwright/FFmpeg tools. They are manually exercised only; no milestone completion, release, host compatibility, or usefulness claim follows. This experiment explicitly selects Playwright browser recording and FFmpeg rendering as separately installed tools and lifts the private video-kit dependency as a blocker. See the proposal for tool licenses, evidence, and open qualification gates.
 
-- [ ] Agree the initial project types, agent host, capture method, and rendering tools.
-- [ ] Specify supported output formats and sensible duration/aspect-ratio constraints.
+- [ ] Agree the initial project types, agent host, capture method, and rendering tools. **Selected for first experiment:** one local browser fixture, Playwright video recording, FFmpeg/ffprobe; no agent host claimed.
+- [ ] Specify supported output formats and sensible duration/aspect-ratio constraints. **Example only:** silent 1280×720 30fps H.264; broader support untested.
 - [ ] Inspect real product behavior and confirm a reproducible user journey.
 - [ ] Define the audience, allowed claims, data boundaries, and success criteria.
 - [ ] Produce a capture plan and capture real behavior with approved inputs.

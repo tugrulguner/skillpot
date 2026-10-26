@@ -1,0 +1,52 @@
+name: Experimental demo checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: examples/project-to-demo/package-lock.json
+      - name: Documentation and render-boundary tests
+        run: |
+          python3 scripts/check_docs.py
+          python3 -m unittest discover -s tests -v
+      - name: Install example dependencies
+        working-directory: examples/project-to-demo
+        run: npm ci
+      - name: Install Chromium and media tools
+        working-directory: examples/project-to-demo
+        run: |
+          npx playwright install --with-deps chromium
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+      - name: Fixture and capture refusal/cleanup tests
+        working-directory: examples/project-to-demo
+        run: npm test
+      - name: Real fixture capture and media-consumer smoke
+        working-directory: examples/project-to-demo
+        run: |
+          export SKILLPOT_OUTPUT="$RUNNER_TEMP/project-to-demo-smoke"
+          node capture.mjs
+          python3 render.py "$SKILLPOT_OUTPUT" "$SKILLPOT_OUTPUT/render-001"
+          python3 - "$SKILLPOT_OUTPUT/render-001/verification.json" <<'PY'
+          import json, sys
+          report = json.load(open(sys.argv[1]))
+          assert report['status'] == 'media_verified_pending_review'
+          assert report['full_decode_exit_code'] == 0
+          assert report['visual_review'] == 'pending'
+          PY
