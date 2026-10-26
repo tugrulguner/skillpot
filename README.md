@@ -1,0 +1,169 @@
+# skillpot
+
+<p align="center">
+  <img src="assets/skillpot-lockup.png" alt="SkillPot — practical agent skills, from task to finished work" width="600">
+</p>
+
+<p align="center">Part of <a href="https://modepot.io/">ModePot</a>. &nbsp; <a href="https://tugrul.modepot.io/">Created by Tugrul Guner</a></p>
+
+<p align="center">
+  <strong>Give your agent a workflow. Get work you can inspect.</strong>
+</p>
+
+<p align="center">
+  Practical, installable agent skills for building, researching, and presenting real work.<br>
+  Clear inputs. Useful artifacts. Explicit checks.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-In%20development-FF9A76" alt="In development">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+  <a href="https://discord.gg/u3AANZr6RG"><img src="https://img.shields.io/badge/Discord-Join%20ModePot-5865F2?logo=discord&amp;logoColor=white" alt="Join the ModePot Discord"></a>
+  <a href="https://github.com/tugrulguner/skillpot"><img src="https://img.shields.io/github/stars/tugrulguner/skillpot?style=social" alt="GitHub stars"></a>
+</p>
+
+<p align="center">
+  <a href="#why-skillpot">Why SkillPot</a> ·
+  <a href="#the-first-workflow">First workflow</a> ·
+  <a href="#current-status">Status</a> ·
+  <a href="#using-skillpot">Using SkillPot</a> ·
+  <a href="ROADMAP.md">Roadmap</a> ·
+  <a href="#community">Community</a> ·
+  <a href="CONTRIBUTING.md">Contributing</a>
+</p>
+
+<p align="center">
+  <img src="assets/skillpot-workflow.png" alt="Planned SkillPot workflow, not a released skill: start with real inputs and constraints, follow a reusable procedure with tools and review points, then deliver an artifact with evidence and limitations" width="960">
+</p>
+
+> [!IMPORTANT]
+> SkillPot is in development. This repository establishes the project direction,
+> roadmap, and identity. No installable skills or compatibility results are released yet.
+
+## Why SkillPot?
+
+A capable agent can still leave you with work to finish: a demo that does not show the
+actual product, a report whose claims cannot be traced, or an analysis that cannot be
+reproduced. More instructions are not enough if the workflow never checks the result.
+
+SkillPot is being built around complete tasks. A skill should explain what it needs,
+choose appropriate tools, produce a useful artifact, and check it before calling the
+work finished. The intended audience is builders, researchers, and creators—not only
+people using ModePot projects.
+
+The library's design principles are:
+
+- **An outcome, not a persona.** Name the task and deliverable instead of asking the
+  agent to pretend to be an expert.
+- **Procedure plus practical resources.** Bundle scripts, examples, templates, and
+  references when they make the work more reliable.
+- **Checks that match the claim.** Validate the artifact; do not confuse clean Markdown
+  or a convincing response with successful execution.
+- **Small, selectively installed skills.** Keep the active instructions focused and
+  load supporting material only when it is needed.
+- **Visible boundaries.** Document prerequisites, permissions, supported environments,
+  review points, and known failures.
+
+These are the bar for future skills, not claims that an unreleased library has already
+met it. Evaluation and maintenance support the work; they are not a guarantee that an
+agent will always follow instructions.
+
+## The first workflow
+
+**A working project → an accurate, polished demo.**
+
+The initial planned skill will help an agent inspect a functioning project, choose a
+small demonstrable user journey, capture real behavior, and produce a shareable demo
+without inventing features or results.
+
+| Input | Planned result |
+| --- | --- |
+| A working project and a defined audience | A short, focused demo brief and capture plan |
+| Reproducible steps and approved data | Evidence of the actual product in use |
+| Allowed claims and media constraints | A rendered demo, captions, and a claim-to-evidence note |
+| A human review decision | A delivery package; public posting remains a separate approval |
+
+Existing tools may handle capture and rendering. SkillPot's contribution must be the
+workflow and its verified result—not another video engine. Tool selection, output
+formats, duration presets, and supported agents will be earned through the
+[roadmap's acceptance gates](ROADMAP.md#milestone-2--build-the-first-complete-workflow).
+
+Research-to-explainer and data-to-decision workflows are later candidates, not committed
+features. A future catalogue must earn its breadth one useful skill at a time.
+
+## Current status
+
+| Area | Status |
+| --- | --- |
+| Project direction and first-workflow scope | Documented |
+| Public roadmap and contribution guidance | Available in this repository |
+| ModePot-family logo and editable artwork | Available in [assets/](assets/README.md) |
+| Installable skills and runnable examples | Not released |
+| Agent/tool compatibility matrix | Not established |
+| Comparative task evaluations | Not published |
+| Standalone website, registry, or custom installer | Not provided |
+
+A standard skill format does not imply identical tool access, permissions, activation,
+or behavior across agents. Compatibility will be stated per tested environment rather
+than inferred from a logo or a folder name.
+
+## Using SkillPot
+
+There is nothing to install yet. Start with the [roadmap](ROADMAP.md) to see what must
+work before the first skill is published, or propose a representative task in
+[GitHub Issues](https://github.com/tugrulguner/skillpot/issues).
+
+The intended packaging is the open [Agent Skills format](https://agentskills.io/): a
+`SKILL.md` entry point with optional scripts, references, and assets. Installation will
+use established agent/distribution mechanisms where practical. Exact install commands
+will be added only after the published layout and clean-install path have been tested.
+
+SkillPot is not an agent runtime, an MCP replacement, a new skill standard, or a skill
+marketplace. Skills provide procedures; the host agent supplies execution and enforces
+its own permission boundary. Some workflows may need external tools or paid services;
+those requirements and costs must be disclosed before use.
+
+## What a published skill must include
+
+1. **A specific task and useful output.** State when the skill applies—and when it does not.
+2. **An explicit environment.** List tools, dependencies, credentials, costs, and access needs.
+3. **A complete procedure.** Include setup, checks, failure handling, and recovery where relevant.
+4. **Inspectable examples.** Supply runnable examples or fixtures, not invented transcripts.
+5. **Evidence of usefulness.** Record repeated task results with and without the skill;
+   compare a relevant existing workflow when one exists.
+6. **Maintenance and provenance.** Record source permissions, tested revisions, limitations,
+   and who maintains the skill.
+
+No credentials, private project data, personal machine paths, or unlicensed third-party
+instructions belong in the public library. Scripts and external references require
+review. A skill is not a sandbox or a security certification.
+
+## Community
+
+Join the [ModePot Discord](https://discord.gg/u3AANZr6RG) for workflow ideas, implementation
+questions, and discussion across the project family.
+
+Use [GitHub Issues](https://github.com/tugrulguner/skillpot/issues) for reproducible
+problems, scoped proposals, and realistic tasks we can evaluate. When proposing a skill,
+show the input, desired artifact, current approach, and what makes the result acceptable.
+Do not include secrets or private source material.
+
+## Contributing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [roadmap](ROADMAP.md) before substantial
+work. The most useful early contributions are representative task cases, source-permission
+checks, failure examples, and evidence that a workflow improves on an existing approach.
+
+Existing project skills may be candidates for extraction, but they must be audited
+against current behavior, stripped of private assumptions, and checked for redistribution
+rights. Being present in another repository is not evidence that a skill is current.
+
+## Support SkillPot
+
+If the direction is useful, [star the repository](https://github.com/tugrulguner/skillpot)
+or bring a real task to the issue tracker. Useful examples and honest failure reports
+will help shape the first release more than a large untested catalogue.
+
+## License
+
+[MIT](LICENSE). Third-party tools and source materials retain their own licenses.

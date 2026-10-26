@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">SkillPot — from task to finished work</title>
+  <desc id="desc">Planned library workflow, not released functionality. Real inputs and constraints enter a reusable procedure; the agent uses tools and review points to deliver an artifact with evidence and limitations.</desc>
+  <rect width="1600" height="760" rx="24" fill="#090C11"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="65" fill="#FF9A76" font-size="18" font-weight="700" letter-spacing="3">SKILLPOT / LIBRARY DESIGN</text>
+    <rect x="1090" y="34" width="454" height="44" rx="22" fill="#211B1A" stroke="#674A40"/>
+    <text x="1317" y="62" text-anchor="middle" fill="#FFBC9F" font-size="17" font-weight="700">PLANNED · NO SKILLS RELEASED YET</text>
+    <text x="56" y="145" fill="#F4F2EA" font-size="46" font-weight="700" letter-spacing="-1">A task is the start. An inspectable result is the goal.</text>
+    <text x="56" y="191" fill="#AEB7C4" font-size="23">Practical procedures for agents, with resources and checks where they matter.</text>
+
+    <rect x="50" y="250" width="470" height="350" rx="20" fill="#111720" stroke="#2A3543" stroke-width="2"/>
+    <rect x="565" y="250" width="470" height="350" rx="20" fill="#161A20" stroke="#FF9A76" stroke-width="2"/>
+    <rect x="1080" y="250" width="470" height="350" rx="20" fill="#111720" stroke="#2A3543" stroke-width="2"/>
+    <path d="M531 425h22m-8-8 8 8-8 8M1046 425h22m-8-8 8 8-8 8" fill="none" stroke="#FF9A76" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="82" y="297" fill="#FF9A76" font-size="17" font-weight="700" letter-spacing="2">01 / DEFINE THE TASK</text>
+    <text x="82" y="350" fill="#F4F2EA" font-size="32" font-weight="700">Start with real inputs.</text>
+    <text x="82" y="402" fill="#BEC7D3" font-size="23">A working project, source material,</text>
+    <text x="82" y="436" fill="#BEC7D3" font-size="23">or data you are allowed to use.</text>
+    <path d="M82 467h402" stroke="#2A3543"/>
+    <text x="82" y="507" fill="#AEB7C4" font-size="22">Name the audience and constraints.</text>
+    <text x="82" y="543" fill="#AEB7C4" font-size="22">Agree what a good result requires.</text>
+
+    <text x="597" y="297" fill="#FF9A76" font-size="17" font-weight="700" letter-spacing="2">02 / APPLY A SKILL</text>
+    <text x="597" y="350" fill="#F4F2EA" font-size="32" font-weight="700">Follow a useful procedure.</text>
+    <text x="597" y="402" fill="#BEC7D3" font-size="23">Focused instructions, practical tools,</text>
+    <text x="597" y="436" fill="#BEC7D3" font-size="23">and references loaded when needed.</text>
+    <path d="M597 467h402" stroke="#49372F"/>
+    <text x="597" y="507" fill="#AEB7C4" font-size="22">Check progress. Recover from failure.</text>
+    <text x="597" y="543" fill="#AEB7C4" font-size="22">Pause for human review when required.</text>
+
+    <text x="1112" y="297" fill="#FF9A76" font-size="17" font-weight="700" letter-spacing="2">03 / INSPECT THE RESULT</text>
+    <text x="1112" y="350" fill="#F4F2EA" font-size="32" font-weight="700">Deliver a checked artifact.</text>
+    <text x="1112" y="402" fill="#BEC7D3" font-size="23">An artifact you can open, use,</text>
+    <text x="1112" y="436" fill="#BEC7D3" font-size="23">and check against the original task.</text>
+    <path d="M1112 467h402" stroke="#2A3543"/>
+    <text x="1112" y="507" fill="#AEB7C4" font-size="22">Keep evidence and reproduction steps.</text>
+    <text x="1112" y="543" fill="#AEB7C4" font-size="22">State limitations. Do not invent success.</text>
+
+    <line x1="56" y1="650" x2="1544" y2="650" stroke="#2A3039"/>
+    <text x="56" y="700" fill="#FF9A76" font-size="21" font-weight="700">FIRST PLANNED WORKFLOW</text>
+    <text x="432" y="700" fill="#D6DCE5" font-size="24">Working project → accurate demo, captions, and claim-to-evidence notes.</text>
+  </g>
+</svg>
