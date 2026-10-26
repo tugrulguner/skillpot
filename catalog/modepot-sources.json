@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "intpot-cli",
+      "kind": "consumer",
+      "directory": "skills/intpot-cli",
+      "upstream_repository": "tugrulguner/intpot",
+      "upstream_revision": "8e583cc4b2b6785955268d09a12dfdd955194b88",
+      "upstream_path": "src/intpot/templates/skills/intpot-cli.md",
+      "upstream_sha256": "aacb0d866b0a880ead86259ba9fffa709ced3d62ee313e08b37100cf9885f2e2",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+      "upstream_url": "https://github.com/tugrulguner/intpot/blob/8e583cc4b2b6785955268d09a12dfdd955194b88/src/intpot/templates/skills/intpot-cli.md",
+      "status": "pinned-public-guidance"
+    },
+    {
+      "name": "intpot-python",
+      "kind": "consumer",
+      "directory": "skills/intpot-python",
+      "upstream_repository": "tugrulguner/intpot",
+      "upstream_revision": "8e583cc4b2b6785955268d09a12dfdd955194b88",
+      "upstream_path": "src/intpot/templates/skills/intpot-python.md",
+      "upstream_sha256": "4cc1f8e2ad8dd5ede573b3d9805314ed250e9e5acca9939fcbe5ba6e0bf4c9e1",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+      "upstream_url": "https://github.com/tugrulguner/intpot/blob/8e583cc4b2b6785955268d09a12dfdd955194b88/src/intpot/templates/skills/intpot-python.md",
+      "status": "pinned-public-guidance"
+    },
+    {
+      "name": "summonpot",
+      "kind": "consumer",
+      "directory": "skills/summonpot",
+      "upstream_repository": "tugrulguner/summonpot",
+      "upstream_revision": "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5",
+      "upstream_path": "src/summonpot/templates/skills/summonpot.md",
+      "upstream_sha256": "e69a4e7bb8fb46c28838fbc6f62ff4624cfa3c62ccecfd44595833de751eab33",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/summonpot/blob/cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5/src/summonpot/templates/skills/summonpot.md",
+      "status": "pinned-public-guidance"
+    },
+    {
+      "name": "summonpot-pr-review",
+      "kind": "contributor",
+      "directory": "skills/summonpot-pr-review",
+      "upstream_repository": "tugrulguner/summonpot",
+      "upstream_revision": "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5",
+      "upstream_path": ".claude/skills/pr-review/SKILL.md",
+      "upstream_sha256": "9b3f55cd03bb1caace2843659a502c23434b239196a884d395fbc88239143bda",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/summonpot/blob/cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5/.claude/skills/pr-review/SKILL.md",
+      "status": "pinned-public-guidance"
+    },
+    {
+      "name": "summonpot-code-review",
+      "kind": "contributor",
+      "directory": "skills/summonpot-code-review",
+      "upstream_repository": "tugrulguner/summonpot",
+      "upstream_revision": "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5",
+      "upstream_path": ".claude/skills/review-code/SKILL.md",
+      "upstream_sha256": "e1d954a394747da05642d376a7f12c926822f8e13c6b38d60560d0cc78e13958",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/summonpot/blob/cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5/.claude/skills/review-code/SKILL.md",
+      "status": "pinned-public-guidance"
+    },
+    {
+      "name": "dexpot",
+      "kind": "consumer",
+      "directory": "skills/dexpot",
+      "upstream_repository": "tugrulguner/dexpot",
+      "upstream_revision": "ca4979a6339e533f11ad135bc760aa081f3f60ab",
+      "upstream_path": "src/dexpot/templates/skills/dexpot.md",
+      "upstream_sha256": "e59dd9703cc902977519edb7f1a2004bca16c6701dbd01c4e738f427ccbc73ad",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/dexpot/blob/ca4979a6339e533f11ad135bc760aa081f3f60ab/src/dexpot/templates/skills/dexpot.md",
+      "status": "pinned-public-guidance"
+    },
+    {
+      "name": "refpot-database",
+      "kind": "consumer",
+      "directory": "skills/refpot-database",
+      "upstream_repository": "tugrulguner/refpot",
+      "upstream_revision": "3294ce39f0e5630c660fad2e5a1e3977bf52a17f",
+      "upstream_path": "skills/refpot-database/SKILL.md",
+      "upstream_sha256": "573ec7a855392ed58d89b5e139348af9b6f1bd4a915043aebff9bf473d307df8",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/refpot/blob/3294ce39f0e5630c660fad2e5a1e3977bf52a17f/skills/refpot-database/SKILL.md",
+      "status": "pinned-public-guidance"
+    }
+  ]
+}

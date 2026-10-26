@@ -24,6 +24,7 @@
 
 <p align="center">
   <a href="#why-skillpot">Why SkillPot</a> ·
+  <a href="#modepot-project-skills">ModePot skills</a> ·
   <a href="#the-first-workflow">First workflow</a> ·
   <a href="#current-status">Status</a> ·
   <a href="#using-skillpot">Using SkillPot</a> ·
@@ -67,6 +68,31 @@ The library's design principles are:
 These are the bar for future skills, not claims that an unreleased library has already
 met it. Evaluation and maintenance support the work; they are not a guarantee that an
 agent will always follow instructions.
+
+## ModePot project skills
+
+The collection now includes pinned public project guidance—not only the original
+repository-readiness experiment:
+
+- **Intpot:** [CLI](skills/intpot-cli/SKILL.md) and [Python API](skills/intpot-python/SKILL.md).
+- **Summonpot:** [consumer workflow](skills/summonpot/SKILL.md), plus project-scoped
+  [PR review](skills/summonpot-pr-review/SKILL.md) and
+  [code review](skills/summonpot-code-review/SKILL.md).
+- **Dexpot:** [synchronous typed HTTP applications](skills/dexpot/SKILL.md).
+- **Refpot:** [embedded database preview](skills/refpot-database/SKILL.md).
+
+Each can be installed separately through an existing host mechanism; there is no
+all-skills auto-install or hidden product dependency installation. Start with the
+[catalogue](catalog/README.md) and [installation guide](docs/project-skill-installation.md).
+Upstream repositories remain canonical. Source revisions, original guide hashes and
+complete MIT notices are preserved; this is a pinned distribution, not a second API
+manual tracking main silently.
+
+The public inventory found no existing skill Markdown in Utilitypot, Lifepot or
+Strpot at the inspected revisions, so none is invented for those projects. Private
+local skills are not copied. See the [bounded inventory](catalog/source-inventory.json)
+and each package's provenance/compatibility records for scope and verification limits.
+Packaging or installation is not proof of a full product runtime or usefulness matrix.
 
 ## The first workflow
 
