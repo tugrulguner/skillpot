@@ -8,8 +8,11 @@ are unsupported. Installing this skill does not install the Refpot database pack
 Package/metadata/reference/license checks are separate from native host installation
 and actual database execution. [Native Hermes install/list/selective-removal](../../evaluations/modepot-project-skills/native-install-001/README.md)
 was exercised with exact installed instruction/reference/license byte parity.
-A bounded source-matched consumer example is being
-exercised separately; until a real result is recorded it is not a passing gate.
+The [bounded source-matched consumer task](../../evaluations/modepot-project-skills/refpot-consumer-001/README.md)
+built this exact Refpot source as 0.1.2 in an isolated CPython 3.11.12 environment
+on macOS 26.5.2 arm64. The two shipped examples and repeatable CRUD/rollback/UTF-8/
+checkpoint/reopen assertions passed, including a separate parent replay of the
+public portable fixture. Its initial failed interpreter-path setup is retained.
 No performance target, physical power-loss safety, general host compatibility,
 important-data suitability or full runtime matrix is established here.
 

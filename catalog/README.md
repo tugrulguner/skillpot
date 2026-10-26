@@ -60,6 +60,10 @@ The [native Hermes verification](../evaluations/modepot-project-skills/native-in
 records successful individual install/list/removal and complete reference/license
 byte parity for every listed package, without bypassing scans. Model activation and
 product execution are separate from those checks.
+One [Refpot consumer task](../evaluations/modepot-project-skills/refpot-consumer-001/README.md)
+also executed against its exact pinned source with a separately replayed
+[portable example](../examples/modepot-project-skills/README.md). No other project's
+runtime or the whole collection's usefulness is established by that result.
 
 ## Maintenance
 

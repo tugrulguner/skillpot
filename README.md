@@ -124,6 +124,7 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Experimental skill source | [repository-readiness](skills/repository-readiness/SKILL.md) and report template |
 | ModePot public collection | [Seven pinned project/contributor packages](catalog/README.md) |
 | Native selective installation | [Seven Hermes install/list/remove checks](evaluations/modepot-project-skills/native-install-001/README.md); not model activation |
+| ModePot consumer execution | [Refpot source-matched task and runnable example](examples/modepot-project-skills/README.md); other runtimes unqualified |
 | Real task example | [Frozen public repository task](examples/repository-readiness/task.md) |
 | Qualified skill releases | Not released |
 | Agent/tool compatibility matrix | Not established |

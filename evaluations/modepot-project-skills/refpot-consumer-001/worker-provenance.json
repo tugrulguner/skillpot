@@ -1,0 +1,29 @@
+{
+  "hashes_sha256": {
+    "skill": "fa31d409a9c5503a88a51d91e3e3e69e5666049ab0f3be2888c2b31f30299fea",
+    "reference": "573ec7a855392ed58d89b5e139348af9b6f1bd4a915043aebff9bf473d307df8",
+    "pyproject": "3f98b4e6516552d9a4c37a87cdf9211112f327e7a67c0505a416057d3ccec773"
+  },
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "python": "3.14.9 (main, Oct 21 2026, 17:47:42) [Clang 23.1.3 ]",
+  "source_commit": "3294ce39f0e5630c660fad2e5a1e3977bf52a17f",
+  "isolated_interpreter_probe": "3.11.12 (main, Apr  9 2025, 03:49:53) [Clang 20.1.0 ]\nmacOS-26.5.2-arm64-arm-64bit\n<consumer workspace>/.venv/lib/python3.11/site-packages/refpot/__init__.py\n0.1.2\n",
+  "source_commit_sha256": "1de7c83f723e596a43bd270df56609dace663bf81480794af231b63bf2858b49",
+  "logged_commands_total": 11,
+  "failed_attempts": [
+    {
+      "cwd": "source",
+      "command": [
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        ".venv/bin/python",
+        "."
+      ],
+      "exit_code": 2,
+      "stderr": "error: No virtual environment or system Python installation found for path `.venv/bin/python`; run `uv venv` to create an environment\n"
+    }
+  ]
+}
