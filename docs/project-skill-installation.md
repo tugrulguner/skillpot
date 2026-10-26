@@ -70,3 +70,9 @@ Collection integrity tests parse YAML, validate source pins and compare source/l
 hashes. Native install/load/selectivity/removal evidence and actual product-consumer
 examples are separate gates, recorded only when executed. No broad compatibility,
 security certification or usefulness advantage follows from distributing source files.
+
+The [recorded native check](../evaluations/modepot-project-skills/native-install-001/README.md)
+exercised all seven packages at the named immutable revision in a temporary Hermes
+home, with normal scanning and no force override. Each installed entry point, source
+reference and license matched source bytes; selected removal preserved siblings.
+This evidence does not establish automatic task activation or another agent host.

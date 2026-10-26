@@ -56,6 +56,10 @@ instruction bundle. Root provenance/compatibility files remain source-review rec
 No all-skills auto-install or hidden product dependency installation is performed.
 Other Agent Skills consumers can use the directories, but format compatibility is
 not a tested-host claim. Actual host and task results must be recorded separately.
+The [native Hermes verification](../evaluations/modepot-project-skills/native-install-001/README.md)
+records successful individual install/list/removal and complete reference/license
+byte parity for every listed package, without bypassing scans. Model activation and
+product execution are separate from those checks.
 
 ## Maintenance
 

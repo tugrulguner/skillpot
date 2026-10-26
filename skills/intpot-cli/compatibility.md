@@ -1,6 +1,6 @@
 # Compatibility
 
-Status: structurally packaged only. These are portable Markdown instructions; no host activation, task execution, or runtime compatibility has been established.
+Status: portable source package with [native Hermes install/list/selective-removal evidence](../../evaluations/modepot-project-skills/native-install-001/README.md). Installed entry-point/reference/license bytes matched the pinned source, with normal scans and no force override. No model activation, task execution, or product runtime matrix is established.
 
 The upstream project metadata requires Python >=3.11. This packaging task did not install intpot, run the consumer workflow, or test a host agent. Consult the pinned reference and ensure the installed package/source revision provides the documented feature before relying on it. No supported-host claim is made.
 

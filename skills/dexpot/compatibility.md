@@ -6,8 +6,8 @@ Underlying runtime/platform/scheduler boundaries remain those of the pinned upst
 revision, not a claim that this distribution tested every combination.
 
 Source structure, portable metadata, reference integrity and complete MIT notice are
-packaging checks. Native installation and user-facing source status are recorded
-separately by the collection verification, when actually executed. No full Dexpot
+packaging checks. [Native Hermes install/list/selective-removal](../../evaluations/modepot-project-skills/native-install-001/README.md)
+was exercised with exact installed instruction/reference/license byte parity. No full Dexpot
 application, benchmark, overload, free-threaded or deployment matrix is established
 by authoring this directory. Unknown/unexecuted checks are not passes.
 

@@ -6,7 +6,9 @@ compiler for source builds. Windows, other architectures and free-threaded Pytho
 are unsupported. Installing this skill does not install the Refpot database package.
 
 Package/metadata/reference/license checks are separate from native host installation
-and actual database execution. A bounded source-matched consumer example is being
+and actual database execution. [Native Hermes install/list/selective-removal](../../evaluations/modepot-project-skills/native-install-001/README.md)
+was exercised with exact installed instruction/reference/license byte parity.
+A bounded source-matched consumer example is being
 exercised separately; until a real result is recorded it is not a passing gate.
 No performance target, physical power-loss safety, general host compatibility,
 important-data suitability or full runtime matrix is established here.

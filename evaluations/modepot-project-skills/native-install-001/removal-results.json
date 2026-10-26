@@ -1,0 +1,61 @@
+{
+  "selective_removal": [
+    {
+      "removed": "intpot-cli",
+      "remaining_selected_names": [
+        "dexpot",
+        "intpot-python",
+        "refpot-database",
+        "summonpot",
+        "summonpot-code-review",
+        "summonpot-pr-review"
+      ]
+    },
+    {
+      "removed": "intpot-python",
+      "remaining_selected_names": [
+        "dexpot",
+        "refpot-database",
+        "summonpot",
+        "summonpot-code-review",
+        "summonpot-pr-review"
+      ]
+    },
+    {
+      "removed": "summonpot",
+      "remaining_selected_names": [
+        "dexpot",
+        "refpot-database",
+        "summonpot-code-review",
+        "summonpot-pr-review"
+      ]
+    },
+    {
+      "removed": "summonpot-pr-review",
+      "remaining_selected_names": [
+        "dexpot",
+        "refpot-database",
+        "summonpot-code-review"
+      ]
+    },
+    {
+      "removed": "summonpot-code-review",
+      "remaining_selected_names": [
+        "dexpot",
+        "refpot-database"
+      ]
+    },
+    {
+      "removed": "dexpot",
+      "remaining_selected_names": [
+        "refpot-database"
+      ]
+    },
+    {
+      "removed": "refpot-database",
+      "remaining_selected_names": []
+    }
+  ],
+  "active_skills_remaining": 0,
+  "hub_audit_cache_may_remain": true
+}
