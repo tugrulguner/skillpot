@@ -24,6 +24,10 @@ entry point or template. Keep permissions and budget equal. One attempt per cond
 cannot establish a skill benefit; a good baseline is a legitimate negative finding.
 The [proposal](../../docs/repository-readiness-proposal.md) lists further gates.
 
+The [repaired-version result](../../evaluations/repository-readiness/repaired-smoke/README.md)
+retains an actual agent's report and machine-captured checks. It passed the bounded
+task review after the earlier failures; it does not establish a benefit over the baseline.
+
 No automation framework or fixture app is needed. This example exercises an agent's
 procedure and resulting report. It does not claim native installation, automatic
 selection, repeated/held-out success or supported compatibility across hosts.

@@ -1,5 +1,9 @@
 # Initial explicit-load smoke — incomplete acceptance, no benefit established
 
+Historical attempts remain below unchanged in disposition. The later
+[repaired-version smoke](../repaired-smoke/README.md) used a revised procedure and
+recorder; its acceptance does not retroactively pass these attempts.
+
 ## Identity and frozen inputs
 
 - Input: public SkillPot revision `3d023734ca0a2a22a873ca59d601f7616fed7716`.

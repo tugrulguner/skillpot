@@ -22,7 +22,12 @@ cleanliness was separately verified; it does not erase the boundary violation.
 Those attempts used the original procedure without the new recorder. A revised
 procedure now requires absolute external destinations and the bundled recorder;
 regressions exercise actual refusal, overwrite, symlink, failure and timeout behavior.
-A new agent task run is pending. There is no demonstrated usefulness benefit.
+The [repaired-version smoke](../../evaluations/repository-readiness/repaired-smoke/README.md)
+was accepted for its frozen bounded audit task: the agent explicitly read the skill,
+ran the checks through the recorder, and delivered the cited report. All six project
+command records were retained; target hashes and modification times were unchanged,
+with no target write observed in the trace. This is one model-assisted, unblinded
+acceptance decision, not native installation/discovery or a demonstrated usefulness benefit.
 
 Host discovery, selective installation/removal, non-trigger behavior, repeated matched
 trials, held-out tasks, external users and other OS/model/harness combinations remain

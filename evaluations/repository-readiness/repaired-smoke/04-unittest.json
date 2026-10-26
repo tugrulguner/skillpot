@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": ".",
+  "timeout_seconds": 60.0,
+  "env": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "status": "passed",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_escape (test_check_docs.CheckDocsTests.test_escape) ... ok\ntest_missing_destination (test_check_docs.CheckDocsTests.test_missing_destination) ... ok\ntest_personal_home_without_trailing_slash (test_check_docs.CheckDocsTests.test_personal_home_without_trailing_slash) ... ok\ntest_personal_path (test_check_docs.CheckDocsTests.test_personal_path) ... ok\ntest_valid_destinations_and_external_links (test_check_docs.CheckDocsTests.test_valid_destinations_and_external_links) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.008s\n\nOK\n"
+}

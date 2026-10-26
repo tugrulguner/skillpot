@@ -1,0 +1,189 @@
+{
+  "kind": "separate parent verification",
+  "target_revision": "3d023734ca0a2a22a873ca59d601f7616fed7716",
+  "skill_revision": "06b4392685ebfb9030acadc550ece30060b1da61",
+  "file_hashes_and_mtimes_unchanged": true,
+  "target_file_count": 20,
+  "snapshot_before": {
+    ".git": {
+      "sha256": "e384dccc9f942cfd37d759b4f775bc8fdc180ae2c19336683d1876fb41fc0b8e",
+      "mtime_ns": 1793050749513636183
+    },
+    ".gitattributes": {
+      "sha256": "23302dd90b8bb74b44d365fafef8df20f809b61cb347023951ecf60a88a29651",
+      "mtime_ns": 1793050749525053347
+    },
+    ".gitignore": {
+      "sha256": "eced19bba5f5358f7f1c6749697f77938208f6775b49e60684d0d28b7ce17ea0",
+      "mtime_ns": 1793050749525473350
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "6b1049bf4e3f4f6bc022d3d329471ea00081c9412cbff17810aac4f58fbe3cd3",
+      "mtime_ns": 1793050749526030437
+    },
+    "LICENSE": {
+      "sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "mtime_ns": 1793050749526398231
+    },
+    "README.md": {
+      "sha256": "a734a7988916ebacb40c4c7acedb05b18ca960e3713699a05690f30ca09d8508",
+      "mtime_ns": 1793050749526814734
+    },
+    "ROADMAP.md": {
+      "sha256": "d2fd4334d85efb295e230376b3f65faceb51823bc19649c8f225aa82cd7a40ad",
+      "mtime_ns": 1793050749527192945
+    },
+    "assets/README.md": {
+      "sha256": "72eb086f4ae31730a4c080051374af12be4a4c10c79f51f4a0736ccae5c23b41",
+      "mtime_ns": 1793050749527650532
+    },
+    "assets/skillpot-lockup.png": {
+      "sha256": "9523ca227b4499605c16844c9648bab82ac130a574cf26c700c8acc0af7580d3",
+      "mtime_ns": 1793050749528443371
+    },
+    "assets/skillpot-lockup.svg": {
+      "sha256": "44970bbd30c8ca4474908454dc4996a399b14872c1c9f47f236dbaa190f182d8",
+      "mtime_ns": 1793050749528795456
+    },
+    "assets/skillpot-mark.png": {
+      "sha256": "66d01a2e0965eaaef3b323fe9996bdf8537edc98e2fff35b89b0271ffdbcde38",
+      "mtime_ns": 1793050749529210334
+    },
+    "assets/skillpot-mark.svg": {
+      "sha256": "1fc7fff4f5384fce02e9205fc757f5a3448f64d08fb03f041f46b93f6c3b4334",
+      "mtime_ns": 1793050749529473295
+    },
+    "assets/skillpot-workflow.png": {
+      "sha256": "5def74a29c614bdce6d19c9f1e50ecbd1a0d300753b9f9f49ea6f07dab5a9cc4",
+      "mtime_ns": 1793050749531065181
+    },
+    "assets/skillpot-workflow.svg": {
+      "sha256": "44f0cbca6595c6191710b237e85182b0c35b593b86cbefdc75c5beae6a31a665",
+      "mtime_ns": 1793050749531390308
+    },
+    "docs/first-workflow-proposal.md": {
+      "sha256": "716737d3855c50b47fb0f16c6e901a61efc1bc9e562833a307e6abd94ae394cf",
+      "mtime_ns": 1793050749531880978
+    },
+    "docs/skill-contract.md": {
+      "sha256": "088a8f2c5dfa95f7d0c4efc682e7683e66adc4a2798aff1829c4b1c3f7b2d3fc",
+      "mtime_ns": 1793050749532313773
+    },
+    "docs/source-audit.md": {
+      "sha256": "64ec0d2afde4fcbc03581c87e5ec7d8375ce6e3cf02738c5e818af5da43ee0de",
+      "mtime_ns": 1793050749532820652
+    },
+    "scripts/check_docs.py": {
+      "sha256": "6bde3f7f6d8785335a4433749522042e80b1f4a6714dfeb37a3e559160482648",
+      "mtime_ns": 1793050749533393781
+    },
+    "templates/task-evaluation.md": {
+      "sha256": "26117ea79040362933ea2c5af8630a9dad087850915bbd836b8bf0cd00034332",
+      "mtime_ns": 1793050749533732283
+    },
+    "tests/test_check_docs.py": {
+      "sha256": "425e0c8977dc33d707fdecbc066646f568d57b0f5786bb9a181b0dab503265d6",
+      "mtime_ns": 1793050749534211495
+    }
+  },
+  "snapshot_after": {
+    ".git": {
+      "sha256": "e384dccc9f942cfd37d759b4f775bc8fdc180ae2c19336683d1876fb41fc0b8e",
+      "mtime_ns": 1793050749513636183
+    },
+    ".gitattributes": {
+      "sha256": "23302dd90b8bb74b44d365fafef8df20f809b61cb347023951ecf60a88a29651",
+      "mtime_ns": 1793050749525053347
+    },
+    ".gitignore": {
+      "sha256": "eced19bba5f5358f7f1c6749697f77938208f6775b49e60684d0d28b7ce17ea0",
+      "mtime_ns": 1793050749525473350
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "6b1049bf4e3f4f6bc022d3d329471ea00081c9412cbff17810aac4f58fbe3cd3",
+      "mtime_ns": 1793050749526030437
+    },
+    "LICENSE": {
+      "sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "mtime_ns": 1793050749526398231
+    },
+    "README.md": {
+      "sha256": "a734a7988916ebacb40c4c7acedb05b18ca960e3713699a05690f30ca09d8508",
+      "mtime_ns": 1793050749526814734
+    },
+    "ROADMAP.md": {
+      "sha256": "d2fd4334d85efb295e230376b3f65faceb51823bc19649c8f225aa82cd7a40ad",
+      "mtime_ns": 1793050749527192945
+    },
+    "assets/README.md": {
+      "sha256": "72eb086f4ae31730a4c080051374af12be4a4c10c79f51f4a0736ccae5c23b41",
+      "mtime_ns": 1793050749527650532
+    },
+    "assets/skillpot-lockup.png": {
+      "sha256": "9523ca227b4499605c16844c9648bab82ac130a574cf26c700c8acc0af7580d3",
+      "mtime_ns": 1793050749528443371
+    },
+    "assets/skillpot-lockup.svg": {
+      "sha256": "44970bbd30c8ca4474908454dc4996a399b14872c1c9f47f236dbaa190f182d8",
+      "mtime_ns": 1793050749528795456
+    },
+    "assets/skillpot-mark.png": {
+      "sha256": "66d01a2e0965eaaef3b323fe9996bdf8537edc98e2fff35b89b0271ffdbcde38",
+      "mtime_ns": 1793050749529210334
+    },
+    "assets/skillpot-mark.svg": {
+      "sha256": "1fc7fff4f5384fce02e9205fc757f5a3448f64d08fb03f041f46b93f6c3b4334",
+      "mtime_ns": 1793050749529473295
+    },
+    "assets/skillpot-workflow.png": {
+      "sha256": "5def74a29c614bdce6d19c9f1e50ecbd1a0d300753b9f9f49ea6f07dab5a9cc4",
+      "mtime_ns": 1793050749531065181
+    },
+    "assets/skillpot-workflow.svg": {
+      "sha256": "44f0cbca6595c6191710b237e85182b0c35b593b86cbefdc75c5beae6a31a665",
+      "mtime_ns": 1793050749531390308
+    },
+    "docs/first-workflow-proposal.md": {
+      "sha256": "716737d3855c50b47fb0f16c6e901a61efc1bc9e562833a307e6abd94ae394cf",
+      "mtime_ns": 1793050749531880978
+    },
+    "docs/skill-contract.md": {
+      "sha256": "088a8f2c5dfa95f7d0c4efc682e7683e66adc4a2798aff1829c4b1c3f7b2d3fc",
+      "mtime_ns": 1793050749532313773
+    },
+    "docs/source-audit.md": {
+      "sha256": "64ec0d2afde4fcbc03581c87e5ec7d8375ce6e3cf02738c5e818af5da43ee0de",
+      "mtime_ns": 1793050749532820652
+    },
+    "scripts/check_docs.py": {
+      "sha256": "6bde3f7f6d8785335a4433749522042e80b1f4a6714dfeb37a3e559160482648",
+      "mtime_ns": 1793050749533393781
+    },
+    "templates/task-evaluation.md": {
+      "sha256": "26117ea79040362933ea2c5af8630a9dad087850915bbd836b8bf0cd00034332",
+      "mtime_ns": 1793050749533732283
+    },
+    "tests/test_check_docs.py": {
+      "sha256": "425e0c8977dc33d707fdecbc066646f568d57b0f5786bb9a181b0dab503265d6",
+      "mtime_ns": 1793050749534211495
+    }
+  },
+  "final_status": {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "original_private_report_sha256": "e33c90a4bc0ed7f0c4614251dc8941fef2a73eff6b20ea0768747deec9646d2f",
+  "public_report_transformation": "Replaced three machine-local absolute locations with labeled placeholders; no findings or command output edited",
+  "limitations": [
+    "Trace inspected for target writes; final status and timestamps alone are not a sandbox guarantee",
+    "Explicit loading only; no host discovery or usefulness advantage claimed"
+  ]
+}

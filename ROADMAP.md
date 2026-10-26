@@ -52,8 +52,9 @@ cited report with actual command results, blockers and minimal next steps.
 
 - [x] Author the original portable skill and reusable report template.
 - [x] Freeze a real public-repository task and acceptance rubric before its trial.
-- [ ] Observe an agent explicitly load the skill and complete that task; retain results.
-- [ ] Verify source citations, actual command outputs and target preservation.
+- [x] Observe an agent explicitly load the repaired skill and complete the frozen task;
+      retain [the bounded result and earlier failures](evaluations/repository-readiness/repaired-smoke/README.md).
+- [x] Verify that attempt's source citations, actual command outputs and target preservation.
 - [ ] Exercise missing prerequisites, unavailable checks and interrupted execution.
 - [ ] Test another representative repository and a held-out goal.
 - [ ] Verify host installation, discovery, selective removal and non-trigger behavior.

@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": ".",
+  "timeout_seconds": 60.0,
+  "env": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "status": "passed",
+  "exit_code": 0,
+  "stdout": "3d023734ca0a2a22a873ca59d601f7616fed7716\n",
+  "stderr": ""
+}

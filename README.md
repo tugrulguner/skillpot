@@ -99,6 +99,7 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Qualified skill releases | Not released |
 | Agent/tool compatibility matrix | Not established |
 | Initial agent smoke and baseline | [Observed attempts and evidence defects](evaluations/repository-readiness/initial-smoke/README.md); no benefit established |
+| Repaired-version task execution | [Accepted bounded audit smoke](evaluations/repository-readiness/repaired-smoke/README.md); no broader qualification |
 | Repeated/held-out usefulness evaluation | Not established |
 | Standalone website, registry, or custom installer | Not provided |
 

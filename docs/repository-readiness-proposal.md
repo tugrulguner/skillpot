@@ -1,10 +1,10 @@
 # Current workflow: repository readiness
 
-Status: experimental skill source, with an initial explicit-load attempt and baseline
-[recorded](../evaluations/repository-readiness/initial-smoke/README.md). Their command
-records failed the full evidence rubric; an assisted retry also failed the read-only
-boundary and evidence-completeness requirements. No
-qualified release, supported-host badge or usefulness advantage is established.
+Status: experimental skill source with an accepted
+[bounded repaired-version audit task](../evaluations/repository-readiness/repaired-smoke/README.md).
+The original failed attempts and baseline remain
+[recorded](../evaluations/repository-readiness/initial-smoke/README.md), not relabeled.
+No qualified release, supported-host badge or usefulness advantage is established.
 The earlier project-to-demo direction is superseded; video work is out of scope.
 
 ## User and outcome
@@ -16,9 +16,11 @@ blockers and the smallest next actions—not just say the code looks good.
 
 Implementation: [repository-readiness](../skills/repository-readiness/SKILL.md) and its
 [report template](../skills/repository-readiness/assets/report.md). This is an original
-procedure with no copied private skills, product-specific API guide or runtime wrapper.
+procedure with no copied private skills, product-specific API guide or custom agent runtime.
 Git and the target's documented tools do the work; the skill guides evidence collection
-and a bounded decision. No custom execution, media, packaging or installation engine.
+and a bounded decision. A bundled standard-library helper records command results
+directly and refuses evidence destinations inside the target; it is not a sandbox.
+No custom agent execution, media, packaging or installation engine.
 
 ## Real first task and verification
 
@@ -43,7 +45,8 @@ Explicit reading is not automatic discovery or native host activation.
 
 ## Remaining gates
 
-- Independent source/evidence review and clean-source validation.
+- Final source/evidence validation at the published head; the repair's source review
+  is complete, and the parent checked the added task artifacts separately.
 - Another real repository and held-out delivery question.
 - Failure/interruption and permission-boundary trials.
 - Repeated paired trials and an applicable established repository-audit incumbent.
