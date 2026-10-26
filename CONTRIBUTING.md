@@ -49,8 +49,17 @@ git clone https://github.com/tugrulguner/skillpot.git
 cd skillpot
 ```
 
-The current repository contains Markdown and artwork; it has no runtime package,
-package installation step, or committed task-evaluation runner. For a documentation change:
+The repository has no runtime package or committed task-evaluation runner. It includes
+a small offline documentation checker. For a documentation change, run:
+
+```sh
+python3 scripts/check_docs.py
+python3 -m unittest discover -s tests -v
+```
+
+The checker verifies local Markdown file destinations and flags personal absolute
+paths. It does not check heading anchors, external URLs, HTML links, artwork parity,
+secrets comprehensively, agent activation, or task quality. Also:
 
 1. Check local links, heading anchors, and current-versus-planned wording.
 2. Preview the README and confirm artwork loads at the intended display size.

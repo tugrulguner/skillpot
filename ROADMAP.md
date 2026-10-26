@@ -13,7 +13,8 @@ limited to the milestone explicitly taken on for a change.
 - [x] Select a working-project-to-demo workflow as the first implementation target.
 - [x] Publish the README, roadmap, and contribution guidance.
 - [x] Create editable ModePot-family artwork and its README renderings.
-- [ ] Open a scoped implementation proposal with representative task inputs.
+- [x] Publish a scoped implementation proposal with representative task inputs:
+      [working project → accurate demo](docs/first-workflow-proposal.md).
 
 **Exit gate:** The repository explains what SkillPot is, what exists, what is planned,
 and how a contributor can help without implying that skills are already released.
@@ -23,16 +24,20 @@ and how a contributor can help without implying that skills are already released
 Start with existing project skills and real workflows. Do not import a private skill
 collection wholesale or assume that old instructions still match a current project.
 
-- [ ] Inventory candidate skills, canonical sources, owners, and licenses.
-- [ ] Classify each candidate: retain upstream, refresh, extract/generalize, or retire.
+- [x] Inventory candidate skills, canonical sources, owners, and licenses in a
+      [bounded seven-repository audit](docs/source-audit.md).
+- [x] Classify each inventoried candidate; retain the product-specific sources upstream.
+      Local demo-tooling rights and extraction decisions remain open.
 - [ ] Check commands, APIs, prerequisites, and failure paths against current behavior.
 - [ ] Remove personal paths, secrets, private context, and machine-specific assumptions.
 - [ ] Establish a single canonical source for each maintained skill; avoid drifting copies.
-- [ ] Define the skill layout using the open Agent Skills format.
-- [ ] Define metadata for tested environments, dependencies, permissions, provenance,
-      known limits, and maintenance ownership.
-- [ ] Define a task-evaluation record: input, acceptance checks, baseline, model/harness
-      versions, tool versions, trials, time, costs, results, and failure notes.
+- [x] Define the skill layout using the open Agent Skills format in the
+      [initial authoring contract](docs/skill-contract.md).
+- [x] Define metadata for tested environments, dependencies, permissions, provenance,
+      known limits, and maintenance ownership in that contract.
+- [x] Define a [task-evaluation record](templates/task-evaluation.md): input, acceptance
+      checks, baseline, model/harness versions, tool versions, trials, time, costs,
+      results, and failure notes. No evaluations have been run.
 
 **Exit gate:** Every retained candidate has traceable provenance and a concrete task.
 One public skill can be authored without depending on undisclosed local knowledge.

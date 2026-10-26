@@ -109,9 +109,13 @@ than inferred from a logo or a folder name.
 
 ## Using SkillPot
 
-There is nothing to install yet. Start with the [roadmap](ROADMAP.md) to see what must
-work before the first skill is published, or propose a representative task in
-[GitHub Issues](https://github.com/tugrulguner/skillpot/issues).
+No skill is implemented yet. The [source audit](docs/source-audit.md) records existing
+project guidance and extraction boundaries. The [first-workflow proposal](docs/first-workflow-proposal.md)
+defines representative tasks and acceptance checks; the [authoring contract](docs/skill-contract.md)
+and [evaluation template](templates/task-evaluation.md) define how implementation will
+be packaged and judged. These are designs, not implemented skills or measured results.
+See the [roadmap](ROADMAP.md) for the remaining gates, or propose a representative task
+in [GitHub Issues](https://github.com/tugrulguner/skillpot/issues).
 
 The intended packaging is the open [Agent Skills format](https://agentskills.io/): a
 `SKILL.md` entry point with optional scripts, references, and assets. Installation will
