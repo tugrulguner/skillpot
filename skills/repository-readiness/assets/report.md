@@ -22,6 +22,8 @@ For each required consumer step:
 For each attempt, retain the exact command, working directory relative to the target,
 tool versions, timeout, exit code, actual output or evidence-file reference, and any
 retry. Do not replace raw failures with a successful summary. Unknown is not zero.
+Use the bundled recorder's JSON files as the command references, including initial
+and final Git status. Do not retype their stdout/stderr or omit an unsuccessful check.
 
 ## Blockers and smallest next steps
 

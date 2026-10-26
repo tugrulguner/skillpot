@@ -4,7 +4,10 @@ Status: experimental procedure, not a released or broadly qualified skill.
 
 The entry point uses portable Agent Skills metadata and host-provided file/search/
 command capabilities. Git and the target project's check tools must be available.
-No installer, runtime, provider API, network service or media stack is bundled.
+The bundled command recorder requires Python 3.10+ and uses only its standard library.
+It guards its own output path and records actual subprocess results, but does not
+sandbox commands or manage background servers/descendant process trees. No installer,
+agent runtime, provider API, network service or media stack is bundled.
 
 An initial explicit-load attempt and a no-candidate attempt ran against the frozen
 public task in [the example](../../examples/repository-readiness/task.md). Both reached
@@ -16,7 +19,10 @@ catalogue selection, native host installation or trigger behavior. An assisted r
 also failed full acceptance: it transiently wrote a command log into the read-only
 target and its saved evidence omitted the cleanup/final status commands. Final target
 cleanliness was separately verified; it does not erase the boundary violation.
-There is no clean accepted full-task attempt or demonstrated benefit yet.
+Those attempts used the original procedure without the new recorder. A revised
+procedure now requires absolute external destinations and the bundled recorder;
+regressions exercise actual refusal, overwrite, symlink, failure and timeout behavior.
+A new agent task run is pending. There is no demonstrated usefulness benefit.
 
 Host discovery, selective installation/removal, non-trigger behavior, repeated matched
 trials, held-out tasks, external users and other OS/model/harness combinations remain

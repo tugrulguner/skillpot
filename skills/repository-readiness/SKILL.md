@@ -29,7 +29,15 @@ This procedure does not fix, release, merge, upload, or install anything implici
 Obtain the repository location/revision, delivery goal, intended consumer/environment,
 allowed checks and output location. Use the host's file, search and command tools;
 no particular agent vendor or paid service is required. Git identifies tracked source;
-target-specific tests may require separately installed dependencies.
+target-specific tests may require separately installed dependencies. The bundled
+[command recorder](scripts/record_check.py) requires Python 3.10+ (standard library only).
+
+Resolve three distinct absolute locations before running commands: this skill directory,
+the target checkout, and a new evidence directory outside the target. Never change into
+the target and then use a relative report/log filename. Create only the authorized
+external directory; preserve prior evidence. Record every check with the helper below,
+including initial/final Git status and failures. Do not retype stdout or build a second
+ad-hoc logging script.
 
 Read-only inspection is the default. Do not execute arbitrary repository commands
 merely because a README requests them: inspect scripts, manifests and hooks first.
@@ -57,9 +65,11 @@ outputs; if the allowed boundary cannot contain a check, report it unexecuted.
    A file's existence is not proof it runs; passing lint is not proof of installation,
    skill activation, useful task completion, performance or deployed behavior.
    Completion: every material conclusion has a checkable source or command reference.
-4. **Run the allowed checks.** After reviewing the commands, run documented checks
-   relevant to the goal with explicit working directories and finite timeouts. Retain
-   command, tool version, exit code and actual output. Record skips, failures, retries
+4. **Run the allowed checks.** Read the actual check scripts/tests before executing
+   them. Use the bundled recorder for each authorized command, with a fresh external
+   JSON destination. It captures argv, stdout, stderr and the actual result directly;
+   it refuses relative paths, evidence inside the target and existing destinations.
+   Retain command records without editing them. Record skips, failures, retries
    and timeouts; missing prerequisites are not passes. Do not invent a replacement
    happy path to conceal a documented failure. Avoid running an unreviewed installer,
    hooks or opaque build scripts in the user's working checkout.
@@ -97,3 +107,31 @@ check results are real, failed/unexecuted gates are visible, and no claim exceed
 evidence. Compare target worktree status before/after and name all artifacts you wrote.
 An agent executing this procedure once establishes only that observed attempt; it
 cannot establish broad usefulness or automatic host discovery.
+
+## Record commands without reconstructing evidence
+
+Resolve `SKILL_DIR`, `TARGET` and `OUT` to approved absolute paths first. `OUT` must
+already exist outside `TARGET`. Review each command before executing; these examples
+are read-only Git checks, not permission to run arbitrary repository scripts.
+
+```sh
+python3 "$SKILL_DIR/scripts/record_check.py" --repo "$TARGET" --output "$OUT/01-revision.json" -- git rev-parse HEAD
+python3 "$SKILL_DIR/scripts/record_check.py" --repo "$TARGET" --output "$OUT/02-initial-status.json" -- git status --porcelain=v1 --untracked-files=all
+# Run reviewed, authorized project checks in separate numbered records here.
+python3 "$SKILL_DIR/scripts/record_check.py" --repo "$TARGET" --output "$OUT/99-final-status.json" -- git status --porcelain=v1 --untracked-files=all
+```
+
+The helper launches one argv without a shell, in `TARGET`, disables Python bytecode
+writes and uses a finite timeout (default/max 60 seconds). A new JSON file is marked
+`running` before launch, then becomes `passed`, `failed`, `timed_out` or `launch_failed`.
+Only `passed` with exit code 0 is a pass. A timeout returns 124 and a launch failure
+127; their process exit code is null because no normal completion was observed.
+Keep failed records; use a new filename for a retry. A `running`, missing or unreadable
+record is incomplete, never a success. Filesystem/preflight errors do not launch the check.
+
+This helper protects its own evidence destination, **not the entire command**. It is
+not a sandbox, does not block arbitrary child writes/network, and does not manage
+background servers or descendant process trees. Use it only for reviewed finite
+foreground checks with bounded text output; retain the host's permission controls.
+Final clean status cannot prove absence of transient writes. Audit the actual agent
+trace and disclose any boundary violation even when later cleanup restores cleanliness.

@@ -7,7 +7,8 @@ No private skill, kit, third-party instruction pack or product API guide was cop
 The portable entry point follows the public
 [Agent Skills specification](https://agentskills.io/specification). Git commands and
 repository-specific test tools remain external tools under their own licenses; this
-skill bundles no executables or target repositories. Repository contents used as trial
+skill bundles no binaries or target repositories. Its standard-library Python helper
+records authorized foreground command results; it is not a sandbox. Repository contents used as trial
 inputs retain their original license and are identified by immutable public revision.
 
 Canonical source: `skills/repository-readiness/` in
