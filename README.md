@@ -37,8 +37,8 @@
 </p>
 
 > [!IMPORTANT]
-> SkillPot is in development. This repository establishes the project direction,
-> roadmap, and identity. No installable skills or compatibility results are released yet.
+> SkillPot is in development. An experimental repository-readiness skill is available
+> as source. No qualified skill release or general host-compatibility claim exists yet.
 
 ## Why SkillPot?
 
@@ -70,23 +70,19 @@ agent will always follow instructions.
 
 ## The first workflow
 
-**A working project → an accurate, polished demo.**
+**A repository and a delivery goal → an evidence-backed readiness report.**
 
-The initial planned skill will help an agent inspect a functioning project, choose a
-small demonstrable user journey, capture real behavior, and produce a shareable demo
-without inventing features or results.
+Use [repository-readiness](skills/repository-readiness/SKILL.md) when you need to know
+whether a project is ready for a specific installation, handoff or release. The skill
+guides an agent to pin the source, trace the consumer path, inspect and run authorized
+checks, separate verified behavior from claims, and deliver blockers with citations
+and concrete next steps. It does not modify or publish the project implicitly.
 
-| Input | Planned result |
-| --- | --- |
-| A working project and a defined audience | A short, focused demo brief and capture plan |
-| Reproducible steps and approved data | Evidence of the actual product in use |
-| Allowed claims and media constraints | A rendered demo, captions, and a claim-to-evidence note |
-| A human review decision | A delivery package; public posting remains a separate approval |
-
-Existing tools may handle capture and rendering. SkillPot's contribution must be the
-workflow and its verified result—not another video engine. Tool selection, output
-formats, duration presets, and supported agents will be earned through the
-[roadmap's acceptance gates](ROADMAP.md#milestone-2--build-the-first-complete-workflow).
+The deliverable is the report and actual check evidence—not a recording, generic
+review persona, custom runtime or test harness. See the
+[task and frozen rubric](examples/repository-readiness/task.md). Source validation is
+not evidence of agent execution; explicit loading is not automatic host discovery.
+The [current proposal](docs/repository-readiness-proposal.md) defines these boundaries.
 
 Research-to-explainer and data-to-decision workflows are later candidates, not committed
 features. A future catalogue must earn its breadth one useful skill at a time.
@@ -98,9 +94,12 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Project direction and first-workflow scope | Documented |
 | Public roadmap and contribution guidance | Available in this repository |
 | ModePot-family logo and editable artwork | Available in [assets/](assets/README.md) |
-| Installable skills and runnable examples | Not released |
+| Experimental skill source | [repository-readiness](skills/repository-readiness/SKILL.md) and report template |
+| Real task example | [Frozen public repository task](examples/repository-readiness/task.md) |
+| Qualified skill releases | Not released |
 | Agent/tool compatibility matrix | Not established |
-| Comparative task evaluations | Not published |
+| Initial agent smoke and baseline | [Observed attempts and evidence defects](evaluations/repository-readiness/initial-smoke/README.md); no benefit established |
+| Repeated/held-out usefulness evaluation | Not established |
 | Standalone website, registry, or custom installer | Not provided |
 
 A standard skill format does not imply identical tool access, permissions, activation,
@@ -109,13 +108,21 @@ than inferred from a logo or a folder name.
 
 ## Using SkillPot
 
-No skill is implemented yet. The [source audit](docs/source-audit.md) records existing
-project guidance and extraction boundaries. The [first-workflow proposal](docs/first-workflow-proposal.md)
-defines representative tasks and acceptance checks; the [authoring contract](docs/skill-contract.md)
-and [evaluation template](templates/task-evaluation.md) define how implementation will
-be packaged and judged. These are designs, not implemented skills or measured results.
-See the [roadmap](ROADMAP.md) for the remaining gates, or propose a representative task
-in [GitHub Issues](https://github.com/tugrulguner/skillpot/issues).
+For an explicit-load experiment, ask your agent to read
+`skills/repository-readiness/SKILL.md`, then give it the repository, exact delivery
+question, allowed checks and an output destination. For example:
+
+> Read the repository-readiness skill. Inspect this checkout and determine whether a
+> new user can install and complete its documented task. Do not change it. Run only
+> authorized offline checks and produce a report with source citations, actual command
+> results, blockers and the smallest next steps.
+
+The [example](examples/repository-readiness/README.md) identifies the frozen input and
+execution boundaries. This is explicit instruction loading, not a verified native
+installation command. See [compatibility](skills/repository-readiness/compatibility.md),
+the [authoring contract](docs/skill-contract.md), and [roadmap](ROADMAP.md) for remaining
+qualification gates. The earlier [demo proposal](docs/first-workflow-proposal.md) is
+historical, not the current implementation target.
 
 The intended packaging is the open [Agent Skills format](https://agentskills.io/): a
 `SKILL.md` entry point with optional scripts, references, and assets. Installation will

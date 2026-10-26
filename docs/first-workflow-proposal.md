@@ -1,7 +1,9 @@
 # First workflow proposal: working project → accurate demo
 
-Status: scoped design, not an implemented or released skill. This document is the
-maintainer implementation proposal; no separate contributor issue is required.
+Status: superseded experiment, retained as history. Video tooling is not the active
+SkillPot implementation target. See the current
+[repository-readiness proposal](repository-readiness-proposal.md). The text below
+records the earlier design, not current instructions or a released skill.
 
 ## User and task
 

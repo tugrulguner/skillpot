@@ -1,0 +1,103 @@
+[
+  {
+    "argv": [
+      "python3",
+      "--version"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Python 3.11.6\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "--version"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "git version 2.50.1 (Apple Git-155)\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/check_docs.py"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "PASS: local Markdown destinations and personal-path checks\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_escape (test_check_docs.CheckDocsTests.test_escape) ... ok\ntest_missing_destination (test_check_docs.CheckDocsTests.test_missing_destination) ... ok\ntest_personal_home_without_trailing_slash (test_check_docs.CheckDocsTests.test_personal_home_without_trailing_slash) ... ok\ntest_personal_path (test_check_docs.CheckDocsTests.test_personal_path) ... ok\ntest_valid_destinations_and_external_links (test_check_docs.CheckDocsTests.test_valid_destinations_and_external_links) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.007s\n\nOK\n"
+  },
+  {
+    "argv": [
+      "python3",
+      "-c",
+      "from pathlib import Path; p=Path(\"skills/repository-readiness/SKILL.md\"); print(p.read_text())"
+    ],
+    "cwd": ".",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py\", line 1058, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py\", line 1044, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'skills/repository-readiness/SKILL.md'\n"
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short",
+      "--branch"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "## HEAD (no branch)\n?? commands.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "3d023734ca0a2a22a873ca59d601f7616fed7716\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--quiet"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-c",
+      "from pathlib import Path; import hashlib; files=[\"README.md\",\"ROADMAP.md\"];\\nfor f in files:\\n p=Path(f); print(p.read_text())"
+    ],
+    "cwd": ".",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "  File \"<string>\", line 1\n    from pathlib import Path; import hashlib; files=[\"README.md\",\"ROADMAP.md\"];\\nfor f in files:\\n p=Path(f); print(p.read_text())\n                                                                                ^\nSyntaxError: unexpected character after line continuation character\n"
+  }
+]

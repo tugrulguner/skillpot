@@ -3,6 +3,11 @@
 Status: bounded inventory and source review, not runtime qualification or extraction.
 No source instructions have been copied into a published SkillPot skill.
 
+This is a historical snapshot. Its project-to-demo recommendation was superseded by
+the [repository-readiness proposal](repository-readiness-proposal.md); its video-tooling
+discussion is not a prerequisite for current SkillPot work. The new skill is original,
+not an extraction of the inventoried product guides.
+
 ## Method and scope
 
 Read GitHub repository metadata, complete recursive default-branch trees (all reported
