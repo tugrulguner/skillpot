@@ -1,0 +1,1 @@
+{'body_recovery_complete': True, 'missing_function_body': [], 'diagnostics': []}

@@ -124,7 +124,7 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Experimental skill source | [repository-readiness](skills/repository-readiness/SKILL.md) and report template |
 | ModePot public collection | [Seven pinned project/contributor packages](catalog/README.md) |
 | Native selective installation | [Seven Hermes install/list/remove checks](evaluations/modepot-project-skills/native-install-001/README.md); not model activation |
-| ModePot consumer execution | [Refpot source-matched task and runnable example](examples/modepot-project-skills/README.md); other runtimes unqualified |
+| ModePot consumer execution | [Refpot plus Intpot/Dexpot/Summonpot examples](examples/modepot-project-skills/README.md); bounded, partly assisted checks, not a runtime matrix |
 | Real task example | [Frozen public repository task](examples/repository-readiness/task.md) |
 | Qualified skill releases | Not released |
 | Agent/tool compatibility matrix | Not established |
@@ -155,10 +155,12 @@ the [authoring contract](docs/skill-contract.md), and [roadmap](ROADMAP.md) for 
 qualification gates. The earlier [demo proposal](docs/first-workflow-proposal.md) is
 historical, not the current implementation target.
 
-The intended packaging is the open [Agent Skills format](https://agentskills.io/): a
-`SKILL.md` entry point with optional scripts, references, and assets. Installation will
-use established agent/distribution mechanisms where practical. Exact install commands
-will be added only after the published layout and clean-install path have been tested.
+Packaging follows the open [Agent Skills format](https://agentskills.io/): a `SKILL.md`
+entry point with optional scripts, references, and assets. The public project collection
+on `main` has [verified selective Hermes installation commands](docs/project-skill-installation.md).
+This installation evidence does not establish model activation, another host, or every
+product runtime. The original repository-readiness workflow remains an explicit-load
+experiment with its own qualification limits.
 
 SkillPot is not an agent runtime, an MCP replacement, a new skill standard, or a skill
 marketplace. Skills provide procedures; the host agent supplies execution and enforces

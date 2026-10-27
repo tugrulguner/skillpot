@@ -25,10 +25,12 @@ Use intpot from Python to register tools with `App`, or load an existing trusted
 
 ## Procedure
 1. For new tools, define explicit named parameters using `@app.tool()` on an `intpot.App`. Avoid `*args`/`**kwargs`, which do not map consistently across CLI/API/MCP.
+   Native `App` exports use `app.eject("api")` (or target `"cli"`/`"mcp"`), which returns source text. The conversion methods below belong to the `IntpotApp` returned by `intpot.load()`, not the native `App` class.
 2. For conversion, call `intpot.load(path)` on a trusted source or pass a live supported app instance. Inspect `app.source_type`, `app.schema.to_dict()`, and `app.project(target)` before generating. Prefer immutable `.schema` for canonical data; `.tools` is a compatibility view.
 3. Generate with `.to_cli()`, `.to_api()`, `.to_mcp()`, or write via `.write(path, target)`. Inspect `app.assess()` and exceptions/diagnostics where available. Do not catch a refusal and continue as if conversion succeeded.
 4. If deliberately requesting a body scaffold, pass `allow_scaffold=True` only where supported; output raises `NotImplementedError` for unrecovered behavior, and this option does not bypass callback, dependency, or binding guards.
 5. Verify generated code independently: compile it, import with runtime dependencies installed, then invoke a real representative target operation.
+   Inspect the generated HTTP schema rather than assuming identical wire formats: at this pin native App API export returns the function value, while framework conversion can wrap a scalar in `{"result": ...}` and preserve a CLI option alias such as `discount-cents` in its request body. Test optional inputs using the emitted contract.
 
 ## Failure boundaries
 - Loading untrusted source is arbitrary code execution; this workflow is not a sandbox.

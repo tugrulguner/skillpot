@@ -64,6 +64,10 @@ One [Refpot consumer task](../evaluations/modepot-project-skills/refpot-consumer
 also executed against its exact pinned source with a separately replayed
 [portable example](../examples/modepot-project-skills/README.md). No other project's
 runtime or the whole collection's usefulness is established by that result.
+Later [Intpot/Dexpot/Summonpot consumer replays](../evaluations/modepot-project-skills/consumer-tasks-001/README.md)
+add bounded installed-artifact checks and runnable examples while preserving original
+worker failures and parent interventions. Native model loading remains unverified;
+these are not baseline comparisons or broad compatibility results.
 
 ## Maintenance
 

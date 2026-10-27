@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "hermes",
+    "chat",
+    "--oneshot",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--provider",
+    "openai-codex",
+    "--model",
+    "gpt-6.1-sol",
+    "--max-turns",
+    "4",
+    "--format",
+    "stream-json",
+    "-q",
+    "Only use skills_list and skill_view: list installed skills, explicitly load intpot-cli and intpot-python, and state their upstream revisions. Do not run commands, edit files, inspect credentials, or read any other skills. This is an isolated instruction-loading check, not a product-task or automatic-selection claim."
+  ],
+  "cwd": ".",
+  "exit_code": 1,
+  "stdout": "{\"type\": \"system\", \"subtype\": \"init\", \"model\": \"gpt-6.1-sol\", \"session_id\": \"\", \"timestamp\": 1793105502259}\n{\"type\": \"result\", \"session_id\": \"\", \"exit_code\": 1, \"text\": \"\", \"tokens\": {\"input\": 0, \"output\": 0, \"total\": 0, \"cache_read\": 0, \"cache_write\": 0}, \"duration_ms\": 1193, \"error\": \"Gateway could not start: the gateway exited with status 75 before it could serve:\\n  \u2713 The host gateway already serves profile 'default' \u2014 nothing to start.\\n    PID 60043 (launched by profile 'default'; serves: default)\\n    One gateway per host serves every profile; manage it with `hermes -p default gateway restart`.\\nFull log: tail -n 200 '<consumer workspace>/hermes-home/logs/gateway-stdio.log'\", \"timestamp\": 1793105503452}\n",
+  "stderr": "Error: Gateway could not start: the gateway exited with status 75 before it could serve:\n  \u2713 The host gateway already serves profile 'default' \u2014 nothing to start.\n    PID 60043 (launched by profile 'default'; serves: default)\n    One gateway per host serves every profile; manage it with `hermes -p default gateway restart`.\nFull log: tail -n 200 '<consumer workspace>/hermes-home/logs/gateway-stdio.log'\n\nsession_id: \n",
+  "scope": "native installed skill loading only; no product task"
+}

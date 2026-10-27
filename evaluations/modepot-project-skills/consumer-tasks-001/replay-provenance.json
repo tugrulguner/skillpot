@@ -1,0 +1,29 @@
+{
+  "private_original_sha256": {
+    "intpot-refresh-commands.json": "1c6f9c2dbea6c91a67626f8b437030cd03ef6c8b635b6618ec25128043752f32",
+    "verified-replays/commands.json": "5741997ba01b85ee957b690f1e97cbeef413b339abbb22ed6af42a7491015f88",
+    "intpot-parent-replay/commands.json": "2f95e0ecaada8dd3fb012be5e0eeb32f2c304bfa2069235b26d12e43d528742b",
+    "intpot-parent-replay/fixture-hashes.json": "e2dfafdbbad476d15a14212463e52b1bece0c1308b8e2cdcb9e12132fab701a7",
+    "intpot-parent-replay/public-fixture-002/commands.json": "bc4da457768740904c529d1014d3c228f04235441a6f85d274eaa92a321a677d",
+    "intpot-parent-replay/public-fixture-003/http-results.json": "9a529ad0833210b282ef40ac791f9fff59cf487c1beee22ec675fba1ffb4b3a1",
+    "intpot-parent-replay/public-fixture-003/commands.json": "fa0faf418d80c7c8955fa0479f88fbabb19b5c466d50dc882e2e69eb89a2dd82",
+    "intpot-parent-replay/public-fixture-004/http-results.json": "9a529ad0833210b282ef40ac791f9fff59cf487c1beee22ec675fba1ffb4b3a1",
+    "intpot-parent-replay/public-fixture-004/commands.json": "ead534ac8cf36112f0d6df43fbaf17a03872bf43e11785811b89ed74ad3a87c3",
+    "intpot-parent-replay/public-fixture-001/commands.json": "3174e84d0a931860ab7f5d96f9aebe16749737f162e7ccc96a47d339be837732",
+    "intpot-parent-replay/public-fixture-002/assessment.txt": "abefabab292bf263d71a44c4cfe86e6c0198caa0dbf5a3b1e15d8d590f22a512",
+    "intpot-parent-replay/public-fixture-003/assessment.txt": "abefabab292bf263d71a44c4cfe86e6c0198caa0dbf5a3b1e15d8d590f22a512",
+    "intpot-parent-replay/public-fixture-004/assessment.txt": "abefabab292bf263d71a44c4cfe86e6c0198caa0dbf5a3b1e15d8d590f22a512",
+    "intpot-parent-replay/public-fixture-001/assessment.txt": "abefabab292bf263d71a44c4cfe86e6c0198caa0dbf5a3b1e15d8d590f22a512"
+  },
+  "public_fixture_sha256": {
+    "examples/modepot-project-skills/intpot/foreign_cli.py": "fd0878f196d83820733d4224c1668832e73ab1ce3aca8a83e1e4ad7803eebb62",
+    "examples/modepot-project-skills/intpot/verify.py": "c34e1f09c7f3b7a1878231e73d99a3efdc1fd2cf4e8c60dc85afc8b56feb85bc",
+    "examples/modepot-project-skills/intpot/invoice.py": "3a081606e46ac9d2b14e9d8e87bb2ea244cf1fdd02a349e0db9acd023b565d4f",
+    "examples/modepot-project-skills/dexpot/app.py": "dc168eeb0384f7339ed0a008f73b5ee517324b9cce715ca594f3a8d64bc4fb73",
+    "examples/modepot-project-skills/dexpot/verify.py": "eb53474ae4fc2d41ce5de22ca85d6d4d20f4d367c165a192a82fd2ad43be516d",
+    "examples/modepot-project-skills/summonpot/invoice_app.py": "1091c113aa923019b9e7edaf0156f0a9d6f1c5dc848e70a7bcb319d9dbc9c16d",
+    "examples/modepot-project-skills/summonpot/verify.py": "f0d20452c277e518cefc7ed7726966b6313ec78a609dc0042fa19fffc26db072"
+  },
+  "transformation": "Only absolute consumer-workspace, checkout and approved-scratch prefixes replaced by labels. Original statuses, errors, response bodies and argv retained.",
+  "interpretation": "Assisted parent replays, not unassisted original trials; interrupted retry workers supplied no accepted verification result."
+}

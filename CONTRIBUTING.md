@@ -1,7 +1,10 @@
 # Contributing to SkillPot
 
 Start with the [README](README.md) and [roadmap](ROADMAP.md). SkillPot is in development;
-there are no released skills, install commands, or established compatibility results yet.
+there is no qualified release or general compatibility matrix. The public project
+collection on `main` has [verified selective Hermes installation commands](docs/project-skill-installation.md)
+and separately recorded bounded task evidence. Do not mistake those results for
+automatic model activation or usefulness gains.
 
 ## Propose a real task
 
@@ -77,8 +80,8 @@ separately; do not silently refresh an upstream revision or modify installed use
 5. Describe the exact scope and verification in the pull request.
 
 Do not add product code or skills as incidental scaffolding to a documentation change.
-When executable skills arrive, their setup and canonical verification commands must be
-introduced alongside their actual implementation.
+When adding or changing executable skill resources, introduce their setup and canonical
+verification commands alongside the implementation.
 
 ## Reviews and publishing
 

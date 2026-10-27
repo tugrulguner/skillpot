@@ -1,0 +1,9 @@
+{
+  "source_pin": "ca4979a6339e533f11ad135bc760aa081f3f60ab",
+  "skillpot_public_main": "f65395e3fa6eb1ebb27a953e1b144d6b15101c92",
+  "hashes": {
+    "<consumer workspace>/hermes-home/skills/dexpot/SKILL.md": "968ce4532834810977e4381ef732208c4c03a3a0477b42b36ee64254c2a88d11",
+    "<consumer workspace>/hermes-home/skills/dexpot/references/upstream.md": "e59dd9703cc902977519edb7f1a2004bca16c6701dbd01c4e738f427ccbc73ad",
+    "<consumer workspace>/dexpot-task/dexpot/src/dexpot/templates/skills/dexpot.md": "e59dd9703cc902977519edb7f1a2004bca16c6701dbd01c4e738f427ccbc73ad"
+  }
+}

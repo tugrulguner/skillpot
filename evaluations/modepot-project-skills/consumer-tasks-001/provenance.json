@@ -1,0 +1,37 @@
+{
+  "original_sha256": {
+    "setup-commands.json": "d3cfe0e85746f393b54a62a5f5bad67fd24bcd1b934408886f41005679d3114b",
+    "native-agent.json": "11bc1923c3b58795cf2555333007e776095d1dcdfa6da3bec631707129f45a03",
+    "native-agent-retry.json": "2b422cac0c566347ef2a61379cc574dc15d985216f3fcf111c7ccc685adac36a",
+    "native-loading-status.json": "6f2132d6ad8eec5a7c26b750940a5b6d6e4744fc65c83033f5f4d6ba3034782c",
+    "intpot-task.txt": "c77a0dd7dc359baf81f6c26e4af1bbff5fd622b8dedfc18fbfa5879e45554fa9",
+    "intpot-task/commands.json": "d0935938328f11a1318dc710f0bd669bdd894dc2382c88559cd86ef891d508f6",
+    "intpot-task/report.md": "7f696d9201c9ccf5fe175b8dc4e47e61177cfe6b6a74dce37e1b3ce5514df25f",
+    "dexpot-task/commands.json": "f66e9db3d25e4cd691ad867551cc0e01edd2db9cb0fa8be2823f0f46b1548ee3",
+    "dexpot-task/provenance.json": "e284ca5bd8e1e570e2a0132c9a1a874334aa87005d97b12cb61048189b4e3bbf",
+    "summonpot-task/commands.json": "f3d8c36c589753c548f38b6f1dbde1b610837dfd17effaf4a5a51cfe3a608e4e",
+    "summonpot-task/report.md": "eefb874d817e7cce0e8d1c0d22da78dcc34cfa13ae5ed8ce251932ef7137cb3e",
+    "intpot-parent-replay/commands.json": "2f95e0ecaada8dd3fb012be5e0eeb32f2c304bfa2069235b26d12e43d528742b",
+    "intpot-parent-replay/fixture-hashes.json": "e2dfafdbbad476d15a14212463e52b1bece0c1308b8e2cdcb9e12132fab701a7",
+    "worker-trace-0.log": "fa7cc0dd81b118aca7c546e1ab43f9a2fe428072e8b4da86b627753ea9259da4",
+    "worker-trace-1.log": "285c6a0461847123cd239a65bf9cf613e588ad4a1f4f7e18a14799c6a0bd3900",
+    "worker-trace-2.log": "983b65723ff00df22973fe06ef88683152c4c202838ae028def44e76c92d024c"
+  },
+  "redactions": [
+    [
+      "absolute consumer-workspace prefix",
+      "<consumer workspace>"
+    ],
+    [
+      "absolute SkillPot-checkout prefix",
+      "<SkillPot checkout>"
+    ],
+    [
+      "absolute approved-scratch prefix",
+      "<approved scratch directory>"
+    ]
+  ],
+  "source_skillpot_revision": "f65395e3fa6eb1ebb27a953e1b144d6b15101c92",
+  "scope": "Original workers explicitly read files from an isolated native installation; native CLI loading attempts failed before any session; parent-assisted replays are separate attempts",
+  "worker_evidence_limit": "Original JSON logs are incomplete; full original traces retained privately. Do not interpret successful worker observations as full acceptance or overwrite their failed/partial attempts."
+}

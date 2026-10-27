@@ -1,0 +1,113 @@
+[
+  {
+    "argv": [
+      "git",
+      "clone",
+      "https://github.com/tugrulguner/dexpot.git",
+      "<consumer workspace>/dexpot-task/dexpot"
+    ],
+    "cwd": "<consumer workspace>/dexpot-task",
+    "exitcode": 0,
+    "stdout": "",
+    "stderr": "Cloning into '<consumer workspace>/dexpot-task/dexpot'...\n"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "<consumer workspace>/dexpot-task/dexpot",
+      "checkout",
+      "--detach",
+      "ca4979a6339e533f11ad135bc760aa081f3f60ab"
+    ],
+    "cwd": "<consumer workspace>/dexpot-task",
+    "exitcode": 0,
+    "stdout": "",
+    "stderr": "HEAD is now at ca4979a refactor(response): share semantic helpers (#147)\n"
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "<consumer workspace>/dexpot-task/dexpot",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "<consumer workspace>/dexpot-task",
+    "exitcode": 0,
+    "stdout": "ca4979a6339e533f11ad135bc760aa081f3f60ab\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "uv",
+      "venv",
+      "--python",
+      "3.12",
+      "<consumer workspace>/dexpot-task/.venv"
+    ],
+    "cwd": "<consumer workspace>/dexpot-task",
+    "exitcode": 0,
+    "stdout": "",
+    "stderr": "Using CPython 3.12.13\nCreating virtual environment at: .venv\nActivate with: source .venv/bin/activate\n"
+  },
+  {
+    "argv": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "<consumer workspace>/dexpot-task/.venv/bin/python",
+      "-e",
+      "<consumer workspace>/dexpot-task/dexpot[cli]"
+    ],
+    "cwd": "<consumer workspace>/dexpot-task",
+    "exitcode": 0,
+    "stdout": "",
+    "stderr": "Resolved 9 packages in 76ms\n   Building dexpot @ file://<consumer workspace>/dexpot-task/dexpot\n      Built dexpot @ file://<consumer workspace>/dexpot-task/dexpot\nPrepared 1 package in 313ms\nInstalled 9 packages in 14ms\n + annotated-doc==0.0.5\n + dexpot==0.7.1 (from file://<consumer workspace>/dexpot-task/dexpot)\n + markdown-it-py==4.2.0\n + mdurl==0.1.2\n + msgspec==0.22.0\n + pygments==2.21.0\n + rich==15.0.0\n + shellingham==1.5.4\n + typer==0.27.3\n"
+  },
+  {
+    "argv": [
+      "<consumer workspace>/dexpot-task/.venv/bin/python",
+      "-c",
+      "import sys,platform,dexpot,msgspec; print('python',sys.version); print('platform',platform.platform()); print('dexpot',dexpot.__file__); print('version',getattr(dexpot,'__version__','unknown')); print('msgspec',msgspec.__version__)"
+    ],
+    "cwd": "<consumer workspace>/dexpot-task",
+    "exitcode": 0,
+    "stdout": "python 3.12.13 (main, Aug  7 2026, 02:15:23) [Clang 22.1.3 ]\nplatform macOS-26.5.2-arm64-arm-64bit\ndexpot <consumer workspace>/dexpot-task/dexpot/src/dexpot/__init__.py\nversion 0.7.1\nmsgspec 0.22.0\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<consumer workspace>/dexpot-task/.venv/bin/python",
+      "-c",
+      "from pathlib import Path; p=Path('<consumer workspace>/dexpot-task/dexpot'); print(\"\\n\".join(str(x.relative_to(p))+\"\\n\"+x.read_text()[:4000] for x in [p/\"pyproject.toml\",p/\"src/dexpot/__init__.py\"] if x.exists()))"
+    ],
+    "cwd": "<consumer workspace>/dexpot-task",
+    "exitcode": 0,
+    "stdout": "pyproject.toml\n[build-system]\nrequires = [\"hatchling\"]\nbuild-backend = \"hatchling.build\"\n\n[project]\nname = \"dexpot\"\nversion = \"0.7.1\"\ndescription = \"A synchronous Python API framework with adaptive GIL and free-threaded execution.\"\nreadme = \"README.md\"\nrequires-python = \">=3.12\"\nlicense = \"MIT\"\nauthors = [{ name = \"Tugrul Guner\", email = \"tugrul@modepot.io\" }]\nkeywords = [\n  \"api\",\n  \"framework\",\n  \"free-threading\",\n  \"http\",\n  \"msgspec\",\n  \"nogil\",\n  \"threads\",\n]\nclassifiers = [\n  \"Development Status :: 3 - Alpha\",\n  \"Intended Audience :: Developers\",\n  \"License :: OSI Approved :: MIT License\",\n  \"Programming Language :: Python :: 3\",\n  \"Programming Language :: Python :: 3.12\",\n  \"Programming Language :: Python :: 3.13\",\n  \"Programming Language :: Python :: 3.14\",\n  \"Programming Language :: Python :: Free Threading\",\n  \"Topic :: Internet :: WWW/HTTP :: HTTP Servers\",\n  \"Topic :: Software Development :: Libraries :: Application Frameworks\",\n  \"Typing :: Typed\",\n]\ndependencies = [\n  \"msgspec>=0.19\",\n]\n\n[project.optional-dependencies]\ncli = [\"typer>=0.9\"]\nall = [\"dexpot[cli]\"]\ndev = [\n  \"dexpot[all]\",\n  \"httpx>=0.27\",\n  \"pre-commit>=4.0\",\n  \"pyright>=1.1.380\",\n  \"pytest>=8.0\",\n  \"pytest-cov>=5.0\",\n  \"pyyaml>=6.0\",\n  \"ruff>=0.6\",\n  \"towncrier>=24.8\",\n]\nbenchmark = [\n    \"psutil>=7\",\n]\n\n[project.urls]\nHomepage = \"https://github.com/tugrulguner/dexpot\"\nRepository = \"https://github.com/tugrulguner/dexpot\"\nIssues = \"https://github.com/tugrulguner/dexpot/issues\"\nChangelog = \"https://github.com/tugrulguner/dexpot/blob/main/CHANGELOG.md\"\n\n[project.scripts]\ndexpot = \"dexpot.cli:app\"\n\n[tool.hatch.build.targets.wheel]\npackages = [\"src/dexpot\"]\nexclude = [\"**/AGENTS.md\"]\n\n[tool.hatch.build.targets.sdist]\nexclude = [\"/.venv*\", \"/dist\", \"/native\"]\n\n[tool.towncrier]\ndirectory = \"changelog.d\"\nfilename = \"CHANGELOG.md\"\nstart_string = \"<!-- towncrier release notes start -->\\n\"\ntitle_format = \"## [{version}] - {project_date}\"\nissue_format = \"[#{issue}](https://github.com/tugrulguner/dexpot/issues/{issue})\"\n\n[[tool.towncrier.type]]\ndirectory = \"added\"\nname = \"Added\"\nshowcontent = true\n\n[[tool.towncrier.type]]\ndirectory = \"changed\"\nname = \"Changed\"\nshowcontent = true\n\n[[tool.towncrier.type]]\ndirectory = \"deprecated\"\nname = \"Deprecated\"\nshowcontent = true\n\n[[tool.towncrier.type]]\ndirectory = \"removed\"\nname = \"Removed\"\nshowcontent = true\n\n[[tool.towncrier.type]]\ndirectory = \"fixed\"\nname = \"Fixed\"\nshowcontent = true\n\n[tool.ruff]\ntarget-version = \"py312\"\nline-length = 100\nsrc = [\"src\", \"tests\", \"examples\", \"scripts\"]\nextend-exclude = [\"*.md\"]\n\n[tool.ruff.lint]\nselect = [\"E\", \"F\", \"W\", \"I\", \"UP\", \"B\", \"SIM\", \"RUF\"]\nignore = [\n  \"E501\",\n  \"B008\", # Typer declares arguments and options through function defaults.\n]\n\n[tool.ruff.lint.isort]\nknown-first-party = [\"dexpot\"]\n\n[tool.pyright]\npythonVersion = \"3.12\"\ntypeCheckingMode = \"standard\"\ninclude = [\"src\", \"tests\", \"examples\", \"scripts\"]\n\n[tool.pytest.ini_options]\ntestpaths = [\"tests\"]\npythonpath = [\"src\"]\n\nsrc/dexpot/__init__.py\n\"\"\"dexpot: synchronous APIs with adaptive GIL and free-threaded execution.\"\"\"\n\nfrom importlib.metadata import PackageNotFoundError, version\n\nfrom ._http import HttpLimits\nfrom .app import Dex\nfrom .requests import Request\nfrom .responses import RawResponse, Response\n\ntry:\n    __version__ = version(\"dexpot\")\nexcept PackageNotFoundError:  # running from source without installation\n    __version__ = \"0.0.0.dev0\"\n\n__all__ = [\"Dex\", \"HttpLimits\", \"RawResponse\", \"Request\", \"Response\", \"__version__\"]\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<consumer workspace>/dexpot-task/.venv/bin/python",
+      "<consumer workspace>/dexpot-task/smoke.py"
+    ],
+    "cwd": "<consumer workspace>/dexpot-task",
+    "exitcode": 0,
+    "stdout": "dexpot serving on http://127.0.0.1:63132 pid=28432 mode=pooled-gil(22) runtime=standard Python, GIL enabled\n{\"port\": 63132, \"results\": {\"post_success\": [200, \"{\\\"quote_id\\\":41,\\\"customer\\\":\\\"Ari\\\",\\\"amount\\\":25.5}\"], \"invalid_body\": [422, \"{\\\"detail\\\":\\\"Expected `str`, got `int` - at `$.customer`\\\"}\"], \"typed_path_success\": [200, \"{\\\"quote_id\\\":7,\\\"customer\\\":\\\"Ari\\\",\\\"amount\\\":25.5}\"], \"typed_path_invalid\": [422, \"{\\\"detail\\\":\\\"invalid int for quote_id\\\"}\"]}, \"server_thread_alive\": true, \"server_errors\": []}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<consumer workspace>/dexpot-task/.venv/bin/python",
+      "-c",
+      "import socket,sys; s=socket.socket(); s.settimeout(.3); r=s.connect_ex((\"127.0.0.1\",int(sys.argv[1]))); print(\"connect_ex\",r); sys.exit(0 if r else 1)",
+      "63132"
+    ],
+    "cwd": "<consumer workspace>/dexpot-task",
+    "exitcode": 0,
+    "stdout": "connect_ex 61\n",
+    "stderr": ""
+  }
+]

@@ -4,10 +4,9 @@ These are agent instructions, not the underlying Python products. Install only t
 task you need; product dependencies, listeners, credentials, data changes, code pushes
 and public review publication remain separate authorization decisions.
 
-The collection is currently on the unmerged `feat/modepot-project-skills` branch,
-stacked on the repository-readiness work. Do not use a main-branch URL until it exists
-there. Pin an inspected published commit so updating your agent does not silently
-change project guidance.
+The public project collection is available on `main`. Start from an inspected checkout
+of `main`, then pin that published commit so updating your agent does not silently
+change project guidance. A merge is not a versioned or generally qualified release.
 
 ## Hermes: direct URL, one selected skill
 
@@ -15,7 +14,7 @@ Hermes' established installer fetches a SKILL.md and its explicitly referenced s
 files. See the [official skills documentation](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills#8-direct-url-url).
 No custom SkillPot installer or registry account is needed.
 
-From an inspected SkillPot checkout of the published collection branch:
+From an inspected SkillPot checkout of `main`:
 
 ```sh
 REV=$(git rev-parse HEAD)

@@ -1,0 +1,18 @@
+{
+  "outcome": "blocked",
+  "attempts": [
+    {
+      "record": "native-agent.json",
+      "exit_code": 2,
+      "kind": "native agent launch did not reach skill loading or product execution"
+    },
+    {
+      "record": "native-agent-retry.json",
+      "exit_code": 1,
+      "kind": "native agent launch did not reach skill loading or product execution"
+    }
+  ],
+  "reason": "Installed CLI is a host-gateway client: run-budget flag unsupported, then isolated-home owner startup refused because default host gateway already owns the host",
+  "policy": "No host gateway restart, registered-profile mutation, credential copying, or fallback presented as native success",
+  "alternative": "Fresh delegated agents explicitly read the verified natively installed public files; reported separately from native model discovery"
+}
