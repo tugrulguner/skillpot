@@ -48,6 +48,25 @@ class ProjectCatalogTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("hash", result.stdout + result.stderr)
 
+    def test_missing_closing_frontmatter_delimiter_is_rejected(self):
+        path = self.skill / "SKILL.md"
+        path.write_text(path.read_text().split("\n---\n", 1)[0] + "\n")
+        result = self.check()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("frontmatter", result.stdout + result.stderr)
+        self.assertNotIn("Traceback", result.stderr)
+
+    def test_empty_instruction_body_is_rejected(self):
+        path = self.skill / "SKILL.md"
+        header = path.read_text().split("\n---\n", 1)[0]
+        for suffix in ("\n---", "\n---\n", "\n---\n \t\n"):
+            with self.subTest(suffix=suffix):
+                path.write_text(header + suffix)
+                result = self.check()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("instruction body", result.stdout + result.stderr)
+                self.assertNotIn("Traceback", result.stderr)
+
     def test_valid_fixture_passes(self):
         result = self.check()
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)

@@ -23,7 +23,14 @@ def check(root):
             errors.append(f"{name}: directory escapes source root")
             continue
         text = (directory / "SKILL.md").read_text()
-        metadata = yaml.safe_load(text.split("---", 2)[1])
+        frontmatter = re.fullmatch(r"---\n(.*?)\n---(?:\n(.*))?", text, re.DOTALL)
+        if frontmatter is None:
+            errors.append(f"{name}: incomplete portable frontmatter")
+            continue
+        if not (frontmatter.group(2) or "").strip():
+            errors.append(f"{name}: missing instruction body")
+            continue
+        metadata = yaml.safe_load(frontmatter.group(1))
         description = metadata.get("description")
         if (not text.startswith("---\n") or metadata.get("name") != name
                 or not isinstance(description, str) or not 0 < len(description) <= 60
