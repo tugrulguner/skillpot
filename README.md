@@ -40,8 +40,8 @@
 
 > [!IMPORTANT]
 > SkillPot is in development. Pinned public ModePot project skills and the experimental
-> repository-readiness workflow are available as source. No qualified skill release or
-> general host-compatibility claim exists yet.
+> repository-readiness workflow are available as source. No versioned collection release
+> exists yet. Harness setup follows official specifications; see the [quickstart](docs/quickstart.md).
 
 ## Why SkillPot?
 
@@ -127,8 +127,8 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Native selective installation | [Seven Hermes install/list/remove checks](evaluations/modepot-project-skills/native-install-001/README.md); not model activation |
 | ModePot consumer execution | [Refpot plus Intpot/Dexpot/Summonpot examples](examples/modepot-project-skills/README.md); bounded, partly assisted checks, not a runtime matrix |
 | Real task example | [Frozen public repository task](examples/repository-readiness/task.md) |
-| Qualified skill releases | Not released |
-| Agent/tool compatibility matrix | Not established |
+| Versioned collection releases | Not published; [first-release policy](docs/release-policy.md) |
+| Documented host integration | Claude Code, Cursor, Codex and Hermes; [official-contract setup](docs/quickstart.md) |
 | Cross-harness execution | [Codex CLI explicit skill use and CLI task](evaluations/harness-portability/explicit-codex-001/README.md); other host observations scoped separately |
 | Initial agent smoke and baseline | [Observed attempts and evidence defects](evaluations/repository-readiness/initial-smoke/README.md); no benefit established |
 | Repaired-version task execution | [Accepted bounded audit smoke](evaluations/repository-readiness/repaired-smoke/README.md); no broader qualification |
@@ -136,8 +136,9 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Standalone website, registry, or custom installer | Not provided |
 
 A standard skill format does not imply identical tool access, permissions, activation,
-or behavior across agents. Compatibility will be stated per tested environment rather
-than inferred from a logo or a folder name.
+or behavior across agents. Integration follows each host's published contract; actual
+runtime observations remain scoped to their recorded environments. Local logins and
+live model trials are not setup or collection-release gates.
 
 ## Using SkillPot
 
@@ -159,9 +160,9 @@ question, allowed checks and an output destination. For example:
 The [example](examples/repository-readiness/README.md) identifies the frozen input and
 execution boundaries. This is explicit instruction loading, not a verified native
 installation command. See [compatibility](skills/repository-readiness/compatibility.md),
-the [authoring contract](docs/skill-contract.md), and [roadmap](ROADMAP.md) for remaining
-qualification gates. The earlier [demo proposal](docs/first-workflow-proposal.md) is
-historical, not the current implementation target.
+the [authoring contract](docs/skill-contract.md), and [roadmap](ROADMAP.md) for scope
+and the [release policy](docs/release-policy.md) for publication gates. The earlier
+[demo proposal](docs/first-workflow-proposal.md) is historical, not the current target.
 
 Packaging follows the open [Agent Skills format](https://agentskills.io/): a `SKILL.md`
 entry point with optional scripts, references, and assets. The public project collection
@@ -181,8 +182,8 @@ those requirements and costs must be disclosed before use.
 2. **An explicit environment.** List tools, dependencies, credentials, costs, and access needs.
 3. **A complete procedure.** Include setup, checks, failure handling, and recovery where relevant.
 4. **Inspectable examples.** Supply runnable examples or fixtures, not invented transcripts.
-5. **Evidence of usefulness.** Record repeated task results with and without the skill;
-   compare a relevant existing workflow when one exists.
+5. **Checks matched to claims.** Validate source, resources and examples. Repeated
+   comparative trials are needed for improvement claims, not ordinary format support.
 6. **Maintenance and provenance.** Record source permissions, tested revisions, limitations,
    and who maintains the skill.
 

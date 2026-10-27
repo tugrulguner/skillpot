@@ -1,7 +1,8 @@
 # Skill authoring contract
 
-Status: initial authoring contract. No skill, host compatibility, or installer is
-implemented by this document. Follow the [Agent Skills specification](https://agentskills.io/specification)
+This is the authoring contract for the implemented source collection. Host placement
+and invocation are documented in the [quickstart](quickstart.md); this document does
+not introduce a runtime or installer. Follow the [Agent Skills specification](https://agentskills.io/specification)
 for the portable entry point; host extensions must not become required portable metadata.
 
 ## Canonical layout
@@ -19,8 +20,8 @@ evaluations/        # see below; no generated results required merely to author
 ```
 
 Evaluation records live at repository-root `evaluations/<name>/<run-id>/`, not inside
-an unrelated installed skill. The layout is proposed for future implementation;
-these directories are not yet a catalogue. Install only the selected skill directory.
+an unrelated installed skill. The [project catalogue](../catalog/README.md) uses this
+layout. Install only the selected skill directory.
 Keep runnable task examples in the repository and link exact public revisions from
 skill documentation; installed operation must not depend on invisible local files.
 
@@ -51,27 +52,30 @@ The body includes:
 
 `provenance.md` identifies each incorporated source by public URL and immutable revision
 where available, its license and notices, what was adapted, and the maintenance owner.
-Record canonical ownership: retain product commands upstream rather than duplicating
-entire product guides. Private material or unclear rights means hold, not an assumed
-license. An audit inventory is not permission to redistribute its sources.
+Record canonical ownership: upstream maintains product commands/APIs. Reviewed pinned
+guide snapshots may be distributed with permission, unchanged source bytes and full
+notices, not as independently evolving API manuals. Private material or unclear rights
+means hold, not an assumed license. An inventory is not redistribution permission.
 
 `compatibility.md` distinguishes proposed, structurally validated, manually exercised,
 and complete-task-tested environments. Record actual OS, agent/model/harness version,
 tool versions, setup path, revision, limitations, and evidence location. A Markdown
 parser, format validator, or successful media probe cannot establish agent activation
-or task usefulness. No supported-host badge without complete-task evidence.
+or task usefulness. Documented host integration follows official specifications and
+offline resource validation; live model execution is not a support prerequisite.
 
 ## Verification gates
 
 - Validate frontmatter and relative resources against the open specification.
 - Test scripts, failure modes, examples, clean setup, and exact output artifacts.
 - Check portable source for secrets, private paths, and undeclared external dependencies.
-- Evaluate activation, non-trigger tasks, output quality, and repeated matched trials
-  with the [task record](../templates/task-evaluation.md).
-- Exercise selective installation, update with user edits, and removal using the
-  chosen host's documented mechanism; do not invent a custom installer as scaffolding.
+- Use official host specifications for selective installation, update/user-edit
+  preservation and removal; do not invent a custom installer as scaffolding.
+- Only for explicitly scoped runtime studies, evaluate activation, non-trigger tasks
+  and repeated matched trials with the [task record](../templates/task-evaluation.md).
 - State experimental/released status explicitly. Documentation-only work cannot check
   off an execution or evaluation gate.
 
-The initial docs-only verification command is `python3 scripts/check_docs.py`; it
-checks local Markdown destinations and source hygiene, not skills, media, or agent behavior.
+Run the source/catalogue checks and tests declared in [CONTRIBUTING](../CONTRIBUTING.md).
+They validate their stated source surfaces, not agent behavior or improved performance.
+Use the [release policy](release-policy.md) for versioning and upstream freshness.
