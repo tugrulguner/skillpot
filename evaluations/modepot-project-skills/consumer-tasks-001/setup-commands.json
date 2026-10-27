@@ -1,0 +1,78 @@
+[
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "opt-out"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Opted out of bundled skills. Future install / update / sync runs will not seed \nbundled skills into this profile.\nMarker: \n<consumer workspace>/hermes-home\n/.no-bundled-skills\nExisting skills on disk were left in place. Re-run with --remove to also delete \nunmodified bundled skills.\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1b144d6b15101c92/skills/intpot-cli/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1\nb144d6b15101c92/skills/intpot-cli/SKILL.md\nQuarantined to .hub/quarantine/intpot-cli\nRunning security scan...\nScan: intpot-cli \n(https://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e\n1b144d6b15101c92/skills/intpot-cli/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   network        references/upstream.md:44      \"intpot serve app.py \n--api          # FastAPI on 127.0.0.1:80\"\n  MEDIUM   supply_chain   references/upstream.md:158     \"pip install intpot    \n# core: init, inspect, add ski\"\n  MEDIUM   supply_chain   references/upstream.md:159     \"pip install intpot    \n# + FastMCP support\"\n  MEDIUM   supply_chain   references/upstream.md:160     \"pip install intpot    \n# + FastAPI support\"\n  MEDIUM   supply_chain   references/upstream.md:161     \"pip install intpot    \n# everything\"\n  MEDIUM   supply_chain   references/upstream.md:200     \"Run `uv run \n--all-extras --with httpx python examples/defini\"\n  MEDIUM   supply_chain   references/upstream.md:279     \"Run `uv run python \nexamples/helper_recovery.py` to exercise \"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:820b95d82e2098805e91fcb236d1e3bcab3d2671c6c44ff660cd0881bfb7e17e\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1\nb144d6b15101c92/skills/intpot-cli/SKILL.md; scanned \n2026-10-27T12:47:27.227352+00:00; rules: hardcoded_ip_port, \nunpinned_pip_install, uv_run\nInstalled: intpot-cli\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1b144d6b15101c92/skills/intpot-python/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1\nb144d6b15101c92/skills/intpot-python/SKILL.md\nQuarantined to .hub/quarantine/intpot-python\nRunning security scan...\nScan: intpot-python \n(https://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e\n1b144d6b15101c92/skills/intpot-python/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   supply_chain   references/upstream.md:203     \"pip install intpot   #\ninstall both framework runtimes\"\n  MEDIUM   supply_chain   references/upstream.md:255     \"Run `uv run \n--all-extras --with httpx python examples/defini\"\n  MEDIUM   supply_chain   references/upstream.md:334     \"Run `uv run python \nexamples/helper_recovery.py` to exercise \"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:bac14081e0ec33fe30a192b82c51fd42d6a674c7f3d1021217c42c5370d9e888\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1\nb144d6b15101c92/skills/intpot-python/SKILL.md; scanned \n2026-10-27T12:47:31.555236+00:00; rules: unpinned_pip_install, uv_run\nInstalled: intpot-python\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1b144d6b15101c92/skills/dexpot/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1\nb144d6b15101c92/skills/dexpot/SKILL.md\nQuarantined to .hub/quarantine/dexpot\nRunning security scan...\nScan: dexpot \n(https://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e\n1b144d6b15101c92/skills/dexpot/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   supply_chain   SKILL.md:33                    \"python -m pip install \n\"dexpot @ git+https://github.com/\"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:3e768ff786488e36ee1b8ed3b395f1f17274017dc86410623290adec3950bac1\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1\nb144d6b15101c92/skills/dexpot/SKILL.md; scanned \n2026-10-27T12:47:36.006357+00:00; rules: unpinned_pip_install\nInstalled: dexpot\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1b144d6b15101c92/skills/summonpot/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1\nb144d6b15101c92/skills/summonpot/SKILL.md\nQuarantined to .hub/quarantine/summonpot\nRunning security scan...\nScan: summonpot \n(https://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e\n1b144d6b15101c92/skills/summonpot/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   supply_chain   references/upstream.md:402     \"pip install \n\"summonpot\"\"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:50d7fae5ce75f509d77b0434105201da622cedb5549626fe5bd186f30a33cd4d\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/f65395e3fa6eb1ebb27a953e1\nb144d6b15101c92/skills/summonpot/SKILL.md; scanned \n2026-10-27T12:47:40.425419+00:00; rules: unpinned_pip_install\nInstalled: summonpot\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "list",
+      "--source",
+      "hub"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "                     Installed Skills                      \n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Name          \u2503 Category \u2503 Source \u2503 Trust     \u2503 Status  \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 dexpot        \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2502 intpot-cli    \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2502 intpot-python \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2502 summonpot     \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n4 hub-installed, 0 builtin, 0 local \u2014 4 enabled, 0 disabled\n\n",
+    "stderr": ""
+  }
+]

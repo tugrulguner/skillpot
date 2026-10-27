@@ -1,0 +1,81 @@
+[
+  {
+    "argv": [
+      "git",
+      "checkout",
+      "--detach",
+      "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5"
+    ],
+    "cwd": "<consumer workspace>/summonpot-task/summonpot",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "HEAD is now at cdaf2f7 chore: correct v0.12.0 publication date (#210)\n"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "<consumer workspace>/summonpot-task/summonpot",
+    "exit_code": 0,
+    "stdout": "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3.12",
+      "--version"
+    ],
+    "cwd": "<consumer workspace>/summonpot-task",
+    "exit_code": 0,
+    "stdout": "Python 3.12.13\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "<consumer workspace>/summonpot-task/.venv/bin/python",
+      "-e",
+      "<consumer workspace>/summonpot-task/summonpot[serve]"
+    ],
+    "cwd": "<consumer workspace>/summonpot-task",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Resolved 26 packages in 6ms\n   Building summonpot @ file://<consumer workspace>/summonpot-task/summonpot\n      Built summonpot @ file://<consumer workspace>/summonpot-task/summonpot\nPrepared 1 package in 303ms\nUninstalled 1 package in 1ms\nInstalled 1 package in 2ms\n ~ summonpot==0.12.0 (from file://<consumer workspace>/summonpot-task/summonpot)\n"
+  },
+  {
+    "argv": [
+      "<consumer workspace>/summonpot-task/.venv/bin/python",
+      "probe.py"
+    ],
+    "cwd": "<consumer workspace>/summonpot-task",
+    "exit_code": 0,
+    "stdout": "{\"success\": [200, {\"customer\": \"Acme\", \"amount_cents\": 25000}], \"invalid_customer\": [422, {\"detail\": \"Request did not satisfy the endpoint input contract.\"}], \"invalid_hours\": [422, {\"detail\": \"Request did not satisfy the endpoint input contract.\"}], \"capability_calls\": [[\"Acme\", 2]], \"call_count\": 1}\nSERVER_STOPPED\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<consumer workspace>/summonpot-task/.venv/bin/python",
+      "invalid_registration.py"
+    ],
+    "cwd": "<consumer workspace>/summonpot-task",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<consumer workspace>/summonpot-task/invalid_registration.py\", line 8, in <module>\n    @s('/invalid')\n     ^^^^^^^^^^^^^\n  File \"<consumer workspace>/summonpot-task/summonpot/src/summonpot/summon.py\", line 279, in decorator\n    validate_contracts(\n  File \"<consumer workspace>/summonpot-task/summonpot/src/summonpot/_validation.py\", line 341, in validate_contracts\n    _validate_bindings(\n  File \"<consumer workspace>/summonpot-task/summonpot/src/summonpot/_validation.py\", line 603, in _validate_bindings\n    raise TypeError(\nTypeError: Endpoint 'endpoint' binds 'missing' for operation 'op', which takes no such argument. It takes: value.\n"
+  },
+  {
+    "argv": [
+      "<consumer workspace>/summonpot-task/.venv/bin/python",
+      "-c",
+      "import inspect,summonpot; from summonpot.runtime import Runtime; print('PATH',summonpot.__file__); print('VERSION',summonpot.__version__); print(inspect.getsource(Runtime.call))"
+    ],
+    "cwd": "<consumer workspace>/summonpot-task",
+    "exit_code": 0,
+    "stdout": "PATH <consumer workspace>/summonpot-task/summonpot/src/summonpot/__init__.py\nVERSION 0.12.0\n    async def call(\n        self,\n        endpoint: EndpointDef,\n        params: Mapping[str, Any],\n    ) -> Any:\n        \"\"\"Run one endpoint under a single deadline, including runtime preparation.\"\"\"\n        deadline = None if self.timeout is None else time.monotonic() + self.timeout\n        token = _runtime_deadline.set(deadline)\n        try:\n            async with asyncio.timeout(self.timeout):\n                return await self._call_with_deadline(endpoint, params, deadline)\n        finally:\n            _runtime_deadline.reset(token)\n\n",
+    "stderr": ""
+  }
+]

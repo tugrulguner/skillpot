@@ -1,0 +1,40 @@
+[
+  {
+    "argv": [
+      "<consumer workspace>/intpot-task/.venv/bin/python",
+      "-c",
+      "import intpot,platform; print(intpot.__file__); print(intpot.__version__); print(platform.python_version(),platform.platform())"
+    ],
+    "cwd": "<consumer workspace>/intpot-task",
+    "returncode": 0,
+    "stdout": "<consumer workspace>/intpot-task/.venv/lib/python3.12/site-packages/intpot/__init__.py\n0.13.0\n3.12.13 macOS-26.5.2-arm64-arm-64bit\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<consumer workspace>/intpot-task/.venv/bin/intpot",
+      "inspect",
+      "<consumer workspace>/intpot-task/sources/invoice.py",
+      "--json"
+    ],
+    "cwd": "<consumer workspace>/intpot-task",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "No FastMCP, Typer, or FastAPI app instance found in <consumer workspace>/intpot-task/sources/invoice.py\n"
+  },
+  {
+    "argv": [
+      "<consumer workspace>/intpot-task/.venv/bin/intpot",
+      "eject",
+      "<consumer workspace>/intpot-task/sources/invoice.py",
+      "--to",
+      "cli",
+      "--output",
+      "<consumer workspace>/intpot-task/generated_cli.py"
+    ],
+    "cwd": "<consumer workspace>/intpot-task",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Wrote cli code to <consumer workspace>/intpot-task/generated_cli.py\n"
+  }
+]

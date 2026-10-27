@@ -1,0 +1,79 @@
+[
+  {
+    "argv": [
+      "<consumer workspace>/intpot-task/.venv/bin/intpot",
+      "inspect",
+      "<SkillPot checkout>/examples/modepot-project-skills/intpot/foreign_cli.py",
+      "--json"
+    ],
+    "cwd": "<SkillPot checkout>/examples/modepot-project-skills/intpot",
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"source\": \"<SkillPot checkout>/examples/modepot-project-skills/intpot/foreign_cli.py\",\n    \"type\": \"cli\",\n    \"tools\": [\n      {\n        \"name\": \"quote\",\n        \"description\": \"Calculate an invoice total in cents; reject invalid amounts.\",\n        \"parameters\": [\n          {\n            \"name\": \"quantity\",\n            \"type_annotation\": \"int\",\n            \"description\": \"\",\n            \"param_source\": null,\n            \"placement\": null,\n            \"binding_name\": null,\n            \"required\": true\n          },\n          {\n            \"name\": \"unit_price_cents\",\n            \"type_annotation\": \"int\",\n            \"description\": \"\",\n            \"param_source\": null,\n            \"placement\": null,\n            \"binding_name\": null,\n            \"required\": true\n          },\n          {\n            \"name\": \"discount_cents\",\n            \"type_annotation\": \"int\",\n            \"description\": \"\",\n            \"param_source\": null,\n            \"placement\": null,\n            \"binding_name\": null,\n            \"required\": false,\n            \"interface_name\": \"discount-cents\",\n            \"aliases\": [\n              \"--discount-cents\"\n            ],\n            \"default\": 0\n          }\n        ],\n        \"return_type\": \"str\",\n        \"http_method\": \"POST\",\n        \"function_body\": \"if quantity <= 0 or unit_price_cents < 0 or discount_cents < 0:\\n    raise ValueError('amounts must be positive quantity and nonnegative cents')\\nsubtotal = quantity * unit_price_cents\\nif discount_cents > subtotal:\\n    raise ValueError('discount exceeds subtotal')\\nreturn subtotal - discount_cents\",\n        \"is_async\": false,\n        \"route_path\": null,\n        \"operation_id\": null,\n        \"route_summary\": null,\n        \"route_description\": null,\n        \"route_tags\": [],\n        \"route_deprecated\": null,\n        \"dependencies\": [],\n        \"source_imports\": [],\n        \"interface_name\": \"quote\"\n      }\n    ]\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<consumer workspace>/intpot-task/.venv/bin/intpot",
+      "eject",
+      "<SkillPot checkout>/examples/modepot-project-skills/intpot/invoice.py",
+      "--to",
+      "cli",
+      "--output",
+      "<approved scratch directory>/intpot-invoice-732tls9e/invoice_cli.py"
+    ],
+    "cwd": "<SkillPot checkout>/examples/modepot-project-skills/intpot",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Wrote cli code to <approved scratch directory>/intpot-invoice-732tls9e/invoice_cli.py\n"
+  },
+  {
+    "argv": [
+      "<consumer workspace>/intpot-task/.venv/bin/python",
+      "<approved scratch directory>/intpot-invoice-732tls9e/invoice_cli.py",
+      "2",
+      "12500"
+    ],
+    "cwd": "<approved scratch directory>/intpot-invoice-732tls9e",
+    "exit_code": 0,
+    "stdout": "25000\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<consumer workspace>/intpot-task/.venv/bin/python",
+      "<approved scratch directory>/intpot-invoice-732tls9e/invoice_cli.py",
+      "3",
+      "1099",
+      "--discount-cents",
+      "100"
+    ],
+    "cwd": "<approved scratch directory>/intpot-invoice-732tls9e",
+    "exit_code": 0,
+    "stdout": "3197\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<consumer workspace>/intpot-task/.venv/bin/python",
+      "<approved scratch directory>/intpot-invoice-732tls9e/invoice_cli.py",
+      "1",
+      "0"
+    ],
+    "cwd": "<approved scratch directory>/intpot-invoice-732tls9e",
+    "exit_code": 0,
+    "stdout": "0\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<consumer workspace>/intpot-task/.venv/bin/python",
+      "<approved scratch directory>/intpot-invoice-732tls9e/invoice_cli.py",
+      "0",
+      "12500"
+    ],
+    "cwd": "<approved scratch directory>/intpot-invoice-732tls9e",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 <approved scratch directory>/intpot-invoice-732tls9e/invoice_cli \u2502\n\u2502 .py:39 in quote                                                              \u2502\n\u2502                                                                              \u2502\n\u2502   36 \u2502   discount_cents: int = _intpot_cli_typer.Option(0, help=''),         \u2502\n\u2502   37 ) -> None:                                                              \u2502\n\u2502   38 \u2502   \"\"\"Calculate an invoice total in cents; reject invalid amounts.\"\"\"  \u2502\n\u2502 \u2771 39 \u2502   result = _quote_impl(quantity, unit_price_cents, discount_cents)    \u2502\n\u2502   40 \u2502   if _intpot_cli_inspect.iscoroutine(result):                         \u2502\n\u2502   41 \u2502   \u2502   result = _intpot_cli_asyncio.run(result)                        \u2502\n\u2502   42 \u2502   if result is not None:                                              \u2502\n\u2502                                                                              \u2502\n\u2502 <approved scratch directory>/intpot-invoice-732tls9e/invoice_cli \u2502\n\u2502 .py:25 in _quote_impl                                                        \u2502\n\u2502                                                                              \u2502\n\u2502   22 \u2502   if unit_price_cents is _intpot_required:                            \u2502\n\u2502   23 \u2502   \u2502   raise TypeError('Missing required argument: unit_price_cents')  \u2502\n\u2502   24 \u2502   if quantity <= 0 or unit_price_cents < 0 or discount_cents < 0:     \u2502\n\u2502 \u2771 25 \u2502   \u2502   raise ValueError('amounts must be positive quantity and         \u2502\n\u2502      nonnegative cents')                                                     \u2502\n\u2502   26 \u2502   subtotal = quantity * unit_price_cents                              \u2502\n\u2502   27 \u2502   if discount_cents > subtotal:                                       \u2502\n\u2502   28 \u2502   \u2502   raise ValueError('discount exceeds subtotal')                   \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\nValueError: amounts must be positive quantity and nonnegative cents\n"
+  }
+]

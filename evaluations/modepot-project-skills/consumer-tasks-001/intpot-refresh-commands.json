@@ -1,0 +1,54 @@
+[
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "intpot-cli",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Uninstalled 'intpot-cli' from intpot-cli\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5355263097c9727facea02356fb7f39aab065cab/skills/intpot-cli/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5355263097c9727facea02356\nfb7f39aab065cab/skills/intpot-cli/SKILL.md\nQuarantined to .hub/quarantine/intpot-cli\nRunning security scan...\nScan: intpot-cli \n(https://raw.githubusercontent.com/tugrulguner/skillpot/5355263097c9727facea0235\n6fb7f39aab065cab/skills/intpot-cli/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   network        references/upstream.md:44      \"intpot serve app.py \n--api          # FastAPI on 127.0.0.1:80\"\n  MEDIUM   supply_chain   references/upstream.md:158     \"pip install intpot    \n# core: init, inspect, add ski\"\n  MEDIUM   supply_chain   references/upstream.md:159     \"pip install intpot    \n# + FastMCP support\"\n  MEDIUM   supply_chain   references/upstream.md:160     \"pip install intpot    \n# + FastAPI support\"\n  MEDIUM   supply_chain   references/upstream.md:161     \"pip install intpot    \n# everything\"\n  MEDIUM   supply_chain   references/upstream.md:200     \"Run `uv run \n--all-extras --with httpx python examples/defini\"\n  MEDIUM   supply_chain   references/upstream.md:279     \"Run `uv run python \nexamples/helper_recovery.py` to exercise \"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:b8944fb953579f57c932b0118c396964a8af5873a2a0a3d2dd2aed86baa542f6\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5355263097c9727facea02356\nfb7f39aab065cab/skills/intpot-cli/SKILL.md; scanned \n2026-10-27T16:54:50.408131+00:00; rules: hardcoded_ip_port, \nunpinned_pip_install, uv_run\nInstalled: intpot-cli\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "intpot-python",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Uninstalled 'intpot-python' from intpot-python\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5355263097c9727facea02356fb7f39aab065cab/skills/intpot-python/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5355263097c9727facea02356\nfb7f39aab065cab/skills/intpot-python/SKILL.md\nQuarantined to .hub/quarantine/intpot-python\nRunning security scan...\nScan: intpot-python \n(https://raw.githubusercontent.com/tugrulguner/skillpot/5355263097c9727facea0235\n6fb7f39aab065cab/skills/intpot-python/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   supply_chain   references/upstream.md:203     \"pip install intpot   #\ninstall both framework runtimes\"\n  MEDIUM   supply_chain   references/upstream.md:255     \"Run `uv run \n--all-extras --with httpx python examples/defini\"\n  MEDIUM   supply_chain   references/upstream.md:334     \"Run `uv run python \nexamples/helper_recovery.py` to exercise \"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:9cef5d110e75f7aaa3120ba66e82e02805604a2bbf4388a2d3fc6a723694e81b\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5355263097c9727facea02356\nfb7f39aab065cab/skills/intpot-python/SKILL.md; scanned \n2026-10-27T16:54:55.959335+00:00; rules: unpinned_pip_install, uv_run\nInstalled: intpot-python\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  }
+]

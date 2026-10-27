@@ -1,0 +1,74 @@
+[
+  {
+    "path": "native_export",
+    "input": {
+      "quantity": 2,
+      "unit_price_cents": 12500
+    },
+    "status": 200,
+    "body": 25000
+  },
+  {
+    "path": "native_export",
+    "input": {
+      "quantity": 3,
+      "unit_price_cents": 1099,
+      "discount_cents": 100
+    },
+    "status": 200,
+    "body": 3197
+  },
+  {
+    "path": "native_export",
+    "input": {
+      "quantity": 1,
+      "unit_price_cents": 0
+    },
+    "status": 200,
+    "body": 0
+  },
+  {
+    "path": "native_export",
+    "case": "invalid_integer",
+    "status": 422
+  },
+  {
+    "path": "framework_conversion",
+    "input": {
+      "quantity": 2,
+      "unit_price_cents": 12500
+    },
+    "status": 200,
+    "body": {
+      "result": 25000
+    }
+  },
+  {
+    "path": "framework_conversion",
+    "input": {
+      "quantity": 3,
+      "unit_price_cents": 1099,
+      "discount-cents": 100
+    },
+    "status": 200,
+    "body": {
+      "result": 3197
+    }
+  },
+  {
+    "path": "framework_conversion",
+    "input": {
+      "quantity": 1,
+      "unit_price_cents": 0
+    },
+    "status": 200,
+    "body": {
+      "result": 0
+    }
+  },
+  {
+    "path": "framework_conversion",
+    "case": "invalid_integer",
+    "status": 422
+  }
+]
