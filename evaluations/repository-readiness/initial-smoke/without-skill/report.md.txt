@@ -1,0 +1,36 @@
+# Repository readiness report (baseline)
+
+## Decision
+
+**No: a new user cannot install a SkillPot skill and complete its documented task from this revision.** This checkout documents the project direction, an initial authoring contract, and a proposed first workflow; it contains no installable skill or runnable example. README explicitly says no skills are implemented and exact install commands await a tested layout/clean-install path ([README.md](README.md#L110-L123)). It also marks installable skills and compatibility results unreleased ([README.md](README.md#L39-L41), [README.md](README.md#L94-L108)).
+
+## Scope and evidence
+
+- Inspected the detached target at exact commit `3d023734ca0a2a22a873ca59d601f7616fed7716`; final status remained clean.
+- Environment: Python 3.11.6; git 2.50.1 (Apple Git-155).
+- Performed repository file/metadata reads and documented offline checks only. No network, install, or target modifications.
+- Full commands, actual outputs, exit codes, and status are recorded in [`commands.txt`](commands.txt). Each command ran at working directory `.` (target root), with maximum timeout 60 seconds; none timed out.
+
+README describes the demo workflow as planned, not shipped ([README.md](README.md#L71-L89)); it distinguishes documented project scope from implemented capabilities ([README.md](README.md#L94-L123)). The contract labels itself an initial proposal, and says the layout is not yet a catalogue ([docs/skill-contract.md](docs/skill-contract.md#L1-L5), [docs/skill-contract.md](docs/skill-contract.md#L21-L25)). Its validation/evaluation/install steps remain gates, not evidence of execution ([docs/skill-contract.md](docs/skill-contract.md#L64-L77)).
+
+The first workflow proposal is explicitly a design, and its representative applications are specifications for future fixtures, not existing fixtures ([docs/first-workflow-proposal.md](docs/first-workflow-proposal.md#L1-L5), [docs/first-workflow-proposal.md](docs/first-workflow-proposal.md#L19-L35)). The proposal leaves its toolchain selection and clean setup unresolved ([docs/first-workflow-proposal.md](docs/first-workflow-proposal.md#L43-L60)). The roadmap marks workflow implementation, evaluation/compatibility, and selective publication as future gates ([ROADMAP.md](ROADMAP.md#L45-L67), [ROADMAP.md](ROADMAP.md#L72-L108)).
+
+## Checks run
+
+- `PYTHONDONTWRITEBYTECODE=1 python3 scripts/check_docs.py` — **exit 0**; output: `PASS: local Markdown destinations and personal-path checks`.
+- `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v` — **exit 0**; 5 tests passed.
+- `git diff --check` — **exit 0**, no output.
+
+These results establish only that the offline documentation checker and its five tests passed. The checker describes its scope as local Markdown destinations and personal-path checks, not skill validation or task evaluation ([scripts/check_docs.py](scripts/check_docs.py#L1-L4), [scripts/check_docs.py](scripts/check_docs.py#L13-L40)); the contract similarly disclaims that these checks establish agent activation or usefulness ([docs/skill-contract.md](docs/skill-contract.md#L58-L62)). No skill installation, activation, or user task was possible or tested. This single baseline execution is not evidence of comparative or performance improvement.
+
+## Blocking gaps and minimal next steps
+
+1. **No installable artifact / path:** implement and publish one skill in a tested layout, then document exact selective install, use, update, and removal commands. Verify clean install and removal on a named host; do not infer compatibility from format ([README.md](README.md#L120-L128), [docs/skill-contract.md](docs/skill-contract.md#L7-L25), [ROADMAP.md](ROADMAP.md#L94-L108)).
+2. **No runnable task fixture or verified workflow:** implement the chosen demo task with public fixtures, disclose dependencies/tool versions, and execute capture/render plus artifact and failure checks in a clean environment ([docs/first-workflow-proposal.md](docs/first-workflow-proposal.md#L19-L41), [docs/first-workflow-proposal.md](docs/first-workflow-proposal.md#L83-L104)).
+3. **No task-use/compatibility evidence:** exercise real activation and non-trigger cases and run the proposed matched repeated trials before claiming usefulness or host support ([ROADMAP.md](ROADMAP.md#L72-L92)).
+
+Optional: test other hosts and consider broader catalogue/site work only after the workflow, evaluation, and publication gates are met ([ROADMAP.md](ROADMAP.md#L94-L123)).
+
+## Limits
+
+No unsupported readiness, compatibility, release, external-publication, or comparative-improvement claim is made. The checks did not validate external links, Agent Skills format conformance of a skill, runtime behavior, installation, host activation, or video outputs. No fixes were made.

@@ -1,0 +1,11 @@
+{
+  "private_original_sha256": {
+    "commands.json": "8639a79714b0eeb197f54d5b0cf590d4ce63292754c649d2eff16d9fccaa4f2f",
+    "provenance.json": "220969b8d7b30fa69b8739edeacd9d02c0a9e873ca66f3aa972e3881b0bdb3a6",
+    "repeatable_example.py": "d52fe04ad4d35f7077ee0d3d84190f4d921d2a547f25b3879e55a3465602f3cb"
+  },
+  "public_transformation": "Only the machine-local consumer workspace prefix is replaced in worker JSON; outputs/failures/relative argv retained",
+  "parent_replay_argv_redaction": "The isolated Python executable is labeled <isolated Refpot Python>; fixture path remains repo-relative",
+  "original_worker_fixture": "Private original has a machine-local temporary directory override; public portable fixture removes that override and was separately replayed by parent",
+  "source_revision": "3294ce39f0e5630c660fad2e5a1e3977bf52a17f"
+}

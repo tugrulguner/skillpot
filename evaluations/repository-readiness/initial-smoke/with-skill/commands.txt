@@ -1,0 +1,50 @@
+# Trial command evidence (all cwd values are target repository root, represented as '.')
+# Source HEAD: 3d023734ca0a2a22a873ca59d601f7616fed7716
+# Initial status: clean detached HEAD (git status --short --branch => ## HEAD (no branch))
+
+$ git rev-parse HEAD; git status --short --branch; git status --porcelain=v1; git describe --always --dirty; python3 --version; git --version
+exit code: 0
+output:
+3d023734ca0a2a22a873ca59d601f7616fed7716
+## HEAD (no branch)
+3d02373
+Python 3.11.6
+git version 2.50.1 (Apple Git-155)
+timeout: 60 seconds; no timeout
+
+$ PYTHONDONTWRITEBYTECODE=1 python3 scripts/check_docs.py
+exit code: 0
+output:
+PASS: local Markdown destinations and personal-path checks
+timeout: 60 seconds; no timeout
+
+$ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+exit code: 0
+output:
+test_escape (test_check_docs.CheckDocsTests.test_escape) ... ok
+test_missing_destination (test_check_docs.CheckDocsTests.test_missing_destination) ... ok
+test_personal_home_without_trailing_slash (test_check_docs.CheckDocsTests.test_personal_home_without_trailing_slash) ... ok
+test_valid_destinations_and_external_links (test_check_docs.CheckDocsTests.test_valid_destinations_and_external_links) ... ok
+test_personal_path (test_check_docs.CheckDocsTests.test_personal_path) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.007s
+
+OK
+timeout: 60 seconds; no timeout
+
+$ git diff --check
+exit code: 0
+output: (empty)
+timeout: 60 seconds; no timeout
+
+# Final status check
+$ git status --porcelain=v1; git rev-parse HEAD
+exit code: 0
+output:
+3d023734ca0a2a22a873ca59d601f7616fed7716
+timeout: 60 seconds; no timeout
+
+# Loaded candidate skill and its linked report template, SHA-256
+repository-readiness/SKILL.md  793eef9c70119e6de81a4caa3c25647262ed1e49cf0ab47e6eceaa90dbdae574
+repository-readiness/assets/report.md  2179f1362167308474d0e44142fe8dad639670366264e0ec0a106e51727d675d

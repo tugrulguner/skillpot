@@ -1,0 +1,13 @@
+{
+  "01-revision.json": "87df0e14c5d6552106329d59f804941f993bc54d57c86b09419761a0e0608ae4",
+  "02-initial-status.json": "53309a7b151e8677efee4c0548230622c69c0f80146602a02b218d81dfabb3ee",
+  "03-doc-check.json": "75065f260cb6e02875133561c79b133aa0371e33025629e87a92931f8bb5a6d3",
+  "04-unittest.json": "de0fb374f9f52ee30a37fd586316cb1e013272c496afd0108ad3d27f6abcfbd5",
+  "05-diff-check.json": "0f96ff3e92c78e46969d166829b0a22b86f3c048f8806a7d1c64acbb626d55c5",
+  "99-final-status.json": "53309a7b151e8677efee4c0548230622c69c0f80146602a02b218d81dfabb3ee",
+  "parent-verification.json": "1229c290f27296a2a0dbd24c0b865ceb704af921bd5f297ef103106175e7af86",
+  "recorder-under-test.py.txt": "26225988ad80c97a45e295f3413239f3b56fe989fe242240bea37b882044f6a8",
+  "report.md": "1b2622583ad13b4e1ce08374ae175248e15ef118a669b869694588def0caf5e5",
+  "skill-under-test.md.txt": "712edafad95e7eedf9c5bc5c02ce61f39949f4e3d8c3086beda04e473c05ac6f",
+  "template-under-test.md.txt": "2198d77985b4db851ac46f56fbdb3dd7ff3ec02b8e3ff910111b99ea4411ab10"
+}

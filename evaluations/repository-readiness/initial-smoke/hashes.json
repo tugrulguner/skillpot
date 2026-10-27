@@ -1,0 +1,10 @@
+{
+  "frozen-task.md.txt": "adb6c80eafceefc9d459dafe509df8b3410c5ba285557ea64c0a2f8e60a1eda8",
+  "parent-checks.json": "9139886d664f47b1b7a6e216c54c18f11eb50a1ed6fe022db23a703852ebb746",
+  "skill-under-test.md.txt": "793eef9c70119e6de81a4caa3c25647262ed1e49cf0ab47e6eceaa90dbdae574",
+  "template-under-test.md.txt": "2179f1362167308474d0e44142fe8dad639670366264e0ec0a106e51727d675d",
+  "with-skill/commands.txt": "2b4524cfdf05cd7f3423215ea89cf955d6c3fa919e8d1f606e4786b1c97c6977",
+  "with-skill/report.md.txt": "2b25caa188383a848222e882d4036696f9f62d095073d2000eccfaa0e490098d",
+  "without-skill/commands.txt": "5ab88ec2b77ebdc1f34d091127392b56e9bbf84c4902540f1ba12be2f642b49a",
+  "without-skill/report.md.txt": "66ca37c1b4c34849ec578a83923e353362c9c04a110dd4336b376ef1f28df803"
+}

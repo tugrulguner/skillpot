@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "git",
+    "status",
+    "--porcelain=v1",
+    "--untracked-files=all"
+  ],
+  "cwd": ".",
+  "timeout_seconds": 60.0,
+  "env": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "status": "passed",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

@@ -1,0 +1,129 @@
+[
+  {
+    "cwd": ".",
+    "command": [
+      "git",
+      "clone",
+      "https://github.com/tugrulguner/refpot.git",
+      "source"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Cloning into 'source'...\n"
+  },
+  {
+    "cwd": "source",
+    "command": [
+      "git",
+      "checkout",
+      "3294ce39f0e5630c660fad2e5a1e3977bf52a17f"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Note: switching to '3294ce39f0e5630c660fad2e5a1e3977bf52a17f'.\n\nYou are in 'detached HEAD' state. You can look around, make experimental\nchanges and commit them, and you can discard any commits you make in this\nstate without impacting any branches by switching back to a branch.\n\nIf you want to create a new branch to retain commits you create, you may\ndo so (now or later) by using -c with the switch command. Example:\n\n  git switch -c <new-branch-name>\n\nOr undo this operation with:\n\n  git switch -\n\nTurn off this advice by setting config variable advice.detachedHead to false\n\nHEAD is now at 3294ce3 fix(website): defer below-fold diagrams (#32)\n"
+  },
+  {
+    "cwd": "source",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout": "3294ce39f0e5630c660fad2e5a1e3977bf52a17f\n",
+    "stderr": ""
+  },
+  {
+    "cwd": ".",
+    "command": [
+      "uv",
+      "venv",
+      "--python",
+      "3.11",
+      ".venv"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Using CPython 3.11.12\nCreating virtual environment at: .venv\nActivate with: source .venv/bin/activate\n"
+  },
+  {
+    "cwd": "source",
+    "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      ".venv/bin/python",
+      "."
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "error: No virtual environment or system Python installation found for path `.venv/bin/python`; run `uv venv` to create an environment\n"
+  },
+  {
+    "cwd": "source",
+    "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "../.venv/bin/python",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Using Python 3.11.12 environment at: <consumer workspace>/.venv\nResolved 1 package in 16ms\n   Building refpot @ file://<consumer workspace>/source\n      Built refpot @ file://<consumer workspace>/source\nPrepared 1 package in 7.81s\nInstalled 1 package in 2ms\n + refpot==0.1.2 (from file://<consumer workspace>/source)\n"
+  },
+  {
+    "cwd": "source",
+    "command": [
+      "../.venv/bin/python",
+      "-c",
+      "import sys,platform,refpot; print(sys.version); print(platform.platform()); print(refpot.__file__); import importlib.metadata as m; print(m.version(\"refpot\"))"
+    ],
+    "exit_code": 0,
+    "stdout": "3.11.12 (main, Apr  9 2025, 03:49:53) [Clang 20.1.0 ]\nmacOS-26.5.2-arm64-arm-64bit\n<consumer workspace>/.venv/lib/python3.11/site-packages/refpot/__init__.py\n0.1.2\n",
+    "stderr": ""
+  },
+  {
+    "cwd": "source",
+    "command": [
+      "../.venv/bin/python",
+      "examples/crud.py"
+    ],
+    "exit_code": 0,
+    "stdout": "Row(key=1, value=43, text='answer')\n",
+    "stderr": ""
+  },
+  {
+    "cwd": "source",
+    "command": [
+      "../.venv/bin/python",
+      "examples/transactions.py"
+    ],
+    "exit_code": 0,
+    "stdout": "Row(key=1, value=10, text='')\n",
+    "stderr": ""
+  },
+  {
+    "cwd": "source",
+    "command": [
+      "../.venv/bin/python",
+      "../repeatable_example.py"
+    ],
+    "exit_code": 0,
+    "stdout": "Row(key=1, value=43, text='answer')\n",
+    "stderr": ""
+  },
+  {
+    "cwd": ".",
+    "command": [
+      ".venv/bin/python",
+      "-c",
+      "import sys,platform,refpot,importlib.metadata as m; print(sys.version); print(platform.platform()); print(refpot.__file__); print(m.version(\"refpot\"))"
+    ],
+    "exit_code": 0,
+    "stdout": "3.11.12 (main, Apr  9 2025, 03:49:53) [Clang 20.1.0 ]\nmacOS-26.5.2-arm64-arm-64bit\n<consumer workspace>/.venv/lib/python3.11/site-packages/refpot/__init__.py\n0.1.2\n",
+    "stderr": ""
+  }
+]

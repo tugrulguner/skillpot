@@ -24,6 +24,7 @@
 
 <p align="center">
   <a href="#why-skillpot">Why SkillPot</a> ·
+  <a href="#modepot-project-skills">ModePot skills</a> ·
   <a href="#the-first-workflow">First workflow</a> ·
   <a href="#current-status">Status</a> ·
   <a href="#using-skillpot">Using SkillPot</a> ·
@@ -37,8 +38,9 @@
 </p>
 
 > [!IMPORTANT]
-> SkillPot is in development. This repository establishes the project direction,
-> roadmap, and identity. No installable skills or compatibility results are released yet.
+> SkillPot is in development. Pinned public ModePot project skills and the experimental
+> repository-readiness workflow are available as source. No qualified skill release or
+> general host-compatibility claim exists yet.
 
 ## Why SkillPot?
 
@@ -68,25 +70,46 @@ These are the bar for future skills, not claims that an unreleased library has a
 met it. Evaluation and maintenance support the work; they are not a guarantee that an
 agent will always follow instructions.
 
+## ModePot project skills
+
+The collection now includes pinned public project guidance—not only the original
+repository-readiness experiment:
+
+- **Intpot:** [CLI](skills/intpot-cli/SKILL.md) and [Python API](skills/intpot-python/SKILL.md).
+- **Summonpot:** [consumer workflow](skills/summonpot/SKILL.md), plus project-scoped
+  [PR review](skills/summonpot-pr-review/SKILL.md) and
+  [code review](skills/summonpot-code-review/SKILL.md).
+- **Dexpot:** [synchronous typed HTTP applications](skills/dexpot/SKILL.md).
+- **Refpot:** [embedded database preview](skills/refpot-database/SKILL.md).
+
+Each can be installed separately through an existing host mechanism; there is no
+all-skills auto-install or hidden product dependency installation. Start with the
+[catalogue](catalog/README.md) and [installation guide](docs/project-skill-installation.md).
+Upstream repositories remain canonical. Source revisions, original guide hashes and
+complete MIT notices are preserved; this is a pinned distribution, not a second API
+manual tracking main silently.
+
+The public inventory found no existing skill Markdown in Utilitypot, Lifepot or
+Strpot at the inspected revisions, so none is invented for those projects. Private
+local skills are not copied. See the [bounded inventory](catalog/source-inventory.json)
+and each package's provenance/compatibility records for scope and verification limits.
+Packaging or installation is not proof of a full product runtime or usefulness matrix.
+
 ## The first workflow
 
-**A working project → an accurate, polished demo.**
+**A repository and a delivery goal → an evidence-backed readiness report.**
 
-The initial planned skill will help an agent inspect a functioning project, choose a
-small demonstrable user journey, capture real behavior, and produce a shareable demo
-without inventing features or results.
+Use [repository-readiness](skills/repository-readiness/SKILL.md) when you need to know
+whether a project is ready for a specific installation, handoff or release. The skill
+guides an agent to pin the source, trace the consumer path, inspect and run authorized
+checks, separate verified behavior from claims, and deliver blockers with citations
+and concrete next steps. It does not modify or publish the project implicitly.
 
-| Input | Planned result |
-| --- | --- |
-| A working project and a defined audience | A short, focused demo brief and capture plan |
-| Reproducible steps and approved data | Evidence of the actual product in use |
-| Allowed claims and media constraints | A rendered demo, captions, and a claim-to-evidence note |
-| A human review decision | A delivery package; public posting remains a separate approval |
-
-Existing tools may handle capture and rendering. SkillPot's contribution must be the
-workflow and its verified result—not another video engine. Tool selection, output
-formats, duration presets, and supported agents will be earned through the
-[roadmap's acceptance gates](ROADMAP.md#milestone-2--build-the-first-complete-workflow).
+The deliverable is the report and actual check evidence—not a recording, generic
+review persona, custom runtime or test harness. See the
+[task and frozen rubric](examples/repository-readiness/task.md). Source validation is
+not evidence of agent execution; explicit loading is not automatic host discovery.
+The [current proposal](docs/repository-readiness-proposal.md) defines these boundaries.
 
 Research-to-explainer and data-to-decision workflows are later candidates, not committed
 features. A future catalogue must earn its breadth one useful skill at a time.
@@ -98,9 +121,16 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Project direction and first-workflow scope | Documented |
 | Public roadmap and contribution guidance | Available in this repository |
 | ModePot-family logo and editable artwork | Available in [assets/](assets/README.md) |
-| Installable skills and runnable examples | Not released |
+| Experimental skill source | [repository-readiness](skills/repository-readiness/SKILL.md) and report template |
+| ModePot public collection | [Seven pinned project/contributor packages](catalog/README.md) |
+| Native selective installation | [Seven Hermes install/list/remove checks](evaluations/modepot-project-skills/native-install-001/README.md); not model activation |
+| ModePot consumer execution | [Refpot source-matched task and runnable example](examples/modepot-project-skills/README.md); other runtimes unqualified |
+| Real task example | [Frozen public repository task](examples/repository-readiness/task.md) |
+| Qualified skill releases | Not released |
 | Agent/tool compatibility matrix | Not established |
-| Comparative task evaluations | Not published |
+| Initial agent smoke and baseline | [Observed attempts and evidence defects](evaluations/repository-readiness/initial-smoke/README.md); no benefit established |
+| Repaired-version task execution | [Accepted bounded audit smoke](evaluations/repository-readiness/repaired-smoke/README.md); no broader qualification |
+| Repeated/held-out usefulness evaluation | Not established |
 | Standalone website, registry, or custom installer | Not provided |
 
 A standard skill format does not imply identical tool access, permissions, activation,
@@ -109,13 +139,21 @@ than inferred from a logo or a folder name.
 
 ## Using SkillPot
 
-No skill is implemented yet. The [source audit](docs/source-audit.md) records existing
-project guidance and extraction boundaries. The [first-workflow proposal](docs/first-workflow-proposal.md)
-defines representative tasks and acceptance checks; the [authoring contract](docs/skill-contract.md)
-and [evaluation template](templates/task-evaluation.md) define how implementation will
-be packaged and judged. These are designs, not implemented skills or measured results.
-See the [roadmap](ROADMAP.md) for the remaining gates, or propose a representative task
-in [GitHub Issues](https://github.com/tugrulguner/skillpot/issues).
+For an explicit-load experiment, ask your agent to read
+`skills/repository-readiness/SKILL.md`, then give it the repository, exact delivery
+question, allowed checks and an output destination. For example:
+
+> Read the repository-readiness skill. Inspect this checkout and determine whether a
+> new user can install and complete its documented task. Do not change it. Run only
+> authorized offline checks and produce a report with source citations, actual command
+> results, blockers and the smallest next steps.
+
+The [example](examples/repository-readiness/README.md) identifies the frozen input and
+execution boundaries. This is explicit instruction loading, not a verified native
+installation command. See [compatibility](skills/repository-readiness/compatibility.md),
+the [authoring contract](docs/skill-contract.md), and [roadmap](ROADMAP.md) for remaining
+qualification gates. The earlier [demo proposal](docs/first-workflow-proposal.md) is
+historical, not the current implementation target.
 
 The intended packaging is the open [Agent Skills format](https://agentskills.io/): a
 `SKILL.md` entry point with optional scripts, references, and assets. Installation will

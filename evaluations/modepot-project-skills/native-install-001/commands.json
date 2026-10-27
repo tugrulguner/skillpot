@@ -1,0 +1,255 @@
+[
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "opt-out"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Opted out of bundled skills. Future install / update / sync runs will not seed \nbundled skills into this profile.\nMarker: \n<temporary HERMES_HOME>\n/.no-bundled-skills\nExisting skills on disk were left in place. Re-run with --remove to also delete \nunmodified bundled skills.\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "inspect",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e149ae4e8dafc14830/skills/intpot-cli/SKILL.md"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Skill: intpot-cli \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Name: intpot-cli                                                             \u2502\n\u2502 Description: Use intpot CLI to scaffold, inspect, or convert Python apps.    \u2502\n\u2502 Source: url                                                                  \u2502\n\u2502 Trust: community                                                             \u2502\n\u2502 Identifier:                                                                  \u2502\n\u2502 https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab79 \u2502\n\u2502 2e149ae4e8dafc14830/skills/intpot-cli/SKILL.md                               \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 SKILL.md Preview \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 ---                                                                          \u2502\n\u2502 name: intpot-cli                                                             \u2502\n\u2502 description: Use intpot CLI to scaffold, inspect, or convert Python apps.    \u2502\n\u2502 license: MIT                                                                 \u2502\n\u2502 metadata:                                                                    \u2502\n\u2502   version: \"0.1.0\"                                                           \u2502\n\u2502   maintainer: \"intpot contributors\"                                          \u2502\n\u2502   upstream-repository: \"tugrulguner/intpot\"                                  \u2502\n\u2502   upstream-revision: \"8e583cc4b2b6785955268d09a12dfdd955194b88\"              \u2502\n\u2502   status: \"pinned-public-guidance\"                                           \u2502\n\u2502 ---                                                                          \u2502\n\u2502 # intpot CLI                                                                 \u2502\n\u2502                                                                              \u2502\n\u2502 Use the `intpot` command for project scaffolding, serving `intpot.App`,      \u2502\n\u2502 inspecting trusted framework apps, and conversion/ejection. This procedure   \u2502\n\u2502 covers consumer workflows; detailed product behavior and version-specific    \u2502\n\u2502 API are in (references/upstream.md).                                         \u2502\n\u2502                                                                              \u2502\n\u2502 ## When to use                                                               \u2502\n\u2502 - User requests CLI-based setup, serving, inspection, or conversion among    \u2502\n\u2502 Typer, FastAPI, and FastMCP.                                                 \u2502\n\u2502 - Use `intpot-python` for Python API operations inside a script or codebase. \u2502\n\u2502 - Do not convert code the user does not trust; discovery imports and         \u2502\n\u2502 executes source modules.                                                     \u2502\n\u2502                                                                              \u2502\n\u2502 ## Setup and version check                                                   \u2502\n\u2502 1. Use the project's existing environment and dependency policy. Install     \u2502\n\u2502 `intpot` there, or install `intpot`, `intpot`, or `intpot` when the          \u2502\n\u2502 source/target framework must be loaded or run.                               \u2502\n\u2502 2. Check `intpot --version` and `intpot --help`; consult the pinned guide    \u2502\n\u2502 for required feature versions. If the package is older than a feature's      \u2502\n\u2502 stated minimum, do not assume it exists. When published release diverges     \u2502\n\u2502 from this pinned snapshot, use a matching upstream source checkout at the    \u2502\n\u2502 pinned revision or a compatible published version; never silently mix docs   \u2502\n\u2502 and runtime.                                                                 \u2502\n\u2502 3. Confirm source and intended output paths. Preserve existing files; use    \u2502\n\u2502 `--dry-run` for conversion previews.                                         \u2502\n\u2502                                                                              \u2502\n\u2502 ## Procedure                                                                 \u2502\n\u2502 1. For a new project, run `intpot init <name> --type cli|api|mcp` with one   \u2502\n\u2502 type; inspect generated files.                                               \u2502\n\u2502 2. For an existing `intpot.App`, run `intpot serve <file.py>                 \u2502\n\u2502 --cli|--api|--mcp`. CLI tool arguments follow mode flags; use `--` if app    \u2502\n\u2502 flags collide with intpot options. API defaults to loopback; network         \u2502\n\u2502 exposure requires an explicit host choice.                                   \u2502\n\u2502 3. For framework conversion, run `intpot inspect <source> --json` (or the    \u2502\n\u2502 table form), review extracted tools and diagnostics, then run `intpot to     \u2502\n\u2502 cli|api|mcp <source> [--output ...]`. Preview with `--dry-run`. For          \u2502\n\u2502 standalone export from an `intpot.App`, use `intpot eject <source> --to      \u2502\n\u2502 cli|api|mcp`.                                                                \u2502\n\u2502 4. Treat refusals as meaningful. Missing bodies/bindings, CLI callbacks,     \u2502\n\u2502 FastAPI dependency injection, and other unsupported cases can prevent        \u2502\n\u2502 conversion before writes. `--allow-scaffold` only opts into explicitly       \u2502\n\u2502 failing `NotImplementedError` stubs for eligible missing-body recovery; it   \u2502\n\u2502 does not bypass callback, dependency, or binding refusals. Never present a   \u2502\n\u2502 scaffold as working output.                                                  \u2502\n\u2502 5. Verify every generated file: compile it, import it in the target runtime  \u2502\n\u2502 environment, and execute a representative CLI invocation, API request, or    \u2502\n\u2502 MCP tool call. Help text, generation success, and compilation alone do not   \u2502\n\u2502 prove behavior.                                                              \u2502\n\u2502                                                                              \u2502\n\u2502 ## Failure boundaries and safety                                             \u2502\n\u2502 - Inspection/conversion imports trusted source. `--dry-run` prevents         \u2502\n\u2502 generated output writes, not source execution; it is not a sandbox.          \u2502\n\u2502 - Before retrying a refusal, check output is absent/unchanged. Avoid         \u2502\n\u2502 overwriting user output without consent.                                     \u2502\n\u2502 - Direct file loading may not put the source directory on `sys.path`;        \u2502\n\u2502 sibling imports can require installing the project or setting `PYTHONPATH`.  \u2502\n\u2502 Intpot does not provision services/configuration.                            \u2502\n\u2502 - Recovery scope is version-dependent and bounded. The pinned snapshot       \u2502\n\u2502 documents v0.11 helper recovery for required undecorated functions and       \u2502\n\u2502 immutable literal constants, including supported transitive helpers. It      \u2502\n\u2502 excludes mutable/dynamic state, closures, classes and other unsupported      \u2502\n\u2502 dependencies. Do not repeat older blanket claims that all same-module        \u2502\n\u2502 helpers are unsupported, nor infer universal helper copying. Consult the     \u2502\n\u2502 versioned reference and actual diagnostics.                                  \u2502\n\u2502 - Framework semantic gaps remain, including nested Typer sub-apps,           \u2502\n\u2502 repeatable CLI options, certain FastAPI parameter forms, factory apps,       \u2502\n\u2502 multi-method routes, callbacks, and dependencies.                            \u2502\n\u2502                                                                              \u2502\n\u2502 ## Verification report                                                       \u2502\n\u2502 Record installed version, source/target, command/output path,                \u2502\n\u2502 diagnostics/refusals, and real behavior exercised. State unverified          \u2502\n\u2502 frameworks and limitations; distinguish generated, compiled, imported, and   \u2502\n\u2502 behaviorally tested.                                                         \u2502\n\u2502                                                                              \u2502\n\u2502 ## Reference                                                                 \u2502\n\u2502 - [Pinned complete upstream public guide](references/upstream.md)            \u2502\n\u2502 - [Complete upstream MIT notice](references/LICENSE.md)                      \u2502\n\u2502                                                                              \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 hermes skills install <id> to install \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e149ae4e8dafc14830/skills/intpot-cli/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/intpot-cli/SKILL.md\nQuarantined to .hub/quarantine/intpot-cli\nRunning security scan...\nScan: intpot-cli \n(https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e1\n49ae4e8dafc14830/skills/intpot-cli/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   network        references/upstream.md:44      \"intpot serve app.py \n--api          # FastAPI on 127.0.0.1:80\"\n  MEDIUM   supply_chain   references/upstream.md:158     \"pip install intpot    \n# core: init, inspect, add ski\"\n  MEDIUM   supply_chain   references/upstream.md:159     \"pip install intpot    \n# + FastMCP support\"\n  MEDIUM   supply_chain   references/upstream.md:160     \"pip install intpot    \n# + FastAPI support\"\n  MEDIUM   supply_chain   references/upstream.md:161     \"pip install intpot    \n# everything\"\n  MEDIUM   supply_chain   references/upstream.md:200     \"Run `uv run \n--all-extras --with httpx python examples/defini\"\n  MEDIUM   supply_chain   references/upstream.md:279     \"Run `uv run python \nexamples/helper_recovery.py` to exercise \"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:820b95d82e2098805e91fcb236d1e3bcab3d2671c6c44ff660cd0881bfb7e17e\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/intpot-cli/SKILL.md; scanned \n2026-10-26T22:23:48.604396+00:00; rules: hardcoded_ip_port, \nunpinned_pip_install, uv_run\nInstalled: intpot-cli\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e149ae4e8dafc14830/skills/intpot-python/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/intpot-python/SKILL.md\nQuarantined to .hub/quarantine/intpot-python\nRunning security scan...\nScan: intpot-python \n(https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e1\n49ae4e8dafc14830/skills/intpot-python/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   supply_chain   references/upstream.md:203     \"pip install intpot   #\ninstall both framework runtimes\"\n  MEDIUM   supply_chain   references/upstream.md:255     \"Run `uv run \n--all-extras --with httpx python examples/defini\"\n  MEDIUM   supply_chain   references/upstream.md:334     \"Run `uv run python \nexamples/helper_recovery.py` to exercise \"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:bac14081e0ec33fe30a192b82c51fd42d6a674c7f3d1021217c42c5370d9e888\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/intpot-python/SKILL.md; scanned \n2026-10-26T22:24:19.804032+00:00; rules: unpinned_pip_install, uv_run\nInstalled: intpot-python\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e149ae4e8dafc14830/skills/summonpot/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/summonpot/SKILL.md\nQuarantined to .hub/quarantine/summonpot\nRunning security scan...\nScan: summonpot \n(https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e1\n49ae4e8dafc14830/skills/summonpot/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   supply_chain   references/upstream.md:402     \"pip install \n\"summonpot\"\"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:50d7fae5ce75f509d77b0434105201da622cedb5549626fe5bd186f30a33cd4d\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/summonpot/SKILL.md; scanned \n2026-10-26T22:24:24.510701+00:00; rules: unpinned_pip_install\nInstalled: summonpot\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e149ae4e8dafc14830/skills/summonpot-pr-review/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/summonpot-pr-review/SKILL.md\nQuarantined to .hub/quarantine/summonpot-pr-review\nRunning security scan...\nScan: summonpot-pr-review \n(https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e1\n49ae4e8dafc14830/skills/summonpot-pr-review/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   execution      references/upstream.md:64      \"base = \nsubprocess.run([\"git\",\"show\",f\"origin/main:{f}\"],capt\"\n  MEDIUM   supply_chain   references/upstream.md:21      \"uv run towncrier \ncreate +.changed.md\"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:0422c8c96e3c7ffe830e4cd5dff612becdf57ab508cc4a208aec1254a8be6154\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/summonpot-pr-review/SKILL.md; scanned \n2026-10-26T22:24:29.795828+00:00; rules: python_subprocess, uv_run\nInstalled: summonpot-pr-review\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e149ae4e8dafc14830/skills/summonpot-code-review/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/summonpot-code-review/SKILL.md\nQuarantined to .hub/quarantine/summonpot-code-review\nRunning security scan...\nScan: summonpot-code-review \n(https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e1\n49ae4e8dafc14830/skills/summonpot-code-review/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   supply_chain   references/upstream.md:54      \"(cd \"$red_tree\" && uv \nsync --all-extras --locked && uv run p\"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:515d74f4d3e880d522be7964ba887237c8758b974112564f01709b792f5991f6\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/summonpot-code-review/SKILL.md; scanned \n2026-10-26T22:24:34.801288+00:00; rules: uv_run\nInstalled: summonpot-code-review\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e149ae4e8dafc14830/skills/dexpot/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/dexpot/SKILL.md\nQuarantined to .hub/quarantine/dexpot\nRunning security scan...\nScan: dexpot \n(https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e1\n49ae4e8dafc14830/skills/dexpot/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   supply_chain   SKILL.md:33                    \"python -m pip install \n\"dexpot @ git+https://github.com/\"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:3e768ff786488e36ee1b8ed3b395f1f17274017dc86410623290adec3950bac1\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/dexpot/SKILL.md; scanned \n2026-10-26T22:24:39.945468+00:00; rules: unpinned_pip_install\nInstalled: dexpot\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "install",
+      "https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e149ae4e8dafc14830/skills/refpot-database/SKILL.md",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "\nFetching: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/refpot-database/SKILL.md\nQuarantined to .hub/quarantine/refpot-database\nRunning security scan...\nScan: refpot-database \n(https://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e1\n49ae4e8dafc14830/skills/refpot-database/SKILL.md/community)  Verdict: SAFE\n  MEDIUM   supply_chain   SKILL.md:32                    \"python -m pip install \n\"refpot @ git+https://github.com/tugru\"\n  MEDIUM   supply_chain   references/upstream.md:22      \"RefPot is an \nexperimental alpha. Install the latest publishe\"\n  MEDIUM   supply_chain   references/upstream.md:28      \"uv pip install \n--python .venv/bin/python .\"\n  MEDIUM   supply_chain   references/upstream.md:25      \"git clone \nhttps://github.com/tugrulguner/refpot.git\"\n  LOW      persistence    references/upstream.md:89      \"Use the \n(https://github.com/tugrulguner/re\"\n\nDecision: ALLOWED \u2014 Allowed (community source, safe verdict)\nScan provenance: fresh; scanner skills-guard-v10; hash \nsha256:1b917319e44c9121bc55213fb30f5ff36059856d2aadf3f1abcfd82d40eb32b8\nSource: \nhttps://raw.githubusercontent.com/tugrulguner/skillpot/5b4f695dea0481877ab792e14\n9ae4e8dafc14830/skills/refpot-database/SKILL.md; scanned \n2026-10-26T22:24:44.771639+00:00; rules: agent_config_ref, git_clone, \nunpinned_pip_install\nInstalled: refpot-database\nFiles: SKILL.md, references/LICENSE.md, references/upstream.md\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "list",
+      "--source",
+      "hub"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "                         Installed Skills                          \n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Name                  \u2503 Category \u2503 Source \u2503 Trust     \u2503 Status  \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 dexpot                \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2502 intpot-cli            \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2502 intpot-python         \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2502 refpot-database       \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2502 summonpot             \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2502 summonpot-code-review \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2502 summonpot-pr-review   \u2502          \u2502 url    \u2502 community \u2502 enabled \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n7 hub-installed, 0 builtin, 0 local \u2014 7 enabled, 0 disabled\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "--help"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "usage: hermes skills uninstall [-h] [--yes] name\n\npositional arguments:\n  name        Skill name to remove\n\noptions:\n  -h, --help  show this help message and exit\n  --yes, -y   Skip confirmation prompt\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "intpot-cli",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Uninstalled 'intpot-cli' from intpot-cli\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "intpot-python",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Uninstalled 'intpot-python' from intpot-python\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "summonpot",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Uninstalled 'summonpot' from summonpot\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "summonpot-pr-review",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Uninstalled 'summonpot-pr-review' from summonpot-pr-review\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "summonpot-code-review",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Uninstalled 'summonpot-code-review' from summonpot-code-review\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "dexpot",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Uninstalled 'dexpot' from dexpot\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "uninstall",
+      "refpot-database",
+      "--yes"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Uninstalled 'refpot-database' from refpot-database\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "skills",
+      "list",
+      "--source",
+      "hub"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "              Installed Skills               \n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Name \u2503 Category \u2503 Source \u2503 Trust \u2503 Status \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n0 hub-installed, 0 builtin, 0 local \u2014 0 enabled, 0 disabled\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "hermes",
+      "--version"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "Hermes Agent v0.22.5 (2026.9.24) \u00b7 stable \u00b7 local bf0203a794a0\nInstall directory: <Hermes install directory>\nInstall method: git\nPython: 3.14.9\nOpenAI SDK: 2.24.0\nUp to date\n",
+    "stderr": ""
+  }
+]

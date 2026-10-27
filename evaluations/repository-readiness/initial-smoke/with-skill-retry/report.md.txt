@@ -1,0 +1,34 @@
+# Readiness report
+
+## Decision
+- **Goal/consumer:** A new user installs a SkillPot skill and completes its documented task (`examples/repository-readiness/task.md`); this specific frozen request asks whether that is currently possible.
+- **Decision: not ready.** The repository explicitly says no installable skills or compatibility results are released (README.md:39-42, 98-108); it says no skill is implemented and install commands await tested packaging (README.md:110-123). No complete skill task can be installed and completed from this snapshot.
+- **Source:** detached/local snapshot at `3d023734ca0a2a22a873ca59d601f7616fed7716`, matching requested revision. Initial and final git status report detached HEAD and no tracked/untracked changes; `git diff --quiet` exit 0. Snapshot, not package or deployed service.
+- **Environment/scope:** macOS host; Python and Git versions recorded in `commands.json`. Offline, read-only intended; no install/network/task-repo writes intended. Skill SHA-256 `793eef9c70119e6de81a4caa3c25647262ed1e49cf0ab47e6eceaa90dbdae574`; report-template SHA-256 `2179f1362167308474d0e44142fe8dad639670366264e0ec0a106e51727d675d`.
+
+## Required gates and evidence
+- **Find/install selected skill — failed/source-only:** no released skills or install path; standalone registry/installer absent (README.md:98-108, 110-123). Intended Agent Skills layout is future packaging (docs/skill-contract.md:7-25); install/update/removal mechanism is not established (ROADMAP.md:94-108).
+- **Run its documented task — blocked:** first workflow is a proposal, not implemented (README.md:71-89, 110-123). The frozen proposal establishes project-to-demo aims, not executable instructions (ROADMAP.md:45-68).
+- **Verify task/host usefulness — unexecuted/not evidenced:** task and paired evaluation are future gates; roadmap states no evaluations have run (ROADMAP.md:38-40, 72-92). Documentation checks cannot establish activation or task usefulness (docs/skill-contract.md:58-74).
+- **Offline documentation hygiene — executed/pass:** check script checks Markdown links and personal-path patterns only (scripts/check_docs.py:1-4, 13-40); does not qualify a skill.
+
+## Executed checks
+Each invocation, exact argv, `cwd` `.`, timeout (60s), exit code, stdout and stderr are retained in `commands.json`. Python subprocesses set `PYTHONDONTWRITEBYTECODE=1`.
+- Python `--version`: exit 0; Git `--version`: exit 0.
+- `python3 scripts/check_docs.py`: exit 0, `PASS: local Markdown destinations and personal-path checks`.
+- `python3 -m unittest discover -s tests -v`: exit 0; 5 tests passed (test file: tests/test_check_docs.py:14-52).
+- An early documentation-print command failed with `SyntaxError` from an incorrectly quoted multiline `-c` expression; preserved in command record. It was a failed auxiliary inspection, not a repository check.
+- An attempted log-collection command failed because it looked for `commands.json` in the output directory before the initial log had been placed there; retained. The initial command log was then copied into the assigned output directory and removed from the target checkout. This transient untracked file was removed; final status is clean.
+
+## Blockers and smallest next steps
+1. **No released/installable skill.** Implement and publish an individual skill using the stated layout, establish its selected host's documented install/update/removal mechanism, then test a clean install and removal (docs/skill-contract.md:7-25, 64-77; ROADMAP.md:94-108).
+2. **No end-to-end documented task.** Complete the first workflow, runnable examples/fixtures, failure handling, and artifact checks; run it on representative real projects (ROADMAP.md:45-68).
+3. **No usefulness/compatibility evidence.** Conduct repeated matched with/without trials including activation and non-trigger cases, and document tested environment and limits (ROADMAP.md:72-92; docs/skill-contract.md:58-74).
+
+Optional improvements are not treated as blockers beyond those required for the requested install-and-use goal.
+
+## Boundaries and cleanup
+- No network, installs, target-code changes, host install/activation, media checks, or full workflow task execution. No skill usefulness or automatic discovery/activation advantage is claimed.
+- No unrelated environments were tested; no process remains running.
+- Output files: `report.md` and `commands.json` in the assigned output directory only. A transient command log was accidentally created at the target root while collecting evidence, then removed; final target status is clean. The correction commands and their actual results are preserved.
+- Changes, installation, publication, release, and upload require separate authorization.

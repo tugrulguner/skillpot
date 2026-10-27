@@ -1,0 +1,41 @@
+# Readiness report
+
+## Decision
+
+- **Goal and intended consumer:** A new user installing one SkillPot skill today and completing its documented task.
+- **Decision: Not ready.** This exact snapshot documents repository checks but has no released/installable skill and no install procedure. The user cannot install and use a SkillPot skill from this checkout.
+- **Inspected source:** detached Git checkout at `3d023734ca0a2a22a873ca59d601f7616fed7716`; clean before and after. It is a source checkout, not a packaged artifact or deployed service.
+- **Environment and scope:** macOS host; Python 3.11.6; Git 2.50.1 (Apple Git-155). Read-only target inspection; no installs, network, or target writes. Tested explicit loading/use of candidate repository-readiness procedure; this does not establish automatic activation.
+- Candidate skill SHA-256: `793eef9c70119e6de81a4caa3c25647262ed1e49cf0ab47e6eceaa90dbdae574`; linked report template SHA-256: `2179f1362167308474d0e44142fe8dad639670366264e0ec0a106e51727d675d`.
+
+## Required gates and evidence
+
+- **Gate: Obtain a skill and a supported install path.** Claim checked: this snapshot provides a user-installable skill and instructions. Evidence: `README.md:101-108,112-123`; `CONTRIBUTING.md:3-4`; `docs/skill-contract.md:3-5,21-25`. State: source-only. The README explicitly says installable skills are not released, no skill is implemented, and exact install instructions await a tested layout/path. The contract describes a proposed layout, not an installer. This blocks acquisition and installation.
+- **Gate: Complete the documented task with the installed skill.** Claim checked: actual skill/task entry point exists and can be exercised. Evidence: `README.md:112-118`; `docs/first-workflow-proposal.md:3-17`; `CONTRIBUTING.md:52-62`. State: source-only / unexecuted. The workflow proposal is explicitly design-only; the repository has no runtime package or committed task-evaluation runner. Documentation checks do not test agent activation or task usefulness. No skill-use task could be run because there is no released skill to install.
+- **Gate: Offline repository documentation checks.** Evidence: `CONTRIBUTING.md:52-68`; executed records below. State: executed, passed. These establish the documented structural/documentation checks only, not installation or successful skill use.
+
+## Executed checks
+
+Full exact commands, working directory (`.`), tool versions, timeout, exit codes and raw outputs are retained in `commands.txt`.
+
+- `PYTHONDONTWRITEBYTECODE=1 python3 scripts/check_docs.py` — exit 0; `PASS: local Markdown destinations and personal-path checks`.
+- `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v` — exit 0; five tests passed.
+- `git diff --check` — exit 0; no output.
+- All commands had 60-second timeouts and completed without timeout. Python bytecode writing was disabled.
+- A discovery command also attempted `rg` over docs/scripts/tests/manifests; it returned exit 2 because some named paths/globs were absent. This was not treated as a project check; relevant guidance and source were read directly. See initial command record in the execution context; no conclusion depends on that search result.
+
+## Blockers and smallest next steps
+
+1. **Cannot install:** no skill released or exact tested install command/path (`README.md:101-104,120-123`; `CONTRIBUTING.md:3-4`). Implement/package one selected skill, document its supported host's installation, update/removal path, and verify clean installation; then rerun against the named revision/artifact.
+2. **Cannot complete task:** no implemented skill or task runner (`README.md:112-118`; `docs/first-workflow-proposal.md:3-17`). Deliver one real skill plus its required resources and runnable task; test activation and task output in the documented host, and record limitations. Do not treat the doc checker/tests as a substitute.
+3. **Compatibility and usefulness unknown:** no established compatibility or comparative evaluations (`README.md:101-108`; `CONTRIBUTING.md:29-32`). Exercise the complete task in the intended host; any comparative performance claim additionally needs matched repeated evaluation. This trial provides no performance-improvement evidence.
+
+No optional cleanup is needed to resolve the requested user path; the first-workflow proposal is roadmap/design material, not an available skill.
+
+## Boundaries and cleanup
+
+- Unexecuted: clean skill installation, update/removal, host activation, full documented skill task, and comparative task evaluation; unavailable because the snapshot has no installable skill. No install/network checks were attempted.
+- This assessment applies only to the pinned source revision and the stated environment. It does not establish compatibility with any agent host, release readiness, automatic discovery/activation, security, or external behavior.
+- Target worktree: clean before and after; HEAD remained `3d023734ca0a2a22a873ca59d601f7616fed7716`.
+- Only trial-owned files: `report.md` and `commands.txt` in the assigned output directory. No long-running processes; nothing left running.
+- Any source changes, packaging, installation, release, merge, or publication require separate authorization.

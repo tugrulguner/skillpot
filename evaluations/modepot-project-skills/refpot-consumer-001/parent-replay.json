@@ -1,0 +1,17 @@
+{
+  "description": "Separate parent replay of the public portable fixture, not a replacement for worker failures",
+  "argv": [
+    "<isolated Refpot Python>",
+    "examples/modepot-project-skills/refpot_preview.py"
+  ],
+  "cwd": "SkillPot root",
+  "exit_code": 0,
+  "stdout": "Row(key=1, value=43, text='answer')\n",
+  "stderr": "",
+  "source_revision": "3294ce39f0e5630c660fad2e5a1e3977bf52a17f",
+  "fixture_sha256": "dff16091317a6350ab2724c4fc1080945d8765d5f1f03f1a1891a83648c18a62",
+  "env": {
+    "TMPDIR": "<owned scratch directory>",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

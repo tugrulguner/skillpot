@@ -1,0 +1,45 @@
+Repository revision: 3d023734ca0a2a22a873ca59d601f7616fed7716
+All commands ran in working directory '.' relative to the target repository. Python commands had PYTHONDONTWRITEBYTECODE=1. No command timed out; each completed within 60 seconds.
+
+$ git status --short --branch
+## HEAD (no branch)
+exit code: 0
+
+$ git rev-parse HEAD
+3d023734ca0a0a2a22a873ca59d601f7616fed7716
+exit code: 0
+
+$ git diff --check
+(no output)
+exit code: 0
+
+$ PYTHONDONTWRITEBYTECODE=1 python3 scripts/check_docs.py
+PASS: local Markdown destinations and personal-path checks
+exit code: 0
+
+$ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+test_escape (test_check_docs.CheckDocsTests.test_escape) ... ok
+test_missing_destination (test_check_docs.CheckDocsTests.test_missing_destination) ... ok
+test_personal_home_without_trailing_slash (test_check_docs.CheckDocsTests.test_personal_home_without_trailing_slash) ... ok
+test_personal_path (test_check_docs.CheckDocsTests.test_personal_path) ... ok
+test_valid_destinations_and_external_links (test_check_docs.CheckDocsTests.test_valid_destinations_and_external_links) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.008s
+
+OK
+exit code: 0
+
+$ git status --porcelain=v1
+(no output; clean)
+exit code: 0
+
+$ git status --short --branch
+## HEAD (no branch)
+exit code: 0
+
+$ git diff --check
+(no output)
+exit code: 0
+
+Environment versions: Python 3.11.6; git version 2.50.1 (Apple Git-155). Target was detached at the requested revision before and after checks. No target writes, network access, or installations.

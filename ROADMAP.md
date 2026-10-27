@@ -10,11 +10,11 @@ limited to the milestone explicitly taken on for a change.
 ## Milestone 0 — Establish the project
 
 - [x] Define the audience, intended outputs, and project boundaries.
-- [x] Select a working-project-to-demo workflow as the first implementation target.
+- [x] Select repository readiness as the current experimental implementation target.
 - [x] Publish the README, roadmap, and contribution guidance.
 - [x] Create editable ModePot-family artwork and its README renderings.
 - [x] Publish a scoped implementation proposal with representative task inputs:
-      [working project → accurate demo](docs/first-workflow-proposal.md).
+      [repository → readiness report](docs/repository-readiness-proposal.md).
 
 **Exit gate:** The repository explains what SkillPot is, what exists, what is planned,
 and how a contributor can help without implying that skills are already released.
@@ -27,7 +27,7 @@ collection wholesale or assume that old instructions still match a current proje
 - [x] Inventory candidate skills, canonical sources, owners, and licenses in a
       [bounded seven-repository audit](docs/source-audit.md).
 - [x] Classify each inventoried candidate; retain the product-specific sources upstream.
-      Local demo-tooling rights and extraction decisions remain open.
+      The current skill is original; no private procedure or tooling is extracted.
 - [ ] Check commands, APIs, prerequisites, and failure paths against current behavior.
 - [ ] Remove personal paths, secrets, private context, and machine-specific assumptions.
 - [ ] Establish a single canonical source for each maintained skill; avoid drifting copies.
@@ -37,37 +37,35 @@ collection wholesale or assume that old instructions still match a current proje
       known limits, and maintenance ownership in that contract.
 - [x] Define a [task-evaluation record](templates/task-evaluation.md): input, acceptance
       checks, baseline, model/harness versions, tool versions, trials, time, costs,
-      results, and failure notes. No evaluations have been run.
+      results, and failure notes. Initial execution smokes are not qualification studies.
 
 **Exit gate:** Every retained candidate has traceable provenance and a concrete task.
 One public skill can be authored without depending on undisclosed local knowledge.
 
 ## Milestone 2 — Build the first complete workflow
 
-### Working project → accurate demo
+### Repository → readiness report
 
-The skill should take a functioning project and produce a focused, inspectable demo
-package. It should orchestrate existing tools rather than introduce a video engine.
+The experimental skill guides an agent through a concrete delivery question: pin the
+source, trace the consumer path, inspect and run authorized checks, and produce a
+cited report with actual command results, blockers and minimal next steps.
 
-- [ ] Agree the initial project types, agent host, capture method, and rendering tools.
-- [ ] Specify supported output formats and sensible duration/aspect-ratio constraints.
-- [ ] Inspect real product behavior and confirm a reproducible user journey.
-- [ ] Define the audience, allowed claims, data boundaries, and success criteria.
-- [ ] Produce a capture plan and capture real behavior with approved inputs.
-- [ ] Distinguish actual recordings from diagrams, illustrative animation, and mock data.
-- [ ] Render the demo and verify duration, dimensions, playback, text, and audio where used.
-- [ ] Deliver captions, reproducible capture/render steps, and a claim-to-evidence note.
-- [ ] Handle failed setup, unavailable tools, broken capture, and interrupted rendering.
-- [ ] Require separate human approval for public posting, uploads, or spending beyond
-      the agreed workflow budget.
-- [ ] Include runnable examples and fixtures that exercise the documented path.
+- [x] Author the original portable skill and reusable report template.
+- [x] Freeze a real public-repository task and acceptance rubric before its trial.
+- [x] Observe an agent explicitly load the repaired skill and complete the frozen task;
+      retain [the bounded result and earlier failures](evaluations/repository-readiness/repaired-smoke/README.md).
+- [x] Verify that attempt's source citations, actual command outputs and target preservation.
+- [ ] Exercise missing prerequisites, unavailable checks and interrupted execution.
+- [ ] Test another representative repository and a held-out goal.
+- [ ] Verify host installation, discovery, selective removal and non-trigger behavior.
+- [ ] Establish usefulness through repeated matched trials and an applicable incumbent.
 
-**Exit gate:** A user can follow the documented setup and obtain a playable demo of
-actual product behavior, with no fabricated capabilities or performance claims.
-Run the complete path on representative projects, not only a prepared golden example.
+**Exit gate:** An agent can use the skill to answer a real delivery question with
+reproducible evidence. Packaging checks or a single successful trial do not establish
+general usefulness, host compatibility or readiness for a qualified release.
 
-**Not in this milestone:** autonomous social posting, a hosted video service, a new
-rendering engine, or general support for every framework and agent.
+**Not in this milestone:** video work, a new execution framework, automatic fixes,
+publication, releases or merges. The earlier demo proposal is retained as history.
 
 ## Milestone 3 — Establish usefulness and compatibility
 
@@ -76,8 +74,7 @@ A successful example is not enough to claim that the skill improves agent perfor
 - [ ] Define representative tasks before tuning the skill against them; reserve held-out cases.
 - [ ] Run repeated paired trials with and without the skill using the same model,
       harness, tools, inputs, permissions, and budget.
-- [ ] Compare the strongest applicable existing workflow, including HyperFrames or
-      Remotion-based approaches when relevant to the agreed toolchain.
+- [ ] Compare the strongest applicable existing repository-audit or delivery workflow.
 - [ ] Check skill activation as well as output quality; include tasks where it should not trigger.
 - [ ] Use deterministic artifact checks where possible and an explicit review rubric
       for qualities requiring human judgment.
