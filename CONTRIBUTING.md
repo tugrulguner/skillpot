@@ -1,7 +1,7 @@
 # Contributing to SkillPot
 
 Start with the [README](README.md) and [roadmap](ROADMAP.md). SkillPot is in development;
-there is no qualified release or general compatibility matrix. The public project
+there is no versioned collection release yet. The public project
 collection has a [harness-neutral quickstart](docs/quickstart.md) and
 [verified selective Hermes installation commands](docs/project-skill-installation.md)
 and separately recorded bounded task evidence. Do not mistake those results for
@@ -18,7 +18,7 @@ Before substantial implementation, describe:
 - The expected artifact and explicit acceptance checks.
 - The strongest applicable existing skill or workflow.
 - Prerequisites, external services, costs, permissions, and failure modes.
-- How you will compare results and maintain the skill as its tools change.
+- How you will verify the claimed outcome and maintain the skill as its tools change.
 
 Do not attach credentials, private code, personal records, or proprietary instructions.
 Focused documentation and artwork fixes may be proposed directly as pull requests.
@@ -30,10 +30,14 @@ Keep the entry point concise and load references when needed. Include practical
 resources where they help, explicit review boundaries, realistic examples, and recovery
 steps. Record unsupported situations rather than silently improvising success.
 
-Check both activation and results. Evaluate with and without the skill under matched
-conditions, include repeated runs and held-out inputs, and compare a relevant incumbent.
-Separate deterministic checks from human or model judgment. A structural lint pass
-is not evidence of improved task performance. Never invent transcripts or measurements.
+For host integration, follow official online specifications and validate portable
+metadata, resources and setup instructions offline. Do not launch harness clients,
+probe authentication or require model trials merely to support their documented
+skill format. Keep historical task results separate from setup instructions.
+
+Claims of improved task performance need separate, explicitly scoped comparisons
+with matched conditions, repeated/held-out inputs and a relevant incumbent. A source
+lint pass proves no such improvement. Never invent transcripts or measurements.
 
 ## Provenance and safety
 
@@ -71,8 +75,9 @@ pins, portable metadata, snapshot hashes and preserved license notices. PyYAML i
 development-only dependency pinned in `requirements-dev.txt`; `uv run` isolates it
 outside the checkout. Alternatively install that file in an approved external virtual
 environment and use its Python for these commands. The catalogue check does not prove
-native skill installation, runtime correctness or task usefulness. Retest those
-separately; do not silently refresh an upstream revision or modify installed user skills.
+native skill installation, runtime correctness or task usefulness. Evaluate those
+only when explicitly in scope; do not silently refresh an upstream revision or modify
+installed user skills. Follow the [release and upstream-refresh policy](docs/release-policy.md).
 
 1. Check local links, heading anchors, and current-versus-planned wording.
 2. Preview the README and confirm artwork loads at the intended display size.

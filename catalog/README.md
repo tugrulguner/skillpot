@@ -47,7 +47,9 @@ individual source/rights/privacy review before any later extraction.
 
 ## Selective installation
 
-Use the host's established installer, not a new SkillPot package manager. For Hermes,
+Start with the [harness-neutral quickstart](../docs/quickstart.md). Use documented
+project skill directories or the host's established installer, not a new SkillPot
+package manager. For Hermes,
 see [installation and verification](../docs/project-skill-installation.md). The seven
 packages expose their necessary reference and license files through explicit relative
 links under `references/`, so a direct SKILL.md URL can fetch the complete runtime
@@ -75,5 +77,7 @@ Review `modepot-sources.json` before updating a package. Fetch both the source a
 license at the **same immutable upstream revision**. Compare API/command changes and
 rights before replacing the pinned reference. Update the entry point only where the
 new behavior requires it, record adaptations, update hashes and rerun catalogue,
-Markdown, source and native installation checks. Never silently rewrite a user's
+Markdown and source checks. Native client trials are not required for source refreshes
+or documented harness support; scope them separately if explicitly requested.
+Follow the [release policy](../docs/release-policy.md). Never silently rewrite a user's
 installed copy or imply that a pinned snapshot follows current main automatically.
