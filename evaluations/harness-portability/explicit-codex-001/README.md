@@ -34,9 +34,12 @@ command result was replaced by invented output.
 [Native observations](native-observations.json) retain selected completed host command
 events, including actual exit codes and explicitly labeled output tails. Full raw
 traces are private and hashed; reasoning events and unrelated startup context are
-not published. The public verifier copies are byte-identical to the agent-created
-files, and a [separate parent replay](parent-replay.json) passed the same 52 assertions.
-That replay confirms the file can run; it does not replace native host execution.
+not published. The public verifier is byte-identical to the agent-created script.
+A trailing empty line was removed from the public invoice
+input after review; its original hash remains preserved. The original
+[parent replay](parent-replay.json) and a [final adapted-input replay](parent-replay-final.json)
+each passed the same 52 assertions. Those replays confirm the files can run; they do
+not replace native host execution.
 
 ## Installation and host distinctions
 

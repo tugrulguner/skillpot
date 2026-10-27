@@ -9,4 +9,3 @@ def quote(quantity: int, unit_price_cents: int, discount_cents: int = 0) -> int:
     if discount_cents > subtotal:
         raise ValueError('discount exceeds subtotal')
     return subtotal - discount_cents
-

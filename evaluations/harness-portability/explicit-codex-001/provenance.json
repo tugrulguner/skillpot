@@ -11,12 +11,15 @@
     "parent-replay.json": "f6d0b7ad7a5354627455ac5cb3f820515cb9820f65cd8604b1197a1e3959225e",
     "launch.json": "7f17ca255cd1f81ed21de711ca40fabf512e6fa876871055f35d3bebef8098a5",
     "launch-retry.json": "b6e798459664d345863e48b078868f4c7f17b94bc398d6605ae649c7c64a4238",
-    "codex-events.jsonl": "7a0b6a7522242db4466adc558e460e00acb857e866963610ea71aa6acaeda05c"
+    "codex-events.jsonl": "7a0b6a7522242db4466adc558e460e00acb857e866963610ea71aa6acaeda05c",
+    "original-invoice.py": "3a081606e46ac9d2b14e9d8e87bb2ea244cf1fdd02a349e0db9acd023b565d4f",
+    "parent-replay-final.json": "9ece4379ebf63d86ef905545db2e194bae33dfbb6bf2b2991fb8e94c35d46166"
   },
   "public_derivation": "Selected completed command events only, with explicitly truncated output tails. Claude startup metadata, reasoning events and private host context omitted. Workspace, scratch and environment prefixes replaced by labeled placeholders.",
   "portable_example_sha256": {
     "examples/harness-portability/codex-intpot/verify_invoice.py": "dca85d8b63fa6954faf69005ad31342e7046dbd3a2113fae5e8eaafe474c9dbc",
-    "examples/harness-portability/codex-intpot/invoice.py": "3a081606e46ac9d2b14e9d8e87bb2ea244cf1fdd02a349e0db9acd023b565d4f"
+    "examples/harness-portability/codex-intpot/invoice.py": "a199056ebfbab212a6667e28fad53e8d118a5ef66227453d95c79d3b51b70947"
   },
-  "scope": "Preprovided source-matched consumer environment; no dependency-install, clean-room, automatic-discovery or comparative-usefulness claim"
+  "scope": "Preprovided source-matched consumer environment; no dependency-install, clean-room, automatic-discovery or comparative-usefulness claim",
+  "input_adaptation": "Removed only final empty line from invoice.py after review; original input preserved privately and hashed. verify_invoice.py remains byte-identical. Separate final parent replay passed 52 assertions; original native journal unchanged."
 }

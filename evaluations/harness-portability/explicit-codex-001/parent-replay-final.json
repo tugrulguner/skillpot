@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "<pinned Intpot environment>/bin/python",
+    "-B",
+    "<parent replay workspace>/verify_invoice.py"
+  ],
+  "cwd": "<parent replay workspace>",
+  "exit_code": 0,
+  "stdout": "Artifacts and preserved results: scratch/invoice-verification-xzkxam1p\n",
+  "stderr": "",
+  "assertions": 52,
+  "failed_assertions": 0,
+  "input_change": "Only final empty line removed from invoice.py; verifier byte-identical to native agent original"
+}
