@@ -155,10 +155,12 @@ the [authoring contract](docs/skill-contract.md), and [roadmap](ROADMAP.md) for 
 qualification gates. The earlier [demo proposal](docs/first-workflow-proposal.md) is
 historical, not the current implementation target.
 
-The intended packaging is the open [Agent Skills format](https://agentskills.io/): a
-`SKILL.md` entry point with optional scripts, references, and assets. Installation will
-use established agent/distribution mechanisms where practical. Exact install commands
-will be added only after the published layout and clean-install path have been tested.
+Packaging follows the open [Agent Skills format](https://agentskills.io/): a `SKILL.md`
+entry point with optional scripts, references, and assets. The public project collection
+on `main` has [verified selective Hermes installation commands](docs/project-skill-installation.md).
+This installation evidence does not establish model activation, another host, or every
+product runtime. The original repository-readiness workflow remains an explicit-load
+experiment with its own qualification limits.
 
 SkillPot is not an agent runtime, an MCP replacement, a new skill standard, or a skill
 marketplace. Skills provide procedures; the host agent supplies execution and enforces
