@@ -2,7 +2,8 @@
 
 Start with the [README](README.md) and [roadmap](ROADMAP.md). SkillPot is in development;
 there is no qualified release or general compatibility matrix. The public project
-collection on `main` has [verified selective Hermes installation commands](docs/project-skill-installation.md)
+collection has a [harness-neutral quickstart](docs/quickstart.md) and
+[verified selective Hermes installation commands](docs/project-skill-installation.md)
 and separately recorded bounded task evidence. Do not mistake those results for
 automatic model activation or usefulness gains.
 

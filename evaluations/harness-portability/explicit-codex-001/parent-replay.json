@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<pinned Intpot environment>/bin/python",
+    "-B",
+    "<approved scratch directory>/skillpot-codex-fixture-replay-j6_crdaf/verify_invoice.py"
+  ],
+  "cwd": "<approved scratch directory>/skillpot-codex-fixture-replay-j6_crdaf",
+  "exit_code": 0,
+  "stdout": "Artifacts and preserved results: scratch/invoice-verification-mnxxi669\n",
+  "stderr": "",
+  "assertions": 52,
+  "failed_assertions": 0
+}

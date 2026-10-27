@@ -1,0 +1,66 @@
+{
+  "source_revision": "8b6f1b32c9c3cda5438402a992659b016fe97bb3",
+  "host": "Codex CLI 0.157.0",
+  "process_exit_code": 0,
+  "model_selection": "CLI default after an unsupported explicit-model attempt; default model ID not reported by the captured event stream",
+  "activation": "Explicit $intpot-cli / $intpot-python task, project .agents/skills files read; not automatic-selection proof",
+  "assertions": 52,
+  "failed_assertions": 0,
+  "nonzero_child_commands_retained": 7,
+  "completed_native_commands": [
+    {
+      "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'invoice.py' -g '*intpot*' -g 'SKILL.md' -g 'upstream.md' -g 'LICENSE.md' .agents .\"",
+      "exit_code": 0,
+      "output_tail": "<native test workspace>/codex-project\n./invoice.py\n.agents/skills/intpot-cli/SKILL.md\n.agents/skills/intpot-cli/references/upstream.md\n.agents/skills/intpot-cli/references/LICENSE.md\n.agents/skills/intpot-python/SKILL.md\n.agents/skills/intpot-python/references/upstream.md\n.agents/skills/intpot-python/references/LICENSE.md\n",
+      "output_truncated": false
+    },
+    {
+      "command": "/bin/zsh -lc 'cat .agents/skills/intpot-cli/SKILL.md .agents/skills/intpot-cli/references/upstream.md .agents/skills/intpot-cli/references/LICENSE.md .agents/skills/intpot-python/SKILL.md .agents/skills/intpot-python/references/upstream.md .agents/skills/intpot-python/references/LICENSE.md'",
+      "exit_code": 0,
+      "output_tail": "using a dynamically initialized module value rather than a recoverable\nliteral. These capabilities are included in v0.11.0; the documented unsupported cases remain explicit.\n\n## Callback and dependency refusal diagnostics (v0.13.0)\n\nRequires v0.13.0 or newer; until publication, use a source checkout containing this\nchange. `app.assess()` and `intpot inspect --json`\nexpose `unsupported_cli_parameter_callback` and `unsupported_fastapi_dependency`\ndiagnostics. Callback entries identify `tool`, `parameter`, and `target`; dependency\nentries identify `tool`, `target`, normalized `dependencies`, and `route` context\n(`path`, `operation_id`, `name`). Each refusal includes `source_location: null`,\n`consequence`, `suggested_action`, and `reference_analysis: \"skipped_due_to_refusal\"`.\nThis status means target binding analysis was skipped, not that bindings are known good.\nConsequences describe what would be lost without equivalent implementation; conversion\nis refused. Scaffold permission cannot bypass these guards. FastAPI dependency\ndiagnostics apply only to API source schemas. See `examples/conversion_refusals.py`.\nMIT License\n\nCopyright (c) 2026 intpot contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "output_truncated": true
+    },
+    {
+      "command": "/bin/zsh -lc 'mkdir -p scratch\nPYTHONDONTWRITEBYTECODE=1 TMPDIR=\"$PWD/scratch\" <pinned Intpot environment>/bin/intpot --version\nPYTHONDONTWRITEBYTECODE=1 TMPDIR=\"$PWD/scratch\" <pinned Intpot environment>/bin/intpot eject --help'",
+      "exit_code": 0,
+      "output_tail": "intpot 0.13.0\n                                                                                \n Usage: intpot eject [OPTIONS] {source}                                         \n                                                                                \n Export an intpot App as standalone framework code.                             \n                                                                                \n\u256d\u2500 Arguments \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 *    source      <path>  Path to a Python file containing an intpot App      \u2502\n\u2502                          [required]                                          \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Options \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 *  --to      -t      <str>   Target framework: cli, mcp, api [required]      \u2502\n\u2502    --output  -o      <path>  Output file path (prints to stdout if omitted)  \u2502\n\u2502    --help                    Show this message and exit.                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n",
+      "output_truncated": false
+    },
+    {
+      "command": "/bin/zsh -lc 'head -45 .agents/skills/intpot-python/references/upstream.md'",
+      "exit_code": 0,
+      "output_tail": "# intpot Python API\n\n**intpot** exposes two APIs: `intpot.App` for defining tools once and serving them as a\nCLI, API, or MCP server, and `intpot.load()` for converting existing framework code\nprogrammatically.\n\n## When to Use\n\n- Define tools once and serve or export them in any framework \u2014 `App`\n- Convert apps inside scripts, build tools, or CI \u2014 `load()`\n- Inspect an app as stable framework-neutral data \u2014 `.schema`\n- Generate from a live app instance rather than a file \u2014 `load(instance)`\n\n## `intpot.App` \u2014 write once, serve everywhere\n\n```python\nfrom intpot import App\n\napp = App(\"my-app\")\n\n@app.tool()\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two numbers.\"\"\"\n    return a + b\n```\n\nThe tool's name and description default to the function name and its docstring. Override\neither \u2014 useful when the docstring explains the code to a maintainer but an agent needs\ndifferent wording:\n\n```python\n@app.tool(name=\"lookup\", description=\"Look up a customer by account number.\")\ndef fetch_customer_record(account_id: str) -> dict:\n    \"\"\"Hit the accounts table. Caller must have validated account_id.\"\"\"\n    ...\n```\n\n`async def` tools work in every mode. Variadic tool signatures using `*args` or `**kwargs`\nare rejected because they cannot expose one consistent CLI, API, and MCP interface; use\nexplicit named parameters instead.\n\n### Serving and exporting\n\n```python\napp.serve(mode=\"cli\")                     # run as a Typer CLI\n",
+      "output_truncated": false
+    },
+    {
+      "command": "/bin/zsh -lc 'PYTHONDONTWRITEBYTECODE=1 TMPDIR=\"$PWD/scratch\" <pinned Intpot environment>/bin/python -B verify_invoice.py'",
+      "exit_code": 0,
+      "output_tail": "Artifacts and preserved results: scratch/invoice-verification-vqk6n7ne\n",
+      "output_truncated": false
+    },
+    {
+      "command": "/bin/zsh -lc \"rg --files scratch -g '*.jsonl' -g 'invoice_*.py'\"",
+      "exit_code": 0,
+      "output_tail": "scratch/invoice-verification-vqk6n7ne/invoice_cli.py\nscratch/invoice-verification-vqk6n7ne/invoice_native.py\nscratch/invoice-verification-vqk6n7ne/verification.jsonl\n",
+      "output_truncated": false
+    },
+    {
+      "command": "/bin/zsh -lc 'cat scratch/invoice-verification-vqk6n7ne/invoice_cli.py\nPYTHONDONTWRITEBYTECODE=1 TMPDIR=\"$PWD/scratch\" <pinned Intpot environment>/bin/python -B - <<'\"'PY'\nimport json\nfrom pathlib import Path\nentries=[json.loads(x) for x in Path('scratch/invoice-verification-vqk6n7ne/verification.jsonl').read_text().splitlines()]\nprint('Python:', entries[0]['python'])\nprint('Assertions:', sum('assertion' in x for x in entries))\nprint('Failed assertions:',sum(x.get('passed') is False for x in entries))\nfor e in entries:\n    if 'argv' in e and ('pip' in e['argv'] or '-c' in e['argv']): print(e)\nprint('Nonzero commands:', [(e['command'],e['returncode']) for e in entries if e.get('returncode',0)])\nprint(entries[-1])\nPY\"",
+      "exit_code": 0,
+      "output_tail": "); print(intpot.__file__)\\'', 'cwd': '<native test workspace>/codex-project', 'returncode': 0, 'stdout': '0.13.0\\n<pinned Intpot environment>/lib/python3.12/site-packages/intpot/__init__.py\\n', 'stderr': ''}\nNonzero commands: [('<pinned Intpot environment>/bin/python -m pip show intpot', 1), ('<pinned Intpot environment>/bin/python <native test workspace>/codex-project/scratch/invoice-verification-vqk6n7ne/invoice_cli.py 0 1250', 1), ('<pinned Intpot environment>/bin/python <native test workspace>/codex-project/scratch/invoice-verification-vqk6n7ne/invoice_cli.py -- -1 1250', 1), ('<pinned Intpot environment>/bin/python <native test workspace>/codex-project/scratch/invoice-verification-vqk6n7ne/invoice_cli.py 1 100 --discount-cents 101', 1), ('<pinned Intpot environment>/bin/python <native test workspace>/codex-project/scratch/invoice-verification-vqk6n7ne/invoice_native.py 0 1250', 1), ('<pinned Intpot environment>/bin/python <native test workspace>/codex-project/scratch/invoice-verification-vqk6n7ne/invoice_native.py -- -1 1250', 1), ('<pinned Intpot environment>/bin/python <native test workspace>/codex-project/scratch/invoice-verification-vqk6n7ne/invoice_native.py 1 100 --discount-cents 101', 1)]\n{'status': 'PASS', 'scope': 'Two native CLI exports; compile, import, four valid and three invalid cases each. API/MCP and conversion not exercised.'}\n",
+      "output_truncated": true
+    }
+  ],
+  "terminal_events": [
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 204439,
+        "cached_input_tokens": 183936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3240,
+        "reasoning_output_tokens": 117
+      }
+    }
+  ]
+}

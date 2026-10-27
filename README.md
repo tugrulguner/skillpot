@@ -24,6 +24,7 @@
 
 <p align="center">
   <a href="#why-skillpot">Why SkillPot</a> ·
+  <a href="docs/quickstart.md">Quickstart</a> ·
   <a href="#modepot-project-skills">ModePot skills</a> ·
   <a href="#the-first-workflow">First workflow</a> ·
   <a href="#current-status">Status</a> ·
@@ -128,6 +129,7 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Real task example | [Frozen public repository task](examples/repository-readiness/task.md) |
 | Qualified skill releases | Not released |
 | Agent/tool compatibility matrix | Not established |
+| Cross-harness execution | [Codex CLI explicit skill use and CLI task](evaluations/harness-portability/explicit-codex-001/README.md); other host observations scoped separately |
 | Initial agent smoke and baseline | [Observed attempts and evidence defects](evaluations/repository-readiness/initial-smoke/README.md); no benefit established |
 | Repaired-version task execution | [Accepted bounded audit smoke](evaluations/repository-readiness/repaired-smoke/README.md); no broader qualification |
 | Repeated/held-out usefulness evaluation | Not established |
@@ -138,6 +140,12 @@ or behavior across agents. Compatibility will be stated per tested environment r
 than inferred from a logo or a folder name.
 
 ## Using SkillPot
+
+Start with the [harness-neutral quickstart](docs/quickstart.md): choose a task, inspect
+and pin the source, copy the complete selected skill into your agent's project skill
+directory, then invoke it and check the real result. Claude Code, Cursor, Codex and
+Hermes are example hosts, not SkillPot dependencies. Host-specific discovery and
+permissions differ; portable format does not establish universal tested support.
 
 For an explicit-load experiment, ask your agent to read
 `skills/repository-readiness/SKILL.md`, then give it the repository, exact delivery
@@ -157,7 +165,7 @@ historical, not the current implementation target.
 
 Packaging follows the open [Agent Skills format](https://agentskills.io/): a `SKILL.md`
 entry point with optional scripts, references, and assets. The public project collection
-on `main` has [verified selective Hermes installation commands](docs/project-skill-installation.md).
+on `main` has [host-specific placement and Hermes installation guidance](docs/project-skill-installation.md).
 This installation evidence does not establish model activation, another host, or every
 product runtime. The original repository-readiness workflow remains an explicit-load
 experiment with its own qualification limits.
