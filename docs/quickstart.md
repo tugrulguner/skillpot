@@ -75,6 +75,43 @@ Repeat deliberately for `intpot-cli` if the task needs both skills. No global us
 skill store is changed by this project-local example. User/global paths exist in some
 hosts, but are not necessary for this quickstart.
 
+### Claude Code
+
+The copied package is already a Claude Code skill; no adapter, plugin, MCP server or
+Claude-specific rewrite is needed. The project layout is:
+
+```text
+.claude/skills/intpot-python/
+├── SKILL.md
+├── references/
+│   ├── upstream.md
+│   └── LICENSE.md
+└── ...other files from the selected package
+```
+
+Open Claude Code in that project. Type `/intpot-python` to invoke the skill directly,
+or describe a matching task and let Claude select it using the skill's `description`.
+For example:
+
+```text
+/intpot-python Export this trusted invoice App as a standalone CLI using the pinned guide.
+```
+
+For availability across projects, Claude Code also documents
+`~/.claude/skills/<skill-name>/`; choose that scope deliberately rather than installing
+there by default. The same `SKILL.md` and supporting files work in either location.
+Keep the portable `name` and `description` frontmatter; Claude-only extensions such as
+`context: fork` and dynamic command injection are not required by SkillPot.
+
+### Cursor and Codex
+
+Use the same complete package under `.cursor/skills/<skill-name>/` for Cursor or
+`.agents/skills/<skill-name>/` for Codex. Cursor also documents `.agents/skills/` and
+compatibility discovery from `.claude/skills/`, so a project shared with Claude Code
+need not duplicate the same package merely for Cursor. In Cursor, type `/` and select
+the skill; in Codex, mention `$intpot-python` or select it through `/skills`.
+Both hosts also document relevance-based selection from the skill description.
+
 Cursor's **From GitHub Repository** plugin import is a different distribution path
 that expects a plugin marketplace manifest; do not assume it imports an arbitrary
 plain skill repository. Manual project-directory placement above does not require
@@ -100,39 +137,21 @@ You can also reproduce the [checked consumer examples](../examples/modepot-proje
 They use actual product environments and include CLI, HTTP or database assertions.
 Installing instructions does not install Intpot, Dexpot, Summonpot or Refpot.
 
-## 5. Keep the evidence boundaries
+## 5. Updates and scope
 
-A successful copy, a discovered skill, an explicit skill invocation, and a completed
-application task are four different observations. None alone proves better results
-than an ordinary workflow or universal compatibility.
-
-Existing [installation evidence](../evaluations/modepot-project-skills/native-install-001/README.md)
-and [consumer replays](../evaluations/modepot-project-skills/consumer-tasks-001/README.md)
-state what actually ran. In particular, the earlier native Hermes gateway-isolation
-failure is **not a prerequisite or blocker for users of other harnesses**. It remains
-a limit on that specific host experiment. A host may also need a working account and
-model entitlement; SkillPot does not supply those or authorize changing credentials.
+These setup instructions follow each host's published skill contract. Supporting the
+documented folder layout and portable format does not require a live model session,
+a particular user's login, or a separate implementation for each harness. Local
+account state is not a SkillPot installation or support gate.
 
 For updates, inspect a newly pinned source and review the diff. Preserve local edits;
 replacement behavior is host-specific. For removal, remove only the instruction bundle
 you installed, using the host's documented method or your project's normal reviewed
 file workflow. Do not remove product environments, applications or data with it.
 
-## What has actually been checked
-
-- **Codex CLI 0.157.0:** a real native session explicitly used the two project Intpot
-  skills and completed a CLI export task with 52 passing assertions. The source and
-  dependencies were provided; this is not automatic selection or setup qualification.
-- **Claude Code:** full-directory project placement was byte-checked. Native task
-  execution was blocked by expired OAuth, not presented as a pass.
-- **Cursor:** project-directory placement was byte-checked against the documented
-  layout. No native model task ran; the installed CLI was not logged in.
-- **Hermes:** selective instruction installation/removal was exercised separately.
-  Its earlier model-loading limitation remains scoped to that host experiment.
-
-See [actual host observations and retained failures](../evaluations/harness-portability/explicit-codex-001/README.md).
-An unavailable account or model does not change the portable files or make another
-harness depend on Hermes. Do not infer support for every host/version from this list.
+Historical [installation](../evaluations/modepot-project-skills/native-install-001/README.md)
+and [task observations](../evaluations/harness-portability/explicit-codex-001/README.md)
+remain separate records, not prerequisites for using the documented integrations.
 
 ## Official host references
 
