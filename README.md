@@ -24,6 +24,7 @@
 
 <p align="center">
   <a href="#why-skillpot">Why SkillPot</a> ·
+  <a href="#modepot-project-skills">ModePot skills</a> ·
   <a href="#the-first-workflow">First workflow</a> ·
   <a href="#current-status">Status</a> ·
   <a href="#using-skillpot">Using SkillPot</a> ·
@@ -37,8 +38,9 @@
 </p>
 
 > [!IMPORTANT]
-> SkillPot is in development. An experimental repository-readiness skill is available
-> as source. No qualified skill release or general host-compatibility claim exists yet.
+> SkillPot is in development. Pinned public ModePot project skills and the experimental
+> repository-readiness workflow are available as source. No qualified skill release or
+> general host-compatibility claim exists yet.
 
 ## Why SkillPot?
 
@@ -68,6 +70,31 @@ These are the bar for future skills, not claims that an unreleased library has a
 met it. Evaluation and maintenance support the work; they are not a guarantee that an
 agent will always follow instructions.
 
+## ModePot project skills
+
+The collection now includes pinned public project guidance—not only the original
+repository-readiness experiment:
+
+- **Intpot:** [CLI](skills/intpot-cli/SKILL.md) and [Python API](skills/intpot-python/SKILL.md).
+- **Summonpot:** [consumer workflow](skills/summonpot/SKILL.md), plus project-scoped
+  [PR review](skills/summonpot-pr-review/SKILL.md) and
+  [code review](skills/summonpot-code-review/SKILL.md).
+- **Dexpot:** [synchronous typed HTTP applications](skills/dexpot/SKILL.md).
+- **Refpot:** [embedded database preview](skills/refpot-database/SKILL.md).
+
+Each can be installed separately through an existing host mechanism; there is no
+all-skills auto-install or hidden product dependency installation. Start with the
+[catalogue](catalog/README.md) and [installation guide](docs/project-skill-installation.md).
+Upstream repositories remain canonical. Source revisions, original guide hashes and
+complete MIT notices are preserved; this is a pinned distribution, not a second API
+manual tracking main silently.
+
+The public inventory found no existing skill Markdown in Utilitypot, Lifepot or
+Strpot at the inspected revisions, so none is invented for those projects. Private
+local skills are not copied. See the [bounded inventory](catalog/source-inventory.json)
+and each package's provenance/compatibility records for scope and verification limits.
+Packaging or installation is not proof of a full product runtime or usefulness matrix.
+
 ## The first workflow
 
 **A repository and a delivery goal → an evidence-backed readiness report.**
@@ -95,6 +122,9 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Public roadmap and contribution guidance | Available in this repository |
 | ModePot-family logo and editable artwork | Available in [assets/](assets/README.md) |
 | Experimental skill source | [repository-readiness](skills/repository-readiness/SKILL.md) and report template |
+| ModePot public collection | [Seven pinned project/contributor packages](catalog/README.md) |
+| Native selective installation | [Seven Hermes install/list/remove checks](evaluations/modepot-project-skills/native-install-001/README.md); not model activation |
+| ModePot consumer execution | [Refpot source-matched task and runnable example](examples/modepot-project-skills/README.md); other runtimes unqualified |
 | Real task example | [Frozen public repository task](examples/repository-readiness/task.md) |
 | Qualified skill releases | Not released |
 | Agent/tool compatibility matrix | Not established |

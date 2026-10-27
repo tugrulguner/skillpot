@@ -1,0 +1,88 @@
+{
+  "inspected_at_utc": "2026-10-26T22:13:50.970567+00:00",
+  "repositories": [
+    {
+      "repository": "tugrulguner/intpot",
+      "revision": "8e583cc4b2b6785955268d09a12dfdd955194b88",
+      "default_branch": "main",
+      "license": "MIT",
+      "paths": [
+        "src/intpot/templates/skills/intpot-cli.md",
+        "src/intpot/templates/skills/intpot-python.md"
+      ],
+      "license_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "repository": "tugrulguner/summonpot",
+      "revision": "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5",
+      "default_branch": "main",
+      "license": "MIT",
+      "paths": [
+        ".claude/skills/pr-review/SKILL.md",
+        ".claude/skills/review-code/SKILL.md",
+        "src/summonpot/templates/skills/summonpot.md"
+      ],
+      "license_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "repository": "tugrulguner/dexpot",
+      "revision": "ca4979a6339e533f11ad135bc760aa081f3f60ab",
+      "default_branch": "main",
+      "license": "MIT",
+      "paths": [
+        "src/dexpot/templates/skills/dexpot.md"
+      ],
+      "license_paths": [
+        "LICENSE",
+        "native/LICENSE"
+      ]
+    },
+    {
+      "repository": "tugrulguner/refpot",
+      "revision": "3294ce39f0e5630c660fad2e5a1e3977bf52a17f",
+      "default_branch": "main",
+      "license": "MIT",
+      "paths": [
+        "skills/refpot-database/SKILL.md"
+      ],
+      "license_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "repository": "tugrulguner/utilitypot",
+      "revision": "dc3fd03aa1a1593bb26001ebb72cd720424eb1dd",
+      "default_branch": "main",
+      "license": "MIT",
+      "paths": [],
+      "license_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "repository": "tugrulguner/lifepot",
+      "revision": "219b7cf62d03fde5f6290a9b77d8e079cf2ca3fd",
+      "default_branch": "main",
+      "license": "MIT",
+      "paths": [],
+      "license_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "repository": "tugrulguner/strpot",
+      "revision": "510c04156a8d72ac1c76ead1657e6c470814f371",
+      "default_branch": "main",
+      "license": "MIT",
+      "paths": [],
+      "license_paths": [
+        "LICENSE"
+      ]
+    }
+  ],
+  "note": "Complete public Git trees; empty skill paths mean no existing published skill was found, not no reusable knowledge."
+}

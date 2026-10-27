@@ -1,0 +1,11 @@
+{
+  "private_original_sha256": {
+    "commands.json": "9463540cd15526b2a7e2d8b57c61e49de0e03be23050162a0ce4021d9a7f09e7",
+    "installation-results.json": "801c05717580f276b00053b5fd91a67de74046becdea53f1275024895c2668a5",
+    "removal-results.json": "a67d6e02301a9dafd8e02f4773596f23aef0f0f05e53e38e3182ff3b599b583d"
+  },
+  "public_transformation": "Only machine-local absolute location strings replaced with labeled placeholders; argv, source URLs, findings, statuses and results retained",
+  "source_revision": "5b4f695dea0481877ab792e149ae4e8dafc14830",
+  "scope": "owned temporary HERMES_HOME; no other registered profile targeted",
+  "package_count": 7
+}

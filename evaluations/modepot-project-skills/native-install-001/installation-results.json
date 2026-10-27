@@ -1,0 +1,105 @@
+{
+  "source_revision": "5b4f695dea0481877ab792e149ae4e8dafc14830",
+  "packages": [
+    {
+      "name": "intpot-cli",
+      "installed_files": {
+        "SKILL.md": "b1ef13f10a172d8afda70a28d08b0dded079d23708d98bbf85dead37206bc742",
+        "references/upstream.md": "aacb0d866b0a880ead86259ba9fffa709ced3d62ee313e08b37100cf9885f2e2",
+        "references/LICENSE.md": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b"
+      },
+      "selected_names_after_install": [
+        "intpot-cli"
+      ]
+    },
+    {
+      "name": "intpot-python",
+      "installed_files": {
+        "SKILL.md": "0a3e1f6a53cd786eb6d6c7f5607569721ae157148eb5b81aa56b5bb453cc98c3",
+        "references/upstream.md": "4cc1f8e2ad8dd5ede573b3d9805314ed250e9e5acca9939fcbe5ba6e0bf4c9e1",
+        "references/LICENSE.md": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b"
+      },
+      "selected_names_after_install": [
+        "intpot-cli",
+        "intpot-python"
+      ]
+    },
+    {
+      "name": "summonpot",
+      "installed_files": {
+        "SKILL.md": "a98debead025c2e328250c97940bde07c1ca2b0f695da6db34423f50c9fc4f92",
+        "references/upstream.md": "e69a4e7bb8fb46c28838fbc6f62ff4624cfa3c62ccecfd44595833de751eab33",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958"
+      },
+      "selected_names_after_install": [
+        "intpot-cli",
+        "intpot-python",
+        "summonpot"
+      ]
+    },
+    {
+      "name": "summonpot-pr-review",
+      "installed_files": {
+        "SKILL.md": "eed4bcb5810fea503020c97b516c2ec3e2af22eba8c23bfa01512cf84bca342c",
+        "references/upstream.md": "9b3f55cd03bb1caace2843659a502c23434b239196a884d395fbc88239143bda",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958"
+      },
+      "selected_names_after_install": [
+        "intpot-cli",
+        "intpot-python",
+        "summonpot",
+        "summonpot-pr-review"
+      ]
+    },
+    {
+      "name": "summonpot-code-review",
+      "installed_files": {
+        "SKILL.md": "1ba4c81c1f6c86953698a2b02f4709cf97ea4875a13229771a3ef07567eae137",
+        "references/upstream.md": "e1d954a394747da05642d376a7f12c926822f8e13c6b38d60560d0cc78e13958",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958"
+      },
+      "selected_names_after_install": [
+        "intpot-cli",
+        "intpot-python",
+        "summonpot",
+        "summonpot-code-review",
+        "summonpot-pr-review"
+      ]
+    },
+    {
+      "name": "dexpot",
+      "installed_files": {
+        "SKILL.md": "968ce4532834810977e4381ef732208c4c03a3a0477b42b36ee64254c2a88d11",
+        "references/upstream.md": "e59dd9703cc902977519edb7f1a2004bca16c6701dbd01c4e738f427ccbc73ad",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958"
+      },
+      "selected_names_after_install": [
+        "dexpot",
+        "intpot-cli",
+        "intpot-python",
+        "summonpot",
+        "summonpot-code-review",
+        "summonpot-pr-review"
+      ]
+    },
+    {
+      "name": "refpot-database",
+      "installed_files": {
+        "SKILL.md": "fa31d409a9c5503a88a51d91e3e3e69e5666049ab0f3be2888c2b31f30299fea",
+        "references/upstream.md": "573ec7a855392ed58d89b5e139348af9b6f1bd4a915043aebff9bf473d307df8",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958"
+      },
+      "selected_names_after_install": [
+        "dexpot",
+        "intpot-cli",
+        "intpot-python",
+        "refpot-database",
+        "summonpot",
+        "summonpot-code-review",
+        "summonpot-pr-review"
+      ]
+    }
+  ],
+  "no_force": true,
+  "scope": "isolated temporary HERMES_HOME"
+}

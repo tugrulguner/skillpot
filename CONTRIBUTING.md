@@ -53,13 +53,22 @@ The repository has no runtime package or committed task-evaluation runner. It in
 a small offline documentation checker. For a documentation change, run:
 
 ```sh
-python3 scripts/check_docs.py
-python3 -m unittest discover -s tests -v
+uv run --no-project --with pyyaml==6.0.3 python scripts/check_docs.py
+uv run --no-project --with pyyaml==6.0.3 python scripts/check_project_skills.py
+uv run --no-project --with pyyaml==6.0.3 python -m unittest discover -s tests -v
 ```
 
 The checker verifies local Markdown file destinations and flags personal absolute
 paths. It does not check heading anchors, external URLs, HTML links, artwork parity,
 secrets comprehensively, agent activation, or task quality. Also:
+
+The project catalogue validator also parses actual YAML and checks immutable source
+pins, portable metadata, snapshot hashes and preserved license notices. PyYAML is a
+development-only dependency pinned in `requirements-dev.txt`; `uv run` isolates it
+outside the checkout. Alternatively install that file in an approved external virtual
+environment and use its Python for these commands. The catalogue check does not prove
+native skill installation, runtime correctness or task usefulness. Retest those
+separately; do not silently refresh an upstream revision or modify installed user skills.
 
 1. Check local links, heading anchors, and current-versus-planned wording.
 2. Preview the README and confirm artwork loads at the intended display size.
