@@ -1,0 +1,61 @@
+{
+  "source_revision": "8b6f1b32c9c3cda5438402a992659b016fe97bb3",
+  "files_sha256": {
+    "LICENSE": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+    "provenance.md": "e711032e695815f60764f79ff317ae55db5709419fe611c879aaaf31bc170dd1",
+    "SKILL.md": "e570f81151538976658cff255a8da4028e18b50b7d0d8154ce96bfa3695d09e7",
+    "compatibility.md": "f66ecdb606b4f56baf7a9e3465523184db4f72985dd00f4955b132e1fe7396ef",
+    "references/LICENSE.md": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+    "references/upstream.md": "4cc1f8e2ad8dd5ede573b3d9805314ed250e9e5acca9939fcbe5ba6e0bf4c9e1"
+  },
+  "commands": [
+    {
+      "host_layout": "Claude Code",
+      "attempt": 1,
+      "script": "set -eu\nmkdir -p \"$SKILL_ROOT\"\nmkdir \"$SKILL_ROOT/intpot-python\"\ncp -R skills/intpot-python/. \"$SKILL_ROOT/intpot-python/\"\n",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "host_layout": "Claude Code",
+      "attempt": 2,
+      "script": "set -eu\nmkdir -p \"$SKILL_ROOT\"\nmkdir \"$SKILL_ROOT/intpot-python\"\ncp -R skills/intpot-python/. \"$SKILL_ROOT/intpot-python/\"\n",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "mkdir: <approved scratch directory>/skillpot-layout-check-dhsl6u4x/Claude-Code/.claude/skills/intpot-python: File exists\n"
+    },
+    {
+      "host_layout": "Cursor",
+      "attempt": 1,
+      "script": "set -eu\nmkdir -p \"$SKILL_ROOT\"\nmkdir \"$SKILL_ROOT/intpot-python\"\ncp -R skills/intpot-python/. \"$SKILL_ROOT/intpot-python/\"\n",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "host_layout": "Cursor",
+      "attempt": 2,
+      "script": "set -eu\nmkdir -p \"$SKILL_ROOT\"\nmkdir \"$SKILL_ROOT/intpot-python\"\ncp -R skills/intpot-python/. \"$SKILL_ROOT/intpot-python/\"\n",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "mkdir: <approved scratch directory>/skillpot-layout-check-dhsl6u4x/Cursor/.cursor/skills/intpot-python: File exists\n"
+    },
+    {
+      "host_layout": "Codex/shared",
+      "attempt": 1,
+      "script": "set -eu\nmkdir -p \"$SKILL_ROOT\"\nmkdir \"$SKILL_ROOT/intpot-python\"\ncp -R skills/intpot-python/. \"$SKILL_ROOT/intpot-python/\"\n",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "host_layout": "Codex/shared",
+      "attempt": 2,
+      "script": "set -eu\nmkdir -p \"$SKILL_ROOT\"\nmkdir \"$SKILL_ROOT/intpot-python\"\ncp -R skills/intpot-python/. \"$SKILL_ROOT/intpot-python/\"\n",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "mkdir: <approved scratch directory>/skillpot-layout-check-dhsl6u4x/Codex-shared/.agents/skills/intpot-python: File exists\n"
+    }
+  ]
+}
