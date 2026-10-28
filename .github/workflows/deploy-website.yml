@@ -1,0 +1,59 @@
+name: Deploy website
+on:
+  push:
+    branches: [main]
+    paths: ['website/**', 'README.md', 'docs/**', 'catalog/**', 'skills/**', '.github/workflows/deploy-website.yml', '.github/workflows/website.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: skillpot-site-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: production
+      url: https://skillpot.modepot.io
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22.23.4'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - name: Check canonical repository sources
+        run: |
+          python3 -m venv "$RUNNER_TEMP/skillpot-source"
+          "$RUNNER_TEMP/skillpot-source/bin/pip" install -r requirements-dev.txt
+          "$RUNNER_TEMP/skillpot-source/bin/python" scripts/check_docs.py
+          "$RUNNER_TEMP/skillpot-source/bin/python" scripts/check_project_skills.py
+          "$RUNNER_TEMP/skillpot-source/bin/python" -m unittest discover -s tests -v
+      - run: npm ci
+        working-directory: website
+      - run: npm run build
+        working-directory: website
+      - run: node node_modules/@playwright/test/cli.js install --with-deps chromium
+        working-directory: website
+      - run: npm run test:browser
+        working-directory: website
+      - name: Deploy the verified static artifact
+        working-directory: website
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo 'Configure CLOUDFLARE_ACCOUNT_ID for production'; exit 1; }
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo 'Configure CLOUDFLARE_API_TOKEN for production'; exit 1; }
+          node node_modules/wrangler/bin/wrangler.js deploy
+      - name: Verify public content after DNS and TLS propagation
+        working-directory: website
+        run: |
+          for attempt in $(seq 1 20); do
+            if node scripts/verify-site.mjs; then exit 0; fi
+            sleep 10
+          done
+          exit 1

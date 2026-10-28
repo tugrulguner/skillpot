@@ -27,6 +27,25 @@ class CheckDocsTests(unittest.TestCase):
             (root / "README.md").write_text("[bad](missing.md)")
             self.assertIn("missing destination", checker.check(root)[0])
 
+    def test_dependencies_and_site_build_outputs_are_not_authored_docs(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for folder in ("website/node_modules/pkg", "website/dist", "website/.astro",
+                           "website/.wrangler", "website/playwright-report", "website/test-results"):
+                target = root / folder
+                target.mkdir(parents=True, exist_ok=True)
+                (target / "generated.md").write_text("[not-source](missing.md)")
+            self.assertEqual(checker.check(root), [])
+
+    def test_authored_website_and_skill_dist_docs_remain_checked(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for folder in ("website/src", "skills/example/dist"):
+                target = root / folder
+                target.mkdir(parents=True, exist_ok=True)
+                (target / "guide.md").write_text("[broken](missing.md)")
+            self.assertEqual(len(checker.check(root)), 2)
+
     def test_escape(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

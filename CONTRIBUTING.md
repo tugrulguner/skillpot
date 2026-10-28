@@ -91,6 +91,14 @@ verification commands alongside the implementation.
 
 ## Reviews and publishing
 
+For product-site changes, also follow [website/README.md](website/README.md). Use the
+declared Node engine, `npm ci`, production build/output checks and browser tests.
+Site guides are generated from the canonical repository documents rather than edited
+as duplicate manuals. Keep original artwork unchanged and inspect desktop/mobile,
+Light/Dark/Auto, keyboard/search behavior and Markdown downloads. A build or preview
+is not a live deployment; credentials and an approved merge remain separate gates.
+
+
 Keep changes small enough to review. Explain the outcome, changed files, source
 permissions, verification performed, and remaining limitations. Do not mark roadmap
 items complete merely because a design exists. Public posting, paid actions, releases,
