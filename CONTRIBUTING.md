@@ -1,7 +1,7 @@
 # Contributing to SkillPot
 
 Start with the [README](README.md) and [roadmap](ROADMAP.md). SkillPot is in development;
-there is no versioned collection release yet. The public project
+the first versioned collection is [v0.1.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.1.0). The public project
 collection has a [harness-neutral quickstart](docs/quickstart.md) and
 [verified selective Hermes installation commands](docs/project-skill-installation.md)
 and separately recorded bounded task evidence. Do not mistake those results for
