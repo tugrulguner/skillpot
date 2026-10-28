@@ -88,3 +88,18 @@ test('mobile search opens and finds the canonical catalogue', async ({ page }) =
   await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog',{name:'Search'})).toBeHidden();
 });
+
+test('guide links stay on the current origin and Markdown clicks save the actual file', async ({ page }) => {
+  await page.goto('/host-setup/');
+  await expect(page.getByRole('heading', {name:'Troubleshooting without changing your setup', exact:true})).toBeVisible();
+  const catalogue = page.locator('.sl-markdown-content').getByRole('link', {name:'task-first catalogue', exact:true});
+  await expect(catalogue).toHaveAttribute('href', '/catalogue/');
+  await catalogue.click();
+  await expect(page).toHaveURL('http://127.0.0.1:4587/catalogue/');
+  const received = page.waitForEvent('download');
+  await page.getByRole('link', {name:'Download this guide as Markdown', exact:true}).click();
+  const download = await received;
+  expect(download.suggestedFilename()).toBe('catalogue.md');
+  const bytes = await readFile(await download.path(), 'utf8');
+  expect(bytes).toBe(await readFile(new URL('../../dist/downloads/catalogue.md', import.meta.url), 'utf8'));
+});

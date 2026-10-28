@@ -32,9 +32,13 @@ an independently chosen free port for manual review.
 - `scripts/sync-docs.mjs` generates six guides from repository README sections,
   `docs/` and `catalog/README.md`; edit those originals. Generated Markdown sources
   are ignored and created before check/build, so there is no second maintained manual.
+  Markdown is parsed structurally: examples remain literal, reference definitions
+  and encoded paths are rewritten, and headings inside code do not define sections.
 - `scripts/emit-markdown-downloads.mjs` produces downloads from the same generated
-  guides rendered as HTML. Source links point to canonical repository files and
-  known internal documentation destinations.
+  guides rendered as HTML. Markdown retains absolute canonical URLs for use outside
+  the site; rendered guide links stay on their serving origin, including local preview.
+  Download links save actual `.md` files. Source links point to canonical repository
+  files and known internal documentation destinations.
 - Public agent discovery is `/llms.txt`, linked in HTML head and homepage content.
   Contributor/coding-agent rules live separately at repository-root `AGENTS.md`.
 - Canonical artwork under `public/assets/` must remain byte-identical to root `assets/`.
@@ -54,6 +58,9 @@ and custom domain `skillpot.modepot.io`, with the emitted 404 page.
 `.github/workflows/website.yml` verifies PRs and relevant main pushes. The separate
 main-push/manual production workflow reruns source, site and browser gates before
 uploading the exact build.
+Manual deployment also requires the selected ref to be `main`; feature branches
+cannot reach the production job. Website CI retains screenshots/failure traces for
+seven days so review does not depend on local files.
 
 Before production deployment, the maintainer must configure:
 

@@ -1,8 +1,11 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { satteri } from '@astrojs/markdown-satteri';
+import { relativeSiteLinks } from './scripts/relative-site-links.mjs';
 
 export default defineConfig({
   site: 'https://skillpot.modepot.io',
+  markdown: { processor: satteri({ hastPlugins: [relativeSiteLinks] }) },
   vite: { preview: { strictPort: true } },
   integrations: [starlight({
     title: 'SkillPot',
