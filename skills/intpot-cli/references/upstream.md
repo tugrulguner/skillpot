@@ -216,16 +216,51 @@ import availability, and Python equivalence are not certified. Lambda bodies and
 bodies are deferred; comprehension locals are not module dependencies. Live `App` and direct
 low-level generators are unchanged.
 
+
+
+## Bounded definition provenance (v0.14.0)
+
+**Availability:** requires v0.14.0 or newer; until v0.14.0 is published, use a
+source checkout containing this change. v0.13.0 does not include captured definition
+coordinates.
+
+Inspected `ToolInfo` and immutable `ToolSchema` carry optional `source_location`
+and `support_source_locations`. JSON locations have `path`, `line`, and `end_line`:
+an absolute owning-file path and inclusive, 1-based definition bounds. The first
+line is the `def`/`async def`, not its decorators. Helper locations are keyed by
+recovered helper name. Schema adapters and projections preserve these snapshots.
+
+Capture reads and compiles the owning file without executing it, then requires a
+matching existing function code object. Where existing inspector recovery unwraps
+a callable, provenance describes the recovered original, not wrapper execution.
+Dynamic functions, closures and otherwise unverifiable callables have no captured
+location. Missing, unreadable or
+changed function bodies also yield no location. This is bounded code/definition
+provenance at inspection time, not proof that annotations/default values or the
+whole application are unchanged. Manually supplied schema metadata is caller-owned.
+
+A diagnostic's top-level `source_location` identifies the affected tool definition,
+including callback/dependency refusals; it does not locate the callback, dependency,
+or exact missing-name occurrence. When provenance is available, binding references
+also carry the originating implementation/helper definition location. Synthetic
+public wrappers have `source_location: null`. Without provenance, reference shapes
+remain compatible and top-level locations stay `null`. Cached schemas retain their
+inspection snapshot; they do not continuously track filesystem edits.
+
+Conversion policy, code-string return types, exception precedence and refusal
+before writes are unchanged. Inspection still imports trusted source code and is
+not a sandbox. Run `uv run --all-extras --with httpx python examples/source_provenance.py`
+for source behavior, helper coordinates, Python/CLI report parity and refusal checks.
+
 ## Actionable binding context (v0.13.0)
 
-Requires v0.13.0 or newer; until publication, use a source checkout containing this
-change. v0.12.0 does not include these additional fields. The three missing-binding
+Requires v0.13.0 or newer. v0.12.0 does not include these additional fields. The three missing-binding
 diagnostic codes expose `references`
 (each missing `name` and its `generated_definition`), `suggested_action`, and
 `source_location`. Generated names identify owned helpers, wrappers and implementations;
-they are not source locations. `source_location` is currently always `None`/JSON `null`
-because original callable/helper coordinates are not retained. Never infer them from
-`source_path`. Existing codes, tool/target/names/message fields and refusal exceptions
+they are not source locations. Published v0.13.0 uses `None`/JSON `null`; v0.14.0
+adds bounded definition provenance (until publication, use its source checkout). Never
+infer original coordinates from `source_path`. Existing codes, tool/target/names/message fields and refusal exceptions
 stay unchanged. Suggestions distinguish eager before-definition ordering from body and
 postponed-annotation availability before use. Inspection remains available; scaffold
 permission does not bypass refusal. Run `examples/diagnostic_context.py` from source.
@@ -283,8 +318,7 @@ literal. These capabilities are included in v0.11.0; the documented unsupported 
 
 ## Callback and dependency refusal diagnostics (v0.13.0)
 
-Requires v0.13.0 or newer; until publication, use a source checkout containing this
-change. `app.assess()` and `intpot inspect --json`
+Requires v0.13.0 or newer. `app.assess()` and `intpot inspect --json`
 expose `unsupported_cli_parameter_callback` and `unsupported_fastapi_dependency`
 diagnostics. Callback entries identify `tool`, `parameter`, and `target`; dependency
 entries identify `tool`, `target`, normalized `dependencies`, and `route` context

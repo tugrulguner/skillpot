@@ -39,6 +39,8 @@ or broad compatibility claim.
 
 ## Intpot CLI export and Python conversion
 
+This existing example and its recorded execution remain pinned to Intpot 0.13.0.
+They are not reclassified as execution of the refreshed v0.14.0 guides.
 Use a new external Python 3.12 environment and a new evidence destination:
 
 ```sh
@@ -55,6 +57,31 @@ and two real loopback HTTP applications, plus invalid CLI/input rejection and cl
 Native API export returns the scalar directly; framework conversion wraps it as
 `{"result": ...}` and preserves the public `discount-cents` option alias. These are
 not identical wire formats. No scaffold opt-in or fake service output is used.
+
+### Intpot v0.14.0 definition provenance
+
+[source_provenance.py](intpot/source_provenance.py) is an unchanged public upstream
+example from [this immutable source](https://github.com/tugrulguner/intpot/blob/3d784e8dd5f1c45b7b2abfac21450aa17efad52c/examples/source_provenance.py).
+It illustrates original HTTP behavior through an in-process TestClient, captured tool
+and helper definition bounds, CLI/Python diagnostic parity, refusal before writes
+with/without scaffold opt-in, and unavailable synthetic provenance. It does not
+assert exact missing-name coordinates or continuous source freshness. Complete
+[upstream MIT notice](../../skills/intpot-python/LICENSE) applies.
+
+With separate permission for public dependency installation and execution:
+
+```sh
+ENV=/absolute/owned-parent/new-intpot-provenance-env
+uv venv --python 3.12 "$ENV"
+uv pip install --python "$ENV/bin/python" "intpot[api] @ git+https://github.com/tugrulguner/intpot.git@3d784e8dd5f1c45b7b2abfac21450aa17efad52c" httpx
+"$ENV/bin/python" examples/modepot-project-skills/intpot/source_provenance.py
+```
+
+Choose a new environment; use an approved `TMPDIR` for the example's owned temporary
+source/output directory. The original module docstring's `uv run --all-extras` command
+assumes an upstream Intpot checkout; the explicit environment command above is for
+this SkillPot copy. This refresh checked source identity and syntax offline only;
+the example was not executed and no v0.14.0 runtime result is claimed.
 
 ## Dexpot typed HTTP contracts
 

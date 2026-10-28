@@ -6,13 +6,13 @@
       "kind": "consumer",
       "directory": "skills/intpot-cli",
       "upstream_repository": "tugrulguner/intpot",
-      "upstream_revision": "8e583cc4b2b6785955268d09a12dfdd955194b88",
+      "upstream_revision": "3d784e8dd5f1c45b7b2abfac21450aa17efad52c",
       "upstream_path": "src/intpot/templates/skills/intpot-cli.md",
-      "upstream_sha256": "aacb0d866b0a880ead86259ba9fffa709ced3d62ee313e08b37100cf9885f2e2",
+      "upstream_sha256": "7b2c772614f8ed66f9414cd89c03807f32ff1328622a68b4533517770bc52ca0",
       "upstream_license_path": "LICENSE",
       "license": "MIT",
       "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
-      "upstream_url": "https://github.com/tugrulguner/intpot/blob/8e583cc4b2b6785955268d09a12dfdd955194b88/src/intpot/templates/skills/intpot-cli.md",
+      "upstream_url": "https://github.com/tugrulguner/intpot/blob/3d784e8dd5f1c45b7b2abfac21450aa17efad52c/src/intpot/templates/skills/intpot-cli.md",
       "status": "pinned-public-guidance"
     },
     {
@@ -20,13 +20,13 @@
       "kind": "consumer",
       "directory": "skills/intpot-python",
       "upstream_repository": "tugrulguner/intpot",
-      "upstream_revision": "8e583cc4b2b6785955268d09a12dfdd955194b88",
+      "upstream_revision": "3d784e8dd5f1c45b7b2abfac21450aa17efad52c",
       "upstream_path": "src/intpot/templates/skills/intpot-python.md",
-      "upstream_sha256": "4cc1f8e2ad8dd5ede573b3d9805314ed250e9e5acca9939fcbe5ba6e0bf4c9e1",
+      "upstream_sha256": "a13b76e17e8bdc27e940bddf5db5263a44fcf4d970f5dbea9aaa755fa353ac79",
       "upstream_license_path": "LICENSE",
       "license": "MIT",
       "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
-      "upstream_url": "https://github.com/tugrulguner/intpot/blob/8e583cc4b2b6785955268d09a12dfdd955194b88/src/intpot/templates/skills/intpot-python.md",
+      "upstream_url": "https://github.com/tugrulguner/intpot/blob/3d784e8dd5f1c45b7b2abfac21450aa17efad52c/src/intpot/templates/skills/intpot-python.md",
       "status": "pinned-public-guidance"
     },
     {

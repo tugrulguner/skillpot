@@ -3,10 +3,10 @@ name: intpot-python
 description: Use intpot Python APIs to define, inspect, or convert apps.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   maintainer: "intpot contributors"
   upstream-repository: "tugrulguner/intpot"
-  upstream-revision: "8e583cc4b2b6785955268d09a12dfdd955194b88"
+  upstream-revision: "3d784e8dd5f1c45b7b2abfac21450aa17efad52c"
   status: "pinned-public-guidance"
 ---
 # intpot Python API
@@ -20,7 +20,7 @@ Use intpot from Python to register tools with `App`, or load an existing trusted
 
 ## Setup and version check
 1. Use the active project environment. Install `intpot` for core/CLI use; add `intpot[api]` or `intpot[mcp]` if inspecting/loading that source framework or importing/running that target. `intpot[all]` installs both.
-2. Check `python -m pip show intpot` (or the environment's package manager) and confirm the installed version supports each API/diagnostic intended. This snapshot is revision `8e583cc4b2b6785955268d09a12dfdd955194b88`; if package release differs, pin a compatible published version or use that matching source checkout rather than assume docs match runtime.
+2. Check `python -m pip show intpot` (or the environment's package manager) and confirm the installed version supports each API/diagnostic intended. This snapshot is revision `3d784e8dd5f1c45b7b2abfac21450aa17efad52c`; if package release differs, pin a compatible published version or use that matching source checkout rather than assume docs match runtime.
 3. Confirm project dependency policy and trusted input. File loading imports and executes the source; live-instance loading requires its framework runtime available.
 
 ## Procedure
@@ -39,6 +39,19 @@ Use intpot from Python to register tools with `App`, or load an existing trusted
 - Callback/dependency guards and missing body/binding/definition/annotation diagnostics can refuse before output. Preserve existing output and inspect exception details; do not use scaffold opt-in to evade refusal.
 
 ## Verification report
+Intpot v0.14.0+ `ToolInfo` and immutable `ToolSchema` expose optional
+`source_location` and `support_source_locations`. Projection/schema adapters preserve
+these captured definition snapshots. A location has the owning file's absolute
+`path`, inclusive 1-based `line`/`end_line`, and starts at `def`, not decorators.
+Missing, changed or unverifiable definitions yield no captured location. Caller-supplied
+schema locations are not authenticated provenance; cached schemas don't continuously
+track edits. Diagnostic top-level locations describe the affected tool definition,
+not an exact missing-name occurrence or refused callback/dependency definition.
+Synthetic wrappers have no captured location. Never infer original coordinates from
+an application's `source_path` or emitted-definition offsets. Intpot 0.13.0 lacks
+captured definition coordinates; use the versioned guide rather than assuming fields
+or availability match every installed release.
+
 Record Python/intpot versions, source form (file or live instance), target, diagnostics, whether output was written, and compile/import/behavior checks separately. State any runtime/framework not exercised.
 
 ## Reference
