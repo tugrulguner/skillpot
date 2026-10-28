@@ -40,7 +40,7 @@
 
 > [!IMPORTANT]
 > SkillPot is in development. Pinned public ModePot project skills and the experimental
-> repository-readiness workflow are available in [v0.1.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.1.0).
+> repository-readiness workflow are available in [v0.2.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.2.0).
 > Harness setup follows official specifications; see the [quickstart](docs/quickstart.md).
 
 ## Why SkillPot?
@@ -127,7 +127,7 @@ features. A future catalogue must earn its breadth one useful skill at a time.
 | Native selective installation | [Seven Hermes install/list/remove checks](evaluations/modepot-project-skills/native-install-001/README.md); not model activation |
 | ModePot consumer execution | [Refpot plus Intpot/Dexpot/Summonpot examples](examples/modepot-project-skills/README.md); bounded, partly assisted checks, not a runtime matrix |
 | Real task example | [Frozen public repository task](examples/repository-readiness/task.md) |
-| Versioned collection releases | [v0.1.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.1.0); [release policy](docs/release-policy.md) |
+| Versioned collection releases | [v0.2.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.2.0); [release policy](docs/release-policy.md) |
 | Documented host integration | Claude Code, Cursor, Codex and Hermes; [official-contract setup](docs/quickstart.md) |
 | Cross-harness execution | [Codex CLI explicit skill use and CLI task](evaluations/harness-portability/explicit-codex-001/README.md); other host observations scoped separately |
 | Initial agent smoke and baseline | [Observed attempts and evidence defects](evaluations/repository-readiness/initial-smoke/README.md); no benefit established |
