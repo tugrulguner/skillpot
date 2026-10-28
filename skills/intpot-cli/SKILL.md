@@ -3,10 +3,10 @@ name: intpot-cli
 description: Use intpot CLI to scaffold, inspect, or convert Python apps.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   maintainer: "intpot contributors"
   upstream-repository: "tugrulguner/intpot"
-  upstream-revision: "8e583cc4b2b6785955268d09a12dfdd955194b88"
+  upstream-revision: "3d784e8dd5f1c45b7b2abfac21450aa17efad52c"
   status: "pinned-public-guidance"
 ---
 # intpot CLI
@@ -39,6 +39,15 @@ Use the `intpot` command for project scaffolding, serving `intpot.App`, inspecti
 - Framework semantic gaps remain, including nested Typer sub-apps, repeatable CLI options, certain FastAPI parameter forms, factory apps, multi-method routes, callbacks, and dependencies.
 
 ## Verification report
+For v0.14.0+ inspection diagnostics, `source_location` and helper locations are
+optional snapshots of owning-file definition bounds: absolute path and inclusive,
+1-based `line`/`end_line`, starting at `def` rather than decorators. They are not
+exact missing-name positions or proof the whole source is unchanged. A top-level
+diagnostic identifies the affected tool, not a refused callback/dependency. Synthetic
+wrappers and unverifiable definitions have no captured location; never infer one
+from `source_path` or generated-code offsets. Inspect the actual JSON and the pinned
+guide's bounded-provenance section; do not promise location capture in Intpot 0.13.0.
+
 Record installed version, source/target, command/output path, diagnostics/refusals, and real behavior exercised. State unverified frameworks and limitations; distinguish generated, compiled, imported, and behaviorally tested.
 
 ## Reference
