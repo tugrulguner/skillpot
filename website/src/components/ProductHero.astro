@@ -1,0 +1,17 @@
+---
+const hero = Astro.locals.starlightRoute.entry.data.hero;
+---
+{hero && <section class="framework-hero">
+  <div class="framework-copy">
+    <p class="eyebrow">Portable agent workflows</p>
+    <h1>Give your agent a workflow. Get work you can inspect.</h1>
+    <p class="tagline">Project knowledge, practical procedures and explicit checks. Choose a skill and use your agent's documented setup.</p>
+    <div class="actions">
+      <a class="action primary" href="/quickstart/">Quick start</a>
+      <a class="action secondary" href="/catalogue/">Catalogue</a>
+      <a class="action quiet" href="https://github.com/tugrulguner/skillpot">GitHub</a>
+    </div>
+    <div class="creator-row"><a class="credit" href="https://tugrul.modepot.io/">Created by Tugrul Guner</a><a href="https://github.com/tugrulguner">GitHub</a><a href="https://www.linkedin.com/in/tugrulguner/">LinkedIn</a><a href="https://x.com/Tugrul_Guner">X</a></div>
+  </div>
+  <figure class="art"><img src="/assets/skillpot-lockup.png" alt="SkillPot's canonical coral flask and wordmark" width="1200" height="900" /></figure>
+</section>}

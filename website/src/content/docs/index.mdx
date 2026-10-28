@@ -1,0 +1,52 @@
+---
+title: Portable agent workflows
+description: Task-focused agent skills with project knowledge, practical procedures and explicit checks.
+template: splash
+hero:
+  title: Give your agent a workflow. Get work you can inspect.
+next:
+  label: Quick start
+  link: /quickstart/
+---
+
+import SkillExcerpt from '../../components/SkillExcerpt.astro';
+
+<div className="overview">
+
+## Install one skill
+
+The published collection has eight skills: seven public project/contributor packages and the original experimental repository-readiness workflow. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
+
+<div className="install"><strong>Get the published source</strong><code>{'git clone --branch v0.2.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source'}</code><a href="/quickstart/">Copy one selected skill →</a></div>
+
+Downloading source does not activate every skill or install any product dependency. The [quick start](/quickstart/) shows the complete-directory copy and refuses an existing destination. Use the host's existing permissions and ask before dependencies, paid services or publication.
+
+## How a skill works
+
+<SkillExcerpt />
+
+The entry point describes when the workflow applies, its prerequisites, procedure, failure cases and completion checks. References load when needed. Source revisions and full licenses remain inspectable. Hosts supply execution tools; instructions do not grant extra authority.
+
+## Choose the work
+
+- **Intpot:** CLI and Python workflows, including versioned conversion and diagnostic limits.
+- **Summonpot:** typed APIs with bounded agent-owned decisions, plus separate project contributor reviews.
+- **Dexpot:** synchronous typed HTTP APIs.
+- **Refpot:** the embedded database preview, with explicit data and durability limits.
+- **Repository readiness:** an experimental, cited delivery audit without implicit target changes.
+
+[Browse all eight skills](/catalogue/) or read the [host setup](/host-setup/).
+
+## Original workflow design
+
+<figure className="workflow"><img src="/assets/skillpot-workflow.png" alt="Original planned workflow overview: real inputs and constraints, reusable procedures, then artifacts with explicit checks. Conceptual design history, not a runtime trace." width="1600" height="760"/><figcaption><strong>Planned direction—not a released workflow.</strong> Preserved original design artwork. This is not an additional skill, a live agent run or a requirement to create videos.</figcaption></figure>
+
+## Boundaries and maintenance
+
+Refpot remains a preview and repository-readiness remains experimental. The upstream projects own product APIs; this collection distributes reviewed immutable guides, not independently evolving manuals. Installation and source checks do not prove improved model performance or universal runtime behavior.
+
+Learn the [authoring contract](/authoring/), [provenance and refresh rules](/provenance-refresh/), and [scope limits](/limits/). Each guide has a Markdown download generated from the same canonical repository source used for its HTML.
+
+Coding agents can start with the [agent documentation map](/llms.txt).
+
+</div>

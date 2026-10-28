@@ -1,0 +1,20 @@
+# SkillPot
+
+SkillPot is a library of practical, selectively installable agent instructions. It is not an agent runtime, registry, or installer. The current public ModePot collection is pinned at v0.2.0; upstream product projects remain canonical.
+
+## Start
+Eight skills are available: seven pinned public project/contributor packages covering Intpot, Summonpot, Dexpot and Refpot, plus the original repository-readiness skill. Refpot is a preview and repository-readiness remains experimental. Claude Code, Cursor, Codex and Hermes use their documented native skill mechanisms. Installation copies instructions, not product dependencies or additional authority. Full MIT source notices are retained per package.
+
+- [Quick start](https://skillpot.modepot.io/quickstart/)
+- [Catalogue](https://skillpot.modepot.io/catalogue/)
+- [Host setup](https://skillpot.modepot.io/host-setup/)
+
+## Learn and maintain
+- [Authoring contract overview](https://skillpot.modepot.io/authoring/)
+- [Provenance and refresh](https://skillpot.modepot.io/provenance-refresh/)
+- [Limits and guarantees](https://skillpot.modepot.io/limits/)
+
+## Canonical source
+- [SkillPot repository](https://github.com/tugrulguner/skillpot)
+- [Source skill contract](https://github.com/tugrulguner/skillpot/blob/main/docs/skill-contract.md)
+- [Pinned release v0.2.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.2.0)

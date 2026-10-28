@@ -11,6 +11,9 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 2
       - name: Check authored documents and source contract
         run: |
           python3 --version
@@ -19,4 +22,4 @@ jobs:
           "$RUNNER_TEMP/skillpot-check-env/bin/python" scripts/check_docs.py
           "$RUNNER_TEMP/skillpot-check-env/bin/python" scripts/check_project_skills.py
           "$RUNNER_TEMP/skillpot-check-env/bin/python" -m unittest discover -s tests -v
-          git diff --check
+          git diff --check HEAD^ HEAD

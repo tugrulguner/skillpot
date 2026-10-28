@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+playwright-report/
+test-results/
+# Canonical guides are generated from repository docs during check/build.
+src/content/docs/*.md

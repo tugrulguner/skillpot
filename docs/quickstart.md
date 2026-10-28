@@ -154,6 +154,30 @@ Historical [installation](../evaluations/modepot-project-skills/native-install-0
 and [task observations](../evaluations/harness-portability/explicit-codex-001/README.md)
 remain separate records, not prerequisites for using the documented integrations.
 
+## Troubleshooting without changing your setup
+
+- **The skill is not listed:** check that you opened the intended project and used
+  that host's documented directory. The selected folder must contain `SKILL.md`
+  directly, not an extra `skillpot-source/skills/` nesting. Check the host's official
+  refresh/discovery instructions below; do not install a second copy globally as a fix.
+- **A reference or notice is missing:** compare the installed folder with the complete
+  selected source package. Copying only `SKILL.md` is incomplete. Do not patch around a
+  missing pinned guide with unrelated current-main product documentation.
+- **The copy says the destination exists:** stop. It may contain local edits or be a
+  symlink. Compare it with the reviewed source before deciding on a separate update;
+  deleting or overwriting it is not part of this quickstart.
+- **The skill is visible but no task runs:** installation provides instructions, not
+  tools, product dependencies or permission. Invoke it in agent chat, give a concrete
+  task and inputs, and resolve missing prerequisites only with the required approval.
+  `/intpot-python` and `$intpot-python` are host invocation syntax, not shell commands.
+- **Product behavior differs from the guide:** inspect the package's provenance and
+  compatibility record, then compare the actual product version with its pinned guide.
+  Do not relabel a source check as runtime verification or silently switch snapshots.
+
+When reporting a setup problem, include the selected skill, source commit, host name
+and version, project-relative folder layout, expected behavior and redacted error.
+Do not attach tokens, private instructions, full personal configuration or agent traces.
+
 ## Official host references
 
 - [Claude Code skills](https://code.claude.com/docs/en/skills)

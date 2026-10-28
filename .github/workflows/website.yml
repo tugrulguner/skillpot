@@ -1,0 +1,41 @@
+name: Website
+on:
+  pull_request:
+    paths: ['website/**', 'README.md', 'docs/**', 'catalog/**', 'skills/**', '.github/workflows/website.yml', '.github/workflows/deploy-website.yml']
+  push:
+    branches: [main]
+    paths: ['website/**', 'README.md', 'docs/**', 'catalog/**', 'skills/**', '.github/workflows/website.yml', '.github/workflows/deploy-website.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: website-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  website:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22.23.4'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - run: node node_modules/@playwright/test/cli.js install --with-deps chromium
+      - run: npm run test:browser
+      - name: Retain browser screenshots and failure traces
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: skillpot-browser-${{ github.run_attempt }}
+          path: website/test-results/
+          if-no-files-found: ignore
+          retention-days: 7
