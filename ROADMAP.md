@@ -46,18 +46,19 @@ Do not build a custom installer, runtime, registry or mandatory plugin merely to
 standard skill directories. Add other host instructions when their official contract
 is known; proprietary client availability is not a collection-wide gate.
 
-## 3. First versioned collection — next publication
+## 3. First versioned collection — published
 
-The source is available now. No versioned GitHub release has been published yet.
-The first planned collection tag is `v0.1.0`, not a product-package version or a
-certification of agent performance. See the [release policy](docs/release-policy.md).
+The first collection release is [v0.1.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.1.0),
+at commit `86ce1b3c7afedc6144b53777ce462ec46f3df36f`. It is not a product-package
+version or certification of agent performance. See the [release policy](docs/release-policy.md).
 
 - [x] Define collection versioning and immutable source-pin/freshness rules.
 - [x] Define offline preparation checks, release contents and publication readback.
-- [ ] Review and merge the release-policy change.
-- [ ] Pin the approved main commit and rerun source checks at that commit.
-- [ ] Publish `v0.1.0` at the approved commit with scoped contents and limitations.
-- [ ] Verify tag, release, source links and post-publication checks against that commit.
+- [x] Review and merge the release-policy change.
+- [x] Pin the approved main commit and rerun source checks at that commit.
+- [x] Publish `v0.1.0` at the approved commit with scoped contents and limitations.
+- [x] Verify tag, release, source links and public archive against that commit;
+      existing CI covers main pushes, not tag/release events.
 
 These checkboxes do not authorize merging a future change or publishing from an
 unreviewed branch. A collection release distributes instructions; it neither installs

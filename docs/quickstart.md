@@ -25,11 +25,12 @@ In a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-source
-git -C skillpot-source checkout --detach 8b6f1b32c9c3cda5438402a992659b016fe97bb3
+git -C skillpot-source checkout --detach 86ce1b3c7afedc6144b53777ce462ec46f3df36f
 cd skillpot-source
 ```
 
-That immutable public revision contains the project collection and consumer examples.
+That immutable public revision is the published `v0.1.0` collection and includes the
+project skills and consumer examples.
 You may choose a newer reviewed published revision, but record its exact commit; do
 not silently refresh instructions. Read the chosen `SKILL.md`, provenance, compatibility
 and complete license before granting access or running commands.
