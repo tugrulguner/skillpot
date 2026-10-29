@@ -1,0 +1,31 @@
+name: Feature proposal
+description: Propose a bounded SkillPot capability
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete task or contributor workflow is currently blocked?
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Proposed bounded behavior
+      description: Describe trusted inputs, expected artifacts, allowed actions, costs and checks.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and source rights
+      description: Explain affected skills, prerequisites, provenance, redistribution permission and maintenance ownership. Do not export private skill stores.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Include an existing skill or a smaller instruction-only alternative where possible.

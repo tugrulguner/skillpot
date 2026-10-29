@@ -91,6 +91,12 @@ verification commands alongside the implementation.
 
 ## Reviews and publishing
 
+Repository automation follows [the LifePot-style verification contract](docs/repository-automation.md):
+offline checks and browser verification feed a fail-closed `verify` gate. Follow the
+pull-request template, describe any permission/provenance impact, and include actual
+test evidence. Python lint and repository-tooling type checks use pinned development
+tools from `requirements-ci.txt`; they are not dependencies for using a skill.
+
 For product-site changes, also follow [website/README.md](website/README.md). Use the
 declared Node engine, `npm ci`, production build/output checks and browser tests.
 Site guides are generated from the canonical repository documents rather than edited

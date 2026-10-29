@@ -1,10 +1,6 @@
 name: Website
 on:
-  pull_request:
-    paths: ['website/**', 'README.md', 'docs/**', 'catalog/**', 'skills/**', '.github/workflows/website.yml', '.github/workflows/deploy-website.yml']
-  push:
-    branches: [main]
-    paths: ['website/**', 'README.md', 'docs/**', 'catalog/**', 'skills/**', '.github/workflows/website.yml', '.github/workflows/deploy-website.yml']
+  workflow_call:
   workflow_dispatch:
 permissions:
   contents: read
