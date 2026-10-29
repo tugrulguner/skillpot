@@ -57,7 +57,7 @@ Dependabot follows LifePot's weekly schedule and five-open-request limit. SkillP
 adds the actual root pip manifests alongside GitHub Actions and `website/` npm files.
 TypeScript major upgrades are deliberately manual: update the Astro checker and
 TypeScript together only when their declared peer ranges overlap, then run clean
-`npm ci`, the complete build/type checks and browser suite. The installed checker
+`npm ci`, the complete build/type checks and browser suite. For example,
 `@astrojs/check@0.9.4` requires TypeScript 5; `0.9.12` supports 5/6, not 7. Do not
 use `--force` or `--legacy-peer-deps` to turn an incompatible proposal green.
 Minor/patch TypeScript updates and updates to other dependencies remain enabled.

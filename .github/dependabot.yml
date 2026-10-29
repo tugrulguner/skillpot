@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: npm
     directory: /website
     # TypeScript major upgrades require a coordinated Astro checker migration.
-    # Current @astrojs/check 0.9.4 requires TS 5; even 0.9.12 supports only TS 5/6.
+    # Checker 0.9.4 requires TS 5; 0.9.12 supports only TS 5/6, not TS 7.
     # Keep minor/patch proposals; review majors manually against actual peer support.
     ignore:
       - dependency-name: typescript
