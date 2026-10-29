@@ -75,8 +75,10 @@ all skills nor changes existing user copies.
       channel that requires it; preserve plain-directory use.
 - [x] Implement product-owned website source with canonical generated guides,
       family presentation and build/browser checks.
-- [ ] Deploy the approved website and verify custom HTTPS routing/assets before
-      switching public discovery and the GitHub homepage to the custom domain.
+- [x] Deploy the approved website, verify custom HTTPS routing/assets, and point
+      the GitHub homepage at the verified site.
+- [ ] Merge and deploy the separate umbrella discovery correction; verify its
+      public collection status and links independently of the product website.
 
 Potential later tasks include sourced interactive explanations, reproducible
 analysis-to-decision briefs and general engineering workflows. They are opportunities,

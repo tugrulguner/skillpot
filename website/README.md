@@ -55,7 +55,8 @@ real failures or claim a warning-free production build when those notices remain
 
 `wrangler.toml` declares an independent static-assets Worker named `skillpot-site`
 and custom domain `skillpot.modepot.io`, with the emitted 404 page.
-`.github/workflows/website.yml` verifies PRs and relevant main pushes. The separate
+`.github/workflows/ci.yml` calls the reusable `website.yml` workflow for PRs and main
+pushes; its `verify` gate requires checks and browser verification to succeed. The separate
 main-push/manual production workflow reruns source, site and browser gates before
 uploading the exact build.
 Manual deployment also requires the selected ref to be `main`; feature branches

@@ -4,7 +4,7 @@
   <img src="assets/skillpot-lockup.png" alt="SkillPot — practical agent skills, from task to finished work" width="600">
 </p>
 
-<p align="center">Part of <a href="https://modepot.io/">ModePot</a>. &nbsp; <a href="website/">Website source</a> &nbsp; <a href="https://tugrul.modepot.io/">Created by Tugrul Guner</a></p>
+<p align="center">Part of <a href="https://modepot.io/">ModePot</a>. &nbsp; <a href="https://skillpot.modepot.io/">Documentation</a> &nbsp; <a href="https://tugrul.modepot.io/">Created by Tugrul Guner</a></p>
 
 <p align="center"><strong>Give your agent a workflow. Get work you can inspect.</strong></p>
 
@@ -122,7 +122,7 @@ requirement to produce videos. The catalogue above describes what is available n
 - [Release and refresh policy](docs/release-policy.md): immutable collection tags,
   upstream freshness, user-edit preservation and publication readback.
 - [Website source](website/): product-owned documentation and build/deployment setup.
-  Its custom domain is pending deployment; no live site is claimed by this source link.
+  The documentation is live at [skillpot.modepot.io](https://skillpot.modepot.io/).
 
 ## Boundaries
 
