@@ -73,6 +73,14 @@ class CIContractTests(unittest.TestCase):
             self.assertEqual(item['schedule']['interval'], 'weekly')
             self.assertEqual(item['open-pull-requests-limit'], '5')
 
+    def test_typescript_major_updates_require_a_coordinated_checker_upgrade(self):
+        config = yaml.load((ROOT / '.github/dependabot.yml').read_text(), Loader=yaml.BaseLoader)
+        npm = next(item for item in config['updates'] if item['package-ecosystem'] == 'npm')
+        self.assertEqual(npm.get('ignore'), [{
+            'dependency-name': 'typescript',
+            'update-types': ['version-update:semver-major'],
+        }])
+
     def test_contribution_forms_reference_existing_labels_and_no_runtime_claims(self):
         forms = ROOT / '.github/ISSUE_TEMPLATE'
         for name, label in [('bug.yml', 'bug'), ('feature.yml', 'enhancement')]:
