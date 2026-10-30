@@ -31,21 +31,18 @@
 
 ## Quick start
 
-The published collection remains **v0.2.0**. This source branch contains a
-[four-package upstream-guide refresh](docs/public-guide-refresh.md) that is not in
-that release. Keep the stable installation below distinct from current-source
-guidance and its version-specific product prerequisites.
-
-[v0.3.0 release preparation](docs/releases/v0.3.0.md) records the proposed contents
-and post-publication setup. It is not a published tag; the stable command below
-deliberately remains on v0.2.0 until publication is separately approved and verified.
+The published collection is **[v0.3.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.3.0)**,
+including the [four-package upstream-guide refresh](docs/public-guide-refresh.md).
+Per-package prerequisites and upstream unreleased-feature boundaries still apply.
+See the [release Discussion](https://github.com/tugrulguner/skillpot/discussions/26)
+and [preparation/publication record](docs/releases/v0.3.0.md).
 
 Choose one task, inspect its instructions and copy the **complete selected directory**
 into your host's documented skill location. This example uses Claude Code's project
 scope and the published collection. Run it from a new source location you own:
 
 ```sh
-git clone --branch v0.2.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source
+git clone --branch v0.3.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source
 cd skillpot-source
 # Replace with an existing project you own.
 SKILL_ROOT=/absolute/owned-project/.claude/skills

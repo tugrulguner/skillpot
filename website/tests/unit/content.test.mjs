@@ -16,7 +16,7 @@ test('canonical guides link to product-owned routes as absolute URLs', async () 
 
 test('docs scope release and experimental status without claiming a runtime', async () => {
   const [home, catalogue, limits] = await Promise.all(['index.mdx', 'catalogue.md', 'limits.md'].map((f) => readFile(join(root, 'src/content/docs', f), 'utf8')));
-  assert.match(home, /v0\.2\.0/);
+  assert.match(home, /v0\.3\.0/);
   assert.match(home, /experimental/);
   assert.match(catalogue, /seven imported public guidance files/);
   assert.match(limits, /not an agent runtime/);

@@ -75,8 +75,8 @@ these are not baseline comparisons or broad compatibility results.
 
 The [public-guide refresh audit](../docs/public-guide-refresh.md) records four
 changed consumer guides and three unchanged imported guides. The refreshed source
-packages are not part of published SkillPot v0.2.0; the stable quickstart continues
-to install that release. Each affected package distinguishes published upstream
+packages are included in published SkillPot v0.3.0; v0.2.0 retains its older
+snapshots. The stable quickstart selects v0.3.0. Each package distinguishes published upstream
 features from newer-main-only instructions. Historical examples remain at their
 original pins rather than becoming fresh execution evidence.
 
