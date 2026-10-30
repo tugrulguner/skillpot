@@ -1,20 +1,22 @@
 # Provenance
 
 - Upstream repository: https://github.com/tugrulguner/intpot
-- Immutable revision: `3d784e8dd5f1c45b7b2abfac21450aa17efad52c`
+- Immutable revision: `470584e21ee518e983087175f217c65664bd0ec5`
 - Original source path: `src/intpot/templates/skills/intpot-python.md`
-- Canonical source URL: https://github.com/tugrulguner/intpot/blob/3d784e8dd5f1c45b7b2abfac21450aa17efad52c/src/intpot/templates/skills/intpot-python.md
+- Canonical source URL: https://github.com/tugrulguner/intpot/blob/470584e21ee518e983087175f217c65664bd0ec5/src/intpot/templates/skills/intpot-python.md
 - License: MIT; complete upstream `LICENSE` retained at this skill root.
-- Original source SHA-256: `a13b76e17e8bdc27e940bddf5db5263a44fcf4d970f5dbea9aaa755fa353ac79`
+- Original source SHA-256: `12d34072bb1fc6e2e50a750e50fddf036e83c8fc261f3b2ae3e168dd0b319c01`
 - Upstream LICENSE SHA-256: `55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b`
 
 Adaptations: transformed the public consumer guide snapshot into a portable AgentSkills entry point; added task triggers, setup/version matching, actionable task procedure, safety and failure boundaries, and verification/reporting. Full source retained byte-for-byte at `references/upstream.md`. The pinned upstream guide remains canonical for detailed product behavior and version-specific API. No private skill material is incorporated. Explicit source metadata and a linked `references/LICENSE.md` ensure selective direct-URL installation carries the complete notice.
 
 Maintenance: upstream intpot maintainers own product/API truth; SkillPot pack maintainers own packaging/adaptation and should refresh against an immutable upstream revision.
 
-Refresh: skill metadata version 0.2.0 replaces the older Intpot 0.13.0 snapshot used
-by SkillPot v0.1.0. The new immutable pin is also the published Intpot v0.14.0 tag.
-Added bounded-definition-provenance guidance without changing product code or the
-upstream reference bytes. The archive retains upstream's pre-publication conditional
-wording; the tag confirms this version is now published. Historical execution/install
-records and the v0.1.0 tag remain unchanged and do not qualify this new runtime pin.
+Refresh: skill metadata version 0.3.0 replaces the v0.14.0 guide snapshot distributed
+by SkillPot v0.2.0. This pin is an audited upstream main commit, not a published
+SkillPot release. It adds documented v0.15 binding chains and v0.16 exact-reference
+locations/source digests, plus explicitly unreleased numeric-range guidance.
+Intpot v0.16.0 is published at f6ec26afc60011d41209cd705636f60e881d492f; its guides
+differ from this main snapshot. Archived pre-publication caveats stay byte-identical.
+Historical installation/execution records retain their original pins; none qualify
+this refreshed runtime or the unreleased range-conversion contract.

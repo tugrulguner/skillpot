@@ -73,6 +73,13 @@ these are not baseline comparisons or broad compatibility results.
 
 ## Maintenance
 
+The [public-guide refresh audit](../docs/public-guide-refresh.md) records four
+changed consumer guides and three unchanged imported guides. The refreshed source
+packages are not part of published SkillPot v0.2.0; the stable quickstart continues
+to install that release. Each affected package distinguishes published upstream
+features from newer-main-only instructions. Historical examples remain at their
+original pins rather than becoming fresh execution evidence.
+
 Review `modepot-sources.json` before updating a package. Fetch both the source and
 license at the **same immutable upstream revision**. Compare API/command changes and
 rights before replacing the pinned reference. Update the entry point only where the

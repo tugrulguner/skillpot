@@ -3,10 +3,10 @@ name: intpot-cli
 description: Use intpot CLI to scaffold, inspect, or convert Python apps.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   maintainer: "intpot contributors"
   upstream-repository: "tugrulguner/intpot"
-  upstream-revision: "3d784e8dd5f1c45b7b2abfac21450aa17efad52c"
+  upstream-revision: "470584e21ee518e983087175f217c65664bd0ec5"
   status: "pinned-public-guidance"
 ---
 # intpot CLI
@@ -37,6 +37,21 @@ Use the `intpot` command for project scaffolding, serving `intpot.App`, inspecti
 - Direct file loading may not put the source directory on `sys.path`; sibling imports can require installing the project or setting `PYTHONPATH`. Intpot does not provision services/configuration.
 - Recovery scope is version-dependent and bounded. The pinned snapshot documents v0.11 helper recovery for required undecorated functions and immutable literal constants, including supported transitive helpers. It excludes mutable/dynamic state, closures, classes and other unsupported dependencies. Do not repeat older blanket claims that all same-module helpers are unsupported, nor infer universal helper copying. Consult the versioned reference and actual diagnostics.
 - Framework semantic gaps remain, including nested Typer sub-apps, repeatable CLI options, certain FastAPI parameter forms, factory apps, multi-method routes, callbacks, and dependencies.
+
+## Versioned feature boundaries
+
+- Intpot v0.15.0 adds bounded `dependency_chain` diagnostics: deterministic static
+  binding-reference paths, not runtime call traces, reachability or recovery authority.
+- Published v0.16.0 adds optional exact body-reference ranges and source digests.
+  Identifier columns are 1-based Unicode characters with exclusive ends; unavailable
+  mappings stay null. Caller-provided metadata is not authenticated source provenance.
+- This newer main snapshot also documents **unreleased numeric-range conversion**.
+  Do not attribute that validation guarantee to v0.16.0. The supported source-only
+  slice uses finite inclusive CLI bounds and refuses clamping, unsupported shapes or
+  invalid defaults before writes; scaffold opt-in must not bypass these refusals.
+- The unchanged upstream archive retains old pre-publication wording for now-published
+  v0.14/v0.15/v0.16 features. Consult compatibility records and actual installed versions;
+  do not interpret archival wording as a new runtime qualification.
 
 ## Verification report
 For v0.14.0+ inspection diagnostics, `source_location` and helper locations are

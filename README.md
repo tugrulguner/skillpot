@@ -31,6 +31,11 @@
 
 ## Quick start
 
+The published collection remains **v0.2.0**. This source branch contains a
+[four-package upstream-guide refresh](docs/public-guide-refresh.md) that is not in
+that release. Keep the stable installation below distinct from current-source
+guidance and its version-specific product prerequisites.
+
 Choose one task, inspect its instructions and copy the **complete selected directory**
 into your host's documented skill location. This example uses Claude Code's project
 scope and the published collection. Run it from a new source location you own:

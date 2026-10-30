@@ -2,11 +2,11 @@
 name: dexpot
 description: Build synchronous typed HTTP APIs with Dexpot.
 license: MIT
-compatibility: Requires Python 3.12+ and Dexpot; CLI commands require the cli extra. No host or runtime matrix is qualified by this package.
+compatibility: Requires Python 3.12+ and Dexpot 0.8.0+ for documented lifecycle support; CLI commands require the cli extra. No host or runtime matrix is qualified by this package.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   upstream-repository: "tugrulguner/dexpot"
-  upstream-revision: "ca4979a6339e533f11ad135bc760aa081f3f60ab"
+  upstream-revision: "409df5b68a2386bd04e1f2cf0f057773142e0759"
   status: "pinned-public-guidance"
 ---
 
@@ -30,7 +30,7 @@ own licenses. If the required source revision is absent, obtain permission to in
 it in a fresh isolated environment, not over an existing user installation:
 
 ```sh
-python -m pip install "dexpot[cli] @ git+https://github.com/tugrulguner/dexpot.git@ca4979a6339e533f11ad135bc760aa081f3f60ab"
+python -m pip install "dexpot[cli] @ git+https://github.com/tugrulguner/dexpot.git@409df5b68a2386bd04e1f2cf0f057773142e0759"
 ```
 
 Use the environment's actual Python executable through your host's command tool.
@@ -50,6 +50,10 @@ boundaries; stop and report missing permission or tools instead of inventing a r
 4. Inspect the source guide's applicable restrictions and add actual application tests.
    Include success, invalid input, and registration-time rejection. Do not replace
    the owned socket server with an ASGI test adapter or second dispatcher.
+   For Dexpot 0.8.0+ lifecycle resources, use synchronous `app.lifespan(factory)`
+   managers with process-local ownership. Bounded shutdown does not forcibly cancel
+   Python handlers: late work can defer cleanup to a finalizer thread. Do not assume
+   enter/exit thread affinity or guaranteed cleanup after forced termination.
 5. With listener permission, serve only on loopback for local verification. For an
    application in `main.py`, the documented command is:
    `dexpot serve main:app --host 127.0.0.1 --port 8000`.
