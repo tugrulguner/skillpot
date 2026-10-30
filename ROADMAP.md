@@ -77,8 +77,10 @@ all skills nor changes existing user copies.
       family presentation and build/browser checks.
 - [x] Deploy the approved website, verify custom HTTPS routing/assets, and point
       the GitHub homepage at the verified site.
-- [ ] Merge and deploy the separate umbrella discovery correction; verify its
-      public collection status and links independently of the product website.
+- [x] Merge and deploy the separate umbrella discovery correction; verify its
+      public collection status and links independently of the product website
+      ([ModePot #58](https://github.com/tugrulguner/modepot/pull/58),
+      [live directory entry](https://modepot.io/#skillpot)).
 
 Potential later tasks include sourced interactive explanations, reproducible
 analysis-to-decision briefs and general engineering workflows. They are opportunities,
