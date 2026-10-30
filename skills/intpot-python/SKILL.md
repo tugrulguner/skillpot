@@ -3,10 +3,10 @@ name: intpot-python
 description: Use intpot Python APIs to define, inspect, or convert apps.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   maintainer: "intpot contributors"
   upstream-repository: "tugrulguner/intpot"
-  upstream-revision: "3d784e8dd5f1c45b7b2abfac21450aa17efad52c"
+  upstream-revision: "470584e21ee518e983087175f217c65664bd0ec5"
   status: "pinned-public-guidance"
 ---
 # intpot Python API
@@ -20,7 +20,7 @@ Use intpot from Python to register tools with `App`, or load an existing trusted
 
 ## Setup and version check
 1. Use the active project environment. Install `intpot` for core/CLI use; add `intpot[api]` or `intpot[mcp]` if inspecting/loading that source framework or importing/running that target. `intpot[all]` installs both.
-2. Check `python -m pip show intpot` (or the environment's package manager) and confirm the installed version supports each API/diagnostic intended. This snapshot is revision `3d784e8dd5f1c45b7b2abfac21450aa17efad52c`; if package release differs, pin a compatible published version or use that matching source checkout rather than assume docs match runtime.
+2. Check `python -m pip show intpot` (or the environment's package manager) and confirm the installed version supports each API/diagnostic intended. This snapshot is revision `470584e21ee518e983087175f217c65664bd0ec5`; if package release differs, pin a compatible published version or use that matching source checkout rather than assume docs match runtime.
 3. Confirm project dependency policy and trusted input. File loading imports and executes the source; live-instance loading requires its framework runtime available.
 
 ## Procedure
@@ -37,6 +37,21 @@ Use intpot from Python to register tools with `App`, or load an existing trusted
 - Generation success or an empty bounded assessment does not establish full Python equivalence, import availability, runtime state, framework resolution, configuration, or service provisioning.
 - Supported recovery is bounded and versioned. The revision guide describes v0.11 recovery for certain undecorated helper functions and immutable literals; closures, mutable/dynamic globals, classes, and other unsupported dependencies remain limitations. Earlier broad statements that no helpers are copied are stale for that bounded subset; neither claim implies universal copy/refusal. Respect concrete diagnostics and installed version.
 - Callback/dependency guards and missing body/binding/definition/annotation diagnostics can refuse before output. Preserve existing output and inspect exception details; do not use scaffold opt-in to evade refusal.
+
+## Versioned feature boundaries
+
+- Intpot v0.15.0 adds bounded `dependency_chain` diagnostics: deterministic static
+  binding-reference paths, not runtime call traces, reachability or recovery authority.
+- Published v0.16.0 adds optional exact body-reference ranges and source digests.
+  Identifier columns are 1-based Unicode characters with exclusive ends; unavailable
+  mappings stay null. Caller-provided metadata is not authenticated source provenance.
+- This newer main snapshot also documents **unreleased numeric-range conversion**.
+  Do not attribute that validation guarantee to v0.16.0. The supported source-only
+  slice uses finite inclusive CLI bounds and refuses clamping, unsupported shapes or
+  invalid defaults before writes; scaffold opt-in must not bypass these refusals.
+- The unchanged upstream archive retains old pre-publication wording for now-published
+  v0.14/v0.15/v0.16 features. Consult compatibility records and actual installed versions;
+  do not interpret archival wording as a new runtime qualification.
 
 ## Verification report
 Intpot v0.14.0+ `ToolInfo` and immutable `ToolSchema` expose optional

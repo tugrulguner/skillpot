@@ -3,10 +3,10 @@ name: summonpot
 description: Use when building or changing a Summonpot API.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   maintainer: "tugrulguner"
   upstream-repository: "tugrulguner/summonpot"
-  upstream-revision: "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5"
+  upstream-revision: "739d980dca48657a839e8f6a19649bfb6f54da80"
   status: "pinned-public-guidance"
 ---
 
@@ -25,8 +25,8 @@ Use this procedure when implementing an API endpoint in a repository that uses S
 1. Define the typed request and response models and endpoint goal. In Summonpot, a decorated declaration body uses `...`; it is not a handler to implement or call directly. Route execution through the framework’s served HTTP endpoint.
 2. Keep business effects in application-owned callables. Grant only exact capabilities required for this endpoint; enforce authorization inside each capability. Never expose ambient database/session, shell, filesystem, or arbitrary SQL authority.
 3. Prefer typed `Operation` bindings when input provenance/order is part of the contract. Bind validated request/result values explicitly; mark only bounded semantic decisions as agent-owned. Unsupported explicit shapes must fail closed, not be silently broadened.
-4. Determine the execution path from the exact installed version and contract. Eligible fully resolved `Exactly(1)` operations/sequential chains may run model-free under narrow predicates; producer-backed choices and legacy capabilities remain agent-mediated. Do not claim a path based only on this skill.
-5. Bound model-backed execution with configured usage limits and a deadline; bind local development to loopback. Summonpot has no built-in authentication in the pinned snapshot. Before network exposure, establish authentication and operational controls with the service owner.
+4. Determine the execution path from the exact installed version and contract. The audited guide adds authenticated `FromContext` in narrow operation/chain shapes from 0.13.0 and a narrowly scoped producer-choice local optimization in 0.14.0. Current source also documents multiple-choice optimization explicitly as unreleased. These are conditional, not blanket model-free guarantees; follow the full pinned guide and installed version. Authentication remains application-owned. Do not claim a path based only on this skill.
+5. Bound model-backed execution with configured usage limits and a deadline; bind local development to loopback. Authentication capabilities vary by version and remain application-owned. Before network exposure, establish authentication and operational controls with the service owner.
 6. Test registration failures, request/response validation, capability arguments/effects, and both supported execution paths as applicable. Prefer the keyless test model only for safe wiring tests; it can invoke capabilities with generated placeholder inputs and is not a dry-run sandbox.
 7. Review timeout/uncertain side effects and idempotency. A timeout does not prove an effect did not occur; applications own transactions and cross-request idempotency.
 
