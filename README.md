@@ -36,6 +36,10 @@ The published collection remains **v0.2.0**. This source branch contains a
 that release. Keep the stable installation below distinct from current-source
 guidance and its version-specific product prerequisites.
 
+[v0.3.0 release preparation](docs/releases/v0.3.0.md) records the proposed contents
+and post-publication setup. It is not a published tag; the stable command below
+deliberately remains on v0.2.0 until publication is separately approved and verified.
+
 Choose one task, inspect its instructions and copy the **complete selected directory**
 into your host's documented skill location. This example uses Claude Code's project
 scope and the published collection. Run it from a new source location you own:
