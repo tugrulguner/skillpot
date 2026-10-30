@@ -64,6 +64,10 @@ These checkboxes do not authorize merging a future change or publishing from an
 unreviewed branch. A collection release distributes instructions; it neither installs
 all skills nor changes existing user copies.
 
+Latest published collection: v0.2.0. The [v0.3.0 preparation](docs/releases/v0.3.0.md)
+describes the four-guide refresh and intervening repository/site changes. It remains
+proposed: preparation, merge and tag/release publication are separate approvals.
+
 ## 4. Maintain and expand the library
 
 - [ ] Apply the source-refresh process when upstream commands, APIs, notices or host
