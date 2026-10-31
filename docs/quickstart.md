@@ -11,6 +11,7 @@ may require its own Python environment, dependencies or credentials.
 Start with the [task-first catalogue](../catalog/README.md):
 
 - Intpot CLI or Python: define, inspect, export or convert a trusted application.
+- Decision brief (unreleased source only): compare alternatives with a bounded evidence packet; use the [separate pinned first-use steps](#try-decision-brief-from-reviewed-source), not the v0.3.0 checkout.
 - Dexpot: build and verify synchronous typed HTTP APIs.
 - Summonpot: implement an endpoint with deterministic operations and bounded agent-owned decisions.
 - Refpot: exercise the embedded database preview with temporary data.
@@ -154,6 +155,122 @@ file workflow. Do not remove product environments, applications or data with it.
 Historical [installation](../evaluations/modepot-project-skills/native-install-001/README.md)
 and [task observations](../evaluations/harness-portability/explicit-codex-001/README.md)
 remain separate records, not prerequisites for using the documented integrations.
+
+## Try decision-brief from reviewed source
+
+`decision-brief` is reviewed but unreleased and is **not included in published v0.3.0**.
+The stable instructions above intentionally select that older collection. For this
+workflow, use the separate immutable source revision below. These POSIX shell steps
+copy instructions and example inputs only; they do not launch an agent, install
+product dependencies or execute the proposed storage change.
+
+### Get the exact source
+
+From a new source location you own:
+
+```sh
+git clone https://github.com/tugrulguner/skillpot.git skillpot-decision-source &&
+git -C skillpot-decision-source checkout --detach 4ca53963cafc8a9a3965808c485dc8c6ad502a66 &&
+cd skillpot-decision-source
+```
+
+This is the reviewed main snapshot after the status/task-record update, not a new
+release. Do not replace the commit with moving `main` or rerun the v0.3.0 checkout
+above before copying this skill. Inspect [the procedure](../skills/decision-brief/SKILL.md),
+its linked templates, provenance, compatibility and both complete notices first.
+
+### Copy only the selected bundle
+
+Stay in that source checkout. Replace `PROJECT` with a real, existing project you own.
+Choose one trusted project-local skill root using your [host's placement](#3-place-it-where-your-agent-discovers-project-skills).
+This example selects Claude Code; Cursor can use `.cursor/skills`, and Codex can use
+`.agents/skills`. Do not execute all three alternatives or change a global skill store.
+
+```sh
+PROJECT=/absolute/owned-parent/your-project
+SKILL_ROOT="$PROJECT/.claude/skills"
+(
+  set -eu
+  : "${SKILL_ROOT:?Choose an owned project-local skill root}"
+  mkdir -p "$SKILL_ROOT"
+  mkdir "$SKILL_ROOT/decision-brief"
+  cp -R skills/decision-brief/. "$SKILL_ROOT/decision-brief/"
+)
+```
+
+The plain `mkdir` refuses an existing selected directory, file or same-name symlink.
+Preserve it and inspect local changes rather than deleting or merging over it. Parent
+paths must be the trusted locations you selected; this recipe is not a sandbox.
+A failed copy can leave a partial new directory, which must be inspected before use.
+The complete bundle includes both templates, provenance, compatibility, `LICENSE`
+and `LICENSES/github-spec-kit-MIT.txt`. No sibling skill is copied or modified.
+
+Hermes and other hosts can instead explicitly read the selected `SKILL.md` and its
+linked resources from this pinned checkout using their existing file tools. That is
+explicit loading, not a claim of native installation or automatic discovery. Follow
+[the existing host setup](#4-ask-for-a-real-result) for invocation; no client trial or
+login is required merely to copy or inspect instructions.
+
+### Prepare an offline input packet
+
+From the same source checkout, with `PROJECT` still set, copy only the task, evidence
+packet and their source notices into a fresh project directory. The output directory
+must also be new:
+
+```sh
+(
+  set -eu
+  : "${PROJECT:?Choose an existing project you own}"
+  test -d "$PROJECT"
+  mkdir "$PROJECT/decision-brief-example"
+  cp examples/decision-brief/task.md examples/decision-brief/sources.json examples/decision-brief/NOTICE.md examples/decision-brief/LICENSE-PYTHON.txt "$PROJECT/decision-brief-example/"
+  mkdir "$PROJECT/decision-brief-output"
+)
+```
+
+This omits the authored expected `brief.md` and `evidence.md`. Existing input/output
+locations, including same-name symlinks, make `mkdir` fail. Earlier successful steps
+may already have created a new input directory; preserve and inspect it rather than
+rerunning or automatically cleaning up. The Python documentation notices remain with
+the supplied excerpts. No database or dependency installation is involved.
+
+### Give your agent the task
+
+Open your host in `PROJECT`. Explicitly select `decision-brief` using its native skill
+invocation, or ask it to read the complete selected entry point and linked resources.
+Then paste this task; the paths are relative to that project:
+
+```text
+Use decision-brief. Read decision-brief-example/task.md and
+decision-brief-example/sources.json as the only task evidence. The source notices
+are in the same input directory. Keep the task offline and preserve all inputs.
+
+Create only decision-brief-output/brief.md and
+decision-brief-output/evidence.md in the fresh owned output directory.
+Compare the stated alternatives against the same constraints, link factual claims
+to the supplied excerpts, separate assumptions and unknowns, and recommend
+conditionally or defer if decisive evidence is missing. State what would change
+the recommendation and what remains untested. Reopen both outputs to check them.
+
+Do not install dependencies, retrieve more sources, create a database, migrate
+anything, publish the result or treat your recommendation as my acceptance.
+If either output already exists or is a symlink, stop without overwriting it.
+```
+
+### Check the result
+
+Expect a proposed recommendation or explicit deferral in `decision-brief-output/brief.md`
+and a source/claim/assumption/unknown ledger in `decision-brief-output/evidence.md`.
+Verify that every load-bearing claim is supported by a precise excerpt or explicitly
+marked as an assumption, that missing decisive evidence is visible, and that the
+recommendation states concrete reversal conditions. The owner still decides whether
+to accept it. This workflow does not perform a storage migration.
+
+Use [the worked example](../examples/decision-brief/README.md) for comparison after
+the task, and the [three observed task attempts](../evaluations/decision-brief/offline-tasks-001/README.md)
+for their actual outputs and limits. The example's Python checker validates its
+checked-in artifacts, not a newly generated brief or semantic correctness. Copy
+checks establish file placement only, not native activation or better decisions.
 
 ## Troubleshooting without changing your setup
 

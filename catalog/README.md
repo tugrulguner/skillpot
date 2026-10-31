@@ -50,8 +50,9 @@ individual source/rights/privacy review before any later extraction.
 Current source contains nine skills: the seven imported public guidance files,
 experimental repository-readiness and reviewed, unreleased **[decision-brief](../skills/decision-brief/SKILL.md)**.
 The decision brief is not included in published v0.3.0, which still contains eight.
-The stable quickstart deliberately remains pinned to that release. Use a reviewed
-source checkout containing the selected directory for this unreleased workflow.
+The stable quickstart deliberately remains pinned to that release. Use the
+[source-only first-use guide](../docs/quickstart.md#try-decision-brief-from-reviewed-source)
+for the exact reviewed source commit, safe copy steps and task prompt for this workflow.
 
 Use decision-brief to compare real alternatives for one decision using supplied
 evidence, constraints, claim/source links, trade-offs and explicit uncertainty.
