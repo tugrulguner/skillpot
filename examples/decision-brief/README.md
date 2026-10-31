@@ -5,7 +5,7 @@ This example accompanies the unreleased [decision-brief skill](../../skills/deci
 Read [the task](task.md), inspect [the pinned source packet](sources.json), then compare the parent-authored [brief](brief.md) and [evidence ledger](evidence.md).
 The [failure cases](cases.md) show expected responses to conflict, missing evidence, source instructions and an occupied output location. None is an observed agent trace.
 
-To use the workflow, choose a reviewed source checkout containing this directory, copy the complete selected skill using the documented [host setup](../../docs/quickstart.md), and provide the task with a fresh owned output location. The stable v0.3.0 clone command does not supply this unreleased directory.
+Use the [source-only first-use guide](../../docs/quickstart.md#try-decision-brief-from-reviewed-source) for an exact reviewed commit, copy commands that refuse existing destinations, a minimal input packet and a ready-to-paste task prompt. The stable v0.3.0 clone command does not supply this unreleased directory.
 Keep all supplied documents within the offline scope. The skill depends on host file tools, not a specific agent or an executable research service.
 
 The separate [observed task record](../../evaluations/decision-brief/offline-tasks-001/README.md) archives actual new outputs from three explicitly loaded attempts. It does not reclassify the authored reference files here as agent output.
