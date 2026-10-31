@@ -28,7 +28,7 @@ must not override another project's policy or a user's explicit approval boundar
 
 ## What is and is not included
 
-The [machine-readable source catalogue](modepot-sources.json) identifies every package,
+The [machine-readable source catalogue](modepot-sources.json) identifies every imported package,
 immutable upstream revision/path, original source hash and license hash. Complete MIT
 notices are included in each package. An unchanged upstream reference sits behind an
 adapted portable entry point: specific task, setup, permissions, checks and limitations.
@@ -44,6 +44,22 @@ audited every ModePot-family repository or every private workflow.
 branch, separate from the seven imported public guidance files. Video tooling is
 not included. Private authoring, release, marketing and operational workflows require
 individual source/rights/privacy review before any later extraction.
+
+## General decision workflow — current source only
+
+Current source contains nine skills: the seven imported public guidance files,
+experimental repository-readiness and experimental **[decision-brief](../skills/decision-brief/SKILL.md)**.
+The decision brief is not included in published v0.3.0, which still contains eight.
+The stable quickstart deliberately remains pinned to that release. Use a reviewed
+source checkout containing the selected directory for this unreleased workflow.
+
+Use decision-brief to compare real alternatives for one decision using supplied
+evidence, constraints, claim/source links, trade-offs and explicit uncertainty.
+It creates a proposed brief and evidence ledger; it neither accepts nor implements
+the decision. The [worked example and failure cases](../examples/decision-brief/README.md)
+are authored references, not observed agent runs or evidence of better decisions.
+Its [provenance](../skills/decision-brief/provenance.md) records narrow public-source
+use and exclusions; the seven-package upstream catalogue remains unchanged.
 
 ## Selective installation
 

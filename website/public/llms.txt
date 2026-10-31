@@ -1,9 +1,9 @@
 # SkillPot
 
-SkillPot is a library of practical, selectively installable agent instructions. It is not an agent runtime, registry, or installer. The current public ModePot collection is pinned at v0.2.0; upstream product projects remain canonical.
+SkillPot is a library of practical, selectively installable agent instructions. It is not an agent runtime, registry, or installer. The current public ModePot collection is pinned at v0.3.0; upstream product projects remain canonical.
 
 ## Start
-Eight skills are available: seven pinned public project/contributor packages covering Intpot, Summonpot, Dexpot and Refpot, plus the original repository-readiness skill. Refpot is a preview and repository-readiness remains experimental. Claude Code, Cursor, Codex and Hermes use their documented native skill mechanisms. Installation copies instructions, not product dependencies or additional authority. Full MIT source notices are retained per package.
+Published v0.3.0 contains eight skills: seven pinned public project/contributor packages covering Intpot, Summonpot, Dexpot and Refpot, plus the original repository-readiness skill. Current source contains nine, adding experimental decision-brief, which is not included in published v0.3.0. It produces a proposed recommendation and evidence ledger from a bounded input packet; it does not accept or implement the decision. Select a reviewed source checkout for that unreleased workflow, not the stable v0.3.0 clone. Refpot is a preview and repository-readiness remains experimental. Claude Code, Cursor, Codex and Hermes use their documented native skill mechanisms. Installation copies instructions, not product dependencies or additional authority. Full MIT source notices are retained per package.
 
 - [Quick start](https://skillpot.modepot.io/quickstart/)
 - [Catalogue](https://skillpot.modepot.io/catalogue/)
@@ -17,4 +17,4 @@ Eight skills are available: seven pinned public project/contributor packages cov
 ## Canonical source
 - [SkillPot repository](https://github.com/tugrulguner/skillpot)
 - [Source skill contract](https://github.com/tugrulguner/skillpot/blob/main/docs/skill-contract.md)
-- [Pinned release v0.2.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.2.0)
+- [Pinned release v0.3.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.3.0)

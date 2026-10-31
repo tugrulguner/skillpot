@@ -73,7 +73,9 @@ instructions grants no additional authority.
 
 ## Choose a workflow
 
-The current collection contains eight skills:
+Published v0.3.0 contains eight skills. Current source contains nine: the same eight
+plus experimental `decision-brief`, which is not included in published v0.3.0.
+Use a reviewed source checkout for that workflow; the stable clone above remains v0.3.0.
 
 | Task | Skill |
 | --- | --- |
@@ -84,6 +86,7 @@ The current collection contains eight skills:
 | Use the embedded database preview with explicit limits | [refpot-database](skills/refpot-database/SKILL.md) |
 | Prepare/review changes specifically in Summonpot | [summonpot-pr-review](skills/summonpot-pr-review/SKILL.md), [summonpot-code-review](skills/summonpot-code-review/SKILL.md) |
 | Audit a repository against an exact delivery goal | [repository-readiness](skills/repository-readiness/SKILL.md), experimental |
+| Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md), experimental current source only; not in v0.3.0 |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
 policies do not govern unrelated projects or authorize a merge. See the
@@ -118,6 +121,7 @@ requirement to produce videos. The catalogue above describes what is available n
 
 ## Examples and reference
 
+- [Decision brief worked example](examples/decision-brief/README.md): a parent-authored CSV/SQLite comparison, pinned documentation excerpts and four failure cases. Its offline checker validates artifact integrity, not agent performance. Current source only, not in v0.3.0.
 - [Product consumer examples](examples/modepot-project-skills/README.md): actual sources,
   setup, expected checks and explicit product pins. v0.14.0 Intpot provenance examples
   are distinguished from older runtime records.

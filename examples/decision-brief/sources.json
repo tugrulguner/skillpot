@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://github.com/python/cpython/blob/ebf955df7a89ed0c7968f79faec1de49f61ed7cb/Doc/library/csv.rst#L72-L74",
+      "revision": "ebf955df7a89ed0c7968f79faec1de49f61ed7cb",
+      "path": "Doc/library/csv.rst",
+      "first_line": 72,
+      "last_line": 74,
+      "retrieved_at": "2026-10-31",
+      "original_sha256": "9e0b648823bbffc3d6112de905d5fcbb7ebe2d29a4a9e8fd0e16737b6e0d3359",
+      "excerpt_sha256": "f43c38b0fe20c905b0602cd4c23c7f927c714e768dfa1b893ca0d9386e8dd402",
+      "excerpt": "   Each row read from the csv file is returned as a list of strings.  No\n   automatic data type conversion is performed unless the :data:`QUOTE_NONNUMERIC` format\n   option is specified (in which case unquoted fields are transformed into floats).",
+      "license": "PSF-2.0"
+    },
+    {
+      "id": "S2",
+      "url": "https://github.com/python/cpython/blob/ebf955df7a89ed0c7968f79faec1de49f61ed7cb/Doc/library/sqlite3.rst#L25-L30",
+      "revision": "ebf955df7a89ed0c7968f79faec1de49f61ed7cb",
+      "path": "Doc/library/sqlite3.rst",
+      "first_line": 25,
+      "last_line": 30,
+      "retrieved_at": "2026-10-31",
+      "original_sha256": "d16dc0094b557effa0ae52618da0f61f0cb50bf05ce21942f3a9b2e70af40163",
+      "excerpt_sha256": "60e4fcbfb619e546b3771f8a737f0f667a29380ebe7c947240c3f7574542164e",
+      "excerpt": "SQLite is a C library that provides a lightweight disk-based database that\ndoesn't require a separate server process and allows accessing the database\nusing a nonstandard variant of the SQL query language. Some applications can use\nSQLite for internal data storage.  It's also possible to prototype an\napplication using SQLite and then port the code to a larger database such as\nPostgreSQL or Oracle.",
+      "license": "PSF-2.0"
+    },
+    {
+      "id": "S3",
+      "url": "https://github.com/python/cpython/blob/ebf955df7a89ed0c7968f79faec1de49f61ed7cb/Doc/library/sqlite3.rst#L2645-L2662",
+      "revision": "ebf955df7a89ed0c7968f79faec1de49f61ed7cb",
+      "path": "Doc/library/sqlite3.rst",
+      "first_line": 2645,
+      "last_line": 2662,
+      "retrieved_at": "2026-10-31",
+      "original_sha256": "d16dc0094b557effa0ae52618da0f61f0cb50bf05ce21942f3a9b2e70af40163",
+      "excerpt_sha256": "8d4f73df2f9c36d036272136aae3b42102c12203b34a41d11dbc7847c1250713",
+      "excerpt": "The recommended way of controlling transaction behaviour is through\nthe :attr:`Connection.autocommit` attribute,\nwhich should preferably be set using the *autocommit* parameter\nof :func:`connect`.\n\nIt is suggested to set *autocommit* to ``False``,\nwhich implies :pep:`249`-compliant transaction control.\nThis means:\n\n* :mod:`!sqlite3` ensures that a transaction is always open,\n  so :func:`connect`, :meth:`Connection.commit`, and :meth:`Connection.rollback`\n  will implicitly open a new transaction\n  (immediately after closing the pending one, for the latter two).\n  :mod:`!sqlite3` uses ``BEGIN DEFERRED`` statements when opening transactions.\n* Transactions should be committed explicitly using :meth:`!commit`.\n* Transactions should be rolled back explicitly using :meth:`!rollback`.\n* An implicit rollback is performed if the database is\n  :meth:`~Connection.close`-ed with pending changes.",
+      "license": "PSF-2.0"
+    },
+    {
+      "id": "S4",
+      "url": "https://github.com/python/cpython/blob/ebf955df7a89ed0c7968f79faec1de49f61ed7cb/Doc/library/csv.rst#L89-L104",
+      "revision": "ebf955df7a89ed0c7968f79faec1de49f61ed7cb",
+      "path": "Doc/library/csv.rst",
+      "first_line": 89,
+      "last_line": 104,
+      "retrieved_at": "2026-10-31",
+      "original_sha256": "9e0b648823bbffc3d6112de905d5fcbb7ebe2d29a4a9e8fd0e16737b6e0d3359",
+      "excerpt_sha256": "1d69714a719205e6ba4445ed1ed5bc80774fa8e5045ce7c7147cafbdff48913d",
+      "excerpt": "   Return a writer object responsible for converting the user's data into delimited\n   strings on the given file-like object.  *csvfile* can be any object with a\n   :meth:`~io.TextIOBase.write` method.  If *csvfile* is a file object, it should be opened with\n   ``newline=''`` [1]_.  An optional *dialect*\n   parameter can be given which is used to define a set of parameters specific to a\n   particular CSV dialect.  It may be an instance of a subclass of the\n   :class:`Dialect` class or one of the strings returned by the\n   :func:`list_dialects` function.  The other optional *fmtparams* keyword arguments\n   can be given to override individual formatting parameters in the current\n   dialect.  For full details about dialects and formatting parameters, see\n   the :ref:`csv-fmt-params` section. To make it\n   as easy as possible to interface with modules which implement the DB API, the\n   value :const:`None` is written as the empty string.  While this isn't a\n   reversible transformation, it makes it easier to dump SQL NULL data values to\n   CSV files without preprocessing the data returned from a ``cursor.fetch*`` call.\n   All other non-string data are stringified with :func:`str` before being written.",
+      "license": "PSF-2.0"
+    }
+  ]
+}

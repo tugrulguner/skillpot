@@ -14,6 +14,23 @@ test('canonical guides link to product-owned routes as absolute URLs', async () 
   }
 });
 
+test('unreleased decision brief is discoverable without changing the stable clone', async () => {
+  const [home, catalogue] = await Promise.all(['index.mdx', 'catalogue.md'].map((f) => readFile(join(root, 'src/content/docs', f), 'utf8')));
+  assert.match(home, /decision-brief/);
+  assert.match(home, /not included in published v0\.3\.0/);
+  assert.match(catalogue, /decision-brief/);
+  assert.match(catalogue, /not included in published v0\.3\.0/);
+  assert.match(home, /git clone --branch v0\.3\.0 --depth 1/);
+});
+
+test('agent map separates the latest published snapshot from new source', async () => {
+  const map = await readFile(join(root, 'public/llms.txt'), 'utf8');
+  assert.match(map, /releases\/tag\/v0\.3\.0/);
+  assert.match(map, /decision-brief/);
+  assert.match(map, /not included in published v0\.3\.0/);
+  assert.doesNotMatch(map, /v0\.2\.0/);
+});
+
 test('docs scope release and experimental status without claiming a runtime', async () => {
   const [home, catalogue, limits] = await Promise.all(['index.mdx', 'catalogue.md', 'limits.md'].map((f) => readFile(join(root, 'src/content/docs', f), 'utf8')));
   assert.match(home, /v0\.3\.0/);

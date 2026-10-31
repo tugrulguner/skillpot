@@ -71,6 +71,11 @@ intervening repository/site changes and independently verified source archives.
 
 ## 4. Maintain and expand the library
 
+- [x] Implement experimental [decision-brief](skills/decision-brief/SKILL.md) in current source,
+      with a bounded evidence procedure, parent-authored worked example and offline
+      artifact checks. This is not included in published v0.3.0 and does not establish
+      agent performance or complete-task execution.
+
 - [ ] Apply the source-refresh process when upstream commands, APIs, notices or host
       specifications change; review diffs rather than silently tracking moving main.
 - [ ] Add useful skills with concrete inputs, outputs, permissions, public source
@@ -87,8 +92,8 @@ intervening repository/site changes and independently verified source archives.
       ([ModePot #58](https://github.com/tugrulguner/modepot/pull/58),
       [live directory entry](https://modepot.io/#skillpot)).
 
-Potential later tasks include sourced interactive explanations, reproducible
-analysis-to-decision briefs and general engineering workflows. They are opportunities,
+Potential later tasks include sourced interactive explanations and further general
+engineering workflows. They are opportunities,
 not committed features or permission to copy private procedures.
 
 ## Optional research — not installation or release gates
