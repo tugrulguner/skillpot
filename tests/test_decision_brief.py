@@ -1,4 +1,5 @@
 import hashlib
+import json
 import re
 import unittest
 from pathlib import Path
@@ -10,6 +11,20 @@ PACKAGE = ROOT / "skills" / "decision-brief"
 
 
 class DecisionBriefContractTests(unittest.TestCase):
+    def test_recorded_tasks_preserve_artifacts_and_tested_procedure(self):
+        record = ROOT / "evaluations/decision-brief/offline-tasks-001"
+        self.assertTrue((record / "manifest.json").is_file(), "observed task record is missing")
+        manifest = json.loads((record / "manifest.json").read_text())
+        self.assertEqual(manifest["candidate_revision"], "9227a9310728a4919ce012bc3f24850c6d2e721e")
+        self.assertEqual({case["id"] for case in manifest["cases"]}, {"normal", "missing", "collision"})
+        self.assertEqual(len(manifest["cases"]), 3)
+        for path, digest in manifest["archived_files"].items():
+            self.assertEqual(hashlib.sha256((record / path).read_bytes()).hexdigest(), digest, path)
+        body = (PACKAGE / "SKILL.md").read_text().split("\n---\n", 1)[1]
+        self.assertEqual(hashlib.sha256(body.encode()).hexdigest(), manifest["procedure_body_sha256"])
+        for path, digest in manifest["unchanged_resources"].items():
+            self.assertEqual(hashlib.sha256((PACKAGE / path).read_bytes()).hexdigest(), digest, path)
+
     def test_frontmatter_has_short_trigger_and_flat_metadata(self):
         text = (PACKAGE / "SKILL.md").read_text()
         match = re.fullmatch(r"---\n(.*?)\n---\n(.+)", text, re.DOTALL)
@@ -40,7 +55,7 @@ class DecisionBriefContractTests(unittest.TestCase):
         self.assertIn("name: decision-brief", text)
         self.assertIn('version: "0.1.0"', text)
         self.assertIn('maintainer: "tugrulguner"', text)
-        self.assertIn('status: "experimental/unreleased"', text)
+        self.assertIn('status: "unreleased"', text)
         self.assertNotIn("metadata:\n  hermes:", text)
         provenance = (PACKAGE / "provenance.md").read_text()
         self.assertIn("7370e592f3cd9c06e5b698983957e227c75b30e2", provenance)

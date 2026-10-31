@@ -74,7 +74,7 @@ instructions grants no additional authority.
 ## Choose a workflow
 
 Published v0.3.0 contains eight skills. Current source contains nine: the same eight
-plus experimental `decision-brief`, which is not included in published v0.3.0.
+plus reviewed, unreleased `decision-brief`, which is not included in published v0.3.0.
 Use a reviewed source checkout for that workflow; the stable clone above remains v0.3.0.
 
 | Task | Skill |
@@ -86,7 +86,7 @@ Use a reviewed source checkout for that workflow; the stable clone above remains
 | Use the embedded database preview with explicit limits | [refpot-database](skills/refpot-database/SKILL.md) |
 | Prepare/review changes specifically in Summonpot | [summonpot-pr-review](skills/summonpot-pr-review/SKILL.md), [summonpot-code-review](skills/summonpot-code-review/SKILL.md) |
 | Audit a repository against an exact delivery goal | [repository-readiness](skills/repository-readiness/SKILL.md), experimental |
-| Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md), experimental current source only; not in v0.3.0 |
+| Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md), reviewed current source only; not in v0.3.0 |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
 policies do not govern unrelated projects or authorize a merge. See the

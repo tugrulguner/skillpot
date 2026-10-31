@@ -16,9 +16,10 @@ test('canonical guides link to product-owned routes as absolute URLs', async () 
 
 test('unreleased decision brief is discoverable without changing the stable clone', async () => {
   const [home, catalogue] = await Promise.all(['index.mdx', 'catalogue.md'].map((f) => readFile(join(root, 'src/content/docs', f), 'utf8')));
-  assert.match(home, /decision-brief/);
+  assert.match(home, /reviewed, unreleased \*\*decision-brief/);
   assert.match(home, /not included in published v0\.3\.0/);
   assert.match(catalogue, /decision-brief/);
+  assert.match(catalogue, /reviewed, unreleased/);
   assert.match(catalogue, /not included in published v0\.3\.0/);
   assert.match(home, /git clone --branch v0\.3\.0 --depth 1/);
 });
