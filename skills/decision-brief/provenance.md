@@ -2,7 +2,7 @@
 
 ## Original procedure
 
-The decision-brief workflow and its templates are original SkillPot material, authored for this package. They are contributed under the repository's MIT license. Maintainer: `tugrulguner`; package version `0.1.0`; source status experimental/unreleased (added after collection v0.3.0). No runtime evaluation, agent-performance result, or ongoing maintenance commitment beyond authorized maintainer implementation is claimed.
+The decision-brief workflow and its templates are original SkillPot material, authored for this package. They are contributed under the repository's MIT license. Maintainer: `tugrulguner`; package version `0.1.0`; source status unreleased (added after collection v0.3.0). Three bounded, explicitly loaded task observations are recorded in the [task record](../../evaluations/decision-brief/offline-tasks-001/README.md); no comparative agent-performance result or ongoing maintenance commitment beyond authorized maintainer implementation is claimed.
 
 A maintainer-facing, authored scenario is available under [`examples/decision-brief/README.md`](../../examples/decision-brief/README.md). Its separate Python documentation excerpts retain PSF terms and notices in that example, not in this instruction bundle. That relative link resolves in the source repository; the installed skill is self-contained without it.
 

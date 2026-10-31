@@ -48,7 +48,7 @@ individual source/rights/privacy review before any later extraction.
 ## General decision workflow — current source only
 
 Current source contains nine skills: the seven imported public guidance files,
-experimental repository-readiness and experimental **[decision-brief](../skills/decision-brief/SKILL.md)**.
+experimental repository-readiness and reviewed, unreleased **[decision-brief](../skills/decision-brief/SKILL.md)**.
 The decision brief is not included in published v0.3.0, which still contains eight.
 The stable quickstart deliberately remains pinned to that release. Use a reviewed
 source checkout containing the selected directory for this unreleased workflow.
@@ -58,6 +58,8 @@ evidence, constraints, claim/source links, trade-offs and explicit uncertainty.
 It creates a proposed brief and evidence ledger; it neither accepts nor implements
 the decision. The [worked example and failure cases](../examples/decision-brief/README.md)
 are authored references, not observed agent runs or evidence of better decisions.
+A separate [task record](../evaluations/decision-brief/offline-tasks-001/README.md)
+archives three actual, bounded attempts without claiming broad reliability or gains.
 Its [provenance](../skills/decision-brief/provenance.md) records narrow public-source
 use and exclusions; the seven-package upstream catalogue remains unchanged.
 

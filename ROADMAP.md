@@ -71,10 +71,12 @@ intervening repository/site changes and independently verified source archives.
 
 ## 4. Maintain and expand the library
 
-- [x] Implement experimental [decision-brief](skills/decision-brief/SKILL.md) in current source,
+- [x] Implement [decision-brief](skills/decision-brief/SKILL.md) in current source,
       with a bounded evidence procedure, parent-authored worked example and offline
-      artifact checks. This is not included in published v0.3.0 and does not establish
-      agent performance or complete-task execution.
+      artifact checks. [Three bounded task observations](evaluations/decision-brief/offline-tasks-001/README.md)
+      record conditional recommendation, missing-evidence deferral and collision refusal.
+      The skill is reviewed but unreleased, not included in published v0.3.0; these
+      observations do not establish broad model performance or automatic discovery.
 
 - [ ] Apply the source-refresh process when upstream commands, APIs, notices or host
       specifications change; review diffs rather than silently tracking moving main.

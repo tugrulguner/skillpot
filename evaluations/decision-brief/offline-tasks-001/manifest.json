@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "candidate_revision": "9227a9310728a4919ce012bc3f24850c6d2e721e",
+  "execution_date": "2026-10-31",
+  "execution_mode": "explicit candidate loading through existing Hermes delegation; one attempt per case",
+  "reported_model": "gpt-6-luna",
+  "runtime_build_version": "not captured",
+  "procedure_body_sha256": "e23b420276208d9a97d3ac564e9cedd5d5959c5fbc3ee2451601e1b35c85b008",
+  "candidate_package_files": {
+    "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+    "provenance.md": "abaa1239ca2b12241d5d895bba41d617f2278a72f65051dab0d98043acc911ec",
+    "SKILL.md": "b64a958a3163f992fd7372e431a07bef87e0ada94422c862c0a1c7272a6cb0b2",
+    "compatibility.md": "c8dabc996a0e8d254083158f8f8ccb38a167b0dafc8bd090401a161b658609bf",
+    "LICENSES/github-spec-kit-MIT.txt": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+    "assets/evidence-template.md": "37977a741e54e9b25ac1c4e7d96c624b203c50b75ce82db4b48aa18f91eae2cb",
+    "assets/brief-template.md": "758c116c3b961d596d28bed2db08b7ecf99b0a0bde6f30d933e58a4b68f19fff"
+  },
+  "unchanged_resources": {
+    "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+    "LICENSES/github-spec-kit-MIT.txt": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+    "assets/evidence-template.md": "37977a741e54e9b25ac1c4e7d96c624b203c50b75ce82db4b48aa18f91eae2cb",
+    "assets/brief-template.md": "758c116c3b961d596d28bed2db08b7ecf99b0a0bde6f30d933e58a4b68f19fff"
+  },
+  "archived_files": {
+    "normal/brief.md": "7f3a0ebf13c64d71073ff55f56680b2fb3582aa954adff4d35cfe6566fcf8b9c",
+    "normal/evidence.md": "34a7967d894c76ff835232b7a80a45173c7e607747fc5bf6c030c6fc37f1a321",
+    "missing/brief.md": "047eef2f80dd9d89afda318aee10bc995ee7e5fc1cb30ea77875f07209af47b3",
+    "missing/evidence.md": "92beede6233b6c4471c95bddff1a4996c67020ac6fe1fecf9c451a38515e5183",
+    "missing/task.md": "7dfed03e1113ac5533fc66a92c3a9c16f27a4f5ddca3c92139dd9bcd37ca1811",
+    "collision/source-note.md": "a90fe4eda196ff3017c013cb0d9cc00466be71b622b1b7ed78e25e968e9b6449",
+    "collision/existing-brief.md": "c7f981b67b4a1f6d68987702920228b88beecfcfec7e207e1a7f223f9dcc443a"
+  },
+  "cases": [
+    {
+      "id": "normal",
+      "observation": "conditional recommendation",
+      "inputs": [
+        {
+          "name": "task.md",
+          "sha256": "f70b1f94b9a1268bc89abbbcf944922cb7a0f7e91310bd9d1b419bd8ac9ee42b",
+          "source": "https://github.com/tugrulguner/skillpot/blob/9227a9310728a4919ce012bc3f24850c6d2e721e/examples/decision-brief/task.md"
+        },
+        {
+          "name": "sources.json",
+          "sha256": "bda25924ba41dab122e262ddb8783ed134cebd6fff9ee16bc86dc8625bff6feb",
+          "source": "https://github.com/tugrulguner/skillpot/blob/9227a9310728a4919ce012bc3f24850c6d2e721e/examples/decision-brief/sources.json"
+        }
+      ],
+      "new_output_files": [
+        "normal/brief.md",
+        "normal/evidence.md"
+      ]
+    },
+    {
+      "id": "missing",
+      "observation": "deferred",
+      "inputs": [
+        {
+          "name": "task.md",
+          "sha256": "7dfed03e1113ac5533fc66a92c3a9c16f27a4f5ddca3c92139dd9bcd37ca1811",
+          "source": "missing/task.md"
+        },
+        {
+          "name": "sources.json",
+          "sha256": "bda25924ba41dab122e262ddb8783ed134cebd6fff9ee16bc86dc8625bff6feb",
+          "source": "https://github.com/tugrulguner/skillpot/blob/9227a9310728a4919ce012bc3f24850c6d2e721e/examples/decision-brief/sources.json"
+        }
+      ],
+      "new_output_files": [
+        "missing/brief.md",
+        "missing/evidence.md"
+      ]
+    },
+    {
+      "id": "collision",
+      "observation": "blocked by existing output",
+      "inputs": [
+        {
+          "name": "task.md",
+          "sha256": "f70b1f94b9a1268bc89abbbcf944922cb7a0f7e91310bd9d1b419bd8ac9ee42b",
+          "source": "https://github.com/tugrulguner/skillpot/blob/9227a9310728a4919ce012bc3f24850c6d2e721e/examples/decision-brief/task.md"
+        },
+        {
+          "name": "sources.json",
+          "sha256": "bda25924ba41dab122e262ddb8783ed134cebd6fff9ee16bc86dc8625bff6feb",
+          "source": "https://github.com/tugrulguner/skillpot/blob/9227a9310728a4919ce012bc3f24850c6d2e721e/examples/decision-brief/sources.json"
+        },
+        {
+          "name": "source-note.md",
+          "source": "collision/source-note.md",
+          "sha256": "a90fe4eda196ff3017c013cb0d9cc00466be71b622b1b7ed78e25e968e9b6449"
+        },
+        {
+          "name": "output/brief.md",
+          "source": "collision/existing-brief.md",
+          "sha256": "c7f981b67b4a1f6d68987702920228b88beecfcfec7e207e1a7f223f9dcc443a"
+        }
+      ],
+      "new_output_files": []
+    }
+  ]
+}
