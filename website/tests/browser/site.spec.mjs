@@ -70,7 +70,7 @@ test('generated HTML, Markdown, routes and real source excerpt agree', async ({ 
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://skillpot.modepot.io/${route}/`);
   }
   await page.goto('/');
-  await expect(page.locator('.install code')).toHaveText('git clone --branch v0.2.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source');
+  await expect(page.locator('.install code')).toHaveText('git clone --branch v0.3.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source');
   const source = await readFile(new URL('../../../skills/intpot-python/SKILL.md', import.meta.url),'utf8');
   await expect(page.locator('.skill-excerpt code')).toHaveText(source.split('\n').slice(0,7).join('\n'));
   await expect(page.locator('.overview strong').filter({hasText:'Intpot:'})).toHaveCount(1);

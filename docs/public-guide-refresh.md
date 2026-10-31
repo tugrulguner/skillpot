@@ -51,11 +51,12 @@ existing source-preview qualification stays in place.
 
 ## SkillPot release boundary
 
-These four refreshed packages belong to the source checkout, not the published
-SkillPot v0.2.0 collection. The stable [quickstart](quickstart.md) continues to select
-v0.2.0 and therefore its older reviewed snapshots. To inspect this refresh before a
-new collection is separately approved and published, use the exact reviewed source
-commit rather than relabeling v0.2.0 or overwriting an existing installation.
+These four refreshed packages are included in published
+[SkillPot v0.3.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.3.0),
+at commit `b4dabf93e7e4a85a55d947a05eb2989f035a58c1`. The stable
+[quickstart](quickstart.md) selects that revision. The v0.2.0 collection keeps its
+older reviewed snapshots. Existing user installations are not overwritten or
+silently upgraded, and upstream source-only features remain source-only.
 
 The [catalogue](../catalog/modepot-sources.json), affected package metadata,
 provenance and compatibility records change together. Historical example and
