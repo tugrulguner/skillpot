@@ -71,6 +71,11 @@ intervening repository/site changes and independently verified source archives.
 
 ## 4. Maintain and expand the library
 
+- [x] Add source-only `document-actions` for source-stated actions and focused questions,
+      with assigned/required/proposed/historical classifications, verbatim deadlines,
+      explicit conflicts, an authored offline example and pinned first-use instructions.
+      Not included in published v0.3.0; source checks are not observed agent extraction results.
+
 - [x] Implement [decision-brief](skills/decision-brief/SKILL.md) in current source,
       with a bounded evidence procedure, parent-authored worked example and offline
       artifact checks. [Three bounded task observations](evaluations/decision-brief/offline-tasks-001/README.md)

@@ -73,9 +73,10 @@ instructions grants no additional authority.
 
 ## Choose a workflow
 
-Published v0.3.0 contains eight skills. Current source contains nine: the same eight
-plus reviewed, unreleased `decision-brief`, which is not included in published v0.3.0.
-Use a reviewed source checkout for that workflow; the stable clone above remains v0.3.0.
+Published v0.3.0 contains eight skills. Current source contains ten: the same eight
+plus reviewed, unreleased `decision-brief` and source-only `document-actions`. Both
+are not included in published v0.3.0. Use their pinned source-only setup instructions;
+the stable clone above remains v0.3.0.
 
 | Task | Skill |
 | --- | --- |
@@ -86,6 +87,7 @@ Use a reviewed source checkout for that workflow; the stable clone above remains
 | Use the embedded database preview with explicit limits | [refpot-database](skills/refpot-database/SKILL.md) |
 | Prepare/review changes specifically in Summonpot | [summonpot-pr-review](skills/summonpot-pr-review/SKILL.md), [summonpot-code-review](skills/summonpot-code-review/SKILL.md) |
 | Audit a repository against an exact delivery goal | [repository-readiness](skills/repository-readiness/SKILL.md), experimental |
+| Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md), unreleased; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
 | Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md), reviewed current source only; not in v0.3.0 |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
@@ -121,6 +123,7 @@ requirement to produce videos. The catalogue above describes what is available n
 
 ## Examples and reference
 
+- [Document actions worked example](examples/document-actions/README.md): fictional documents, expected classifications and offline acceptance checks. These are authored fixtures, not observed agent extractions. Source only, not included in published v0.3.0.
 - [Decision brief worked example](examples/decision-brief/README.md): a parent-authored CSV/SQLite comparison, pinned documentation excerpts and four failure cases. Its offline checker validates artifact integrity, not agent performance. Current source only, not in v0.3.0.
 - [Product consumer examples](examples/modepot-project-skills/README.md): actual sources,
   setup, expected checks and explicit product pins. v0.14.0 Intpot provenance examples
