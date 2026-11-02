@@ -167,7 +167,7 @@ From a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-actions-source &&
-git -C skillpot-actions-source checkout --detach b3ff48dd073d8fa1377b9ae9cd96e643326bfb23 &&
+git -C skillpot-actions-source checkout --detach d2d098f25f61fc938f2aa397d45c82bf699b03d5 &&
 cd skillpot-actions-source
 ```
 
