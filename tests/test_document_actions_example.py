@@ -100,6 +100,38 @@ class DocumentActionsExampleTests(unittest.TestCase):
             for label, number in re.findall(r"(N\d+):L(\d+)", (EXAMPLE / name).read_text()):
                 self.assertTrue(notes[int(number) - 1].startswith(f"[{label}]"), (name, label, number))
 
+    def assert_wrong_section_refused(self, item_id, section):
+        import re
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / "example"
+            shutil.copytree(EXAMPLE, target)
+            path = target / "actions.md"
+            text = path.read_text()
+            match = re.search(r"(?ms)^### " + re.escape(item_id) + r" — [^\n]+\n.*?(?=^#{2,3} |\Z)", text)
+            self.assertIsNotNone(match)
+            assert match is not None
+            block = match.group()
+            text = text[:match.start()] + text[match.end():]
+            marker = "## " + section + "\n"
+            self.assertIn(marker, text)
+            text = text.replace(marker, marker + "\n" + block + "\n", 1)
+            path.write_text(text)
+            result = self.run_checker(target)
+            self.assertNotEqual(result.returncode, 0, result.stdout)
+
+    def test_checker_rejects_proposal_in_outstanding_section(self):
+        self.assert_wrong_section_refused("A03", "Outstanding items")
+
+    def test_checker_rejects_assigned_item_in_proposals_section(self):
+        self.assert_wrong_section_refused("A01", "Proposed (not assigned)")
+
+    def test_checker_rejects_relocated_requirement_and_history(self):
+        for item_id, section in [("A02", "Proposed (not assigned)"),
+                                 ("A07", "Outstanding items"),
+                                 ("A09", "Proposed (not assigned)")]:
+            with self.subTest(item_id=item_id, section=section):
+                self.assert_wrong_section_refused(item_id, section)
+
     def test_every_expected_source_locator_resolves(self):
         result = self.run_checker(EXAMPLE)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)

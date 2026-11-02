@@ -95,9 +95,24 @@ def main():
                "proposal": "Proposal", "completed_historical": "Completed historical",
                "cancelled_historical": "Cancelled historical"}
     records = {row["id"]: row for row in oracle["items"] + oracle["exclusions"]}
+    category_sections = {
+        "assigned": "Outstanding items",
+        "unassigned_requirement": "Outstanding items",
+        "proposal": "Proposed (not assigned)",
+        "completed_historical": "Completed or cancelled historical items (not outstanding)",
+        "cancelled_historical": "Completed or cancelled historical items (not outstanding)",
+    }
+    sections = list(re.finditer(r"(?m)^## (.+)$", actions))
+    for title in set(category_sections.values()):
+        if sum(section[1] == title for section in sections) != 1:
+            return fail(f"expected exactly one category section: {title}")
     for index, heading in enumerate(headings):
         block = actions[heading.end():headings[index + 1].start() if index + 1 < len(headings) else len(actions)]
         row = records[heading[1]]
+        containing_section = next((section[1] for section in reversed(sections)
+                                   if section.start() < heading.start()), None)
+        if containing_section != category_sections[row["category"]]:
+            return fail(f"{heading[1]} is in the wrong category section: {containing_section}")
         conflicts = row.get("conflicts", {})
         fields = {"Category": display[row["category"]],
                   "Owner": "Conflicting" if "owner" in conflicts else row["owner"] or "Unknown",
