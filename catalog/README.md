@@ -47,8 +47,9 @@ individual source/rights/privacy review before any later extraction.
 
 ## General decision workflow — current source only
 
-Current source contains nine skills: the seven imported public guidance files,
-experimental repository-readiness and reviewed, unreleased **[decision-brief](../skills/decision-brief/SKILL.md)**.
+Current source contains ten skills: the seven imported public guidance files,
+experimental repository-readiness, reviewed, unreleased **[decision-brief](../skills/decision-brief/SKILL.md)**
+and unreleased **[document-actions](../skills/document-actions/SKILL.md)**.
 The decision brief is not included in published v0.3.0, which still contains eight.
 The stable quickstart deliberately remains pinned to that release. Use the
 [source-only first-use guide](../docs/quickstart.md#try-decision-brief-from-reviewed-source)
@@ -63,6 +64,18 @@ A separate [task record](../evaluations/decision-brief/offline-tasks-001/README.
 archives three actual, bounded attempts without claiming broad reliability or gains.
 Its [provenance](../skills/decision-brief/provenance.md) records narrow public-source
 use and exclusions; the seven-package upstream catalogue remains unchanged.
+
+## Document actions — current source only
+
+Use [document-actions](../skills/document-actions/SKILL.md) to extract source-stated
+assignments and requirements, separate proposals and historical items, preserve exact
+deadline wording, and expose conflicting or missing fields without inventing commitments.
+It produces `actions.md` and `questions.md`; it creates no tickets or messages.
+This workflow is not included in published v0.3.0. Follow the
+[document-actions first-use guide](../docs/quickstart.md#try-document-actions-from-pinned-source)
+for a pinned source checkout, complete selected bundle, bounded input packet and prompt.
+The [worked example](../examples/document-actions/README.md) and executable offline checks
+validate authored fixtures and setup, not semantic extraction quality or native activation.
 
 ## Selective installation
 

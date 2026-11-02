@@ -32,6 +32,20 @@ test('agent map separates the latest published snapshot from new source', async 
   assert.doesNotMatch(map, /v0\.2\.0/);
 });
 
+test('document actions is source-only and preserves the stable release', async () => {
+  const [home, catalogue, map] = await Promise.all([
+    readFile(join(root, 'src/content/docs/index.mdx'), 'utf8'),
+    readFile(join(root, 'src/content/docs/catalogue.md'), 'utf8'),
+    readFile(join(root, 'public/llms.txt'), 'utf8'),
+  ]);
+  for (const text of [home, catalogue, map]) {
+    assert.match(text, /document-actions/);
+    assert.match(text, /not included in published v0\.3\.0/);
+  }
+  assert.match(catalogue, /Current source contains ten skills/);
+  assert.match(home, /git clone --branch v0\.3\.0 --depth 1/);
+});
+
 test('docs scope release and experimental status without claiming a runtime', async () => {
   const [home, catalogue, limits] = await Promise.all(['index.mdx', 'catalogue.md', 'limits.md'].map((f) => readFile(join(root, 'src/content/docs', f), 'utf8')));
   assert.match(home, /v0\.3\.0/);

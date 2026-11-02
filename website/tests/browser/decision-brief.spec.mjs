@@ -7,7 +7,7 @@ test('new decision workflow stays source-only across discovery and downloads', a
   await expect(page.locator('.install code')).toHaveText('git clone --branch v0.3.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source');
   await page.goto('/catalogue/');
   const body = page.locator('.sl-markdown-content');
-  await expect(body).toContainText('Current source contains nine skills');
+  await expect(body).toContainText('Current source contains ten skills');
   await expect(body).toContainText('reviewed, unreleased');
   await expect(body).toContainText('not included in published v0.3.0');
   await expect(body.getByRole('link', { name: 'decision-brief', exact: true })).toHaveAttribute('href', 'https://github.com/tugrulguner/skillpot/blob/main/skills/decision-brief/SKILL.md');

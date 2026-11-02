@@ -1,0 +1,130 @@
+{
+  "items": [
+    {
+      "id": "A01",
+      "category": "assigned",
+      "source_locators": [
+        "N02:L4",
+        "N13:L15"
+      ],
+      "owner": "Mira",
+      "acceptance": "unknown",
+      "due": null,
+      "history": false,
+      "exclusions": []
+    },
+    {
+      "id": "A02",
+      "category": "unassigned_requirement",
+      "source_locators": [
+        "N03:L5"
+      ],
+      "owner": null,
+      "acceptance": "unknown",
+      "due": "before release",
+      "history": false,
+      "exclusions": []
+    },
+    {
+      "id": "A03",
+      "category": "proposal",
+      "source_locators": [
+        "N04:L6"
+      ],
+      "owner": null,
+      "acceptance": "not accepted",
+      "due": null,
+      "history": false,
+      "exclusions": []
+    },
+    {
+      "id": "A04",
+      "category": "unassigned_requirement",
+      "source_locators": [
+        "N05:L7"
+      ],
+      "owner": null,
+      "acceptance": "unknown",
+      "due": "tomorrow",
+      "history": false,
+      "exclusions": []
+    },
+    {
+      "id": "A05",
+      "category": "assigned",
+      "source_locators": [
+        "N06:L8",
+        "N07:L9"
+      ],
+      "owner": null,
+      "acceptance": "unknown",
+      "due": null,
+      "history": false,
+      "conflicts": {
+        "owner": [
+          "Mira",
+          "Jon"
+        ],
+        "due": [
+          "Friday",
+          "Monday"
+        ]
+      },
+      "exclusions": []
+    },
+    {
+      "id": "A06",
+      "category": "assigned",
+      "source_locators": [
+        "N08:L10"
+      ],
+      "owner": "Mira",
+      "acceptance": "unknown",
+      "due": "Thursday",
+      "history": false,
+      "exclusions": []
+    },
+    {
+      "id": "A08",
+      "category": "assigned",
+      "source_locators": [
+        "N12:L14"
+      ],
+      "owner": "Jon",
+      "acceptance": "unknown",
+      "due": "before release",
+      "history": false,
+      "exclusions": []
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "A07",
+      "category": "completed_historical",
+      "source_locators": [
+        "N09:L11"
+      ],
+      "owner": "Jon",
+      "acceptance": "unknown",
+      "due": null,
+      "history": true,
+      "exclusions": [
+        "completed"
+      ]
+    },
+    {
+      "id": "A09",
+      "category": "cancelled_historical",
+      "source_locators": [
+        "N10:L12"
+      ],
+      "owner": "Mira",
+      "acceptance": "unknown",
+      "due": null,
+      "history": true,
+      "exclusions": [
+        "cancelled"
+      ]
+    }
+  ]
+}
