@@ -1,4 +1,5 @@
 """Release-preparation/source-copy checks, not tag publication or model trials."""
+import json
 import os
 from pathlib import Path
 import re
@@ -42,6 +43,26 @@ class V040PreparationTests(unittest.TestCase):
             self.assertIn(f"`{name}`", text)
         for token in ["0.1.1", "assisted", "supplementary", "not a runtime", "v0.3.0"]:
             self.assertIn(token, text)
+
+    def test_freshness_inventory_covers_each_retained_package(self):
+        catalog = json.loads((ROOT / "catalog/modepot-sources.json").read_text())["skills"]
+        audit = json.loads((ROOT / "docs/releases/v0.4.0-freshness.json").read_text())
+        packages = {row["name"]: row for row in audit["packages"]}
+        self.assertEqual(len(packages), len(audit["packages"]))
+        self.assertEqual(set(packages), {row["name"] for row in catalog})
+        self.assertEqual(set(audit["repositories"]), {row["upstream_repository"] for row in catalog})
+        for row in catalog:
+            record = packages[row["name"]]
+            self.assertEqual(record["pinned"]["revision"], row["upstream_revision"])
+            self.assertEqual(record["pinned"]["guide_sha256"], row["upstream_sha256"])
+            self.assertEqual(record["pinned"]["license_sha256"], row["license_sha256"])
+            repo = audit["repositories"][row["upstream_repository"]]
+            self.assertEqual(record["main"]["revision"], repo["default_commit"])
+            self.assertEqual(record["release"]["revision"], repo["release_commit"])
+            for state in ["pinned", "main", "release"]:
+                self.assertRegex(record[state]["revision"], r"^[0-9a-f]{40}$")
+                for field in ["guide_sha256", "license_sha256"]:
+                    self.assertRegex(record[state][field], r"^[0-9a-f]{64}$")
 
     def test_every_complete_selected_package_and_sibling_preserved(self):
         fingerprint = lambda path: {p.relative_to(path).as_posix(): p.read_bytes()
