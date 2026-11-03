@@ -39,18 +39,25 @@
 
 - Category/status: Completed / Cancelled (as reported, not independently verified).
 - Source citation: ...
-- Relevant owner/deadline/context: source-stated only.
+- Owner: source-stated person/team / Unknown / Conflicting; retain known owners after completion or cancellation.
+- Due text (verbatim): source-stated wording / Unknown / Conflicting; assess separately from owner.
+- Reported completion/cancellation time: source-stated only; this is not a deadline.
+- Other relevant context: source-stated only. Do not replace known fields with a blanket Unknown.
 
 ## Unresolved items
 
 ### U1 — Item whose classification or status is unresolved
 
+- Place this item only here. Other sections may point to U1, but must not repeat a full record.
 - Source citation and conflicting claims with their locators: ...
+- Retained known fields: owner, verbatim deadline and other supported facts; mark only affected fields Conflicting or Unknown.
 - Affected fields: Conflicting / Unknown.
 - Why not placed as a settled outstanding/proposed/historical item: ...
 - Needed clarification: Q1.
 
 ## Coverage and checks
+
+- Source-item map: each supported underlying work item -> its canonical A/P/H/U record in this file. Include unassigned requirements; questions cannot replace a record.
 
 - Preserve distinct tasks; merged duplicates retain every relevant locator.
 - Missing/unsupported facts and unreadable material: ...

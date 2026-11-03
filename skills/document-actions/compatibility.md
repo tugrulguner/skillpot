@@ -21,6 +21,13 @@ Native activation, semantic accuracy on arbitrary documents, completeness of ext
 obligations, cross-host reliability and improved task performance are not established.
 No live client/model evaluation is required or claimed for this source-only package.
 
+When recording optional task observations, retain original inputs/outputs and audit
+which other guidance the host actually loaded. Supplementary extraction skills or
+inherited instructions limit attribution; do not describe mixed-guidance attempts as
+isolated tests of this package or weaken host policies to manufacture isolation.
+Test a hostile source with fresh permitted outputs separately from collision refusal:
+a collision-first stop before reading that source supplies no injection-resistance evidence.
+
 Assignment, acceptance, status and external authority remain distinct even when all
 sources are readable. The owner reviews the resulting artifacts; the workflow does
 not perform, publish, schedule or accept extracted work. Interrupted outputs and

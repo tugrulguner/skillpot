@@ -19,7 +19,7 @@ class DocumentActionsContractTests(unittest.TestCase):
         self.assertLessEqual(len(meta["description"]), 60)
         self.assertTrue(meta["description"].endswith("."))
         self.assertIn("compatibility", meta)
-        self.assertEqual(meta["metadata"], {"version": "0.1.0", "maintainer": "tugrulguner", "status": "unreleased"})
+        self.assertEqual(meta["metadata"], {"version": "0.1.1", "maintainer": "tugrulguner", "status": "unreleased"})
         self.assertTrue(match[2].strip())
 
     def test_procedure_covers_extraction_categories_and_safety_contract(self):
@@ -59,6 +59,38 @@ class DocumentActionsContractTests(unittest.TestCase):
         questions = (PACKAGE / "assets/questions-template.md").read_text()
         self.assertIn("Why it matters:", questions)
         self.assertIn("None identified within the supplied", questions)
+
+    def test_review_retains_known_historical_fields(self):
+        skill = (PACKAGE / "SKILL.md").read_text()
+        template = (PACKAGE / "assets/actions-template.md").read_text()
+        self.assertIn("Preserve known owners in historical items", skill)
+        self.assertIn("named possessive", skill)
+        checklist = (PACKAGE / "assets/review-checklist.md").read_text()
+        self.assertIn("possessive phrase", checklist)
+        historical = template.split("## Historical items", 1)[1].split("## Unresolved items", 1)[0]
+        for field in ["- Owner:", "- Due text (verbatim):", "- Reported completion/cancellation time:"]:
+            self.assertIn(field, historical)
+
+    def test_status_conflict_has_one_canonical_record(self):
+        skill = (PACKAGE / "SKILL.md").read_text()
+        template = (PACKAGE / "assets/actions-template.md").read_text()
+        self.assertIn("one canonical record per underlying item", skill)
+        self.assertIn("not a second historical or outstanding record", skill)
+        self.assertIn("Place this item only here", template)
+
+    def test_refusal_requests_new_location_and_checklist_is_linked(self):
+        skill = (PACKAGE / "SKILL.md").read_text()
+        self.assertIn("name the colliding targets and request a fresh approved location", skill)
+        self.assertIn("assets/review-checklist.md", skill)
+        self.assertTrue((PACKAGE / "assets/review-checklist.md").is_file())
+
+    def test_requirement_cannot_be_replaced_by_question_or_coverage_note(self):
+        skill = (PACKAGE / "SKILL.md").read_text()
+        template = (PACKAGE / "assets/actions-template.md").read_text()
+        self.assertIn("A question or coverage note is not a substitute", skill)
+        self.assertIn("Conflicting owners or deadlines alone do not change", skill)
+        self.assertIn("Source-item map:", template)
+        self.assertIn("questions cannot replace a record", template)
 
     def test_package_local_markdown_links_resolve(self):
         self.assertTrue((PACKAGE / "SKILL.md").is_file())
