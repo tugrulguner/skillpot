@@ -64,6 +64,9 @@ class DocumentActionsContractTests(unittest.TestCase):
         skill = (PACKAGE / "SKILL.md").read_text()
         template = (PACKAGE / "assets/actions-template.md").read_text()
         self.assertIn("Preserve known owners in historical items", skill)
+        self.assertIn("named possessive", skill)
+        checklist = (PACKAGE / "assets/review-checklist.md").read_text()
+        self.assertIn("possessive phrase", checklist)
         historical = template.split("## Historical items", 1)[1].split("## Unresolved items", 1)[0]
         for field in ["- Owner:", "- Due text (verbatim):", "- Reported completion/cancellation time:"]:
             self.assertIn(field, historical)

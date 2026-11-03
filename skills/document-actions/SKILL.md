@@ -76,6 +76,9 @@ remain the host's responsibility; this procedure is not a sandbox.
    Preserve known owners in historical items as well as outstanding items. An unknown
    deadline does not make a known owner unknown. Assess each field separately; never
    collapse known and unknown historical facts into one blanket `Unknown` value.
+   A named possessive such as "Rin's task was cancelled" states the task holder:
+   retain Rin rather than claiming no owner was stated. This does not make a proposal's
+   suggester or a document's author an assignee.
 4. **Preserve deadline wording verbatim.** There is **no date normalization** in this
    version. Keep `tomorrow`, `Friday`, `ASAP` or a written calendar date exactly as supplied.
    Do not calculate or guess an anchor, timezone, date format interpretation or actual
