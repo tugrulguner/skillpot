@@ -57,6 +57,8 @@
 
 ## Coverage and checks
 
+- Source-item map: each supported underlying work item -> its canonical A/P/H/U record in this file. Include unassigned requirements; questions cannot replace a record.
+
 - Preserve distinct tasks; merged duplicates retain every relevant locator.
 - Missing/unsupported facts and unreadable material: ...
 - No tasks assigned, accepted, executed or published by this extraction.

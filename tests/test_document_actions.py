@@ -84,6 +84,14 @@ class DocumentActionsContractTests(unittest.TestCase):
         self.assertIn("assets/review-checklist.md", skill)
         self.assertTrue((PACKAGE / "assets/review-checklist.md").is_file())
 
+    def test_requirement_cannot_be_replaced_by_question_or_coverage_note(self):
+        skill = (PACKAGE / "SKILL.md").read_text()
+        template = (PACKAGE / "assets/actions-template.md").read_text()
+        self.assertIn("A question or coverage note is not a substitute", skill)
+        self.assertIn("Conflicting owners or deadlines alone do not change", skill)
+        self.assertIn("Source-item map:", template)
+        self.assertIn("questions cannot replace a record", template)
+
     def test_package_local_markdown_links_resolve(self):
         self.assertTrue((PACKAGE / "SKILL.md").is_file())
         for md in PACKAGE.rglob("*.md"):

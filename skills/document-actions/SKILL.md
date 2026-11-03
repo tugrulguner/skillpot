@@ -92,7 +92,12 @@ remain the host's responsibility; this procedure is not a sandbox.
    timestamps/mtime, confidence and majority are not authority. Until status is resolved,
    keep the item in an unresolved section rather than silently choosing outstanding or
    historical placement. Mark the classification unresolved if the conflict affects it.
-   Keep one canonical record per underlying item. A status-conflicted item belongs only
+   Keep one canonical record per underlying item. Every supported action or requirement
+   needs its own record in `actions.md`, including unassigned work with missing timing.
+   A question or coverage note is not a substitute for that record; link questions to it.
+   Conflicting owners or deadlines alone do not change an explicitly stated assignment
+   into an unresolved classification: retain its category and mark only those fields
+   `Conflicting`. A status-conflicted item belongs only
    in the unresolved section, not a second historical or outstanding record with a
    disclaimer. Other sections may point to that unresolved ID without repeating it.
 6. **Write proportional artifacts.** Use the linked templates. `actions.md` separates

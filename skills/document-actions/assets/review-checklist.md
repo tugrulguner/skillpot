@@ -8,6 +8,11 @@ an instruction for review, not an automatic semantic validator.
   fields with a blanket Unknown when only one fact is missing. Check ownership stated
   inside a possessive phrase (for example, "Rin's task was cancelled") before saying
   no owner was supplied; preserve the named task holder, not a proposal's suggester.
+- **Check source-item coverage.** List the supported underlying tasks/requirements from
+  each source and match each to its canonical actions.md record. Unknown owners or dates
+  must not make a requirement disappear into questions.md or a coverage paragraph.
+  Owner/deadline conflicts affect those fields, not an otherwise explicit assignment
+  category; a status conflict is what can prevent outstanding/historical classification.
 - **One item, one canonical record.** Check underlying source IDs across every section,
   not just output IDs. A status conflict belongs only in unresolved items. Remove a
   duplicate historical/outstanding record; a disclaimer does not repair its placement.
