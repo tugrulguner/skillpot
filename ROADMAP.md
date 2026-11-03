@@ -69,6 +69,14 @@ at commit `b4dabf93e7e4a85a55d947a05eb2989f035a58c1`. The
 [publication record](docs/releases/v0.3.0.md) describes the four-guide refresh,
 intervening repository/site changes and independently verified source archives.
 
+## 3a. Proposed v0.4.0 collection — preparation only
+
+The [v0.4.0 preparation](docs/releases/v0.4.0.md) proposes ten skills, adding
+`decision-brief` and `document-actions` to the eight in v0.3.0. It preserves reviewed
+upstream pins and the existing maturity/evidence boundaries. Candidate verification,
+preparation merge and release publication remain separate gates; v0.3.0 is still the
+latest published collection and stable setup default.
+
 ## 4. Maintain and expand the library
 
 - [x] Add source-only `document-actions` for source-stated actions and focused questions,

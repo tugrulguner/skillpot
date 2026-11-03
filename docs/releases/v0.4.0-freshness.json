@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "2b8040fece04dc159a44e72e909e376f5d0583a3",
+  "repositories": {
+    "tugrulguner/dexpot": {
+      "default_branch": "main",
+      "default_commit": "a670e626cf73e1c4b21e0529294a87f1aa83e74f",
+      "latest_release_tag": "v0.8.1",
+      "release_commit": "a670e626cf73e1c4b21e0529294a87f1aa83e74f",
+      "release_published_at": "2026-11-03T02:18:38Z"
+    },
+    "tugrulguner/intpot": {
+      "default_branch": "main",
+      "default_commit": "f167cd4bac3931da063cc5bc43d7b2905054815e",
+      "latest_release_tag": "v0.16.0",
+      "release_commit": "f6ec26afc60011d41209cd705636f60e881d492f",
+      "release_published_at": "2026-10-29T12:06:12Z"
+    },
+    "tugrulguner/refpot": {
+      "default_branch": "main",
+      "default_commit": "9bef95543bd4d2292e93c0572cbfd0f809b5b7ce",
+      "latest_release_tag": "v0.1.1",
+      "release_commit": "e3581aa02989484b24a3cc1f33ed6080c9649a5f",
+      "release_published_at": "2026-10-12T17:32:11Z"
+    },
+    "tugrulguner/summonpot": {
+      "default_branch": "main",
+      "default_commit": "81f098638229e801ebc8ed7fca995fdbf0215b71",
+      "latest_release_tag": "v0.14.0",
+      "release_commit": "4c3df451e35e6d15e6b068f42bb4189d7777d7ef",
+      "release_published_at": "2026-10-29T13:02:48Z"
+    }
+  },
+  "packages": [
+    {
+      "name": "intpot-cli",
+      "kind": "consumer",
+      "directory": "skills/intpot-cli",
+      "upstream_repository": "tugrulguner/intpot",
+      "upstream_revision": "470584e21ee518e983087175f217c65664bd0ec5",
+      "upstream_path": "src/intpot/templates/skills/intpot-cli.md",
+      "upstream_sha256": "adc110824726faea7d78bf5552962033f3ebc4263c54f8296bd9227c8dcf56a0",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+      "upstream_url": "https://github.com/tugrulguner/intpot/blob/470584e21ee518e983087175f217c65664bd0ec5/src/intpot/templates/skills/intpot-cli.md",
+      "status": "pinned-public-guidance",
+      "main": {
+        "revision": "f167cd4bac3931da063cc5bc43d7b2905054815e",
+        "guide_sha256": "27c172ffae4bbdc18b029ed065b0194554a45013a5008ce12d764a0a3abaee31",
+        "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "guide_bytes": 29509,
+        "license_bytes": 1076
+      },
+      "release": {
+        "revision": "f6ec26afc60011d41209cd705636f60e881d492f",
+        "guide_sha256": "5e5c5b5f87e8172c2a436a6690b479d6beb40011197ef17b4b3d747183d4a1d1",
+        "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "guide_bytes": 22752,
+        "license_bytes": 1076
+      },
+      "pinned": {
+        "revision": "470584e21ee518e983087175f217c65664bd0ec5",
+        "guide_sha256": "adc110824726faea7d78bf5552962033f3ebc4263c54f8296bd9227c8dcf56a0",
+        "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "guide_bytes": 25242,
+        "license_bytes": 1076
+      },
+      "catalog_pinned_guide_match": true,
+      "catalog_pinned_license_match": true,
+      "main_guide_changed_from_pin": true,
+      "release_guide_changed_from_pin": true
+    },
+    {
+      "name": "intpot-python",
+      "kind": "consumer",
+      "directory": "skills/intpot-python",
+      "upstream_repository": "tugrulguner/intpot",
+      "upstream_revision": "470584e21ee518e983087175f217c65664bd0ec5",
+      "upstream_path": "src/intpot/templates/skills/intpot-python.md",
+      "upstream_sha256": "12d34072bb1fc6e2e50a750e50fddf036e83c8fc261f3b2ae3e168dd0b319c01",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+      "upstream_url": "https://github.com/tugrulguner/intpot/blob/470584e21ee518e983087175f217c65664bd0ec5/src/intpot/templates/skills/intpot-python.md",
+      "status": "pinned-public-guidance",
+      "main": {
+        "revision": "f167cd4bac3931da063cc5bc43d7b2905054815e",
+        "guide_sha256": "99057f2f5de6152f6a455cf138b7e691265be658eb6073925ea0a8747be782b7",
+        "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "guide_bytes": 32952,
+        "license_bytes": 1076
+      },
+      "release": {
+        "revision": "f6ec26afc60011d41209cd705636f60e881d492f",
+        "guide_sha256": "097fe3a226307412b5ce7d7981c7b575c57c490a351bc8233decb50552374994",
+        "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "guide_bytes": 25529,
+        "license_bytes": 1076
+      },
+      "pinned": {
+        "revision": "470584e21ee518e983087175f217c65664bd0ec5",
+        "guide_sha256": "12d34072bb1fc6e2e50a750e50fddf036e83c8fc261f3b2ae3e168dd0b319c01",
+        "license_sha256": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "guide_bytes": 28070,
+        "license_bytes": 1076
+      },
+      "catalog_pinned_guide_match": true,
+      "catalog_pinned_license_match": true,
+      "main_guide_changed_from_pin": true,
+      "release_guide_changed_from_pin": true
+    },
+    {
+      "name": "summonpot",
+      "kind": "consumer",
+      "directory": "skills/summonpot",
+      "upstream_repository": "tugrulguner/summonpot",
+      "upstream_revision": "739d980dca48657a839e8f6a19649bfb6f54da80",
+      "upstream_path": "src/summonpot/templates/skills/summonpot.md",
+      "upstream_sha256": "6854fdfc73876d0f27fd8bbd06dfafc0c874402c03806c822f9df6a6d2345e8a",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/summonpot/blob/739d980dca48657a839e8f6a19649bfb6f54da80/src/summonpot/templates/skills/summonpot.md",
+      "status": "pinned-public-guidance",
+      "main": {
+        "revision": "81f098638229e801ebc8ed7fca995fdbf0215b71",
+        "guide_sha256": "7a71984f0641f9c88e86263464c33a29ade55551677613bd732837f63e97e807",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 39729,
+        "license_bytes": 1069
+      },
+      "release": {
+        "revision": "4c3df451e35e6d15e6b068f42bb4189d7777d7ef",
+        "guide_sha256": "0558e1d41adff9a38890bb2f3efa1b35f674665256f17600cb3e5e171f74cf5a",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 32051,
+        "license_bytes": 1069
+      },
+      "pinned": {
+        "revision": "739d980dca48657a839e8f6a19649bfb6f54da80",
+        "guide_sha256": "6854fdfc73876d0f27fd8bbd06dfafc0c874402c03806c822f9df6a6d2345e8a",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 33603,
+        "license_bytes": 1069
+      },
+      "catalog_pinned_guide_match": true,
+      "catalog_pinned_license_match": true,
+      "main_guide_changed_from_pin": true,
+      "release_guide_changed_from_pin": true
+    },
+    {
+      "name": "summonpot-pr-review",
+      "kind": "contributor",
+      "directory": "skills/summonpot-pr-review",
+      "upstream_repository": "tugrulguner/summonpot",
+      "upstream_revision": "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5",
+      "upstream_path": ".claude/skills/pr-review/SKILL.md",
+      "upstream_sha256": "9b3f55cd03bb1caace2843659a502c23434b239196a884d395fbc88239143bda",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/summonpot/blob/cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5/.claude/skills/pr-review/SKILL.md",
+      "status": "pinned-public-guidance",
+      "main": {
+        "revision": "81f098638229e801ebc8ed7fca995fdbf0215b71",
+        "guide_sha256": "9b3f55cd03bb1caace2843659a502c23434b239196a884d395fbc88239143bda",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 3142,
+        "license_bytes": 1069
+      },
+      "release": {
+        "revision": "4c3df451e35e6d15e6b068f42bb4189d7777d7ef",
+        "guide_sha256": "9b3f55cd03bb1caace2843659a502c23434b239196a884d395fbc88239143bda",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 3142,
+        "license_bytes": 1069
+      },
+      "pinned": {
+        "revision": "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5",
+        "guide_sha256": "9b3f55cd03bb1caace2843659a502c23434b239196a884d395fbc88239143bda",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 3142,
+        "license_bytes": 1069
+      },
+      "catalog_pinned_guide_match": true,
+      "catalog_pinned_license_match": true,
+      "main_guide_changed_from_pin": false,
+      "release_guide_changed_from_pin": false
+    },
+    {
+      "name": "summonpot-code-review",
+      "kind": "contributor",
+      "directory": "skills/summonpot-code-review",
+      "upstream_repository": "tugrulguner/summonpot",
+      "upstream_revision": "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5",
+      "upstream_path": ".claude/skills/review-code/SKILL.md",
+      "upstream_sha256": "e1d954a394747da05642d376a7f12c926822f8e13c6b38d60560d0cc78e13958",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/summonpot/blob/cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5/.claude/skills/review-code/SKILL.md",
+      "status": "pinned-public-guidance",
+      "main": {
+        "revision": "81f098638229e801ebc8ed7fca995fdbf0215b71",
+        "guide_sha256": "e1d954a394747da05642d376a7f12c926822f8e13c6b38d60560d0cc78e13958",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 3776,
+        "license_bytes": 1069
+      },
+      "release": {
+        "revision": "4c3df451e35e6d15e6b068f42bb4189d7777d7ef",
+        "guide_sha256": "e1d954a394747da05642d376a7f12c926822f8e13c6b38d60560d0cc78e13958",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 3776,
+        "license_bytes": 1069
+      },
+      "pinned": {
+        "revision": "cdaf2f76ae5aa698aeed1d4654ecdb567eb6e2d5",
+        "guide_sha256": "e1d954a394747da05642d376a7f12c926822f8e13c6b38d60560d0cc78e13958",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 3776,
+        "license_bytes": 1069
+      },
+      "catalog_pinned_guide_match": true,
+      "catalog_pinned_license_match": true,
+      "main_guide_changed_from_pin": false,
+      "release_guide_changed_from_pin": false
+    },
+    {
+      "name": "dexpot",
+      "kind": "consumer",
+      "directory": "skills/dexpot",
+      "upstream_repository": "tugrulguner/dexpot",
+      "upstream_revision": "409df5b68a2386bd04e1f2cf0f057773142e0759",
+      "upstream_path": "src/dexpot/templates/skills/dexpot.md",
+      "upstream_sha256": "c1b8e553e3fb97ad486e8cc008ccb75fbc5d44a6ba0060c9b3aea18ce632ab4b",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/dexpot/blob/409df5b68a2386bd04e1f2cf0f057773142e0759/src/dexpot/templates/skills/dexpot.md",
+      "status": "pinned-public-guidance",
+      "main": {
+        "revision": "a670e626cf73e1c4b21e0529294a87f1aa83e74f",
+        "guide_sha256": "064792cb9897483af66fa1199cbcf4be97cc3e26417533dbb87a36e471a3fa0d",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 14768,
+        "license_bytes": 1069
+      },
+      "release": {
+        "revision": "a670e626cf73e1c4b21e0529294a87f1aa83e74f",
+        "guide_sha256": "064792cb9897483af66fa1199cbcf4be97cc3e26417533dbb87a36e471a3fa0d",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 14768,
+        "license_bytes": 1069
+      },
+      "pinned": {
+        "revision": "409df5b68a2386bd04e1f2cf0f057773142e0759",
+        "guide_sha256": "c1b8e553e3fb97ad486e8cc008ccb75fbc5d44a6ba0060c9b3aea18ce632ab4b",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 14253,
+        "license_bytes": 1069
+      },
+      "catalog_pinned_guide_match": true,
+      "catalog_pinned_license_match": true,
+      "main_guide_changed_from_pin": true,
+      "release_guide_changed_from_pin": true
+    },
+    {
+      "name": "refpot-database",
+      "kind": "consumer",
+      "directory": "skills/refpot-database",
+      "upstream_repository": "tugrulguner/refpot",
+      "upstream_revision": "3294ce39f0e5630c660fad2e5a1e3977bf52a17f",
+      "upstream_path": "skills/refpot-database/SKILL.md",
+      "upstream_sha256": "573ec7a855392ed58d89b5e139348af9b6f1bd4a915043aebff9bf473d307df8",
+      "upstream_license_path": "LICENSE",
+      "license": "MIT",
+      "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "upstream_url": "https://github.com/tugrulguner/refpot/blob/3294ce39f0e5630c660fad2e5a1e3977bf52a17f/skills/refpot-database/SKILL.md",
+      "status": "pinned-public-guidance",
+      "main": {
+        "revision": "9bef95543bd4d2292e93c0572cbfd0f809b5b7ce",
+        "guide_sha256": "395bfb07c408a75b578d8beb30aeedaa43c68f10a16103e31715653fa44bb673",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 6142,
+        "license_bytes": 1069
+      },
+      "release": {
+        "revision": "e3581aa02989484b24a3cc1f33ed6080c9649a5f",
+        "guide_sha256": "a5e79de06cee751b0b7d72b89485bb38771e26fc3c2a77cac551d951395f4948",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 5438,
+        "license_bytes": 1069
+      },
+      "pinned": {
+        "revision": "3294ce39f0e5630c660fad2e5a1e3977bf52a17f",
+        "guide_sha256": "573ec7a855392ed58d89b5e139348af9b6f1bd4a915043aebff9bf473d307df8",
+        "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "guide_bytes": 5671,
+        "license_bytes": 1069
+      },
+      "catalog_pinned_guide_match": true,
+      "catalog_pinned_license_match": true,
+      "main_guide_changed_from_pin": true,
+      "release_guide_changed_from_pin": true
+    }
+  ]
+}
