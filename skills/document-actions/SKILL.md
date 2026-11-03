@@ -3,7 +3,7 @@ name: document-actions
 description: Extract stated actions and unresolved document questions.
 compatibility: "Any host able to read supplied text and create new files in an approved owned directory; no network, account, runtime package or particular host required."
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   maintainer: "tugrulguner"
   status: "unreleased"
 ---
@@ -73,6 +73,9 @@ remain the host's responsibility; this procedure is not a sandbox.
    owners. Preserve named team owners instead of choosing a person. Cite separately
    sourced fields specifically; one citation may support several fields together, so
    do not duplicate it mechanically for every field.
+   Preserve known owners in historical items as well as outstanding items. An unknown
+   deadline does not make a known owner unknown. Assess each field separately; never
+   collapse known and unknown historical facts into one blanket `Unknown` value.
 4. **Preserve deadline wording verbatim.** There is **no date normalization** in this
    version. Keep `tomorrow`, `Friday`, `ASAP` or a written calendar date exactly as supplied.
    Do not calculate or guess an anchor, timezone, date format interpretation or actual
@@ -86,6 +89,9 @@ remain the host's responsibility; this procedure is not a sandbox.
    timestamps/mtime, confidence and majority are not authority. Until status is resolved,
    keep the item in an unresolved section rather than silently choosing outstanding or
    historical placement. Mark the classification unresolved if the conflict affects it.
+   Keep one canonical record per underlying item. A status-conflicted item belongs only
+   in the unresolved section, not a second historical or outstanding record with a
+   disclaimer. Other sections may point to that unresolved ID without repeating it.
 6. **Write proportional artifacts.** Use the linked templates. `actions.md` separates
    outstanding assigned actions/unassigned requirements, proposals, completed/cancelled
    history, and unresolved items. `questions.md` contains only actionable clarifications
@@ -93,7 +99,8 @@ remain the host's responsibility; this procedure is not a sandbox.
    coverage limits. Do not ask for every blank field or require meeting metadata for a
    specification. If no clarification is needed, say `None identified within the supplied
    scope`. Do not manufacture questions to fill a template.
-7. **Verify and report.** Reopen both outputs. Check source/locator resolution, item
+7. **Verify and report.** Reopen both outputs and apply the [review checklist](assets/review-checklist.md).
+   Check source/locator resolution, item
    wording and classifications, field-level support, retained deadline text, conditions,
    duplicate/conflict handling, and outstanding-versus-historical placement. Make sure
    assignment and acceptance remain separate, proposals are not outstanding commitments,
@@ -115,11 +122,14 @@ files; do not silently delete, overwrite, publish or restart over them. Obtain n
 scoped recovery permission. Do not widen access, change destinations or retry with
 new tools automatically. Verification can correct outputs newly created in the current
 authorized attempt; pre-existing or interrupted outputs require explicit permission.
+In a collision refusal, name the colliding targets and request a fresh approved location
+in the final response; do not merely label the artifacts unresolved or choose a new path.
 
 ## Resources
 
 - [Actions template](assets/actions-template.md)
 - [Questions template](assets/questions-template.md)
+- [Review checklist](assets/review-checklist.md)
 - [Provenance](provenance.md)
 - [Compatibility and verification boundaries](compatibility.md)
 

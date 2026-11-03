@@ -1,7 +1,7 @@
 # Provenance and maintenance
 
 This is an original SkillPot extraction procedure and original templates. Maintainer:
-`tugrulguner`; version `0.1.0`; source-only and unreleased. Original contributions use
+`tugrulguner`; version `0.1.1`; source-only and unreleased. Original contributions use
 the existing [repository license](https://github.com/tugrulguner/skillpot/blob/524d3a06303362aaafae0fbfdf2ebae38782875e/LICENSE).
 No text, template, or code is copied or adapted from the comparison sources below.
 
