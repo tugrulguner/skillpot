@@ -1,7 +1,9 @@
 # Compatibility and verification boundaries
 
-Version `0.1.1` is included in published SkillPot v0.4.0 at
-`3624eaaf2aa6c870e1dad6190ac3466e4e378f35`. Publication does not extend the
+Published version `0.1.1` is included in SkillPot v0.4.0 at
+`3624eaaf2aa6c870e1dad6190ac3466e4e378f35`. Current source version `0.1.2` is
+unreleased and adds status/approval-role clarifications, not included in that release.
+Publication does not extend the
 verification scope below or relabel assisted observations as isolated task evidence.
 
 Use with a host that can read supplied text, inspect file destinations, create two

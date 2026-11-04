@@ -74,8 +74,10 @@ instructions grants no additional authority.
 ## Choose a workflow
 
 Published v0.4.0 contains ten skills, including `decision-brief` and
-`document-actions`. Current source retains the same ten workflows. The stable clone
-above selects their published snapshot; the first-use guides use its exact commit.
+`document-actions`. Current source retains the same ten workflows, with
+[unreleased field-consistency corrections](docs/field-consistency.md) to those two
+skills. The stable clone above selects their published snapshot; the first-use guides
+use its exact commit.
 Publication does not promote repository-readiness beyond its experimental scope.
 
 | Task | Skill |

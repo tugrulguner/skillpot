@@ -16,7 +16,8 @@
 - Owner: source-stated person/team / Unknown / Conflicting (show claims and citations).
 - Assignment: source-stated assigner/statement / Unknown.
 - Acceptance: source-stated acceptance / Unknown / Conflicting; assignment alone is not acceptance.
-- Status: source-stated status / Unknown; retain any conditions.
+- Status: source-reported status / Unknown; no completion report is Unknown, not Incomplete. Use Incomplete only when reported as such; retain any conditions.
+- Approval (when relevant): approval role: source-stated role / Unknown; approver (named person): source-stated individual / Unknown. Do not infer approval occurred or turn an approver/proposer into the owner.
 - Due text (verbatim): exact source wording / Unknown / Conflicting (retain both expressions).
 - Conditions/dependencies: stated conditions / Unknown / Not applicable (explain).
 - Completion criteria: source-stated criteria / Unknown.

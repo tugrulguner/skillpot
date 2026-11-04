@@ -4,9 +4,9 @@ description: Compare alternatives using a bounded evidence packet.
 license: MIT
 compatibility: "Any host able to read supplied files, create new files in an owned directory, and optionally retrieve explicitly permitted public sources; no particular host or network is required."
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   maintainer: "tugrulguner"
-  status: "released"
+  status: "unreleased"
 ---
 
 # Decision brief
@@ -35,13 +35,13 @@ Before writing, confirm the output directory is owned/approved and that neither 
 
 ## Procedure
 
-1. **Freeze the decision frame.** State the decision, owner, audience, cutoff, scope, and stop condition. List hard constraints as pass/fail gates and preferences as qualitative criteria. Include the current approach and credible alternatives; explain any omitted candidate. A preference cannot waive a hard constraint.
+1. **Freeze the decision frame.** State the decision question. Record the decision owner, intended reader, and any purchasing/approval authority separately; they are distinct roles. Do not assume the reader decides or that the owner may spend money. Record cutoff, scope, and stop condition. List hard constraints as pass/fail gates and preferences as qualitative criteria. Include the current approach and credible alternatives; explain any omitted candidate. A preference cannot waive a hard constraint.
 2. **Inventory evidence.** Read only permitted sources. Assign stable source IDs (`S1`, `S2`, …) and claims (`C1`, `C2`, …). Record exact title/identity, author/publisher, version or immutable URL/revision where available, publication/update date, access date when retrieved, page/section/table/paragraph locator, and access limitations. A URL alone is not evidence that its content was read. Cite a precise locator for every load-bearing factual statement. Preserve only short excerpts when permitted; otherwise paraphrase and locate.
 3. **Classify each assertion.** Mark it `FACT` only when the cited source supports it; `ASSUMPTION` when supplied or adopted but not established by evidence; `CALCULATION` with inputs, formula, units, and tool used; or `UNKNOWN` when unresolved. Do not turn absence of evidence into a fact. Do not invent measurements, prices, performance, consensus, or numerical scores. Calculate actual arithmetic with an available calculation tool and show reproducible inputs; if no such tool is available or inputs are not established, omit the calculation and say so. Scoring is optional, never forced; use it only when criteria, weights, and inputs are explicit.
 4. **Test constraints and compare fairly.** Evaluate each alternative against the same hard gates and preferences. Identify disqualified options and cite why. Describe material advantages, costs, risks, dependencies, reversibility, and operational burden as supported or explicitly assumed. Separate source-backed consequences from judgment. Do not portray incomparable evidence as a precise ranking.
 5. **Resolve evidence quality and conflict.** Compare sources for independence, recency, scope, method, and authority relevant to the claim. Several pages repeating one origin are not independent corroboration. Record contradictions side by side, with locators and their decision effect; do not count votes or silently select a preferred source. Seek corroboration only inside the permitted boundary. If unresolved conflict affects a decisive gate or recommendation, defer and name the evidence needed.
 6. **Decide conditionally.** Recommend the best-supported eligible alternative only if evidence is sufficient for the stated decision; otherwise explicitly defer, identify the missing decisive evidence, and state what can be decided now. Give material trade-offs, residual uncertainty, and concrete reversal conditions (new evidence, changed constraint, or threshold—not vague “more research”). State why the runner-up/current approach was not selected. The human owner remains responsible for acceptance and action.
-7. **Verify the two artifacts.** Create `brief.md` and `evidence.md` from the linked templates. Check that every load-bearing claim in the brief has a stable claim ID and source/assumption/calculation record; every source ID resolves; all citations have locators; conflicts and access gaps are disclosed; constraints are not conflated with preferences; and the recommendation or deferral and reversal conditions agree across both files. Re-open both files and inspect the final contents. If verification fails, correct them without creating extra outputs.
+7. **Verify the two artifacts.** Create `brief.md` and `evidence.md` from the linked templates. Check that every load-bearing claim in the brief has a stable claim ID and source/assumption/calculation record; every source ID resolves; all citations have locators; conflicts and access gaps are disclosed; constraints are not conflated with preferences; and the recommendation or deferral and reversal conditions agree across both files. Check role consistency across the recommendation and owner action: the owner remains the decision owner, the reader is not silently made the decider, and purchasing/approval authority is stated or marked unknown. Re-open both files and inspect the final contents. If verification fails, correct them without creating extra outputs.
 8. **Report completion.** Give the two paths, decision status (recommendation or deferred), material limitations, and any owner action still needed. Do not say the decision was made or implemented unless the owner separately did so.
 
 ## Stop and recovery

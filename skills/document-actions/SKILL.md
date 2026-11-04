@@ -3,9 +3,9 @@ name: document-actions
 description: Extract stated actions and unresolved document questions.
 compatibility: "Any host able to read supplied text and create new files in an approved owned directory; no network, account, runtime package or particular host required."
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
   maintainer: "tugrulguner"
-  status: "released"
+  status: "unreleased"
 ---
 
 # Document actions
@@ -61,6 +61,8 @@ remain the host's responsibility; this procedure is not a sandbox.
      outside outstanding actions, even if the source suggests an owner or deadline.
    - **Completed/cancelled:** source-reported historical items, excluded from outstanding
      work. Preserve the source's reported status, not a claim of live verification.
+     No completion report means status is `Unknown`; use `Incomplete` only when the
+     source reports incomplete/not complete. Do not infer incompletion from silence.
    Preserve conditions on any conditional item. A condition is not evidence that the
    triggering event occurred. Record a source-stated action without identifiable owner
    as unassigned and explain whether it is an explicit requirement or only a proposal;
@@ -70,7 +72,10 @@ remain the host's responsibility; this procedure is not a sandbox.
    its wording and category. Record owner, assignment, acceptance, status, deadline,
    conditions/dependencies and completion criteria only where stated; otherwise use
    `Unknown` or `Not applicable` with a reason. Do not invent priorities, criteria or
-   owners. Preserve named team owners instead of choosing a person. Cite separately
+   owners. Preserve named team owners instead of choosing a person. Preserve a
+   source-stated approval role separately from the individual approver: if no person
+   is named, the approver is `Unknown`, not the role. An approver/proposer is not an
+   assignee unless the source explicitly assigns that person the work. Cite separately
    sourced fields specifically; one citation may support several fields together, so
    do not duplicate it mechanically for every field.
    Preserve known owners in historical items as well as outstanding items. An unknown
