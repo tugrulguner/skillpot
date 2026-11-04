@@ -21,6 +21,12 @@ found a specific wording/field correction in each draft:
   role. A missing individual name must not erase a known role, make that role an action
   owner, or establish that approval occurred.
 
+Follow-up inspection also found an unknown completion date labeled as a failed
+hard gate, an incorrect sentence locator, and source-backed frame claims missing
+from the ledger. The decision-brief evidence template and final check now explicitly
+separate event timing from confirmation timing, verify cited sentence/clause locations,
+and register frame/constraint claims alongside recommendation claims.
+
 The corrections place these distinctions in drafting templates and final review,
 where the original generic evidence requirements did not prevent the observed drift.
 They do not add outputs, authority, dependencies or external actions.
@@ -40,9 +46,13 @@ failed outputs with retries, or claim an improvement from unpaired observations.
 Original task packets and generated outputs remain preserved. The
 [fresh follow-up record](../evaluations/workflow-fields/followup-001/README.md) includes
 unchanged fictional inputs, all eight actual outputs and package identities. The
-three targeted distinctions held under parent inspection, while the decision drafts
-still need manual gate-label/citation edits; the archive packet's timing expectation
-is also ambiguous. This does not establish error-free drafts or an improvement caused
-by the instruction changes. Supplementary host guidance was loaded in all four cases.
+three targeted distinctions held under parent inspection. The original decision drafts
+retain their documented gate-label/citation errors, and the archive packet's timing
+expectation remains ambiguous. Separately labeled
+[assisted corrected copies](../evaluations/workflow-fields/corrections-001/README.md)
+repair those artifacts and qualify the frozen expectation without altering the original
+attempts or packet. These corrections are not fresh task attempts or evidence of an
+improvement caused by the instruction changes. Supplementary host guidance was loaded
+in all four original cases.
 The published [v0.4.0 record](releases/v0.4.0.md) and earlier repository evaluations
 remain historical records at their original identities.

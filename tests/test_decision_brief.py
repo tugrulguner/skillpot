@@ -24,7 +24,7 @@ class DecisionBriefContractTests(unittest.TestCase):
         self.assertNotEqual(hashlib.sha256(body.encode()).hexdigest(), manifest["procedure_body_sha256"],
                             "current correction must not rewrite historical task provenance")
         for path, digest in manifest["unchanged_resources"].items():
-            if path == "assets/brief-template.md":
+            if path in {"assets/brief-template.md", "assets/evidence-template.md"}:
                 self.assertNotEqual(hashlib.sha256((PACKAGE / path).read_bytes()).hexdigest(), digest)
                 continue
             self.assertEqual(hashlib.sha256((PACKAGE / path).read_bytes()).hexdigest(), digest, path)
@@ -70,6 +70,19 @@ class DecisionBriefContractTests(unittest.TestCase):
         self.assertEqual((PACKAGE / "LICENSE").read_bytes(), (ROOT / "LICENSE").read_bytes())
         self.assertIn("Copyright GitHub, Inc.", notice)
         self.assertIn('THE SOFTWARE IS PROVIDED "AS IS"', notice)
+
+    def test_source_checks_cover_timing_locators_and_frame_claims(self):
+        skill = (PACKAGE / "SKILL.md").read_text().lower()
+        evidence = (PACKAGE / "assets/evidence-template.md").read_text().lower()
+        checks = (
+            ("actual completion", "confirmation", "unknown"),
+            ("locator", "source text", "sentence", "clause"),
+            ("decision frame", "ledger", "claim ids", "constraints", "preferences"),
+        )
+        combined = skill + "\n" + evidence
+        for check in checks:
+            for phrase in check:
+                self.assertIn(phrase, combined, phrase)
 
     def test_owner_reader_authority_roles_are_explicit_in_template_and_review(self):
         template = (PACKAGE / "assets/brief-template.md").read_text().lower()
