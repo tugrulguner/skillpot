@@ -46,9 +46,13 @@ drafts had no additional material field correction identified in this inspection
   frozen input/task/control/package files matched their pre-execution hashes.
 - Supplementary guidance was actually loaded: `hermes-agent` in both decision cases
   and `document-to-action-items` in both extraction cases. Those host instruction
-  contents are not published here. No visible tool-error preview was found in the
-  worker logs; their output previews are truncated, so that is not a complete command
-  journal or a guarantee that every underlying command was captured.
+  contents are not published here. The garden attempt had one initial `write_file`
+  failure because its path was omitted; it corrected that call within the same attempt.
+  A delayed worker summary exposed that the first parent trace filter missed the
+  logger's uppercase `ERROR` marker. Direct trace inspection confirmed the failure,
+  and the count was corrected. Other workers reported no tool failures. Runner output
+  previews are truncated, so these logs are not a complete command journal or a
+  guarantee that every underlying command was captured.
 - The parent audit's first inline invocation had a SyntaxError before execution; a
   separate corrected script completed the hash/output/trace checks. This was parent
   verification, not a worker retry or change to generated outputs.

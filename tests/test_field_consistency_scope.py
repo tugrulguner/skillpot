@@ -24,6 +24,9 @@ class FieldConsistencyScopeTests(unittest.TestCase):
         manifest = json.loads((record / "manifest.json").read_text())
         self.assertEqual(manifest["candidate_commit"], "6a3d6950a40e2fc6bec236741b59085e02486f8a")
         self.assertEqual(len(manifest["attempts"]), 4)
+        attempts = {row["case"]: row for row in manifest["attempts"]}
+        self.assertEqual(attempts["03-garden-actions"]["visible_tool_error_previews"], 1,
+                         "preserve the recovered missing-path write failure")
         for name, digest in manifest["copied_file_sha256"].items():
             self.assertEqual(hashlib.sha256((record / name).read_bytes()).hexdigest(), digest, name)
         actual = {p.relative_to(record).as_posix() for p in record.rglob("*") if p.is_file()}
