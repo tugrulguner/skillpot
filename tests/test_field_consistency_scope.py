@@ -1,5 +1,7 @@
 """Source corrections must not silently change published installation defaults."""
 from pathlib import Path
+import hashlib
+import json
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,6 +18,18 @@ class FieldConsistencyScopeTests(unittest.TestCase):
             self.assertIn(required, text)
         self.assertIn("docs/field-consistency.md", (ROOT / "README.md").read_text())
         self.assertIn("../docs/field-consistency.md", (ROOT / "catalog/README.md").read_text())
+
+    def test_observation_record_keeps_exact_artifact_hashes_and_scope(self):
+        record = ROOT / "evaluations/workflow-fields/followup-001"
+        manifest = json.loads((record / "manifest.json").read_text())
+        self.assertEqual(manifest["candidate_commit"], "6a3d6950a40e2fc6bec236741b59085e02486f8a")
+        self.assertEqual(len(manifest["attempts"]), 4)
+        for name, digest in manifest["copied_file_sha256"].items():
+            self.assertEqual(hashlib.sha256((record / name).read_bytes()).hexdigest(), digest, name)
+        actual = {p.relative_to(record).as_posix() for p in record.rglob("*") if p.is_file()}
+        self.assertEqual(actual, set(manifest["copied_file_sha256"]) | {"manifest.json"})
+        self.assertEqual(len(list(record.glob("cases/*/output/*.md"))), 8)
+        self.assertFalse(list(record.rglob("*.log")), "private runner logs must not be published")
 
     def test_stable_installation_still_selects_the_published_snapshot(self):
         self.assertIn("git clone --branch v0.4.0 --depth 1",

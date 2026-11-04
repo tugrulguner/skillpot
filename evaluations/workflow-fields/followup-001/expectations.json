@@ -1,0 +1,57 @@
+{
+  "01-archive-decision": {
+    "skill": "decision-brief",
+    "permitted_outputs": [
+      "brief.md",
+      "evidence.md"
+    ],
+    "expected": "Propose Cedar conditionally; exclude volunteer timing and Flint off-site work. Do not invent quality or cancellation comparisons.",
+    "checks": [
+      "Nessa remains decision owner across frame, recommendation and next actions; Luis remains reader.",
+      "Imani retains explicitly separate purchasing authority; no purchase or approval is claimed.",
+      "Workspace dependency is unresolved and disclosed, rather than asserted confirmed."
+    ]
+  },
+  "02-reading-room-decision": {
+    "skill": "decision-brief",
+    "permitted_outputs": [
+      "brief.md",
+      "evidence.md"
+    ],
+    "expected": "Defer: current room unavailable; unresolved Rowan toilet conflict and absent Birch toilet route. Transit preference cannot override the gate.",
+    "checks": [
+      "Rafi stays decision owner throughout; Sera is the audience, not decision or booking authority.",
+      "Purchasing/reservation authority stays unknown rather than assigned by inference.",
+      "Contradictory evidence and missing evidence remain distinct, with no invented resolution."
+    ]
+  },
+  "03-garden-actions": {
+    "skill": "document-actions",
+    "permitted_outputs": [
+      "actions.md",
+      "questions.md"
+    ],
+    "expected": "Three assigned outstanding tasks, one unassigned required diagram, one conditional proposal and one source-reported historical completion.",
+    "checks": [
+      "G1 and G2 completion status stays Unknown/no report; G3 retains explicit incomplete status.",
+      "Grounds team, Bea and Kiran are owners only where sourced; preserve Jo in historical record.",
+      "Val assignment is not Bea/Kiran/team acceptance; Bea acceptance alone is explicit.",
+      "Marta is proposer, not inferred shelter owner; sponsor funding approval role is known, individual Unknown and funding occurrence unresolved.",
+      "Required diagram has a canonical record, and deadlines stay verbatim."
+    ]
+  },
+  "04-harbor-actions": {
+    "skill": "document-actions",
+    "permitted_outputs": [
+      "actions.md",
+      "questions.md"
+    ],
+    "expected": "One deduplicated crew notice-posting task, Anil assigned review, unassigned required photo, conditional lamp proposal, and Dalia historical cancellation.",
+    "checks": [
+      "Notice posting completion is Unknown/no report rather than Incomplete; Anil status retains explicit not-started report.",
+      "Grant panel is the known funding approval role, members Unknown; no approval or accepted owner is inferred.",
+      "Tomas remains proposer; approving panel is not automatically action owner.",
+      "H1/H2 merge with locators; deadline verbatim; Dalia historical owner retained; photo canonical unassigned record."
+    ]
+  }
+}

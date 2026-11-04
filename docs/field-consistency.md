@@ -37,7 +37,12 @@ Supplementary host guidance and tool failures must be reported from actual trace
 Do not attribute the result solely to the selected SkillPot bundle, replace original
 failed outputs with retries, or claim an improvement from unpaired observations.
 
-Original task packets and generated outputs remain preserved outside the source tree.
-No fresh follow-up outcome is claimed by this preparation note. The published
-[v0.4.0 record](releases/v0.4.0.md) and earlier repository evaluations remain historical
-records at their original identities.
+Original task packets and generated outputs remain preserved. The
+[fresh follow-up record](../evaluations/workflow-fields/followup-001/README.md) includes
+unchanged fictional inputs, all eight actual outputs and package identities. The
+three targeted distinctions held under parent inspection, while the decision drafts
+still need manual gate-label/citation edits; the archive packet's timing expectation
+is also ambiguous. This does not establish error-free drafts or an improvement caused
+by the instruction changes. Supplementary host guidance was loaded in all four cases.
+The published [v0.4.0 record](releases/v0.4.0.md) and earlier repository evaluations
+remain historical records at their original identities.
