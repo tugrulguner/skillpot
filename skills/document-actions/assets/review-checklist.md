@@ -20,6 +20,10 @@ an instruction for review, not an automatic semantic validator.
 - **Preserve supported distinctions.** Assignment is not acceptance. A reported completion
   time is not a deadline. A planned condition has not necessarily occurred. Keep proposal,
   historical and unresolved placement consistent with the evidence.
+- **Check status and approval separately.** No completion report means status is `Unknown`,
+  not `Incomplete`; use `Incomplete` only when the source reports it. Preserve a
+  source-known approval role, but leave the unnamed individual `Unknown`. Do not infer
+  an assignee from an approver or proposer; require explicit assignment.
 - **Check citations and wording.** Resolve locators and separately sourced fields, retain
   all competing claims, and preserve deadline wording without normalization.
 - **Keep questions useful.** Link material questions to canonical item/source IDs and

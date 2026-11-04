@@ -48,10 +48,10 @@ class V040DefaultsTests(unittest.TestCase):
             self.assertNotIn(old, text)
         self.assertNotIn("not included in published v0.3.0", text)
 
-    def test_original_workflow_publication_is_not_maturity_promotion(self):
-        for name, version in [("decision-brief", "0.1.0"), ("document-actions", "0.1.1")]:
+    def test_original_workflow_source_patches_do_not_claim_publication(self):
+        for name, version in [("decision-brief", "0.1.1"), ("document-actions", "0.1.2")]:
             text = (ROOT / f"skills/{name}/SKILL.md").read_text()
-            self.assertIn('status: "released"', text)
+            self.assertIn('status: "unreleased"', text)
             self.assertIn(f'version: "{version}"', text)
             self.assertIn("v0.4.0", (ROOT / f"skills/{name}/compatibility.md").read_text())
         self.assertIn("experimental", (ROOT / "skills/repository-readiness/SKILL.md").read_text())

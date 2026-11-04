@@ -1,0 +1,12 @@
+{
+  "source_git_commit": "6a3d6950a40e2fc6bec236741b59085e02486f8a",
+  "skill": "document-actions",
+  "file_sha256": {
+    "provenance.md": "158a91f96438abc8b41af52a11e01472c61b394619b84cf19ceec0517f0ba9d5",
+    "SKILL.md": "14a1015024530eaaaaa23da5a2cc1ba391245bd43ed9d98c1335b8ed64277b77",
+    "compatibility.md": "8ed348b0e370543787e16e2868ca06bd96208510e9cc848d15d04f4883d32d8c",
+    "assets/review-checklist.md": "f7984192de83e49453dcd9a9b0dbaa2a6defc648ff4ec0584a2c663b021b7fc4",
+    "assets/questions-template.md": "8551efeeecec0c6b0010776379e533d80471d10b490dd6f08c757cced089d66f",
+    "assets/actions-template.md": "8b1f7e51f314770284c127d5febc758ad6943803c9b6159e3db79dbba9b50654"
+  }
+}

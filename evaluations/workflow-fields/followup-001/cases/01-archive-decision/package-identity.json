@@ -1,0 +1,13 @@
+{
+  "source_git_commit": "6a3d6950a40e2fc6bec236741b59085e02486f8a",
+  "skill": "decision-brief",
+  "file_sha256": {
+    "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+    "provenance.md": "14998edf2ec6eb0e5a5074b69db114260f761acdeb367faa9fa51f134635b927",
+    "SKILL.md": "8b906ab37505778296e93131b584283983cbe50029fa8d46950cb3f335c7c9a4",
+    "compatibility.md": "c6421b50383a7b8c63cd7cd9b3815dd84d462d9751a34b161e8883cde7c8151c",
+    "LICENSES/github-spec-kit-MIT.txt": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+    "assets/evidence-template.md": "37977a741e54e9b25ac1c4e7d96c624b203c50b75ce82db4b48aa18f91eae2cb",
+    "assets/brief-template.md": "1df6e7c25ec27a1da17d8f9daade1c02d38892a7e7b0fe181fe81f6f38969e16"
+  }
+}

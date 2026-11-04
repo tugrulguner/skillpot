@@ -50,7 +50,9 @@ individual source/rights/privacy review before any later extraction.
 Published v0.4.0 contains ten skills, also present in current source: the seven imported public guidance files,
 experimental repository-readiness, **[decision-brief](../skills/decision-brief/SKILL.md)**
 and **[document-actions](../skills/document-actions/SKILL.md)**.
-The stable quickstart selects that published release. Use the
+The stable quickstart selects that published release. Current-source
+[field-consistency patches](../docs/field-consistency.md) for both original workflows
+are unreleased and do not change that snapshot. Use the
 [decision-brief first-use guide](../docs/quickstart.md#try-decision-brief-from-reviewed-source)
 for its exact release commit, safe copy steps and task prompt.
 

@@ -19,7 +19,7 @@ class DocumentActionsContractTests(unittest.TestCase):
         self.assertLessEqual(len(meta["description"]), 60)
         self.assertTrue(meta["description"].endswith("."))
         self.assertIn("compatibility", meta)
-        self.assertEqual(meta["metadata"], {"version": "0.1.1", "maintainer": "tugrulguner", "status": "released"})
+        self.assertEqual(meta["metadata"], {"version": "0.1.2", "maintainer": "tugrulguner", "status": "unreleased"})
         self.assertTrue(match[2].strip())
 
     def test_procedure_covers_extraction_categories_and_safety_contract(self):
@@ -77,6 +77,19 @@ class DocumentActionsContractTests(unittest.TestCase):
         self.assertIn("one canonical record per underlying item", skill)
         self.assertIn("not a second historical or outstanding record", skill)
         self.assertIn("Place this item only here", template)
+
+    def test_status_and_approval_role_are_field_level_and_explicit(self):
+        skill = (PACKAGE / "SKILL.md").read_text().lower()
+        template = (PACKAGE / "assets/actions-template.md").read_text().lower()
+        checklist = (PACKAGE / "assets/review-checklist.md").read_text().lower()
+        self.assertIn("no completion report means status is", skill)
+        self.assertIn("use `incomplete` only when the", skill)
+        self.assertIn("approval role:", template)
+        self.assertIn("approver (named person):", template)
+        self.assertIn("an approver/proposer is not an", skill)
+        self.assertIn("source-known approval role", checklist)
+        self.assertIn("unnamed individual `unknown`", checklist)
+        self.assertIn("do not infer", checklist)
 
     def test_refusal_requests_new_location_and_checklist_is_linked(self):
         skill = (PACKAGE / "SKILL.md").read_text()

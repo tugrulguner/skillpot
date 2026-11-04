@@ -4,7 +4,9 @@
 
 ## Decision frame
 - **Question:** [one decision]
-- **Decision owner / reader:** [owner / audience]
+- **Decision owner:** [person/role accountable for the decision]
+- **Intended reader:** [audience; may differ from decision owner]
+- **Purchasing / approval authority:** [person/role, or unknown; do not infer from owner or reader]
 - **Status:** [recommendation for owner review | deferred]
 - **Evidence cutoff and scope:** [date or cutoff; supplied materials / expressly allowed public sources]
 - **Stop condition:** [what missing evidence or constraint prevents a decision]
@@ -19,14 +21,14 @@
 | [option] | [pass/fail/unknown; C IDs] | [C IDs] | [A/U IDs] |
 
 ## Recommendation or deferral
-[Conditional recommendation with rationale and runner-up/current approach, or explicit deferral and the decisive evidence needed. Do not imply acceptance or implementation. Cite C/A/K/U identifiers.]
+[Conditional recommendation addressed to the intended reader, naming the decision owner, rationale and why the runner-up/current approach was not selected; or explicit deferral and decisive evidence needed. Do not imply the reader decides, owner may spend, acceptance, or implementation. Cite C/A/K/U identifiers.]
 
 ## Risks, uncertainty, and reversal conditions
 - **Residual uncertainty:** [item and effect; IDs]
 - **Reversal condition:** [specific new evidence, changed hard constraint, or explicit threshold that would change this recommendation]
 
 ## Owner action
-[Decision owner action still required; “acceptance not recorded” unless separately confirmed.]
+[Action still required from the decision owner; state any separate purchasing/approval authority. “Acceptance not recorded” unless separately confirmed.]
 
 ## Limitations
 [Evidence not accessed, cutoff, assumptions, calculations, scope limitations.]

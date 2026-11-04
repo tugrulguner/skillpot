@@ -1,0 +1,57 @@
+{
+  "candidate_commit": "6a3d6950a40e2fc6bec236741b59085e02486f8a",
+  "frozen_files_verified": 41,
+  "attempts": [
+    {
+      "case": "01-archive-decision",
+      "loaded_host_skills": [
+        "hermes-agent"
+      ],
+      "visible_tool_error_previews": 0
+    },
+    {
+      "case": "02-reading-room-decision",
+      "loaded_host_skills": [
+        "hermes-agent"
+      ],
+      "visible_tool_error_previews": 0
+    },
+    {
+      "case": "03-garden-actions",
+      "loaded_host_skills": [
+        "document-to-action-items"
+      ],
+      "visible_tool_error_previews": 1
+    },
+    {
+      "case": "04-harbor-actions",
+      "loaded_host_skills": [
+        "document-to-action-items"
+      ],
+      "visible_tool_error_previews": 0
+    }
+  ],
+  "copied_file_sha256": {
+    "expectations.json": "8b96e0cf0acb704f016a62a2132ed819078207f84c35b68b3a480e28103f38a1",
+    "README.md": "e4ea73d6c74d76a55e0c20174595951e67e1196dfe384201cc1f5bae078853da",
+    "protocol.md": "ecfa1e55d9377edf2b481e8bec5b5c820d1e7b90004e9635db4b27cd648f9ddc",
+    "cases/01-archive-decision/package-identity.json": "7cb61bcff99966aa696d496d2ba8760684f4d194e19b335b819f88a989498790",
+    "cases/01-archive-decision/input/evidence.md": "badd5412b7df9d6c04fee6d6fe1be742b6abfafe00d2a6f5fcf817fe4eb70b27",
+    "cases/01-archive-decision/output/evidence.md": "890256c0270170a13abc12b8dd19a7c755266104f4e8d05b293265262995da8d",
+    "cases/01-archive-decision/output/brief.md": "4747dd60d72db913a2f059f31fe48b15722c09db88148e0e0d46fc0c56c1ad11",
+    "cases/02-reading-room-decision/package-identity.json": "7cb61bcff99966aa696d496d2ba8760684f4d194e19b335b819f88a989498790",
+    "cases/02-reading-room-decision/input/evidence.md": "7ce2103dc2b4915b1a4d6db2e50085dc9237fac104d90a48512d62ce6e56cf05",
+    "cases/02-reading-room-decision/output/evidence.md": "edc97518acce32d09682e36f9df613d755af0e8b29e1e77c7d10486dae6e5781",
+    "cases/02-reading-room-decision/output/brief.md": "6946949d950064833affd49dc16fa668961358ea5e82e1e802b2de2f7fdd673a",
+    "cases/03-garden-actions/package-identity.json": "e30d7d08a552a8b13fc0c83a04fd94621f84c11cfaf0f68718594397d7372220",
+    "cases/03-garden-actions/input/evidence.md": "f178bb9a5194ab1b9e17c7bb6fc2f7a26a84a6c76f3164e79d2cdb5e61ebf047",
+    "cases/03-garden-actions/output/questions.md": "0b6d1c39c2a903bbb47710b1afe83a069a38b483233c07821c9890b82a3703d2",
+    "cases/03-garden-actions/output/actions.md": "7efb6b63b2d11467a0c750ee8e7799aba5c406ea45e781e65c773f09cee4d564",
+    "cases/04-harbor-actions/package-identity.json": "e30d7d08a552a8b13fc0c83a04fd94621f84c11cfaf0f68718594397d7372220",
+    "cases/04-harbor-actions/input/evidence.md": "a32670c7fae0ccf9e2e3fedd9483541a1997fdc5ee246db56a2697257d6fbe9b",
+    "cases/04-harbor-actions/output/questions.md": "8b92b0dfbfe6c7c437585e0fb199dd96c2358911ab705500f2dde9f7ae592e47",
+    "cases/04-harbor-actions/output/actions.md": "e6d867583c264470d918a56e1fd98e4fa3ffdaa98d8fb33dd2d8ac87aed68df1"
+  },
+  "adaptations": "Input documents, outputs, expectations, protocol and package identities copied byte-for-byte. Parent report copied as README.md. Private task envelopes, host skill contents and runner logs excluded.",
+  "verification_amendment": "Late completion summary and direct trace inspection exposed the garden missing-path write failure. Count corrected; original inputs and outputs unchanged."
+}
