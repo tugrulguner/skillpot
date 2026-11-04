@@ -23,16 +23,16 @@ class V040PreparationTests(unittest.TestCase):
                                    "SKILL_ROOT": str(project / "skills")},
                               capture_output=True, text=True)
 
-    def test_preparation_does_not_promote_absent_release(self):
+    def test_preparation_history_and_published_defaults_are_distinct(self):
         text = NOTES.read_text()
         self.assertIn("Not published", text)
         self.assertIn("only after the tag and public archives exist", text)
         self.assertIn("Do not rerun", text)
         self.assertIn("2b8040fece04dc159a44e72e909e376f5d0583a3", text)
-        self.assertIn("git clone --branch v0.3.0", (ROOT / "README.md").read_text())
-        self.assertIn("checkout --detach b4dabf93e7e4a85a55d947a05eb2989f035a58c1",
+        self.assertIn("git clone --branch v0.4.0", (ROOT / "README.md").read_text())
+        self.assertIn("checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35",
                       (ROOT / "docs/quickstart.md").read_text())
-        self.assertIn('status: "unreleased"', (ROOT / "skills/document-actions/SKILL.md").read_text())
+        self.assertIn('status: "released"', (ROOT / "skills/document-actions/SKILL.md").read_text())
 
     def test_contents_and_limits_cover_complete_collection(self):
         names = sorted(p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md"))

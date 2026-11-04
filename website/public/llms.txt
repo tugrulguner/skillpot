@@ -1,14 +1,14 @@
 # SkillPot
 
-SkillPot is a library of practical, selectively installable agent instructions. It is not an agent runtime, registry, or installer. The current public ModePot collection is pinned at v0.3.0; upstream product projects remain canonical.
+SkillPot is a library of practical, selectively installable agent instructions. It is not an agent runtime, registry, or installer. The current public ModePot collection is pinned at v0.4.0; upstream product projects remain canonical.
 
 ## Start
-Published v0.3.0 contains eight skills: seven pinned public project/contributor packages covering Intpot, Summonpot, Dexpot and Refpot, plus the original repository-readiness skill. Current source contains ten, adding reviewed, unreleased decision-brief and source-only document-actions; both are not included in published v0.3.0. Document-actions extracts source-stated assignments and requirements into actions.md and questions.md, keeping proposals and completed/cancelled history separate, deadlines verbatim and conflicts explicit. It does not invent acceptance or operate a task tracker. Decision-brief produces a proposed recommendation and evidence ledger from a bounded input packet; it does not accept or implement the decision. Use the pinned source-only setup for the selected unreleased workflow, not the stable v0.3.0 clone. Refpot is a preview and repository-readiness remains experimental. Claude Code, Cursor, Codex and Hermes use their documented native skill mechanisms. Installation copies instructions, not product dependencies or additional authority. Full MIT source notices are retained per package.
+Published v0.4.0 contains ten skills: seven pinned public project/contributor packages covering Intpot, Summonpot, Dexpot and Refpot, plus the original repository-readiness, decision-brief and document-actions workflows. Current source retains these ten workflows. Document-actions extracts source-stated assignments and requirements into actions.md and questions.md, keeping proposals and completed/cancelled history separate, deadlines verbatim and conflicts explicit. It does not invent acceptance or operate a task tracker. Decision-brief produces a proposed recommendation and evidence ledger from a bounded input packet; it does not accept or implement the decision. Use the stable v0.4.0 checkout for any selected workflow; first-use steps pin release commit 3624eaaf2aa6c870e1dad6190ac3466e4e378f35. Refpot is a preview and repository-readiness remains experimental. Claude Code, Cursor, Codex and Hermes use their documented native skill mechanisms. Installation copies instructions, not product dependencies or additional authority. Full MIT source notices are retained per package.
 
 - [Quick start](https://skillpot.modepot.io/quickstart/)
 - [Catalogue](https://skillpot.modepot.io/catalogue/)
 - [Host setup](https://skillpot.modepot.io/host-setup/)
-- [Document-actions source-only first use](https://skillpot.modepot.io/host-setup/#try-document-actions-from-pinned-source)
+- [Document-actions release-pinned first use](https://skillpot.modepot.io/host-setup/#try-document-actions-from-pinned-source)
 
 ## Learn and maintain
 - [Authoring contract overview](https://skillpot.modepot.io/authoring/)
@@ -18,4 +18,4 @@ Published v0.3.0 contains eight skills: seven pinned public project/contributor 
 ## Canonical source
 - [SkillPot repository](https://github.com/tugrulguner/skillpot)
 - [Source skill contract](https://github.com/tugrulguner/skillpot/blob/main/docs/skill-contract.md)
-- [Pinned release v0.3.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.3.0)
+- [Pinned release v0.4.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.0)

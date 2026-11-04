@@ -1,15 +1,15 @@
 import { test, expect } from '@playwright/test';
 
-test('document actions source-only workflow and first-use are discoverable', async ({ page, request }, info) => {
+test('released document actions and release-pinned first-use are discoverable', async ({ page, request }, info) => {
   for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
     await expect(page.locator('.overview')).toContainText('document-actions');
     await page.goto('/catalogue/');
     const content = page.locator('.sl-markdown-content');
-    await expect(content).toContainText('Current source contains ten skills');
+    await expect(content).toContainText('Published v0.4.0 contains ten skills');
     await expect(content).toContainText('document-actions');
-    await expect(content).toContainText('not included in published v0.3.0');
+    await expect(content).toContainText('included in v0.4.0');
     const guide = content.getByRole('link', { name: 'document-actions first-use guide', exact: true });
     await expect(guide).toHaveAttribute('href', '/host-setup/#try-document-actions-from-pinned-source');
     await guide.scrollIntoViewIfNeeded();

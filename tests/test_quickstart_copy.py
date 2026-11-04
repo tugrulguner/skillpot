@@ -12,10 +12,13 @@ ROOT = Path(__file__).resolve().parents[1]
 class QuickstartCopyTests(unittest.TestCase):
     def recipe(self, destination):
         source = (ROOT / 'README.md').read_text()
-        match = re.search(r'(?ms)^\(\n  set -eu\n.*?^\)', source)
+        # Exercise only the literal copy fragment offline; the full source-selection
+        # block has a separate clone-failure regression and public-clone replay.
+        match = re.search(r'(?ms)^  mkdir -p "\$SKILL_ROOT".*?^\)', source)
         if match is None:
-            self.fail('README must retain a complete fail-closed copy recipe')
-        return subprocess.run(['sh', '-c', match.group()], cwd=ROOT,
+            self.fail('README must retain the complete selected-directory copy fragment')
+        script = '(\n  set -eu\n' + match.group()
+        return subprocess.run(['sh', '-c', script], cwd=ROOT,
                               env={**os.environ, 'SKILL_ROOT': str(destination)},
                               capture_output=True, text=True)
 

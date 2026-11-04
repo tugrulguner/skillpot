@@ -19,7 +19,7 @@ class DocumentActionsContractTests(unittest.TestCase):
         self.assertLessEqual(len(meta["description"]), 60)
         self.assertTrue(meta["description"].endswith("."))
         self.assertIn("compatibility", meta)
-        self.assertEqual(meta["metadata"], {"version": "0.1.1", "maintainer": "tugrulguner", "status": "unreleased"})
+        self.assertEqual(meta["metadata"], {"version": "0.1.1", "maintainer": "tugrulguner", "status": "released"})
         self.assertTrue(match[2].strip())
 
     def test_procedure_covers_extraction_categories_and_safety_contract(self):

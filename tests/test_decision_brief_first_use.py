@@ -13,7 +13,7 @@ class DecisionBriefFirstUseTests(unittest.TestCase):
     def run_recipe(self, skill_root):
         text = (ROOT / "docs/quickstart.md").read_text()
         marker = "## Try decision-brief from reviewed source"
-        self.assertIn(marker, text, "source-only first-use instructions missing")
+        self.assertIn(marker, text, "release-pinned first-use instructions missing")
         section = text.split(marker, 1)[1].split("\n## ", 1)[0]
         match = re.search(r"(?ms)^\(\n  set -eu\n.*?^\)", section)
         self.assertIsNotNone(match, "copy recipe must be complete and fail closed")
@@ -117,9 +117,9 @@ class DecisionBriefFirstUseTests(unittest.TestCase):
 
     def test_pin_prompt_and_release_boundaries_are_explicit(self):
         text = (ROOT / "docs/quickstart.md").read_text()
-        self.assertIn("git -C skillpot-decision-source checkout --detach 4ca53963cafc8a9a3965808c485dc8c6ad502a66", text)
-        self.assertIn("b4dabf93e7e4a85a55d947a05eb2989f035a58c1", text)
-        self.assertIn("not included in published v0.3.0", text)
+        self.assertIn("git -C skillpot-decision-source checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35", text)
+        self.assertIn("3624eaaf2aa6c870e1dad6190ac3466e4e378f35", text)
+        self.assertIn("included in published v0.4.0", text)
         self.assertIn("decision-brief-example/task.md", text)
         self.assertIn("decision-brief-example/sources.json", text)
         self.assertIn("decision-brief-output/brief.md", text)

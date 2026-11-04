@@ -10,9 +10,10 @@ These are agent instructions, not the underlying Python products. Install only t
 task you need; product dependencies, listeners, credentials, data changes, code pushes
 and public review publication remain separate authorization decisions.
 
-The public project collection is available on `main`. Start from an inspected checkout
-of `main`, then pin that published commit so updating your agent does not silently
-change project guidance. A merge is not a versioned or generally qualified release.
+The published collection is v0.4.0 at `3624eaaf2aa6c870e1dad6190ac3466e4e378f35`.
+Start from that inspected release checkout using the quickstart, so installing or
+updating your agent does not silently follow moving `main`. A merge alone is not
+another versioned or generally qualified release.
 
 ## Hermes: direct URL, one selected skill
 
@@ -20,7 +21,8 @@ Hermes' established installer fetches a SKILL.md and its explicitly referenced s
 files. See the [official skills documentation](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills#8-direct-url-url).
 No custom SkillPot installer or registry account is needed.
 
-From an inspected SkillPot checkout of `main`:
+From the inspected v0.4.0 release checkout (confirm `git rev-parse HEAD` is
+`3624eaaf2aa6c870e1dad6190ac3466e4e378f35`):
 
 ```sh
 REV=$(git rev-parse HEAD)
@@ -39,7 +41,7 @@ existing profile without permission. For verification, an owned temporary empty
 `HERMES_HOME` can isolate install/list/uninstall checks from the real profile. That is
 a temporary test home, not authorization to change another registered profile.
 
-Each package links its complete source guide and MIT notice under `references/`.
+Each imported project package links its complete source guide and MIT notice under `references/`.
 Those files must accompany the entry point. Root `provenance.md` and `compatibility.md`
 in the source repository document the distribution and its measured limits; direct
 URL consumers do not depend on those root files being fetched.
