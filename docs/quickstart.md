@@ -11,7 +11,8 @@ may require its own Python environment, dependencies or credentials.
 Start with the [task-first catalogue](../catalog/README.md):
 
 - Intpot CLI or Python: define, inspect, export or convert a trusted application.
-- Decision brief (unreleased source only): compare alternatives with a bounded evidence packet; use the [separate pinned first-use steps](#try-decision-brief-from-reviewed-source), not the v0.3.0 checkout.
+- Decision brief: compare alternatives with a bounded evidence packet; use the [release-pinned first-use steps](#try-decision-brief-from-reviewed-source).
+- Document actions: extract source-stated work and questions using the [release-pinned input and output steps](#try-document-actions-from-pinned-source).
 - Dexpot: build and verify synchronous typed HTTP APIs.
 - Summonpot: implement an endpoint with deterministic operations and bounded agent-owned decisions.
 - Refpot: exercise the embedded database preview with temporary data.
@@ -25,13 +26,13 @@ experimental explicit-load audit, with its own [tested boundaries](../skills/rep
 In a new source location you own:
 
 ```sh
-git clone https://github.com/tugrulguner/skillpot.git skillpot-source
-git -C skillpot-source checkout --detach b4dabf93e7e4a85a55d947a05eb2989f035a58c1
+git clone https://github.com/tugrulguner/skillpot.git skillpot-source &&
+git -C skillpot-source checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35 &&
 cd skillpot-source
 ```
 
-That immutable public revision is the published `v0.3.0` collection and includes the
-four refreshed project guides and existing consumer examples. Examples retain their
+That immutable public revision is the published `v0.4.0` collection and includes all
+ten skills, including decision-brief and document-actions, and their worked examples. Examples retain their
 own historical product pins; they are not new runtime evidence for these guides.
 You may choose a newer reviewed published revision, but record its exact commit; do
 not silently refresh instructions. Read the chosen `SKILL.md`, provenance, compatibility
@@ -158,21 +159,21 @@ remain separate records, not prerequisites for using the documented integrations
 
 ## Try document-actions from pinned source
 
-`document-actions` is source-only and **not included in published v0.3.0**.
-The stable checkout above does not contain it. These POSIX shell steps select a
-specific source candidate and copy instructions and fictional input documents only.
+`document-actions` version 0.1.1 is **included in published v0.4.0**.
+The stable checkout above already contains it. If starting separately, these POSIX
+shell steps select the same release commit and copy instructions and fictional input documents only.
 They do not launch a client, install dependencies or create external tasks.
 
 From a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-actions-source &&
-git -C skillpot-actions-source checkout --detach 8a07fb954694cae186a59893bcbc3c0c579dee1e &&
+git -C skillpot-actions-source checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35 &&
 cd skillpot-actions-source
 ```
 
-The pin supplies the procedure, templates and authored example together; it is not a
-collection release or evidence of agent extraction accuracy. Inspect the selected
+The release pin supplies the procedure, templates and authored example together.
+Publication is not evidence of agent extraction accuracy. Inspect the selected
 [procedure](../skills/document-actions/SKILL.md) and its linked resources first.
 
 Stay in that checkout. Replace `PROJECT` with an existing project you own and choose
@@ -255,9 +256,9 @@ client or model trial is required to inspect or copy the bundle.
 
 ## Try decision-brief from reviewed source
 
-`decision-brief` is reviewed but unreleased and is **not included in published v0.3.0**.
-The stable instructions above intentionally select that older collection. For this
-workflow, use the separate immutable source revision below. These POSIX shell steps
+`decision-brief` version 0.1.0 is **included in published v0.4.0**.
+The stable instructions above already select this collection. If starting separately,
+use the same immutable release revision below. These POSIX shell steps
 copy instructions and example inputs only; they do not launch an agent, install
 product dependencies or execute the proposed storage change.
 
@@ -267,13 +268,13 @@ From a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-decision-source &&
-git -C skillpot-decision-source checkout --detach 4ca53963cafc8a9a3965808c485dc8c6ad502a66 &&
+git -C skillpot-decision-source checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35 &&
 cd skillpot-decision-source
 ```
 
-This is the reviewed main snapshot after the status/task-record update, not a new
-release. Do not replace the commit with moving `main` or rerun the v0.3.0 checkout
-above before copying this skill. Inspect [the procedure](../skills/decision-brief/SKILL.md),
+This is the published v0.4.0 snapshot, shared with the stable checkout above.
+Do not replace the commit with moving `main` or an older source checkout
+before copying this skill. Inspect [the procedure](../skills/decision-brief/SKILL.md),
 its linked templates, provenance, compatibility and both complete notices first.
 
 ### Copy only the selected bundle

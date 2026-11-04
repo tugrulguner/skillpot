@@ -1,5 +1,9 @@
 # Compatibility and verification boundaries
 
+Version `0.1.1` is included in published SkillPot v0.4.0 at
+`3624eaaf2aa6c870e1dad6190ac3466e4e378f35`. Publication does not extend the
+verification scope below or relabel assisted observations as isolated task evidence.
+
 Use with a host that can read supplied text, inspect file destinations, create two
 new files in an owned approved directory and reopen them. No particular model, native
 client, account, network, paid service or dependency installation is needed. Existing
@@ -19,7 +23,7 @@ and website navigation checks can validate their stated structural and file/UI s
 The repository example is authored expected material, not an agent-generated result.
 Native activation, semantic accuracy on arbitrary documents, completeness of extracted
 obligations, cross-host reliability and improved task performance are not established.
-No live client/model evaluation is required or claimed for this source-only package.
+No live client/model evaluation is required or claimed for this instruction bundle.
 
 When recording optional task observations, retain original inputs/outputs and audit
 which other guidance the host actually loaded. Supplementary extraction skills or

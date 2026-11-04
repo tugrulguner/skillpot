@@ -53,8 +53,10 @@ existing source-preview qualification stays in place.
 
 These four refreshed packages are included in published
 [SkillPot v0.3.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.3.0),
-at commit `b4dabf93e7e4a85a55d947a05eb2989f035a58c1`. The stable
-[quickstart](quickstart.md) selects that revision. The v0.2.0 collection keeps its
+at commit `b4dabf93e7e4a85a55d947a05eb2989f035a58c1`. Published v0.4.0 retains
+these same package snapshots and adds two original workflows. The stable
+[quickstart](quickstart.md) now selects v0.4.0 at `3624eaaf2aa6c870e1dad6190ac3466e4e378f35`.
+The v0.2.0 collection keeps its
 older reviewed snapshots. Existing user installations are not overwritten or
 silently upgraded, and upstream source-only features remain source-only.
 

@@ -31,23 +31,23 @@
 
 ## Quick start
 
-The published collection is **[v0.3.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.3.0)**,
-including the [four-package upstream-guide refresh](docs/public-guide-refresh.md).
+The published collection is **[v0.4.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.0)**,
+adding decision briefs and document action extraction to ten portable skills.
 Per-package prerequisites and upstream unreleased-feature boundaries still apply.
-See the [release Discussion](https://github.com/tugrulguner/skillpot/discussions/26)
-and [preparation/publication record](docs/releases/v0.3.0.md).
+See the [release Discussion](https://github.com/tugrulguner/skillpot/discussions/34)
+and [preparation/publication record](docs/releases/v0.4.0.md).
 
 Choose one task, inspect its instructions and copy the **complete selected directory**
 into your host's documented skill location. This example uses Claude Code's project
 scope and the published collection. Run it from a new source location you own:
 
 ```sh
-git clone --branch v0.3.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source
-cd skillpot-source
-# Replace with an existing project you own.
-SKILL_ROOT=/absolute/owned-project/.claude/skills
 (
   set -eu
+  git clone --branch v0.4.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source
+  cd skillpot-source
+  # Replace with an existing project you own.
+  SKILL_ROOT="/absolute/owned-project/.claude/skills"
   mkdir -p "$SKILL_ROOT"
   mkdir "$SKILL_ROOT/intpot-python"
   cp -R skills/intpot-python/. "$SKILL_ROOT/intpot-python/"
@@ -73,10 +73,10 @@ instructions grants no additional authority.
 
 ## Choose a workflow
 
-Published v0.3.0 contains eight skills. Current source contains ten: the same eight
-plus reviewed, unreleased `decision-brief` and source-only `document-actions`. Both
-are not included in published v0.3.0. Use their pinned source-only setup instructions;
-the stable clone above remains v0.3.0.
+Published v0.4.0 contains ten skills, including `decision-brief` and
+`document-actions`. Current source retains the same ten workflows. The stable clone
+above selects their published snapshot; the first-use guides use its exact commit.
+Publication does not promote repository-readiness beyond its experimental scope.
 
 | Task | Skill |
 | --- | --- |
@@ -87,8 +87,8 @@ the stable clone above remains v0.3.0.
 | Use the embedded database preview with explicit limits | [refpot-database](skills/refpot-database/SKILL.md) |
 | Prepare/review changes specifically in Summonpot | [summonpot-pr-review](skills/summonpot-pr-review/SKILL.md), [summonpot-code-review](skills/summonpot-code-review/SKILL.md) |
 | Audit a repository against an exact delivery goal | [repository-readiness](skills/repository-readiness/SKILL.md), experimental |
-| Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md), unreleased; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
-| Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md), reviewed current source only; not in v0.3.0 |
+| Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md), released in v0.4.0; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
+| Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md), released in v0.4.0 |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
 policies do not govern unrelated projects or authorize a merge. See the
@@ -123,8 +123,8 @@ requirement to produce videos. The catalogue above describes what is available n
 
 ## Examples and reference
 
-- [Document actions worked example](examples/document-actions/README.md): fictional documents, expected classifications and offline acceptance checks. These are authored fixtures, not observed agent extractions. Source only, not included in published v0.3.0.
-- [Decision brief worked example](examples/decision-brief/README.md): a parent-authored CSV/SQLite comparison, pinned documentation excerpts and four failure cases. Its offline checker validates artifact integrity, not agent performance. Current source only, not in v0.3.0.
+- [Document actions worked example](examples/document-actions/README.md): fictional documents, expected classifications and offline acceptance checks. These are authored fixtures, not observed agent extractions. Included in v0.4.0.
+- [Decision brief worked example](examples/decision-brief/README.md): a parent-authored CSV/SQLite comparison, pinned documentation excerpts and four failure cases. Its offline checker validates artifact integrity, not agent performance. Included in v0.4.0.
 - [Product consumer examples](examples/modepot-project-skills/README.md): actual sources,
   setup, expected checks and explicit product pins. v0.14.0 Intpot provenance examples
   are distinguished from older runtime records.
