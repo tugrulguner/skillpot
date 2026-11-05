@@ -76,6 +76,14 @@ The [v0.4.0 publication record](docs/releases/v0.4.0.md) records ten skills, add
 upstream pins and existing maturity/evidence boundaries. The immutable tag is unchanged;
 current setup selects its verified release commit. Family discovery deploys independently.
 
+## 3b. Proposed v0.4.1 patch — preparation only
+
+The [v0.4.1 preparation](docs/releases/v0.4.1.md) covers the two original workflows'
+role, status, approval, timing and evidence-check corrections, with unchanged inputs,
+outputs, permissions and the same ten-skill collection. Stable setup remains on
+published v0.4.0. Merge, publication and later defaults/discovery promotion require
+separate approval; no v0.4.1 tag is created by this preparation.
+
 ## 4. Maintain and expand the library
 
 - [x] Add `document-actions`, released in v0.4.0, for source-stated actions and focused questions,
