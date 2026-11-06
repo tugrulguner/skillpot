@@ -59,7 +59,7 @@ class DecisionBriefContractTests(unittest.TestCase):
         self.assertIn("name: decision-brief", text)
         self.assertIn('version: "0.1.1"', text)
         self.assertIn('maintainer: "tugrulguner"', text)
-        self.assertIn('status: "unreleased"', text)
+        self.assertIn('status: "published"', text)
         self.assertNotIn("metadata:\n  hermes:", text)
         provenance = (PACKAGE / "provenance.md").read_text()
         self.assertIn("7370e592f3cd9c06e5b698983957e227c75b30e2", provenance)

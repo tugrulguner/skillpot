@@ -64,29 +64,29 @@ These checkboxes do not authorize merging a future change or publishing from an
 unreviewed branch. A collection release distributes instructions; it neither installs
 all skills nor changes existing user copies.
 
-Latest published collection: [v0.4.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.0),
-at commit `3624eaaf2aa6c870e1dad6190ac3466e4e378f35`. The
-[publication record](docs/releases/v0.4.0.md) describes both new workflows, retained
+Latest published collection: [v0.4.1](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.1),
+at commit `79284b3faa928dc556a9032aa9dbeb059b4ee915`. The
+[publication record](docs/releases/v0.4.1.md) describes the two workflow corrections, retained
 upstream pins and independently verified public source archives.
 
 ## 3a. Published v0.4.0 collection
 
 The [v0.4.0 publication record](docs/releases/v0.4.0.md) records ten skills, adding
 `decision-brief` and `document-actions` to the eight in v0.3.0. It preserves reviewed
-upstream pins and existing maturity/evidence boundaries. The immutable tag is unchanged;
-current setup selects its verified release commit. Family discovery deploys independently.
+upstream pins and existing maturity/evidence boundaries. The v0.4.0 tag is unchanged;
+current setup now selects v0.4.1 as described below. Family discovery deploys independently.
 
-## 3b. Proposed v0.4.1 patch — preparation only
+## 3b. Published v0.4.1 patch
 
-The [v0.4.1 preparation](docs/releases/v0.4.1.md) covers the two original workflows'
+The [v0.4.1 publication record](docs/releases/v0.4.1.md) covers the two original workflows'
 role, status, approval, timing and evidence-check corrections, with unchanged inputs,
-outputs, permissions and the same ten-skill collection. Stable setup remains on
-published v0.4.0. Merge, publication and later defaults/discovery promotion require
-separate approval; no v0.4.1 tag is created by this preparation.
+outputs, permissions and the same ten-skill collection. Current stable setup selects
+published v0.4.1. This source-facing alignment preserves the immutable published tag;
+family discovery deploys independently and each alignment change needs merge approval.
 
 ## 4. Maintain and expand the library
 
-- [x] Add `document-actions`, released in v0.4.0, for source-stated actions and focused questions,
+- [x] Add `document-actions`, released in v0.4.0 and corrected in v0.4.1, for source-stated actions and focused questions,
       with assigned/required/proposed/historical classifications, verbatim deadlines,
       explicit conflicts, an authored offline example and pinned first-use instructions.
       Included in v0.4.0; source checks are not observed agent extraction results.
@@ -95,7 +95,7 @@ separate approval; no v0.4.1 tag is created by this preparation.
       with a bounded evidence procedure, parent-authored worked example and offline
       artifact checks. [Three bounded task observations](evaluations/decision-brief/offline-tasks-001/README.md)
       record conditional recommendation, missing-evidence deferral and collision refusal.
-      The skill is released in v0.4.0; these
+      The skill was introduced in v0.4.0 and corrected in v0.4.1; these
       observations do not establish broad model performance or automatic discovery.
 
 - [ ] Apply the source-refresh process when upstream commands, APIs, notices or host

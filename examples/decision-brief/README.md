@@ -1,11 +1,11 @@
 # Worked example: an evidence-bounded decision
 
-This example accompanies the [decision-brief skill](../../skills/decision-brief/SKILL.md), included in **published v0.4.0**. Its authored outputs are distinct from historical task observations.
+This example accompanies the [decision-brief skill](../../skills/decision-brief/SKILL.md), included in **published v0.4.1**. Its authored outputs are distinct from historical task observations.
 
 Read [the task](task.md), inspect [the pinned source packet](sources.json), then compare the parent-authored [brief](brief.md) and [evidence ledger](evidence.md).
 The [failure cases](cases.md) show expected responses to conflict, missing evidence, source instructions and an occupied output location. None is an observed agent trace.
 
-Use the [release-pinned first-use guide](../../docs/quickstart.md#try-decision-brief-from-reviewed-source) for an exact reviewed commit, copy commands that refuse existing destinations, a minimal input packet and a ready-to-paste task prompt. The stable v0.4.0 checkout supplies this complete directory.
+Use the [release-pinned first-use guide](../../docs/quickstart.md#try-decision-brief-from-reviewed-source) for an exact reviewed commit, copy commands that refuse existing destinations, a minimal input packet and a ready-to-paste task prompt. The stable v0.4.1 checkout supplies this complete directory.
 Keep all supplied documents within the offline scope. The skill depends on host file tools, not a specific agent or an executable research service.
 
 The separate [observed task record](../../evaluations/decision-brief/offline-tasks-001/README.md) archives actual new outputs from three explicitly loaded attempts. It does not reclassify the authored reference files here as agent output.

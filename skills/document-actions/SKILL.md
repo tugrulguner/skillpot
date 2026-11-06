@@ -5,7 +5,7 @@ compatibility: "Any host able to read supplied text and create new files in an a
 metadata:
   version: "0.1.2"
   maintainer: "tugrulguner"
-  status: "unreleased"
+  status: "published"
 ---
 
 # Document actions

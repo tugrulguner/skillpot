@@ -1,8 +1,10 @@
 # Compatibility and verification boundaries
 
-Published version `0.1.1` is included in SkillPot v0.4.0 at
-`3624eaaf2aa6c870e1dad6190ac3466e4e378f35`. Current source version `0.1.2` is
-unreleased and adds status/approval-role clarifications, not included in that release.
+Published version `0.1.2` is included in SkillPot v0.4.1 at
+`79284b3faa928dc556a9032aa9dbeb059b4ee915`, with status/approval-role clarifications.
+The earlier v0.4.0 snapshot retains version `0.1.1`. Current-source publication labels
+differ from the immutable tag's prepublication labels; instruction bodies and templates
+are unchanged.
 Publication does not extend the
 verification scope below or relabel assisted observations as isolated task evidence.
 

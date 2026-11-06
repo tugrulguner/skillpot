@@ -27,16 +27,21 @@ In a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-source &&
-git -C skillpot-source checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35 &&
+git -C skillpot-source checkout --detach 79284b3faa928dc556a9032aa9dbeb059b4ee915 &&
 cd skillpot-source
 ```
 
-That immutable public revision is the published `v0.4.0` collection and includes all
+That immutable public revision is the published `v0.4.1` collection and includes all
 ten skills, including decision-brief and document-actions, and their worked examples. Examples retain their
 own historical product pins; they are not new runtime evidence for these guides.
 You may choose a newer reviewed published revision, but record its exact commit; do
 not silently refresh instructions. Read the chosen `SKILL.md`, provenance, compatibility
 and complete license before granting access or running commands.
+
+The immutable v0.4.1 archive retains v0.4.0 setup examples and prepublication metadata.
+Keep this selected v0.4.1 checkout when following the current guide; do not rerun older
+checkout commands from tagged documentation. The verified Release supplies the same
+new-tag override. Current-source publication labels do not rewrite the archive.
 
 Copy the **whole chosen skill directory**, not just `SKILL.md`. References, scripts,
 assets and permission notices must stay with it. Inspect provenance/compatibility in
@@ -159,7 +164,7 @@ remain separate records, not prerequisites for using the documented integrations
 
 ## Try document-actions from pinned source
 
-`document-actions` version 0.1.1 is **included in published v0.4.0**.
+`document-actions` version 0.1.2 is **included in published v0.4.1**.
 The stable checkout above already contains it. If starting separately, these POSIX
 shell steps select the same release commit and copy instructions and fictional input documents only.
 They do not launch a client, install dependencies or create external tasks.
@@ -168,7 +173,7 @@ From a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-actions-source &&
-git -C skillpot-actions-source checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35 &&
+git -C skillpot-actions-source checkout --detach 79284b3faa928dc556a9032aa9dbeb059b4ee915 &&
 cd skillpot-actions-source
 ```
 
@@ -256,7 +261,7 @@ client or model trial is required to inspect or copy the bundle.
 
 ## Try decision-brief from reviewed source
 
-`decision-brief` version 0.1.0 is **included in published v0.4.0**.
+`decision-brief` version 0.1.1 is **included in published v0.4.1**.
 The stable instructions above already select this collection. If starting separately,
 use the same immutable release revision below. These POSIX shell steps
 copy instructions and example inputs only; they do not launch an agent, install
@@ -268,11 +273,11 @@ From a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-decision-source &&
-git -C skillpot-decision-source checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35 &&
+git -C skillpot-decision-source checkout --detach 79284b3faa928dc556a9032aa9dbeb059b4ee915 &&
 cd skillpot-decision-source
 ```
 
-This is the published v0.4.0 snapshot, shared with the stable checkout above.
+This is the published v0.4.1 snapshot, shared with the stable checkout above.
 Do not replace the commit with moving `main` or an older source checkout
 before copying this skill. Inspect [the procedure](../skills/decision-brief/SKILL.md),
 its linked templates, provenance, compatibility and both complete notices first.

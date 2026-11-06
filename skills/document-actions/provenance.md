@@ -1,9 +1,11 @@
 # Provenance and maintenance
 
 This is an original SkillPot extraction procedure and original templates. Maintainer:
-`tugrulguner`; published version `0.1.1` is included in SkillPot v0.4.0 at
-`3624eaaf2aa6c870e1dad6190ac3466e4e378f35`. Current source version `0.1.2` contains
-unreleased status/approval-field clarifications; these fixes are not in published v0.4.0.
+`tugrulguner`; version `0.1.2` is included in published SkillPot v0.4.1 at
+`79284b3faa928dc556a9032aa9dbeb059b4ee915`, including status/approval-field
+clarifications. Version `0.1.1` remains in v0.4.0. Current-source publication labels
+differ from the immutable tag's prepublication labels; instruction bodies and templates
+are unchanged.
 Original contributions use
 the existing [repository license](https://github.com/tugrulguner/skillpot/blob/524d3a06303362aaafae0fbfdf2ebae38782875e/LICENSE).
 No text, template, or code is copied or adapted from the comparison sources below.

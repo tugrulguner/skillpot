@@ -1,14 +1,16 @@
 # Field-consistency corrections in current source
 
-These are unreleased source patches for `decision-brief` **0.1.1** and
-`document-actions` **0.1.2**. Published collection **v0.4.0** remains at
-`3624eaaf2aa6c870e1dad6190ac3466e4e378f35`; it contains decision-brief 0.1.0
-and document-actions 0.1.1. Stable clone and first-use instructions still select
-that published snapshot. No published tag or existing installation is changed.
+These corrections to `decision-brief` **0.1.1** and `document-actions` **0.1.2**
+are included in published collection **v0.4.1** at
+`79284b3faa928dc556a9032aa9dbeb059b4ee915`. Stable clone and first-use instructions
+select that immutable snapshot. The earlier v0.4.0 snapshot retains decision-brief
+0.1.0 and document-actions 0.1.1. Current-source publication labels differ from the
+prepublication labels frozen in v0.4.1; instruction bodies and templates are unchanged.
+No published tag or existing installation is changed by this status alignment.
 
 ## Why these checks changed
 
-Four fresh fictional workplace attempts using the published bundles reached the
+Four fictional workplace attempts using the published v0.4.0 bundles reached the
 expected broad recommendation, deferral or extraction outcome, but parent inspection
 found a specific wording/field correction in each draft:
 

@@ -117,9 +117,9 @@ class DecisionBriefFirstUseTests(unittest.TestCase):
 
     def test_pin_prompt_and_release_boundaries_are_explicit(self):
         text = (ROOT / "docs/quickstart.md").read_text()
-        self.assertIn("git -C skillpot-decision-source checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35", text)
-        self.assertIn("3624eaaf2aa6c870e1dad6190ac3466e4e378f35", text)
-        self.assertIn("included in published v0.4.0", text)
+        self.assertIn("git -C skillpot-decision-source checkout --detach 79284b3faa928dc556a9032aa9dbeb059b4ee915", text)
+        self.assertIn("79284b3faa928dc556a9032aa9dbeb059b4ee915", text)
+        self.assertIn("included in published v0.4.1", text)
         self.assertIn("decision-brief-example/task.md", text)
         self.assertIn("decision-brief-example/sources.json", text)
         self.assertIn("decision-brief-output/brief.md", text)

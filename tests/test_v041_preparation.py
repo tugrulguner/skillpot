@@ -10,7 +10,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 NOTES = ROOT / "docs/releases/v0.4.1.md"
 BASE = "e3ba0893f2ae03587206c4ee8d15c5187c29ebea"
-RELEASE = "3624eaaf2aa6c870e1dad6190ac3466e4e378f35"
+RELEASE = "79284b3faa928dc556a9032aa9dbeb059b4ee915"
 
 
 class V041PreparationTests(unittest.TestCase):
@@ -21,12 +21,12 @@ class V041PreparationTests(unittest.TestCase):
                        "ten skills", "assisted", "not a controlled comparison",
                        "only after the tag and public archives exist", "Do not rerun"]:
             self.assertIn(phrase, text)
-        self.assertIn("git clone --branch v0.4.0", (ROOT / "README.md").read_text())
+        self.assertIn("git clone --branch v0.4.1", (ROOT / "README.md").read_text())
         setup = (ROOT / "docs/quickstart.md").read_text()
         self.assertIn(RELEASE, setup)
-        self.assertNotIn("v0.4.1", setup)
+        self.assertIn("v0.4.1", setup)
         for name in ["decision-brief", "document-actions"]:
-            self.assertIn('status: "unreleased"', (ROOT / "skills" / name / "SKILL.md").read_text())
+            self.assertIn('status: "published"', (ROOT / "skills" / name / "SKILL.md").read_text())
 
     def test_freshness_record_covers_all_retained_guides_and_notices(self):
         path = ROOT / "docs/releases/v0.4.1-freshness.json"

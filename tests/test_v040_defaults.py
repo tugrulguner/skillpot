@@ -7,15 +7,16 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-RELEASE = "3624eaaf2aa6c870e1dad6190ac3466e4e378f35"
+RELEASE = "79284b3faa928dc556a9032aa9dbeb059b4ee915"
+V040_RELEASE = "3624eaaf2aa6c870e1dad6190ac3466e4e378f35"
 
 
 class V040DefaultsTests(unittest.TestCase):
     def test_readme_selects_published_ten_skill_release(self):
         text = (ROOT / "README.md").read_text()
-        self.assertIn("git clone --branch v0.4.0 --depth 1", text)
-        self.assertIn("Published v0.4.0 contains ten skills", text)
-        self.assertIn("discussions/34", text)
+        self.assertIn("git clone --branch v0.4.1 --depth 1", text)
+        self.assertIn("Published v0.4.1 contains ten skills", text)
+        self.assertIn("discussions/43", text)
         self.assertNotIn("not included in published v0.3.0", text)
 
     def test_readme_clone_failure_cannot_continue_to_copy(self):
@@ -48,18 +49,18 @@ class V040DefaultsTests(unittest.TestCase):
             self.assertNotIn(old, text)
         self.assertNotIn("not included in published v0.3.0", text)
 
-    def test_original_workflow_source_patches_do_not_claim_publication(self):
+    def test_original_workflow_source_labels_match_verified_publication(self):
         for name, version in [("decision-brief", "0.1.1"), ("document-actions", "0.1.2")]:
             text = (ROOT / f"skills/{name}/SKILL.md").read_text()
-            self.assertIn('status: "unreleased"', text)
+            self.assertIn('status: "published"', text)
             self.assertIn(f'version: "{version}"', text)
-            self.assertIn("v0.4.0", (ROOT / f"skills/{name}/compatibility.md").read_text())
+            self.assertIn("v0.4.1", (ROOT / f"skills/{name}/compatibility.md").read_text())
         self.assertIn("experimental", (ROOT / "skills/repository-readiness/SKILL.md").read_text())
 
     def test_publication_record_keeps_exact_identity_and_public_parity(self):
         text = (ROOT / "docs/releases/v0.4.0.md").read_text()
         self.assertIn("**Published:**", text)
-        self.assertIn(RELEASE, text)
+        self.assertIn(V040_RELEASE, text)
         self.assertIn("269", text)
         self.assertIn("5ae45d1c0359adf297c822704a1c8c1b608a6ffb58ce9c1542701edeba5a24c4", text)
         self.assertIn("c1f4f9992b9635bfdadf60134c925d97f3240645d9594639fc44b75472feca1b", text)
@@ -70,7 +71,7 @@ class V040DefaultsTests(unittest.TestCase):
             text = (ROOT / filename).read_text()
             for name in ["decision-brief", "document-actions"]:
                 self.assertIn(name, text)
-            self.assertIn("v0.4.0", text)
+            self.assertIn("v0.4.1", text)
             self.assertNotIn("not included in published v0.3.0", text)
             self.assertNotIn("reviewed, unreleased", text)
 

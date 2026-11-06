@@ -29,13 +29,13 @@ class V040PreparationTests(unittest.TestCase):
         self.assertIn("only after the tag and public archives exist", text)
         self.assertIn("Do not rerun", text)
         self.assertIn("2b8040fece04dc159a44e72e909e376f5d0583a3", text)
-        self.assertIn("git clone --branch v0.4.0", (ROOT / "README.md").read_text())
-        self.assertIn("checkout --detach 3624eaaf2aa6c870e1dad6190ac3466e4e378f35",
+        self.assertIn("git clone --branch v0.4.1", (ROOT / "README.md").read_text())
+        self.assertIn("checkout --detach 79284b3faa928dc556a9032aa9dbeb059b4ee915",
                       (ROOT / "docs/quickstart.md").read_text())
         current = (ROOT / "skills/document-actions/SKILL.md").read_text()
-        self.assertIn('status: "unreleased"', current)
+        self.assertIn('status: "published"', current)
         self.assertIn('version: "0.1.2"', current)
-        self.assertIn("Published version `0.1.1`", (ROOT / "skills/document-actions/compatibility.md").read_text())
+        self.assertIn("Published version `0.1.2`", (ROOT / "skills/document-actions/compatibility.md").read_text())
 
     def test_contents_and_limits_cover_complete_collection(self):
         names = sorted(p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md"))

@@ -45,14 +45,15 @@ branch, separate from the seven imported public guidance files. Video tooling is
 not included. Private authoring, release, marketing and operational workflows require
 individual source/rights/privacy review before any later extraction.
 
-## General decision workflow — released in v0.4.0
+## General decision workflow — version 0.1.1 in v0.4.1
 
-Published v0.4.0 contains ten skills, also present in current source: the seven imported public guidance files,
+Published v0.4.1 contains ten skills, also present in current source: the seven imported public guidance files,
 experimental repository-readiness, **[decision-brief](../skills/decision-brief/SKILL.md)**
 and **[document-actions](../skills/document-actions/SKILL.md)**.
 The stable quickstart selects that published release. Current-source
 [field-consistency patches](../docs/field-consistency.md) for both original workflows
-are unreleased and do not change that snapshot. Use the
+are included in that release; current-source publication labels do not rewrite its
+prepublication metadata. Use the
 [decision-brief first-use guide](../docs/quickstart.md#try-decision-brief-from-reviewed-source)
 for its exact release commit, safe copy steps and task prompt.
 
@@ -66,13 +67,13 @@ archives three actual, bounded attempts without claiming broad reliability or ga
 Its [provenance](../skills/decision-brief/provenance.md) records narrow public-source
 use and exclusions; the seven-package upstream catalogue remains unchanged.
 
-## Document actions — released in v0.4.0
+## Document actions — version 0.1.2 in v0.4.1
 
 Use [document-actions](../skills/document-actions/SKILL.md) to extract source-stated
 assignments and requirements, separate proposals and historical items, preserve exact
 deadline wording, and expose conflicting or missing fields without inventing commitments.
 It produces `actions.md` and `questions.md`; it creates no tickets or messages.
-This workflow is included in v0.4.0. Follow the
+This workflow is included in v0.4.1. Follow the
 [document-actions first-use guide](../docs/quickstart.md#try-document-actions-from-pinned-source)
 for a pinned source checkout, complete selected bundle, bounded input packet and prompt.
 The [worked example](../examples/document-actions/README.md) and executable offline checks
@@ -109,8 +110,9 @@ these are not baseline comparisons or broad compatibility results.
 The [public-guide refresh audit](../docs/public-guide-refresh.md) records four
 changed consumer guides and three unchanged imported guides. The refreshed source
 packages are included in published SkillPot v0.3.0; v0.2.0 retains its older
-snapshots. Published v0.4.0 retains those guide snapshots and adds the two original workflows.
-The stable quickstart selects v0.4.0. Each package distinguishes published upstream
+snapshots. Published v0.4.0 added the two original workflows; v0.4.1 retains those
+guide snapshots and distributes bounded corrections to the two originals.
+The stable quickstart selects v0.4.1. Each package distinguishes published upstream
 features from newer-main-only instructions. Historical examples remain at their
 original pins rather than becoming fresh execution evidence.
 

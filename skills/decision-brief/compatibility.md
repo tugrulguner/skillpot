@@ -2,7 +2,7 @@
 
 ## Package compatibility
 
-- **Status:** current source version `0.1.1` is an unreleased role-consistency correction plus bounded drafting/final-verification guidance for timing distinctions, exact source sublocators, and ledger IDs for supported decision-frame claims. It is relative to published SkillPot v0.4.0 at `3624eaaf2aa6c870e1dad6190ac3466e4e378f35`; the published snapshot remains unchanged. Publication does not extend the task evidence or native-activation scope below.
+- **Status:** version `0.1.1` is included in published SkillPot v0.4.1 at `79284b3faa928dc556a9032aa9dbeb059b4ee915`. It adds role-consistency corrections plus bounded drafting/final-verification guidance for timing distinctions, exact source sublocators, and ledger IDs for supported decision-frame claims. Current-source publication metadata differs from the prepublication labels frozen in that tag; the instruction body and templates are unchanged. Publication does not extend the task evidence or native-activation scope below.
 - **Required runtime/dependencies:** none specified. The procedure is host-neutral and can be followed with ordinary file-reading/writing and, only when explicitly allowed, source-retrieval and calculation capabilities. No host-specific tool names, integrations, installer, or runtime are required.
 - **Offline behavior:** supplied evidence can be handled offline; network access is never assumed. A permitted-source request may require a host retrieval capability, but its availability and correctness are not asserted here.
 - **Verified source:** package resources, frontmatter, notices and relative Markdown links are source-contract tested.
