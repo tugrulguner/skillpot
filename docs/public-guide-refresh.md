@@ -1,5 +1,10 @@
 # Public project-guide refresh
 
+**Historical v0.3.0 refresh record.** The audit and release/setup observations below
+are retained unchanged as history. For the newer Dexpot-only current-source change,
+see the [published-guide correction](published-upstream-refresh.md); current stable
+setup is documented in the [quickstart](quickstart.md).
+
 This audit compares the seven packaged public project guides with immutable snapshots
 of their four canonical repositories. It is source maintenance, not a runtime trial,
 a new collection release or a promise to follow moving `main` automatically.

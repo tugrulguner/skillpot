@@ -76,13 +76,13 @@
       "kind": "consumer",
       "directory": "skills/dexpot",
       "upstream_repository": "tugrulguner/dexpot",
-      "upstream_revision": "409df5b68a2386bd04e1f2cf0f057773142e0759",
+      "upstream_revision": "a670e626cf73e1c4b21e0529294a87f1aa83e74f",
       "upstream_path": "src/dexpot/templates/skills/dexpot.md",
-      "upstream_sha256": "c1b8e553e3fb97ad486e8cc008ccb75fbc5d44a6ba0060c9b3aea18ce632ab4b",
+      "upstream_sha256": "064792cb9897483af66fa1199cbcf4be97cc3e26417533dbb87a36e471a3fa0d",
       "upstream_license_path": "LICENSE",
       "license": "MIT",
       "license_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
-      "upstream_url": "https://github.com/tugrulguner/dexpot/blob/409df5b68a2386bd04e1f2cf0f057773142e0759/src/dexpot/templates/skills/dexpot.md",
+      "upstream_url": "https://github.com/tugrulguner/dexpot/blob/a670e626cf73e1c4b21e0529294a87f1aa83e74f/src/dexpot/templates/skills/dexpot.md",
       "status": "pinned-public-guidance"
     },
     {

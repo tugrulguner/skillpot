@@ -1,9 +1,18 @@
 # Compatibility and limits
 
-Current guide pin `409df5b68a2386bd04e1f2cf0f057773142e0759` is the published
-[Dexpot v0.8.0](https://github.com/tugrulguner/dexpot/releases/tag/v0.8.0) commit.
-Lifecycle guidance requires that version or newer. This refresh validates source,
-not a new installation, socket run or lifecycle/runtime qualification.
+Current guide pin `a670e626cf73e1c4b21e0529294a87f1aa83e74f` is the published
+[Dexpot v0.8.1](https://github.com/tugrulguner/dexpot/releases/tag/v0.8.1) commit.
+SkillPot instruction version `0.3.0` requires Dexpot 0.8.1+ for registration-time
+rejection of unsupported path annotations. Supported annotations are `str`, `int`,
+unannotated parameters and `Any`; body/response schemas do not imply path conversion.
+Existing lifecycle guidance introduced in 0.8.0 remains unchanged.
+
+This current-source refresh is not included in published SkillPot v0.4.1, which
+retains instruction version `0.2.0` and upstream pin
+`409df5b68a2386bd04e1f2cf0f057773142e0759`. Stable setup still selects that collection;
+this does not silently upgrade installed instructions. See the
+[scoped refresh record](../../docs/published-upstream-refresh.md). This refresh
+validates source, not a new installation, socket run or lifecycle/runtime qualification.
 
 This is pinned public Dexpot guidance, not a newly qualified runtime or agent host.
 The source metadata requires Python 3.12+; CLI serving needs Dexpot's `cli` extra.

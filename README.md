@@ -84,6 +84,11 @@ skills. The stable clone above selects their published snapshot; the first-use g
 use its exact commit.
 Publication does not promote repository-readiness beyond its experimental scope.
 
+Current source also contains a [Dexpot-only published-guide refresh](docs/published-upstream-refresh.md):
+instruction version 0.3.0 targets Dexpot v0.8.1's path-annotation correction. It is not
+in the v0.4.1 collection selected above, which retains Dexpot instruction 0.2.0 and
+its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
+
 | Task | Skill |
 | --- | --- |
 | Scaffold, inspect or export through the Intpot CLI | [intpot-cli](skills/intpot-cli/SKILL.md) |
