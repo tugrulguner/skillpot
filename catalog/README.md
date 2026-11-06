@@ -48,7 +48,7 @@ individual source/rights/privacy review before any later extraction.
 ## Claim-check — current source, unreleased
 
 The original **[claim-check](../skills/claim-check/SKILL.md)** bundle is in current
-source and remains unreleased; it is one of twelve current-source bundles, not part of
+source and remains unreleased; it is one of thirteen current-source bundles, not part of
 published v0.4.1's ten-skill set. Use the standard Skills CLI to install only this
 skill from the exact reviewed source revision:
 
@@ -66,10 +66,20 @@ The original [change-impact](../skills/change-impact/SKILL.md) bundle maps a spe
 diff to callers, contracts, configuration, docs and focused verification needs. It
 produces exactly `impact.md` and `verification.md`, linking static evidence and
 explicit unknowns without claiming runtime reachability or automatically running tests.
-It is one of twelve current-source bundles, not part of the ten published in v0.4.1.
+It is one of thirteen current-source bundles, not part of the ten published in v0.4.1.
 Use the [one-command first-use guide](../docs/change-impact-first-use.md), also
 [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/change-impact-first-use.md).
 This is instruction distribution, not a custom dependency analyzer or task-efficacy claim.
+
+## Bug-repro — current source, unreleased
+
+The original [bug-repro](../skills/bug-repro/SKILL.md) workflow turns a reported failure
+into a minimal runnable reproducer, a regression test and `repro.md` with actual command
+evidence. Execution/dependencies require explicit permission in an owned isolated case.
+Not reproduced and Blocked are honest outcomes; an unrelated failure is not reproduction,
+and an authored control is not a released product fix. See the [one-command first-use guide](../docs/bug-repro-first-use.md),
+also [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/bug-repro-first-use.md).
+This is one of thirteen current-source bundles, not part of stable v0.4.1's ten skills.
 
 ## General decision workflow — version 0.1.1 in v0.4.1
 
