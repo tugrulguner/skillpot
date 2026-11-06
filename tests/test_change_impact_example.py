@@ -61,7 +61,7 @@ class ChangeImpactExampleTests(unittest.TestCase):
         changed = {p for p in old.keys() | new.keys() if old.get(p) != new.get(p)}
         self.assertEqual(changed, {"api.py", "caller.py"})
         expected = "".join("".join(difflib.unified_diff(
-            old.get(p, "").splitlines(True), new.get(p, "").splitlines(True),
+            old.get(p, "").splitlines(True), new.get(p, "").splitlines(True), n=0,
             fromfile="before/" + p if p in old else "/dev/null",
             tofile="after/" + p if p in new else "/dev/null")) for p in sorted(old.keys() | new.keys()))
         self.assertEqual((ROOT / "change.diff").read_text(), expected)

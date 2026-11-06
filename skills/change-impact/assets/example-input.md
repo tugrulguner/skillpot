@@ -156,18 +156,12 @@ def fetch_items(limit=100):
 ```diff
 --- before/api.py
 +++ after/api.py
-@@ -1,4 +1,4 @@
+@@ -1 +1 @@
 -def fetch_items(limit=100):
 +def fetch_items(*, limit):
-     """Return up to limit items."""
-     return query_items(limit)
- 
 --- before/caller.py
 +++ after/caller.py
-@@ -2,4 +2,4 @@
- 
- 
- def load():
+@@ -5 +5 @@
 -    return fetch_items(25)
 +    return fetch_items(limit=25)
 ```
