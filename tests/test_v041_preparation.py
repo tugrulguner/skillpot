@@ -78,7 +78,7 @@ class V041PreparationTests(unittest.TestCase):
             }
             self.assertEqual(len(released_names), 10)
             current_skills = sorted((ROOT / "skills").glob("*/SKILL.md"))
-            self.assertEqual(len(current_skills), 11)
+            self.assertEqual(len(current_skills), 12)
             self.assertNotIn("claim-check", released_names)
             self.assertTrue((ROOT / "skills/claim-check/SKILL.md").is_file())
             for name in sorted(released_names):

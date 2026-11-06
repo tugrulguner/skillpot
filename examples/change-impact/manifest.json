@@ -1,0 +1,141 @@
+{
+  "snapshot_labels": {
+    "before": "authored BEFORE snapshot, not a Git commit",
+    "after": "authored AFTER snapshot, not a Git commit"
+  },
+  "before": {
+    "legacy_caller.py": "f00371dd509faeaf007ad397739f5dba8cf41c0c0c28fa786ecd3079e5cf3cbc",
+    "unrelated.py": "f1718cb1a0f13075ed9172e94badf9f0402f95caced81c04dd075c502c1a729c",
+    "configuration.md": "1eca29fb333c3eb210a341abe04fec512b84c7bd9334786cb7074ee537efcf21",
+    "tests/test_api.py": "bf7c2fa43f96d763681bbb839fde51b0e6405f868bb4a95a10ed119240db8971",
+    "api.py": "35af001eed9f907e81f7db0791f51d63239c38c05005b4a8644c60b524c0acef",
+    "caller.py": "9376032d39c78d2a2a4e09d734d86bc167c26139150f039b140c17b63c23190c"
+  },
+  "after": {
+    "legacy_caller.py": "f00371dd509faeaf007ad397739f5dba8cf41c0c0c28fa786ecd3079e5cf3cbc",
+    "unrelated.py": "f1718cb1a0f13075ed9172e94badf9f0402f95caced81c04dd075c502c1a729c",
+    "configuration.md": "1eca29fb333c3eb210a341abe04fec512b84c7bd9334786cb7074ee537efcf21",
+    "tests/test_api.py": "bf7c2fa43f96d763681bbb839fde51b0e6405f868bb4a95a10ed119240db8971",
+    "api.py": "8adee59741802739a1b9a436f5f43c22ed4d4ed87f11bca2262d1945a5d5d20d",
+    "caller.py": "022d9030e5d570f7fa67a466f3efba21e04821d26c66a7ed544cea8ba7f624dd"
+  },
+  "changed_files": {
+    "api.py": [
+      "I1",
+      "I3",
+      "I4",
+      "I5"
+    ],
+    "caller.py": [
+      "I2"
+    ]
+  },
+  "impacts": {
+    "I1": {
+      "changed_file": "api.py",
+      "basis": "Direct change",
+      "evidence": [
+        {
+          "snapshot": "before",
+          "path": "api.py",
+          "line": 1,
+          "text": "def fetch_items(limit=100):"
+        },
+        {
+          "snapshot": "after",
+          "path": "api.py",
+          "line": 1,
+          "text": "def fetch_items(*, limit):"
+        }
+      ]
+    },
+    "I2": {
+      "changed_file": "caller.py",
+      "basis": "Direct change",
+      "evidence": [
+        {
+          "snapshot": "before",
+          "path": "caller.py",
+          "line": 5,
+          "text": "    return fetch_items(25)"
+        },
+        {
+          "snapshot": "after",
+          "path": "caller.py",
+          "line": 5,
+          "text": "    return fetch_items(limit=25)"
+        }
+      ]
+    },
+    "I3": {
+      "changed_file": "api.py",
+      "basis": "Source-linked",
+      "evidence": [
+        {
+          "snapshot": "after",
+          "path": "api.py",
+          "line": 1,
+          "text": "def fetch_items(*, limit):"
+        },
+        {
+          "snapshot": "after",
+          "path": "legacy_caller.py",
+          "line": 1,
+          "text": "from api import fetch_items"
+        },
+        {
+          "snapshot": "after",
+          "path": "legacy_caller.py",
+          "line": 5,
+          "text": "    return fetch_items()"
+        }
+      ]
+    },
+    "I4": {
+      "changed_file": "api.py",
+      "basis": "Source-linked",
+      "evidence": [
+        {
+          "snapshot": "after",
+          "path": "api.py",
+          "line": 1,
+          "text": "def fetch_items(*, limit):"
+        },
+        {
+          "snapshot": "after",
+          "path": "configuration.md",
+          "line": 1,
+          "text": "The documented default for api.fetch_items is limit=100."
+        }
+      ]
+    },
+    "I5": {
+      "changed_file": "api.py",
+      "basis": "Unknown",
+      "evidence": [
+        {
+          "snapshot": "after",
+          "path": "api.py",
+          "line": 1,
+          "text": "def fetch_items(*, limit):"
+        },
+        {
+          "snapshot": "after",
+          "path": "tests/test_api.py",
+          "line": 7,
+          "text": "        self.assertEqual(fetch_items(limit=5), list(range(5)))"
+        }
+      ]
+    }
+  },
+  "exclusions": {
+    "E1": "after/unrelated.py:1 defines a separate function; no link to api.fetch_items"
+  },
+  "check_states": {
+    "I1": "Not run",
+    "I2": "Not run",
+    "I3": "Not run",
+    "I4": "Not run",
+    "I5": "Not run"
+  }
+}

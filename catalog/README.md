@@ -48,7 +48,7 @@ individual source/rights/privacy review before any later extraction.
 ## Claim-check — current source, unreleased
 
 The original **[claim-check](../skills/claim-check/SKILL.md)** bundle is in current
-source and remains unreleased; it is the eleventh current-source bundle, not part of
+source and remains unreleased; it is one of twelve current-source bundles, not part of
 published v0.4.1's ten-skill set. Use the standard Skills CLI to install only this
 skill from the exact reviewed source revision:
 
@@ -59,6 +59,17 @@ npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127
 See the [claim-check first-use guide](../docs/claim-check-first-use.md), with a
 [GitHub main fallback](https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md).
 This discovery describes source availability and installation, not task efficacy.
+
+## Change-impact — current source, unreleased
+
+The original [change-impact](../skills/change-impact/SKILL.md) bundle maps a specified
+diff to callers, contracts, configuration, docs and focused verification needs. It
+produces exactly `impact.md` and `verification.md`, linking static evidence and
+explicit unknowns without claiming runtime reachability or automatically running tests.
+It is one of twelve current-source bundles, not part of the ten published in v0.4.1.
+Use the [one-command first-use guide](../docs/change-impact-first-use.md), also
+[available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/change-impact-first-use.md).
+This is instruction distribution, not a custom dependency analyzer or task-efficacy claim.
 
 ## General decision workflow — version 0.1.1 in v0.4.1
 

@@ -36,13 +36,13 @@ class ClaimCheckDistributionTests(unittest.TestCase):
         self.assertNotIn("still being integrated", text)
         self.assertNotIn("--all", first[1])
 
-    def test_current_source_adds_exactly_one_original_bundle(self):
+    def test_current_source_preserves_prior_bundle_and_adds_change_impact(self):
         imported = json.loads((ROOT / "catalog/modepot-sources.json").read_text())["skills"]
         expected = {row["name"] for row in imported} | {
-            "repository-readiness", "decision-brief", "document-actions", "claim-check"}
+            "repository-readiness", "decision-brief", "document-actions", "claim-check", "change-impact"}
         actual = {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}
         self.assertEqual(actual, expected)
-        self.assertEqual(len(actual), 11)
+        self.assertEqual(len(actual), 12)
         self.assertIn("Published v0.4.1 contains ten skills", (ROOT / "README.md").read_text())
 
     def test_public_replay_manifest_binds_every_installed_file(self):
