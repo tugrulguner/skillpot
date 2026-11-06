@@ -1,0 +1,10 @@
+--- before/api.py
++++ after/api.py
+@@ -1 +1 @@
+-def fetch_items(limit=100):
++def fetch_items(*, limit):
+--- before/caller.py
++++ after/caller.py
+@@ -5 +5 @@
+-    return fetch_items(25)
++    return fetch_items(limit=25)

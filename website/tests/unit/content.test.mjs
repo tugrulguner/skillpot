@@ -26,7 +26,7 @@ test('claim-check is current-source and unreleased, separate from the stable rel
     assert.match(text, /claim-check-first-use\.md/);
   }
   assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check/);
-  assert.match(catalogue, /eleventh current-source bundle/);
+  assert.match(catalogue, /twelve current-source bundles/);
   assert.match(catalogue, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check/);
   assert.match(map, /claim-check-first-use\.md/);
   assert.match(map, /Published v0\.4\.1 contains ten skills/);

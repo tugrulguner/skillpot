@@ -1,0 +1,29 @@
+{
+  "source_commit": "f953f4f5dd97b21e76d403a29b32ac2cb8c8da7f",
+  "scope": "public immutable-source install/list/remove; filesystem verification only",
+  "source_ref": "f953f4f5dd97b21e76d403a29b32ac2cb8c8da7f",
+  "source_url": "https://github.com/tugrulguner/skillpot/tree/f953f4f5dd97b21e76d403a29b32ac2cb8c8da7f",
+  "node": "22.23.4",
+  "installer": "skills@1.7.6",
+  "files_verified": 7,
+  "source_files": {
+    "SKILL.md": "e131e0a344ff15523bdd0161ac5520caacf4ff24031e7ac04ee37e056e5e4758",
+    "assets/example-input.md": "5212791b8938487131bae845e13a50b53ca6dd26aa21b3c516053513cc04d6d2",
+    "assets/impact-template.md": "4fa28403f5af33f8eba8fb9416b513f70978794526b4afe24d321db009b0ff8c",
+    "assets/review-checklist.md": "6ca0420b3efda946f85f0a2d8d58cc230f4d19c747357eab0f264ff9ec6f9b6f",
+    "assets/verification-template.md": "42c9f24f804e6c8512b0ad43218f089eca31c31a358097853bda597c6daa5f01",
+    "compatibility.md": "d41ab9b1d3667a6014be40bfd3c3428fae6012263f01bbe8b314932e95e3db04",
+    "provenance.md": "4e4daa7bdb4cb17d058ac8949f09df35faa86f6cd39e0829ef8dace58b74a391"
+  },
+  "agents": [
+    "claude-code",
+    "cursor",
+    "codex",
+    "hermes-agent"
+  ],
+  "lock_ref_verified": true,
+  "sibling_preserved": true,
+  "selected_removal_verified": true,
+  "no_global_install": true,
+  "client_or_model_launched": false
+}

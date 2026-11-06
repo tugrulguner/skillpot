@@ -109,6 +109,10 @@ family discovery deploys independently and each alignment change needs merge app
 - [x] Implement the original [claim-check bundle](skills/claim-check/SKILL.md) as a
       current-source, unreleased working artifact. Source checks and authored examples
       do not establish task efficacy; publication remains separate.
+- [x] Implement original `change-impact`: evidence-linked `impact.md` and
+      `verification.md`, read-only default, an authored change packet, selective
+      automated installation and bounded source/distribution checks. No runtime
+      reachability, full-compatibility or task-efficacy claim.
 - [ ] Add useful skills with concrete inputs, outputs, permissions, public source
       rights and a named maintenance owner.
 - [ ] Improve task examples and failure guidance when users report actual gaps.

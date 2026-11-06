@@ -97,9 +97,10 @@ instructions grants no additional authority.
 ## Choose a workflow
 
 Published v0.4.1 contains ten skills, including `decision-brief` and
-`document-actions`. Current source contains eleven workflows, adding the unreleased
-`claim-check` bundle; its [automated first-use guide](docs/claim-check-first-use.md)
-selects a separate source revision because the stable release does not contain it.
+`document-actions`. Current source contains twelve workflows, adding the unreleased
+`claim-check` and `change-impact` bundles. Their [claim-check](docs/claim-check-first-use.md)
+and [change-impact](docs/change-impact-first-use.md) automated first-use guides select
+separate source revisions because the stable release does not contain these skills.
 The original two workflows retain
 [published field-consistency corrections](docs/field-consistency.md) to those two
 skills. The stable clone above selects their published snapshot; the first-use guides
@@ -122,6 +123,7 @@ its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
 | Audit a repository against an exact delivery goal | [repository-readiness](skills/repository-readiness/SKILL.md), experimental |
 | Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md) 0.1.2, included in v0.4.1; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
 | Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md) 0.1.1, included in v0.4.1 |
+| Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, current source only; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
 | Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.0, current source only; [one-command setup](docs/claim-check-first-use.md) |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
