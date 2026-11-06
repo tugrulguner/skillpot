@@ -10,7 +10,7 @@ Neither workflow certifies correctness, security or merge readiness.
 With Node.js 22.20+ and Git, run this in your owned project:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/7a0b4e505041497041965f64ce73a0fd8244249d --skill change-impact
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/f953f4f5dd97b21e76d403a29b32ac2cb8c8da7f --skill change-impact
 ```
 
 The standard Skills CLI installs the complete selected directory and records its source
