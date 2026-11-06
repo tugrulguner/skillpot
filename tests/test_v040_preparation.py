@@ -48,7 +48,9 @@ class V040PreparationTests(unittest.TestCase):
             self.assertIn(token, text)
 
     def test_freshness_inventory_covers_each_retained_package(self):
-        catalog = json.loads((ROOT / "catalog/modepot-sources.json").read_text())["skills"]
+        # Compare the frozen release inventory with its recorded pre-refresh catalogue,
+        # not the newer current-source Dexpot selection. All identity checks remain.
+        catalog = json.loads((ROOT / "docs/published-upstream-refresh.json").read_text())["catalog_before_refresh"]["skills"]
         audit = json.loads((ROOT / "docs/releases/v0.4.0-freshness.json").read_text())
         packages = {row["name"]: row for row in audit["packages"]}
         self.assertEqual(len(packages), len(audit["packages"]))

@@ -100,6 +100,10 @@ family discovery deploys independently and each alignment change needs merge app
 
 - [ ] Apply the source-refresh process when upstream commands, APIs, notices or host
       specifications change; review diffs rather than silently tracking moving main.
+  - [x] Prepare the [Dexpot v0.8.1 guide correction](docs/published-upstream-refresh.md)
+        in current source, with released-source parity, version/pin/notice consistency
+        and explicit separation from published SkillPot v0.4.1. No new collection
+        release or runtime qualification is implied.
 - [ ] Add useful skills with concrete inputs, outputs, permissions, public source
       rights and a named maintenance owner.
 - [ ] Improve task examples and failure guidance when users report actual gaps.

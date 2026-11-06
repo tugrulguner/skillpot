@@ -33,7 +33,9 @@ class V041PreparationTests(unittest.TestCase):
         self.assertTrue(path.is_file(), "fresh v0.4.1 inventory missing")
         audit = json.loads(path.read_text())
         self.assertEqual(audit["failures"], [])
-        catalog = json.loads((ROOT / "catalog/modepot-sources.json").read_text())["skills"]
+        # Compare the frozen release inventory with its recorded pre-refresh catalogue,
+        # not the newer current-source Dexpot selection. All identity checks remain.
+        catalog = json.loads((ROOT / "docs/published-upstream-refresh.json").read_text())["catalog_before_refresh"]["skills"]
         packages = {row["name"]: row for row in audit["packages"]}
         self.assertEqual(len(packages), len(audit["packages"]))
         self.assertEqual(set(packages), {row["name"] for row in catalog})

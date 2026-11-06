@@ -2,11 +2,11 @@
 name: dexpot
 description: Build synchronous typed HTTP APIs with Dexpot.
 license: MIT
-compatibility: Requires Python 3.12+ and Dexpot 0.8.0+ for documented lifecycle support; CLI commands require the cli extra. No host or runtime matrix is qualified by this package.
+compatibility: Requires Python 3.12+ and Dexpot 0.8.1+ for the documented path-annotation rejection contract; CLI commands require the cli extra. No host or runtime matrix is qualified by this package.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   upstream-repository: "tugrulguner/dexpot"
-  upstream-revision: "409df5b68a2386bd04e1f2cf0f057773142e0759"
+  upstream-revision: "a670e626cf73e1c4b21e0529294a87f1aa83e74f"
   status: "pinned-public-guidance"
 ---
 
@@ -30,7 +30,7 @@ own licenses. If the required source revision is absent, obtain permission to in
 it in a fresh isolated environment, not over an existing user installation:
 
 ```sh
-python -m pip install "dexpot[cli] @ git+https://github.com/tugrulguner/dexpot.git@409df5b68a2386bd04e1f2cf0f057773142e0759"
+python -m pip install "dexpot[cli] @ git+https://github.com/tugrulguner/dexpot.git@a670e626cf73e1c4b21e0529294a87f1aa83e74f"
 ```
 
 Use the environment's actual Python executable through your host's command tool.
@@ -43,7 +43,13 @@ boundaries; stop and report missing permission or tools instead of inventing a r
    allowed data, expected status and supported runtime; preserve unrelated files.
 2. Declare a synchronous `Dex` handler. Bind path captures by parameter name and JSON
    bodies explicitly with `body=YourStruct`; use msgspec Structs rather than inventing
-   Pydantic or query-injection support. Register all routes before serving.
+   Pydantic or query-injection support. Path annotations support only
+   `str`, `int`, unannotated parameters, and `Any`. Unsupported path annotations
+   (`float`, `bool`, `Enum`, `Annotated`, unions or explicit `None`) raise
+   `TypeError` during registration in Dexpot 0.8.1+, rather than receiving strings
+   as in 0.8.0. Migrate with `str` plus explicit application validation or a typed
+   JSON body where appropriate. Body/response schema support does not imply path
+   conversion support. Register all routes before serving.
 3. Declare `response=YourStruct` when output filtering/validation is needed.
    `response=None` is generic JSON encoding, not a privacy boundary. Do not return
    Request context or assume raw envelopes bypass checked response contracts.

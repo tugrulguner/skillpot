@@ -107,7 +107,12 @@ these are not baseline comparisons or broad compatibility results.
 
 ## Maintenance
 
-The [public-guide refresh audit](../docs/public-guide-refresh.md) records four
+The [current published-guide correction](../docs/published-upstream-refresh.md) selects
+Dexpot v0.8.1 for current-source instruction 0.3.0 only. Published SkillPot v0.4.1
+keeps the earlier Dexpot package; its stable install command is unchanged. The other
+six imported packages and three original bundles are not refreshed.
+
+The historical [public-guide refresh audit](../docs/public-guide-refresh.md) records four
 changed consumer guides and three unchanged imported guides. The refreshed source
 packages are included in published SkillPot v0.3.0; v0.2.0 retains its older
 snapshots. Published v0.4.0 added the two original workflows; v0.4.1 retains those

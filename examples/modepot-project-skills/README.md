@@ -85,6 +85,11 @@ the example was not executed and no v0.14.0 runtime result is claimed.
 
 ## Dexpot typed HTTP contracts
 
+This retained example and command remain at their historical Dexpot v0.7.1 source
+pin. The current-source guide refresh targets v0.8.1, but this example's supported
+integer-path code, verifier and recorded outcomes are unchanged. They are not new
+execution evidence for registration-time annotation rejection in v0.8.1.
+
 ```sh
 ENV=/absolute/owned-parent/new-dexpot-example-env
 uv venv --python 3.12 "$ENV"
