@@ -104,10 +104,11 @@ family discovery deploys independently and each alignment change needs merge app
         in current source, with released-source parity, version/pin/notice consistency
         and explicit separation from published SkillPot v0.4.1. No new collection
         release or runtime qualification is implied.
-- [ ] Review the [claim-check proposal](docs/claim-check-proposal.md) and its authored
-      draft/source/review packet: factual-claim verdicts, exact evidence locators,
-      minimal proposed edits and explicit permission/access limits. Proposal only;
-      no installable skill, new collection release or observed accuracy claim yet.
+- [x] Review the [claim-check proposal](docs/claim-check-proposal.md) and its authored
+      draft/source/review packet; design accepted in [#46](https://github.com/tugrulguner/skillpot/issues/46).
+- [x] Implement the original [claim-check bundle](skills/claim-check/SKILL.md) as a
+      current-source, unreleased working artifact. Source checks and authored examples
+      do not establish task efficacy; publication remains separate.
 - [ ] Add useful skills with concrete inputs, outputs, permissions, public source
       rights and a named maintenance owner.
 - [ ] Improve task examples and failure guidance when users report actual gaps.

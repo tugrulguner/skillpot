@@ -1,0 +1,31 @@
+{
+  "scope": "public immutable-source install/list/remove; filesystem verification only",
+  "source_url": "https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c",
+  "node": "22.23.4",
+  "installer": "skills@1.7.6",
+  "files_verified": 8,
+  "source_files": {
+    "SKILL.md": "18038a543b6e31d7c7cb4a5352a06cc564ce34102767b392bbcc72c98f6a685a",
+    "assets/claims-template.md": "072afe092aff81fef1fb520447d4e9f13ab1112a5200679a4886186f2e4144a9",
+    "assets/example-draft.md": "212af375e8425cf9785d6d546eb099dbd173df74119c76c094b4ea4fa9de72a9",
+    "assets/example-sources.md": "119d9f657b1f8eb270c8450194efe042543163570c4948b57221bd8f4fa4d68e",
+    "assets/review-checklist.md": "84432659ac3343549896524742e71f4e818e6ae2d0e43a73b66ee238dcc2895a",
+    "assets/review-template.md": "34c8327ccd39feae65b526949316ac9e83e2e0e1dbbfeb344318f1edca98d33a",
+    "compatibility.md": "6f68c8dac9c91d69a4527c53a3d3dda740896ac151a69518483a9098ded0663a",
+    "provenance.md": "8602c1b39f9ce91b213997c199b97e3adc930620f6cd95fbc33f63b526099cac"
+  },
+  "agents": [
+    "claude-code",
+    "cursor",
+    "codex",
+    "hermes-agent"
+  ],
+  "lock_ref_verified": true,
+  "sibling_preserved": true,
+  "selected_removal_verified": true,
+  "no_global_install": true,
+  "client_or_model_launched": false,
+  "source_commit": "4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c",
+  "qualification": "installer filesystem placement only; not native activation or factual-review efficacy",
+  "initial_probe_caveat": "Published skills CLI1.7.6 interpreted owner/repo@v0.4.1 as a skill selector, partially installed main and returned exit1. The full GitHub tree URL was used for successful immutable-ref verification."
+}

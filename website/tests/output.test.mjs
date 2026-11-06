@@ -22,10 +22,12 @@ test('static build emits each required page and generated Markdown download', as
 test('homepage uses canonical identity, selected-install command, and honest planned label', async () => {
   const html = await readFile(join(dist, 'index.html'), 'utf8');
   assert.match(html, /https:\/\/skillpot\.modepot\.io/);
-  assert.match(html, /git clone --branch v0\.4\.1 --depth 1/);
+  assert.match(html, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check/);
+  assert.match(html, /releases\/tag\/v0\.4\.1/);
   assert.match(html, /Planned direction—not a released workflow/);
   assert.match(html, /https:\/\/github\.com\/tugrulguner\/skillpot/);
   assert.match(html, /ten published skills/);
+  assert.match(html, /claim-check-first-use\.md/);
   assert.doesNotMatch(html, /href="[^"]*playground/i);
 });
 

@@ -71,13 +71,22 @@ class V041PreparationTests(unittest.TestCase):
             root = project / "project skills"
             (root / "sibling").mkdir(parents=True)
             (root / "sibling/owner").write_text("UNCHANGED")
-            skills = sorted((ROOT / "skills").glob("*/SKILL.md"))
-            self.assertEqual(len(skills), 10)
-            for entry in skills:
-                with self.subTest(skill=entry.parent.name):
-                    result = self.copy_recipe(project, entry.parent.name)
+            released_names = {
+                "decision-brief", "dexpot", "document-actions", "intpot-cli",
+                "intpot-python", "refpot-database", "repository-readiness",
+                "summonpot", "summonpot-code-review", "summonpot-pr-review",
+            }
+            self.assertEqual(len(released_names), 10)
+            current_skills = sorted((ROOT / "skills").glob("*/SKILL.md"))
+            self.assertEqual(len(current_skills), 11)
+            self.assertNotIn("claim-check", released_names)
+            self.assertTrue((ROOT / "skills/claim-check/SKILL.md").is_file())
+            for name in sorted(released_names):
+                entry = ROOT / "skills" / name / "SKILL.md"
+                with self.subTest(skill=name):
+                    result = self.copy_recipe(project, name)
                     self.assertEqual(result.returncode, 0, result.stderr)
-                    self.assertEqual(fingerprint(root / entry.parent.name), fingerprint(entry.parent))
+                    self.assertEqual(fingerprint(root / name), fingerprint(entry.parent))
             self.assertEqual((root / "sibling/owner").read_text(), "UNCHANGED")
 
     def test_copy_refuses_existing_files_directories_and_both_symlink_kinds(self):

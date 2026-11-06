@@ -45,9 +45,24 @@ branch, separate from the seven imported public guidance files. Video tooling is
 not included. Private authoring, release, marketing and operational workflows require
 individual source/rights/privacy review before any later extraction.
 
+## Claim-check — current source, unreleased
+
+The original **[claim-check](../skills/claim-check/SKILL.md)** bundle is in current
+source and remains unreleased; it is the eleventh current-source bundle, not part of
+published v0.4.1's ten-skill set. Use the standard Skills CLI to install only this
+skill from the exact reviewed source revision:
+
+```sh
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check
+```
+
+See the [claim-check first-use guide](../docs/claim-check-first-use.md), with a
+[GitHub main fallback](https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md).
+This discovery describes source availability and installation, not task efficacy.
+
 ## General decision workflow — version 0.1.1 in v0.4.1
 
-Published v0.4.1 contains ten skills, also present in current source: the seven imported public guidance files,
+Published v0.4.1 contains ten skills. They are also present in current source: the seven imported public guidance files,
 experimental repository-readiness, **[decision-brief](../skills/decision-brief/SKILL.md)**
 and **[document-actions](../skills/document-actions/SKILL.md)**.
 The stable quickstart selects that published release. Current-source

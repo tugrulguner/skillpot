@@ -21,7 +21,7 @@ class V040DefaultsTests(unittest.TestCase):
 
     def test_readme_clone_failure_cannot_continue_to_copy(self):
         text = (ROOT / "README.md").read_text()
-        block = re.search(r"```sh\n(.*?)\n```", text, re.S)
+        block = re.search(r"<summary>Advanced:.*?</summary>.*?```sh\n(.*?)\n```", text, re.S)
         self.assertIsNotNone(block)
         assert block is not None
         with tempfile.TemporaryDirectory() as temp:

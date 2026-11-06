@@ -45,11 +45,9 @@ for (const width of widths) for (const theme of themes) {
     await page.screenshot({ path: info.outputPath(`home-${width}-${theme}.png`), fullPage: true });
     await page.locator('.creator-row').screenshot({ path: info.outputPath(`creator-${width}-${theme}.png`) });
     await expect(page.locator('footer a[rel="next"]')).toHaveAttribute('href', '/quickstart/');
-    await action.focus(); await page.keyboard.press('Enter');
-    await expect(page).toHaveURL(/\/quickstart\/$/);
-    await expect(page.locator('h1')).toHaveText('Quick start');
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.screenshot({ path: info.outputPath(`quickstart-${width}-${theme}.png`), fullPage: true });
+    await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check');
+    await expect(page.locator('.install a')).toHaveAttribute('href', 'https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md');
+    await expect(page.locator('.overview')).toContainText('unreleased');
   });
 }
 test('Auto follows live OS theme changes and explicit choice persists', async ({ page }) => {
@@ -70,7 +68,8 @@ test('generated HTML, Markdown, routes and real source excerpt agree', async ({ 
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://skillpot.modepot.io/${route}/`);
   }
   await page.goto('/');
-  await expect(page.locator('.install code')).toHaveText('git clone --branch v0.4.1 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source');
+  await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check');
+  await expect(page.locator('.overview')).toContainText('Published v0.4.1 has ten skills');
   const source = await readFile(new URL('../../../skills/intpot-python/SKILL.md', import.meta.url),'utf8');
   await expect(page.locator('.skill-excerpt code')).toHaveText(source.split('\n').slice(0,7).join('\n'));
   await expect(page.locator('.overview strong').filter({hasText:'Intpot:'})).toHaveCount(1);

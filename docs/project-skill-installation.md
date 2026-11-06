@@ -1,10 +1,10 @@
 # Selectively install a ModePot skill
 
-SkillPot is harness-neutral. Start with the [quickstart](quickstart.md) for Claude Code,
-Cursor, Codex or another Agent Skills host. Copy the complete selected directory into
-that host's documented project skill location; the guide includes non-overwriting
-examples and distinguishes documented setup from observed task results. Hermes below
-is one existing installer example, not a prerequisite or a collection-wide gate.
+SkillPot is harness-neutral. The default path is one automated command through the
+existing skills CLI; the [quickstart](quickstart.md#install-automatically) shows how to
+select a skill and host without cloning this repository or managing directories.
+Native host installers remain alternatives. Hermes below is one existing installer
+option, not a prerequisite or a collection-wide gate.
 
 These are agent instructions, not the underlying Python products. Install only the
 task you need; product dependencies, listeners, credentials, data changes, code pushes

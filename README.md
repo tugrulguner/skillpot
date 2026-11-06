@@ -38,9 +38,26 @@ Per-package prerequisites and upstream unreleased-feature boundaries still apply
 See the [release Discussion](https://github.com/tugrulguner/skillpot/discussions/43)
 and [preparation/publication record](docs/releases/v0.4.1.md).
 
+Install one skill with one command (Node.js 22.20+ and Git):
+
+```sh
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/v0.4.1 --skill decision-brief
+```
+
+The existing open-source skills CLI downloads the selected complete bundle, creates
+its agent links and records its source in `skills-lock.json`. It supports Claude
+Code, Cursor, Codex and Hermes among other hosts. Installation is project-local by
+default; choose global installation explicitly only if that is what you want.
+You do not need to clone this repository or manage skill folders yourself.
+See the [automated installation guide](docs/quickstart.md) for choosing one skill,
+agent, updates and removal. Installed instructions grant no extra task authority.
+
+<details>
+<summary>Advanced: inspect and place the files manually</summary>
+
 Choose one task, inspect its instructions and copy the **complete selected directory**
-into your host's documented skill location. This example uses Claude Code's project
-scope and the published collection. Run it from a new source location you own:
+into your host's documented skill location. This optional example uses Claude Code's
+project scope and the published collection. Run it from a new source location you own:
 
 ```sh
 (
@@ -75,10 +92,15 @@ Hermes has an existing selective URL installer. Follow the
 updates and removal. The host supplies tools and enforces permissions; installing
 instructions grants no additional authority.
 
+</details>
+
 ## Choose a workflow
 
 Published v0.4.1 contains ten skills, including `decision-brief` and
-`document-actions`. Current source retains the same ten workflows, with
+`document-actions`. Current source contains eleven workflows, adding the unreleased
+`claim-check` bundle; its [automated first-use guide](docs/claim-check-first-use.md)
+selects a separate source revision because the stable release does not contain it.
+The original two workflows retain
 [published field-consistency corrections](docs/field-consistency.md) to those two
 skills. The stable clone above selects their published snapshot; the first-use guides
 use its exact commit.
@@ -100,6 +122,7 @@ its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
 | Audit a repository against an exact delivery goal | [repository-readiness](skills/repository-readiness/SKILL.md), experimental |
 | Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md) 0.1.2, included in v0.4.1; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
 | Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md) 0.1.1, included in v0.4.1 |
+| Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.0, current source only; [one-command setup](docs/claim-check-first-use.md) |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
 policies do not govern unrelated projects or authorize a merge. See the
