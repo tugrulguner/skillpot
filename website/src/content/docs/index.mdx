@@ -15,7 +15,7 @@ import SkillExcerpt from '../../components/SkillExcerpt.astro';
 
 ## Install one skill
 
-Published v0.4.1 has ten skills: seven public project/contributor packages, the original experimental repository-readiness workflow, decision-brief 0.1.1 and document-actions 0.1.2. Current source has twelve skills, including the original **claim-check** and **change-impact** bundles, both version 0.1.0, unreleased and not in that ten-skill release. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
+Published v0.4.1 has ten skills: seven public project/contributor packages, the original experimental repository-readiness workflow, decision-brief 0.1.1 and document-actions 0.1.2. Current source has thirteen skills, including the original **claim-check**, **change-impact** and **bug-repro** bundles, each version 0.1.0, unreleased and not in that ten-skill release. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
 
 <div className="install"><strong>Install one current-source skill</strong><code>{'npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check'}</code><a href="https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md">Claim-check first-use guide →</a></div>
 
@@ -41,7 +41,9 @@ Published v0.4.1 also includes **document-actions**. It extracts stated actions 
 
 Current-source **change-impact** maps a specified code change to evidenced callers, contracts and focused checks, producing `impact.md` and `verification.md`. It does not modify code or run tests without authorization. See its [one-command first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/change-impact-first-use.md); static links are not runtime-reachability proof.
 
-[Browse the ten published skills and two source-only workflows](/catalogue/) or read the [host setup](/host-setup/).
+Current-source **bug-repro** turns an authorized bug investigation into a minimal runnable reproducer, a regression test and `repro.md` with actual evidence. It does not execute unapproved code or silently fix the product. See its [bug-repro first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/bug-repro-first-use.md); Not reproduced and Blocked remain valid outcomes.
+
+[Browse the ten published skills and three source-only workflows](/catalogue/) or read the [host setup](/host-setup/).
 
 ## Original workflow design
 
