@@ -66,22 +66,26 @@ Proposed correction: The storage notice places primary customer data in the EU a
 
 Draft D5: “An independent audit”
 
+Proposition checked: An audit was performed.
+
 - S4.1: “We commissioned an independent security audit.”
 - S4.1: “The announcement gives no audit scope, method, findings or assessor identity.”
 
-Reason: The vendor reports commissioning one, but no report or assessor identity is available. Commissioning is not evidence that an audit was performed or independently qualified.
+Reason: The vendor reports commissioning an audit, not its performance or completion. No report is supplied.
 
-Proposed correction: Harbor says it commissioned an independent security audit; its completion and independence are not verified from this packet.
+Proposed correction: Harbor says it commissioned a security audit; performance and completion are not verified from this packet.
 
 ## C8 — Unresolved
 
-Draft D5: “confirmed that the system is secure”
+Draft D5: “the system is secure”
+
+Proposition checked: The system is secure.
 
 - S4.1: “The report is referenced as an attachment, but that attachment is not in this supplied packet.”
 
-Reason: The report and findings are unavailable. Do not invent findings, say the system is unsafe, or assume a finite audit could certify all security.
+Reason: No report, findings or other security evidence is supplied. The underlying security assertion remains unresolved, independently of whether an audit reported a positive finding.
 
-Proposed correction: Remove this assurance pending the report and a claim limited to its actual scope and findings.
+Proposed correction: Remove the security assurance; this packet establishes neither security nor insecurity.
 
 ## C9 — Unresolved
 
@@ -103,6 +107,46 @@ Draft D8: “Harbor says it commissioned an audit.”
 Reason: Supported attribution to the vendor, not independent verification of commissioning, completed audit, independence or security.
 
 Proposed correction: Retain as attribution, not a security endorsement.
+
+## C11 — Unresolved
+
+Draft D5: “independent”
+
+Proposition checked: The audit was independent.
+
+- S4.1: “We commissioned an independent security audit.”
+- S4.1: “The announcement gives no audit scope, method, findings or assessor identity.”
+
+Reason: Independent is the vendor’s characterization; no assessor identity or evidence of independence is available.
+
+Proposed correction: Harbor characterizes the commissioned audit as independent; that characterization is not verified here.
+
+## C12 — Unresolved
+
+Draft D5: “confirmed that the system is secure”
+
+Proposition checked: The audit reported a positive security conclusion.
+
+- S4.1: “The report is referenced as an attachment, but that attachment is not in this supplied packet.”
+
+Reason: The missing report prevents checking whether an audit actually reported a positive security finding. That reporting event is distinct from audit occurrence, independence and actual system security.
+
+Proposed correction: Do not attribute a positive finding to the audit without the report and its actual scope and findings.
+
+## Coverage reconciliation
+
+Manual assertion inventory, checked against the draft independently of ledger rendering:
+
+- D1: C1.
+- D2: C2, C3, C4.
+- D3: C5.
+- D4: C6.
+- D5: C7, C11, C12, C8.
+- D6: C9.
+- D7: E1.
+- D8: C10.
+
+D5 separates audit performance (C7), independence (C11), an attributed positive finding (C12) and underlying security (C8). Earlier C7/C8 compound records are clarified, not renumbered; new facets append IDs. Source IDs and original draft/packet bytes remain unchanged. This authored map is not automated semantic completeness proof.
 
 ## Exclusions and source limitations
 

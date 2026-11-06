@@ -90,7 +90,7 @@
       "draft_locator": "D5",
       "draft_span": "An independent audit",
       "verdict": "Unresolved",
-      "reason": "The vendor reports commissioning one, but no report or assessor identity is available. Commissioning is not evidence that an audit was performed or independently qualified.",
+      "reason": "The vendor reports commissioning an audit, not its performance or completion. No report is supplied.",
       "evidence": [
         {
           "locator": "S4.1",
@@ -101,21 +101,23 @@
           "span": "The announcement gives no audit scope, method, findings or assessor identity."
         }
       ],
-      "suggested_correction": "Harbor says it commissioned an independent security audit; its completion and independence are not verified from this packet."
+      "suggested_correction": "Harbor says it commissioned a security audit; performance and completion are not verified from this packet.",
+      "proposition": "An audit was performed"
     },
     {
       "id": "C8",
       "draft_locator": "D5",
-      "draft_span": "confirmed that the system is secure",
+      "draft_span": "the system is secure",
       "verdict": "Unresolved",
-      "reason": "The report and findings are unavailable. Do not invent findings, say the system is unsafe, or assume a finite audit could certify all security.",
+      "reason": "No report, findings or other security evidence is supplied. The underlying security assertion remains unresolved, independently of whether an audit reported a positive finding.",
       "evidence": [
         {
           "locator": "S4.1",
           "span": "The report is referenced as an attachment, but that attachment is not in this supplied packet."
         }
       ],
-      "suggested_correction": "Remove this assurance pending the report and a claim limited to its actual scope and findings."
+      "suggested_correction": "Remove the security assurance; this packet establishes neither security nor insecurity.",
+      "proposition": "The system is secure"
     },
     {
       "id": "C9",
@@ -148,6 +150,40 @@
         }
       ],
       "suggested_correction": "Retain as attribution, not a security endorsement."
+    },
+    {
+      "id": "C11",
+      "draft_locator": "D5",
+      "draft_span": "independent",
+      "proposition": "The audit was independent",
+      "verdict": "Unresolved",
+      "reason": "Independent is the vendor\u2019s characterization; no assessor identity or evidence of independence is available.",
+      "evidence": [
+        {
+          "locator": "S4.1",
+          "span": "We commissioned an independent security audit."
+        },
+        {
+          "locator": "S4.1",
+          "span": "The announcement gives no audit scope, method, findings or assessor identity."
+        }
+      ],
+      "suggested_correction": "Harbor characterizes the commissioned audit as independent; that characterization is not verified here."
+    },
+    {
+      "id": "C12",
+      "draft_locator": "D5",
+      "draft_span": "confirmed that the system is secure",
+      "proposition": "The audit reported a positive security conclusion",
+      "verdict": "Unresolved",
+      "reason": "The missing report prevents checking whether an audit actually reported a positive security finding. That reporting event is distinct from audit occurrence, independence and actual system security.",
+      "evidence": [
+        {
+          "locator": "S4.1",
+          "span": "The report is referenced as an attachment, but that attachment is not in this supplied packet."
+        }
+      ],
+      "suggested_correction": "Do not attribute a positive finding to the audit without the report and its actual scope and findings."
     }
   ],
   "exclusions": [
@@ -157,5 +193,36 @@
       "span": "Harbor's interface feels calm.",
       "reason": "Subjective impression, without a checkable factual premise here."
     }
-  ]
+  ],
+  "coverage": {
+    "D1": [
+      "C1"
+    ],
+    "D2": [
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "D3": [
+      "C5"
+    ],
+    "D4": [
+      "C6"
+    ],
+    "D5": [
+      "C7",
+      "C11",
+      "C12",
+      "C8"
+    ],
+    "D6": [
+      "C9"
+    ],
+    "D7": [
+      "E1"
+    ],
+    "D8": [
+      "C10"
+    ]
+  }
 }

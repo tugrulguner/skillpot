@@ -27,7 +27,7 @@ class ClaimCheckProposalTests(unittest.TestCase):
         self.assertIn("(50 - 40) / 50 * 100 = 20%", review)
         self.assertIn("do not establish causation", review)
         self.assertIn("not an automatically rewritten draft", (EXAMPLE / "README.md").read_text())
-        self.assertEqual([c["id"] for c in claims], [f"C{i}" for i in range(1, 11)])
+        self.assertEqual([c["id"] for c in claims], [f"C{i}" for i in range(1, 13)])
         self.assertEqual({c["verdict"] for c in claims},
                          {"Supported", "Overstated", "Contradicted", "Unresolved"})
         for claim in claims:
@@ -42,6 +42,44 @@ class ClaimCheckProposalTests(unittest.TestCase):
         self.assertEqual((50 - 40) / 50 * 100, 20)
         self.assertIn(fixture["exclusions"][0]["span"], draft)
         self.assertIn("[S6.1]", sources)  # Hostile text is authored source data.
+
+    def assert_coverage(self, fixture):
+        claims = {c["id"]: c for c in fixture["claims"]}
+        exclusions = {e["id"]: e for e in fixture["exclusions"]}
+        draft_ids = {line.split(']')[0][1:] for line in
+                     (EXAMPLE / "draft.md").read_text().splitlines() if line.startswith('[D')}
+        self.assertEqual(set(fixture["coverage"]), draft_ids)
+        mapped = []
+        for paragraph, ids in fixture["coverage"].items():
+            self.assertTrue(ids)
+            for identifier in ids:
+                self.assertIn(identifier, claims.keys() | exclusions.keys())
+                record = claims[identifier] if identifier in claims else exclusions[identifier]
+                self.assertEqual(record.get("draft_locator", record.get("locator")), paragraph)
+                mapped.append(identifier)
+        self.assertEqual(sorted(mapped), sorted(claims.keys() | exclusions.keys()))
+        d5 = [claims[i]["proposition"] for i in fixture["coverage"]["D5"]]
+        self.assertEqual(set(d5), {"An audit was performed", "The audit was independent",
+                                  "The audit reported a positive security conclusion",
+                                  "The system is secure"})
+
+    def test_explicit_coverage_reconciles_draft_and_audit_facets(self):
+        fixture = json.loads((EXAMPLE / "expected-claims.json").read_text())
+        self.assert_coverage(fixture)
+        import copy
+        for mutation in ["omission", "duplicate", "wrong-paragraph", "missing-paragraph"]:
+            bad = copy.deepcopy(fixture)
+            if mutation == "omission":
+                bad["coverage"]["D5"].remove("C12")
+            elif mutation == "duplicate":
+                bad["coverage"]["D5"].append("C7")
+            elif mutation == "wrong-paragraph":
+                bad["coverage"]["D5"].remove("C12")
+                bad["coverage"]["D6"].append("C12")
+            else:
+                del bad["coverage"]["D5"]
+            with self.subTest(mutation=mutation), self.assertRaises(AssertionError):
+                self.assert_coverage(bad)
 
     def test_no_installable_or_published_skill_is_claimed(self):
         proposal = (ROOT / "docs/claim-check-proposal.md").read_text()

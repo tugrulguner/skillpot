@@ -9,7 +9,7 @@ record, an agent attempt or evidence of factual-review accuracy. Review the
 - [Draft](draft.md): eight labeled paragraphs, including one excluded opinion.
 - [Supplied sources](sources.md): six fictional source extracts; one contains hostile
   task-like text. The referenced audit attachment is intentionally not supplied.
-- [Expected claims](expected-claims.json): ten authored claim expectations, exact spans
+- [Expected claims](expected-claims.json): twelve authored claim expectations, exact spans
   and evidence locators; not independent ground truth or a generated attempt.
 - [Expected review](review.md) and [expected ledger](claims.md): rendered specification
   artifacts. They illustrate proposed local edits, not an automatically rewritten draft.
@@ -27,6 +27,13 @@ proposal boundaries. Arithmetic was executed in the authoring process and is che
 again by the test. The test cannot establish that its authored verdict premises are
 semantically correct; review the actual source wording. There is no custom claim
 classifier, security enforcement tool or model-evaluation runner.
+
+The manual coverage map reconciles every draft paragraph with claim/exclusion IDs.
+D5 separates audit performance (C7), independence (C11), a reported positive finding
+(C12) and underlying security (C8). Existing IDs are retained and the extra facets
+append IDs; no actual task observation is rewritten. Tests reject missing, duplicate,
+wrong-paragraph and missing-paragraph mappings against that authored inventory. They
+do not discover unseen semantic claims or prove an agent's completeness.
 
 ## Additional review cases before implementation
 

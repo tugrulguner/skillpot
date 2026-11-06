@@ -3,7 +3,7 @@
 **Specification example, not observed agent output.** This is a review of the fictional
 Harbor draft version 1 using only the supplied fictional packet, with a May 12, 2026
 cutoff. No network retrieval, independent corroboration, real measurement, model run
-or publication took place. The [ledger](claims.md) accounts for ten factual claims;
+or publication took place. The [ledger](claims.md) accounts for twelve factual claims;
 D7 is an excluded subjective impression. All eight draft paragraphs are readable.
 The audit attachment is absent, so review of that report is not claimed.
 
@@ -14,11 +14,13 @@ The audit attachment is absent, so review of that report is not claimed.
   notice places primary customer data in the EU and retained disaster-recovery backups
   in the United States.” This is what the notice states, not independently verified
   production geography.
-- **C7–C8 / D5 — audit assurance unresolved.** S4.1 supports only the vendor's report
+- **C7, C11, C12, C8 / D5 — audit assurance unresolved.** S4.1 supports only the vendor's report
   that it commissioned an independent audit. It provides no report, assessor identity
   or findings. Commissioning is not proof that an audit was performed. Proposed
-  replacement: “Harbor says it commissioned an independent security audit; its
-  completion, independence and findings are not verified from this packet.” Do not
+  replacement: “Harbor says it commissioned a security audit and characterizes it as
+  independent; its performance, independence and findings are not verified from this
+  packet.” C7 checks performance, C11 independence, C12 the reported conclusion and
+  C8 underlying system security. None is established by commissioning alone. Do not
   call the system either secure or unsafe from that gap.
 - **C9 / D6 — unresolved price conflict.** S1.1 lists $30 and S5.1 lists $32 for the
   same standard monthly plan and effective date. No supplied hierarchy resolves them.

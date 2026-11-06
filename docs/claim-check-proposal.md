@@ -96,6 +96,11 @@ about what a dated document or named speaker reported.
    draft spans and paragraph/sentence/clause locators. Repeated identical assertions
    may share one claim with every occurrence listed; similar but differently qualified
    claims stay separate. Account for all in-scope factual assertions and exclusions.
+   Build a paragraph-by-paragraph assertion inventory by rereading the draft before
+   comparing it with the ledger. Include presupposed events and distinguish an event
+   occurring, its independence, what it reportedly concluded and whether its embedded
+   proposition is actually true. Reusing a span for different explicit propositions
+   is allowed; duplicating the same proposition as several claims is not.
 4. **Read and locate evidence.** Record source identity/version, date where stated,
    exact passage/page/section/table and access limits. Record retrieval date only for
    sources actually retrieved. Do not imply a URL, search snippet, abstract or unread
@@ -121,6 +126,14 @@ about what a dated document or named speaker reported.
    calculations against retained tool results, and review/ledger agreement. Ensure no
    missing-evidence item was declared false, no conflict silently resolved and no
    unsupported stronger correction introduced. Disclose unchecked portions explicitly.
+   Include a coverage map in `claims.md`: every draft paragraph maps to claim IDs,
+   reasoned exclusions or explicitly unchecked portions. Reconcile that inventory
+   with the final ledger in both directions: no omitted assertion, orphan ID, duplicate
+   proposition, wrong-paragraph mapping or silently collapsed split. Check each mapped
+   proposition semantically against the draft; literal span presence and counts alone
+   cannot prove complete coverage. Repeated occurrences must all be mapped without
+   inventing separate claims merely to inflate the count. If a gap remains, mark
+   coverage partial rather than declaring the whole draft checked.
 9. **Report bounded completion.** Return both paths, material findings and evidence
    limits. Say "reviewed within scope," not "factually certified" or "ready to publish."
    Approval/publication stays with the owner.
@@ -154,6 +167,9 @@ authored specification examples, not a model run, real customer records or measu
 Acceptance must check:
 
 - Every atomic claim and excluded opinion has an exact draft span and source locator.
+- A separately reviewed paragraph/assertion map reconciles all ledger and exclusion
+  IDs. D5 distinguishes an audit being performed, independence, a reported positive
+  conclusion and actual system security. No facet is silently merged into another.
 - Supported attribution is not promoted to independent verification.
 - Conflicting same-plan prices remain unresolved without authorized supersession.
 - Unsupported causality is narrowed, not falsely disproved.
