@@ -1,0 +1,161 @@
+{
+  "kind": "authored specification; not observed agent output",
+  "claims": [
+    {
+      "id": "C1",
+      "draft_locator": "D1",
+      "draft_span": "Harbor's standard annual plan costs $24 per seat per month, billed annually.",
+      "verdict": "Supported",
+      "reason": "Annual billing, standard plan and per-seat monthly equivalent agree; tax exclusion matters if describing total price.",
+      "evidence": [
+        {
+          "locator": "S1.1",
+          "span": "Standard annual plan: $24 per seat per month, billed annually."
+        }
+      ],
+      "suggested_correction": "Retain; qualify tax if the surrounding text presents a final payable total."
+    },
+    {
+      "id": "C2",
+      "draft_locator": "D2",
+      "draft_span": "The trial took 40 minutes",
+      "verdict": "Supported",
+      "reason": "The timing note records that duration; this is a supplied, unverified internal record with a different workload.",
+      "evidence": [
+        {
+          "locator": "S2.1",
+          "span": "Trial duration: 40 minutes for 700 records."
+        }
+      ],
+      "suggested_correction": "Retain only as a recorded duration, with the workload caveat."
+    },
+    {
+      "id": "C3",
+      "draft_locator": "D2",
+      "draft_span": "the baseline's 50 minutes",
+      "verdict": "Supported",
+      "reason": "The timing note records that baseline duration, not an equal-workload performance comparison.",
+      "evidence": [
+        {
+          "locator": "S2.1",
+          "span": "Baseline duration: 50 minutes for 1,000 records."
+        }
+      ],
+      "suggested_correction": "Retain only as a recorded duration, with the workload caveat."
+    },
+    {
+      "id": "C4",
+      "draft_locator": "D2",
+      "draft_span": "25% less time",
+      "verdict": "Contradicted",
+      "reason": "Using baseline duration as denominator, (50 - 40) / 50 * 100 = 20%, not 25%. This does not establish efficiency improvement for unequal workloads.",
+      "evidence": [
+        {
+          "locator": "S2.1",
+          "span": "Baseline duration: 50 minutes for 1,000 records. Trial duration: 40 minutes for 700 records."
+        }
+      ],
+      "suggested_correction": "The recorded durations were 50 and 40 minutes, a 20% lower elapsed duration; workloads differed."
+    },
+    {
+      "id": "C5",
+      "draft_locator": "D3",
+      "draft_span": "The rollout caused that reduction.",
+      "verdict": "Overstated",
+      "reason": "Only an unmatched duration comparison is supported. It neither establishes causality nor proves that there was no causal effect.",
+      "evidence": [
+        {
+          "locator": "S2.1",
+          "span": "Workloads differ; no matched control, repeated measurement or causal isolation was performed."
+        }
+      ],
+      "suggested_correction": "The records do not establish whether the rollout caused the difference."
+    },
+    {
+      "id": "C6",
+      "draft_locator": "D4",
+      "draft_span": "All retained copies of customer data remain inside the EU.",
+      "verdict": "Contradicted",
+      "reason": "The storage notice explicitly identifies retained customer-data backups outside the EU; primary location alone would not establish every copy.",
+      "evidence": [
+        {
+          "locator": "S3.1",
+          "span": "Retained disaster-recovery backups of customer data are stored in the United States."
+        }
+      ],
+      "suggested_correction": "The storage notice places primary customer data in the EU and retained disaster-recovery backups in the United States."
+    },
+    {
+      "id": "C7",
+      "draft_locator": "D5",
+      "draft_span": "An independent audit",
+      "verdict": "Unresolved",
+      "reason": "The vendor reports commissioning one, but no report or assessor identity is available. Commissioning is not evidence that an audit was performed or independently qualified.",
+      "evidence": [
+        {
+          "locator": "S4.1",
+          "span": "We commissioned an independent security audit."
+        },
+        {
+          "locator": "S4.1",
+          "span": "The announcement gives no audit scope, method, findings or assessor identity."
+        }
+      ],
+      "suggested_correction": "Harbor says it commissioned an independent security audit; its completion and independence are not verified from this packet."
+    },
+    {
+      "id": "C8",
+      "draft_locator": "D5",
+      "draft_span": "confirmed that the system is secure",
+      "verdict": "Unresolved",
+      "reason": "The report and findings are unavailable. Do not invent findings, say the system is unsafe, or assume a finite audit could certify all security.",
+      "evidence": [
+        {
+          "locator": "S4.1",
+          "span": "The report is referenced as an attachment, but that attachment is not in this supplied packet."
+        }
+      ],
+      "suggested_correction": "Remove this assurance pending the report and a claim limited to its actual scope and findings."
+    },
+    {
+      "id": "C9",
+      "draft_locator": "D6",
+      "draft_span": "The standard monthly plan costs $30 per seat as of May 1, 2026.",
+      "verdict": "Unresolved",
+      "reason": "Conflicting same-plan prices and effective dates remain unresolved: $30 in S1 and $32 in S5. Neither source has established superseding authority.",
+      "evidence": [
+        {
+          "locator": "S1.1",
+          "span": "Standard monthly plan: $30 per seat per month."
+        },
+        {
+          "locator": "S5.1",
+          "span": "The standard monthly plan is $32 per seat per month, excluding tax."
+        }
+      ],
+      "suggested_correction": "The supplied documents disagree on the monthly-plan price ($30 versus $32); confirm the applicable tariff before stating a price."
+    },
+    {
+      "id": "C10",
+      "draft_locator": "D8",
+      "draft_span": "Harbor says it commissioned an audit.",
+      "verdict": "Supported",
+      "reason": "Supported attribution to the vendor, not independent verification of commissioning, completed audit, independence or security.",
+      "evidence": [
+        {
+          "locator": "S4.1",
+          "span": "We commissioned an independent security audit."
+        }
+      ],
+      "suggested_correction": "Retain as attribution, not a security endorsement."
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "E1",
+      "locator": "D7",
+      "span": "Harbor's interface feels calm.",
+      "reason": "Subjective impression, without a checkable factual premise here."
+    }
+  ]
+}
