@@ -81,13 +81,14 @@ class ClaimCheckProposalTests(unittest.TestCase):
             with self.subTest(mutation=mutation), self.assertRaises(AssertionError):
                 self.assert_coverage(bad)
 
-    def test_no_installable_or_published_skill_is_claimed(self):
+    def test_proposal_remains_a_historical_record_after_implementation(self):
         proposal = (ROOT / "docs/claim-check-proposal.md").read_text()
-        self.assertIn("proposed, not an installable skill", proposal)
+        self.assertIn("**Status: proposed, not an installable skill or published collection addition.**", proposal)
+        self.assertIn("before implementing a portable", proposal)
         self.assertIn("Missing support is not proof of falsehood", proposal)
         self.assertIn("dangling symlink", proposal)
         self.assertIn("No wholesale rewrite", proposal)
-        self.assertFalse((ROOT / "skills/claim-check").exists())
+        self.assertTrue((ROOT / "skills/claim-check/SKILL.md").is_file())
 
 
 if __name__ == "__main__":

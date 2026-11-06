@@ -38,7 +38,9 @@ class V040PreparationTests(unittest.TestCase):
         self.assertIn("Published version `0.1.2`", (ROOT / "skills/document-actions/compatibility.md").read_text())
 
     def test_contents_and_limits_cover_complete_collection(self):
-        names = sorted(p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md"))
+        # Frozen release notes name the ten pre-claim-check bundles, not future source additions.
+        names = sorted(p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")
+                       if p.parent.name != "claim-check")
         self.assertEqual(len(names), 10)
         text = NOTES.read_text()
         self.assertIn("ten skills", text)

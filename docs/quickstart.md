@@ -6,6 +6,43 @@ A skill is a directory containing `SKILL.md` and its supporting files. Your agen
 provides file access, command execution and permission controls; the underlying product
 may require its own Python environment, dependencies or credentials.
 
+## Install automatically
+
+With Node.js 22.20+ and Git available, run this in the project where you use your agent:
+
+```sh
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/v0.4.1 --skill decision-brief
+```
+
+This selects decision-brief; replace its name for another published skill.
+Choose the target agent if prompted. The existing skills CLI handles the
+complete bundle and agent directories automatically. No repository clone or manual
+file placement is required. This selects the published ten-skill collection; newer
+source-only workflows need their separately documented source URL.
+
+For one selected skill and host without selection prompts:
+
+```sh
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/v0.4.1 --skill decision-brief --agent claude-code -y
+```
+
+Use `cursor`, `codex` or `hermes-agent` instead of `claude-code`, or pass several
+agent names. Default scope is the current project. Add `--global` only when you want
+user-wide installation. The CLI records the source in `skills-lock.json`, keeps one
+canonical bundle and links agent locations to it. `--copy` selects independent copies
+when needed. No agent client or model is launched by `skills add`.
+
+Inspect installed skills with `npx skills@1.7.6 list`. Remove a selected project skill
+with `npx skills@1.7.6 remove decision-brief --agent claude-code` and inspect the plan.
+Review local edits before reinstallation or updates; do not assume an installer
+preserves edited content, or use `-y` to skip a decision you have not reviewed.
+Installation provides instructions, not product dependencies or task authority.
+
+The installer is [vercel-labs/skills](https://github.com/vercel-labs/skills), an optional
+existing ecosystem tool, not a SkillPot runtime. Native host installers remain usable.
+The file layouts and manual steps below are advanced inspection/fallback guidance,
+not a prerequisite for ordinary installation.
+
 ## 1. Choose one workflow
 
 Start with the [task-first catalogue](../catalog/README.md):

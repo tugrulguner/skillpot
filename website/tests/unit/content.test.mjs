@@ -14,13 +14,32 @@ test('canonical guides link to product-owned routes as absolute URLs', async () 
   }
 });
 
+test('claim-check is current-source and unreleased, separate from the stable release', async () => {
+  const [home, catalogue, map] = await Promise.all([
+    readFile(join(root, 'src/content/docs/index.mdx'), 'utf8'),
+    readFile(join(root, 'src/content/docs/catalogue.md'), 'utf8'),
+    readFile(join(root, 'public/llms.txt'), 'utf8'),
+  ]);
+  for (const text of [home, catalogue, map]) {
+    assert.match(text, /claim-check/);
+    assert.match(text, /unreleased/i);
+    assert.match(text, /claim-check-first-use\.md/);
+  }
+  assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check/);
+  assert.match(catalogue, /eleventh current-source bundle/);
+  assert.match(catalogue, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check/);
+  assert.match(map, /claim-check-first-use\.md/);
+  assert.match(map, /Published v0\.4\.1 contains ten skills/);
+  assert.doesNotMatch(map, /Published v0\.4\.1 contains eleven skills/);
+});
+
 test('released decision brief is discoverable with the v0.4.1 clone', async () => {
   const [home, catalogue] = await Promise.all(['index.mdx', 'catalogue.md'].map((f) => readFile(join(root, 'src/content/docs', f), 'utf8')));
   assert.match(home, /Published v0\.4\.1 includes \*\*decision-brief/);
   assert.match(catalogue, /decision-brief/);
   assert.match(catalogue, /Published v0\.4\.1 contains ten skills/);
   assert.doesNotMatch(catalogue, /reviewed, unreleased/);
-  assert.match(home, /git clone --branch v0\.4\.1 --depth 1/);
+  assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check/);
 });
 
 test('agent map selects the latest published ten-skill snapshot', async () => {
@@ -43,7 +62,7 @@ test('document actions uses the published release across discovery', async () =>
     assert.doesNotMatch(text, /not included in published v0\.3\.0/);
   }
   assert.match(catalogue, /Published v0\.4\.1 contains ten skills/);
-  assert.match(home, /git clone --branch v0\.4\.1 --depth 1/);
+  assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check/);
 });
 
 test('docs preserve experimental scope and runtime boundaries after publication', async () => {

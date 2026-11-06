@@ -34,7 +34,9 @@ class PublishedDefaultsTests(unittest.TestCase):
         excerpt = (ROOT / "website/src/components/SkillExcerpt.astro").read_text()
         self.assertIn("current source", excerpt)
         self.assertIn("v0.4.1", excerpt)
-        self.assertIn("git clone --branch v0.4.1", (ROOT / "website/src/content/docs/index.mdx").read_text())
+        home = (ROOT / "website/src/content/docs/index.mdx").read_text()
+        self.assertIn("npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check", home)
+        self.assertIn("releases/tag/v0.4.1", home)
 
     def test_publication_labels_do_not_change_released_instruction_bodies(self):
         # Frozen from the approved v0.4.1 commit, excluding YAML frontmatter only.
@@ -54,7 +56,7 @@ class PublishedDefaultsTests(unittest.TestCase):
         self.assertIn("`decision-brief` version 0.1.1", setup)
         self.assertIn("`document-actions` version 0.1.2", setup)
         home = (ROOT / "website/src/content/docs/index.mdx").read_text()
-        self.assertIn("published v0.4.1 collection has ten skills", home)
+        self.assertIn("Published v0.4.1 has ten skills", home)
         self.assertNotIn("published collection has eight skills", home)
         for name, version in [("decision-brief", "0.1.1"), ("document-actions", "0.1.2")]:
             compatibility = (ROOT / f"skills/{name}/compatibility.md").read_text()
