@@ -6,7 +6,7 @@ compatibility: "Any host able to read supplied files, create new files in an own
 metadata:
   version: "0.1.1"
   maintainer: "tugrulguner"
-  status: "unreleased"
+  status: "published"
 ---
 
 # Decision brief

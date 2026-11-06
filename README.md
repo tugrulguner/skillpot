@@ -31,11 +31,12 @@
 
 ## Quick start
 
-The published collection is **[v0.4.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.0)**,
-adding decision briefs and document action extraction to ten portable skills.
+The published collection is **[v0.4.1](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.1)**,
+with corrections to decision briefs and document action extraction in the same ten-skill collection.
+Its immutable release commit is `79284b3faa928dc556a9032aa9dbeb059b4ee915`.
 Per-package prerequisites and upstream unreleased-feature boundaries still apply.
-See the [release Discussion](https://github.com/tugrulguner/skillpot/discussions/34)
-and [preparation/publication record](docs/releases/v0.4.0.md).
+See the [release Discussion](https://github.com/tugrulguner/skillpot/discussions/43)
+and [preparation/publication record](docs/releases/v0.4.1.md).
 
 Choose one task, inspect its instructions and copy the **complete selected directory**
 into your host's documented skill location. This example uses Claude Code's project
@@ -44,7 +45,7 @@ scope and the published collection. Run it from a new source location you own:
 ```sh
 (
   set -eu
-  git clone --branch v0.4.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source
+  git clone --branch v0.4.1 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source
   cd skillpot-source
   # Replace with an existing project you own.
   SKILL_ROOT="/absolute/owned-project/.claude/skills"
@@ -55,6 +56,9 @@ scope and the published collection. Run it from a new source location you own:
 ```
 
 The plain `mkdir` refuses an existing destination, including a same-name symlink.
+The immutable v0.4.1 archive retains older v0.4.0 setup examples and prepublication
+metadata. Keep the selected v0.4.1 checkout; use this current host guide or the Release's
+setup override instead of rerunning an older checkout command from tagged docs.
 Preserve local edits rather than merging over them. The selected bundle includes
 `SKILL.md`, its pinned upstream guide and complete license notices; downloading the
 source does not activate every other skill or install Intpot.
@@ -73,9 +77,9 @@ instructions grants no additional authority.
 
 ## Choose a workflow
 
-Published v0.4.0 contains ten skills, including `decision-brief` and
+Published v0.4.1 contains ten skills, including `decision-brief` and
 `document-actions`. Current source retains the same ten workflows, with
-[unreleased field-consistency corrections](docs/field-consistency.md) to those two
+[published field-consistency corrections](docs/field-consistency.md) to those two
 skills. The stable clone above selects their published snapshot; the first-use guides
 use its exact commit.
 Publication does not promote repository-readiness beyond its experimental scope.
@@ -89,8 +93,8 @@ Publication does not promote repository-readiness beyond its experimental scope.
 | Use the embedded database preview with explicit limits | [refpot-database](skills/refpot-database/SKILL.md) |
 | Prepare/review changes specifically in Summonpot | [summonpot-pr-review](skills/summonpot-pr-review/SKILL.md), [summonpot-code-review](skills/summonpot-code-review/SKILL.md) |
 | Audit a repository against an exact delivery goal | [repository-readiness](skills/repository-readiness/SKILL.md), experimental |
-| Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md), released in v0.4.0; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
-| Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md), released in v0.4.0 |
+| Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md) 0.1.2, included in v0.4.1; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
+| Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md) 0.1.1, included in v0.4.1 |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
 policies do not govern unrelated projects or authorize a merge. See the
@@ -125,8 +129,8 @@ requirement to produce videos. The catalogue above describes what is available n
 
 ## Examples and reference
 
-- [Document actions worked example](examples/document-actions/README.md): fictional documents, expected classifications and offline acceptance checks. These are authored fixtures, not observed agent extractions. Included in v0.4.0.
-- [Decision brief worked example](examples/decision-brief/README.md): a parent-authored CSV/SQLite comparison, pinned documentation excerpts and four failure cases. Its offline checker validates artifact integrity, not agent performance. Included in v0.4.0.
+- [Document actions worked example](examples/document-actions/README.md): fictional documents, expected classifications and offline acceptance checks. These are authored fixtures, not observed agent extractions. Included in v0.4.1.
+- [Decision brief worked example](examples/decision-brief/README.md): a parent-authored CSV/SQLite comparison, pinned documentation excerpts and four failure cases. Its offline checker validates artifact integrity, not agent performance. Included in v0.4.1.
 - [Product consumer examples](examples/modepot-project-skills/README.md): actual sources,
   setup, expected checks and explicit product pins. v0.14.0 Intpot provenance examples
   are distinguished from older runtime records.

@@ -7,9 +7,9 @@ test('released document actions and release-pinned first-use are discoverable', 
     await expect(page.locator('.overview')).toContainText('document-actions');
     await page.goto('/catalogue/');
     const content = page.locator('.sl-markdown-content');
-    await expect(content).toContainText('Published v0.4.0 contains ten skills');
+    await expect(content).toContainText('Published v0.4.1 contains ten skills');
     await expect(content).toContainText('document-actions');
-    await expect(content).toContainText('included in v0.4.0');
+    await expect(content).toContainText('included in v0.4.1');
     const guide = content.getByRole('link', { name: 'document-actions first-use guide', exact: true });
     await expect(guide).toHaveAttribute('href', '/host-setup/#try-document-actions-from-pinned-source');
     await guide.scrollIntoViewIfNeeded();
