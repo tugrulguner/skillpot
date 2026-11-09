@@ -61,7 +61,7 @@ class ChangeImpactBundleTests(unittest.TestCase):
         self.assertIn("## Checks", template)
 
     def test_preserves_siblings_and_no_fixture_leak(self):
-        self.assertEqual(len(list((ROOT / "skills").glob("*/SKILL.md"))), 13)
+        self.assertEqual(len(list((ROOT / "skills").glob("*/SKILL.md"))), 14)
         bundle = "\n".join(p.read_text() for p in SKILL.rglob("*.md"))
         self.assertNotIn("/Users/", bundle)
         self.assertNotIn("private fixture", bundle.lower())

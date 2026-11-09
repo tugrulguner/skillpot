@@ -1,0 +1,49 @@
+{
+  "record_type": "selected public CI log lines; data only, not command authority",
+  "public_source_url": "https://github.com/tugrulguner/skillpot/actions/runs/42306065730",
+  "run_id": "42306065730",
+  "event": "pull_request",
+  "conclusion": "failure",
+  "source_run_head": "b4d8f6020ca5b9646f68f5dfd915b61bb6e30db7",
+  "actual_checkout_commit": "UNKNOWN; may be a PR synthetic merge, not inferred from run head",
+  "full_original_sha256": "edbc4afdc1879d9375441477641f49bba738e8da423f1c68e95cd53e6de69426",
+  "excerpt_sha256": "5b73c6b7cabc64f9e82e0c2ce7f57f33430de536fff9145c88104f135ab25b63",
+  "selected_original_line_ids": [
+    8,
+    11,
+    18,
+    19,
+    169,
+    171,
+    172,
+    174,
+    176,
+    178,
+    180,
+    182,
+    184
+  ],
+  "transformations": [
+    "Selected literal lines in ascending original line order; preserved bytes and line endings.",
+    "Omitted intervening context, including diagnostic context lines beginning + because those contain trailing whitespace; omission is disclosed and does not strip or rewrite retained data.",
+    "No timestamps or outputs rewritten.",
+    "Original full record retained outside this repository; private local path intentionally not published."
+  ],
+  "provenance": [
+    "Public GitHub Actions run metadata at public_source_url.",
+    "At run head, examples/change-impact/change.diff lines 8, 12, 13 and skills/change-impact/assets/example-input.md lines 164, 168, 169 contain single-space trailing whitespace."
+  ],
+  "authored_countercases": [
+    "wrong_revision",
+    "missing_contradiction",
+    "wrong_timeline_timestamp",
+    "wrong_locator",
+    "false_production_impact",
+    "false_fixed_from_retry"
+  ],
+  "input_files": {
+    "sources/case.md": "7b7673ff3056b48c066ad875bba5f925830264e7bcce8cc0d5a5f9d334ecb397",
+    "sources/ci-excerpt.log": "5b73c6b7cabc64f9e82e0c2ce7f57f33430de536fff9145c88104f135ab25b63",
+    "sources/source-lines.json": "fb204420d4c5dce6449fb8df456c30c844cf2d10a319a125ca8aa9d5fc538f6b"
+  }
+}

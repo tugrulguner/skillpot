@@ -1,0 +1,29 @@
+{
+  "selection": "Source data selected at the recorded run head; not a command receipt or evidence of the actual checkout commit",
+  "files": [
+    {
+      "path": "examples/change-impact/change.diff",
+      "revision": "b4d8f6020ca5b9646f68f5dfd915b61bb6e30db7",
+      "git_blob": "fa5c4fff7f230a34d333b5afb3a947ceb9f7f146",
+      "sha256": "15aa7e6e7d150dd1269bdee9e62f946ecedd0f193981a48cb57aac4daf691897",
+      "selected_lines": {
+        "8": " ",
+        "12": " ",
+        "13": " "
+      },
+      "url": "https://github.com/tugrulguner/skillpot/blob/b4d8f6020ca5b9646f68f5dfd915b61bb6e30db7/examples/change-impact/change.diff"
+    },
+    {
+      "path": "skills/change-impact/assets/example-input.md",
+      "revision": "b4d8f6020ca5b9646f68f5dfd915b61bb6e30db7",
+      "git_blob": "be5a7936c3636ef07f51bfb8e5c8c0576f894006",
+      "sha256": "b10ca771754b7ea1386505f0b2fe595490a694da7da2090036692fe3a6fe7713",
+      "selected_lines": {
+        "164": " ",
+        "168": " ",
+        "169": " "
+      },
+      "url": "https://github.com/tugrulguner/skillpot/blob/b4d8f6020ca5b9646f68f5dfd915b61bb6e30db7/skills/change-impact/assets/example-input.md"
+    }
+  ]
+}

@@ -116,6 +116,10 @@ family discovery deploys independently and each alignment change needs merge app
 - [x] Implement original `bug-repro`: a minimized runnable reproducer, regression
       test and evidence-backed guide, with explicit execution permissions, isolated
       case artifacts and honest failed/blocked outcomes.
+- [x] Implement original `incident-triage`: bounded evidence-linked `incident.md`
+      and `timeline.md`, observed impact and supporting/contradicting hypotheses,
+      inspection-only default, a source-derived historical CI example and selective
+      installation. No automatic diagnostics, remediation or task-efficacy claim.
 - [ ] Add useful skills with concrete inputs, outputs, permissions, public source
       rights and a named maintenance owner.
 - [ ] Improve task examples and failure guidance when users report actual gaps.
