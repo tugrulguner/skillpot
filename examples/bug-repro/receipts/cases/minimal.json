@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "<CONSUMER_PYTHON>",
+    "-I",
+    "-B",
+    "<REPO_ROOT>/examples/bug-repro/reproduce.py",
+    "--items",
+    "1"
+  ],
+  "cwd": "<CASE_CWD>",
+  "timeout_seconds": 10,
+  "source_files": {
+    "buggy.py": "540b0b23c892d4f1f46f9c42ab423e0896b9295456dbed1ff476e4dcbb94f899",
+    "known-good-control.py": "6dfc347ba689ef6f5a6c784cbccfbbc81b8fe796e762e1d62cc082595ae34114",
+    "reproduce.py": "2894e4bc0a4c6ca64671c886b4b024c03b0eb7b0e67a4db43c45ac64a3191000",
+    "regression.py": "8e03fb253c61ef75262bc6388782741bfea3b5de2506fa1917d96bce3c5c2b5a"
+  },
+  "status": "completed",
+  "exit_code": 1,
+  "stdout": "{\"actual_repr\": \"['item-0']\", \"expected_repr\": \"[]\", \"imported_module_path\": \"<REPO_ROOT>/examples/bug-repro/buggy.py\", \"input_sha256\": \"1b26e937e8da4baf7a63c43079b5d63dc624cedc1225446493b46debd6e591f1\", \"items\": 1, \"limit\": 0, \"python_executable\": \"<CONSUMER_PYTHON>\", \"python_version\": \"3.11.6\", \"status\": \"Reproduced\", \"target_path\": \"<REPO_ROOT>/examples/bug-repro/buggy.py\", \"target_sha256\": \"540b0b23c892d4f1f46f9c42ab423e0896b9295456dbed1ff476e4dcbb94f899\"}\n",
+  "stderr": ""
+}

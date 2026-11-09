@@ -1,0 +1,70 @@
+{
+  "scope": "Parent execution of exact public fictional scripts; not observed agent task output",
+  "source_files": {
+    "buggy.py": "540b0b23c892d4f1f46f9c42ab423e0896b9295456dbed1ff476e4dcbb94f899",
+    "known-good-control.py": "6dfc347ba689ef6f5a6c784cbccfbbc81b8fe796e762e1d62cc082595ae34114",
+    "reproduce.py": "2894e4bc0a4c6ca64671c886b4b024c03b0eb7b0e67a4db43c45ac64a3191000",
+    "regression.py": "8e03fb253c61ef75262bc6388782741bfea3b5de2506fa1917d96bce3c5c2b5a"
+  },
+  "cases": {
+    "environment": {
+      "expected_exit": 0,
+      "raw_sha256": "cc12b495f1e3713ba9ed1e6036aba5de02b6243309654bd0a29b8b527a1955ef",
+      "public_sha256": "6e210044215d8f6df11ab586d62b116855241082ed024972ded7745902c5d42f"
+    },
+    "original": {
+      "expected_exit": 1,
+      "raw_sha256": "2bf43e1b84e3da3e6e170365f4de2b8c846e787d47a474007ebaa2a7089edeeb",
+      "public_sha256": "e8bc7e296a6d1712a2724019361d5ea4dab7a18e10e43d9f907be144dd47c1ef"
+    },
+    "minimal": {
+      "expected_exit": 1,
+      "raw_sha256": "7c4ec99caeed130ddee85e184b1611a8711fa923b87488f3988fbc20227bc622",
+      "public_sha256": "b2ea27f4a1bb558e2d661aa20ef30af50124986a4e933e74221e9c4f2a5a971c"
+    },
+    "empty": {
+      "expected_exit": 0,
+      "raw_sha256": "035c2d53112ea7a856703c497aabba517d35d8818e5fb75d6b161a067afdcf1e",
+      "public_sha256": "4a262afae2c231672ee827e85df0dc20bb3a7c2d11d775a969d1c5dbb4f1f704"
+    },
+    "positive": {
+      "expected_exit": 0,
+      "raw_sha256": "fbe7154ead42af1d4b1333acdeebb513b78b848e0c450734071cf66a30186d42",
+      "public_sha256": "e541f565b0416a0f7f159791ae8db9ba3213f3cae0ed168cffb769d20e9f3e79"
+    },
+    "none": {
+      "expected_exit": 0,
+      "raw_sha256": "6beea485f61ea865d72947399b63bec3296c2512d2179403a83f773acbd77f2f",
+      "public_sha256": "b4ef362fd8ba6ba4c461f744435cd31bab7a189becc85a9bb75280257852e67d"
+    },
+    "good_control": {
+      "expected_exit": 0,
+      "raw_sha256": "ec69d589cc747e7a05070c26c7d694bdcc016ed3c3b4479d467063c2f277e8c5",
+      "public_sha256": "d3001d9a9105b865b5fabd69341520fbbb85320157b377fd5e3fe1c900fd87e2"
+    },
+    "regression_bug": {
+      "expected_exit": 1,
+      "raw_sha256": "0c88dfefc51d40c4b6da232222f4eecd512ee046044ae01a272b8c15618df72f",
+      "public_sha256": "d76f904ba48bc4de122abd5c8f834fb6183a07d3d50c4d4c239b61577b0e4337"
+    },
+    "regression_good": {
+      "expected_exit": 0,
+      "raw_sha256": "c36e10d5d71719006b619a82e1bffc71643eb8ac246dd5cbd5b16e12d117176d",
+      "public_sha256": "0928086b5141738fac73fa26bb1f7dd2e0620e61cdc762cda0bc8351d0fd9f94"
+    },
+    "missing_target": {
+      "expected_exit": 2,
+      "raw_sha256": "1b82664c14fb3855de9044e6f5281e98f387f319103d886e352b768f54d9da61",
+      "public_sha256": "e87788a06b233ed9ba1363fe3b32b2203253ec56be5d873522dd9cab0cb8ea62"
+    }
+  },
+  "redaction": {
+    "method": "Only literal path-prefix replacements in serialized raw records; no output synthesis",
+    "tokens": [
+      "<CASE_CWD>",
+      "<REPO_ROOT>",
+      "<CONSUMER_PYTHON>"
+    ]
+  },
+  "qualification": "Deterministic authored zero-limit example and authored contrast, not a real product release/fix or broad efficacy study"
+}
