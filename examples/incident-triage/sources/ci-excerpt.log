@@ -1,0 +1,13 @@
+source	Check authored documents and source contract	2026-11-06T22:37:02.7377903Z [36;1mgit diff --check HEAD^ HEAD[0m
+source	Check authored documents and source contract	2026-11-06T22:37:02.7501011Z Python 3.14.4
+source	Check authored documents and source contract	2026-11-06T22:37:04.7277690Z PASS: local Markdown destinations and personal-path checks
+source	Check authored documents and source contract	2026-11-06T22:37:04.7641399Z PASS: pinned project skill source integrity
+source	Check authored documents and source contract	2026-11-06T22:37:06.8379918Z Ran 147 tests in 2.006s
+source	Check authored documents and source contract	2026-11-06T22:37:06.8380110Z OK
+source	Check authored documents and source contract	2026-11-06T22:37:06.8490429Z examples/change-impact/change.diff:8: trailing whitespace.
+source	Check authored documents and source contract	2026-11-06T22:37:06.8490958Z examples/change-impact/change.diff:12: trailing whitespace.
+source	Check authored documents and source contract	2026-11-06T22:37:06.8491438Z examples/change-impact/change.diff:13: trailing whitespace.
+source	Check authored documents and source contract	2026-11-06T22:37:06.8491962Z skills/change-impact/assets/example-input.md:164: trailing whitespace.
+source	Check authored documents and source contract	2026-11-06T22:37:06.8492479Z skills/change-impact/assets/example-input.md:168: trailing whitespace.
+source	Check authored documents and source contract	2026-11-06T22:37:06.8492829Z skills/change-impact/assets/example-input.md:169: trailing whitespace.
+source	Check authored documents and source contract	2026-11-06T22:37:06.8507649Z ##[error]Process completed with exit code 2.

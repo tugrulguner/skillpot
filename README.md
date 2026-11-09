@@ -97,9 +97,10 @@ instructions grants no additional authority.
 ## Choose a workflow
 
 Published v0.4.1 contains ten skills, including `decision-brief` and
-`document-actions`. Current source contains thirteen workflows, adding the unreleased
-`claim-check`, `change-impact` and `bug-repro` bundles. Their [claim-check](docs/claim-check-first-use.md),
-[change-impact](docs/change-impact-first-use.md) and [bug-repro](docs/bug-repro-first-use.md)
+`document-actions`. Current source contains fourteen workflows, adding the unreleased
+`claim-check`, `change-impact`, `bug-repro` and `incident-triage` bundles. Their [claim-check](docs/claim-check-first-use.md),
+[change-impact](docs/change-impact-first-use.md), [bug-repro](docs/bug-repro-first-use.md)
+and [incident-triage](docs/incident-triage-first-use.md)
 automated first-use guides select separate source revisions because the stable release
 does not contain these skills.
 The original two workflows retain
@@ -124,6 +125,7 @@ its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
 | Audit a repository against an exact delivery goal | [repository-readiness](skills/repository-readiness/SKILL.md), experimental |
 | Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md) 0.1.2, included in v0.4.1; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
 | Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md) 0.1.1, included in v0.4.1 |
+| Triage symptoms and logs into an evidence-backed investigation handoff | [incident-triage](skills/incident-triage/SKILL.md) 0.1.0, source only; `incident.md` and `timeline.md`; [one-command setup](docs/incident-triage-first-use.md); inspection-only by default |
 | Minimize a reported failure into a runnable reproducer and regression test | [bug-repro](skills/bug-repro/SKILL.md) 0.1.0, source only; [one-command setup](docs/bug-repro-first-use.md); execution requires explicit permission |
 | Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, current source only; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
 | Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.0, current source only; [one-command setup](docs/claim-check-first-use.md) |

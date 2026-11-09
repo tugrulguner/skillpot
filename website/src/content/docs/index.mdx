@@ -15,7 +15,7 @@ import SkillExcerpt from '../../components/SkillExcerpt.astro';
 
 ## Install one skill
 
-Published v0.4.1 has ten skills: seven public project/contributor packages, the original experimental repository-readiness workflow, decision-brief 0.1.1 and document-actions 0.1.2. Current source has thirteen skills, including the original **claim-check**, **change-impact** and **bug-repro** bundles, each version 0.1.0, unreleased and not in that ten-skill release. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
+Published v0.4.1 has ten skills: seven public project/contributor packages, the original experimental repository-readiness workflow, decision-brief 0.1.1 and document-actions 0.1.2. Current source has fourteen skills, including the original **claim-check**, **change-impact**, **bug-repro** and **incident-triage** bundles, each version 0.1.0, unreleased and not in that ten-skill release. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
 
 <div className="install"><strong>Install one current-source skill</strong><code>{'npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check'}</code><a href="https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md">Claim-check first-use guide →</a></div>
 
@@ -43,7 +43,9 @@ Current-source **change-impact** maps a specified code change to evidenced calle
 
 Current-source **bug-repro** turns an authorized bug investigation into a minimal runnable reproducer, a regression test and `repro.md` with actual evidence. It does not execute unapproved code or silently fix the product. See its [bug-repro first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/bug-repro-first-use.md); Not reproduced and Blocked remain valid outcomes.
 
-[Browse the ten published skills and three source-only workflows](/catalogue/) or read the [host setup](/host-setup/).
+Current-source **incident-triage** turns bounded symptoms and logs into `incident.md` and `timeline.md`, separating observed impact, source-linked events, hypotheses and next checks. It is inspection-only by default, without automatic diagnostics or remediation. See the [incident-triage first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/incident-triage-first-use.md); a passing retry does not establish a fixed cause.
+
+[Browse the ten published skills and four source-only workflows](/catalogue/) or read the [host setup](/host-setup/).
 
 ## Original workflow design
 
