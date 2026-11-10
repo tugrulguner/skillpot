@@ -30,7 +30,10 @@ skill documentation; installed operation must not depend on invisible local file
 Start with YAML frontmatter containing `name` and `description`. The name matches
 its directory, is at most 64 characters, uses lowercase ASCII letters, digits and
 single hyphens, and has no leading/trailing hyphen. Description states the task and
-trigger; SkillPot targets a concise first sentence readable in a truncated catalogue.
+trigger; SkillPot enforces a nonempty description of at most 60 characters for a
+concise first sentence readable in a truncated catalogue. Root fields stay within
+the portable specification; host-specific extensions belong in optional host setup,
+not required entry-point metadata. Duplicate YAML keys are rejected.
 Use `license: MIT` only when provenance permits it. Optional `compatibility` describes
 actual requirements, not untested host support. Custom `metadata` values are strings,
 for example `version: "0.1.0"` and `maintainer: "tugrulguner"`.
@@ -66,7 +69,12 @@ offline resource validation; live model execution is not a support prerequisite.
 
 ## Verification gates
 
-- Validate frontmatter and relative resources against the open specification.
+- Validate every bundle, including original workflows, not only imported catalogue entries.
+- Validate frontmatter and inline relative resources against the portable contract.
+  Require a complete instruction body, provenance and compatibility records; refuse
+  source-bundle symlinks, missing resources and links escaping a standalone bundle.
+  Link out-of-bundle maintenance evidence by explicit public revision instead.
+  These are bounded source checks, not a complete Markdown parser or host sandbox.
 - Test scripts, failure modes, examples, clean setup, and exact output artifacts.
 - Check portable source for secrets, private paths, and undeclared external dependencies.
 - Use official host specifications for selective installation, update/user-edit

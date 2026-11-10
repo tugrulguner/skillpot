@@ -45,7 +45,7 @@ for (const width of widths) for (const theme of themes) {
     await page.screenshot({ path: info.outputPath(`home-${width}-${theme}.png`), fullPage: true });
     await page.locator('.creator-row').screenshot({ path: info.outputPath(`creator-${width}-${theme}.png`) });
     await expect(page.locator('footer a[rel="next"]')).toHaveAttribute('href', '/quickstart/');
-    await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check');
+    await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check');
     await expect(page.locator('.install a')).toHaveAttribute('href', 'https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md');
     await expect(page.locator('.overview')).toContainText('unreleased');
   });
@@ -68,7 +68,7 @@ test('generated HTML, Markdown, routes and real source excerpt agree', async ({ 
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://skillpot.modepot.io/${route}/`);
   }
   await page.goto('/');
-  await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check');
+  await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check');
   await expect(page.locator('.overview')).toContainText('Published v0.4.1 has ten skills');
   const source = await readFile(new URL('../../../skills/intpot-python/SKILL.md', import.meta.url),'utf8');
   await expect(page.locator('.skill-excerpt code')).toHaveText(source.split('\n').slice(0,7).join('\n'));

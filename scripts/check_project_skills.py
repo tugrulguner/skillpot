@@ -1,4 +1,4 @@
-"""Validate pinned skill distribution integrity, offline (not runtime qualification)."""
+"""Validate portable bundles and pinned source integrity, offline (not task efficacy)."""
 import argparse
 import hashlib
 import json
@@ -140,5 +140,5 @@ if __name__ == "__main__":
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args()
     errors = check(args.root)
-    print("\n".join(errors) if errors else "PASS: pinned project skill source integrity")
+    print("\n".join(errors) if errors else "PASS: portable bundles and pinned project source integrity")
     raise SystemExit(bool(errors))

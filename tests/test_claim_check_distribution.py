@@ -6,7 +6,8 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-PIN = "4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c"
+PIN = "66bad57a0a42a4aec2c5d54feee1df8fb242e166"
+ORIGINAL_PIN = "4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c"
 
 
 class ClaimCheckDistributionTests(unittest.TestCase):
@@ -45,16 +46,17 @@ class ClaimCheckDistributionTests(unittest.TestCase):
         self.assertEqual(len(actual), 14)
         self.assertIn("Published v0.4.1 contains ten skills", (ROOT / "README.md").read_text())
 
-    def test_public_replay_manifest_binds_every_installed_file(self):
+    def test_original_public_replay_record_is_preserved_separately_from_current_matrix(self):
         path = ROOT / "docs/claim-check-distribution.json"
-        self.assertTrue(path.is_file(), "public installer verification record missing")
+        self.assertTrue(path.is_file(), "original public installer record missing")
+        self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), "3b1eefd22ed52ef53d595bd8e104d7494c0e1f7c0a768226e86dccde33cbac5a")
         record = json.loads(path.read_text())
-        self.assertEqual(record["source_commit"], PIN)
-        package = ROOT / "skills/claim-check"
-        actual = {p.relative_to(package).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
-                  for p in package.rglob("*") if p.is_file()}
-        self.assertEqual(actual, record["source_files"])
-        self.assertEqual(len(actual), 8)
+        self.assertEqual(record["source_commit"], ORIGINAL_PIN)
+        self.assertEqual(len(record["source_files"]), 8)
+        # Current-byte equality is enforced for ALL bundles by test_collection_hardening.
+        matrix = json.loads((ROOT / "docs/skill-hardening-distribution.json").read_text())
+        self.assertEqual(matrix["source_commit"], PIN)
+        self.assertEqual(len([r for r in matrix["skills"] if r["name"] == "claim-check"]), 1)
         self.assertEqual(set(record["agents"]), {"claude-code", "cursor", "codex", "hermes-agent"})
         self.assertTrue(record["lock_ref_verified"])
         self.assertTrue(record["selected_removal_verified"])

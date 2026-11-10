@@ -35,7 +35,7 @@ class PublishedDefaultsTests(unittest.TestCase):
         self.assertIn("current source", excerpt)
         self.assertIn("v0.4.1", excerpt)
         home = (ROOT / "website/src/content/docs/index.mdx").read_text()
-        self.assertIn("npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check", home)
+        self.assertIn("npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check", home)
         self.assertIn("releases/tag/v0.4.1", home)
 
     def test_publication_labels_do_not_change_released_instruction_bodies(self):

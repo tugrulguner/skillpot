@@ -1,6 +1,6 @@
 # Claim-check: one-command installation
 
-`claim-check` 0.1.0 is available from the exact current-source revision below. It is
+`claim-check` 0.1.1 is available from the exact current-source revision below. It is
 **not included in published SkillPot v0.4.1**. The stable collection remains unchanged;
 this is selective source installation, not a new collection release.
 
@@ -10,7 +10,7 @@ With Node.js 22.20+ and Git available, run this directly in the project where yo
 your agent. No repository clone, folder management or manual input copying is needed:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check
 ```
 
 Select your agent in the installer if prompted. The installer may detect the invoking
@@ -27,7 +27,8 @@ source in `skills-lock.json`. The two optional fictional example inputs arrive w
 the bundle. There is no custom SkillPot installer or required service.
 
 The literal source pin contains the procedure, templates, checklist and both example
-inputs together. The public installer replay verified all eight files against that
+inputs together. The [current-source installer matrix](skill-hardening-distribution.json)
+verified all eight files against that
 Git commit, the recorded source ref, four agent target locations, an unrelated sibling
 and selected removal. It used Node 22.23.4 and skills CLI 1.7.6 in an owned isolated
 home/project. No native agent client, account probe, model or review task was run;

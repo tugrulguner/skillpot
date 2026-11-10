@@ -70,8 +70,12 @@ The checker verifies local Markdown file destinations and flags personal absolut
 paths. It does not check heading anchors, external URLs, HTML links, artwork parity,
 secrets comprehensively, agent activation, or task quality. Also:
 
-The project catalogue validator also parses actual YAML and checks immutable source
-pins, portable metadata, snapshot hashes and preserved license notices. PyYAML is a
+The source validator checks every distributable bundle’s complete frontmatter/body,
+required records, source symlinks and standalone inline Markdown resources. For imported
+catalogue entries it additionally checks immutable source pins, snapshot hashes and
+preserved license notices. Duplicate YAML keys and unsupported host-specific root
+fields are rejected; metadata values remain strings. See the
+[current-source hardening record](docs/skill-hardening.md) and its public installer matrix. PyYAML is a
 development-only dependency pinned in `requirements-dev.txt`; `uv run` isolates it
 outside the checkout. Alternatively install that file in an approved external virtual
 environment and use its Python for these commands. The catalogue check does not prove
