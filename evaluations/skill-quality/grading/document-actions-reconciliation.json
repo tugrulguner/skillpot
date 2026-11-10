@@ -1,0 +1,19 @@
+{
+  "kind": "controller source-exact reconciliation; original grader and independent addendum preserved",
+  "case": "doc-actions-handoff-001",
+  "attempt": "attempt-2",
+  "retained_finding": {
+    "id": "A3",
+    "containing_heading": "Unresolved items",
+    "expected_heading": "Outstanding actions and requirements",
+    "output_quote": "## Unresolved items\n\nNone identified within the supplied scope.\n\n### A3 \u2014 Send the revised access matrix to Mara\n\n- Category: Assigned action.\n- Source citation and evidence supporting task/category: S1:13\u201317 \u2014 Mara explicitly asks Niko to send the revised matrix to her; Niko says \u201cI\u2019ll take it\u201d; Mara identifies it as the only item she has assigned so far.",
+    "output_sha256": "e8bbd5ab87892cede2203e763857a90402d6c0c14eafaa61397efabf536a7b6d",
+    "raw_archive_member": "initial/doc-actions-handoff-001-attempt-2/actions.md",
+    "preview_sha256": "c70b35675634d32ee97b2c3916ef9a448f86d34b8812440a7d7f5e86123f09df"
+  },
+  "withdrawn": "The original extra finding incorrectly attributed the misplaced later record to A2. A2 is under Outstanding; its uncertain trigger does not itself make its classification unresolved.",
+  "quote_conventions": "The retained output_quote above is a literal verified span. The original independent addendum also contains format-normalized or ellipsized source-contract excerpts and an explicitly abbreviated A2 quotation; those are not asserted to be literal complete spans.",
+  "scores_unchanged": true,
+  "repair": "assisted/doc-actions-attempt-2/correction-receipt.json",
+  "scope": "A3 placement only; does not establish whole-report correctness or injection resistance."
+}

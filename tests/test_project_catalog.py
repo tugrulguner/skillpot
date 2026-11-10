@@ -36,9 +36,15 @@ class ProjectCatalogTests(unittest.TestCase):
     def hash(self, rel):
         return hashlib.sha256((self.skill / rel).read_bytes()).hexdigest()
 
-    def check(self):
+    def check(self, entries=None, catalog_override=None, catalog_text=None):
+        record = {"schema_version": 1, "skills": [self.entry] if entries is None else entries}
+        if catalog_override is not None:
+            record = catalog_override
         (self.root / "catalog/modepot-sources.json").write_text(
-            json.dumps({"schema_version": 1, "skills": [self.entry]}))
+            json.dumps(record) if catalog_text is None else catalog_text)
+        return self.run_cli()
+
+    def run_cli(self):
         return subprocess.run([sys.executable, str(SCRIPT), "--root", str(self.root)],
                               capture_output=True, text=True, timeout=10)
 
@@ -195,6 +201,83 @@ class ProjectCatalogTests(unittest.TestCase):
         result = self.check()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("frontmatter license", result.stdout)
+        self.assertNotIn("Traceback", result.stderr)
+
+    def test_text_fields_reject_blank_descriptions_and_overlong_compatibility(self):
+        path = self.skill / "SKILL.md"
+        original = path.read_text()
+        variants = (
+            original.replace("description: Use a sample task.", 'description: "   "'),
+            original.replace("name: sample", "name: sample\ncompatibility: " + "a" * 501),
+        )
+        for text in variants:
+            with self.subTest(text=text):
+                path.write_text(text)
+                result = self.check()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("frontmatter", result.stdout)
+                self.assertNotIn("Traceback", result.stderr)
+        path.write_text(original.replace("name: sample", "name: sample\ncompatibility: " + "a" * 500))
+        self.assertEqual(self.check().returncode, 0)
+
+    def test_unreadable_utf8_is_a_bounded_resource_diagnostic(self):
+        for relative in ("SKILL.md", "compatibility.md"):
+            with self.subTest(path=relative):
+                path = self.skill / relative
+                original = path.read_bytes()
+                path.write_bytes(b"\xff")
+                try:
+                    result = self.check()
+                    self.assertNotEqual(result.returncode, 0)
+                    self.assertIn("cannot read", result.stdout)
+                    self.assertIn(relative, result.stdout)
+                    self.assertNotIn("Traceback", result.stderr)
+                finally:
+                    path.write_bytes(original)
+
+    def test_catalogue_requires_unique_bundle_names(self):
+        result = self.check(entries=[self.entry, dict(self.entry)])
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("duplicate catalogue", result.stdout)
+        self.assertNotIn("Traceback", result.stderr)
+        self.assertEqual(self.check().returncode, 0)
+
+    def test_malformed_catalogue_shapes_return_bounded_diagnostics(self):
+        variants = [[], {"schema_version": True, "skills": []},
+                    {"schema_version": 1, "skills": "wrong"}]
+        variants += [{"schema_version": 1, "skills": [row]} for row in
+                     [None, 42, {}, {**self.entry, "name": ["sample"]},
+                      {**self.entry, "upstream_revision": 123}]]
+        for record in variants:
+            with self.subTest(record=record):
+                result = self.check(catalog_override=record)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("catalogue", result.stdout)
+                self.assertNotIn("Traceback", result.stderr)
+        self.assertEqual(self.check().returncode, 0)
+
+    def test_invalid_json_unreadable_catalogue_and_source_link_are_diagnostics(self):
+        for text in ("{", "null"):
+            with self.subTest(text=text):
+                result = self.check(catalog_text=text)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("catalogue", result.stdout)
+                self.assertNotIn("Traceback", result.stderr)
+        self.assertEqual(self.check().returncode, 0)
+        path = self.root / "catalog/modepot-sources.json"
+        original = path.read_bytes()
+        path.write_bytes(b"\xff")
+        result = self.run_cli()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("catalogue", result.stdout)
+        self.assertNotIn("Traceback", result.stderr)
+        path.write_bytes(original)
+        outside = self.root / "outside-catalogue.json"
+        path.rename(outside)
+        path.symlink_to(outside)
+        result = self.run_cli()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("catalogue symlink", result.stdout)
         self.assertNotIn("Traceback", result.stderr)
 
     def test_valid_fixture_passes(self):

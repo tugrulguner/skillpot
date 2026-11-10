@@ -27,7 +27,10 @@ class UniqueKeyLoader(yaml.SafeLoader):
 
 
 def check_entrypoint(directory, name):
-    text = (directory / "SKILL.md").read_text()
+    try:
+        text = (directory / "SKILL.md").read_text(encoding="utf-8")
+    except (OSError, UnicodeError):
+        return None, [f"{name}: cannot read SKILL.md as UTF-8"]
     frontmatter = re.fullmatch(r"---\n(.*?)\n---(?:\n(.*))?", text, re.DOTALL)
     if frontmatter is None:
         return None, [f"{name}: incomplete portable frontmatter"]
@@ -49,8 +52,12 @@ def check_entrypoint(directory, name):
         if key in metadata and (not isinstance(metadata[key], str) or not metadata[key].strip()):
             errors.append(f"{name}: invalid portable frontmatter {key}")
     if (metadata.get("name") != name
-            or not isinstance(description, str) or not 0 < len(description) <= 60):
+            or not isinstance(description, str) or not description.strip()
+            or not 0 < len(description) <= 60):
         errors.append(f"{name}: invalid portable frontmatter")
+    compatibility = metadata.get("compatibility")
+    if isinstance(compatibility, str) and len(compatibility) > 500:
+        errors.append(f"{name}: portable frontmatter compatibility exceeds 500 characters")
     values = metadata.get("metadata", {})
     if not isinstance(values, dict) or any(not isinstance(k, str) or not isinstance(v, str)
                                            for k, v in values.items()):
@@ -62,7 +69,11 @@ def check_resources(directory, name):
     """Check inline local Markdown destinations within the installed bundle."""
     errors = []
     for path in sorted(directory.rglob("*.md")):
-        text = path.read_text(encoding="utf-8")
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError):
+            errors.append(f"{name}: cannot read resource: {path.relative_to(directory)}")
+            continue
         for match in re.finditer(r"!?\[[^\]\n]*\]\(([^\s)]+)(?:\s+[^)]*)?\)", text):
             destination = match.group(1).strip("<>")
             parsed = urlsplit(destination)
@@ -99,12 +110,32 @@ def check(root):
             continue
         metadata, problems = check_entrypoint(directory, name)
         errors.extend(problems)
+        if metadata is None:
+            continue
         errors.extend(check_resources(directory, name))
-        if metadata is not None:
-            packages[name] = metadata
-    catalog = json.loads((root / "catalog/modepot-sources.json").read_text())
+        packages[name] = metadata
+    catalog_path = root / "catalog/modepot-sources.json"
+    if catalog_path.is_symlink():
+        return errors + ["catalogue symlink is not portable"]
+    try:
+        catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return errors + ["cannot read catalogue as UTF-8 JSON"]
+    if (not isinstance(catalog, dict) or type(catalog.get("schema_version")) is not int
+            or catalog.get("schema_version") != 1 or not isinstance(catalog.get("skills"), list)):
+        return errors + ["invalid catalogue schema"]
+    seen = set()
+    required = ("name", "directory", "upstream_revision", "upstream_sha256", "license", "license_sha256")
     for entry in catalog["skills"]:
+        if (not isinstance(entry, dict)
+                or any(not isinstance(entry.get(key), str) or not entry[key].strip() for key in required)):
+            errors.append("invalid catalogue entry fields")
+            continue
         name = entry["name"]
+        if name in seen:
+            errors.append(f"{name}: duplicate catalogue entry")
+            continue
+        seen.add(name)
         if (not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name)
                 or entry["directory"] != f"skills/{name}"):
             errors.append(f"{name}: unsafe directory")

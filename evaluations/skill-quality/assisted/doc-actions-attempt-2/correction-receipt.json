@@ -1,0 +1,11 @@
+{
+  "kind": "parent-assisted artifact correction; NOT a new agent attempt or replacement of original",
+  "finding": "Assigned access-matrix record A3 appeared in Unresolved items despite Category:Assigned action; a due-field conflict does not change assignment category.",
+  "intervention": "Moved unchanged A3 block into Outstanding actions and requirements before Proposals; all record fields/IDs/citations and questions.md preserved byte-for-byte. No skill instruction edited.",
+  "raw_actions_sha256": "e8bbd5ab87892cede2203e763857a90402d6c0c14eafaa61397efabf536a7b6d",
+  "corrected_actions_sha256": "96bdde76d851c3e11d6b28d1993834c7fb746b489fe1e62c50bb5de18eb70e86",
+  "questions_unchanged": true,
+  "original_containing_section": "Unresolved items",
+  "corrected_containing_section": "Outstanding actions and requirements",
+  "wrong_attempted_patch_target_exists": false
+}

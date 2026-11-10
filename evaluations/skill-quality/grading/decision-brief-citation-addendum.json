@@ -1,0 +1,21 @@
+{
+  "kind": "parent citation correction addendum; original independent grade preserved",
+  "raw_grade": "grading/raw/grade-decision-brief.json",
+  "case": "decision-brief-region-gates-001",
+  "attempt": "attempt-1",
+  "file": "brief.md",
+  "artifact_sha256": "ea000a1bf988d91747bbaa49e028a6f7d767fe45b95f8ece30d477138e85d5c3",
+  "changes": [
+    {
+      "assertion": "freshness-and-cost-qualifications",
+      "original_quote": "internal estimate is below threshold but stale and not an updated quote",
+      "corrected_quote": "current approach's estimate is below threshold but stale and not an updated quote"
+    },
+    {
+      "assertion": "conflicting-cloud-evidence",
+      "original_quote": "proposed plan's region/configuration and quote scope are unclear",
+      "corrected_quote": "Proposed plan's region/configuration and quote scope are unclear"
+    }
+  ],
+  "reason": "Two alleged literal quotations were paraphrased/case-changed. Replaced only in derived grading view with exact artifact spans. Verdicts, reasons, frozen rubric and all original task reports remain unchanged. This corrects evidence citation, not task performance."
+}

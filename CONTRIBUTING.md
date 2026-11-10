@@ -38,6 +38,10 @@ skill format. Keep historical task results separate from setup instructions.
 Claims of improved task performance need separate, explicitly scoped comparisons
 with matched conditions, repeated/held-out inputs and a relevant incumbent. A source
 lint pass proves no such improvement. Never invent transcripts or measurements.
+See the [existing-skill quality protocol and observed task results](docs/skill-quality.md):
+freeze source-grounded criteria, keep answer oracles out of task inputs, preserve all
+attempts, and audit grader evidence and physical output structure. Retain mistakes
+and assisted corrections separately; passing rubric scores are not full correctness.
 
 ## Provenance and safety
 
