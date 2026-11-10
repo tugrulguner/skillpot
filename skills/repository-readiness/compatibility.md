@@ -10,9 +10,9 @@ sandbox commands or manage background servers/descendant process trees. No insta
 agent runtime, provider API, network service or media stack is bundled.
 
 An initial explicit-load attempt and a no-candidate attempt ran against the frozen
-public task in [the example](../../examples/repository-readiness/task.md). Both reached
+public task in [the example](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/examples/repository-readiness/task.md). Both reached
 the correct decision, but saved command records failed the full evidence rubric.
-The [record](../../evaluations/repository-readiness/initial-smoke/README.md) preserves
+The [record](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/evaluations/repository-readiness/initial-smoke/README.md) preserves
 those failures and a separate parent verification, without claiming improvement.
 A worker reading and applying the entry point is explicit loading, not automatic
 catalogue selection, native host installation or trigger behavior. An assisted retry
@@ -22,7 +22,7 @@ cleanliness was separately verified; it does not erase the boundary violation.
 Those attempts used the original procedure without the new recorder. A revised
 procedure now requires absolute external destinations and the bundled recorder;
 regressions exercise actual refusal, overwrite, symlink, failure and timeout behavior.
-The [repaired-version smoke](../../evaluations/repository-readiness/repaired-smoke/README.md)
+The [repaired-version smoke](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/evaluations/repository-readiness/repaired-smoke/README.md)
 was accepted for its frozen bounded audit task: the agent explicitly read the skill,
 ran the checks through the recorder, and delivered the cited report. All six project
 command records were retained; target hashes and modification times were unchanged,

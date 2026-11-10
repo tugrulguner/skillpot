@@ -4,7 +4,7 @@ Current source: audited Intpot main commit `470584e21ee518e983087175f217c65664bd
 Latest observed release: [v0.16.0](https://github.com/tugrulguner/intpot/releases/tag/v0.16.0),
 commit `f6ec26afc60011d41209cd705636f60e881d492f`. Its guide differs from this snapshot.
 This refresh validates public source, portable metadata, required resources, notice
-parity and hashes offline. Host placement follows the [official-contract quickstart](../../docs/quickstart.md);
+parity and hashes offline. Host placement follows the [official-contract quickstart](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/docs/quickstart.md);
 no harness sessions, authentication probes or product executions were run for this refresh.
 
 The upstream project metadata requires Python >=3.11. Definition provenance requires
@@ -14,8 +14,8 @@ remain unchanged in the reference. Numeric-range conversion and its guarantees a
 explicitly unreleased in this source snapshot and are not provided by v0.16.0. Use
 matching product dependencies; installing the skill installs no product or extras.
 
-Historical [Hermes installation checks](../../evaluations/modepot-project-skills/native-install-001/README.md)
-and [consumer replays](../../evaluations/modepot-project-skills/consumer-tasks-001/README.md)
+Historical [Hermes installation checks](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/evaluations/modepot-project-skills/native-install-001/README.md)
+and [consumer replays](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/evaluations/modepot-project-skills/consumer-tasks-001/README.md)
 remain at their recorded older snapshots. The latter used Intpot 0.13.0 at
 `8e583cc4b2b6785955268d09a12dfdd955194b88`, CPython 3.12.13 on macOS arm64,
 with standalone CLI and generated HTTP checks, failures and parent assistance.

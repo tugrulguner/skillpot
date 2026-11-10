@@ -11,7 +11,7 @@ This current-source refresh is not included in published SkillPot v0.4.1, which
 retains instruction version `0.2.0` and upstream pin
 `409df5b68a2386bd04e1f2cf0f057773142e0759`. Stable setup still selects that collection;
 this does not silently upgrade installed instructions. See the
-[scoped refresh record](../../docs/published-upstream-refresh.md). This refresh
+[scoped refresh record](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/docs/published-upstream-refresh.md). This refresh
 validates source, not a new installation, socket run or lifecycle/runtime qualification.
 
 This is pinned public Dexpot guidance, not a newly qualified runtime or agent host.
@@ -20,9 +20,9 @@ Underlying runtime/platform/scheduler boundaries remain those of the pinned upst
 revision, not a claim that this distribution tested every combination.
 
 Source structure, portable metadata, reference integrity and complete MIT notice are
-packaging checks. [Native Hermes install/list/selective-removal](../../evaluations/modepot-project-skills/native-install-001/README.md)
+packaging checks. [Native Hermes install/list/selective-removal](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/evaluations/modepot-project-skills/native-install-001/README.md)
 was exercised with exact installed instruction/reference/license byte parity. A later
-[bounded assisted consumer replay](../../evaluations/modepot-project-skills/consumer-tasks-001/README.md)
+[bounded assisted consumer replay](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/evaluations/modepot-project-skills/consumer-tasks-001/README.md)
 used a non-editable 0.7.1 install from the prior pin (not the refreshed source) on macOS arm64/CPython 3.12.13: actual
 HTTP success, body/path rejection, response filtering and owned listener cleanup passed.
 The original editable smoke and incomplete evidence are retained separately. No

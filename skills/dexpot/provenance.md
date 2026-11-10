@@ -26,7 +26,7 @@ Main-only typed query/header/cookie inputs are not imported.
 
 This source refresh is not in published SkillPot v0.4.1, whose Dexpot package remains
 at instruction 0.2.0 and the earlier v0.8.0 pin. Earlier installed/task records keep their
-original identities. See the [current refresh record](../../docs/published-upstream-refresh.md).
+original identities. See the [current refresh record](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/docs/published-upstream-refresh.md).
 
 - Audited upstream license SHA-256: `44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958`; complete MIT notices remain byte-identical.
 

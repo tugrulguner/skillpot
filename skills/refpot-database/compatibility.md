@@ -6,9 +6,9 @@ compiler for source builds. Windows, other architectures and free-threaded Pytho
 are unsupported. Installing this skill does not install the Refpot database package.
 
 Package/metadata/reference/license checks are separate from native host installation
-and actual database execution. [Native Hermes install/list/selective-removal](../../evaluations/modepot-project-skills/native-install-001/README.md)
+and actual database execution. [Native Hermes install/list/selective-removal](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/evaluations/modepot-project-skills/native-install-001/README.md)
 was exercised with exact installed instruction/reference/license byte parity.
-The [bounded source-matched consumer task](../../evaluations/modepot-project-skills/refpot-consumer-001/README.md)
+The [bounded source-matched consumer task](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/evaluations/modepot-project-skills/refpot-consumer-001/README.md)
 built this exact Refpot source as 0.1.2 in an isolated CPython 3.11.12 environment
 on macOS 26.5.2 arm64. The two shipped examples and repeatable CRUD/rollback/UTF-8/
 checkpoint/reopen assertions passed, including a separate parent replay of the

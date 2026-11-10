@@ -1,7 +1,7 @@
 # Provenance and maintenance
 
 Original SkillPot procedure and report template, authored for this repository by
-Tugrul Guner with Hermes Agent. MIT; see the repository's [license](../../LICENSE).
+Tugrul Guner with Hermes Agent. MIT; see the repository's [license](https://github.com/tugrulguner/skillpot/blob/203e942848b33ca5b1250b99d17536a19c145a5c/LICENSE).
 No private skill, kit, third-party instruction pack or product API guide was copied.
 
 The portable entry point follows the public
