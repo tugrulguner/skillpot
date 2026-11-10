@@ -21,7 +21,14 @@ def check(root):
             ("website", "playwright-report"), ("website", "test-results"),
         }:
             continue
-        text = path.read_text(encoding="utf-8")
+        if path.is_symlink():
+            errors.append(f"{path.relative_to(root)}: authored source symlink is not portable")
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError):
+            errors.append(f"{path.relative_to(root)}: cannot read authored source as UTF-8")
+            continue
         if re.search(r"/(?:Users|home)/[A-Za-z0-9_.-]+(?![A-Za-z0-9_.-])", text):
             errors.append(f"{path.relative_to(root)}: personal absolute path")
         for match in re.finditer(r"!?\[[^\]\n]*\]\(([^\s)]+)(?:\s+[^)]*)?\)", text):

@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "kind": "actual delegated task artifacts on authored fictional inputs; not correctness certification",
+  "source_snapshot": "abfa31581e7d7c40083cfade9020aa710a52dab7",
+  "manifest_sha256": "48295eaef1ef88cf1ff0b9d214a0b5d9382b02211d9b891e247b62f7ae7a9f92",
+  "attempts": [
+    {
+      "id": "doc-actions-handoff-001-attempt-1",
+      "case": "doc-actions-handoff-001",
+      "attempt": 1,
+      "outputs": {
+        "initial/doc-actions-handoff-001-attempt-1/questions.md": "25f929254d72ddb4a2d793a2351c46e5d260b592c6bedd6be6183ce92950e185",
+        "initial/doc-actions-handoff-001-attempt-1/actions.md": "d087423bfbb8010f9b7a1dfda7c94d2bd1f2991ee50b3339f58a3193b761dafe"
+      },
+      "export": "Exact original bytes in reports-exact.zip; readable Markdown preview may have disclosed whitespace-only adaptations.",
+      "runtime_reported_model": "gpt-6-luna",
+      "runtime_reported_api_calls": 11,
+      "runtime_reported_duration_seconds": 98.07,
+      "tokens": null,
+      "guidance_condition": "mixed host guidance, not isolated skill-only",
+      "visible_tool_error_count": 2,
+      "raw_output_sha256": {
+        "initial/doc-actions-handoff-001-attempt-1/questions.md": "25f929254d72ddb4a2d793a2351c46e5d260b592c6bedd6be6183ce92950e185",
+        "initial/doc-actions-handoff-001-attempt-1/actions.md": "d087423bfbb8010f9b7a1dfda7c94d2bd1f2991ee50b3339f58a3193b761dafe"
+      }
+    },
+    {
+      "id": "doc-actions-handoff-001-attempt-2",
+      "case": "doc-actions-handoff-001",
+      "attempt": 2,
+      "outputs": {
+        "initial/doc-actions-handoff-001-attempt-2/questions.md": "a82b505ab3257715cd28aee76a00aacd2cabf79651bb799bd5089e0d603767ae",
+        "initial/doc-actions-handoff-001-attempt-2/actions.md": "c70b35675634d32ee97b2c3916ef9a448f86d34b8812440a7d7f5e86123f09df"
+      },
+      "export": "Exact original bytes in reports-exact.zip; readable Markdown preview may have disclosed whitespace-only adaptations.",
+      "runtime_reported_model": "gpt-6-luna",
+      "runtime_reported_api_calls": 15,
+      "runtime_reported_duration_seconds": 107.95,
+      "tokens": null,
+      "guidance_condition": "mixed host guidance, not isolated skill-only",
+      "visible_tool_error_count": 2,
+      "raw_output_sha256": {
+        "initial/doc-actions-handoff-001-attempt-2/questions.md": "a82b505ab3257715cd28aee76a00aacd2cabf79651bb799bd5089e0d603767ae",
+        "initial/doc-actions-handoff-001-attempt-2/actions.md": "e8bbd5ab87892cede2203e763857a90402d6c0c14eafaa61397efabf536a7b6d"
+      }
+    },
+    {
+      "id": "decision-brief-region-gates-001-attempt-1",
+      "case": "decision-brief-region-gates-001",
+      "attempt": 1,
+      "outputs": {
+        "initial/decision-brief-region-gates-001-attempt-1/evidence.md": "65b74997be64f9d47b2eb2f23b5433a6ee034484b1247fd657e983a7e16d5c88",
+        "initial/decision-brief-region-gates-001-attempt-1/brief.md": "ea000a1bf988d91747bbaa49e028a6f7d767fe45b95f8ece30d477138e85d5c3"
+      },
+      "export": "Exact original bytes in reports-exact.zip; readable Markdown preview may have disclosed whitespace-only adaptations.",
+      "runtime_reported_model": "gpt-6-luna",
+      "runtime_reported_api_calls": 9,
+      "runtime_reported_duration_seconds": 90.23,
+      "tokens": null,
+      "guidance_condition": "mixed host guidance, not isolated skill-only",
+      "visible_tool_error_count": 3,
+      "raw_output_sha256": {
+        "initial/decision-brief-region-gates-001-attempt-1/evidence.md": "65b74997be64f9d47b2eb2f23b5433a6ee034484b1247fd657e983a7e16d5c88",
+        "initial/decision-brief-region-gates-001-attempt-1/brief.md": "ea000a1bf988d91747bbaa49e028a6f7d767fe45b95f8ece30d477138e85d5c3"
+      }
+    },
+    {
+      "id": "decision-brief-region-gates-001-attempt-2",
+      "case": "decision-brief-region-gates-001",
+      "attempt": 2,
+      "outputs": {
+        "initial/decision-brief-region-gates-001-attempt-2/evidence.md": "d443898ff92c6041f860b673bc4114a7f3cf979a013ad64224015820352a234e",
+        "initial/decision-brief-region-gates-001-attempt-2/brief.md": "366274fdcd0e247cd44245ec49422bd52c71774463dd31321c6fc4e8d3b6fed3"
+      },
+      "export": "Exact original bytes in reports-exact.zip; readable Markdown preview may have disclosed whitespace-only adaptations.",
+      "runtime_reported_model": "gpt-6-luna",
+      "runtime_reported_api_calls": 10,
+      "runtime_reported_duration_seconds": 120.38,
+      "tokens": null,
+      "guidance_condition": "mixed host guidance, not isolated skill-only",
+      "visible_tool_error_count": 1,
+      "raw_output_sha256": {
+        "initial/decision-brief-region-gates-001-attempt-2/evidence.md": "d443898ff92c6041f860b673bc4114a7f3cf979a013ad64224015820352a234e",
+        "initial/decision-brief-region-gates-001-attempt-2/brief.md": "366274fdcd0e247cd44245ec49422bd52c71774463dd31321c6fc4e8d3b6fed3"
+      }
+    },
+    {
+      "id": "claim-check-audit-and-tally-001-attempt-1",
+      "case": "claim-check-audit-and-tally-001",
+      "attempt": 1,
+      "outputs": {
+        "initial/claim-check-audit-and-tally-001-attempt-1/claims.md": "57098441bdda4f8686fbef364183f26a78ece2662cba2adbb1d6254d288e8e26",
+        "initial/claim-check-audit-and-tally-001-attempt-1/review.md": "6603e9f018dfd6281c2d4ace2caf70ca7b8f992db8aaf257ebfe0a6e4e090508"
+      },
+      "export": "Exact original bytes in reports-exact.zip; readable Markdown preview may have disclosed whitespace-only adaptations.",
+      "runtime_reported_model": "gpt-6-luna",
+      "runtime_reported_api_calls": 12,
+      "runtime_reported_duration_seconds": 154.01,
+      "tokens": null,
+      "guidance_condition": "mixed host guidance, not isolated skill-only",
+      "visible_tool_error_count": 2,
+      "raw_output_sha256": {
+        "initial/claim-check-audit-and-tally-001-attempt-1/claims.md": "57098441bdda4f8686fbef364183f26a78ece2662cba2adbb1d6254d288e8e26",
+        "initial/claim-check-audit-and-tally-001-attempt-1/review.md": "a51b4a1de062f7f8ee537163bef3203fab84ca1755c28befb5f6483641123c9c"
+      }
+    },
+    {
+      "id": "claim-check-audit-and-tally-001-attempt-2",
+      "case": "claim-check-audit-and-tally-001",
+      "attempt": 2,
+      "outputs": {
+        "initial/claim-check-audit-and-tally-001-attempt-2/claims.md": "a2dad6ae500aaa17d14b90129eef5bc2e213e773f642d446fea803de6b01df2b",
+        "initial/claim-check-audit-and-tally-001-attempt-2/review.md": "a7975f0213d70e5ff43e811ee0267b59734d47ef17b74052103746e7a0b20bb3"
+      },
+      "export": "Exact original bytes in reports-exact.zip; readable Markdown preview may have disclosed whitespace-only adaptations.",
+      "runtime_reported_model": "gpt-6-luna",
+      "runtime_reported_api_calls": 8,
+      "runtime_reported_duration_seconds": 133.3,
+      "tokens": null,
+      "guidance_condition": "mixed host guidance, not isolated skill-only",
+      "visible_tool_error_count": 1,
+      "raw_output_sha256": {
+        "initial/claim-check-audit-and-tally-001-attempt-2/claims.md": "a2dad6ae500aaa17d14b90129eef5bc2e213e773f642d446fea803de6b01df2b",
+        "initial/claim-check-audit-and-tally-001-attempt-2/review.md": "a7975f0213d70e5ff43e811ee0267b59734d47ef17b74052103746e7a0b20bb3"
+      }
+    }
+  ],
+  "limitations": [
+    "Explicit instruction loading, no automatic selection or native-client trial",
+    "No no-skill control or causal improvement estimate",
+    "Supplementary host guidance active; all six are mixed-guidance observations",
+    "Runtime logs retained privately are preview-truncated, not complete raw journals",
+    "Per-run token counters unavailable",
+    "Recoverable tool errors retained separately from artifact judgments"
+  ],
+  "input_sha256": {
+    "cases/document-actions/packet.md": "28ee02d051fb073d6b1caa1dbc9bd6d71a08400b5757c6d2559e87f338d4ed71",
+    "cases/decision-brief/packet.md": "22078def9fbf2f9a39aee73be1c9f2c5b1306705f2c81e9db26cd14ff34e3ee6",
+    "cases/claim-check/draft.md": "46f72b5fad7667cece620f0c420406f9d0f66ca3a6dd35c30a2184fd599139c3",
+    "cases/claim-check/sources.md": "457eeda4a7f63101851689fd5722e29896f57b208fa16111777688b4e1cdcfaa"
+  },
+  "bundle_sha256_at_source_snapshot": {
+    "document-actions": {
+      "provenance.md": "98e3d3cfdf987b41f09a35ed13aa61ddb7cacd4c6d320d45b9ca9216578674da",
+      "SKILL.md": "8478eadf571e4562ac5c0a8f7fd0b14f4cdc3d4cc2190abf5ccc76032da0e59c",
+      "compatibility.md": "20b52566be980db342559261f02c86d77d39406dbcc51563f95836c8750c2c14",
+      "assets/review-checklist.md": "f7984192de83e49453dcd9a9b0dbaa2a6defc648ff4ec0584a2c663b021b7fc4",
+      "assets/questions-template.md": "8551efeeecec0c6b0010776379e533d80471d10b490dd6f08c757cced089d66f",
+      "assets/actions-template.md": "8b1f7e51f314770284c127d5febc758ad6943803c9b6159e3db79dbba9b50654"
+    },
+    "decision-brief": {
+      "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "provenance.md": "9590715dae6f78e652ce3da00ff6ea0b6c96f06a65292588fb0f1cf046221ab7",
+      "SKILL.md": "6bd65553068a852714b57fd877751a9fa6b8418b944a8ce7c2733e07eb0bb869",
+      "compatibility.md": "4756f6dee4b35a0c59fac4c38e834c79773d2aa59c90ef20d6e9fb2a22d961dc",
+      "LICENSES/github-spec-kit-MIT.txt": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+      "assets/evidence-template.md": "b4cc3d4fee14655e66f4b0538656fa4b9b3c429c8409bf53b4da8164d38cd3bd",
+      "assets/brief-template.md": "1df6e7c25ec27a1da17d8f9daade1c02d38892a7e7b0fe181fe81f6f38969e16"
+    },
+    "claim-check": {
+      "provenance.md": "39a9c1385f17b01da9a0253465a0fb39ac4465b56abfed95f811d0c323d020ad",
+      "SKILL.md": "be7e21d97464e19a0f4bf213d22dae00dbb14aae659e90d9bda77ef644446b2d",
+      "compatibility.md": "5fa434e27593326c56a05c48dfb4705bd98a19527f423bebd5d9864e9092f6f3",
+      "assets/review-checklist.md": "84432659ac3343549896524742e71f4e818e6ae2d0e43a73b66ee238dcc2895a",
+      "assets/example-draft.md": "212af375e8425cf9785d6d546eb099dbd173df74119c76c094b4ea4fa9de72a9",
+      "assets/review-template.md": "34c8327ccd39feae65b526949316ac9e83e2e0e1dbbfeb344318f1edca98d33a",
+      "assets/example-sources.md": "119d9f657b1f8eb270c8450194efe042543163570c4948b57221bd8f4fa4d68e",
+      "assets/claims-template.md": "072afe092aff81fef1fb520447d4e9f13ab1112a5200679a4886186f2e4144a9"
+    }
+  },
+  "raw_archive": {
+    "file": "reports-exact.zip",
+    "sha256": "1976ecd88d81d1074854d7d6b043150f28c367d6623248ea21ed08db8edca10e",
+    "members": {
+      "initial/doc-actions-handoff-001-attempt-1/questions.md": "25f929254d72ddb4a2d793a2351c46e5d260b592c6bedd6be6183ce92950e185",
+      "initial/doc-actions-handoff-001-attempt-1/actions.md": "d087423bfbb8010f9b7a1dfda7c94d2bd1f2991ee50b3339f58a3193b761dafe",
+      "initial/doc-actions-handoff-001-attempt-2/questions.md": "a82b505ab3257715cd28aee76a00aacd2cabf79651bb799bd5089e0d603767ae",
+      "initial/doc-actions-handoff-001-attempt-2/actions.md": "e8bbd5ab87892cede2203e763857a90402d6c0c14eafaa61397efabf536a7b6d",
+      "initial/decision-brief-region-gates-001-attempt-1/evidence.md": "65b74997be64f9d47b2eb2f23b5433a6ee034484b1247fd657e983a7e16d5c88",
+      "initial/decision-brief-region-gates-001-attempt-1/brief.md": "ea000a1bf988d91747bbaa49e028a6f7d767fe45b95f8ece30d477138e85d5c3",
+      "initial/decision-brief-region-gates-001-attempt-2/evidence.md": "d443898ff92c6041f860b673bc4114a7f3cf979a013ad64224015820352a234e",
+      "initial/decision-brief-region-gates-001-attempt-2/brief.md": "366274fdcd0e247cd44245ec49422bd52c71774463dd31321c6fc4e8d3b6fed3",
+      "initial/claim-check-audit-and-tally-001-attempt-1/claims.md": "57098441bdda4f8686fbef364183f26a78ece2662cba2adbb1d6254d288e8e26",
+      "initial/claim-check-audit-and-tally-001-attempt-1/review.md": "a51b4a1de062f7f8ee537163bef3203fab84ca1755c28befb5f6483641123c9c",
+      "initial/claim-check-audit-and-tally-001-attempt-2/claims.md": "a2dad6ae500aaa17d14b90129eef5bc2e213e773f642d446fea803de6b01df2b",
+      "initial/claim-check-audit-and-tally-001-attempt-2/review.md": "a7975f0213d70e5ff43e811ee0267b59734d47ef17b74052103746e7a0b20bb3",
+      "assisted/doc-actions-attempt-2/actions.md": "96bdde76d851c3e11d6b28d1993834c7fb746b489fe1e62c50bb5de18eb70e86",
+      "assisted/doc-actions-attempt-2/questions.md": "a82b505ab3257715cd28aee76a00aacd2cabf79651bb799bd5089e0d603767ae"
+    }
+  },
+  "preview_adaptations": {
+    "initial/doc-actions-handoff-001-attempt-2/actions.md": {
+      "raw_sha256": "e8bbd5ab87892cede2203e763857a90402d6c0c14eafaa61397efabf536a7b6d",
+      "preview_sha256": "c70b35675634d32ee97b2c3916ef9a448f86d34b8812440a7d7f5e86123f09df",
+      "adaptation": "Equivalent Markdown backslash hard breaks replace trailing two-space hard breaks; extra blank lines at EOF removed. No source assertions/IDs/verdicts edited."
+    },
+    "initial/claim-check-audit-and-tally-001-attempt-1/review.md": {
+      "raw_sha256": "a51b4a1de062f7f8ee537163bef3203fab84ca1755c28befb5f6483641123c9c",
+      "preview_sha256": "6603e9f018dfd6281c2d4ace2caf70ca7b8f992db8aaf257ebfe0a6e4e090508",
+      "adaptation": "Equivalent Markdown backslash hard breaks replace trailing two-space hard breaks; extra blank lines at EOF removed. No source assertions/IDs/verdicts edited."
+    },
+    "assisted/doc-actions-attempt-2/actions.md": {
+      "raw_sha256": "96bdde76d851c3e11d6b28d1993834c7fb746b489fe1e62c50bb5de18eb70e86",
+      "preview_sha256": "af4f207007f0e2cf2cf971f85cb23ab2423f953bb1fa3ad2555e5748741b4815",
+      "adaptation": "Equivalent Markdown backslash hard breaks replace trailing two-space hard breaks; extra blank lines at EOF removed. No source assertions/IDs/verdicts edited."
+    }
+  }
+}

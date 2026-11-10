@@ -2,6 +2,7 @@ import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 SPEC = importlib.util.spec_from_file_location(
     "check_docs", Path(__file__).resolve().parents[1] / "scripts/check_docs.py"
@@ -20,6 +21,41 @@ class CheckDocsTests(unittest.TestCase):
                 "[local](a%20file.md#target) [web](https://example.com/missing)\n"
             )
             self.assertEqual(checker.check(root), [])
+
+    def test_source_symlink_is_rejected_before_reading_its_external_target(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "source"
+            root.mkdir()
+            outside = Path(directory) / "outside.md"
+            outside.write_text("External source must not be inspected.\n")
+            link = root / "README.md"
+            link.symlink_to(outside)
+            reads = []
+            original = Path.read_text
+
+            def observe(path, *args, **kwargs):
+                if path == link:
+                    reads.append(path)
+                return original(path, *args, **kwargs)
+
+            with patch.object(Path, "read_text", observe):
+                errors = checker.check(root)
+            self.assertEqual(reads, [], "source checker followed the linked content")
+            self.assertTrue(any("symlink" in error for error in errors))
+            link.unlink()
+            link.write_text("Regular authored source.\n")
+            self.assertEqual(checker.check(root), [])
+
+    def test_unreadable_source_is_reported_without_a_traceback(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "README.md").write_bytes(b"\xff")
+            try:
+                errors = checker.check(root)
+            except UnicodeError:
+                self.fail("checker crashed instead of reporting unreadable source")
+            self.assertTrue(any("cannot read" in error for error in errors))
+            self.assertTrue(any("README.md" in error for error in errors))
 
     def test_missing_destination(self):
         with tempfile.TemporaryDirectory() as directory:

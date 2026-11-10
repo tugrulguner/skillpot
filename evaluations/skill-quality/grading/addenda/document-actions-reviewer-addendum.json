@@ -1,0 +1,63 @@
+{
+  "case": "doc-actions-handoff-001",
+  "attempt": "attempt-2",
+  "purpose": "Reconcile the additional contract finding against literal attempt-2 source and copied contract text. Original grade and frozen scores are unchanged.",
+  "reconciled_original_finding": {
+    "original_path": "actions.md:61-63, 26-38, 65-77",
+    "retained": [
+      {
+        "item_id": "A3",
+        "output_location": "actions.md:65-77",
+        "containing_heading": "## Unresolved items",
+        "output_quote": "## Unresolved items\n\nNone identified within the supplied scope.\n\n### A3 — Send the revised access matrix to Mara\n\n- Category: Assigned action.\n- Source citation and evidence supporting task/category: S1:13–17 — Mara explicitly asks Niko to send the revised matrix to her; Niko says “I’ll take it”; Mara identifies it as the only item she has assigned so far.",
+        "independent_assessment": "Retain a placement/canonical-record finding for A3. A3 is an explicitly assigned action, but its full record appears under Unresolved items after the section says “None identified within the supplied scope.” The provided output does not identify a status conflict or unresolved classification for A3. This retained finding does not depend on how A2's source wording is classified.",
+        "source_contract_support": [
+          {
+            "file": "skill/SKILL.md",
+            "lines": "98-107",
+            "quote": "Until status is resolved, keep the item in an unresolved section rather than silently choosing outstanding or historical placement. Mark the classification unresolved if the conflict affects it. Keep one canonical record per underlying item. Every supported action or requirement needs its own record in actions.md, including unassigned work with missing timing. A question or coverage note is not a substitute for that record; link questions to it."
+          },
+          {
+            "file": "skill/assets/actions-template.md",
+            "lines": "48-57",
+            "quote": "## Unresolved items\n\n### U1 — Item whose classification or status is unresolved\n\n- Place this item only here. Other sections may point to U1, but must not repeat a full record."
+          },
+          {
+            "file": "skill/assets/actions-template.md",
+            "lines": "67-68",
+            "quote": "Use “None identified within the supplied scope” for empty sections; remove unused sample entries."
+          },
+          {
+            "file": "skill/assets/review-checklist.md",
+            "lines": "11-19",
+            "quote": "List the supported underlying tasks/requirements from each source and match each to its canonical actions.md record. Unknown owners or dates must not make a requirement disappear into questions.md or a coverage paragraph. ... A status conflict belongs only in unresolved items. Remove a duplicate historical/outstanding record; a disclaimer does not repair its placement."
+          }
+        ]
+      }
+    ],
+    "withdrawn": [
+      {
+        "item_id": "A2",
+        "output_location": "actions.md:26-38",
+        "containing_heading": "## Outstanding actions and requirements",
+        "withdrawn_claim": "A2 appears later in Unresolved and its own record calls classification unresolved.",
+        "literal_correction": "A2 appears under Outstanding actions and requirements, with category “Unassigned requirement (conditional; source says Ivo ‘should’ check, but does not explicitly assign the task).” The phrases “whether vendor confirmation has arrived is not stated” and “the packet does not establish that confirmation occurred” concern whether the condition occurred; they do not call A2's classification unresolved.",
+        "output_quote": "### A2 — Check whether the sample import still works\n\n- Category: Unassigned requirement (conditional; source says Ivo “should” check, but does not explicitly assign the task).\n- Source citation and evidence supporting task/category: S1:25 — the check is to occur once the vendor confirms the export format; if confirmation never arrives, do not run it.\n- Owner: Unknown; Ivo is named in the recommendation, not explicitly assigned as owner.\n- Assignment: Unknown; no explicit assignment stated.\n- Status: Unknown; whether vendor confirmation has arrived is not stated.\n- ...\n- Conditions/dependencies: Run the check only once the vendor confirms the export format. If confirmation never arrives, do not run the check. The packet does not establish that confirmation occurred.",
+        "finding": "Withdraw the A2-specific placement/canonical-record allegation and the claim that A2's own record calls its classification unresolved. Do not force an interpretation of the source's ambiguous “should” wording: the copied skill distinguishes unassigned requirements from proposals and says to explain whether an unowned source-stated action is an explicit requirement or only a proposal, with unresolved classification placed in questions and a clearly marked unresolved item. The supplied output labels A2 an unassigned requirement while acknowledging the source says “should”; that tension alone does not establish that its classification is expressly unresolved or that it is the A3 record misplaced under Unresolved. The question Q2 addresses the unknown trigger status.",
+        "source_contract_support": [
+          {
+            "file": "skill/SKILL.md",
+            "lines": "54-70",
+            "quote": "Unassigned requirement: the source requires work but states no owner. ... Proposal: suggested or potential work, not an accepted assignment. Keep proposals outside outstanding actions ... Preserve conditions on any conditional item. A condition is not evidence that the triggering event occurred. ... Record a source-stated action without identifiable owner as unassigned and explain whether it is an explicit requirement or only a proposal; do not promote ambiguous discussion to a requirement. Put unresolved classification in questions.md and a clearly marked unresolved item, not an asserted commitment."
+          },
+          {
+            "file": "reports/questions.md",
+            "lines": "13-19",
+            "quote": "### Q2 — Confirm whether the vendor confirmed the export format\n\n- Related item/source: A2 / S1:25.\n- Missing or contradictory claim: The sample-import check is conditional on vendor confirmation, and the packet does not report whether confirmation arrived."
+          }
+        ]
+      }
+    ]
+  },
+  "score_handling": "No frozen score was changed. This addendum corrects the additional finding only."
+}

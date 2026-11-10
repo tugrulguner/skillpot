@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "kind": "Four real unassisted prospective extraction attempts; no self-grade treated as correctness",
+  "source_skill_snapshot": "d9d2301718bb318286f2a226059c17eee625f930",
+  "manifest_sha256": "f29b3599be7bea233ba7328eae6abedb202dfdcfc68f1be3dcd1a34fff98eb8a",
+  "archive": {
+    "file": "reports-exact.zip",
+    "sha256": "2bfee127294204563c46a486844ebb1ba597aa62a981592c59bb9601f6c1a5a4",
+    "member_count": 8
+  },
+  "attempts": [
+    {
+      "id": "harbor-archive-attempt-1",
+      "case": "harbor-archive",
+      "attempt": 1,
+      "outputs": {
+        "actions.md": {
+          "preview": "initial/harbor-archive/attempt-1/actions.md",
+          "archive_member": "harbor-archive/attempt-1/actions.md",
+          "raw_sha256": "74f9b185b70fcda66ad750bc0b28dd6b7d6fb1809e91bf0bd31ed15bad13574a",
+          "preview_sha256": "74f9b185b70fcda66ad750bc0b28dd6b7d6fb1809e91bf0bd31ed15bad13574a",
+          "preview_adaptation": null
+        },
+        "questions.md": {
+          "preview": "initial/harbor-archive/attempt-1/questions.md",
+          "archive_member": "harbor-archive/attempt-1/questions.md",
+          "raw_sha256": "6f3ea12c2e4f344ef674a3c5f87e7a4646e57a46caa3bea251338366337b2082",
+          "preview_sha256": "6f3ea12c2e4f344ef674a3c5f87e7a4646e57a46caa3bea251338366337b2082",
+          "preview_adaptation": null
+        }
+      },
+      "runtime": {
+        "delegation": "deleg_247d2135",
+        "task_index": 0,
+        "reported_model": "gpt-6-luna",
+        "reported_api_calls": 7,
+        "reported_duration_seconds": 60.6,
+        "tokens": null,
+        "supplementary_skills": [
+          "document-to-action-items"
+        ],
+        "visible_tool_error_events": 0,
+        "capture_limit": "Logger retains truncated tool-result previews, not a complete raw event journal. Input-read completeness and absence of all possible errors are not established."
+      }
+    },
+    {
+      "id": "harbor-archive-attempt-2",
+      "case": "harbor-archive",
+      "attempt": 2,
+      "outputs": {
+        "actions.md": {
+          "preview": "initial/harbor-archive/attempt-2/actions.md",
+          "archive_member": "harbor-archive/attempt-2/actions.md",
+          "raw_sha256": "3c1bb41c5895abb7fae792abc19dfd454a799b1c64ddfe080543936799d0b2bc",
+          "preview_sha256": "3c1bb41c5895abb7fae792abc19dfd454a799b1c64ddfe080543936799d0b2bc",
+          "preview_adaptation": null
+        },
+        "questions.md": {
+          "preview": "initial/harbor-archive/attempt-2/questions.md",
+          "archive_member": "harbor-archive/attempt-2/questions.md",
+          "raw_sha256": "c657b4a335348329395f90ab99dfdae2df2e8704c931f5e0c16707dd1d6abb53",
+          "preview_sha256": "c657b4a335348329395f90ab99dfdae2df2e8704c931f5e0c16707dd1d6abb53",
+          "preview_adaptation": null
+        }
+      },
+      "runtime": {
+        "delegation": "deleg_247d2135",
+        "task_index": 1,
+        "reported_model": "gpt-6-luna",
+        "reported_api_calls": 7,
+        "reported_duration_seconds": 63.99,
+        "tokens": null,
+        "supplementary_skills": [
+          "document-to-action-items"
+        ],
+        "visible_tool_error_events": 0,
+        "capture_limit": "Logger retains truncated tool-result previews, not a complete raw event journal. Input-read completeness and absence of all possible errors are not established."
+      }
+    },
+    {
+      "id": "orchard-studio-attempt-1",
+      "case": "orchard-studio",
+      "attempt": 1,
+      "outputs": {
+        "actions.md": {
+          "preview": "initial/orchard-studio/attempt-1/actions.md",
+          "archive_member": "orchard-studio/attempt-1/actions.md",
+          "raw_sha256": "29bf3bc2edd3e8eb6873ce381f3e3fd4a71956122ccdf57eeaeef078885193f5",
+          "preview_sha256": "29bf3bc2edd3e8eb6873ce381f3e3fd4a71956122ccdf57eeaeef078885193f5",
+          "preview_adaptation": null
+        },
+        "questions.md": {
+          "preview": "initial/orchard-studio/attempt-1/questions.md",
+          "archive_member": "orchard-studio/attempt-1/questions.md",
+          "raw_sha256": "85210f08e3590eb9df9a5c443c64f56c464ac6f86895dfbed27bf118afd2c7c6",
+          "preview_sha256": "85210f08e3590eb9df9a5c443c64f56c464ac6f86895dfbed27bf118afd2c7c6",
+          "preview_adaptation": null
+        }
+      },
+      "runtime": {
+        "delegation": "deleg_247d2135",
+        "task_index": 2,
+        "reported_model": "gpt-6-luna",
+        "reported_api_calls": 14,
+        "reported_duration_seconds": 93.46,
+        "tokens": null,
+        "supplementary_skills": [
+          "document-to-action-items"
+        ],
+        "visible_tool_error_events": 0,
+        "capture_limit": "Logger retains truncated tool-result previews, not a complete raw event journal. Input-read completeness and absence of all possible errors are not established."
+      }
+    },
+    {
+      "id": "orchard-studio-attempt-2",
+      "case": "orchard-studio",
+      "attempt": 2,
+      "outputs": {
+        "actions.md": {
+          "preview": "initial/orchard-studio/attempt-2/actions.md",
+          "archive_member": "orchard-studio/attempt-2/actions.md",
+          "raw_sha256": "f4e364c1d1518a6137dcf41170e73f7151c2a4af897adc3f2b3a9e5bf747c57b",
+          "preview_sha256": "f4e364c1d1518a6137dcf41170e73f7151c2a4af897adc3f2b3a9e5bf747c57b",
+          "preview_adaptation": null
+        },
+        "questions.md": {
+          "preview": "initial/orchard-studio/attempt-2/questions.md",
+          "archive_member": "orchard-studio/attempt-2/questions.md",
+          "raw_sha256": "6c724d12a7b6e1b421d433dd7293a91aeaa3ffb55f9bacec0a220858dad5d3e3",
+          "preview_sha256": "6c724d12a7b6e1b421d433dd7293a91aeaa3ffb55f9bacec0a220858dad5d3e3",
+          "preview_adaptation": null
+        }
+      },
+      "runtime": {
+        "delegation": "deleg_247d2135",
+        "task_index": 3,
+        "reported_model": "gpt-6-luna",
+        "reported_api_calls": 8,
+        "reported_duration_seconds": 62.84,
+        "tokens": null,
+        "supplementary_skills": [
+          "document-to-action-items"
+        ],
+        "visible_tool_error_events": 1,
+        "capture_limit": "Logger retains truncated tool-result previews, not a complete raw event journal. Input-read completeness and absence of all possible errors are not established."
+      }
+    }
+  ],
+  "limitations": [
+    "Mixed host guidance, explicit selected-skill loading, no baseline/control, no automatic/native selection test.",
+    "Prompt and command-working-directory guidance differ from initial cohort, so outcomes are not matched causal comparisons.",
+    "Raw reports preserved unchanged; no raw/private host guidance or runtime traces exported."
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "key": "logbook-catalogue",
+    "heading": "### A2 — Catalogue the north-pier logbooks",
+    "containing_h2": "## Outstanding actions and requirements",
+    "identity_evidence": "Dev catalogue assignment; dispatch Assignment, 4 June.",
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### A2 — Catalogue the north-pier logbooks"
+      }
+    ]
+  },
+  {
+    "key": "map-sleeves",
+    "heading": "### A1 — Add acid-free map sleeves to the packing list",
+    "containing_h2": "## Outstanding actions and requirements",
+    "identity_evidence": "Mandatory acid-free map sleeves added to packing list; Rina says unassigned.",
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### A1 — Add acid-free map sleeves to the packing list"
+      }
+    ]
+  },
+  {
+    "key": "sleeve-chart",
+    "heading": "### P1 — Prepare a sleeve-size chart",
+    "containing_h2": "## Proposals — not outstanding commitments",
+    "identity_evidence": "Tomas's conditional offer is not an assignment.",
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### P1 — Prepare a sleeve-size chart"
+      }
+    ]
+  },
+  {
+    "key": "lantern-index",
+    "heading": "### H1 — Lantern-register indexing",
+    "containing_h2": "## Historical items — not outstanding work",
+    "identity_evidence": "Completed by Mei; owner Mei.",
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### H1 — Lantern-register indexing"
+      }
+    ]
+  },
+  {
+    "key": "crate-h9-inspection",
+    "heading": "### A3 — Crate H-9 seal inspection (status unresolved)",
+    "containing_h2": "## Unresolved items",
+    "identity_evidence": "Register explicitly says both entries refer to same Crate H-9 inspection.",
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### A3 — Crate H-9 seal inspection (status unresolved)"
+      }
+    ]
+  }
+]

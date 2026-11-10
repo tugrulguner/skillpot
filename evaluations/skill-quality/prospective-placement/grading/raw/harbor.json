@@ -1,0 +1,368 @@
+{
+  "case": "harbor-archive",
+  "attempts": [
+    {
+      "id": "harbor-archive-attempt-1",
+      "assertions": [
+        {
+          "id": "record-placement",
+          "verdict": "pass",
+          "reason": "All five canonical records are present exactly once in the correct physical template H2 sections.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "### U1 — Crate H-9 seal inspection"
+            }
+          ]
+        },
+        {
+          "id": "assigned-field-only-conflict",
+          "verdict": "pass",
+          "reason": "Dev assignment remains assigned; both 18 June and 20 June are retained and queried.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "### A2 — Catalogue the north-pier logbooks"
+            }
+          ]
+        },
+        {
+          "id": "requirement-owner-unknown",
+          "verdict": "pass",
+          "reason": "Mandatory sleeves requirement is outstanding and unassigned.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "No tasks assigned, accepted, executed or published by this extraction; acceptance is reported only where the source says Dev accepted A2."
+            }
+          ]
+        },
+        {
+          "id": "offer-not-commitment",
+          "verdict": "pass",
+          "reason": "Offer appears as proposal only.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "### P1 — Prepare a sleeve-size chart"
+            }
+          ]
+        },
+        {
+          "id": "history-and-actor",
+          "verdict": "pass",
+          "reason": "Historical item retains owner Mei.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "### H1 — Lantern-register indexing"
+            }
+          ]
+        },
+        {
+          "id": "single-status-unresolved",
+          "verdict": "pass",
+          "reason": "One U1 canonical unresolved record cites both status claims.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "No tasks assigned, accepted, executed or published by this extraction; acceptance is reported only where the source says Dev accepted A2."
+            }
+          ]
+        },
+        {
+          "id": "questions-crosslink",
+          "verdict": "pass",
+          "reason": "Questions cross-link using A/U IDs to records; no expected answer IDs invented.",
+          "output_evidence": [
+            {
+              "file": "questions.md",
+              "quote": "### Q2 — Which catalogue due date is authoritative?"
+            }
+          ]
+        },
+        {
+          "id": "no-overclaim",
+          "verdict": "pass",
+          "reason": "No external execution claimed; modality and dates are retained.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "No tasks assigned, accepted, executed or published by this extraction; acceptance is reported only where the source says Dev accepted A2."
+            }
+          ]
+        }
+      ],
+      "record_map": [
+        {
+          "key": "logbook-catalogue",
+          "heading": "### A2 — Catalogue the north-pier logbooks",
+          "containing_h2": "## Outstanding actions and requirements",
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. ",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev, please catalogue the north-pier logbooks by 18 June.”"
+            }
+          ],
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "A2 — Catalogue the north-pier logbooks"
+            }
+          ]
+        },
+        {
+          "key": "map-sleeves",
+          "heading": "### A1 — Add acid-free map sleeves to packing list",
+          "containing_h2": "## Outstanding actions and requirements",
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. ",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "the acid-free map sleeves must be added to the packing list. I have not assigned that requirement."
+            }
+          ],
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "A1 — Add acid-free map sleeves to packing list"
+            }
+          ]
+        },
+        {
+          "key": "sleeve-chart",
+          "heading": "### P1 — Prepare a sleeve-size chart",
+          "containing_h2": "## Proposals — not outstanding commitments",
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. ",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "I could prepare a sleeve-size chart if the team wants one."
+            }
+          ],
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "P1 — Prepare a sleeve-size chart"
+            }
+          ]
+        },
+        {
+          "key": "lantern-index",
+          "heading": "### H1 — Lantern-register indexing",
+          "containing_h2": "## Historical items — not outstanding work",
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. ",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Mei completed the lantern-register indexing on 2 June. Mei was its owner."
+            }
+          ],
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "H1 — Lantern-register indexing"
+            }
+          ]
+        },
+        {
+          "key": "crate-h9-inspection",
+          "heading": "### U1 — Crate H-9 seal inspection",
+          "containing_h2": "## Unresolved items",
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. ",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "These two entries refer to the same inspection, Crate H-9 seal inspection."
+            }
+          ],
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "U1 — Crate H-9 seal inspection"
+            }
+          ]
+        }
+      ],
+      "additional_contract_findings": []
+    },
+    {
+      "id": "harbor-archive-attempt-2",
+      "assertions": [
+        {
+          "id": "record-placement",
+          "verdict": "fail",
+          "reason": "Crate inspection is in Outstanding, not Unresolved; proposal is omitted from its own proposal record.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "### A3 — Crate H-9 seal inspection (status unresolved)"
+            }
+          ]
+        },
+        {
+          "id": "assigned-field-only-conflict",
+          "verdict": "pass",
+          "reason": "Dev assignment remains assigned; both 18 June and 20 June are retained and queried.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "### A2 — Catalogue the north-pier logbooks"
+            }
+          ]
+        },
+        {
+          "id": "requirement-owner-unknown",
+          "verdict": "pass",
+          "reason": "Mandatory sleeves requirement is outstanding and unassigned.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "### A1 — Add acid-free map sleeves to the packing list"
+            }
+          ]
+        },
+        {
+          "id": "offer-not-commitment",
+          "verdict": "fail",
+          "reason": "Complete actions.md scan finds offer only in coverage note, with no proposal record under Proposals.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "No tasks assigned, accepted, executed or published by this extraction. A2 acceptance is source-reported, not an act by this extraction."
+            }
+          ]
+        },
+        {
+          "id": "history-and-actor",
+          "verdict": "pass",
+          "reason": "Historical item retains owner Mei.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "### H1 — Lantern-register indexing"
+            }
+          ]
+        },
+        {
+          "id": "single-status-unresolved",
+          "verdict": "fail",
+          "reason": "One A3 record preserves both statuses but is physically under Outstanding; Unresolved section says it is not duplicated, which does not satisfy placement.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "### A3 — Crate H-9 seal inspection (status unresolved)"
+            }
+          ]
+        },
+        {
+          "id": "questions-crosslink",
+          "verdict": "pass",
+          "reason": "Questions cross-link using A/U IDs to records; no expected answer IDs invented.",
+          "output_evidence": [
+            {
+              "file": "questions.md",
+              "quote": "### Q2 — Which due date governs A2?"
+            }
+          ]
+        },
+        {
+          "id": "no-overclaim",
+          "verdict": "pass",
+          "reason": "No external execution claimed; modality and dates are retained.",
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "No external actions were performed."
+            }
+          ]
+        }
+      ],
+      "record_map": [
+        {
+          "key": "logbook-catalogue",
+          "heading": "### A2 — Catalogue the north-pier logbooks",
+          "containing_h2": "## Outstanding actions and requirements",
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. ",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev, please catalogue the north-pier logbooks by 18 June.”"
+            }
+          ],
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "A2 — Catalogue the north-pier logbooks"
+            }
+          ]
+        },
+        {
+          "key": "map-sleeves",
+          "heading": null,
+          "containing_h2": null,
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. ",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "the acid-free map sleeves must be added to the packing list. I have not assigned that requirement."
+            }
+          ],
+          "output_evidence": []
+        },
+        {
+          "key": "sleeve-chart",
+          "heading": null,
+          "containing_h2": null,
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. ",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "I could prepare a sleeve-size chart if the team wants one."
+            }
+          ],
+          "output_evidence": []
+        },
+        {
+          "key": "lantern-index",
+          "heading": "### H1 — Lantern-register indexing",
+          "containing_h2": "## Historical items — not outstanding work",
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. ",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Mei completed the lantern-register indexing on 2 June. Mei was its owner."
+            }
+          ],
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "H1 — Lantern-register indexing"
+            }
+          ]
+        },
+        {
+          "key": "crate-h9-inspection",
+          "heading": "### A3 — Crate H-9 seal inspection (status unresolved)",
+          "containing_h2": "## Outstanding actions and requirements",
+          "identity_reason": "Same underlying item and distinguishing facts; headings are quoted literally. Attempt 2 places the canonical inspection record in outstanding section despite unresolved status.",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "These two entries refer to the same inspection, Crate H-9 seal inspection."
+            }
+          ],
+          "output_evidence": [
+            {
+              "file": "actions.md",
+              "quote": "A3 — Crate H-9 seal inspection (status unresolved)"
+            }
+          ]
+        }
+      ],
+      "additional_contract_findings": []
+    }
+  ],
+  "supplementary_skills": []
+}

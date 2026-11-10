@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "attempt": "harbor-archive-attempt-2",
+  "raw_grade_file": "grading/raw/harbor.json",
+  "raw_grade_sha256": "f191a4a19cace0c6bc3af4554352a9ea66cc0a84ac5040d4c781a003a05322ec",
+  "original_actions_sha256": "3c1bb41c5895abb7fae792abc19dfd454a799b1c64ddfe080543936799d0b2bc",
+  "independent_reconciliation": "grading/map-reconciliation-raw.json",
+  "independent_reconciliation_sha256": "163bd329bfb3c722b1b2e0489bc68c5ca04da91b303da69db657c6966109f677",
+  "scope": "Correct only the false null mapping for the present map-sleeves requirement; source/report/grade verdicts unchanged. Other maps independently retained.",
+  "raw_reconciliation_quote_limit": "Some raw reconciliation source quote fields combine or paraphrase source statements and are not literal spans. Only literal_source_evidence below and literal output headings are machine span-checked. Independent reviewer did not inspect guide/template; final-head review must cover that scope.",
+  "corrected_record_map": [
+    {
+      "key": "logbook-catalogue",
+      "heading": "### A2 \u2014 Catalogue the north-pier logbooks",
+      "containing_h2": "## Outstanding actions and requirements",
+      "identity_evidence": "Dev catalogue assignment; dispatch Assignment, 4 June.",
+      "output_evidence": "A2 record in initial actions.md."
+    },
+    {
+      "key": "map-sleeves",
+      "heading": "### A1 \u2014 Add acid-free map sleeves to the packing list",
+      "containing_h2": "## Outstanding actions and requirements",
+      "identity_evidence": "Mandatory acid-free map sleeves added to packing list; Rina says unassigned.",
+      "output_evidence": "A1 record explicitly records unassigned requirement, unknown owner/status; grader criterion requirement-owner-unknown passes."
+    },
+    {
+      "key": "sleeve-chart",
+      "heading": null,
+      "containing_h2": null,
+      "identity_evidence": "Tomas's conditional offer is not an assignment.",
+      "output_evidence": "No proposal record in initial attempt; null retained."
+    },
+    {
+      "key": "lantern-index",
+      "heading": "### H1 \u2014 Lantern-register indexing",
+      "containing_h2": "## Historical items \u2014 not outstanding work",
+      "identity_evidence": "Completed by Mei; owner Mei.",
+      "output_evidence": "H1 historical record."
+    },
+    {
+      "key": "crate-h9-inspection",
+      "heading": "### A3 \u2014 Crate H-9 seal inspection (status unresolved)",
+      "containing_h2": "## Outstanding actions and requirements",
+      "identity_evidence": "Register explicitly says both entries refer to same Crate H-9 inspection.",
+      "output_evidence": "Single A3 canonical record; section is incorrectly Outstanding, not Unresolved."
+    }
+  ],
+  "literal_source_evidence": {
+    "logbook-catalogue": [
+      {
+        "file": "cases/harbor-archive/dispatch.md",
+        "quote": "Rina: \u201cDev, please catalogue the north-pier logbooks by 18 June.\u201d"
+      },
+      {
+        "file": "cases/harbor-archive/dispatch.md",
+        "quote": "Dev: \u201cI accept that assignment.\u201d"
+      },
+      {
+        "file": "cases/harbor-archive/dispatch.md",
+        "quote": "Rina: \u201cDev\u2019s logbook catalogue is due 18 June.\u201d"
+      },
+      {
+        "file": "cases/harbor-archive/dispatch.md",
+        "quote": "Dev: \u201cThe work slip I received says 20 June. I cannot tell which date is correct.\u201d"
+      }
+    ],
+    "map-sleeves": [
+      {
+        "file": "cases/harbor-archive/dispatch.md",
+        "quote": "the acid-free map sleeves must be added to the packing list. I have not assigned that requirement."
+      }
+    ],
+    "sleeve-chart": [
+      {
+        "file": "cases/harbor-archive/dispatch.md",
+        "quote": "I could prepare a sleeve-size chart if the team wants one."
+      },
+      {
+        "file": "cases/harbor-archive/dispatch.md",
+        "quote": "That is only an offer for discussion; nobody has asked you to make it."
+      }
+    ],
+    "lantern-index": [
+      {
+        "file": "cases/harbor-archive/dispatch.md",
+        "quote": "Mei completed the lantern-register indexing on 2 June. Mei was its owner."
+      }
+    ],
+    "crate-h9-inspection": [
+      {
+        "file": "cases/harbor-archive/register.md",
+        "quote": "the signed log says inspection complete on 4 June."
+      },
+      {
+        "file": "cases/harbor-archive/register.md",
+        "quote": "the shift register says not performed; status still pending."
+      },
+      {
+        "file": "cases/harbor-archive/register.md",
+        "quote": "These two entries refer to the same inspection, Crate H-9 seal inspection."
+      }
+    ]
+  }
+}
