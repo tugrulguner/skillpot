@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "judgments": {
+    "pass": 29,
+    "fail": 3,
+    "unverified": 0
+  },
+  "literal_evidence_audit": "Every output/source quotation checked against exact retained artifact; no raw grades rewritten. Output filename bases are report-directory-relative or explicit reports/ attempt-root-relative.",
+  "structural": [
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "errors": [],
+      "independent_placement_verdict": "pass",
+      "actions_sha256": "74f9b185b70fcda66ad750bc0b28dd6b7d6fb1809e91bf0bd31ed15bad13574a"
+    },
+    {
+      "attempt": "harbor-archive-attempt-2",
+      "errors": [
+        "sleeve-chart: missing canonical record",
+        "crate-h9-inspection: wrong containing section"
+      ],
+      "independent_placement_verdict": "fail",
+      "actions_sha256": "3c1bb41c5895abb7fae792abc19dfd454a799b1c64ddfe080543936799d0b2bc",
+      "raw_mapping_errors": [
+        "missing, duplicated or unmapped canonical record"
+      ],
+      "mapping_addendum": "grading/mapping-addendum.json"
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "errors": [],
+      "independent_placement_verdict": "pass",
+      "actions_sha256": "29bf3bc2edd3e8eb6873ce381f3e3fd4a71956122ccdf57eeaeef078885193f5"
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "errors": [],
+      "independent_placement_verdict": "pass",
+      "actions_sha256": "f4e364c1d1518a6137dcf41170e73f7151c2a4af897adc3f2b3a9e5bf747c57b"
+    }
+  ],
+  "limits": [
+    "Structural checking validates physical placement for an independently supplied semantic mapping, not semantic mapping truth.",
+    "Mechanical null-heading diagnostic was clarified after grading to report missing records alongside independent wrong-section errors; prospective criteria and raw reports unchanged.",
+    "Three placement passes are not three wholly correct tasks: narrow graders may omit additional defects.",
+    "Parent notes harbor-archive-attempt-1 due-date citation includes S1:line26 (blank); actual Dev statement is line27. This additional citation defect does not rewrite frozen grades."
+  ],
+  "raw_grades": {
+    "grading/raw/harbor.json": "f191a4a19cace0c6bc3af4554352a9ea66cc0a84ac5040d4c781a003a05322ec",
+    "grading/raw/orchard.json": "03a0e283a3fa4f9f200ffcd2f783f91e687d82b2995d3cc3f8fbcb54459af459"
+  }
+}

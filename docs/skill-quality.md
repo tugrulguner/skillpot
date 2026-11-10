@@ -72,6 +72,47 @@ not the absence of other semantic defects. Additional checks devised after seein
 outputs must be labeled exploratory or prospective; do not quietly add them to the
 original rubric or claim they were held out.
 
+## Prospective placement coverage
+
+The original rubric and all six historical attempts remain unchanged. A separate
+[prospective cohort](../evaluations/skill-quality/prospective-placement/README.md)
+adds two fresh fictional document packets, five expected records and eight critical
+criteria per packet, frozen before four new attempts. Writers received the complete
+unchanged selected skill and inputs, not expected records or rubrics.
+
+Independent graders recorded **29 pass and 3 fail judgments across 32 criteria**.
+Harbor-archive attempt 2 omitted the unaccepted sleeve-chart proposal and placed its
+status-conflicted inspection physically under Outstanding, despite calling it
+unresolved. Its later cross-reference did not move the canonical record. The new
+predeclared placement criterion failed this report; the other three placement
+judgments passed. This is coverage of a fresh failure, not evidence that skill
+performance improved or that the other tasks were wholly correct.
+
+Source classification, source-to-record identification and structural containment
+are checked separately. A grader supplies stable source keys mapped to literal
+arbitrary output headings; the bounded test helper checks actual containing H2s,
+complete inventories and duplicates without trusting Category labels. Grader maps
+are not automatically authoritative: the raw harbor grade incorrectly marks its
+present A1 requirement missing, despite passing that requirement's criterion. That
+mapping error is retained with a separately hash-bound independent reconciliation
+and corrected mapping; raw grades and scores are unchanged.
+
+Replayed controls retain three untouched placement baselines and reject 45
+whole-record wrong-section relocations, 15 omissions, 15 duplications and 24 missing
+or duplicate category sections. Those are authored mutations of retained reports,
+not additional agent attempts. A separate assisted copy restores the omitted
+proposal and relocates the inspection while preserving its ID and questions; it
+is not included among unassisted successes.
+
+All eight new raw reports are preserved byte-for-byte. The new cohort retains mixed
+host guidance, one visible tool-error event, unknown token counts and truncated
+runtime-preview limits. Its explicit template-heading and working-directory
+instructions differ from the initial cohort; there is no matched causal comparison.
+The mechanical checker was completed during task execution, not frozen with the
+criteria, and its missing-record diagnostic was clarified after grading. A parent
+citation review also found a blank-line reference in harbor attempt 1; passing
+frozen judgments are not complete source-locator certification.
+
 ## Practical quality rules
 
 1. Start with an authorized task, exact outputs, permission boundaries and useful

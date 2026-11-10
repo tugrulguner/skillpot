@@ -1,0 +1,1019 @@
+{
+  "kind": "Authored mutation controls derived from real unmodified passing placement reports; not new agent attempts",
+  "records": [
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "untouched-baseline",
+      "key": null,
+      "target_section": null,
+      "sha256": "74f9b185b70fcda66ad750bc0b28dd6b7d6fb1809e91bf0bd31ed15bad13574a",
+      "errors": []
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "missing-record",
+      "key": "logbook-catalogue",
+      "target_section": null,
+      "sha256": "2f1a58122efc86d0db1d98f6d4b3feb9ff20a4f52ffa67b60686cbd3c0671927",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "duplicate-record",
+      "key": "logbook-catalogue",
+      "target_section": null,
+      "sha256": "b2de76b3842c6f3df80ec0839ac27ca05c0608feb3b10eba977501ec38a6ac02",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "logbook-catalogue",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "7753a9f1935ccb016d1067a6caa42b0e7defcb69f353cacdba55f85d9abf1078",
+      "errors": [
+        "logbook-catalogue: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "logbook-catalogue",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "d68f86e520991c4162af3238e20847387728737816c0298fa297a6016fb0a6b1",
+      "errors": [
+        "logbook-catalogue: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "logbook-catalogue",
+      "target_section": "Unresolved items",
+      "sha256": "399b1c75342ccec73dabfe2b458acc194c77f2ab47bceaf84b78c2938a82e265",
+      "errors": [
+        "logbook-catalogue: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "missing-record",
+      "key": "map-sleeves",
+      "target_section": null,
+      "sha256": "df9fe3134efb60079b0598463a6d5021b550902f13261d883fa0b06c10fe5bf6",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "duplicate-record",
+      "key": "map-sleeves",
+      "target_section": null,
+      "sha256": "865cf720c40527b82e3883d0e87830b8b602b070241bdf122a19e3f1eb9a8382",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "map-sleeves",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "073f05fe599abf2d16b15782a7bd7537937df48d6d13539f4d72fcfff0b7b0d8",
+      "errors": [
+        "map-sleeves: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "map-sleeves",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "bf7ca874f8d8d34df8accf97f6aa40435ca3587128ae1a78da87c73074a76f38",
+      "errors": [
+        "map-sleeves: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "map-sleeves",
+      "target_section": "Unresolved items",
+      "sha256": "266458de4e6be6a12ef07337103bfd3562e6e1164f35cf27db40438c61ae5e84",
+      "errors": [
+        "map-sleeves: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "missing-record",
+      "key": "sleeve-chart",
+      "target_section": null,
+      "sha256": "d49f781ffa3634a9ddb1b819ef8e7366fb79f750e1ef2405d8e66b0018c495db",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "duplicate-record",
+      "key": "sleeve-chart",
+      "target_section": null,
+      "sha256": "cff32dec69bd20754f8435c6b86bb3cf302507c9e683aa6310e71753c5143fa9",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "sleeve-chart",
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "fbcffa87204e95f458ed7870f1a404e8297b3dccf5b5dcf1044b94681c7bf091",
+      "errors": [
+        "sleeve-chart: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "sleeve-chart",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "0a57fdc4dcd5eea63fdcc8e0d9780d08303554a4aa5224c7b13291419fe9e39c",
+      "errors": [
+        "sleeve-chart: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "sleeve-chart",
+      "target_section": "Unresolved items",
+      "sha256": "18b4521e279eb2d9fd4966450e9b143381da9feb37830ec1b9c6f712317a5cb9",
+      "errors": [
+        "sleeve-chart: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "missing-record",
+      "key": "lantern-index",
+      "target_section": null,
+      "sha256": "77f7f67e55d3da5df11f88a9c7f91b995c7d2f1dac18d5d95ff3a74dabe98610",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "duplicate-record",
+      "key": "lantern-index",
+      "target_section": null,
+      "sha256": "6eab899250155e4935b01ae6e624ca592251c1df67dcda47755eded48ca28600",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "lantern-index",
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "533e79a0a7c5cbb58f91b3a6d48f9662e4f6994d3a046ffa911f2fb6ac06e74b",
+      "errors": [
+        "lantern-index: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "lantern-index",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "84e1f1c7150cbf3feca36c255b20ff2c7a38e2ae5f9f593398d3b54810090422",
+      "errors": [
+        "lantern-index: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "lantern-index",
+      "target_section": "Unresolved items",
+      "sha256": "6b36ac74d694a3dfb6fb46609ee9911f5661055b622d6beac311bf92779f1211",
+      "errors": [
+        "lantern-index: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "missing-record",
+      "key": "crate-h9-inspection",
+      "target_section": null,
+      "sha256": "aa3977901a187bcbbf3eda85953ea08f7744a2c170f45f6816bd390a8e97cad6",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "duplicate-record",
+      "key": "crate-h9-inspection",
+      "target_section": null,
+      "sha256": "de2c2aabcc5cbcbdbc8e4ff1526fae2c1c2f05948de7fb1131f230996c9bf73d",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "crate-h9-inspection",
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "6163d4cf9b466571c60c75673384001afceaed8f07ebffdf8d2749c3dc40d86b",
+      "errors": [
+        "crate-h9-inspection: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "crate-h9-inspection",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "2a95bd6a99bb9b86a3fa1d7e2d5c89f6f638a64dc51484cfa3d5fb25e89f8e8d",
+      "errors": [
+        "crate-h9-inspection: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "wrong-section",
+      "key": "crate-h9-inspection",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "3bfcfccdfd0a1297753c63beb8e1a2f3342e029c173ba2bf64a63ab4b1e342d9",
+      "errors": [
+        "crate-h9-inspection: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "40ac69a1568ef1cb00e8dd4a02640714318f68ffa38af2aaa1502210b8b247ec",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "74a8323b97a84b047e7e79451c81dc8c134945cf91ac33596cd4033d2641ce60",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "e42f083524f150dc4be194b35340bff266cd20af9507c91b13fe741dfa613ddb",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "5163c672d886859f138fceba817a659b9a6ac72bef9f3e0e0aac1bab2c1a5349",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "0fdf64a14c600491801276d1ad8eefde4430a8841033a466a893b99aee26cbd7",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "c3faaafa87132ea6f9a70259c1c34ba204fcd361eb1de86010c9b6eef8c85a55",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Unresolved items",
+      "sha256": "522734a9226ba2582a8855b0d7a9302d39f24b7424bd393977e9af6ece76e3b2",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "harbor-archive-attempt-1",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Unresolved items",
+      "sha256": "a095239dec245694f08af962ea6d0b4cd2ec79087f2ff9954c5cd9bdb092b29d",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "untouched-baseline",
+      "key": null,
+      "target_section": null,
+      "sha256": "29bf3bc2edd3e8eb6873ce381f3e3fd4a71956122ccdf57eeaeef078885193f5",
+      "errors": []
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "missing-record",
+      "key": "label-proof",
+      "target_section": null,
+      "sha256": "df28a2237fb965c018aca8be486ebeb7af0aeaa8b717e35c39df6e3fc0476b7c",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "duplicate-record",
+      "key": "label-proof",
+      "target_section": null,
+      "sha256": "16d4fb5e9f916620f177c8bfe9b67c925683f9ef0ef60cd16667c05902622fe6",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "label-proof",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "1387b54e1f96fa8db22e09e6a81eb933ef01a97aafeeeb4b2281420385eb058d",
+      "errors": [
+        "label-proof: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "label-proof",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "96b819d28ae1ac18c36b00c68291b909a61737c6d97b33b568fb196dd34fc323",
+      "errors": [
+        "label-proof: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "label-proof",
+      "target_section": "Unresolved items",
+      "sha256": "db061b7204c3432e76d4403f82eecfe8a1b23fdffb76121a526fa04a1d283a04",
+      "errors": [
+        "label-proof: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "missing-record",
+      "key": "caption-cards",
+      "target_section": null,
+      "sha256": "bb188a9c653a8a7373ab84772ad6089c0902200af3fa51359f43b7a6ae32ecf5",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "duplicate-record",
+      "key": "caption-cards",
+      "target_section": null,
+      "sha256": "77d68f5bddcd3044e8fb19ca7480f40f5e567e0c39915b23cf50af31d7cd72a7",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "caption-cards",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "c9f2aa67c1eaffe3b3d6f4672715c33920e47d53845c7d80cf7de04a8b27b16b",
+      "errors": [
+        "caption-cards: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "caption-cards",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "75aa006fe4257b00ded5c83e74d8a76ecefb5c551d64825e26387078d1ce8c61",
+      "errors": [
+        "caption-cards: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "caption-cards",
+      "target_section": "Unresolved items",
+      "sha256": "0f53851c372198d8a4eaccfeabadb66b62ca7a9193fc4745776fdee7e7d6865b",
+      "errors": [
+        "caption-cards: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "missing-record",
+      "key": "card-layout",
+      "target_section": null,
+      "sha256": "61c8927cb05c9c7f8e7df85abedec9c1328874aec90df34de50488163bd95873",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "duplicate-record",
+      "key": "card-layout",
+      "target_section": null,
+      "sha256": "c274fdeb36e5fc4107e3333c3f423d291a912ea55267c7e837b00e52269e163d",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "card-layout",
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "9cbb07340acfa9b78224fbef0673cc8ba2ef0257cae0285b53eb329adfe8f9a0",
+      "errors": [
+        "card-layout: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "card-layout",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "713107a31ba09e28d5f8f94d7b52550ba0e8255fa01b186c24e0c63c3b783779",
+      "errors": [
+        "card-layout: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "card-layout",
+      "target_section": "Unresolved items",
+      "sha256": "ca9f8fe8f874e43c855ad7802ead4c4362c81dff07afed9f3734ce843a3bec64",
+      "errors": [
+        "card-layout: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "missing-record",
+      "key": "pigment-inventory",
+      "target_section": null,
+      "sha256": "e172dd54c40d9f64207539247840a8d9ff626f14dcb3f50f372f3415b00c78a1",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "duplicate-record",
+      "key": "pigment-inventory",
+      "target_section": null,
+      "sha256": "d5733354d8342774801ffa6543153f194e625aaec1342f5a27fe274f5054eb34",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "pigment-inventory",
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "2d953ab16cf626b3da145774f27883167bc57cc3ef68a16d04571a752ef8cdb8",
+      "errors": [
+        "pigment-inventory: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "pigment-inventory",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "a3ed87c03b0f1e5bc6dee9f96f2c05c8955d1cd36acfaeefd6051a88d9b7ce66",
+      "errors": [
+        "pigment-inventory: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "pigment-inventory",
+      "target_section": "Unresolved items",
+      "sha256": "95b53b6a8fc15199b50c90da47f1d9e31a2405306c9327fdb5bdfe2708638878",
+      "errors": [
+        "pigment-inventory: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "missing-record",
+      "key": "frame-c12-color-check",
+      "target_section": null,
+      "sha256": "978c81787507d20888292922cd2e4000aacf227b61f6ff4a7982a933c426a906",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "duplicate-record",
+      "key": "frame-c12-color-check",
+      "target_section": null,
+      "sha256": "3e940d2710ceaa6db0f1a1c0221a67086ca4160c82aef90fd69d869c6f86d7a1",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "frame-c12-color-check",
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "add1b33114282b7a644e357f70c168a987a4eb8f34b903c1d74d22c95cc8ee27",
+      "errors": [
+        "frame-c12-color-check: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "frame-c12-color-check",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "d484716ad13841e990debe7a029e2bab4cb8bde82287cfb6d58c59342744dfe1",
+      "errors": [
+        "frame-c12-color-check: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "wrong-section",
+      "key": "frame-c12-color-check",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "65da627be024a73886d4efe369b650f9a6ab04dc535223dad3eb2cde3eff5145",
+      "errors": [
+        "frame-c12-color-check: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "082f5d8c1f597d9245e7d24d9b4ca90273238f69067cd4030769ac59aa3327fa",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "9da91f49afafdb3a89f2305c91d700a0d7f3dad74af76e78f6b354573a18c931",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "c9b88bccb9f770e933657dbf203ff6185131b7fe232ceb36bab6260baaee7c46",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "bb661058118e7ad932e3c831eee6248b000672288bc46d3610a842a48d5fd197",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "86b3684b9613988925b08c9926c569b21e5a875c4ede02a110105a9e23c9d7ed",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "6d10d3a5d48bf900d68ae6220c6baa772f698a6cf84cd19588b823497aa89c0c",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Unresolved items",
+      "sha256": "ce7be98213f36369e401eefcb28274b1399a0d960ca79394a40dbb356ceb3b6d",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-1",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Unresolved items",
+      "sha256": "94cf84764612b8e3b3a9602a837ba0012fcabe3767693997cf45facf72b61cf8",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "untouched-baseline",
+      "key": null,
+      "target_section": null,
+      "sha256": "f4e364c1d1518a6137dcf41170e73f7151c2a4af897adc3f2b3a9e5bf747c57b",
+      "errors": []
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "missing-record",
+      "key": "label-proof",
+      "target_section": null,
+      "sha256": "efb5023fb5c7e96ee3f35270a97e7a383e7a71ddae28b974c7bbb6f9a28afe87",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "duplicate-record",
+      "key": "label-proof",
+      "target_section": null,
+      "sha256": "ba53a7476d434811a2dffbc787c7e0f273ea67b160f6c62f8da47d16db451ee8",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "label-proof",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "1b76268fdef16f611738ceea3a5770ed489b545669182a3dc471c5ca80b37a1c",
+      "errors": [
+        "label-proof: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "label-proof",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "a2a36d6e15804d852095dacecd74de2e2de7af7daf52f07bb153a170f7ed51e1",
+      "errors": [
+        "label-proof: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "label-proof",
+      "target_section": "Unresolved items",
+      "sha256": "244d2b39c819423b53b6432868d91df1fb945f3b7314b76fdffbe56e5d1de70b",
+      "errors": [
+        "label-proof: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "missing-record",
+      "key": "caption-cards",
+      "target_section": null,
+      "sha256": "7993227a5eb2502b91ba4a5897a41c761c653e686069fa058b4e3092c815d373",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "duplicate-record",
+      "key": "caption-cards",
+      "target_section": null,
+      "sha256": "9b99dfc210864203f1b04ab520b2c6070b679186e64424835d97e19839efb637",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "caption-cards",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "35cf943d4990aae7dce48b5f61a16c1ea87ac54fa190db93344dd0ebaa018052",
+      "errors": [
+        "caption-cards: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "caption-cards",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "000155e1c23ad493c2800f21b659ceb50ed1f299f836e52f4259fd5e18f5aca0",
+      "errors": [
+        "caption-cards: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "caption-cards",
+      "target_section": "Unresolved items",
+      "sha256": "d8dc0981f1787cf5b41f150a901ca5bdf4d59eb57821cc6cec25fc49e472441f",
+      "errors": [
+        "caption-cards: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "missing-record",
+      "key": "card-layout",
+      "target_section": null,
+      "sha256": "5226544a945fc1bb6e333984b3055827696c2cf959f42d7bebfd4a95a44fddeb",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "duplicate-record",
+      "key": "card-layout",
+      "target_section": null,
+      "sha256": "d1a2bc98ca7d63fc8f8307cb33af84e571da5716b6fbfd879e0dd0980796f49c",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "card-layout",
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "f3c6b42e93ec2e5e31efdf85c0dea2fca02674aaa07d9206002ce350e300abc0",
+      "errors": [
+        "card-layout: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "card-layout",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "f00d2e65cedfe8f4d75403dc123d38f5fe72d05acd9836b9dd97ce62d35bdfe2",
+      "errors": [
+        "card-layout: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "card-layout",
+      "target_section": "Unresolved items",
+      "sha256": "11beea870501a758c1ac3e6bf3c3b8bc70d7c14c842b64972d1165dd70d6bace",
+      "errors": [
+        "card-layout: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "missing-record",
+      "key": "pigment-inventory",
+      "target_section": null,
+      "sha256": "5e4d1982ad34d4ac49bc5fb310dc3cfeb0a4634f2a68242e16f59d04422f4c70",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "duplicate-record",
+      "key": "pigment-inventory",
+      "target_section": null,
+      "sha256": "8339520968ebba8ef10144dd201c1ee7d39d46a26d20586a2255689b541df3fe",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "pigment-inventory",
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "465e36d1adc0c95ef87edaf08974e185cda7ec09515c2007bf2e3f24c6fbd8b0",
+      "errors": [
+        "pigment-inventory: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "pigment-inventory",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "7f895d3dfbbe1885c60efa5b0b299463bda19a8672603d6c9f8ea5ef4300e332",
+      "errors": [
+        "pigment-inventory: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "pigment-inventory",
+      "target_section": "Unresolved items",
+      "sha256": "80c5ef53223f020c64e5bf3065f2dd26ca060a9c0e29840668d2583088634b31",
+      "errors": [
+        "pigment-inventory: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "missing-record",
+      "key": "frame-c12-color-check",
+      "target_section": null,
+      "sha256": "3ea3063db854ee8acadbf2b23a1af0db90adeac45637615e6214aa5b86c42cd5",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "duplicate-record",
+      "key": "frame-c12-color-check",
+      "target_section": null,
+      "sha256": "b9da7c79f77a78dd2d87ee4378b060fd42c3bf573596ab4089645e2477bc8ff3",
+      "errors": [
+        "missing, duplicated or unmapped canonical record"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "frame-c12-color-check",
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "9d2e7614ba8d129500b8f50feb831c6282a1d8cea0ac2832de4062204af67780",
+      "errors": [
+        "frame-c12-color-check: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "frame-c12-color-check",
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "d74be7c408bc8cb4d87c765f930d2a04dc49c57ae2937420ce694f17da4b5757",
+      "errors": [
+        "frame-c12-color-check: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "wrong-section",
+      "key": "frame-c12-color-check",
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "96950dcccfa1c31f83a273e6538143bd127d43ba9ef954d67259a4a65325f17a",
+      "errors": [
+        "frame-c12-color-check: wrong containing section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "63efd68b1f91802fdc57c5d0f90b161b334f351aea5ab3bc985b1577a9a7b15d",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Outstanding actions and requirements",
+      "sha256": "0f17f998b2b179b773f554ce4a2cd242f2876b89c681e5194fe4ccd7f895d306",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "0b642ccdcf7e746f0d067ffda38ab095e8929c21d3793876ca5a930e7e541829",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Proposals \u2014 not outstanding commitments",
+      "sha256": "0e99aaabe55cf2eb69e8a22ac7a8b8813ea4437f592ab26519ec4c34e0949248",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "7106aed050e493452437d1fee36cb1a3f3bd8f4f12d87873fd3258452a2f75b9",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Historical items \u2014 not outstanding work",
+      "sha256": "a67df4cf223d240470df8e626730c9220bfe4e0b26eb1106dc822c2cf8718f66",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "missing-section",
+      "key": null,
+      "target_section": "Unresolved items",
+      "sha256": "9ecbe84cea6dfbbef6cba05e10c5cff19f8168a7f22d3f9fad9415a3330dda0e",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    },
+    {
+      "attempt": "orchard-studio-attempt-2",
+      "kind": "duplicate-section",
+      "key": null,
+      "target_section": "Unresolved items",
+      "sha256": "b911f04d2110fc3d8ad82fe1289cef59e15f35d87e43a899763cdfa60a69d4de",
+      "errors": [
+        "missing or duplicate category section"
+      ]
+    }
+  ]
+}

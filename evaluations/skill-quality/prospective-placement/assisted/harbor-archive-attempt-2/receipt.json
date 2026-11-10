@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "kind": "Parent-assisted artifact correction; not a new unassisted attempt or revised grade",
+  "original_attempt": "harbor-archive-attempt-2",
+  "changes": [
+    "Moved unchanged A3 canonical record from Outstanding to Unresolved, replacing misleading cross-reference claiming it was already there.",
+    "Restored omitted source-supported proposal as new P1; updated source-item coverage.",
+    "Existing IDs and questions unchanged; original outputs and all frozen grades untouched."
+  ],
+  "original": {
+    "actions.md": {
+      "path": "initial/harbor-archive/attempt-2/actions.md",
+      "sha256": "3c1bb41c5895abb7fae792abc19dfd454a799b1c64ddfe080543936799d0b2bc"
+    },
+    "questions.md": {
+      "path": "initial/harbor-archive/attempt-2/questions.md",
+      "sha256": "c657b4a335348329395f90ab99dfdae2df2e8704c931f5e0c16707dd1d6abb53"
+    }
+  },
+  "corrected": {
+    "actions.md": {
+      "path": "assisted/harbor-archive-attempt-2/actions.md",
+      "sha256": "8988ba964c5ff992ad7e5e2b890b89ee2fad0b7eb26e25f4d3aa092ab233e7f8"
+    },
+    "questions.md": {
+      "path": "assisted/harbor-archive-attempt-2/questions.md",
+      "sha256": "c657b4a335348329395f90ab99dfdae2df2e8704c931f5e0c16707dd1d6abb53"
+    }
+  }
+}

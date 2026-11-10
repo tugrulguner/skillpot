@@ -1,0 +1,608 @@
+{
+  "schema_version": 1,
+  "source_skill_snapshot": "d9d2301718bb318286f2a226059c17eee625f930",
+  "cases": [
+    {
+      "id": "harbor-archive",
+      "skill": "document-actions",
+      "prompt": "Using only these fictional source files, extract actions and requirements in the supplied skill/template structure. Produce exactly actions.md and questions.md, using the existing template section headings. At execution, write those files only to the fresh output location supplied by the controller. Preserve source uncertainty and citations; do not perform or claim external actions.",
+      "input_files": [
+        "cases/harbor-archive/dispatch.md",
+        "cases/harbor-archive/register.md"
+      ],
+      "required_outputs": [
+        "actions.md",
+        "questions.md"
+      ],
+      "expected_records": [
+        {
+          "key": "logbook-catalogue",
+          "category": "assigned",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev, please catalogue the north-pier logbooks by 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “I accept that assignment.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev’s logbook catalogue is due 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “The work slip I received says 20 June. I cannot tell which date is correct.”"
+            }
+          ]
+        },
+        {
+          "key": "map-sleeves",
+          "category": "unassigned_requirement",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "the acid-free map sleeves must be added to the packing list. I have not assigned that requirement."
+            }
+          ]
+        },
+        {
+          "key": "sleeve-chart",
+          "category": "proposal",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "I could prepare a sleeve-size chart if the team wants one."
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "That is only an offer for discussion; nobody has asked you to make it."
+            }
+          ]
+        },
+        {
+          "key": "lantern-index",
+          "category": "historical",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Mei completed the lantern-register indexing on 2 June. Mei was its owner."
+            }
+          ]
+        },
+        {
+          "key": "crate-h9-inspection",
+          "category": "unresolved",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "the signed log says inspection complete on 4 June."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "the shift register says not performed; status still pending."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "These two entries refer to the same inspection, Crate H-9 seal inspection."
+            }
+          ]
+        }
+      ],
+      "assertions": [
+        {
+          "id": "record-placement",
+          "criterion": "Include each of the five canonical records exactly once under its semantically correct existing template H2 section: assigned in “Outstanding actions and requirements”, unassigned requirement there, proposal in “Proposals — not outstanding commitments”, completed/cancelled item in “Historical items — not outstanding work”, and status-conflicted item in “Unresolved items”. Category labels do not substitute for correct containing section.",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev, please catalogue the north-pier logbooks by 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “I accept that assignment.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev’s logbook catalogue is due 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “The work slip I received says 20 June. I cannot tell which date is correct.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "the acid-free map sleeves must be added to the packing list. I have not assigned that requirement."
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "I could prepare a sleeve-size chart if the team wants one."
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "That is only an offer for discussion; nobody has asked you to make it."
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Mei completed the lantern-register indexing on 2 June. Mei was its owner."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "the signed log says inspection complete on 4 June."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "the shift register says not performed; status still pending."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "These two entries refer to the same inspection, Crate H-9 seal inspection."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "assigned-field-only-conflict",
+          "criterion": "Keep logbook catalogue assigned to Dev (not unassigned or unresolved); leave only due date conflicting, preserve both literal dates 18 June and 20 June, and ask to resolve. Do not drop the record or convert the whole record to unresolved.",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev, please catalogue the north-pier logbooks by 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “I accept that assignment.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev’s logbook catalogue is due 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “The work slip I received says 20 June. I cannot tell which date is correct.”"
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "requirement-owner-unknown",
+          "criterion": "Keep the mandatory map-sleeve requirement outstanding and unassigned; unknown owner is not grounds to omit it or call it resolved.",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "the acid-free map sleeves must be added to the packing list. I have not assigned that requirement."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "offer-not-commitment",
+          "criterion": "Represent the sleeve-chart offer as proposal only, not assigned, accepted, or outstanding work.",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "I could prepare a sleeve-size chart if the team wants one."
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "That is only an offer for discussion; nobody has asked you to make it."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "history-and-actor",
+          "criterion": "Keep completed indexing historical/non-outstanding and retain named owner Mei.",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Mei completed the lantern-register indexing on 2 June. Mei was its owner."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "single-status-unresolved",
+          "criterion": "Represent Crate H-9 inspection once, as one canonical unresolved status/classification-conflict record citing both contradictory statuses; do not duplicate it into completed and pending records or choose a status.",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "the signed log says inspection complete on 4 June."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "the shift register says not performed; status still pending."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "These two entries refer to the same inspection, Crate H-9 seal inspection."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "questions-crosslink",
+          "criterion": "Questions that ask to resolve conflicts or decisions cross-link to the corresponding output record using consistent IDs or unambiguous record names; do not invent question IDs in expected answer requirements.",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev, please catalogue the north-pier logbooks by 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “I accept that assignment.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev’s logbook catalogue is due 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “The work slip I received says 20 June. I cannot tell which date is correct.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "I could prepare a sleeve-size chart if the team wants one."
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "That is only an offer for discussion; nobody has asked you to make it."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "the signed log says inspection complete on 4 June."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "the shift register says not performed; status still pending."
+            },
+            {
+              "file": "cases/harbor-archive/register.md",
+              "quote": "These two entries refer to the same inspection, Crate H-9 seal inspection."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "no-overclaim",
+          "criterion": "Do not claim any source action was executed, accepted beyond explicit acceptance, independently verified, or live; retain source modality and verbatim date text.",
+          "source_evidence": [
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev, please catalogue the north-pier logbooks by 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “I accept that assignment.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Rina: “Dev’s logbook catalogue is due 18 June.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Dev: “The work slip I received says 20 June. I cannot tell which date is correct.”"
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "I could prepare a sleeve-size chart if the team wants one."
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "That is only an offer for discussion; nobody has asked you to make it."
+            },
+            {
+              "file": "cases/harbor-archive/dispatch.md",
+              "quote": "Mei completed the lantern-register indexing on 2 June. Mei was its owner."
+            }
+          ],
+          "critical": true
+        }
+      ]
+    },
+    {
+      "id": "orchard-studio",
+      "skill": "document-actions",
+      "prompt": "Using only these fictional source files, extract actions and requirements in the supplied skill/template structure. Produce exactly actions.md and questions.md, using the existing template section headings. At execution, write those files only to the fresh output location supplied by the controller. Preserve source uncertainty and citations; do not perform or claim external actions.",
+      "input_files": [
+        "cases/orchard-studio/production-note.md",
+        "cases/orchard-studio/status-ledger.md"
+      ],
+      "required_outputs": [
+        "actions.md",
+        "questions.md"
+      ],
+      "expected_records": [
+        {
+          "key": "label-proof",
+          "category": "assigned",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel, please proof the west-gallery label set by 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “I’ll do that assigned proofread.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel’s label proof is due 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “My production sheet lists Jo as the owner of this same west-gallery label proof. I do not know which owner listing is current.”"
+            }
+          ]
+        },
+        {
+          "key": "caption-cards",
+          "category": "unassigned_requirement",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "the bilingual caption cards must be added to the crate checklist. I have not assigned that requirement."
+            }
+          ]
+        },
+        {
+          "key": "card-layout",
+          "category": "proposal",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "I can sketch a card layout if that would help."
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "It is an unaccepted suggestion for discussion, not work I assigned."
+            }
+          ]
+        },
+        {
+          "key": "pigment-inventory",
+          "category": "historical",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Anika completed the pigment inventory on 11 September. Anika owned that inventory task."
+            }
+          ]
+        },
+        {
+          "key": "frame-c12-color-check",
+          "category": "unresolved",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "the studio journal records complete on 13 September."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "the quality ledger marks not completed and still open."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "Both lines concern the single Frame C-12 color check; no later adjudication is recorded."
+            }
+          ]
+        }
+      ],
+      "assertions": [
+        {
+          "id": "record-placement",
+          "criterion": "Include each of the five canonical records exactly once under its semantically correct existing template H2 section: assigned in “Outstanding actions and requirements”, unassigned requirement there, proposal in “Proposals — not outstanding commitments”, completed/cancelled item in “Historical items — not outstanding work”, and status-conflicted item in “Unresolved items”. Category labels do not substitute for correct containing section.",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel, please proof the west-gallery label set by 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “I’ll do that assigned proofread.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel’s label proof is due 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “My production sheet lists Jo as the owner of this same west-gallery label proof. I do not know which owner listing is current.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "the bilingual caption cards must be added to the crate checklist. I have not assigned that requirement."
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "I can sketch a card layout if that would help."
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "It is an unaccepted suggestion for discussion, not work I assigned."
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Anika completed the pigment inventory on 11 September. Anika owned that inventory task."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "the studio journal records complete on 13 September."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "the quality ledger marks not completed and still open."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "Both lines concern the single Frame C-12 color check; no later adjudication is recorded."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "assigned-field-only-conflict",
+          "criterion": "Keep label proof in assigned category and retain the assignment; owner alone conflicts between Pavel and Jo, so cite both and leave owner unresolved pending clarification. Do not drop the record or classify the entire record as unresolved.",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel, please proof the west-gallery label set by 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “I’ll do that assigned proofread.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel’s label proof is due 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “My production sheet lists Jo as the owner of this same west-gallery label proof. I do not know which owner listing is current.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel, please proof the west-gallery label set by 27 September.”"
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "requirement-owner-unknown",
+          "criterion": "Keep the mandatory caption-card requirement outstanding and unassigned; unknown owner is not grounds to omit it or call it resolved.",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "the bilingual caption cards must be added to the crate checklist. I have not assigned that requirement."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "offer-not-commitment",
+          "criterion": "Represent the card-layout offer as proposal only, not assigned, accepted, or outstanding work.",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "I can sketch a card layout if that would help."
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "It is an unaccepted suggestion for discussion, not work I assigned."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "history-and-actor",
+          "criterion": "Keep completed inventory historical/non-outstanding and retain named owner Anika.",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Anika completed the pigment inventory on 11 September. Anika owned that inventory task."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "single-status-unresolved",
+          "criterion": "Represent Frame C-12 check once, as one canonical unresolved status/classification-conflict record citing both contradictory statuses; do not duplicate it into completed and open records or choose a status.",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "the studio journal records complete on 13 September."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "the quality ledger marks not completed and still open."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "Both lines concern the single Frame C-12 color check; no later adjudication is recorded."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "questions-crosslink",
+          "criterion": "Questions that ask to resolve conflicts or decisions cross-link to the corresponding output record using consistent IDs or unambiguous record names; do not invent question IDs in expected answer requirements.",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel, please proof the west-gallery label set by 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “I’ll do that assigned proofread.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel’s label proof is due 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “My production sheet lists Jo as the owner of this same west-gallery label proof. I do not know which owner listing is current.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "I can sketch a card layout if that would help."
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "It is an unaccepted suggestion for discussion, not work I assigned."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "the studio journal records complete on 13 September."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "the quality ledger marks not completed and still open."
+            },
+            {
+              "file": "cases/orchard-studio/status-ledger.md",
+              "quote": "Both lines concern the single Frame C-12 color check; no later adjudication is recorded."
+            }
+          ],
+          "critical": true
+        },
+        {
+          "id": "no-overclaim",
+          "criterion": "Do not claim any source action was executed, accepted beyond explicit acceptance, independently verified, or live; retain source modality and verbatim date text.",
+          "source_evidence": [
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel, please proof the west-gallery label set by 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “I’ll do that assigned proofread.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Luca: “Pavel’s label proof is due 27 September.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Pavel: “My production sheet lists Jo as the owner of this same west-gallery label proof. I do not know which owner listing is current.”"
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "I can sketch a card layout if that would help."
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "It is an unaccepted suggestion for discussion, not work I assigned."
+            },
+            {
+              "file": "cases/orchard-studio/production-note.md",
+              "quote": "Anika completed the pigment inventory on 11 September. Anika owned that inventory task."
+            }
+          ],
+          "critical": true
+        }
+      ]
+    }
+  ]
+}

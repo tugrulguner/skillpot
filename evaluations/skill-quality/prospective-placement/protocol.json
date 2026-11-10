@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "kind": "prospective placement criteria frozen before new task execution",
+  "source_skill_snapshot": "d9d2301718bb318286f2a226059c17eee625f930",
+  "manifest_sha256": "f29b3599be7bea233ba7328eae6abedb202dfdcfc68f1be3dcd1a34fff98eb8a",
+  "input_sha256": {
+    "cases/harbor-archive/dispatch.md": "2042168459c65eadd7998f39a1c9d1c52543becce397d99429331590b76005cc",
+    "cases/harbor-archive/register.md": "8b82a89598e95a2db7b494290fb9022be98d073a0bb8e2421be7cc48d0b0de55",
+    "cases/orchard-studio/production-note.md": "52918eca32565c97feaf825523cd4a0e8123e7b9267103f96cef1b703689f50e",
+    "cases/orchard-studio/status-ledger.md": "d53e2b48e55451392652ff3af23de41658600d37dd376b4d7104ec8b839b44a5"
+  },
+  "bundle_sha256": {
+    "provenance.md": "98e3d3cfdf987b41f09a35ed13aa61ddb7cacd4c6d320d45b9ca9216578674da",
+    "SKILL.md": "8478eadf571e4562ac5c0a8f7fd0b14f4cdc3d4cc2190abf5ccc76032da0e59c",
+    "compatibility.md": "20b52566be980db342559261f02c86d77d39406dbcc51563f95836c8750c2c14",
+    "assets/review-checklist.md": "f7984192de83e49453dcd9a9b0dbaa2a6defc648ff4ec0584a2c663b021b7fc4",
+    "assets/questions-template.md": "8551efeeecec0c6b0010776379e533d80471d10b490dd6f08c757cced089d66f",
+    "assets/actions-template.md": "8b1f7e51f314770284c127d5febc758ad6943803c9b6159e3db79dbba9b50654"
+  },
+  "case_ids": [
+    "harbor-archive",
+    "orchard-studio"
+  ],
+  "attempts_per_case": 2,
+  "scope": "Two fresh fictional tasks. Mandatory physical containing-section and whole-record coverage criteria, not a regrade/rewrite of the initial six attempts. Independent semantic mapping precedes bounded structural checking. No no-skill control or causal benefit claim.",
+  "historical_initial_manifest_sha256": "48295eaef1ef88cf1ff0b9d214a0b5d9382b02211d9b891e247b62f7ae7a9f92"
+}
