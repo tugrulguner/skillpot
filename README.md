@@ -109,6 +109,11 @@ skills. The stable clone above selects their published snapshot; the first-use g
 use its exact commit.
 Publication does not promote repository-readiness beyond its experimental scope.
 
+The [current-source hardening guide](docs/skill-hardening.md) records a review of all
+fourteen bundles, corrected standalone references and worked-output consistency,
+and a fresh individual-installation matrix for every bundle. It includes claim-check
+0.1.1; the published ten-skill release remains unchanged.
+
 Current source also contains a [Dexpot-only published-guide refresh](docs/published-upstream-refresh.md):
 instruction version 0.3.0 targets Dexpot v0.8.1's path-annotation correction. It is not
 in the v0.4.1 collection selected above, which retains Dexpot instruction 0.2.0 and
@@ -128,7 +133,7 @@ its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
 | Triage symptoms and logs into an evidence-backed investigation handoff | [incident-triage](skills/incident-triage/SKILL.md) 0.1.0, source only; `incident.md` and `timeline.md`; [one-command setup](docs/incident-triage-first-use.md); inspection-only by default |
 | Minimize a reported failure into a runnable reproducer and regression test | [bug-repro](skills/bug-repro/SKILL.md) 0.1.0, source only; [one-command setup](docs/bug-repro-first-use.md); execution requires explicit permission |
 | Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, current source only; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
-| Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.0, current source only; [one-command setup](docs/claim-check-first-use.md) |
+| Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.1, current source only; [one-command setup](docs/claim-check-first-use.md) |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
 policies do not govern unrelated projects or authorize a merge. See the

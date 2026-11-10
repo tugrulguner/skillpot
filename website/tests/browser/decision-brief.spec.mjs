@@ -4,7 +4,7 @@ test('released decision workflow uses v0.4.1 across discovery and downloads', as
   await page.goto('/');
   await expect(page.locator('.overview')).toContainText('decision-brief');
   await expect(page.locator('.overview')).toContainText('Published v0.4.1 includes');
-  await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check');
+  await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check');
   await expect(page.locator('.overview')).toContainText('Published v0.4.1 has ten skills');
   await expect(page.locator('.overview').getByRole('link', { name: 'v0.4.1', exact: true })).toHaveAttribute('href', 'https://github.com/tugrulguner/skillpot/releases/tag/v0.4.1');
   await page.goto('/catalogue/');

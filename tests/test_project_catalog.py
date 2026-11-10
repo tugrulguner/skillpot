@@ -67,6 +67,136 @@ class ProjectCatalogTests(unittest.TestCase):
                 self.assertIn("instruction body", result.stdout + result.stderr)
                 self.assertNotIn("Traceback", result.stderr)
 
+    def test_original_bundle_outside_import_catalog_is_validated(self):
+        original = self.root / "skills/original"
+        original.mkdir()
+        (original / "SKILL.md").write_text(
+            '---\nname: original\ndescription: Inspect original inputs.\n'
+            'license: MIT\n---\n')
+        for name in ("provenance.md", "compatibility.md"):
+            (original / name).write_text("Original work, source checks only.\n")
+        result = self.check()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("original", result.stdout)
+        self.assertIn("instruction body", result.stdout)
+        self.assertNotIn("Traceback", result.stderr)
+
+    def test_malformed_or_nonmapping_frontmatter_reports_a_diagnostic(self):
+        path = self.skill / "SKILL.md"
+        for header in ("[unfinished", "scalar", "- list item", "null"):
+            with self.subTest(header=header):
+                path.write_text("---\n" + header + "\n---\n# Body\n")
+                result = self.check()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("frontmatter", result.stdout)
+                self.assertNotIn("Traceback", result.stderr)
+
+    def test_duplicate_frontmatter_keys_are_rejected(self):
+        path = self.skill / "SKILL.md"
+        original = path.read_text()
+        mutants = (
+            original.replace("name: sample", "name: wrong\nname: sample"),
+            original.replace('status: "experimental"', 'status: "hidden"\n  status: "experimental"'),
+        )
+        for text in mutants:
+            with self.subTest(text=text):
+                path.write_text(text)
+                result = self.check()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("duplicate", result.stdout)
+                self.assertNotIn("Traceback", result.stderr)
+
+    def test_bundle_symlinks_are_rejected_before_reading_targets(self):
+        for relative in ("SKILL.md", "references/upstream.md", "provenance.md"):
+            with self.subTest(path=relative):
+                path = self.skill / relative
+                original = path.read_bytes()
+                outside = self.root / ("outside-" + relative.replace("/", "_"))
+                outside.write_bytes(original)
+                path.unlink()
+                path.symlink_to(outside)
+                result = self.check()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("symlink", result.stdout)
+                self.assertNotIn("Traceback", result.stderr)
+                path.unlink()
+                path.write_bytes(original)
+
+    def test_missing_bundle_resources_report_diagnostics(self):
+        for relative in ("SKILL.md", "provenance.md", "compatibility.md", "references/upstream.md"):
+            with self.subTest(path=relative):
+                path = self.skill / relative
+                original = path.read_bytes()
+                path.unlink()
+                try:
+                    result = self.check()
+                    self.assertNotEqual(result.returncode, 0)
+                    self.assertIn(relative, result.stdout)
+                    self.assertNotIn("Traceback", result.stderr)
+                finally:
+                    path.write_bytes(original)
+
+    def test_local_resource_links_must_survive_standalone_installation(self):
+        path = self.skill / "SKILL.md"
+        original = path.read_text()
+        (self.root / "outside.md").write_text("Available only in the source checkout.\n")
+        for link, message in (("../../outside.md", "escapes bundle"),
+                              ("references/missing.md", "missing resource")):
+            with self.subTest(link=link):
+                path.write_text(original + "\n[required](" + link + ")\n")
+                result = self.check()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn(message, result.stdout)
+                self.assertNotIn("Traceback", result.stderr)
+
+    def test_missing_catalogued_bundle_cannot_pass(self):
+        self.skill.rename(self.root / "removed-sample")
+        result = self.check()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("missing bundle", result.stdout)
+        self.assertNotIn("Traceback", result.stderr)
+
+    def test_portable_name_length_limit_has_a_valid_boundary_control(self):
+        for size in (64, 65):
+            name = "a" * size
+            directory = self.root / "skills" / name
+            directory.mkdir()
+            (directory / "SKILL.md").write_text(
+                '---\nname: ' + name + '\ndescription: Inspect a sample.\n---\n# Body\n')
+            for resource in ("provenance.md", "compatibility.md"):
+                (directory / resource).write_text("Fixture only.\n")
+            result = self.check()
+            if size == 64:
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            else:
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("name", result.stdout)
+
+    def test_portable_optional_fields_reject_host_extensions_and_wrong_types(self):
+        path = self.skill / "SKILL.md"
+        original = path.read_text()
+        for extra in ("version: 1", "platforms: [linux]", "compatibility: {}", "allowed-tools: [Read]"):
+            with self.subTest(extra=extra):
+                path.write_text(original.replace("name: sample", "name: sample\n" + extra))
+                result = self.check()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("frontmatter", result.stdout)
+                self.assertNotIn("Traceback", result.stderr)
+        path.write_text(original.replace("name: sample", 'name: sample\ncompatibility: "Trusted input only"\nallowed-tools: "Read"'))
+        self.assertEqual(self.check().returncode, 0)
+
+    def test_original_bundle_optional_license_must_be_a_string(self):
+        directory = self.root / "skills/original"
+        directory.mkdir()
+        (directory / "SKILL.md").write_text(
+            '---\nname: original\ndescription: Inspect a sample.\nlicense: []\n---\n# Body\n')
+        for resource in ("provenance.md", "compatibility.md"):
+            (directory / resource).write_text("Fixture only.\n")
+        result = self.check()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("frontmatter license", result.stdout)
+        self.assertNotIn("Traceback", result.stderr)
+
     def test_valid_fixture_passes(self):
         result = self.check()
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)

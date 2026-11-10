@@ -53,7 +53,7 @@ published v0.4.1's ten-skill set. Use the standard Skills CLI to install only th
 skill from the exact reviewed source revision:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/4139aff1dd8127fc4c9bb3916a4bc5e3fd5cd23c --skill claim-check
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check
 ```
 
 See the [claim-check first-use guide](../docs/claim-check-first-use.md), with a

@@ -1,16 +1,23 @@
-# Timeline (selected evidence)
+# Revised authored analysis — historical CI practice packet
 
-Times below are UTC `Z` timestamps copied from retained source lines. They are event timestamps from the job log, not packet-arrival times. Citations refer to original line IDs in `manifest.json` and `sources/ci-excerpt.log`.
+Not a new historical execution, captured collection record, or agent result. This analysis is revised from the original authored output, preserved privately outside the repository.
 
-| Observed time | Observation | Evidence |
-|---|---|---|
-| 2026-11-06T22:37:02.7377903Z | Whitespace check command logged. | Original line 8 |
-| 2026-11-06T22:37:02.7501011Z | Python version logged. | Original line 11 |
-| 2026-11-06T22:37:04.7277690Z | Documentation destination/personal-path check reports PASS. | Original line 18 |
-| 2026-11-06T22:37:04.7641399Z | Pinned source-integrity check reports PASS. | Original line 19 |
-| 2026-11-06T22:37:06.8379918Z | Test summary reports 147 tests in 2.006s. | Original line 169 |
-| 2026-11-06T22:37:06.8380110Z | Test output reports `OK`. | Original line 171 |
-| 2026-11-06T22:37:06.8490429Z through 2026-11-06T22:37:06.8492829Z | Six trailing-whitespace findings reported across source/example files. | Original lines 172, 174, 176, 178, 180, 182 |
-| 2026-11-06T22:37:06.8507649Z | Process exit code 2 reported. | Original line 184 |
+| ID | Source ID/locator | Timestamp as recorded | Precision/timezone/clock | Kind: event, collection, notification | Event or bounded interval | Ordering relation / uncertainty |
+|---|---|---|---|---|---|---|
+| log-command | `sources/ci-excerpt.log`, original line 8 | 2026-11-06T22:37:02.7377903Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | The log records a command echo (`git diff --check HEAD^ HEAD`); this is not evidence of execution at that timestamp. | Timestamp order in this selected log only; command execution time unknown. |
+| log-version | `sources/ci-excerpt.log`, original line 11 | 2026-11-06T22:37:02.7501011Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Python 3.14.4 is logged. | After original line 8 in log order; no causal claim. |
+| log-pass-docs | `sources/ci-excerpt.log`, original line 18 | 2026-11-06T22:37:04.7277690Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Documentation destination/personal-path check reports PASS. | After original line 11 in log order; no causal claim. |
+| log-pass-integrity | `sources/ci-excerpt.log`, original line 19 | 2026-11-06T22:37:04.7641399Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Pinned source-integrity check reports PASS. | After original line 18 in log order; no causal claim. |
+| log-tests-summary | `sources/ci-excerpt.log`, original line 169 | 2026-11-06T22:37:06.8379918Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Test summary reports 147 tests in 2.006s. | After original line 19 in log order; no causal claim. |
+| log-tests-ok | `sources/ci-excerpt.log`, original line 171 | 2026-11-06T22:37:06.8380110Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Test output reports `OK`. | After original line 169 in log order; no causal claim. |
+| log-whitespace-1 | `sources/ci-excerpt.log`, original line 172 | 2026-11-06T22:37:06.8490429Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Trailing-whitespace finding in `examples/change-impact/change.diff:8`. | After original line 171 in log order; no causal claim. |
+| log-whitespace-2 | `sources/ci-excerpt.log`, original line 174 | 2026-11-06T22:37:06.8490958Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Trailing-whitespace finding in `examples/change-impact/change.diff:12`. | After original line 172 in log order; no causal claim. |
+| log-whitespace-3 | `sources/ci-excerpt.log`, original line 176 | 2026-11-06T22:37:06.8491438Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Trailing-whitespace finding in `examples/change-impact/change.diff:13`. | After original line 174 in log order; no causal claim. |
+| log-whitespace-4 | `sources/ci-excerpt.log`, original line 178 | 2026-11-06T22:37:06.8491962Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Trailing-whitespace finding in `skills/change-impact/assets/example-input.md:164`. | After original line 176 in log order; no causal claim. |
+| log-whitespace-5 | `sources/ci-excerpt.log`, original line 180 | 2026-11-06T22:37:06.8492479Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Trailing-whitespace finding in `skills/change-impact/assets/example-input.md:168`. | After original line 178 in log order; no causal claim. |
+| log-whitespace-6 | `sources/ci-excerpt.log`, original line 182 | 2026-11-06T22:37:06.8492829Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Trailing-whitespace finding in `skills/change-impact/assets/example-input.md:169`. | After original line 180 in log order; no causal claim. |
+| log-exit | `sources/ci-excerpt.log`, original line 184 | 2026-11-06T22:37:06.8507649Z | Timestamp precision: 7 fractional digits; recorded Z; source clock accuracy unknown | event | Process exit code 2 is reported. | After original line 182 in log order; selected log ordering only, not proof of cause. |
 
-Production status: UNKNOWN; resolution NOT ASSESSED. This is a selected source-job timeline, not proof of a complete workflow or production timeline. No event arrival time is inferred.
+## Ordering notes
+
+The precision is the timestamp text's precision, not clock accuracy. Clock synchronization/offset is unknown; the recorded `Z` is preserved but does not establish verified UTC accuracy. These are event records as presented by a selected job log, distinct from collection or packet-arrival times, which are unknown. The command echo is not evidence of command execution at its echo timestamp. Log order supplies a partial ordering of these selected records only; it does not prove causal relations. The excerpt omits intervening lines and is not complete workflow or production history. Production/customer status is UNKNOWN; resolution is NOT ASSESSED.

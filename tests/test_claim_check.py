@@ -26,7 +26,7 @@ class ClaimCheckBundleTests(unittest.TestCase):
         metadata = yaml.safe_load("\n".join(lines[1:closing]))
         self.assertTrue("\n".join(lines[closing + 1:]).strip())
         self.assertEqual(metadata.get("name"), "claim-check")
-        self.assertEqual(metadata.get("metadata"), {"version": "0.1.0", "status": "unreleased"})
+        self.assertEqual(metadata.get("metadata"), {"version": "0.1.1", "status": "unreleased"})
         self.assertIsInstance(metadata.get("description"), str)
         self.assertLessEqual(len(metadata["description"]), 60)
         self.assertTrue(metadata["description"].strip())
@@ -71,6 +71,19 @@ class ClaimCheckBundleTests(unittest.TestCase):
                       "underlying truth", "coverage", "wrong-paragraph", "orphan", "duplicate"):
             self.assertIn(value.lower(), checklist.lower())
         self.assertNotRegex(checklist, r"\bC(?:7|8|11|12)\b", "acceptance rules must not hardcode fixture ledger")
+
+    def test_optional_example_requires_fresh_exact_output_paths_and_read_only_inputs(self):
+        section = self.skill.split("## Optional example", 1)[1].split("## Scope and authority", 1)[0].lower()
+        for phrase in (
+            "fresh approved output directory",
+            "review.md",
+            "claims.md",
+            "never copy existing authored expected outputs or oracles",
+            "do not overwrite the packet",
+            "keep the bundled draft/source inputs read-only",
+            "the existing no-oracle scope",
+        ):
+            self.assertIn(phrase, section, phrase)
 
     def test_optional_example_inputs_match_public_authored_packet(self):
         for name in ["draft", "sources"]:

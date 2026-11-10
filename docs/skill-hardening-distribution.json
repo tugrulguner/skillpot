@@ -1,0 +1,288 @@
+{
+  "source_commit": "66bad57a0a42a4aec2c5d54feee1df8fb242e166",
+  "source_ref": "66bad57a0a42a4aec2c5d54feee1df8fb242e166",
+  "source_url": "https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166",
+  "node": "22.23.4",
+  "installer": "skills@1.7.6",
+  "agents": [
+    "claude-code",
+    "cursor",
+    "codex",
+    "hermes-agent"
+  ],
+  "skills": [
+    {
+      "name": "bug-repro",
+      "source_files": {
+        "provenance.md": "44839291949a4d27ad9cf5d67503c44939bab97766cd85c177a443d99ec7d393",
+        "SKILL.md": "eab2c460355a22ae0c4c88083a1c74d573c168066eca8cefe73b9dc0e4c5bf9b",
+        "compatibility.md": "013d4562c166386fe0be3efe87e522aae7c3f5e432ce850cf4d314a34bf9674a",
+        "assets/example-input.md": "d1450ec349bcd4ca6fde15bdad2a0fa19b11ace7ede3d86d0f043d0986006880",
+        "assets/review-checklist.md": "8ee4c684e022f16a6eda2051e6927aa33000be9bff08509c61510056dd0fc67a",
+        "assets/reduction-log-template.md": "6ed2d5f8a4a9711dd7692b78c023801c9a39eec5db925ad56f0378d9b38fcd6c",
+        "assets/repro-template.md": "8e307167615de89c51c60b71d86b7789c59250d52961fb4d4ac3d362696f7324"
+      },
+      "files_verified": 7,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "change-impact",
+      "source_files": {
+        "provenance.md": "4e4daa7bdb4cb17d058ac8949f09df35faa86f6cd39e0829ef8dace58b74a391",
+        "SKILL.md": "e131e0a344ff15523bdd0161ac5520caacf4ff24031e7ac04ee37e056e5e4758",
+        "compatibility.md": "d41ab9b1d3667a6014be40bfd3c3428fae6012263f01bbe8b314932e95e3db04",
+        "assets/example-input.md": "5212791b8938487131bae845e13a50b53ca6dd26aa21b3c516053513cc04d6d2",
+        "assets/review-checklist.md": "6ca0420b3efda946f85f0a2d8d58cc230f4d19c747357eab0f264ff9ec6f9b6f",
+        "assets/impact-template.md": "4fa28403f5af33f8eba8fb9416b513f70978794526b4afe24d321db009b0ff8c",
+        "assets/verification-template.md": "42c9f24f804e6c8512b0ad43218f089eca31c31a358097853bda597c6daa5f01"
+      },
+      "files_verified": 7,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "claim-check",
+      "source_files": {
+        "provenance.md": "39a9c1385f17b01da9a0253465a0fb39ac4465b56abfed95f811d0c323d020ad",
+        "SKILL.md": "be7e21d97464e19a0f4bf213d22dae00dbb14aae659e90d9bda77ef644446b2d",
+        "compatibility.md": "5fa434e27593326c56a05c48dfb4705bd98a19527f423bebd5d9864e9092f6f3",
+        "assets/review-checklist.md": "84432659ac3343549896524742e71f4e818e6ae2d0e43a73b66ee238dcc2895a",
+        "assets/example-draft.md": "212af375e8425cf9785d6d546eb099dbd173df74119c76c094b4ea4fa9de72a9",
+        "assets/review-template.md": "34c8327ccd39feae65b526949316ac9e83e2e0e1dbbfeb344318f1edca98d33a",
+        "assets/example-sources.md": "119d9f657b1f8eb270c8450194efe042543163570c4948b57221bd8f4fa4d68e",
+        "assets/claims-template.md": "072afe092aff81fef1fb520447d4e9f13ab1112a5200679a4886186f2e4144a9"
+      },
+      "files_verified": 8,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "decision-brief",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "9590715dae6f78e652ce3da00ff6ea0b6c96f06a65292588fb0f1cf046221ab7",
+        "SKILL.md": "6bd65553068a852714b57fd877751a9fa6b8418b944a8ce7c2733e07eb0bb869",
+        "compatibility.md": "4756f6dee4b35a0c59fac4c38e834c79773d2aa59c90ef20d6e9fb2a22d961dc",
+        "LICENSES/github-spec-kit-MIT.txt": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+        "assets/evidence-template.md": "b4cc3d4fee14655e66f4b0538656fa4b9b3c429c8409bf53b4da8164d38cd3bd",
+        "assets/brief-template.md": "1df6e7c25ec27a1da17d8f9daade1c02d38892a7e7b0fe181fe81f6f38969e16"
+      },
+      "files_verified": 7,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "dexpot",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "1d99dd11a6f0e83ea50bbd26516e0f0ec7c9089813505802d6a3ee2d6bb8b129",
+        "SKILL.md": "616462a22b628b3cd7232d9258bda6c6f322ce15cc842b2c0a5c5b033dbf887f",
+        "compatibility.md": "679c86991d4542a32f7b267e198a4523a44e5c0a5886e07a866cf45c1b4eb892",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "064792cb9897483af66fa1199cbcf4be97cc3e26417533dbb87a36e471a3fa0d"
+      },
+      "files_verified": 6,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "document-actions",
+      "source_files": {
+        "provenance.md": "98e3d3cfdf987b41f09a35ed13aa61ddb7cacd4c6d320d45b9ca9216578674da",
+        "SKILL.md": "8478eadf571e4562ac5c0a8f7fd0b14f4cdc3d4cc2190abf5ccc76032da0e59c",
+        "compatibility.md": "20b52566be980db342559261f02c86d77d39406dbcc51563f95836c8750c2c14",
+        "assets/review-checklist.md": "f7984192de83e49453dcd9a9b0dbaa2a6defc648ff4ec0584a2c663b021b7fc4",
+        "assets/questions-template.md": "8551efeeecec0c6b0010776379e533d80471d10b490dd6f08c757cced089d66f",
+        "assets/actions-template.md": "8b1f7e51f314770284c127d5febc758ad6943803c9b6159e3db79dbba9b50654"
+      },
+      "files_verified": 6,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "incident-triage",
+      "source_files": {
+        "provenance.md": "a2721a60be807704ffcf581537cc217cd28228010488a35b6c86a637dcf79582",
+        "SKILL.md": "aca3dac2be9c1d11e4e1b6bb51dd23f4718dae68007bbfce435d7696c23f8f99",
+        "compatibility.md": "b018af279671b3a357e7d8810b175f9267c5972f00c57668c2d9ef3b4296c02e",
+        "assets/example-input.md": "2610dd5498f059821a15a04e48b26d77bcf0f9693b1741c4e2e63d3f421f465f",
+        "assets/review-checklist.md": "a1227788a427bf9e96e363d90f5d1ebf58a138423df8d1c0e734527b2444a599",
+        "assets/incident-template.md": "e98417a44dd03af471d123245e0303d5994b5e8042e23b0d94a0222cb9f4b543",
+        "assets/timeline-template.md": "398e81d85797f562f5eaef6adc3806c59ffb151133922d15954a2f11163ca476"
+      },
+      "files_verified": 7,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "intpot-cli",
+      "source_files": {
+        "LICENSE": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "provenance.md": "e0c5b25898893336ff59d5413fbff3abfa9e21b0d4bc198e87ee2ff6d453dac1",
+        "SKILL.md": "faeac043de555677ab7da6ffc298d0afc63d28e9c448e10d6074b4e65617aaa2",
+        "compatibility.md": "30c47095e455d8dd35898584d17b85b0a24102ca51f2808edb26016e44dfd860",
+        "references/LICENSE.md": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "references/upstream.md": "adc110824726faea7d78bf5552962033f3ebc4263c54f8296bd9227c8dcf56a0"
+      },
+      "files_verified": 6,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "intpot-python",
+      "source_files": {
+        "LICENSE": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "provenance.md": "a807f5152ce4d2de24455b55e8df66aa1884da91b53b299c8ddc24968c03d53e",
+        "SKILL.md": "0b1f24bba23e5813a1ecdf142a4e4dd43e90f0550e15e4aaa703d58f5b3eedaf",
+        "compatibility.md": "9d5101e5150f2a6b02e97c57e3635e26b3cfb26066f6c5c68e0b435e168f8eaf",
+        "references/LICENSE.md": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "references/upstream.md": "12d34072bb1fc6e2e50a750e50fddf036e83c8fc261f3b2ae3e168dd0b319c01"
+      },
+      "files_verified": 6,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "refpot-database",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "9452b5ed5c1f77e967a5a2ece5eddb4bd677422676f270fe883a1703e4ddef31",
+        "SKILL.md": "fa31d409a9c5503a88a51d91e3e3e69e5666049ab0f3be2888c2b31f30299fea",
+        "compatibility.md": "9d1475569a6f859db17876b4b54c34e5b7e8a4f911c5de5dfd1240c93d1366fa",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "573ec7a855392ed58d89b5e139348af9b6f1bd4a915043aebff9bf473d307df8"
+      },
+      "files_verified": 6,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "repository-readiness",
+      "source_files": {
+        "provenance.md": "b0c64f1becf5d9638235b4cf958a206444e0d8e733c43b3e5cd2ff1c6711a485",
+        "SKILL.md": "712edafad95e7eedf9c5bc5c02ce61f39949f4e3d8c3086beda04e473c05ac6f",
+        "compatibility.md": "3d8bb1e4289023ff6b98c99c02697a0a79041b3dafc7dfb060c9a05231fda095",
+        "scripts/record_check.py": "26225988ad80c97a45e295f3413239f3b56fe989fe242240bea37b882044f6a8",
+        "assets/report.md": "2198d77985b4db851ac46f56fbdb3dd7ff3ec02b8e3ff910111b99ea4411ab10"
+      },
+      "files_verified": 5,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "summonpot",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "310e9843b6b87412cdef566ad740212597352bcd7dba2919e9cf3113b6bdab2a",
+        "SKILL.md": "0a23d0cc039919f26355bfa3586e3f1741dca48e12c8f931077fdb2ab881704b",
+        "compatibility.md": "5e3b2ed8baf2cb22e5441e8d8030b92e374a1596e7232e9f4b9086f7df615533",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "6854fdfc73876d0f27fd8bbd06dfafc0c874402c03806c822f9df6a6d2345e8a"
+      },
+      "files_verified": 6,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "summonpot-code-review",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "e1b3d1cca34674d0ad86c4b9e2c34543d1a59a386556d1e75d8ee53bc0a7b341",
+        "SKILL.md": "1ba4c81c1f6c86953698a2b02f4709cf97ea4875a13229771a3ef07567eae137",
+        "compatibility.md": "d0e1e4110c5b931abb9ed1fb1f5e19d208ad49a907d3adb85814331ece4f1ea0",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "e1d954a394747da05642d376a7f12c926822f8e13c6b38d60560d0cc78e13958"
+      },
+      "files_verified": 6,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    },
+    {
+      "name": "summonpot-pr-review",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "5ef5da3ec4b3499d3a1ac06be2045a6de1441e0eb7e178efd7b36c6b9b447d5e",
+        "SKILL.md": "eed4bcb5810fea503020c97b516c2ec3e2af22eba8c23bfa01512cf84bca342c",
+        "compatibility.md": "51bc54d49e302c4c90009cc6247bd3739b98c1bfbdbf2231eb13efda71a4aa16",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "9b3f55cd03bb1caace2843659a502c23434b239196a884d395fbc88239143bda"
+      },
+      "files_verified": 6,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "project_links_verified": true,
+      "standalone_resource_links_verified": true,
+      "sibling_preserved": true,
+      "selected_removal_verified": true,
+      "no_global_install": true
+    }
+  ],
+  "client_or_model_launched": false,
+  "scope": "Real public immutable-source add/list/remove and installed-byte/link checks; not native activation or task-efficacy evidence"
+}
