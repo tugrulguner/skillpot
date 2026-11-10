@@ -191,6 +191,21 @@ class ProspectivePlacementTests(unittest.TestCase):
         case = next(case for case in self.manifest['cases'] if case['id'] == 'harbor-archive')
         maps = json.loads((folder / 'record-map.json').read_text())
         self.assertEqual(placement_errors(corrected, case['expected_records'], maps), [])
+        sections = {}
+        current = None
+        for line in corrected.split('\n'):
+            if line.startswith('## '):
+                current = line
+            elif line.startswith('### '):
+                sections[line] = current
+        for row in maps:
+            self.assertEqual(row['containing_h2'], sections[row['heading']])
+        for row in maps:
+            self.assertIsInstance(row['output_evidence'], list)
+            self.assertTrue(row['output_evidence'])
+            for evidence in row['output_evidence']:
+                self.assertEqual(evidence['file'], 'actions.md')
+                self.assertIn(evidence['quote'], corrected)
 
     def test_every_source_record_has_category_evidence_and_a_prospective_placement_criterion(self):
         self.assertEqual(len(self.manifest['cases']), 2)

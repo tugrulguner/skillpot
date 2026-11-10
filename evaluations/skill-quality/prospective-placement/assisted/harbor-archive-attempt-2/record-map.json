@@ -1,37 +1,62 @@
 [
   {
     "key": "logbook-catalogue",
-    "heading": "### A2 \u2014 Catalogue the north-pier logbooks",
+    "heading": "### A2 — Catalogue the north-pier logbooks",
     "containing_h2": "## Outstanding actions and requirements",
     "identity_evidence": "Dev catalogue assignment; dispatch Assignment, 4 June.",
-    "output_evidence": "A2 record in initial actions.md."
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### A2 — Catalogue the north-pier logbooks"
+      }
+    ]
   },
   {
     "key": "map-sleeves",
-    "heading": "### A1 \u2014 Add acid-free map sleeves to the packing list",
+    "heading": "### A1 — Add acid-free map sleeves to the packing list",
     "containing_h2": "## Outstanding actions and requirements",
     "identity_evidence": "Mandatory acid-free map sleeves added to packing list; Rina says unassigned.",
-    "output_evidence": "A1 record explicitly records unassigned requirement, unknown owner/status; grader criterion requirement-owner-unknown passes."
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### A1 — Add acid-free map sleeves to the packing list"
+      }
+    ]
   },
   {
     "key": "sleeve-chart",
-    "heading": "### P1 \u2014 Prepare a sleeve-size chart",
-    "containing_h2": null,
+    "heading": "### P1 — Prepare a sleeve-size chart",
+    "containing_h2": "## Proposals — not outstanding commitments",
     "identity_evidence": "Tomas's conditional offer is not an assignment.",
-    "output_evidence": "No proposal record in initial attempt; null retained."
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### P1 — Prepare a sleeve-size chart"
+      }
+    ]
   },
   {
     "key": "lantern-index",
-    "heading": "### H1 \u2014 Lantern-register indexing",
-    "containing_h2": "## Historical items \u2014 not outstanding work",
+    "heading": "### H1 — Lantern-register indexing",
+    "containing_h2": "## Historical items — not outstanding work",
     "identity_evidence": "Completed by Mei; owner Mei.",
-    "output_evidence": "H1 historical record."
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### H1 — Lantern-register indexing"
+      }
+    ]
   },
   {
     "key": "crate-h9-inspection",
-    "heading": "### A3 \u2014 Crate H-9 seal inspection (status unresolved)",
+    "heading": "### A3 — Crate H-9 seal inspection (status unresolved)",
     "containing_h2": "## Unresolved items",
     "identity_evidence": "Register explicitly says both entries refer to same Crate H-9 inspection.",
-    "output_evidence": "Single A3 canonical record; section is incorrectly Outstanding, not Unresolved."
+    "output_evidence": [
+      {
+        "file": "actions.md",
+        "quote": "### A3 — Crate H-9 seal inspection (status unresolved)"
+      }
+    ]
   }
 ]
