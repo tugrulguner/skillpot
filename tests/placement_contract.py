@@ -35,7 +35,7 @@ def placement_errors(text: str, expected_records: Any, record_map: Any) -> list[
     for row in record_map:
         if (not isinstance(row, dict) or not isinstance(row.get('key'), str)
                 or 'heading' not in row or (row['heading'] is not None and
-                    (not isinstance(row['heading'], str) or not re.fullmatch(r' {0,3}### [^\r\n]+', row['heading'])))):
+                    (not isinstance(row['heading'], str) or not re.fullmatch(r' {0,3}###[ \t]+[^\r\n]+', row['heading'])))):
             return ['invalid record mapping']
         if row['key'] in mapped:
             return ['duplicate mapped key']
@@ -62,14 +62,17 @@ def placement_errors(text: str, expected_records: Any, record_map: Any) -> list[
         if delimiter and (delimiter[1][0] != '`' or '`' not in delimiter[2]):
             fence = (delimiter[1][0], len(delimiter[1]))
             continue
-        heading_line = line.lstrip(' ') if not line.startswith('    ') else line
-        if heading_line.startswith('# '):
-            current = None
-        elif heading_line.startswith('## '):
-            current = heading_line[3:]
-            section_counts[current] += 1
-        elif heading_line.startswith('### '):
-            records.append((line, current))
+        heading = re.fullmatch(r' {0,3}(#{1,6})(?:[ \t]+(.*))?', line)
+        if heading:
+            level = len(heading[1])
+            if level == 1:
+                current = None
+            elif level == 2:
+                title = (heading[2] or '').rstrip(' \t')
+                current = re.sub(r'[ \t]+#+$', '', title).strip(' \t')
+                section_counts[current] += 1
+            elif level == 3:
+                records.append((line, current))
         elif line.strip().rstrip('.') == 'None identified within the supplied scope':
             empty_sections.add(current)
     if any(section_counts[title] != 1 for title in set(SECTIONS.values())):

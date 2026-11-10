@@ -129,6 +129,17 @@ class PlacementContractTests(unittest.TestCase):
         self.assertTrue(any('missing canonical record' in error for error in errors))
         self.assertTrue(any('wrong containing section' in error for error in errors))
 
+    def test_atx_empty_h1_and_tab_delimiters_do_not_hide_section_changes(self):
+        heading = mapping()[0]['heading']
+        for marker in ('#', '#\t', '##\tOther section'):
+            with self.subTest(marker=marker):
+                self.assertTrue(placement_errors(fixture().replace(heading, marker + '\n\n' + heading), RECORDS, mapping()))
+        text = fixture().replace('## ', '##\t')
+        maps = [dict(row, heading=row['heading'].replace('### ', '###\t')) for row in mapping()]
+        self.assertEqual(placement_errors(text, RECORDS, maps), [])
+        ghost = fixture() + '\n###\tExtra record\n'
+        self.assertTrue(placement_errors(ghost, RECORDS, mapping()))
+
     def test_valid_records_accept_arbitrary_id_schemes_and_crlf(self):
         for ids in (['X8', 'Zeta', 'R3', 'H4', 'U9'], ['B74', 'Alpha', 'N9', 'Old1', 'Pending2']):
             with self.subTest(ids=ids):

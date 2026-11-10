@@ -108,8 +108,9 @@ All eight new raw reports are preserved byte-for-byte. The new cohort retains mi
 host guidance, one visible tool-error event, unknown token counts and truncated
 runtime-preview limits. Its explicit template-heading and working-directory
 instructions differ from the initial cohort; there is no matched causal comparison.
-The mechanical checker was completed during task execution, not frozen with the
-criteria, and its missing-record diagnostic was clarified after grading. A parent
+The initial mechanical checker was implemented during task execution, not frozen
+with the criteria; missing-record diagnostics and ATX syntax guards were repaired
+after grading. A parent
 citation review also found a blank-line reference in harbor attempt 1; passing
 frozen judgments are not complete source-locator certification.
 

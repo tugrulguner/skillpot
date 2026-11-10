@@ -4,9 +4,10 @@ This is a new cohort, not a rewritten rubric or regrade of the original six task
 attempts. `cases.json` and all four fictional source inputs were parent-reviewed
 and fingerprinted before the new task attempts were dispatched. `protocol.json`
 records that immutable identity and the unchanged public skill snapshot. The
-mechanical checker was completed and calibrated while task execution was in
-progress, before the parent inspected the new reports; its code identity was not
-part of the pre-execution freeze. The source-derived criteria, not a post-hoc
+initial mechanical checker was implemented and calibrated during task execution,
+before parent report inspection. Later missing-record diagnostics and ATX syntax
+guards were repaired after grading; checker code was not part of the pre-execution
+freeze. The source-derived criteria, not a post-hoc
 checker implementation, define the prospective judgments.
 
 ## Predeclared acceptance
@@ -45,7 +46,8 @@ an invalid mapping. Output IDs are not prescribed by the corpus.
   match the independently reviewed source category.
 - A nonempty section cannot claim that none were identified.
 - Quoted heading lines and fenced backtick/tilde code are data. Up to three spaces
-  of ATX heading indentation and CRLF are supported; a new H1 resets the H2 context.
+  of ATX heading indentation, tab delimiters and physical LF/CRLF/CR are supported;
+  a new H1 (including an empty heading) resets the H2 context.
 
 This is a test-only checker for the explicit ATX template profile, not a general
 Markdown parser or semantic classifier. It does not infer facts from Category
