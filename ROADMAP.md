@@ -120,6 +120,65 @@ family discovery deploys independently and each alignment change needs merge app
       and `timeline.md`, observed impact and supporting/contradicting hypotheses,
       inspection-only default, a source-derived historical CI example and selective
       installation. No automatic diagnostics, remediation or task-efficacy claim.
+
+### Pending skill backlog
+
+This consolidates the earlier engineering/audit candidates with the later additions;
+new suggestions do not replace or automatically outrank existing candidates.
+`incident-triage`, originally a first-wave candidate, is implemented above.
+`benchmark-audit` remains the other first-wave candidate, pending recovery and review
+of a complete public-safe benchmark evidence packet. Work one bounded skill at a
+time; further ordering depends on evidence readiness and an explicit scope.
+Names and output filenames below remain provisional until each contract is reviewed.
+These entries do not claim completed evaluations or authorize implementation.
+
+- [ ] Implement `benchmark-audit`: review whether a performance claim is supported
+      by raw trials, matched workloads/contracts, source and environment identities,
+      complete comparison cells, errors and retained losses. Produce
+      `benchmark-audit.md` with supported/unsupported claims and evidence gaps;
+      review existing evidence by default, without implicitly rerunning benchmarks.
+- [ ] Implement `experiment-design`: turn a hypothesis and current evidence into
+      `experiment.md` defining a discriminating comparison, invariants, falsifiers,
+      positive/negative controls, a frozen trial matrix, resource budget and
+      advance/revise/stop rules. A design is not an executed experiment.
+- [ ] Implement `invariant-audit`: map a named technical guarantee and failure model
+      to source paths, independent expected outcomes, observations, counterexamples
+      and proposed negative tests in `invariant-audit.md`. Distinguish source review
+      from executed tests; finite checks do not establish formal verification.
+- [ ] Implement `performance-investigation`: use a measured symptom, comparable
+      baseline and permitted traces to produce `investigation.md`, separating
+      observations, eliminated hypotheses, supported mechanisms and remaining
+      qualification. Diagnosis does not silently authorize optimization or system changes.
+- [ ] Implement `release-verification`: produce `release-verification.md` binding
+      applicable source/build/install/consumer/CI/publication/deployment gates to
+      exact candidate identities and explicit gaps. Verify the package's actual
+      delivery boundary without granting merge, publication or deployment authority.
+- [ ] Implement `audit-evidence`: assemble `evidence-index.md` mapping named
+      assertions to scoped, source-linked records with provenance, freshness,
+      contradictions, exceptions and declared redactions. Preserve original/assisted
+      distinctions; indexing evidence does not establish the underlying claim.
+- [ ] Implement `architecture-planning`: turn project goals, current code, public
+      contracts and constraints into an evidence-linked architecture plan covering
+      component responsibilities, data flow, dependencies, alternatives/trade-offs,
+      risks and incremental implementation/verification steps. Keep assumptions and
+      open decisions explicit; planning does not authorize implementation.
+- [ ] Implement `example-regression-check`: reuse and create runnable examples under
+      `examples/` covering the package's functionalities and real use cases. Maintain
+      a feature/use-case-to-example coverage map with expected outcomes and assertions;
+      compare baseline and candidate versions, including failure and boundary cases.
+      Record actual commands, package/runtime versions and results, distinguish setup
+      failures from regressions, and name coverage gaps. Execution, dependency changes
+      and external-service access require explicit scope; example presence alone does
+      not establish coverage or a passing regression check.
+- [ ] Evaluate `control-evidence-map` as a later, conditional extension: first select
+      an exact framework/customer checklist, version, applicability scope, owners and
+      assessment period, and review authoritative requirements. Produce `control-map.md`
+      and `gaps.md` distinguishing documented policy, implemented controls and evidence
+      of operation. Retain unsupported/not-assessed items; engineering checks do not
+      establish organizational compliance, certification, attestation or legal conclusions.
+
+### Library maintenance and delivery
+
 - [ ] Add useful skills with concrete inputs, outputs, permissions, public source
       rights and a named maintenance owner.
 - [ ] Improve task examples and failure guidance when users report actual gaps.
