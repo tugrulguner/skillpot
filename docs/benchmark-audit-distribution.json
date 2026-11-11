@@ -1,14 +1,14 @@
 {
-  "source_commit": "67cc081dd26bcd91529bf68ceaf3c66bf3dbbdb9",
-  "source_ref": "67cc081dd26bcd91529bf68ceaf3c66bf3dbbdb9",
-  "source_url": "https://github.com/tugrulguner/skillpot/tree/67cc081dd26bcd91529bf68ceaf3c66bf3dbbdb9",
+  "source_commit": "ad7aec4d77945ed10c3a1ff49fb2b4f8d786c27f",
+  "source_ref": "ad7aec4d77945ed10c3a1ff49fb2b4f8d786c27f",
+  "source_url": "https://github.com/tugrulguner/skillpot/tree/ad7aec4d77945ed10c3a1ff49fb2b4f8d786c27f",
   "scope": "public immutable-source install/list/remove; filesystem verification only",
   "node": "22.23.4",
   "installer": "skills@1.7.6",
   "files_verified": 10,
   "source_files": {
     "provenance.md": "fffee25f8892e720ab9c1742cd255403d6d765a0a559c30cd023404d9d76e7e6",
-    "SKILL.md": "ebf2250e88c9670f6a8a0b86c094e01b9e188294e94fa661d12a635dd8c9a0ce",
+    "SKILL.md": "456ba21ddb88449279e8a495aacdfa64763397744ddcb09afed68148d0c52629",
     "compatibility.md": "b5a1df332b62047f5545b18469c18a49cb359c381e606c88ccda489644a934a2",
     "references/evidence-checklist.md": "4d1aa595e616d1a04aa258f055c81d0d445e905fdf321a61941fbe573cbcf8e9",
     "assets/benchmark-audit-template.md": "ad7190aa3a704045b9ce0adef66bee358f4abfa1d519602b09efb54f06c37a2a",

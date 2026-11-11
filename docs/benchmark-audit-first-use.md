@@ -11,7 +11,7 @@ artifacts, diagnose causes or authorize promotion/publication.
 With Node.js 22.20+ and Git, run from an owned project:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/67cc081dd26bcd91529bf68ceaf3c66bf3dbbdb9 --skill benchmark-audit
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/ad7aec4d77945ed10c3a1ff49fb2b4f8d786c27f --skill benchmark-audit
 ```
 
 Choose your agent, or append `--agent claude-code`, `--agent cursor`, `--agent codex`
