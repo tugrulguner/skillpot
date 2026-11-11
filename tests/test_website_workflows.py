@@ -45,13 +45,16 @@ class WebsiteWorkflowTests(unittest.TestCase):
         workflow = yaml.safe_load((ROOT / '.github/workflows/deploy-website.yml').read_text())
         steps = workflow['jobs']['deploy']['steps']
         setups = [index for index, step in enumerate(steps)
-                  if step.get('uses', '').startswith('actions/setup-python@')]
+                  if step.get('uses', '').startswith('astral-sh/setup-uv@')]
         self.assertEqual(len(setups), 1)
-        self.assertEqual(steps[setups[0]]['with']['python-version'], '3.12')
+        self.assertFalse(any(step.get('uses', '').startswith('actions/setup-python@')
+                             for step in steps))
         check = next(index for index, step in enumerate(steps)
                      if step.get('name') == 'Check canonical repository sources')
         self.assertLess(setups[0], check)
-        self.assertIn('python3 -m venv', steps[check]['run'])
+        self.assertIn('uv venv --managed-python --python 3.12', steps[check]['run'])
+        self.assertIn('import ssl; print(ssl.OPENSSL_VERSION)', steps[check]['run'])
+        self.assertIn('uv pip install --python', steps[check]['run'])
 
     def test_manual_deployment_cannot_publish_a_feature_branch(self):
         workflow = yaml.safe_load((ROOT / '.github/workflows/deploy-website.yml').read_text())
