@@ -30,13 +30,12 @@ jobs:
           node-version: '22.23.4'
           cache: npm
           cache-dependency-path: website/package-lock.json
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
-        with:
-          python-version: '3.12'
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
       - name: Check canonical repository sources
         run: |
-          python3 -m venv "$RUNNER_TEMP/skillpot-source"
-          "$RUNNER_TEMP/skillpot-source/bin/pip" install -r requirements-dev.txt
+          uv venv --managed-python --python 3.12 "$RUNNER_TEMP/skillpot-source"
+          "$RUNNER_TEMP/skillpot-source/bin/python" -c 'import ssl; print(ssl.OPENSSL_VERSION)'
+          uv pip install --python "$RUNNER_TEMP/skillpot-source/bin/python" -r requirements-dev.txt
           "$RUNNER_TEMP/skillpot-source/bin/python" scripts/check_docs.py
           "$RUNNER_TEMP/skillpot-source/bin/python" scripts/check_project_skills.py
           "$RUNNER_TEMP/skillpot-source/bin/python" -m unittest discover -s tests -v
