@@ -19,8 +19,23 @@ class CollectionHardeningTests(unittest.TestCase):
         self.assertEqual(set(record["agents"]), {"claude-code", "cursor", "codex", "hermes-agent"})
         self.assertFalse(record["client_or_model_launched"])
         names = {p.name for p in (ROOT / "skills").iterdir() if p.is_dir()}
-        self.assertEqual({row["name"] for row in record["skills"]}, names)
-        self.assertEqual(len(record["skills"]), len(names))
+        previous_names = {row["name"] for row in record["skills"]}
+        # Preserve the executed fourteen-skill matrix and every original byte check.
+        # The new bundle has a separate public replay at its own immutable pin.
+        self.assertEqual(len(previous_names), 14)
+        self.assertNotIn("benchmark-audit", previous_names)
+        addition = json.loads((ROOT / "docs/benchmark-audit-distribution.json").read_text())
+        added_package = ROOT / "skills/benchmark-audit"
+        added_files = {p.relative_to(added_package).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                       for p in added_package.rglob("*") if p.is_file()}
+        self.assertEqual(addition["source_files"], added_files)
+        self.assertEqual(addition["files_verified"], len(added_files))
+        self.assertEqual(previous_names | {"benchmark-audit"}, names)
+        self.assertTrue(addition["lock_ref_verified"])
+        self.assertTrue(addition["sibling_preserved"])
+        self.assertTrue(addition["selected_removal_verified"])
+        self.assertTrue(addition["no_global_install"])
+        self.assertFalse(addition["client_or_model_launched"])
         for row in record["skills"]:
             with self.subTest(name=row["name"]):
                 package = ROOT / "skills" / row["name"]

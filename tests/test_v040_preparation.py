@@ -40,7 +40,7 @@ class V040PreparationTests(unittest.TestCase):
     def test_contents_and_limits_cover_complete_collection(self):
         # Frozen release notes name the ten pre-claim-check bundles, not future source additions.
         names = sorted(p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")
-                       if p.parent.name not in {"claim-check", "change-impact", "bug-repro", "incident-triage"})
+                       if p.parent.name not in {"claim-check", "change-impact", "bug-repro", "incident-triage", "benchmark-audit"})
         self.assertEqual(len(names), 10)
         text = NOTES.read_text()
         self.assertIn("ten skills", text)

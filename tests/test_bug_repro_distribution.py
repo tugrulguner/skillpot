@@ -21,12 +21,12 @@ class BugReproDistributionTests(unittest.TestCase):
             self.assertIn(value, text)
         self.assertNotIn("--all", first[1])
 
-    def test_current_source_fourteen_and_stable_ten_remain_separate(self):
+    def test_current_source_fifteen_and_stable_ten_remain_separate(self):
         imported = json.loads((ROOT / "catalog/modepot-sources.json").read_text())["skills"]
         names = {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}
         self.assertEqual(names, {row["name"] for row in imported} | {
-            "repository-readiness", "decision-brief", "document-actions", "claim-check", "change-impact", "bug-repro", "incident-triage"})
-        self.assertEqual(len(names), 14)
+            "repository-readiness", "decision-brief", "document-actions", "claim-check", "change-impact", "bug-repro", "incident-triage", "benchmark-audit"})
+        self.assertEqual(len(names), 15)
         for file in ["README.md", "catalog/README.md", "website/src/content/docs/index.mdx", "website/public/llms.txt"]:
             text = (ROOT / file).read_text()
             self.assertIn("bug-repro", text, file)

@@ -97,12 +97,14 @@ instructions grants no additional authority.
 ## Choose a workflow
 
 Published v0.4.1 contains ten skills, including `decision-brief` and
-`document-actions`. Current source contains fourteen workflows, adding the unreleased
-`claim-check`, `change-impact`, `bug-repro` and `incident-triage` bundles. Their [claim-check](docs/claim-check-first-use.md),
-[change-impact](docs/change-impact-first-use.md), [bug-repro](docs/bug-repro-first-use.md)
-and [incident-triage](docs/incident-triage-first-use.md)
-automated first-use guides select separate source revisions because the stable release
-does not contain these skills.
+`document-actions`. Current source contains fifteen workflows, adding the unreleased
+`claim-check`, `change-impact`, `bug-repro`, `incident-triage` and `benchmark-audit` bundles. Their [claim-check](docs/claim-check-first-use.md),
+[change-impact](docs/change-impact-first-use.md), [bug-repro](docs/bug-repro-first-use.md),
+[incident-triage](docs/incident-triage-first-use.md) and
+[benchmark-audit](docs/benchmark-audit-first-use.md) first-use guides cover source-only
+workflows; the stable release does not contain them. Benchmark-audit produces
+`benchmark-audit.md` with four claim-level verdicts, and reviews existing evidence
+without running benchmarks or models.
 The original two workflows retain
 [published field-consistency corrections](docs/field-consistency.md) to those two
 skills. The stable clone above selects their published snapshot; the first-use guides
@@ -110,9 +112,10 @@ use its exact commit.
 Publication does not promote repository-readiness beyond its experimental scope.
 
 The [current-source hardening guide](docs/skill-hardening.md) records a review of all
-fourteen bundles, corrected standalone references and worked-output consistency,
-and a fresh individual-installation matrix for every bundle. It includes claim-check
-0.1.1; the published ten-skill release remains unchanged.
+fourteen bundles at the historical snapshot it records, corrected standalone references
+and worked-output consistency, and a fresh individual-installation matrix for every
+bundle at that snapshot. Current source now has fifteen bundles; the published ten-skill
+release remains unchanged.
 
 Current source also contains a [Dexpot-only published-guide refresh](docs/published-upstream-refresh.md):
 instruction version 0.3.0 targets Dexpot v0.8.1's path-annotation correction. It is not
@@ -133,6 +136,7 @@ its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
 | Triage symptoms and logs into an evidence-backed investigation handoff | [incident-triage](skills/incident-triage/SKILL.md) 0.1.0, source only; `incident.md` and `timeline.md`; [one-command setup](docs/incident-triage-first-use.md); inspection-only by default |
 | Minimize a reported failure into a runnable reproducer and regression test | [bug-repro](skills/bug-repro/SKILL.md) 0.1.0, source only; [one-command setup](docs/bug-repro-first-use.md); execution requires explicit permission |
 | Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, current source only; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
+| Audit a performance claim against existing benchmark evidence, without rerunning trials | [benchmark-audit](skills/benchmark-audit/SKILL.md) 0.1.0, source only; inspection-only; [first-use guide](docs/benchmark-audit-first-use.md) |
 | Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.1, current source only; [one-command setup](docs/claim-check-first-use.md) |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review

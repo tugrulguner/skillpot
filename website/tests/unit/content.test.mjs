@@ -26,11 +26,29 @@ test('claim-check is current-source and unreleased, separate from the stable rel
     assert.match(text, /claim-check-first-use\.md/);
   }
   assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check/);
-  assert.match(catalogue, /fourteen current-source bundles/);
+  assert.match(catalogue, /fifteen current-source bundles/);
   assert.match(catalogue, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check/);
   assert.match(map, /claim-check-first-use\.md/);
   assert.match(map, /Published v0\.4\.1 contains ten skills/);
   assert.doesNotMatch(map, /Published v0\.4\.1 contains eleven skills/);
+});
+
+test('benchmark-audit is a source-only inspection workflow, separate from stable ten', async () => {
+  const [home, catalogue, map] = await Promise.all([
+    readFile(join(root, 'src/content/docs/index.mdx'), 'utf8'),
+    readFile(join(root, 'src/content/docs/catalogue.md'), 'utf8'),
+    readFile(join(root, 'public/llms.txt'), 'utf8'),
+  ]);
+  for (const text of [home, catalogue, map]) {
+    assert.match(text, /benchmark-audit/);
+    assert.match(text, /benchmark-audit-first-use\.md/);
+    assert.match(text, /benchmark-audit\.md/);
+    assert.match(text, /inspection-only/i);
+    assert.match(text, /does not run benchmarks|without benchmark or model execution/i);
+  }
+  assert.match(home, /fifteen skills/);
+  assert.match(catalogue, /fifteen current-source bundles/);
+  assert.match(map, /Published v0\.4\.1 contains ten skills/);
 });
 
 test('released decision brief is discoverable with the v0.4.1 clone', async () => {

@@ -41,12 +41,12 @@ class ChangeImpactDistributionTests(unittest.TestCase):
         self.assertFalse(record["client_or_model_launched"])
         self.assertEqual(set(record["agents"]), {"claude-code", "cursor", "codex", "hermes-agent"})
 
-    def test_current_source_preserves_original_bundles_and_stable_ten(self):
+    def test_current_source_fifteen_preserves_original_bundles_and_stable_ten(self):
         expected = {row["name"] for row in json.loads((ROOT / "catalog/modepot-sources.json").read_text())["skills"]}
-        expected |= {"repository-readiness", "decision-brief", "document-actions", "claim-check", "change-impact", "bug-repro", "incident-triage"}
+        expected |= {"repository-readiness", "decision-brief", "document-actions", "claim-check", "change-impact", "bug-repro", "incident-triage", "benchmark-audit"}
         actual = {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}
         self.assertEqual(actual, expected)
-        self.assertEqual(len(actual), 14)
+        self.assertEqual(len(actual), 15)
         for name in ["README.md", "catalog/README.md", "website/src/content/docs/index.mdx", "website/public/llms.txt"]:
             text = (ROOT / name).read_text()
             for value in ["change-impact", "change-impact-first-use.md", "impact.md", "verification.md"]:

@@ -15,11 +15,13 @@ import SkillExcerpt from '../../components/SkillExcerpt.astro';
 
 ## Install one skill
 
-Published v0.4.1 has ten skills: seven public project/contributor packages, the original experimental repository-readiness workflow, decision-brief 0.1.1 and document-actions 0.1.2. Current source has fourteen skills, including the original **claim-check**, **change-impact**, **bug-repro** and **incident-triage** bundles. Claim-check is now instruction version 0.1.1; the other three remain 0.1.0. All four are unreleased and not in that ten-skill release. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
+Published v0.4.1 has ten skills: seven public project/contributor packages, the original experimental repository-readiness workflow, decision-brief 0.1.1 and document-actions 0.1.2. Current source has fifteen skills, including the original **claim-check**, **change-impact**, **bug-repro**, **incident-triage** and **benchmark-audit** bundles. Claim-check is now instruction version 0.1.1; change-impact, bug-repro, incident-triage and benchmark-audit remain 0.1.0. All five are unreleased and not in that ten-skill release. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
 
 <div className="install"><strong>Install one current-source skill</strong><code>{'npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check'}</code><a href="https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md">Claim-check first-use guide →</a></div>
 
 This installs only claim-check from an immutable current-source revision using the standard Skills CLI; Node.js 22.20.0+ and Git are required. It is a working source artifact, not a published v0.4.1 skill or an efficacy claim. For the stable ten-skill release, see [v0.4.1](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.1) and the [quick start](/quickstart/). Installation does not install product dependencies. Use the host's existing permissions and ask before dependencies, paid services or publication.
+
+Current-source **benchmark-audit** reviews existing benchmark evidence into `benchmark-audit.md`, with four claim-level verdicts and explicit evidence boundaries. Inspection-only; it does not run benchmarks or models. See the [benchmark-audit first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/benchmark-audit-first-use.md); source availability is not task-efficacy evidence.
 
 ## How a skill works
 
@@ -45,7 +47,7 @@ Current-source **bug-repro** turns an authorized bug investigation into a minima
 
 Current-source **incident-triage** turns bounded symptoms and logs into `incident.md` and `timeline.md`, separating observed impact, source-linked events, hypotheses and next checks. It is inspection-only by default, without automatic diagnostics or remediation. See the [incident-triage first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/incident-triage-first-use.md); a passing retry does not establish a fixed cause.
 
-[Browse the ten published skills and four source-only workflows](/catalogue/) or read the [host setup](/host-setup/).
+[Browse the ten published skills and five source-only workflows](/catalogue/) or read the [host setup](/host-setup/).
 
 ## Original workflow design
 
