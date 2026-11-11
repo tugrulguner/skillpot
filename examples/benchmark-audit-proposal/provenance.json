@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "kind": "proposal-source-packet-not-new-benchmark",
+  "repository": "https://github.com/tugrulguner/dexpot",
+  "source_commit": "798c449fd1337404c388abb2a177c0302ba35fc0",
+  "retrieved_on": "2026-11-11",
+  "source_status": "public MIT snapshot; full published JSON record copied, original per-trial raw files and wheels are not included",
+  "files": [
+    {
+      "local_path": "sources/linux-screen.json",
+      "upstream_path": "benchmarks/scalar_response/linux-screen.json",
+      "url": "https://github.com/tugrulguner/dexpot/blob/798c449fd1337404c388abb2a177c0302ba35fc0/benchmarks/scalar_response/linux-screen.json",
+      "git_blob_sha1": "cd41d6861c365e2ecfc084852900768c904905dc",
+      "file_sha256": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+      "bytes": 33073,
+      "adaptation": "none; byte-exact public source"
+    },
+    {
+      "local_path": "sources/DEXPOT-LICENSE",
+      "upstream_path": "LICENSE",
+      "url": "https://github.com/tugrulguner/dexpot/blob/798c449fd1337404c388abb2a177c0302ba35fc0/LICENSE",
+      "git_blob_sha1": "057bc978a9293429cb129f7fec3944d54ec26179",
+      "file_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "bytes": 1069,
+      "adaptation": "none; byte-exact public source"
+    }
+  ]
+}

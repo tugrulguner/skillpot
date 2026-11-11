@@ -1,0 +1,27 @@
+{
+  "kind": "authored-proposal-expectations-not-agent-grades",
+  "source": "sources/linux-screen.json",
+  "claims": [
+    {"id": "C1", "verdict": "Supported within scope", "evidence": [{"pointer": "/evaluation/expected_trials", "value": 8}, {"pointer": "/evaluation/collected_trials", "value": 8}]},
+    {"id": "C2", "verdict": "Contradicted", "evidence": [{"pointer": "/trials/3/cell/id", "value": "item-1-candidate"}, {"pointer": "/trials/3/metrics/timeout_errors", "value": 6}, {"pointer": "/trials/6/cell/id", "value": "fallback-control"}, {"pointer": "/trials/6/metrics/timeout_errors", "value": 2}]},
+    {"id": "C3", "verdict": "Contradicted", "evidence": [{"pointer": "/trials/4/metrics/good", "value": 2607747}, {"pointer": "/trials/5/metrics/good", "value": 2683339}, {"pointer": "/trials/3/comparison_valid", "value": false}]},
+    {"id": "C4", "verdict": "Supported within scope", "evidence": [{"pointer": "/trials/4/metrics/duration_us", "value": 30100399}, {"pointer": "/trials/5/metrics/duration_us", "value": 30001020}, {"pointer": "/trials/4/metrics/p99_us", "value": 891.0}, {"pointer": "/trials/5/metrics/p99_us", "value": 687.0}]},
+    {"id": "C5", "verdict": "Insufficient evidence", "evidence": [{"pointer": "/trials/0/raw_record_sha256", "value": "7fb250d172d01d63729c7f0e8b08f76d060145190fb826bab6100db41fd4c0b2"}], "reason": "Original raw records and wheel bytes are not supplied; recorded identities are not independent execution verification."},
+    {"id": "C6", "verdict": "Insufficient evidence", "evidence": [{"pointer": "/plan/original_full_gate_retained/offered_rps", "value": 10000}, {"pointer": "/plan/original_full_gate_retained/scheduled_p99_us", "value": 20000}, {"pointer": "/plan/original_full_gate_retained/status", "value": "Not evaluated by this closed-loop screen; original #116 failures retained"}], "reason": "Closed-loop observations do not establish a scheduled-arrival latency budget."},
+    {"id": "C7", "verdict": "Not assessed", "evidence": [], "reason": "Explicit owner exclusion in claims.md, not a hidden in-scope evidence gap."}
+  ],
+  "accounting": {"planned": 8, "recorded": 8, "smoke": 2, "screen": 6, "source_reported_valid": 6, "source_reported_valid_screen": 4, "known_good_replies": 10451995, "reported_timeouts": 8},
+  "pair": {"id": "item-2", "candidate_index": 4, "control_index": 5, "goodput_ratio_display": "0.968621", "p99_ratio_display": "1.296943"},
+  "controls": [
+    {"id": "untouched-record", "check": "inventory", "operation": "none", "expected": true, "meaning": "Complete published cell inventory; not original-raw or performance qualification."},
+    {"id": "valid-losing-pair", "check": "pair", "operation": "none", "expected": true, "meaning": "Recorded eligibility is independent of whether the candidate wins."},
+    {"id": "drop-timeout-row", "check": "inventory", "operation": "remove", "pointer": "/trials/3", "expected": false, "meaning": "A favorable subset cannot claim complete coverage."},
+    {"id": "duplicate-trial", "check": "inventory", "operation": "duplicate", "pointer": "/trials/3", "expected": false, "meaning": "Counts alone must not hide duplicate/missing cell identity."},
+    {"id": "mismatched-workload", "check": "pair", "operation": "set", "pointer": "/trials/4/cell/profile", "value": "large_nested", "expected": false, "meaning": "Unequal named workloads are not a matched pair."},
+    {"id": "wrong-artifact-binding", "check": "pair", "operation": "set", "pointer": "/trials/4/source/wheel", "value": "8b9ed82c9f70d92594190ccde530fa20f7c1a817feb8e01814af92714f3ad12d", "expected": false, "meaning": "A declared control wheel cannot stand in for the planned candidate; this does not authenticate real executed bytes."},
+    {"id": "zero-duration", "check": "pair", "operation": "set", "pointer": "/trials/4/metrics/duration_us", "value": 0, "expected": false, "meaning": "Do not divide by zero or invent a goodput value."},
+    {"id": "smoke-as-screen", "check": "pair", "operation": "set", "pointer": "/trials/4/cell/phase", "value": "smoke", "expected": false, "meaning": "A smoke observation cannot replace a screen repeat."},
+    {"id": "hidden-transport-error", "check": "pair", "operation": "set", "pointer": "/trials/4/metrics/timeout_errors", "value": 1, "expected": false, "meaning": "A retained true comparison_valid flag cannot erase a nonzero timeout counter."}
+  ],
+  "limits": "Authored expectations and bounded fixture checks. No generic report grader, benchmark execution, independent artifact authentication or observed agent efficacy. Semantic verdicts require source review."
+}
