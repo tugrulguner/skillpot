@@ -120,6 +120,19 @@ family discovery deploys independently and each alignment change needs merge app
       and `timeline.md`, observed impact and supporting/contradicting hypotheses,
       inspection-only default, a source-derived historical CI example and selective
       installation. No automatic diagnostics, remediation or task-efficacy claim.
+- [ ] Implement `architecture-planning`: turn project goals, current code, public
+      contracts and constraints into an evidence-linked architecture plan covering
+      component responsibilities, data flow, dependencies, alternatives/trade-offs,
+      risks and incremental implementation/verification steps. Keep assumptions and
+      open decisions explicit; planning does not authorize implementation.
+- [ ] Implement `example-regression-check`: reuse and create runnable examples under
+      `examples/` covering the package's functionalities and real use cases. Maintain
+      a feature/use-case-to-example coverage map with expected outcomes and assertions;
+      compare baseline and candidate versions, including failure and boundary cases.
+      Record actual commands, package/runtime versions and results, distinguish setup
+      failures from regressions, and name coverage gaps. Execution, dependency changes
+      and external-service access require explicit scope; example presence alone does
+      not establish coverage or a passing regression check.
 - [ ] Add useful skills with concrete inputs, outputs, permissions, public source
       rights and a named maintenance owner.
 - [ ] Improve task examples and failure guidance when users report actual gaps.
