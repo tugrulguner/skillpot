@@ -38,6 +38,11 @@ class BenchmarkAuditSourceContract(unittest.TestCase):
                        "outside all evidence roots", "installed bundle", "exclusive creation"):
             self.assertIn(phrase, text)
 
+    def test_all_practice_inputs_are_reachable_from_the_entrypoint(self):
+        text = (BUNDLE / "SKILL.md").read_text()
+        for name in ("claims.md", "linux-screen.json", "linux-screen.provenance.json", "provenance.md", "DEXPOT-LICENSE"):
+            self.assertIn(f"](assets/practice/{name})", text)
+
     def test_template_has_six_required_top_level_sections(self):
         text = (BUNDLE / "assets/benchmark-audit-template.md").read_text()
         for heading in ("Scope and decision", "Evidence inventory", "Claims", "Comparison and accounting", "Calculations", "Evidence limits and next checks"):

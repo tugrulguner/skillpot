@@ -34,7 +34,7 @@ Require the exact claim text/version (or readable report), claim/section boundar
 
 No readable claims or output permission: stop and ask. Partial records: address independently readable source-level claims and mark qualification limits; never reconstruct logs. Authentication, rate limits or unavailable archives: record the gap; do not bypass controls. Changed inputs require a separately authorized revision and fresh output, preserving prior reports. Discovering a bug does not authorize fixes or reruns.
 
-The optional [practice packet](assets/practice/claims.md) is input-only: claims are authored fixture text, not upstream statements or observed task output. It includes a complete published summary/JSON record and full notice, not original raw trial files or wheel bytes; declared hashes/runtime flags are not independently verified. Do not use any repository example expected report or acceptance data as an answer oracle. Practice is not a benchmark or efficacy test.
+The optional [practice packet](assets/practice/claims.md) is input-only: claims are authored fixture text, not upstream statements or observed task output. Read its [historical JSON](assets/practice/linux-screen.json), [packet provenance](assets/practice/provenance.md), [source manifest](assets/practice/linux-screen.provenance.json) and [full notice](assets/practice/DEXPOT-LICENSE). It includes a complete published summary/JSON record, not original raw trial files or wheel bytes; declared hashes/runtime flags are not independently verified. Do not use any repository example expected report or acceptance data as an answer oracle. Practice is not a benchmark or efficacy test.
 
 ## Verification
 
