@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "kind": "optional-input-only-practice-packet",
+  "repository": "https://github.com/tugrulguner/dexpot",
+  "source_commit": "798c449fd1337404c388abb2a177c0302ba35fc0",
+  "retrieved_on": "2026-11-11",
+  "source_status": "public MIT snapshot; full published JSON record copied, original per-trial raw files and wheels are not included",
+  "files": [
+    {
+      "local_path": "linux-screen.json",
+      "upstream_path": "benchmarks/scalar_response/linux-screen.json",
+      "url": "https://github.com/tugrulguner/dexpot/blob/798c449fd1337404c388abb2a177c0302ba35fc0/benchmarks/scalar_response/linux-screen.json",
+      "git_blob_sha1": "cd41d6861c365e2ecfc084852900768c904905dc",
+      "file_sha256": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+      "bytes": 33073,
+      "adaptation": "none; byte-exact public source"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "source_commit": "ad7aec4d77945ed10c3a1ff49fb2b4f8d786c27f",
+  "source_ref": "ad7aec4d77945ed10c3a1ff49fb2b4f8d786c27f",
+  "source_url": "https://github.com/tugrulguner/skillpot/tree/ad7aec4d77945ed10c3a1ff49fb2b4f8d786c27f",
+  "scope": "public immutable-source install/list/remove; filesystem verification only",
+  "node": "22.23.4",
+  "installer": "skills@1.7.6",
+  "files_verified": 10,
+  "source_files": {
+    "provenance.md": "fffee25f8892e720ab9c1742cd255403d6d765a0a559c30cd023404d9d76e7e6",
+    "SKILL.md": "456ba21ddb88449279e8a495aacdfa64763397744ddcb09afed68148d0c52629",
+    "compatibility.md": "b5a1df332b62047f5545b18469c18a49cb359c381e606c88ccda489644a934a2",
+    "references/evidence-checklist.md": "4d1aa595e616d1a04aa258f055c81d0d445e905fdf321a61941fbe573cbcf8e9",
+    "assets/benchmark-audit-template.md": "ad7190aa3a704045b9ce0adef66bee358f4abfa1d519602b09efb54f06c37a2a",
+    "assets/practice/linux-screen.json": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+    "assets/practice/provenance.md": "2e5ceaa7a8e07ba2efbbe6e4f285a702f1fc7907def83760e29ad5f382160a88",
+    "assets/practice/linux-screen.provenance.json": "3c8808a35b5d2c19f2dbd4f6a2faa767b22c8bcf14762abebafacb4183d9d28b",
+    "assets/practice/DEXPOT-LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+    "assets/practice/claims.md": "ef032f669cca8a19ec32ecf7514140683881733157de0d321e9faea725205fdb"
+  },
+  "agents": [
+    "claude-code",
+    "cursor",
+    "codex",
+    "hermes-agent"
+  ],
+  "agent_links": {
+    ".hermes/skills/benchmark-audit": ".agents/skills/benchmark-audit",
+    ".claude/skills/benchmark-audit": ".agents/skills/benchmark-audit"
+  },
+  "lock_ref_verified": true,
+  "sibling_preserved": true,
+  "selected_removal_verified": true,
+  "no_global_install": true,
+  "client_or_model_launched": false
+}

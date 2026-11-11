@@ -126,20 +126,21 @@ family discovery deploys independently and each alignment change needs merge app
 This consolidates the earlier engineering/audit candidates with the later additions;
 new suggestions do not replace or automatically outrank existing candidates.
 `incident-triage`, originally a first-wave candidate, is implemented above.
-`benchmark-audit` remains the other first-wave candidate, pending recovery and review
-of a complete public-safe benchmark evidence packet. Work one bounded skill at a
-time; further ordering depends on evidence readiness and an explicit scope.
-Names and output filenames below remain provisional until each contract is reviewed.
+`benchmark-audit` was the other first-wave candidate. Its proposal/design is accepted
+in [#56](https://github.com/tugrulguner/skillpot/issues/56); the separate source-only
+implementation does not establish task efficacy or qualify benchmark results. Work one
+bounded skill at a time; further ordering depends on evidence readiness and explicit scope.
+Names and output filenames for remaining backlog items remain provisional until reviewed.
 These entries do not claim completed evaluations or authorize implementation.
 
-- [ ] Implement `benchmark-audit`: review whether a performance claim is supported
+- [x] Implement `benchmark-audit` in source only: review whether a performance claim is supported
       by raw trials, matched workloads/contracts, source and environment identities,
       complete comparison cells, errors and retained losses. Produce
       `benchmark-audit.md` with claim-level verdicts and evidence gaps;
       review existing evidence by default, without implicitly rerunning benchmarks.
-      The [bounded proposal and worked packet](docs/benchmark-audit-proposal.md)
-      specify verdicts, provenance, comparison limits and acceptance cases; design
-      review is pending and no installable bundle is implemented.
+      The [accepted proposal and worked packet](docs/benchmark-audit-proposal.md)
+      specify verdicts, provenance, comparison limits and acceptance cases. Source-only
+      implementation is distinct from publication and task-efficacy evidence.
 - [ ] Implement `experiment-design`: turn a hypothesis and current evidence into
       `experiment.md` defining a discriminating comparison, invariants, falsifiers,
       positive/negative controls, a frozen trial matrix, resource budget and

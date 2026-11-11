@@ -14,8 +14,9 @@ class IncidentTriageDistributionTests(unittest.TestCase):
             text = (ROOT / name).read_text()
             for token in ["incident-triage", "incident-triage-first-use.md", "incident.md", "timeline.md"]:
                 self.assertIn(token, text, name)
-        self.assertIn("fourteen current-source bundles", (ROOT / "catalog/README.md").read_text())
+        self.assertIn("fifteen current-source bundles", (ROOT / "catalog/README.md").read_text())
         self.assertIn("Published v0.4.1 contains ten skills", (ROOT / "README.md").read_text())
+        self.assertIn("benchmark-audit", (ROOT / "catalog/README.md").read_text())
 
     def test_public_installer_manifest_binds_all_selected_files_and_pin(self):
         path = ROOT / "docs/incident-triage-distribution.json"
