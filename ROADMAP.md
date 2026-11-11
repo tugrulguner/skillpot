@@ -135,8 +135,11 @@ These entries do not claim completed evaluations or authorize implementation.
 - [ ] Implement `benchmark-audit`: review whether a performance claim is supported
       by raw trials, matched workloads/contracts, source and environment identities,
       complete comparison cells, errors and retained losses. Produce
-      `benchmark-audit.md` with supported/unsupported claims and evidence gaps;
+      `benchmark-audit.md` with claim-level verdicts and evidence gaps;
       review existing evidence by default, without implicitly rerunning benchmarks.
+      The [bounded proposal and worked packet](docs/benchmark-audit-proposal.md)
+      specify verdicts, provenance, comparison limits and acceptance cases; design
+      review is pending and no installable bundle is implemented.
 - [ ] Implement `experiment-design`: turn a hypothesis and current evidence into
       `experiment.md` defining a discriminating comparison, invariants, falsifiers,
       positive/negative controls, a frozen trial matrix, resource budget and
