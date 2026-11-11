@@ -11,6 +11,10 @@ jobs:
   website:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # Official image includes browsers and OS dependencies: no runner APT mirror access.
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f
+      options: --init --shm-size=1g
     defaults:
       run:
         working-directory: website
@@ -25,7 +29,6 @@ jobs:
           cache-dependency-path: website/package-lock.json
       - run: npm ci
       - run: npm run build
-      - run: node node_modules/@playwright/test/cli.js install --with-deps chromium
       - run: npm run test:browser
       - name: Retain browser screenshots and failure traces
         if: ${{ !cancelled() }}
