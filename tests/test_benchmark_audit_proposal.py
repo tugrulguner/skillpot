@@ -131,6 +131,9 @@ class BenchmarkAuditProposalTests(unittest.TestCase):
         p99 = candidate['p99_us'] / control['p99_us']
         self.assertLess(goodput, 1)
         self.assertGreater(p99, 1.10)
+        verdicts = {claim['id']: claim['verdict'] for claim in self.acceptance['claims']}
+        self.assertEqual(verdicts['C4'], 'Supported within scope')
+        self.assertEqual(verdicts['C3'], 'Contradicted')
         self.assertEqual(f'{goodput:.6f}', spec['goodput_ratio_display'])
         self.assertEqual(f'{p99:.6f}', spec['p99_ratio_display'])
         self.assertAlmostEqual(goodput, self.record['evaluation']['pairs'][1]['goodput_ratio'])

@@ -79,20 +79,21 @@ within the archived record, not independently verified, repeatable product behav
 
 ### C5 — Insufficient evidence
 
-> The supplied packet independently verifies the actual executed wheel bytes, serving
-> identity and original client-output counters for every trial.
+> The wheel bytes actually loaded in every recorded trial match that side's
+> declared wheel digest.
 
 The wheel digests at `/plan/control_wheel_sha256` and `/plan/candidate_wheel_sha256`
 are declared identities. For example, `/trials/0/source` and `/trials/0/lifecycle/events` add recorded
 startup/after-workload evidence, but no original wheel/raw bytes or independently
 captured execution chain are supplied. Correct hash format and internally consistent
-flags do not establish this claim. The missing evidence is original artifacts and
-source-bound execution/raw receipts; do not fabricate or silently retrieve them.
+flags do not establish this underlying execution claim. Missing wheel bytes and source-bound execution receipts leave it
+unresolved; they do not prove that different bytes actually ran. The separate claim
+that the packet supplies original wheel bytes would be contradicted by its inventory.
 
 ### C6 — Insufficient evidence
 
-> The supplied closed-loop screen establishes that the candidate meets a 20 ms
-> scheduled-arrival p99 budget at 10,000 offered requests per second.
+> At 10,000 offered requests per second, the candidate's scheduled-arrival
+> p99 latency is at most 20 ms.
 
 `/plan/original_full_gate_retained/offered_rps` is 10000 and
 `/plan/original_full_gate_retained/scheduled_p99_us` is 20000, but

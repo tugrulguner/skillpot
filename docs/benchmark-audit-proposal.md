@@ -103,6 +103,11 @@ Split conjunctions with different verdicts into stable subclaims. Conflicting so
 records remain side by side unless applicable authority or an explicit correction
 resolves them; majority, recency alone or favorable results are not resolution.
 Do not invent confidence scores, statistical significance or an overall accuracy rate.
+A claim about evidence availability is different from the underlying behavior: an
+inventory can contradict “this packet contains a scheduled-arrival trial” while
+leaving “the system meets a scheduled-arrival budget” insufficiently evidenced.
+Likewise, absent wheel bytes refute a claim that those bytes are supplied; they do
+not by themselves refute a claim about which bytes actually ran.
 
 ## Procedure to implement after design approval
 
