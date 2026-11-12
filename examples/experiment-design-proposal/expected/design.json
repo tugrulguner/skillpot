@@ -65,7 +65,9 @@
       "Analysis and decision rules",
       "Freeze and execution handoff"
     ],
-    "status": "authored retrospective example; not an observation"
+    "status": "authored retrospective example; not an observation",
+    "normalized_sha256": "bd21d16bcda0dfe51eed735df0794da7c974ec547cb8175a25e29ed6ec8980ec",
+    "fingerprint_scope": "Reviewed fixed fixture text: collapse whitespace and canonicalize scheduled binding-row spacing/order. Not semantic validation of arbitrary reports; unreviewed text changes require separate review and explicit fingerprint refresh."
   },
   "matrix": [
     {

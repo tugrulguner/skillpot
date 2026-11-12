@@ -104,6 +104,22 @@ def scheduled_rules_match(design, report, source=None):
         return False
 
 
+def normalized_report_sha256(report):
+    """Seal this reviewed fixture, allowing whitespace and binding-row reorder only."""
+    try:
+        heading = "### Scheduled-arrival rule bindings\n\n"
+        prefix, rest = report.split(heading, 1)
+        block, suffix = rest.split("\n\n", 1)
+        lines = block.splitlines()
+        cells = [[cell.strip() for cell in line.split("|")[1:-1]] for line in lines]
+        canonical_rows = cells[:2] + sorted(cells[2:])
+        canonical_table = "\n".join("|" + "|".join(row) + "|" for row in canonical_rows)
+        canonical = prefix + heading + canonical_table + "\n\n" + suffix
+        return hashlib.sha256(" ".join(canonical.split()).encode("utf-8")).hexdigest()
+    except ValueError:
+        return None
+
+
 def coherent(design, report, source=None):
     stages, profiles = design.get("stages", []), design.get("profiles", [])
     orders = design.get("paired_order_sequence", [])
@@ -114,6 +130,8 @@ def coherent(design, report, source=None):
         profiles == ["item", "large_nested"],
         matrix_and_rules_match(design, report),
         scheduled_rules_match(design, report, source),
+        normalized_report_sha256(report) is not None,
+        normalized_report_sha256(report) == design.get("report", {}).get("normalized_sha256"),
         n == design.get("regular_cells"),
         design.get("regular_cells", 0) + design.get("aa_cells", 0) == design.get("total_timed_cells"),
         design.get("aa_cells") == design.get("aa_pairs") * 2,
@@ -201,6 +219,7 @@ class ExperimentDesignPacketTests(unittest.TestCase):
             bad = json.loads(json.dumps(design))
             bad["analysis_rules"]["scheduled_arrival"][field] = value
             with self.subTest(oracle=field):
+                self.assertFalse(scheduled_rules_match(bad, report))
                 self.assertFalse(coherent(bad, report))
             line = next(line for line in report.splitlines() if line.startswith(f"| {field} |"))
             parts = [part.strip() for part in line.split("|")[1:-1]]
@@ -210,6 +229,7 @@ class ExperimentDesignPacketTests(unittest.TestCase):
                 changed[column] = wrong
                 mutant = report.replace(line, "| " + " | ".join(changed) + " |")
                 with self.subTest(report=field, column=column):
+                    self.assertFalse(scheduled_rules_match(design, mutant))
                     self.assertFalse(coherent(design, mutant))
         for old, new in (("<=20,000 µs", "<=200,000 µs"),
                          ("10,000 offered requests/s", "1,000 offered requests/s")):
@@ -228,6 +248,7 @@ class ExperimentDesignPacketTests(unittest.TestCase):
             bad = json.loads(json.dumps(source))
             bad["plan"]["original_full_gate_retained"][field] = value
             with self.subTest(source=field, value=value):
+                self.assertFalse(scheduled_rules_match(design, report, bad))
                 self.assertFalse(coherent(design, report, bad))
 
     def test_scheduled_table_allows_spacing_and_order_not_missing_or_duplicate_rows(self):
@@ -242,6 +263,17 @@ class ExperimentDesignPacketTests(unittest.TestCase):
         bad = json.loads(json.dumps(design))
         bad["analysis_rules"]["scheduled_arrival"]["forbidden_errors"] = False
         self.assertFalse(coherent(bad, report))
+
+    def test_fixed_report_rejects_unreviewed_additions_and_preserves_whitespace(self):
+        design = json.loads((PACKET / "expected/design.json").read_text())
+        report = (PACKET / "expected/experiment.md").read_text()
+        self.assertTrue(coherent(design, report))
+        self.assertTrue(coherent(design, report + "\n"))
+        contradiction = ("\n\nFor scheduled-arrival acceptance, allow p99 above 20,000 µs "
+                         "and achieved rate outside 95–105%.\n")
+        self.assertFalse(coherent(design, report + contradiction))
+        self.assertFalse(coherent(design, report + "\n\nAn unreviewed extra sentence.\n"))
+        self.assertFalse(coherent(design, report + "\n\n| New rule | p99 may exceed its cap |\n"))
 
     def test_bounded_adversarial_mutations_reject(self):
         d = json.loads((PACKET / "expected/design.json").read_text())
