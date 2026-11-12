@@ -100,6 +100,17 @@ For eligible matched cells, compute goodput as validated good replies divided by
 
 Scheduled-arrival qualification is separate: every control and candidate scheduled-arrival trial must achieve 95–105% of 10,000 offered requests/s, have scheduled-arrival p99 <=20,000 µs and zero forbidden errors, plus all owner-approved correctness/resource gates. These values come from `/plan/original_full_gate_retained`; its minimum capacity ratio 0.95 must also hold on the separate closed-loop pairs, which the stricter item and explicit fallback rules already require. Require every applicable gate; do not average away failures. A/A drift limits and positive-control expectations are missing and must be frozen by the owner before execution. A/A or negative-control failure invalidates dependent qualification. An identity or instrumentation mismatch invalidates attribution and blocks dependent decisions; it is not evidence of a candidate performance defect. An otherwise attributable candidate correctness/forbidden-error breach or resource-cap breach fails its corresponding acceptance gate; preserve the observation. A valid loss remains a loss, but a fallback loss within the explicit 0.95 tolerance does not by itself fail that gate. Missing scheduled-arrival observations or any required identity/measurement evidence means insufficient qualification; capacity-only win cannot qualify target-load performance.
 
+### Scheduled-arrival rule bindings
+
+| Rule | Operator | Value | Unit | Source JSON pointer |
+|---|---|---|---|---|
+| offered_rps | == | 10000 | requests/s | /plan/original_full_gate_retained/offered_rps |
+| achieved_rate_fraction_ge | >= | 0.95 | fraction | /plan/original_full_gate_retained/achieved_rate_fraction/0 |
+| achieved_rate_fraction_le | <= | 1.05 | fraction | /plan/original_full_gate_retained/achieved_rate_fraction/1 |
+| each_trial_scheduled_p99_us_le | <= | 20000 | µs | /plan/original_full_gate_retained/scheduled_p99_us |
+| forbidden_errors | == | 0 | count | /plan/original_full_gate_retained/errors |
+| minimum_closed_loop_capacity_ratio | >= | 0.95 | ratio | /plan/original_full_gate_retained/minimum_capacity_ratio |
+
 No optional stopping, adaptive outlier deletion, post-result threshold changes, or silent cell replacement. Stop at the first invalid cell, retain its receipt, and mark dependent decisions incomplete. A retry is a distinct authorized observation under unchanged frozen rules. These illustrative repetitions are not a power certificate and establish no causal mechanism.
 
 ## Freeze and execution handoff

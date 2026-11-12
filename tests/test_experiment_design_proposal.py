@@ -52,7 +52,59 @@ def matrix_and_rules_match(design, report):
     ))
 
 
-def coherent(design, report):
+def scheduled_rules_match(design, report, source=None):
+    """Bind this fixture's six target-load rules, units and prose to its source."""
+    if source is None:
+        source = json.loads((PACKET / "sources/linux-screen.json").read_text())
+    try:
+        gate = source["plan"]["original_full_gate_retained"]
+        specs = (
+            ("offered_rps", "==", gate["offered_rps"], "requests/s", "offered_rps"),
+            ("achieved_rate_fraction_ge", ">=", gate["achieved_rate_fraction"][0], "fraction", "achieved_rate_fraction/0"),
+            ("achieved_rate_fraction_le", "<=", gate["achieved_rate_fraction"][1], "fraction", "achieved_rate_fraction/1"),
+            ("each_trial_scheduled_p99_us_le", "<=", gate["scheduled_p99_us"], "µs", "scheduled_p99_us"),
+            ("forbidden_errors", "==", gate["errors"], "count", "errors"),
+            ("minimum_closed_loop_capacity_ratio", ">=", gate["minimum_capacity_ratio"], "ratio", "minimum_capacity_ratio"),
+        )
+        rules = design.get("analysis_rules", {}).get("scheduled_arrival", {})
+        if not isinstance(rules, dict) or set(rules) != {row[0] for row in specs}:
+            return False
+        for field, _, value, _, _ in specs:
+            if type(value) not in (int, float) or type(rules[field]) not in (int, float) or rules[field] != value:
+                return False
+        heading = "### Scheduled-arrival rule bindings"
+        if report.count(heading) != 1:
+            return False
+        block = report.split(heading + "\n\n", 1)[1].split("\n\n", 1)[0]
+        lines = block.splitlines()
+        if len(lines) != len(specs) + 2:
+            return False
+        observed = {}
+        for line in lines[2:]:
+            if not line.startswith("|") or not line.endswith("|"):
+                return False
+            parts = [part.strip() for part in line.split("|")[1:-1]]
+            if len(parts) != 5 or parts[0] in observed:
+                return False
+            observed[parts[0]] = tuple(parts[1:])
+        expected = {field: (operator, f"{value:g}", unit, "/plan/original_full_gate_retained/" + pointer)
+                    for field, operator, value, unit, pointer in specs}
+        if observed != expected:
+            return False
+        low, high = gate["achieved_rate_fraction"]
+        errors = "zero" if gate["errors"] == 0 else f"{gate['errors']:g}"
+        sentence = ("Scheduled-arrival qualification is separate: every control and candidate "
+                    f"scheduled-arrival trial must achieve {low * 100:g}–{high * 100:g}% of "
+                    f"{gate['offered_rps']:,.0f} offered requests/s, have scheduled-arrival p99 "
+                    f"<={gate['scheduled_p99_us']:,.0f} µs and {errors} forbidden errors,")
+        floor = f"its minimum capacity ratio {gate['minimum_capacity_ratio']:g} must also hold on the separate closed-loop pairs"
+        normalized = " ".join(report.split())
+        return sentence in normalized and floor in normalized
+    except (KeyError, IndexError, TypeError, ValueError):
+        return False
+
+
+def coherent(design, report, source=None):
     stages, profiles = design.get("stages", []), design.get("profiles", [])
     orders = design.get("paired_order_sequence", [])
     n = len(stages) * len(profiles) * design.get("paired_blocks_per_stage_profile", 0) * 2
@@ -61,6 +113,7 @@ def coherent(design, report):
         stages == ["closed_loop_capacity", "scheduled_arrival"],
         profiles == ["item", "large_nested"],
         matrix_and_rules_match(design, report),
+        scheduled_rules_match(design, report, source),
         n == design.get("regular_cells"),
         design.get("regular_cells", 0) + design.get("aa_cells", 0) == design.get("total_timed_cells"),
         design.get("aa_cells") == design.get("aa_pairs") * 2,
@@ -136,6 +189,59 @@ class ExperimentDesignPacketTests(unittest.TestCase):
             bad[field][1] = "unmatched_payload_or_mode"
             with self.subTest(field=field):
                 self.assertFalse(coherent(bad, report))
+
+    def test_scheduled_rules_reject_oracle_and_report_mismatches(self):
+        design = json.loads((PACKET / "expected/design.json").read_text())
+        report = (PACKET / "expected/experiment.md").read_text()
+        self.assertTrue(coherent(design, report))
+        changes = {"offered_rps": 1000, "achieved_rate_fraction_ge": 0.90,
+                   "achieved_rate_fraction_le": 1.10, "each_trial_scheduled_p99_us_le": 200000,
+                   "forbidden_errors": 1, "minimum_closed_loop_capacity_ratio": 0.90}
+        for field, value in changes.items():
+            bad = json.loads(json.dumps(design))
+            bad["analysis_rules"]["scheduled_arrival"][field] = value
+            with self.subTest(oracle=field):
+                self.assertFalse(coherent(bad, report))
+            line = next(line for line in report.splitlines() if line.startswith(f"| {field} |"))
+            parts = [part.strip() for part in line.split("|")[1:-1]]
+            for column, wrong in ((1, "wrong-direction"), (2, "999999"),
+                                  (3, "wrong-unit"), (4, "/plan/wrong_pointer")):
+                changed = parts.copy()
+                changed[column] = wrong
+                mutant = report.replace(line, "| " + " | ".join(changed) + " |")
+                with self.subTest(report=field, column=column):
+                    self.assertFalse(coherent(design, mutant))
+        for old, new in (("<=20,000 µs", "<=200,000 µs"),
+                         ("10,000 offered requests/s", "1,000 offered requests/s")):
+            self.assertIn(old, report)
+            self.assertFalse(coherent(design, report.replace(old, new)))
+
+    def test_scheduled_rules_reject_changed_source(self):
+        design = json.loads((PACKET / "expected/design.json").read_text())
+        report = (PACKET / "expected/experiment.md").read_text()
+        source = json.loads((PACKET / "sources/linux-screen.json").read_text())
+        self.assertTrue(coherent(design, report, source))
+        for field, value in (("offered_rps", 1000), ("scheduled_p99_us", 200000),
+                             ("errors", 1), ("minimum_capacity_ratio", 0.90),
+                             ("achieved_rate_fraction", [0.90, 1.05]),
+                             ("achieved_rate_fraction", [0.95, 1.10])):
+            bad = json.loads(json.dumps(source))
+            bad["plan"]["original_full_gate_retained"][field] = value
+            with self.subTest(source=field, value=value):
+                self.assertFalse(coherent(design, report, bad))
+
+    def test_scheduled_table_allows_spacing_and_order_not_missing_or_duplicate_rows(self):
+        design = json.loads((PACKET / "expected/design.json").read_text())
+        report = (PACKET / "expected/experiment.md").read_text()
+        block = report.split("### Scheduled-arrival rule bindings\n\n", 1)[1].split("\n\n", 1)[0]
+        lines = block.splitlines()
+        equivalent = "\n".join(lines[:2] + [line.replace(" | ", "  |  ") for line in reversed(lines[2:])])
+        self.assertTrue(coherent(design, report.replace(block, equivalent)))
+        self.assertFalse(coherent(design, report.replace(lines[2] + "\n", "")))
+        self.assertFalse(coherent(design, report.replace(block, block + "\n" + lines[2])))
+        bad = json.loads(json.dumps(design))
+        bad["analysis_rules"]["scheduled_arrival"]["forbidden_errors"] = False
+        self.assertFalse(coherent(bad, report))
 
     def test_bounded_adversarial_mutations_reject(self):
         d = json.loads((PACKET / "expected/design.json").read_text())

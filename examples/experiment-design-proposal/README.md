@@ -30,6 +30,8 @@ The scheduled-arrival stage requires a separately identified, available and appr
 
 [`acceptance.json`](acceptance.json) specifies authored cases and expected dispositions. The offline tests check the pristine fixture, source provenance and hashes, complete failed/loss-containing record retention, matrix pairing/order/stage/workload uniqueness, units and derived budget arithmetic, eight-section/report consistency, and bounded adversarial mutations. They do not establish semantic truth, prove historical validity, assess arbitrary plans, or demonstrate agent performance.
 
+The scheduled-arrival consistency checks bind all six numerical rules to their source JSON pointers, structured oracle, report table and prose. They reject changed latency/rate limits, achieved-rate bounds, forbidden-error allowances and capacity floors, as well as wrong operators, units, pointers, missing/duplicate rows and source-only changes; harmless table spacing and row order remain accepted. These are fixed-fixture integrity checks, not a generic report evaluator.
+
 From repository root:
 
 ```sh
