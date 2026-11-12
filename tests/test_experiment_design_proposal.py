@@ -1,4 +1,5 @@
 import hashlib
+import itertools
 import json
 import re
 import unittest
@@ -34,6 +35,13 @@ def matrix_and_rules_match(design, report):
     rows = design.get("matrix", [])
     if rows != planned_rows():
         return False
+    for stage, profile in sorted({(row["stage"], row["profile"]) for row in rows}):
+        comparisons = [row for row in rows if row["stage"] == stage
+                       and row["profile"] == profile and row["phase"] == "comparison"]
+        actual_order = ["".join(row["slot"] for row in comparisons if row["block"] == block)
+                        for block in sorted({row["block"] for row in comparisons})]
+        if actual_order != design.get("paired_order_sequence"):
+            return False
     table_rows = [line for line in report.splitlines() if re.match(r"\| P\d{3} \|", line)]
     expected = ["| " + " | ".join(str(row[key]) for key in (
         "id", "stage", "profile", "phase", "block", "slot", "artifact_role", "seconds")) + " |"
@@ -207,6 +215,29 @@ class ExperimentDesignPacketTests(unittest.TestCase):
             bad[field][1] = "unmatched_payload_or_mode"
             with self.subTest(field=field):
                 self.assertFalse(coherent(bad, report))
+
+    def test_declared_order_matches_every_matrix_stratum(self):
+        design = json.loads((PACKET / "expected/design.json").read_text())
+        report = (PACKET / "expected/experiment.md").read_text()
+        self.assertTrue(coherent(design, report))
+        canonical = design["paired_order_sequence"]
+        for order in sorted(set(itertools.permutations(canonical))):
+            bad = json.loads(json.dumps(design))
+            bad["paired_order_sequence"] = list(order)
+            with self.subTest(order=order):
+                self.assertEqual(matrix_and_rules_match(bad, report), list(order) == canonical)
+                self.assertEqual(coherent(bad, report), list(order) == canonical)
+        for stage in design["stages"]:
+            for profile in design["profiles"]:
+                bad = json.loads(json.dumps(design))
+                indices = [index for index, row in enumerate(bad["matrix"])
+                           if row["stage"] == stage and row["profile"] == profile
+                           and row["phase"] == "comparison" and row["block"] == 1]
+                first, second = indices
+                bad["matrix"][first], bad["matrix"][second] = bad["matrix"][second], bad["matrix"][first]
+                with self.subTest(stage=stage, profile=profile):
+                    self.assertFalse(matrix_and_rules_match(bad, report))
+                    self.assertFalse(coherent(bad, report))
 
     def test_scheduled_rules_reject_oracle_and_report_mismatches(self):
         design = json.loads((PACKET / "expected/design.json").read_text())
