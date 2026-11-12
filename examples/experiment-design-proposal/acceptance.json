@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "kind": "authored-adversarial-acceptance-cases-not-executed-trials",
+  "cases": [
+    {
+      "id": "missing_identity",
+      "mutation": "remove independently bindable candidate/control artifact identity",
+      "disposition": "blocked / insufficient qualification",
+      "why": "source-reported hash or summary flag alone does not establish loaded artifact identity"
+    },
+    {
+      "id": "aa_drift",
+      "mutation": "A/A pair exceeds the prospectively owner-frozen drift limit",
+      "disposition": "invalidate dependent comparison; stop and retain receipt",
+      "why": "calibration drift prevents attributing candidate/control difference"
+    },
+    {
+      "id": "negative_control_not_detected",
+      "mutation": "seeded correctness/transport fault is not detected",
+      "disposition": "detection pipeline unqualified; dependent decision incomplete",
+      "why": "absence of observed failure is meaningless if validator sensitivity is unestablished"
+    },
+    {
+      "id": "observed_candidate_error",
+      "mutation": "eligible candidate cell contains correctness or forbidden transport error",
+      "disposition": "candidate gate fails; do not drop the cell",
+      "why": "all applicable frozen correctness gates must hold"
+    },
+    {
+      "id": "valid_loss",
+      "mutation": "eligible closed-loop item pair has candidate/control goodput ratio 0.98",
+      "disposition": "retain loss; item each-pair >1.0 gate fails; no advance under the declared composite rule",
+      "why": "this explicit item loss breaches its frozen gate; not every tolerated fallback loss implies rejection"
+    },
+    {
+      "id": "capacity_win_without_scheduled_arrivals",
+      "mutation": "capacity stage appears to pass but scheduled-arrival observations are absent",
+      "disposition": "insufficient qualification for target-load decision",
+      "why": "closed-loop capacity and scheduled-arrival latency are different measurement modes"
+    },
+    {
+      "id": "preflight_clean_no_candidate_observations",
+      "mutation": "preflight succeeds but no candidate cells were observed",
+      "disposition": "design/preflight status only; no performance decision",
+      "why": "permission and readiness are not experiment results"
+    },
+    {
+      "id": "threshold_revision_after_data",
+      "mutation": "threshold changes after outcomes are seen",
+      "disposition": "reject as confirmatory analysis; preserve original and prospectively version revision",
+      "why": "post-result moving thresholds compromise frozen decision rule"
+    },
+    {
+      "id": "unauthorized_run",
+      "mutation": "attempt execution without explicit owner permission",
+      "disposition": "do not execute; request permission",
+      "why": "a design does not grant execution authority"
+    },
+    {
+      "id": "fallback_loss_within_margin",
+      "mutation": "all other valid complete gates pass and a large_nested pair goodput ratio is 0.97",
+      "disposition": "retain the loss; this ratio passes the explicit >=0.95 fallback gate, so it alone does not bar scoped advance",
+      "why": "a predeclared tolerated loss is not a win and must not be hidden, but it is not a failed gate"
+    }
+  ],
+  "status": "authored semantic expectations for independent review; not empirical cases or proof of general evaluator accuracy"
+}

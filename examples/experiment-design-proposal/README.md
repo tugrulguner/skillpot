@@ -1,0 +1,39 @@
+# Retrospective experiment-design packet
+
+**Authored integrity fixture only.** This is not an installable skill, prospective preregistration, experiment, benchmark, observed agent task, or execution receipt. Its complete input record and license are retained byte-exact copies, not newly fetched material.
+
+## Inputs and provenance
+
+[`task.md`](task.md) is the authored input-only review task and permission/read boundary. Expected reports/oracles are excluded from its later task input set.
+
+- [`sources/linux-screen.json`](sources/linux-screen.json): complete selected published Dexpot Linux-screen JSON, copied byte-for-byte from the retained public packet.
+- [`sources/DEXPOT-LICENSE`](sources/DEXPOT-LICENSE): complete byte-exact Dexpot MIT notice.
+- [`provenance.json`](provenance.json): capture origin, pinned upstream commit/path/blob IDs, byte counts and recomputed digests.
+
+The original campaign's raw trial outputs, wheels and independent launch/execution receipts are unavailable. Recorded hashes or status fields do not recover those artifacts or independently authenticate the events. Source-reported resource metrics concern a sampled server descendant tree during timed client windows and exclude startup/drain; they do not establish total experiment resources. Driver/host CPU, memory, sampling coverage and original sampling implementation are unknown. Do not claim a source-recorded flag alone proves a valid pair, a full gate, or execution identity.
+
+## Worked decision and design
+
+The authored illustration asks whether the recorded candidate merits further qualification against its named control, while explicitly not claiming the historical packet authorizes a new run. It distinguishes a closed-loop capacity screen from a separate scheduled-arrival/target-load stage. The historical record supplies thresholds as inherited illustrative gates only; the original scheduled-arrival criteria were expressly not evaluated by the closed-loop screen. Neither summary flags nor a purported capacity win can substitute for raw artifact binding, valid-cell review, or the missing scheduled-arrival observations.
+
+The proposed illustrative future matrix contains two workload profiles (`item`, `large_nested`) at each of two distinct stages (closed-loop capacity and scheduled-arrival), four paired blocks per workload/stage, and a deterministic counterbalanced AB/BA order sequence `AB, BA, BA, AB` (two per order). It is a fixed balanced order, **not randomized**. Each pair contributes two candidate/control trials: 2 × 2 × 4 × 2 = 32 regular cells. Four separate A/A calibration pairs contribute 8 cells (four baseline-vs-baseline pairs), for **40 timed calibration/comparison cells**, plus the two separately specified smoke cells. The full ordered 42-row matrix is enumerated in the expected report and oracle. These are authored repetition choices, not historical counts, power calculations, or guarantees of adequate precision.
+
+Each timed cell is illustratively budgeted at 30 seconds; two one-second smoke cells are separately preflight-only. Thus timed workload is 40 × 30 = 1,200 seconds (20 minutes); including two smoke cells gives 1,202 seconds (20 minutes, 2 seconds) of specified-matrix workload, excluding setup, warmup, drain, cooldown, analysis and undefined positive/negative validator controls. Their unbudgeted cost is unknown, not zero. These are design assumptions, not historical run duration or an authorized resource budget. Require an owner-approved total wall-clock/resource budget before execution. The historical FT process limits, where applicable, describe the DUT/server process scope only (RSS 536,870,912 bytes, 80 threads, 512 file descriptors, 10.5 CPU cores); they do not bound driver/host overhead or total machine use. Historical sample intervals/high-water values are source-reported and not independently verified; future sampling coverage, actual cadence, high-water capture, correctness and identity checks are preflight criteria.
+
+The scheduled-arrival stage requires a separately identified, available and approved driver plus independently specified arrival schedule and latency boundary. The retained closed-loop client does not establish this capability; no runnable command is proposed. Original wheels/raw data, driver availability, measurement instrumentation, final workload/target approval, owner permission, and an approved total resource/time budget remain unresolved. Therefore the design is complete as a bounded illustration but is **not executable and not authorized to execute**.
+
+## Expected output
+
+[`expected/experiment.md`](expected/experiment.md) is a post-results retrospective illustration. It preserves exactly the eight output-contract headings and labels historical facts, source-attributed observations, authored assumptions and gaps. It is not preregistration, an independent reproduction, causal diagnosis, or a claim of experiment execution. [`expected/design.json`](expected/design.json) is the structured authoring oracle for the frozen illustrative matrix, budgets, provenance and report identity; it is not a second runtime output or observed result.
+
+## Adversarial acceptance and verification
+
+[`acceptance.json`](acceptance.json) specifies authored cases and expected dispositions. The offline tests check the pristine fixture, source provenance and hashes, complete failed/loss-containing record retention, matrix pairing/order/stage/workload uniqueness, units and derived budget arithmetic, eight-section/report consistency, and bounded adversarial mutations. They do not establish semantic truth, prove historical validity, assess arbitrary plans, or demonstrate agent performance.
+
+From repository root:
+
+```sh
+uv run --no-project --with-requirements requirements-ci.txt python -m unittest discover -s tests -p test_experiment_design_proposal.py -v
+```
+
+No benchmark/client/model is run by these integrity tests. The packet contains no original raw campaign reconstruction or fabricated execution receipt.

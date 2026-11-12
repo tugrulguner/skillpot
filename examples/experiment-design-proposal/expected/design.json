@@ -1,0 +1,522 @@
+{
+  "schema": 1,
+  "kind": "retrospective-authoring-integrity-oracle-not-runtime-output",
+  "source": {
+    "path": "sources/linux-screen.json",
+    "upstream_commit": "798c449fd1337404c388abb2a177c0302ba35fc0",
+    "upstream_path": "benchmarks/scalar_response/linux-screen.json",
+    "retained_capture_commit": "1b0ae953b56a439661861c8f8ec9bf5375e8e5a6",
+    "sha256": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+    "bytes": 33073
+  },
+  "timing": "post-results retrospective illustration; not prospective preregistration or executed experiment",
+  "stages": [
+    "closed_loop_capacity",
+    "scheduled_arrival"
+  ],
+  "profiles": [
+    "item",
+    "large_nested"
+  ],
+  "paired_blocks_per_stage_profile": 4,
+  "paired_order_sequence": [
+    "AB",
+    "BA",
+    "BA",
+    "AB"
+  ],
+  "order_claim": "deterministic counterbalanced; not randomized",
+  "regular_cells": 32,
+  "aa_pairs": 4,
+  "aa_placement": "one pair per stage/profile stratum",
+  "aa_cells": 8,
+  "total_timed_cells": 40,
+  "timed_seconds_per_cell": 30,
+  "timed_seconds_total": 1200,
+  "smoke_cells": 2,
+  "smoke_seconds_per_cell": 1,
+  "smoke_seconds_total": 2,
+  "measured_seconds_including_smoke": 1202,
+  "excluded_time": [
+    "setup",
+    "warmup",
+    "drain",
+    "cooldown",
+    "analysis"
+  ],
+  "permissions": "no execution authorized; driver, owner, target, budgets and preflight remain unresolved",
+  "resource_scope": {
+    "historical_ft_limits_scope": "DUT/server process only; not total host or experiment resource guarantee",
+    "rss_bytes": 536870912,
+    "threads": 80,
+    "fds": 512,
+    "cpu_cores": 10.5,
+    "driver_host_budget": "unknown; must be separately approved and measured"
+  },
+  "report": {
+    "path": "expected/experiment.md",
+    "sections": [
+      "Question and decision",
+      "Evidence and assumptions",
+      "Hypotheses and falsifiers",
+      "Design, controls and invariants",
+      "Trial matrix and measurements",
+      "Budgets and permissions",
+      "Analysis and decision rules",
+      "Freeze and execution handoff"
+    ],
+    "status": "authored retrospective example; not an observation"
+  },
+  "matrix": [
+    {
+      "id": "P001",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "smoke",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 1
+    },
+    {
+      "id": "P002",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "smoke",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 1
+    },
+    {
+      "id": "P003",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P004",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P005",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P006",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P007",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P008",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P009",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P010",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P011",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P012",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P013",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P014",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P015",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P016",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P017",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P018",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P019",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P020",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P021",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P022",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P023",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P024",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P025",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P026",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P027",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P028",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P029",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P030",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P031",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P032",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P033",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P034",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P035",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P036",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P037",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P038",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P039",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P040",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P041",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P042",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    }
+  ],
+  "matrix_scope": "All specified smoke/calibration/comparison cells; separate positive/negative validator controls remain undefined preflight work and are not represented as zero-cost.",
+  "analysis_rules": {
+    "provenance": "Numerical thresholds inherited from /plan/screen_gate and /plan/original_full_gate_retained; applying them to four new pairs per profile is an authored extension, not the historical two-pair protocol.",
+    "item_goodput": {
+      "each_pair_gt": 1.0,
+      "median_ge": 1.05
+    },
+    "large_nested_goodput": {
+      "each_pair_ge": 0.95
+    },
+    "item_adjusted_closed_loop_p99": {
+      "median_pair_ratio_le": 1.1
+    },
+    "large_nested_adjusted_closed_loop_p99": {
+      "each_pair_ratio_le": 1.1
+    },
+    "scheduled_arrival": {
+      "offered_rps": 10000,
+      "achieved_rate_fraction_ge": 0.95,
+      "achieved_rate_fraction_le": 1.05,
+      "each_trial_scheduled_p99_us_le": 20000,
+      "forbidden_errors": 0,
+      "minimum_closed_loop_capacity_ratio": 0.95
+    },
+    "aa_drift_limit": null,
+    "positive_control_definition": null,
+    "negative_control_definition": null,
+    "overall_decision": "Advance to owner review only if complete valid observations pass all applicable rules; otherwise report failed gate(s) or insufficient qualification. Never a merge/release authority."
+  },
+  "plan_version": "retrospective-illustration-v1"
+}
