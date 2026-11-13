@@ -66,7 +66,7 @@
       "Freeze and execution handoff"
     ],
     "status": "authored retrospective example; not an observation",
-    "normalized_sha256": "bd21d16bcda0dfe51eed735df0794da7c974ec547cb8175a25e29ed6ec8980ec",
+    "normalized_sha256": "8b16a4ac760897ee65371570fe2c8f939774973be1631fc3b6ad67abb625ae28",
     "fingerprint_scope": "Reviewed fixed fixture text: collapse whitespace and canonicalize scheduled binding-row spacing/order. Not semantic validation of arbitrary reports; unreviewed text changes require separate review and explicit fingerprint refresh."
   },
   "matrix": [
@@ -520,5 +520,43 @@
     "negative_control_definition": null,
     "overall_decision": "Advance to owner review only if complete valid observations pass all applicable rules; otherwise report failed gate(s) or insufficient qualification. Never a merge/release authority."
   },
-  "plan_version": "retrospective-illustration-v1"
+  "plan_version": "retrospective-illustration-v2",
+  "revision_scope": "Post-results clarification of design rationale, units, inference limits and control roles; no new observations, changed cells, timings or numerical gates. Prior v1 retained in Git history.",
+  "design_rationale": {
+    "purpose": "Scoped qualification against inherited engineering gates, not causal mechanism identification. H1/H2 are complementary decision propositions, not independent causal explanations.",
+    "selected_comparison": "Matched artifact runs paired within each stage/profile/block; deterministic counterbalancing distributes comparison order without claiming randomization.",
+    "selection_rule": "Map each plausible alternative explanation to a discriminating contrast or observation, choose blocking/order/reset to address it, and state residual ambiguity.",
+    "limitations": [
+      "Initial A/A checks do not establish stability throughout later comparisons.",
+      "Counterbalancing does not eliminate nonlinear drift, carryover or artifact mismatch.",
+      "Reset/cooldown, state matching and ongoing drift observations require an owner-frozen protocol before execution."
+    ]
+  },
+  "inference_plan": {
+    "experimental_unit": "One scheduled artifact run (one cell); actual independence depends on a prospectively fixed initialization/reset and state-matching protocol.",
+    "comparison_unit": "One matched candidate/control pair within the same stage, profile and block.",
+    "within_run_samples": "Requests, latency samples and resource samples characterize a run; they are not independent treatment repetitions. A/A calibration cells are not additional candidate-effect repetitions.",
+    "repetition_rationale": "Four pairs give two comparisons in each order for descriptive repeatability and order-stratified inspection, rather than one comparison per order. This is a bounded feasibility choice, not a variance-based sample-size calculation; balance alone does not establish precision, independence or adequacy.",
+    "precision_status": "No variance estimate, justified precision target, power or population-level uncertainty claim is supplied. A stronger decision requires an owner-selected precision/design rationale before collecting its observations.",
+    "permitted_claim": "Descriptive feasibility and scoped gate outcomes only, conditional on complete valid future observations; no experiment has run."
+  },
+  "control_roles": {
+    "null_measurement": {
+      "matrix_role": "A/A calibration",
+      "expected": "Same-artifact measurements within an owner-frozen variation envelope.",
+      "failure_effect": "Invalidate dependent attribution; diagnose state, drift or instrumentation. Passing initial calibration does not certify later stability.",
+      "rule_field": "aa_drift_limit"
+    },
+    "known_effect_sensitivity": {
+      "expected": "Detect an owner-defined known effect at its predeclared relevant scale.",
+      "failure_effect": "Sensitivity for that effect/scale unqualified; block dependent interpretation.",
+      "rule_field": "positive_control_definition"
+    },
+    "seeded_fault_validator": {
+      "expected": "Reject an approved seeded correctness/transport fault, not report no effect.",
+      "failure_effect": "Correctness/error detector unqualified; block dependent acceptance.",
+      "rule_field": "negative_control_definition",
+      "legacy_label": "negative_control_definition is retained as a field identifier only; it denotes a software fault-validation check, not a scientific no-effect control."
+    }
+  }
 }

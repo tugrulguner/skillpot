@@ -14,8 +14,7 @@ Keep closed-loop capacity and scheduled-arrival target-load questions distinct. 
 may retain explicitly sourced numeric thresholds as illustrative constraints. Label
 new repetitions, blocking/order, durations and extensions of historical aggregation
 as authored choices, not historical facts, prospective preregistration or power claims.
-Make the proposed cells inspectable and identify the expected validity/detection
-controls, unknown control definitions and missing execution prerequisites. Do not
+Make the proposed cells inspectable and justify why the selected contrast, blocking/order/reset rules distinguish the plausible explanations; state what evidence would justify randomization or another design and what ambiguity remains. Distinguish experimental unit, independent run repetitions, and within-run requests/samples. Justify repetitions and precision limits without treating four blocks or 30 seconds as adequate by default. Name controls by function (A/A measurement check, known-effects sensitivity control, seeded-fault validator check), with expected observation, failure consequence, and unresolved definitions; do not conflate a scientific no-effect control with a software test. Do not
 invent original wheels, logs, driver commands, authority or budgets.
 
 The actual future decision owner, artifacts/execution bindings, scheduled-arrival

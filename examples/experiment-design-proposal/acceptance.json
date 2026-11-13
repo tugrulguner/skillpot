@@ -18,7 +18,9 @@
       "id": "negative_control_not_detected",
       "mutation": "seeded correctness/transport fault is not detected",
       "disposition": "detection pipeline unqualified; dependent decision incomplete",
-      "why": "absence of observed failure is meaningless if validator sensitivity is unestablished"
+      "why": "absence of observed failure is meaningless if validator sensitivity is unestablished",
+      "control_role": "seeded_fault_validator",
+      "identifier_note": "Retained case identifier; this is a seeded-fault validator check, not a scientific no-effect control."
     },
     {
       "id": "observed_candidate_error",
@@ -61,6 +63,24 @@
       "mutation": "all other valid complete gates pass and a large_nested pair goodput ratio is 0.97",
       "disposition": "retain the loss; this ratio passes the explicit >=0.95 fallback gate, so it alone does not bar scoped advance",
       "why": "a predeclared tolerated loss is not a win and must not be hidden, but it is not a failed gate"
+    },
+    {
+      "id": "pseudoreplication",
+      "mutation": "Treat within-run requests or A/A cells as extra independent candidate-effect repetitions.",
+      "disposition": "Reject the independence claim; count matched run pairs and retain dependence/reset uncertainty.",
+      "why": "Sampling density and calibration do not increase independent treatment replication."
+    },
+    {
+      "id": "unsupported_precision",
+      "mutation": "Claim four balanced pairs establish power or population precision without a justified planning basis.",
+      "disposition": "Limit to descriptive feasibility; require a prospectively approved precision/repetition rationale for stronger inference.",
+      "why": "Counterbalancing and an authored repeat count do not establish statistical adequacy."
+    },
+    {
+      "id": "control_role_confusion",
+      "mutation": "Treat a seeded-fault detector check as a no-effect control and expect the fault not to be detected.",
+      "disposition": "Reject the control interpretation; state expected observable outcome and which dependent decision its failure invalidates.",
+      "why": "Null measurement, effect sensitivity and correctness detection test different failure modes."
     }
   ],
   "status": "authored semantic expectations for independent review; not empirical cases or proof of general evaluator accuracy"
