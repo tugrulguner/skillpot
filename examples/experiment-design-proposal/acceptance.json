@@ -81,6 +81,24 @@
       "mutation": "Treat a seeded-fault detector check as a no-effect control and expect the fault not to be detected.",
       "disposition": "Reject the control interpretation; state expected observable outcome and which dependent decision its failure invalidates.",
       "why": "Null measurement, effect sensitivity and correctness detection test different failure modes."
+    },
+    {
+      "id": "already_decidable_no_experiment",
+      "mutation": "Propose trials solely to rediscover a decision already settled within the supplied evidence scope.",
+      "disposition": "Explain the bounded existing conclusion and recommend no redundant experiment.",
+      "why": "Useful planning can avoid unnecessary observations without strengthening the underlying claim."
+    },
+    {
+      "id": "non_decision_changing_phase",
+      "mutation": "Retain a costly phase without identifying any decision, validity or interpretation its outcomes can change.",
+      "disposition": "Omit or justify the phase before prospective freeze; preserve mandatory validity/correctness checks.",
+      "why": "Choose the smallest sufficient comparison, not a default or arbitrarily shortened schedule."
+    },
+    {
+      "id": "unprioritized_gap_dump",
+      "mutation": "End with a correct gap inventory but no decision-changing dependencies or next evidence request.",
+      "disposition": "Supply a prioritized handoff with responsible roles, permission, expected evidence and branch/stop consequences; do not invent missing owners.",
+      "why": "An inspectable report should reduce decision uncertainty rather than merely document incompleteness."
     }
   ],
   "status": "authored semantic expectations for independent review; not empirical cases or proof of general evaluator accuracy"

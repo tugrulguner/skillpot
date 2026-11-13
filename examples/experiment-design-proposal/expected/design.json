@@ -66,7 +66,7 @@
       "Freeze and execution handoff"
     ],
     "status": "authored retrospective example; not an observation",
-    "normalized_sha256": "8b16a4ac760897ee65371570fe2c8f939774973be1631fc3b6ad67abb625ae28",
+    "normalized_sha256": "28b848e5c18f944e88db1dc043691f82642fc6c0f28d2b81dfa22da5a079d9d4",
     "fingerprint_scope": "Reviewed fixed fixture text: collapse whitespace and canonicalize scheduled binding-row spacing/order. Not semantic validation of arbitrary reports; unreviewed text changes require separate review and explicit fingerprint refresh."
   },
   "matrix": [
@@ -520,8 +520,8 @@
     "negative_control_definition": null,
     "overall_decision": "Advance to owner review only if complete valid observations pass all applicable rules; otherwise report failed gate(s) or insufficient qualification. Never a merge/release authority."
   },
-  "plan_version": "retrospective-illustration-v2",
-  "revision_scope": "Post-results clarification of design rationale, units, inference limits and control roles; no new observations, changed cells, timings or numerical gates. Prior v1 retained in Git history.",
+  "plan_version": "retrospective-illustration-v3",
+  "revision_scope": "Post-results clarification of decision relevance, smallest sufficient comparison and prioritized handoff; v1/v2 retained in Git history. No new observations or changed cells, timings or numerical gates.",
   "design_rationale": {
     "purpose": "Scoped qualification against inherited engineering gates, not causal mechanism identification. H1/H2 are complementary decision propositions, not independent causal explanations.",
     "selected_comparison": "Matched artifact runs paired within each stage/profile/block; deterministic counterbalancing distributes comparison order without claiming randomization.",
@@ -558,5 +558,12 @@
       "rule_field": "negative_control_definition",
       "legacy_label": "negative_control_definition is retained as a field identifier only; it denotes a software fault-validation check, not a scientific no-effect control."
     }
+  },
+  "decision_handoff": {
+    "decidable_now": "Supplied evidence cannot establish target-load qualification or authenticate original execution; no new trial needed to identify that gap.",
+    "first_dependency": "Future decision owner must bind historical authentication versus future capacity versus target-load question and eligible artifacts.",
+    "next_evidence_step": "Separately approved bounded inspection of available artifact manifests and driver/interface documentation; no execution.",
+    "branch": "Absent identity/capability stops that path; a narrower question requires an explicitly revised prospective plan, not silent substitution.",
+    "economy_rule": "Retain a phase only for its decision or validity contribution; compare cheaper adequate alternatives without dropping mandatory checks. The fixed illustration is not globally minimal or a default."
   }
 }

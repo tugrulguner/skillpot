@@ -200,7 +200,7 @@ class ExperimentDesignPacketTests(unittest.TestCase):
     def test_acceptance_cases_are_declared(self):
         acceptance = json.loads((PACKET / "acceptance.json").read_text())
         ids = {case["id"] for case in acceptance["cases"]}
-        self.assertTrue({"missing_identity", "aa_drift", "negative_control_not_detected", "observed_candidate_error", "valid_loss", "capacity_win_without_scheduled_arrivals", "preflight_clean_no_candidate_observations", "threshold_revision_after_data", "unauthorized_run", "pseudoreplication", "unsupported_precision", "control_role_confusion"} <= ids)
+        self.assertTrue({"missing_identity", "aa_drift", "negative_control_not_detected", "observed_candidate_error", "valid_loss", "capacity_win_without_scheduled_arrivals", "preflight_clean_no_candidate_observations", "threshold_revision_after_data", "unauthorized_run", "pseudoreplication", "unsupported_precision", "control_role_confusion", "already_decidable_no_experiment", "non_decision_changing_phase", "unprioritized_gap_dump"} <= ids)
 
     def test_scope_and_destination_guards_are_explicit(self):
         text = (ROOT / "docs/experiment-design-proposal.md").read_text()

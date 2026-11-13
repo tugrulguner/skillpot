@@ -26,6 +26,8 @@ Each timed cell is illustratively budgeted at 30 seconds; two one-second smoke c
 
 The scheduled-arrival stage requires a separately identified, available and approved driver plus independently specified arrival schedule and latency boundary. The retained closed-loop client does not establish this capability; no runnable command is proposed. Original wheels/raw data, driver availability, measurement instrumentation, final workload/target approval, owner permission, and an approved total resource/time budget remain unresolved. Therefore the design is complete as a bounded illustration but is **not executable and not authorized to execute**.
 
+The v3 handoff prioritizes the decision rather than treating every unknown equally: current evidence already leaves target-load qualification unsupported; the next request is to bind the future question and inspect separately approved artifact/driver evidence, not launch the illustrative schedule. Each phase has an explicit decision or validity contribution; a cheaper adequate design requires a prospective revision, not silent deletion of required checks. This is planning usefulness, not observed task-efficacy evidence.
+
 ## Expected output
 
 [`expected/experiment.md`](expected/experiment.md) is a post-results retrospective illustration. It preserves exactly the eight output-contract headings and labels historical facts, source-attributed observations, authored assumptions and gaps. It is not preregistration, an independent reproduction, causal diagnosis, or a claim of experiment execution. [`expected/design.json`](expected/design.json) is the structured authoring oracle for the frozen illustrative matrix, budgets, provenance and report identity; it is not a second runtime output or observed result.

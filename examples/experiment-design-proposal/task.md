@@ -33,5 +33,7 @@ and preserve partial artifacts. No fallback destination or overwrite.
 File inspection and ordinary arithmetic are permitted. No benchmark, target import,
 server, dependency installation, client/model launch, credentials, private searches,
 network retrieval, target edits, paid action, merge or publication is authorized.
+Distinguish what can be decided now, genuine blockers, decision-changing unknowns and the smallest next evidence step worth requesting permission for. Justify what each phase contributes and consider cheaper adequate alternatives without dropping validity checks; do not reproduce the illustrative matrix as a default or end with an unprioritized list of gaps.
+
 The deliverable is one honest design report, not an executable study or a successful
 experimental outcome.
