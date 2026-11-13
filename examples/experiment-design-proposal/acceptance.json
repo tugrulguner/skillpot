@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "kind": "authored-adversarial-acceptance-cases-not-executed-trials",
+  "cases": [
+    {
+      "id": "missing_identity",
+      "mutation": "remove independently bindable candidate/control artifact identity",
+      "disposition": "blocked / insufficient qualification",
+      "why": "source-reported hash or summary flag alone does not establish loaded artifact identity"
+    },
+    {
+      "id": "aa_drift",
+      "mutation": "A/A pair exceeds the prospectively owner-frozen drift limit",
+      "disposition": "invalidate dependent comparison; stop and retain receipt",
+      "why": "calibration drift prevents attributing candidate/control difference"
+    },
+    {
+      "id": "negative_control_not_detected",
+      "mutation": "seeded correctness/transport fault is not detected",
+      "disposition": "detection pipeline unqualified; dependent decision incomplete",
+      "why": "absence of observed failure is meaningless if validator sensitivity is unestablished",
+      "control_role": "seeded_fault_validator",
+      "identifier_note": "Retained case identifier; this is a seeded-fault validator check, not a scientific no-effect control."
+    },
+    {
+      "id": "observed_candidate_error",
+      "mutation": "eligible candidate cell contains correctness or forbidden transport error",
+      "disposition": "candidate gate fails; do not drop the cell",
+      "why": "all applicable frozen correctness gates must hold"
+    },
+    {
+      "id": "valid_loss",
+      "mutation": "eligible closed-loop item pair has candidate/control goodput ratio 0.98",
+      "disposition": "retain loss; item each-pair >1.0 gate fails; no advance under the declared composite rule",
+      "why": "this explicit item loss breaches its frozen gate; not every tolerated fallback loss implies rejection"
+    },
+    {
+      "id": "capacity_win_without_scheduled_arrivals",
+      "mutation": "capacity stage appears to pass but scheduled-arrival observations are absent",
+      "disposition": "insufficient qualification for target-load decision",
+      "why": "closed-loop capacity and scheduled-arrival latency are different measurement modes"
+    },
+    {
+      "id": "preflight_clean_no_candidate_observations",
+      "mutation": "preflight succeeds but no candidate cells were observed",
+      "disposition": "design/preflight status only; no performance decision",
+      "why": "permission and readiness are not experiment results"
+    },
+    {
+      "id": "threshold_revision_after_data",
+      "mutation": "threshold changes after outcomes are seen",
+      "disposition": "reject as confirmatory analysis; preserve original and prospectively version revision",
+      "why": "post-result moving thresholds compromise frozen decision rule"
+    },
+    {
+      "id": "unauthorized_run",
+      "mutation": "attempt execution without explicit owner permission",
+      "disposition": "do not execute; request permission",
+      "why": "a design does not grant execution authority"
+    },
+    {
+      "id": "fallback_loss_within_margin",
+      "mutation": "all other valid complete gates pass and a large_nested pair goodput ratio is 0.97",
+      "disposition": "retain the loss; this ratio passes the explicit >=0.95 fallback gate, so it alone does not bar scoped advance",
+      "why": "a predeclared tolerated loss is not a win and must not be hidden, but it is not a failed gate"
+    },
+    {
+      "id": "pseudoreplication",
+      "mutation": "Treat within-run requests or A/A cells as extra independent candidate-effect repetitions.",
+      "disposition": "Reject the independence claim; count matched run pairs and retain dependence/reset uncertainty.",
+      "why": "Sampling density and calibration do not increase independent treatment replication."
+    },
+    {
+      "id": "unsupported_precision",
+      "mutation": "Claim four balanced pairs establish power or population precision without a justified planning basis.",
+      "disposition": "Limit to descriptive feasibility; require a prospectively approved precision/repetition rationale for stronger inference.",
+      "why": "Counterbalancing and an authored repeat count do not establish statistical adequacy."
+    },
+    {
+      "id": "control_role_confusion",
+      "mutation": "Treat a seeded-fault detector check as a no-effect control and expect the fault not to be detected.",
+      "disposition": "Reject the control interpretation; state expected observable outcome and which dependent decision its failure invalidates.",
+      "why": "Null measurement, effect sensitivity and correctness detection test different failure modes."
+    },
+    {
+      "id": "already_decidable_no_experiment",
+      "mutation": "Propose trials solely to rediscover a decision already settled within the supplied evidence scope.",
+      "disposition": "Explain the bounded existing conclusion and recommend no redundant experiment.",
+      "why": "Useful planning can avoid unnecessary observations without strengthening the underlying claim."
+    },
+    {
+      "id": "non_decision_changing_phase",
+      "mutation": "Retain a costly phase without identifying any decision, validity or interpretation its outcomes can change.",
+      "disposition": "Omit or justify the phase before prospective freeze; preserve mandatory validity/correctness checks.",
+      "why": "Choose the smallest sufficient comparison, not a default or arbitrarily shortened schedule."
+    },
+    {
+      "id": "unprioritized_gap_dump",
+      "mutation": "End with a correct gap inventory but no decision-changing dependencies or next evidence request.",
+      "disposition": "Supply a prioritized handoff with responsible roles, permission, expected evidence and branch/stop consequences; do not invent missing owners.",
+      "why": "An inspectable report should reduce decision uncertainty rather than merely document incompleteness."
+    }
+  ],
+  "status": "authored semantic expectations for independent review; not empirical cases or proof of general evaluator accuracy"
+}

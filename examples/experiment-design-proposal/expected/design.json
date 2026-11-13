@@ -1,0 +1,569 @@
+{
+  "schema": 1,
+  "kind": "retrospective-authoring-integrity-oracle-not-runtime-output",
+  "source": {
+    "path": "sources/linux-screen.json",
+    "upstream_commit": "798c449fd1337404c388abb2a177c0302ba35fc0",
+    "upstream_path": "benchmarks/scalar_response/linux-screen.json",
+    "retained_capture_commit": "1b0ae953b56a439661861c8f8ec9bf5375e8e5a6",
+    "sha256": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+    "bytes": 33073
+  },
+  "timing": "post-results retrospective illustration; not prospective preregistration or executed experiment",
+  "stages": [
+    "closed_loop_capacity",
+    "scheduled_arrival"
+  ],
+  "profiles": [
+    "item",
+    "large_nested"
+  ],
+  "paired_blocks_per_stage_profile": 4,
+  "paired_order_sequence": [
+    "AB",
+    "BA",
+    "BA",
+    "AB"
+  ],
+  "order_claim": "deterministic counterbalanced; not randomized",
+  "regular_cells": 32,
+  "aa_pairs": 4,
+  "aa_placement": "one pair per stage/profile stratum",
+  "aa_cells": 8,
+  "total_timed_cells": 40,
+  "timed_seconds_per_cell": 30,
+  "timed_seconds_total": 1200,
+  "smoke_cells": 2,
+  "smoke_seconds_per_cell": 1,
+  "smoke_seconds_total": 2,
+  "measured_seconds_including_smoke": 1202,
+  "excluded_time": [
+    "setup",
+    "warmup",
+    "drain",
+    "cooldown",
+    "analysis"
+  ],
+  "permissions": "no execution authorized; driver, owner, target, budgets and preflight remain unresolved",
+  "resource_scope": {
+    "historical_ft_limits_scope": "DUT/server process only; not total host or experiment resource guarantee",
+    "rss_bytes": 536870912,
+    "threads": 80,
+    "fds": 512,
+    "cpu_cores": 10.5,
+    "driver_host_budget": "unknown; must be separately approved and measured"
+  },
+  "report": {
+    "path": "expected/experiment.md",
+    "sections": [
+      "Question and decision",
+      "Evidence and assumptions",
+      "Hypotheses and falsifiers",
+      "Design, controls and invariants",
+      "Trial matrix and measurements",
+      "Budgets and permissions",
+      "Analysis and decision rules",
+      "Freeze and execution handoff"
+    ],
+    "status": "authored retrospective example; not an observation",
+    "normalized_sha256": "28b848e5c18f944e88db1dc043691f82642fc6c0f28d2b81dfa22da5a079d9d4",
+    "fingerprint_scope": "Reviewed fixed fixture text: collapse whitespace and canonicalize scheduled binding-row spacing/order. Not semantic validation of arbitrary reports; unreviewed text changes require separate review and explicit fingerprint refresh."
+  },
+  "matrix": [
+    {
+      "id": "P001",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "smoke",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 1
+    },
+    {
+      "id": "P002",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "smoke",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 1
+    },
+    {
+      "id": "P003",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P004",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P005",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P006",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P007",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P008",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P009",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P010",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P011",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P012",
+      "stage": "closed_loop_capacity",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P013",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P014",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P015",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P016",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P017",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P018",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P019",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P020",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P021",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P022",
+      "stage": "closed_loop_capacity",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P023",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P024",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P025",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P026",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P027",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P028",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P029",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P030",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P031",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P032",
+      "stage": "scheduled_arrival",
+      "profile": "item",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P033",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P034",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "calibration",
+      "block": 0,
+      "slot": "B",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P035",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P036",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 1,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P037",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P038",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 2,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P039",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    },
+    {
+      "id": "P040",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 3,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P041",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "A",
+      "artifact_role": "control",
+      "seconds": 30
+    },
+    {
+      "id": "P042",
+      "stage": "scheduled_arrival",
+      "profile": "large_nested",
+      "phase": "comparison",
+      "block": 4,
+      "slot": "B",
+      "artifact_role": "candidate",
+      "seconds": 30
+    }
+  ],
+  "matrix_scope": "All specified smoke/calibration/comparison cells; separate positive/negative validator controls remain undefined preflight work and are not represented as zero-cost.",
+  "analysis_rules": {
+    "provenance": "Numerical thresholds inherited from /plan/screen_gate and /plan/original_full_gate_retained; applying them to four new pairs per profile is an authored extension, not the historical two-pair protocol.",
+    "item_goodput": {
+      "each_pair_gt": 1.0,
+      "median_ge": 1.05
+    },
+    "large_nested_goodput": {
+      "each_pair_ge": 0.95
+    },
+    "item_adjusted_closed_loop_p99": {
+      "median_pair_ratio_le": 1.1
+    },
+    "large_nested_adjusted_closed_loop_p99": {
+      "each_pair_ratio_le": 1.1
+    },
+    "scheduled_arrival": {
+      "offered_rps": 10000,
+      "achieved_rate_fraction_ge": 0.95,
+      "achieved_rate_fraction_le": 1.05,
+      "each_trial_scheduled_p99_us_le": 20000,
+      "forbidden_errors": 0,
+      "minimum_closed_loop_capacity_ratio": 0.95
+    },
+    "aa_drift_limit": null,
+    "positive_control_definition": null,
+    "negative_control_definition": null,
+    "overall_decision": "Advance to owner review only if complete valid observations pass all applicable rules; otherwise report failed gate(s) or insufficient qualification. Never a merge/release authority."
+  },
+  "plan_version": "retrospective-illustration-v3",
+  "revision_scope": "Post-results clarification of decision relevance, smallest sufficient comparison and prioritized handoff; v1/v2 retained in Git history. No new observations or changed cells, timings or numerical gates.",
+  "design_rationale": {
+    "purpose": "Scoped qualification against inherited engineering gates, not causal mechanism identification. H1/H2 are complementary decision propositions, not independent causal explanations.",
+    "selected_comparison": "Matched artifact runs paired within each stage/profile/block; deterministic counterbalancing distributes comparison order without claiming randomization.",
+    "selection_rule": "Map each plausible alternative explanation to a discriminating contrast or observation, choose blocking/order/reset to address it, and state residual ambiguity.",
+    "limitations": [
+      "Initial A/A checks do not establish stability throughout later comparisons.",
+      "Counterbalancing does not eliminate nonlinear drift, carryover or artifact mismatch.",
+      "Reset/cooldown, state matching and ongoing drift observations require an owner-frozen protocol before execution."
+    ]
+  },
+  "inference_plan": {
+    "experimental_unit": "One scheduled artifact run (one cell); actual independence depends on a prospectively fixed initialization/reset and state-matching protocol.",
+    "comparison_unit": "One matched candidate/control pair within the same stage, profile and block.",
+    "within_run_samples": "Requests, latency samples and resource samples characterize a run; they are not independent treatment repetitions. A/A calibration cells are not additional candidate-effect repetitions.",
+    "repetition_rationale": "Four pairs give two comparisons in each order for descriptive repeatability and order-stratified inspection, rather than one comparison per order. This is a bounded feasibility choice, not a variance-based sample-size calculation; balance alone does not establish precision, independence or adequacy.",
+    "precision_status": "No variance estimate, justified precision target, power or population-level uncertainty claim is supplied. A stronger decision requires an owner-selected precision/design rationale before collecting its observations.",
+    "permitted_claim": "Descriptive feasibility and scoped gate outcomes only, conditional on complete valid future observations; no experiment has run."
+  },
+  "control_roles": {
+    "null_measurement": {
+      "matrix_role": "A/A calibration",
+      "expected": "Same-artifact measurements within an owner-frozen variation envelope.",
+      "failure_effect": "Invalidate dependent attribution; diagnose state, drift or instrumentation. Passing initial calibration does not certify later stability.",
+      "rule_field": "aa_drift_limit"
+    },
+    "known_effect_sensitivity": {
+      "expected": "Detect an owner-defined known effect at its predeclared relevant scale.",
+      "failure_effect": "Sensitivity for that effect/scale unqualified; block dependent interpretation.",
+      "rule_field": "positive_control_definition"
+    },
+    "seeded_fault_validator": {
+      "expected": "Reject an approved seeded correctness/transport fault, not report no effect.",
+      "failure_effect": "Correctness/error detector unqualified; block dependent acceptance.",
+      "rule_field": "negative_control_definition",
+      "legacy_label": "negative_control_definition is retained as a field identifier only; it denotes a software fault-validation check, not a scientific no-effect control."
+    }
+  },
+  "decision_handoff": {
+    "decidable_now": "Supplied evidence cannot establish target-load qualification or authenticate original execution; no new trial needed to identify that gap.",
+    "first_dependency": "Future decision owner must bind historical authentication versus future capacity versus target-load question and eligible artifacts.",
+    "next_evidence_step": "Separately approved bounded inspection of available artifact manifests and driver/interface documentation; no execution.",
+    "branch": "Absent identity/capability stops that path; a narrower question requires an explicitly revised prospective plan, not silent substitution.",
+    "economy_rule": "Retain a phase only for its decision or validity contribution; compare cheaper adequate alternatives without dropping mandatory checks. The fixed illustration is not globally minimal or a default."
+  }
+}
