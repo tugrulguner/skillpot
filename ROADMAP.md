@@ -147,13 +147,14 @@ These entries do not claim completed evaluations or authorize implementation.
       The [accepted proposal and worked packet](docs/benchmark-audit-proposal.md)
       specify verdicts, provenance, comparison limits and acceptance cases. Source-only
       implementation is distinct from publication and task-efficacy evidence.
-- [ ] Implement `experiment-design`: turn a hypothesis and current evidence into
-      `experiment.md` defining a discriminating comparison, invariants, falsifiers,
-      positive/negative controls, a frozen trial matrix, resource budget and
-      advance/revise/stop rules. A design is not an executed experiment.
-      The [bounded proposal and retrospective worked packet](docs/experiment-design-proposal.md)
-      specify the procedure, output contract and acceptance cases; no installable
-      bundle or experiment execution is included.
+- [x] Implement original `experiment-design` as a portable, inspection-first bundle
+      producing the exact eight-section `experiment.md` plan, with permission and fresh
+      destination guards, controls/units/repetition reasoning, full-schedule and budget
+      consistency, frozen decision rules, input-only practice, and report/checklist
+      resources. The accepted retrospective example remains unchanged and its expected
+      report/oracle are excluded from installation. Offline tests check bundle and
+      fixture integrity, not experiment execution, causal validity or task efficacy.
+      See [first use](docs/experiment-design-first-use.md).
 - [ ] Implement `invariant-audit`: map a named technical guarantee and failure model
       to source paths, independent expected outcomes, observations, counterexamples
       and proposed negative tests in `invariant-audit.md`. Distinguish source review

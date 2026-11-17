@@ -14,7 +14,7 @@ class IncidentTriageDistributionTests(unittest.TestCase):
             text = (ROOT / name).read_text()
             for token in ["incident-triage", "incident-triage-first-use.md", "incident.md", "timeline.md"]:
                 self.assertIn(token, text, name)
-        self.assertIn("sixteen current-source bundles", (ROOT / "catalog/README.md").read_text())
+        self.assertIn("seventeen current-source bundles", (ROOT / "catalog/README.md").read_text())
         self.assertIn("Published v0.4.1 contains ten skills", (ROOT / "README.md").read_text())
         self.assertIn("benchmark-audit", (ROOT / "catalog/README.md").read_text())
 

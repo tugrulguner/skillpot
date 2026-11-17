@@ -1,0 +1,18 @@
+{
+  "skill": "experiment-design",
+  "pin": "a85c1069bc6630874cdb58b7f4c036e5545c4a8c",
+  "source_files": {
+    "provenance.md": "cde55a43dceff0a77c35de0e490e4adf3b15483b75d9c463c6ed55600fc30507",
+    "SKILL.md": "660f23aff759b04ea90e473c0a5775d12ed136cbd91c328f42482169de78e78f",
+    "compatibility.md": "c911a1d912e892cb6e8a97e8ec6f7c01b9b8ba6f2b794aae212846cae27f5fd4",
+    "assets/report-template.md": "e09ac20fbb941cb9818cadc27adcd4d54fd483c9657e2299006e809abd732cdd",
+    "assets/checklist.md": "ef69f74f778d57398caa883568375c25c0c95e154b48d373a66ba69605d7bd2b",
+    "assets/practice-input.md": "f5a3bc669b8ed24724790536fd2e6f88c6248bc64d0ab9bea2691114253989c9"
+  },
+  "files_verified": 6,
+  "lock_ref_verified": true,
+  "sibling_preserved": true,
+  "selected_removal_verified": true,
+  "agent_links": [".claude/skills", ".hermes/skills"],
+  "client_or_model_launched": false
+}

@@ -123,9 +123,9 @@ class VerificationLoopContractTests(unittest.TestCase):
 
     def test_discovery_counts_and_historical_collection_count(self):
         count = sum(1 for _ in (ROOT / "skills").glob("*/SKILL.md"))
-        self.assertEqual(count, 16)
+        self.assertEqual(count, 17)
         readme = (ROOT / "README.md").read_text()
-        self.assertIn("sixteen workflows", readme)
+        self.assertIn("seventeen workflows", readme)
         self.assertIn("ten-skill published collection", readme)
         source_catalog = json.loads((ROOT / "catalog/modepot-sources.json").read_text())
         self.assertEqual(len(source_catalog["skills"]), 7)
