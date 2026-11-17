@@ -10,10 +10,24 @@ HERE = Path(__file__).resolve().parent
 TIMEOUT_SECONDS = 3
 GENERATOR_SEED = 20261117
 GENERATED_CASE_COUNT = 24
+MAX_JSON_DEPTH = 64
+
+
+class OutputLimitError(ValueError):
+    """The teaching fixture cannot safely inspect this output depth."""
 
 
 def normalized(stdout):
-    return json.loads(stdout)
+    value = json.loads(stdout)
+    pending = [(value, 1)]
+    while pending:
+        item, depth = pending.pop()
+        if isinstance(item, (dict, list)):
+            if depth > MAX_JSON_DEPTH:
+                raise OutputLimitError(f"JSON nesting exceeds the fixture limit of {MAX_JSON_DEPTH}")
+            children = item.values() if isinstance(item, dict) else item
+            pending.extend((child, depth + 1) for child in children)
+    return value
 
 
 def json_equal(left, right):
@@ -114,6 +128,10 @@ def invoke(source, value, cwd=None):
         try:
             run["normalized"] = normalized(completed.stdout.decode("utf-8"))
             run["classification"] = "OK"
+        except (OutputLimitError, RecursionError) as exc:
+            run["classification"] = "OUTPUT_LIMIT"
+            run["parse_error"] = str(exc)
+            run["max_json_depth"] = MAX_JSON_DEPTH
         except UnicodeDecodeError as exc:
             run["classification"] = "INVALID_OUTPUT"
             run["decode_error"] = str(exc)
@@ -137,7 +155,8 @@ def main():
         raise SystemExit(f"refusing destination: {exc}")
 
     sources = {name: HERE / f"{name}.py" for name in ("baseline", "candidate")}
-    hashes, initial_errors = source_identities(sources)
+    identity_inputs = {**sources, "checker": Path(__file__).resolve()}
+    hashes, initial_errors = source_identities(identity_inputs)
     controls = [
         {"id": "known-extension", "name": "primary", "enabled": True,
          "extension": {"vendor": "example", "flags": ["x", 4]}},
@@ -172,7 +191,7 @@ def main():
             result["verdict"] = "PASS" if result["differential_equal"] else "FAIL"
         results.append(result)
 
-    current, final_errors = source_identities(sources)
+    current, final_errors = source_identities(identity_inputs)
     status = "STALE" if initial_errors or final_errors else identity_status(hashes, current)
     generated = [r for r in results if r["case_kind"] == "generated-invariant"]
     counterexample = next((r["case_index"] for r in generated if r["verdict"] == "FAIL"), None)

@@ -278,6 +278,71 @@ class VerificationLoopExampleTests(unittest.TestCase):
             self.assertTrue(all(case["verdict"] == "NO_CURRENT_VERDICT_STALE_SOURCE" for case in report["results"]))
             self.assertEqual(len(list(output.glob("*.stdout"))) + len(list(output.glob("*.stderr"))), 104)
 
+    def test_parser_depth_limits_retain_reports_and_candidate_bytes(self):
+        import base64
+        import shutil
+
+        for depth, expected in ((16, "OK"), (900, "OUTPUT_LIMIT"), (2000, "OUTPUT_LIMIT")):
+            with self.subTest(depth=depth), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp).resolve()
+                target = root / "target" / "examples" / "verification-loop"
+                shutil.copytree(ROOT, target)
+                payload = '{"value":' + '[' * depth + '0' + ']' * depth + '}'
+                (target / "candidate.py").write_text("import sys\nsys.stdout.write(" + repr(payload) + ")\n")
+                output = root / "receipts"
+                process = subprocess.run([sys.executable, str(target / "replay.py"), "--output", str(output)],
+                                         text=True, capture_output=True, timeout=30, check=False)
+                self.assertTrue((output / "verification.md").is_file(), process.stderr)
+                report = json.loads((output / "result.json").read_text())
+                self.assertEqual(process.returncode, 1)
+                self.assertNotIn("Traceback", process.stderr)
+                for case in report["results"]:
+                    run = case["runs"]["candidate"]
+                    self.assertEqual(run["classification"], expected)
+                    self.assertEqual(base64.b64decode(run["stdout_base64"]), payload.encode())
+                    self.assertEqual((output / f"case-{case['case_index']}-candidate.stdout").read_bytes(), payload.encode())
+                    if expected == "OUTPUT_LIMIT":
+                        self.assertNotIn("normalized", run)
+                self.assertEqual(len(list(output.glob("*.stdout"))) + len(list(output.glob("*.stderr"))), 104)
+
+    def test_checker_changes_invalidate_current_identity(self):
+        import shutil
+
+        for action in ("append", "delete"):
+            with self.subTest(action=action), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp).resolve()
+                target = root / "target" / "examples" / "verification-loop"
+                shutil.copytree(ROOT, target)
+                checker = target / "replay.py"
+                checker_before = hashlib.sha256(checker.read_bytes()).hexdigest()
+                mutation = ("p.write_bytes(p.read_bytes()+b'\\n# changed checker\\n')\n" if action == "append"
+                            else "if p.exists(): p.unlink()\n")
+                (target / "candidate.py").write_text(
+                    "from pathlib import Path\np=Path(__file__).with_name('replay.py')\n" + mutation +
+                    (ROOT / "candidate.py").read_text())
+                output = root / "receipts"
+                process = subprocess.run([sys.executable, str(checker), "--output", str(output)],
+                                         text=True, capture_output=True, timeout=30, check=False)
+                self.assertEqual(process.returncode, 1, process.stderr)
+                self.assertTrue((output / "verification.md").is_file())
+                report = json.loads((output / "result.json").read_text())
+                self.assertEqual(report["identity_status"], "STALE")
+                self.assertEqual(report["source_sha256"]["checker"], checker_before)
+                self.assertTrue(report["summary"]["named_controls_match_expected"])
+                self.assertTrue(all(case["verdict"] == "NO_CURRENT_VERDICT_STALE_SOURCE" for case in report["results"]))
+                self.assertEqual("checker" in report["post_execution_identity_errors"], action == "delete")
+                self.assertEqual(len(list(output.glob("*.stdout"))) + len(list(output.glob("*.stderr"))), 104)
+
+    def test_parser_depth_boundary_preserves_legitimate_output(self):
+        module = load_replay()
+        before = sys.getrecursionlimit()
+        accepted = '{"value":' + '[' * 63 + '"braces { [ \\\"quote\\\" ] }"' + ']' * 63 + '}'
+        self.assertIsInstance(module.normalized(accepted), dict)
+        rejected = '{"value":' + '[' * 64 + '0' + ']' * 64 + '}'
+        with self.assertRaises(module.OutputLimitError):
+            module.normalized(rejected)
+        self.assertEqual(sys.getrecursionlimit(), before)
+
     def test_stale_source_identity_is_not_current(self):
         module = load_replay()
         self.assertEqual(module.identity_status({"candidate": "old"}, {"candidate": "new"}), "STALE")
