@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "kind": "retained-public-source-copy-not-new-retrieval",
+  "capture_origin": {"repository": "SkillPot", "commit": "1b0ae953b56a439661861c8f8ec9bf5375e8e5a6", "paths": ["examples/benchmark-audit-proposal/sources/linux-screen.json", "examples/benchmark-audit-proposal/sources/DEXPOT-LICENSE"], "status": "Existing retained public packet; byte-exact copies; no fresh retrieval"},
+  "upstream": {"repository": "https://github.com/tugrulguner/dexpot", "commit": "798c449fd1337404c388abb2a177c0302ba35fc0", "source_status": "Public MIT snapshot; complete selected published JSON record, including recorded failed/invalid cells and losses; not original raw campaign or wheels"},
+  "files": [
+    {"local_path": "sources/linux-screen.json", "upstream_path": "benchmarks/scalar_response/linux-screen.json", "url": "https://github.com/tugrulguner/dexpot/blob/798c449fd1337404c388abb2a177c0302ba35fc0/benchmarks/scalar_response/linux-screen.json", "git_blob_sha1": "cd41d6861c365e2ecfc084852900768c904905dc", "bytes": 33073, "sha256": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c", "adaptation": "none; byte-exact retained copy"},
+    {"local_path": "sources/DEXPOT-LICENSE", "upstream_path": "LICENSE", "url": "https://github.com/tugrulguner/dexpot/blob/798c449fd1337404c388abb2a177c0302ba35fc0/LICENSE", "git_blob_sha1": "057bc978a9293429cb129f7fec3944d54ec26179", "bytes": 1069, "sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958", "adaptation": "none; byte-exact retained copy"}
+  ],
+  "evidence_gaps": ["Original per-trial raw outputs are unavailable.", "Original control/candidate wheel bytes and independent execution bindings are unavailable.", "Status flags and hashes are source-reported, not independently authenticated by this packet.", "Reported server-process sampling excludes startup/drain and does not establish total DUT-plus-driver resources; sampler and driver/host resources are unavailable.", "Retained closed-loop record does not establish a scheduled-arrival driver or its availability."]
+}

@@ -145,6 +145,9 @@ These entries do not claim completed evaluations or authorize implementation.
       `experiment.md` defining a discriminating comparison, invariants, falsifiers,
       positive/negative controls, a frozen trial matrix, resource budget and
       advance/revise/stop rules. A design is not an executed experiment.
+      The [bounded proposal and retrospective worked packet](docs/experiment-design-proposal.md)
+      specify the procedure, output contract and acceptance cases; no installable
+      bundle or experiment execution is included.
 - [ ] Implement `invariant-audit`: map a named technical guarantee and failure model
       to source paths, independent expected outcomes, observations, counterexamples
       and proposed negative tests in `invariant-audit.md`. Distinguish source review
