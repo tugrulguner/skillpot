@@ -37,13 +37,13 @@ class ClaimCheckDistributionTests(unittest.TestCase):
         self.assertNotIn("still being integrated", text)
         self.assertNotIn("--all", first[1])
 
-    def test_current_source_sixteen_and_stable_ten_remain_separate(self):
+    def test_current_source_seventeen_and_stable_ten_remain_separate(self):
         imported = json.loads((ROOT / "catalog/modepot-sources.json").read_text())["skills"]
         expected = {row["name"] for row in imported} | {
-            "repository-readiness", "decision-brief", "document-actions", "claim-check", "change-impact", "bug-repro", "incident-triage", "benchmark-audit", "verification-loop"}
+            "repository-readiness", "decision-brief", "document-actions", "claim-check", "change-impact", "bug-repro", "incident-triage", "benchmark-audit", "verification-loop", "experiment-design"}
         actual = {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}
         self.assertEqual(actual, expected)
-        self.assertEqual(len(actual), 16)
+        self.assertEqual(len(actual), 17)
         self.assertIn("Published v0.4.1 contains ten skills", (ROOT / "README.md").read_text())
 
     def test_original_public_replay_record_is_preserved_separately_from_current_matrix(self):

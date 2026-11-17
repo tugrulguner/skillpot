@@ -15,7 +15,7 @@ import SkillExcerpt from '../../components/SkillExcerpt.astro';
 
 ## Install one skill
 
-Published v0.4.1 has ten skills: seven public project/contributor packages, the original experimental repository-readiness workflow, decision-brief 0.1.1 and document-actions 0.1.2. Current source has sixteen skills, including the original **claim-check**, **change-impact**, **bug-repro**, **incident-triage**, **benchmark-audit** and **verification-loop** bundles. Claim-check is instruction version 0.1.1; the other five are 0.1.0. These six workflows are unreleased and not in that ten-skill release. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
+Published v0.4.1 has ten skills: seven public project/contributor packages, the original experimental repository-readiness workflow, decision-brief 0.1.1 and document-actions 0.1.2. Current source has seventeen skills, including the original **claim-check**, **change-impact**, **bug-repro**, **incident-triage**, **benchmark-audit**, **verification-loop** and **experiment-design** bundles. Claim-check is instruction version 0.1.1; the other six are 0.1.0. These seven workflows are unreleased and not in that ten-skill release. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
 
 <div className="install"><strong>Install one current-source skill</strong><code>{'npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check'}</code><a href="https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md">Claim-check first-use guide →</a></div>
 
@@ -49,7 +49,14 @@ Current-source **incident-triage** turns bounded symptoms and logs into `inciden
 
 Current-source **verification-loop** checks one code change against user-visible criteria, with actual-byte identities and evidence-linked `verification.md`. It plans by default; execution and bounded repairs require permission. See the [verification-loop first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/verification-loop-first-use.md). Authored examples and source checks do not establish agent efficacy.
 
-[Browse the ten published skills and six source-only workflows](/catalogue/) or read the [host setup](/host-setup/).
+Current-source **experiment-design** turns a bounded decision into a falsifiable,
+prospective `experiment.md` with competing explanations, controls, unit/repetition
+rationale, a frozen full schedule and permission-aware handoff. Inspection/planning
+only; blocked and no-new-experiment are valid outcomes. No experiments, benchmarks or
+models are run. The accepted retrospective fixture and expected oracle stay outside
+installed practice inputs. See the [experiment-design first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/experiment-design-first-use.md).
+
+[Browse the ten published skills and seven source-only workflows](/catalogue/) or read the [host setup](/host-setup/).
 
 ## Original workflow design
 

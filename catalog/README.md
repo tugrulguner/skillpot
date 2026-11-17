@@ -48,7 +48,7 @@ individual source/rights/privacy review before any later extraction.
 ## Claim-check — current source, unreleased
 
 The original **[claim-check](../skills/claim-check/SKILL.md)** bundle is in current
-source and remains unreleased; it is one of sixteen current-source bundles, not part of
+source and remains unreleased; it is one of seventeen current-source bundles, not part of
 published v0.4.1's ten-skill set. Use the standard Skills CLI to install only this
 skill from the exact reviewed source revision:
 
@@ -66,7 +66,7 @@ The original [change-impact](../skills/change-impact/SKILL.md) bundle maps a spe
 diff to callers, contracts, configuration, docs and focused verification needs. It
 produces exactly `impact.md` and `verification.md`, linking static evidence and
 explicit unknowns without claiming runtime reachability or automatically running tests.
-It is one of sixteen current-source bundles, not part of the ten published in v0.4.1.
+It is one of seventeen current-source bundles, not part of the ten published in v0.4.1.
 Use the [one-command first-use guide](../docs/change-impact-first-use.md), also
 [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/change-impact-first-use.md).
 This is instruction distribution, not a custom dependency analyzer or task-efficacy claim.
@@ -79,7 +79,7 @@ evidence. Execution/dependencies require explicit permission in an owned isolate
 Not reproduced and Blocked are honest outcomes; an unrelated failure is not reproduction,
 and an authored control is not a released product fix. See the [one-command first-use guide](../docs/bug-repro-first-use.md),
 also [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/bug-repro-first-use.md).
-This is one of sixteen current-source bundles, not part of stable v0.4.1's ten skills.
+This is one of seventeen current-source bundles, not part of stable v0.4.1's ten skills.
 
 ## Incident-triage — current source, unreleased
 
@@ -90,14 +90,14 @@ Inspection-only by default; it does not silently run diagnostics or apply fixes.
 A failed CI gate is not automatically a customer outage, and a passing retry is not
 proof of a resolved cause. See the [one-command first-use guide](../docs/incident-triage-first-use.md),
 also [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/incident-triage-first-use.md).
-It is one of sixteen current-source bundles, not part of stable v0.4.1's ten skills.
+It is one of seventeen current-source bundles, not part of stable v0.4.1's ten skills.
 
 ## Benchmark-audit — current source, unreleased
 
 The original [benchmark-audit](../skills/benchmark-audit/SKILL.md) workflow reviews
 existing benchmark evidence and produces `benchmark-audit.md` with four claim-level
 verdicts and explicit evidence boundaries. Inspection-only: it does not run benchmarks
-or models. It is one of sixteen current-source bundles, not part of stable v0.4.1's ten
+or models. It is one of seventeen current-source bundles, not part of stable v0.4.1's ten
 skills. See the [first-use guide](../docs/benchmark-audit-first-use.md).
 Source availability is not evidence of task efficacy.
 
@@ -135,13 +135,25 @@ for a pinned source checkout, complete selected bundle, bounded input packet and
 The [worked example](../examples/document-actions/README.md) and executable offline checks
 validate authored fixtures and setup, not semantic extraction quality or native activation.
 
+## Experiment design — current source, unreleased
+
+The original [experiment-design](../skills/experiment-design/SKILL.md) workflow turns a
+bounded decision question and evidence into a prospective, falsifiable `experiment.md`.
+It names competing explanations, contrasts, controls, invariants, units, repetitions,
+full schedule/budget, frozen analysis and a permission-aware handoff. It is inspection
+and planning only: no experiment, benchmark, model or client runs. It permits blocked
+and no-new-experiment outcomes. It is one of seventeen current-source bundles, not part
+of published v0.4.1. The accepted retrospective fixture and its expected report/oracle
+are separate from the installed bundle's input-only practice. See the
+[experiment-design first-use guide](../docs/experiment-design-first-use.md).
+
 ## Verification loop — current source, unreleased
 
 The original [verification-loop](../skills/verification-loop/SKILL.md) bundle maps a
 specific code change to user-visible acceptance criteria and exact-head evidence. It
 provides `verification.md`, a checklist, and an input-only practice task. Authored
 worked examples are separate. Inspection/planning is default; execution and repair need explicit
-permission. It is one of sixteen current-source bundles and not in published v0.4.1.
+permission. It is one of seventeen current-source bundles and not in published v0.4.1.
 See the [first-use guide](../docs/verification-loop-first-use.md). Source checks do not
 establish native activation or task efficacy.
 

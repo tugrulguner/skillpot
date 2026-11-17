@@ -97,7 +97,7 @@ instructions grants no additional authority.
 ## Choose a workflow
 
 Published v0.4.1 contains ten skills, including `decision-brief` and
-`document-actions`. Current source contains sixteen workflows; v0.4.1 remains the
+`document-actions`. Current source contains seventeen workflows; v0.4.1 remains the
 ten-skill published collection. The original `verification-loop` bundle provides
 exact-head, acceptance-linked checks and `verification.md`; inspection/planning is
 default, and execution or repairs need explicit permission. An input-only practice
@@ -117,10 +117,17 @@ skills. The stable clone above selects their published snapshot; the first-use g
 use its exact commit.
 Publication does not promote repository-readiness beyond its experimental scope.
 
+The original `experiment-design` bundle turns a decision and bounded evidence into a
+falsifiable, permission-aware `experiment.md` plan; it separates decision/design,
+execution authority and evidence, and permits blocked or no-new-experiment outcomes.
+Inspection/planning only; no experiment, model or benchmark is run. Its accepted
+retrospective fixture and its expected oracle remain outside the installed input-only practice.
+See the [experiment-design first-use guide](docs/experiment-design-first-use.md).
+
 The [current-source hardening guide](docs/skill-hardening.md) records a review of all
 fourteen bundles at the historical snapshot it records, corrected standalone references
 and worked-output consistency, and a fresh individual-installation matrix for every
-bundle at that snapshot. Current source now has sixteen bundles; the published ten-skill
+bundle at that snapshot. Current source now has seventeen bundles; the published ten-skill
 release remains unchanged.
 
 Current source also contains a [Dexpot-only published-guide refresh](docs/published-upstream-refresh.md):
@@ -143,6 +150,7 @@ its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
 | Minimize a reported failure into a runnable reproducer and regression test | [bug-repro](skills/bug-repro/SKILL.md) 0.1.0, source only; [one-command setup](docs/bug-repro-first-use.md); execution requires explicit permission |
 | Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, current source only; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
 | Audit a performance claim against existing benchmark evidence, without rerunning trials | [benchmark-audit](skills/benchmark-audit/SKILL.md) 0.1.0, source only; inspection-only; [first-use guide](docs/benchmark-audit-first-use.md) |
+| Plan a falsifiable, permission-aware experiment before new observations | [experiment-design](skills/experiment-design/SKILL.md) 0.1.0, original source only; `experiment.md`; [first-use guide](docs/experiment-design-first-use.md); no execution by default |
 | Verify a code change against user-visible criteria | [verification-loop](skills/verification-loop/SKILL.md) 0.1.0, original source only; `verification.md`; exact-head evidence, inspection-only default; [first-use guide](docs/verification-loop-first-use.md) |
 | Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.1, current source only; [one-command setup](docs/claim-check-first-use.md) |
 
