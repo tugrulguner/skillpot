@@ -12,7 +12,7 @@ From the repository root, provide a **new** output directory outside this exampl
 python3 examples/verification-loop/replay.py --output /absolute/path/to/new-evidence
 ```
 
-The replay exclusively creates the destination; existing paths and symlinks are refused and never overwritten. Source-byte SHA-256 is computed before execution and rehashed afterward; stale source identity does not yield a current verdict. The tests hold the independent expected contract and verify generated cases, named controls, actual intentional field-loss counterexamples and protected output/error paths.
+The replay exclusively creates the destination; existing paths and symlinks are refused and never overwritten. Completed stdout/stderr receipts are persisted after each invocation, before later checks and final identity reads. Source-byte SHA-256 is computed before execution and rehashed afterward; stale source identity does not yield a current verdict. Missing, unreadable or directory-valued source paths produce explicit initial/post-execution identity diagnostics and null digests rather than an exception or invented hash. Any unavailable identity makes the report STALE and the replay unsuccessful, even when both unavailable digests are null. Reports and completed receipts are retained. The tests hold the independent expected contract and verify generated cases, named controls, actual intentional field-loss counterexamples and protected output/error paths.
 
 ```sh
 python3 -m unittest tests.test_verification_loop_example -v

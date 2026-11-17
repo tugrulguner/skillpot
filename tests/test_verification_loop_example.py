@@ -217,6 +217,67 @@ class VerificationLoopExampleTests(unittest.TestCase):
                 self.assertEqual(base64.b64decode(run["stderr_base64"]), b"\xfe\x00")
                 json.dumps(run)  # Structured receipts must remain serializable.
 
+    def test_unavailable_source_identity_retains_execution_evidence(self):
+        import base64
+        import shutil
+
+        for condition in ("deleted", "directory", "missing-initial", "directory-initial"):
+            with self.subTest(condition=condition), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp).resolve()
+                target = root / "target" / "examples" / "verification-loop"
+                shutil.copytree(ROOT, target)
+                candidate = target / "candidate.py"
+                if condition.endswith("initial"):
+                    candidate.unlink()
+                    if condition == "directory-initial":
+                        candidate.mkdir()
+                else:
+                    action = "p.unlink()\n" + ("p.mkdir()\n" if condition == "directory" else "")
+                    candidate.write_text("import json,sys\nfrom pathlib import Path\n"
+                                         "v=json.load(sys.stdin)\np=Path(__file__)\n" + action +
+                                         "json.dump({k:v[k] for k in ('id','name','enabled')},sys.stdout)\n")
+                output = root / "receipts"
+                process = subprocess.run([sys.executable, str(target / "replay.py"), "--output", str(output)],
+                                         text=True, capture_output=True, timeout=30, check=False)
+                self.assertTrue((output / "result.json").is_file(), process.stderr)
+                self.assertTrue((output / "verification.md").is_file())
+                self.assertNotEqual(process.returncode, 0)
+                self.assertNotIn("Traceback", process.stderr)
+                report = json.loads((output / "result.json").read_text())
+                self.assertEqual(report["identity_status"], "STALE")
+                self.assertIsNone(report["post_execution_sha256"]["candidate"])
+                self.assertIn("candidate", report["post_execution_identity_errors"])
+                self.assertEqual("candidate" in report["initial_identity_errors"], condition.endswith("initial"))
+                for case in report["results"]:
+                    self.assertEqual(case["verdict"], "NO_CURRENT_VERDICT_STALE_SOURCE")
+                    for name in ("baseline", "candidate"):
+                        for channel in ("stdout", "stderr"):
+                            path = output / f"case-{case['case_index']}-{name}.{channel}"
+                            self.assertEqual(path.read_bytes(), base64.b64decode(case["runs"][name][channel + "_base64"]))
+                self.assertEqual(len(list(output.glob("*.stdout"))) + len(list(output.glob("*.stderr"))), 104)
+
+    def test_readable_source_change_stays_stale_with_receipts(self):
+        import shutil
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp).resolve()
+            target = root / "target" / "examples" / "verification-loop"
+            shutil.copytree(ROOT, target)
+            original = (ROOT / "candidate.py").read_text()
+            (target / "candidate.py").write_text(
+                "from pathlib import Path\np=Path(__file__)\np.write_text(p.read_text()+'\\n')\n" + original)
+            output = root / "receipts"
+            process = subprocess.run([sys.executable, str(target / "replay.py"), "--output", str(output)],
+                                     text=True, capture_output=True, timeout=30, check=False)
+            self.assertEqual(process.returncode, 1, process.stderr)
+            report = json.loads((output / "result.json").read_text())
+            self.assertEqual(report["identity_status"], "STALE")
+            self.assertEqual(report["initial_identity_errors"], {})
+            self.assertEqual(report["post_execution_identity_errors"], {})
+            self.assertNotEqual(report["source_sha256"]["candidate"], report["post_execution_sha256"]["candidate"])
+            self.assertTrue(all(case["verdict"] == "NO_CURRENT_VERDICT_STALE_SOURCE" for case in report["results"]))
+            self.assertEqual(len(list(output.glob("*.stdout"))) + len(list(output.glob("*.stderr"))), 104)
+
     def test_stale_source_identity_is_not_current(self):
         module = load_replay()
         self.assertEqual(module.identity_status({"candidate": "old"}, {"candidate": "new"}), "STALE")

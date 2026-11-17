@@ -31,6 +31,18 @@ def identity_status(recorded_hashes, current_hashes):
     return "CURRENT" if recorded_hashes == current_hashes else "STALE"
 
 
+def source_identities(sources):
+    """Unavailable source bytes have no digest, never an invented identity."""
+    hashes, errors = {}, {}
+    for name, path in sources.items():
+        try:
+            hashes[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+        except OSError as exc:
+            hashes[name] = None
+            errors[name] = {"path": str(path), "error": type(exc).__name__, "detail": str(exc)}
+    return hashes, errors
+
+
 def safe_text(value):
     if value is None:
         return ""
@@ -125,7 +137,7 @@ def main():
         raise SystemExit(f"refusing destination: {exc}")
 
     sources = {name: HERE / f"{name}.py" for name in ("baseline", "candidate")}
-    hashes = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in sources.items()}
+    hashes, initial_errors = source_identities(sources)
     controls = [
         {"id": "known-extension", "name": "primary", "enabled": True,
          "extension": {"vendor": "example", "flags": ["x", 4]}},
@@ -140,6 +152,10 @@ def main():
                   "runs": {}}
         for name, source in sources.items():
             run = invoke(source, value, HERE)
+            # Persist completed streams before later checks or identity reads.
+            for channel in ("stdout", "stderr"):
+                (destination / f"case-{idx}-{name}.{channel}").write_bytes(
+                    base64.b64decode(run.get(channel + "_base64", "")))
             if run["classification"] == "OK":
                 run["semantic_assertion"] = "PASS" if json_equal(run["normalized"], value) else "FAIL"
             result["runs"][name] = run
@@ -156,8 +172,8 @@ def main():
             result["verdict"] = "PASS" if result["differential_equal"] else "FAIL"
         results.append(result)
 
-    current = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in sources.items()}
-    status = identity_status(hashes, current)
+    current, final_errors = source_identities(sources)
+    status = "STALE" if initial_errors or final_errors else identity_status(hashes, current)
     generated = [r for r in results if r["case_kind"] == "generated-invariant"]
     counterexample = next((r["case_index"] for r in generated if r["verdict"] == "FAIL"), None)
     summary = {"cases": len(results), "generated_cases": len(generated),
@@ -172,20 +188,18 @@ def main():
               "generator": {"seed": GENERATOR_SEED, "generated_case_count": len(generated),
                             "finite_testing_limit": "This bounded deterministic sample is evidence for these cases, not proof of the invariant for all JSON inputs."},
               "source_sha256": hashes, "post_execution_sha256": current, "identity_status": status,
+              "initial_identity_errors": initial_errors, "post_execution_identity_errors": final_errors,
               "timeout_seconds": TIMEOUT_SECONDS, "results": results, "summary": summary}
     if status != "CURRENT":
         for result in results:
             result["verdict"] = "NO_CURRENT_VERDICT_STALE_SOURCE"
     (destination / "result.json").write_text(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=True) + "\n", encoding="utf-8")
-    for index, result in enumerate(results):
-        for name, run in result["runs"].items():
-            (destination / f"case-{index}-{name}.stdout").write_bytes(base64.b64decode(run.get("stdout_base64", "")))
-            (destination / f"case-{index}-{name}.stderr").write_bytes(base64.b64decode(run.get("stderr_base64", "")))
     lines = ["# Verification results", "", f"Seed: `{GENERATOR_SEED}`; generated cases: **{len(generated)}**.",
              "Each subprocess receipt (stdout and stderr) is retained per case under its exact case index.", ""]
     lines.extend(f"- Case {i} (`{r['input']['id']}`, {r['case_kind']}): **{r['verdict']}**; full-input contract baseline={r['runs']['baseline'].get('semantic_assertion', 'N/A')}, candidate={r['runs']['candidate'].get('semantic_assertion', 'N/A')}; differential_equal={r['differential_equal']}; receipts: `case-{i}-baseline.stdout`, `case-{i}-candidate.stdout`." for i, r in enumerate(results))
     lines += ["", f"Generated counterexample case index: **{counterexample}**. This finite sample is not proof of the universal invariant.",
               f"Source identity: **{status}**. Baseline trustworthy: **{summary['baseline_trustworthy']}**. Candidate regression detected: **{summary['candidate_detected_regression']}**.",
+              "Missing/unreadable identity diagnostics: `initial_identity_errors` and `post_execution_identity_errors` in result.json; unavailable digests are null, not invented hashes.",
               "Detailed per-case JSON and subprocess receipts: [`result.json`](result.json)."]
     (destination / "verification.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=True))
