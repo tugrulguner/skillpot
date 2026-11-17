@@ -15,6 +15,17 @@ def normalized(stdout):
     return json.loads(stdout)
 
 
+def json_equal(left, right):
+    """Compare decoded JSON recursively without bool/number coercion."""
+    if type(left) is not type(right):
+        return False
+    if isinstance(left, dict):
+        return left.keys() == right.keys() and all(json_equal(left[key], right[key]) for key in left)
+    if isinstance(left, list):
+        return len(left) == len(right) and all(json_equal(a, b) for a, b in zip(left, right))
+    return left == right
+
+
 def identity_status(recorded_hashes, current_hashes):
     return "CURRENT" if recorded_hashes == current_hashes else "STALE"
 
@@ -118,11 +129,11 @@ def main():
         for name, source in sources.items():
             run = invoke(source, value, HERE)
             if run["classification"] == "OK":
-                run["semantic_assertion"] = "PASS" if run["normalized"] == value else "FAIL"
+                run["semantic_assertion"] = "PASS" if json_equal(run["normalized"], value) else "FAIL"
             result["runs"][name] = run
         old, new = result["runs"]["baseline"], result["runs"]["candidate"]
         result["differential_equal"] = (old.get("classification") == new.get("classification") == "OK"
-                                         and old.get("normalized") == new.get("normalized"))
+                                         and json_equal(old.get("normalized"), new.get("normalized")))
         if not baseline_trustworthy(old):
             result["verdict"] = "BASELINE_NOT_TRUSTWORTHY"
         elif new["classification"] != "OK":
@@ -140,6 +151,7 @@ def main():
     summary = {"cases": len(results), "generated_cases": len(generated),
                "baseline_trustworthy": all(baseline_trustworthy(r["runs"]["baseline"]) for r in results),
                "candidate_detected_regression": any(r["verdict"] == "FAIL" for r in results),
+               "named_controls_match_expected": [r["verdict"] for r in results if r["case_kind"] == "named-control"] == ["FAIL", "PASS"],
                "generated_counterexample_case_index": counterexample,
                "generated_pass_count": sum(r["verdict"] == "PASS" for r in generated),
                "generated_fail_count": sum(r["verdict"] == "FAIL" for r in generated)}
@@ -165,7 +177,9 @@ def main():
               "Detailed per-case JSON and subprocess receipts: [`result.json`](result.json)."]
     (destination / "verification.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=False))
-    if status != "CURRENT" or not summary["baseline_trustworthy"] or not summary["candidate_detected_regression"] or counterexample is None:
+    if (status != "CURRENT" or not summary["baseline_trustworthy"]
+            or not summary["named_controls_match_expected"]
+            or not summary["candidate_detected_regression"] or counterexample is None):
         raise SystemExit(1)
 
 

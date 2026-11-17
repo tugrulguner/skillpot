@@ -53,6 +53,7 @@ class VerificationLoopExampleTests(unittest.TestCase):
             self.assertEqual(summary["cases"], 26)
             self.assertIsNotNone(summary["generated_counterexample_case_index"])
             self.assertTrue(summary["candidate_detected_regression"])
+            self.assertTrue(summary["named_controls_match_expected"])
             self.assertEqual(report["results"][0]["verdict"], "FAIL")
             self.assertEqual(report["results"][1]["verdict"], "PASS")
             generated = report["results"][2:]
@@ -70,6 +71,78 @@ class VerificationLoopExampleTests(unittest.TestCase):
                     self.assertTrue((output / f"case-{case['case_index']}-{name}.stdout").is_file())
                     self.assertTrue((output / f"case-{case['case_index']}-{name}.stderr").is_file())
             self.assertIn("not proof", (output / "verification.md").read_text())
+
+    def test_boolean_corruption_cannot_pass_contract_or_differential(self):
+        import shutil
+
+        corrupt = ("import json,sys\n"
+                   "def corrupt(v):\n"
+                   "    if type(v) is bool: return int(v)\n"
+                   "    if type(v) is list: return [corrupt(x) for x in v]\n"
+                   "    if type(v) is dict: return {k:corrupt(x) for k,x in v.items()}\n"
+                   "    return v\n"
+                   "json.dump(corrupt(json.load(sys.stdin)),sys.stdout)\n")
+        for wrong_baseline in (False, True):
+            with self.subTest(wrong_baseline=wrong_baseline), tempfile.TemporaryDirectory() as temp:
+                base = Path(temp).resolve()
+                target = base / "target" / "examples" / "verification-loop"
+                shutil.copytree(ROOT, target)
+                (target / "candidate.py").write_text(corrupt)
+                if wrong_baseline:
+                    (target / "baseline.py").write_text(corrupt)
+                output = base / "receipts"
+                subprocess.run([sys.executable, str(target / "replay.py"), "--output", str(output)],
+                               text=True, capture_output=True, timeout=30, check=False)
+                report = json.loads((output / "result.json").read_text())
+                minimal = report["results"][1]
+                self.assertEqual(minimal["runs"]["candidate"]["semantic_assertion"], "FAIL")
+                self.assertEqual(report["summary"]["baseline_trustworthy"], not wrong_baseline)
+                self.assertEqual(minimal["differential_equal"], wrong_baseline)
+                self.assertNotEqual(minimal["verdict"], "PASS")
+                # Nested booleans must also differ from numeric output.
+                for case in report["results"][2:]:
+                    self.assertEqual(case["runs"]["candidate"]["semantic_assertion"], "FAIL")
+
+    def test_failed_or_unavailable_legitimate_control_fails_replay(self):
+        import shutil
+
+        variants = {
+            "always-loss": "import json,sys\njson.load(sys.stdin)\njson.dump({},sys.stdout)\n",
+            "minimal-execution-error": (
+                "import json,sys\nv=json.load(sys.stdin)\n"
+                "if v['id']=='minimal': raise SystemExit(7)\n"
+                "json.dump({k:v[k] for k in ('id','name','enabled')},sys.stdout)\n"),
+        }
+        for label, code in variants.items():
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as temp:
+                base = Path(temp).resolve()
+                target = base / "target" / "examples" / "verification-loop"
+                shutil.copytree(ROOT, target)
+                (target / "candidate.py").write_text(code)
+                output = base / "receipts"
+                process = subprocess.run([sys.executable, str(target / "replay.py"), "--output", str(output)],
+                                         text=True, capture_output=True, timeout=30, check=False)
+                report = json.loads((output / "result.json").read_text())
+                self.assertTrue(report["summary"]["baseline_trustworthy"])
+                self.assertTrue(report["summary"]["candidate_detected_regression"])
+                self.assertNotEqual(report["results"][1]["verdict"], "PASS")
+                self.assertNotEqual(process.returncode, 0)
+
+    def test_json_comparison_preserves_nested_types_and_legitimate_formatting(self):
+        module = load_replay()
+        left = module.normalized('{"snow":"雪", "nested":[false, {"zero":0,"nil":null}]}')
+        reordered = module.normalized('{"nested": [false,{"nil":null,"zero":0}], "snow":"雪"}')
+        self.assertTrue(module.json_equal(left, reordered))
+        for changed in (
+            {"snow": "雪", "nested": [0, {"zero": 0, "nil": None}]},
+            {"snow": "雪", "nested": [False, {"zero": False, "nil": None}]},
+            {"snow": "雪", "nested": [False]},
+            {"snow": "雪", "nested": [False, {"zero": 0, "nil": None}, None]},
+        ):
+            self.assertFalse(module.json_equal(left, changed))
+        self.assertFalse(module.json_equal(True, 1))
+        self.assertFalse(module.json_equal(0, False))
+        self.assertFalse(module.json_equal([], {}))
 
     def test_stale_source_identity_is_not_current(self):
         module = load_replay()
