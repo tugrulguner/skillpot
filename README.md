@@ -98,10 +98,12 @@ instructions grants no additional authority.
 
 Published v0.4.1 contains ten skills, including `decision-brief` and
 `document-actions`. Current source contains sixteen workflows; v0.4.1 remains the
-ten-skill published collection. The original `verification-loop` bundle provides
-exact-head, acceptance-linked checks and `verification.md`; inspection/planning is
-default, and execution or repairs need explicit permission. An input-only practice
-packet is included; authored example execution is not task-efficacy evidence. See the
+ten-skill published collection. The original `verification-loop` 0.2.0 bundle runs
+acceptance-linked checks within existing local authorization, producing `verification.md`
+and actual-byte evidence. Without execution permission it plans only. Optional setup
+qualifies reusable project recipes; recurring misses become owner-reviewed diff-triggered
+rule candidates. An input-only practice packet is included; authored example execution
+is not task-efficacy evidence. See the
 [verification-loop first-use guide](docs/verification-loop-first-use.md).
 
 Existing source-only workflows are described in their individual first-use guides:
@@ -143,7 +145,7 @@ its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
 | Minimize a reported failure into a runnable reproducer and regression test | [bug-repro](skills/bug-repro/SKILL.md) 0.1.0, source only; [one-command setup](docs/bug-repro-first-use.md); execution requires explicit permission |
 | Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, current source only; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
 | Audit a performance claim against existing benchmark evidence, without rerunning trials | [benchmark-audit](skills/benchmark-audit/SKILL.md) 0.1.0, source only; inspection-only; [first-use guide](docs/benchmark-audit-first-use.md) |
-| Verify a code change against user-visible criteria | [verification-loop](skills/verification-loop/SKILL.md) 0.1.0, original source only; `verification.md`; exact-head evidence, inspection-only default; [first-use guide](docs/verification-loop-first-use.md) |
+| Verify a code change against user-visible criteria | [verification-loop](skills/verification-loop/SKILL.md) 0.2.0, original source only; `verification.md`, optional qualified recipe and rule candidates; executes within authorization, plans otherwise; [first-use guide](docs/verification-loop-first-use.md) |
 | Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.1, current source only; [one-command setup](docs/claim-check-first-use.md) |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
