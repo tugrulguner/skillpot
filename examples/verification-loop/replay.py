@@ -1,3 +1,4 @@
+import base64
 import hashlib
 import json
 from pathlib import Path
@@ -38,6 +39,15 @@ def safe_text(value):
     return value
 
 
+def captured_output(stdout, stderr):
+    """Keep exact bytes separately from explicitly lossy display previews."""
+    stdout, stderr = stdout or b"", stderr or b""
+    return {"raw_stdout": safe_text(stdout), "raw_stderr": safe_text(stderr),
+            "stdout_base64": base64.b64encode(stdout).decode("ascii"),
+            "stderr_base64": base64.b64encode(stderr).decode("ascii"),
+            "text_preview_policy": "raw_stdout/raw_stderr are UTF-8 replacement previews; base64 fields and receipt files retain exact bytes"}
+
+
 def baseline_trustworthy(run):
     return run.get("classification") == "OK" and run.get("semantic_assertion") == "PASS"
 
@@ -75,24 +85,26 @@ def invoke(source, value, cwd=None):
     argv = [sys.executable, str(source)]
     started = __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
     try:
-        completed = subprocess.run(argv, input=json.dumps(value), text=True, capture_output=True,
+        completed = subprocess.run(argv, input=json.dumps(value).encode("utf-8"), capture_output=True,
                                    timeout=TIMEOUT_SECONDS, check=False, cwd=cwd)
     except subprocess.TimeoutExpired as exc:
-        return {"classification": "TIMEOUT", "raw_stdout": safe_text(exc.stdout),
-                "raw_stderr": safe_text(exc.stderr), "argv": argv, "cwd": str(cwd),
+        return {"classification": "TIMEOUT", **captured_output(exc.stdout, exc.stderr), "argv": argv, "cwd": str(cwd),
                 "started_at": started, "timeout_seconds": TIMEOUT_SECONDS}
     except OSError as exc:
         return {"classification": "LAUNCH_ERROR", "launch_error": str(exc), "argv": argv,
                 "cwd": str(cwd), "started_at": started, "timeout_seconds": TIMEOUT_SECONDS}
-    run = {"exit_code": completed.returncode, "raw_stdout": safe_text(completed.stdout),
-           "raw_stderr": safe_text(completed.stderr), "argv": argv, "cwd": str(cwd),
+    run = {"exit_code": completed.returncode, **captured_output(completed.stdout, completed.stderr),
+           "argv": argv, "cwd": str(cwd),
            "started_at": started, "timeout_seconds": TIMEOUT_SECONDS}
     if completed.returncode:
         run["classification"] = "SETUP_OR_EXECUTION_ERROR"
     else:
         try:
-            run["normalized"] = normalized(completed.stdout)
+            run["normalized"] = normalized(completed.stdout.decode("utf-8"))
             run["classification"] = "OK"
+        except UnicodeDecodeError as exc:
+            run["classification"] = "INVALID_OUTPUT"
+            run["decode_error"] = str(exc)
         except (ValueError, TypeError) as exc:
             run["classification"] = "INVALID_OUTPUT"
             run["parse_error"] = str(exc)
@@ -164,11 +176,11 @@ def main():
     if status != "CURRENT":
         for result in results:
             result["verdict"] = "NO_CURRENT_VERDICT_STALE_SOURCE"
-    (destination / "result.json").write_text(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    (destination / "result.json").write_text(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=True) + "\n", encoding="utf-8")
     for index, result in enumerate(results):
         for name, run in result["runs"].items():
-            (destination / f"case-{index}-{name}.stdout").write_text(run.get("raw_stdout", ""), encoding="utf-8")
-            (destination / f"case-{index}-{name}.stderr").write_text(run.get("raw_stderr", ""), encoding="utf-8")
+            (destination / f"case-{index}-{name}.stdout").write_bytes(base64.b64decode(run.get("stdout_base64", "")))
+            (destination / f"case-{index}-{name}.stderr").write_bytes(base64.b64decode(run.get("stderr_base64", "")))
     lines = ["# Verification results", "", f"Seed: `{GENERATOR_SEED}`; generated cases: **{len(generated)}**.",
              "Each subprocess receipt (stdout and stderr) is retained per case under its exact case index.", ""]
     lines.extend(f"- Case {i} (`{r['input']['id']}`, {r['case_kind']}): **{r['verdict']}**; full-input contract baseline={r['runs']['baseline'].get('semantic_assertion', 'N/A')}, candidate={r['runs']['candidate'].get('semantic_assertion', 'N/A')}; differential_equal={r['differential_equal']}; receipts: `case-{i}-baseline.stdout`, `case-{i}-candidate.stdout`." for i, r in enumerate(results))
@@ -176,7 +188,7 @@ def main():
               f"Source identity: **{status}**. Baseline trustworthy: **{summary['baseline_trustworthy']}**. Candidate regression detected: **{summary['candidate_detected_regression']}**.",
               "Detailed per-case JSON and subprocess receipts: [`result.json`](result.json)."]
     (destination / "verification.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=False))
+    print(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=True))
     if (status != "CURRENT" or not summary["baseline_trustworthy"]
             or not summary["named_controls_match_expected"]
             or not summary["candidate_detected_regression"] or counterexample is None):

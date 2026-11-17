@@ -144,6 +144,79 @@ class VerificationLoopExampleTests(unittest.TestCase):
         self.assertFalse(module.json_equal(0, False))
         self.assertFalse(module.json_equal([], {}))
 
+    def test_invalid_utf8_streams_retain_exact_receipts_and_report(self):
+        import base64
+        import shutil
+
+        for stream in ("stdout", "stderr"):
+            with self.subTest(stream=stream), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp).resolve()
+                target = root / "target" / "examples" / "verification-loop"
+                shutil.copytree(ROOT, target)
+                bad = b"\xff\x00\r\n"
+                if stream == "stdout":
+                    code = "import sys\nsys.stdout.buffer.write(bytes([255,0,13,10]))\n"
+                else:
+                    code = ((ROOT / "candidate.py").read_text() +
+                            "\nsys.stderr.buffer.write(bytes([255,0,13,10]))\n")
+                (target / "candidate.py").write_text(code)
+                output = root / "receipts"
+                process = subprocess.run([sys.executable, str(target / "replay.py"), "--output", str(output)],
+                                         text=True, capture_output=True, timeout=30, check=False)
+                self.assertTrue((output / "result.json").is_file(), process.stderr)
+                self.assertTrue((output / "verification.md").is_file())
+                report = json.loads((output / "result.json").read_text())
+                self.assertEqual(process.returncode, 1 if stream == "stdout" else 0)
+                self.assertEqual(report["identity_status"], "CURRENT")
+                for case in report["results"]:
+                    run = case["runs"]["candidate"]
+                    self.assertEqual(run["classification"], "INVALID_OUTPUT" if stream == "stdout" else "OK")
+                    if stream == "stdout":
+                        self.assertIn("decode_error", run)
+                    self.assertEqual(base64.b64decode(run[stream + "_base64"]), bad)
+                    for name in ("baseline", "candidate"):
+                        for channel in ("stdout", "stderr"):
+                            receipt = output / f"case-{case['case_index']}-{name}.{channel}"
+                            self.assertEqual(receipt.read_bytes(), base64.b64decode(case["runs"][name][channel + "_base64"]))
+                self.assertEqual(len(list(output.glob("*.stdout"))) + len(list(output.glob("*.stderr"))), 104)
+
+    def test_escaped_surrogate_output_does_not_break_report_encoding(self):
+        import shutil
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp).resolve()
+            target = root / "target" / "examples" / "verification-loop"
+            shutil.copytree(ROOT, target)
+            (target / "candidate.py").write_text(
+                "import json,sys\nv=json.load(sys.stdin)\nv['name']=chr(0xd800)\njson.dump(v,sys.stdout)\n")
+            output = root / "receipts"
+            process = subprocess.run([sys.executable, str(target / "replay.py"), "--output", str(output)],
+                                     text=True, capture_output=True, timeout=30, check=False)
+            self.assertTrue((output / "result.json").is_file(), process.stderr)
+            self.assertTrue((output / "verification.md").is_file())
+            self.assertEqual(process.returncode, 1)
+            report = json.loads((output / "result.json").read_text())
+            self.assertEqual(report["results"][1]["verdict"], "FAIL")
+            self.assertEqual(report["results"][1]["runs"]["candidate"]["normalized"]["name"], chr(0xd800))
+            self.assertEqual(len(list(output.glob("*.stdout"))) + len(list(output.glob("*.stderr"))), 104)
+
+    def test_timeout_and_nonzero_capture_preserve_binary_streams(self):
+        import base64
+
+        module = load_replay()
+        setattr(module, "TIMEOUT_SECONDS", 0.1)
+        with tempfile.TemporaryDirectory() as temp:
+            for tail, expected in (("import time; time.sleep(1)", "TIMEOUT"),
+                                   ("raise SystemExit(7)", "SETUP_OR_EXECUTION_ERROR")):
+                target = Path(temp) / "binary.py"
+                target.write_text("import sys\nsys.stdout.buffer.write(bytes([255,13,10])); sys.stdout.buffer.flush()\n"
+                                  "sys.stderr.buffer.write(bytes([254,0])); sys.stderr.buffer.flush()\n" + tail + "\n")
+                run = module.invoke(target, {})
+                self.assertEqual(run["classification"], expected)
+                self.assertEqual(base64.b64decode(run["stdout_base64"]), b"\xff\r\n")
+                self.assertEqual(base64.b64decode(run["stderr_base64"]), b"\xfe\x00")
+                json.dumps(run)  # Structured receipts must remain serializable.
+
     def test_stale_source_identity_is_not_current(self):
         module = load_replay()
         self.assertEqual(module.identity_status({"candidate": "old"}, {"candidate": "new"}), "STALE")
