@@ -18,7 +18,7 @@ class VerificationLoopExampleTests(unittest.TestCase):
 
     def test_real_baseline_and_candidate_expose_field_loss_end_to_end(self):
         with tempfile.TemporaryDirectory() as temp:
-            output = Path(temp) / "receipts"
+            output = Path(temp).resolve() / "receipts"
             process = self.run_replay(output)
             self.assertEqual(process.returncode, 0, process.stderr)
             report = json.loads((output / "result.json").read_text())
@@ -60,6 +60,17 @@ class VerificationLoopExampleTests(unittest.TestCase):
             broken.write_text("raise SystemExit(7)\n")
             run = module.invoke(broken, {})
             self.assertEqual(run["exit_code"], 7)
+
+    def test_ancestor_symlink_cannot_redirect_output(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp).resolve()
+            target = root / "target"
+            (target / "nested").mkdir(parents=True)
+            link = root / "alias"
+            link.symlink_to(target, target_is_directory=True)
+            process = self.run_replay(link / "nested" / "evidence")
+            self.assertNotEqual(process.returncode, 0)
+            self.assertFalse((target / "nested" / "evidence").exists())
 
     def test_existing_destination_is_preserved_and_refused(self):
         with tempfile.TemporaryDirectory() as temp:
