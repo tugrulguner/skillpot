@@ -45,6 +45,19 @@ class V050PublicationTests(unittest.TestCase):
                              + COMMIT + " --skill " + name)
             self.assertIn("construction-time publication labels", text)
 
+    def test_active_discovery_and_historical_release_counts_do_not_conflict(self):
+        discovery = (ROOT / "website/public/llms.txt").read_text()
+        for name in ("Experiment-design", "Verification-loop"):
+            self.assertIn(name + " published first use", discovery)
+            self.assertNotIn(name + " source-only first use", discovery)
+        roadmap = (ROOT / "ROADMAP.md").read_text()
+        section = roadmap.split("## 3a. Published v0.4.0 collection", 1)[1].split("## 3b.", 1)[0]
+        self.assertIn("records ten skills", section)
+        self.assertNotIn("records seventeen skills", section)
+        proposal = (ROOT / "docs/claim-check-proposal.md").read_text()
+        self.assertIn("At proposal time, stable v0.4.1 did not contain claim-check", proposal)
+        self.assertNotIn("Stable v0.5.0 does not contain claim-check", proposal)
+
     def test_release_record_preserves_preparation_and_public_archive_identities(self):
         text = (ROOT / "docs/releases/v0.5.0.md").read_text()
         self.assertLess(text.index("**Published:**"), text.index("**Not published.**"))

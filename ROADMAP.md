@@ -71,7 +71,7 @@ upstream pins and independently verified public source archives.
 
 ## 3a. Published v0.4.0 collection
 
-The [v0.4.0 publication record](docs/releases/v0.4.0.md) records seventeen skills, adding
+The [v0.4.0 publication record](docs/releases/v0.4.0.md) records ten skills, adding
 `decision-brief` and `document-actions` to the eight in v0.3.0. It preserves reviewed
 upstream pins and existing maturity/evidence boundaries. The v0.4.0 tag is unchanged;
 current setup now selects v0.5.0 as described below. Family discovery deploys independently.
