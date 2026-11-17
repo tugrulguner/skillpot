@@ -62,8 +62,10 @@ def main():
         raise SystemExit("usage: replay.py --output FRESH_OUTPUT_DIRECTORY")
     destination = Path(sys.argv[2]).absolute()
     parent = destination.parent
-    if parent.is_symlink() or not parent.is_dir() or destination.is_symlink() or destination.exists():
-        raise SystemExit(f"refusing unsafe, missing-parent, existing or symlink destination: {destination}")
+    if (not parent.is_dir() or destination.exists()
+            or any(component.is_symlink() for component in (destination, *destination.parents))
+            or destination.resolve().is_relative_to(HERE.parents[1])):
+        raise SystemExit(f"refusing unsafe, missing-parent, existing, internal or symlink destination: {destination}")
     try:
         destination.mkdir()
     except OSError as exc:
