@@ -7,16 +7,16 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-RELEASE = "79284b3faa928dc556a9032aa9dbeb059b4ee915"
+RELEASE = "044213fd00343e94b4d389c3ca2c0f2909feb79f"
 V040_RELEASE = "3624eaaf2aa6c870e1dad6190ac3466e4e378f35"
 
 
 class V040DefaultsTests(unittest.TestCase):
     def test_readme_selects_published_ten_skill_release(self):
         text = (ROOT / "README.md").read_text()
-        self.assertIn("git clone --branch v0.4.1 --depth 1", text)
-        self.assertIn("Published v0.4.1 contains ten skills", text)
-        self.assertIn("discussions/43", text)
+        self.assertIn("git clone --branch v0.5.0 --depth 1", text)
+        self.assertIn("Published v0.5.0 contains seventeen skills", text)
+        self.assertIn("discussions/68", text)
         self.assertNotIn("not included in published v0.3.0", text)
 
     def test_readme_clone_failure_cannot_continue_to_copy(self):
@@ -71,7 +71,7 @@ class V040DefaultsTests(unittest.TestCase):
             text = (ROOT / filename).read_text()
             for name in ["decision-brief", "document-actions"]:
                 self.assertIn(name, text)
-            self.assertIn("v0.4.1", text)
+            self.assertIn("v0.5.0", text)
             self.assertNotIn("not included in published v0.3.0", text)
             self.assertNotIn("reviewed, unreleased", text)
 

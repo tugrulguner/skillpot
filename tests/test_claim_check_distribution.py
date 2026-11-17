@@ -18,7 +18,7 @@ class ClaimCheckDistributionTests(unittest.TestCase):
             self.assertIsNotNone(first)
             assert first is not None
             self.assertIn("npx skills@1.7.6 add", first[1])
-            self.assertIn("/tree/v0.4.1", first[1])
+            self.assertIn("/tree/v0.5.0", first[1])
             self.assertIn("--skill decision-brief", first[1])
             self.assertNotIn("git clone", first[1])
         text = (ROOT / "README.md").read_text()
@@ -29,7 +29,7 @@ class ClaimCheckDistributionTests(unittest.TestCase):
         first = re.search(r"```sh\n(.*?)\n```", text, re.S)
         self.assertIsNotNone(first)
         assert first is not None
-        self.assertIn("/tree/" + PIN + " --skill claim-check", first[1])
+        self.assertIn("/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check", first[1])
         self.assertNotRegex(first[1], r"(?m)^\s*(?:cp|mkdir|git clone)\b")
         self.assertIn("not included in published SkillPot v0.4.1", text)
         for asset in ["example-draft.md", "example-sources.md"]:
@@ -44,7 +44,7 @@ class ClaimCheckDistributionTests(unittest.TestCase):
         actual = {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}
         self.assertEqual(actual, expected)
         self.assertEqual(len(actual), 17)
-        self.assertIn("Published v0.4.1 contains ten skills", (ROOT / "README.md").read_text())
+        self.assertIn("Published v0.5.0 contains seventeen skills", (ROOT / "README.md").read_text())
 
     def test_original_public_replay_record_is_preserved_separately_from_current_matrix(self):
         path = ROOT / "docs/claim-check-distribution.json"

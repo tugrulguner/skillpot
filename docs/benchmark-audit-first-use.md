@@ -1,6 +1,8 @@
 # Benchmark-audit: one-command installation
 
-`benchmark-audit` 0.1.0 is current-source instruction work, **not included in published SkillPot v0.4.1**.
+This workflow was not included in published SkillPot v0.4.1. It is included in v0.5.0. Earlier distribution records keep their original pins; the selected release contains byte-identical bundles. Bundle metadata and compatibility/provenance notices retain their construction-time publication labels; collection publication status here and in the Release is authoritative.
+
+`benchmark-audit` 0.1.0 is published SkillPot v0.5.0 instruction workflow.
 It reviews a performance claim against bounded supplied records and produces exactly
 `benchmark-audit.md`: claim-level verdicts, precise evidence, comparison/accounting,
 calculations and missing evidence. It does not launch benchmarks, authenticate absent
@@ -11,7 +13,7 @@ artifacts, diagnose causes or authorize promotion/publication.
 With Node.js 22.20+ and Git, run from an owned project:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/ad7aec4d77945ed10c3a1ff49fb2b4f8d786c27f --skill benchmark-audit
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill benchmark-audit
 ```
 
 Choose your agent, or append `--agent claude-code`, `--agent cursor`, `--agent codex`
@@ -23,7 +25,7 @@ agent links and `skills-lock.json`; SkillPot adds no runtime or custom installer
 The [distribution record](benchmark-audit-distribution.json) binds the installed files
 to that immutable source. It verifies isolated add/list/remove and filesystem parity,
 not native agent activation, automatic selection, audit accuracy or model improvement.
-Stable v0.4.1 remains its immutable ten-skill collection.
+Stable v0.5.0 remains its immutable seventeen-skill collection.
 
 ## Try the installed input-only practice packet
 

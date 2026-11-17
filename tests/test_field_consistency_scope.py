@@ -35,11 +35,11 @@ class FieldConsistencyScopeTests(unittest.TestCase):
         self.assertFalse(list(record.rglob("*.log")), "private runner logs must not be published")
 
     def test_stable_installation_still_selects_the_published_snapshot(self):
-        self.assertIn("git clone --branch v0.4.1 --depth 1",
+        self.assertIn("git clone --branch v0.5.0 --depth 1",
                       (ROOT / "README.md").read_text())
         setup = (ROOT / "docs/quickstart.md").read_text()
         for directory in ["skillpot-source", "skillpot-actions-source", "skillpot-decision-source"]:
-            self.assertIn(f"git -C {directory} checkout --detach {RELEASE}", setup)
+            self.assertIn(f"git -C {directory} checkout --detach 044213fd00343e94b4d389c3ca2c0f2909feb79f", setup)
 
 
 if __name__ == "__main__":

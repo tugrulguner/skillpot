@@ -64,29 +64,29 @@ These checkboxes do not authorize merging a future change or publishing from an
 unreviewed branch. A collection release distributes instructions; it neither installs
 all skills nor changes existing user copies.
 
-Latest published collection: [v0.4.1](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.1),
-at commit `79284b3faa928dc556a9032aa9dbeb059b4ee915`. The
-[publication record](docs/releases/v0.4.1.md) describes the two workflow corrections, retained
+Latest published collection: [v0.5.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.5.0),
+at commit `044213fd00343e94b4d389c3ca2c0f2909feb79f`. The
+[publication record](docs/releases/v0.5.0.md) describes the two workflow corrections, retained
 upstream pins and independently verified public source archives.
 
 ## 3a. Published v0.4.0 collection
 
-The [v0.4.0 publication record](docs/releases/v0.4.0.md) records ten skills, adding
+The [v0.4.0 publication record](docs/releases/v0.4.0.md) records seventeen skills, adding
 `decision-brief` and `document-actions` to the eight in v0.3.0. It preserves reviewed
 upstream pins and existing maturity/evidence boundaries. The v0.4.0 tag is unchanged;
-current setup now selects v0.4.1 as described below. Family discovery deploys independently.
+current setup now selects v0.5.0 as described below. Family discovery deploys independently.
 
-## 3b. Published v0.4.1 patch
+## 3b. Published v0.5.0 patch
 
-The [v0.4.1 publication record](docs/releases/v0.4.1.md) covers the two original workflows'
+The [v0.5.0 publication record](docs/releases/v0.5.0.md) covers the two original workflows'
 role, status, approval, timing and evidence-check corrections, with unchanged inputs,
-outputs, permissions and the same ten-skill collection. Current stable setup selects
-published v0.4.1. This source-facing alignment preserves the immutable published tag;
+outputs, permissions and the same seventeen-skill collection. Current stable setup selects
+published v0.5.0. This source-facing alignment preserves the immutable published tag;
 family discovery deploys independently and each alignment change needs merge approval.
 
 ## 4. Maintain and expand the library
 
-- [x] Add `document-actions`, released in v0.4.0 and corrected in v0.4.1, for source-stated actions and focused questions,
+- [x] Add `document-actions`, released in v0.4.0 and corrected in v0.5.0, for source-stated actions and focused questions,
       with assigned/required/proposed/historical classifications, verbatim deadlines,
       explicit conflicts, an authored offline example and pinned first-use instructions.
       Included in v0.4.0; source checks are not observed agent extraction results.
@@ -95,19 +95,19 @@ family discovery deploys independently and each alignment change needs merge app
       with a bounded evidence procedure, parent-authored worked example and offline
       artifact checks. [Three bounded task observations](evaluations/decision-brief/offline-tasks-001/README.md)
       record conditional recommendation, missing-evidence deferral and collision refusal.
-      The skill was introduced in v0.4.0 and corrected in v0.4.1; these
+      The skill was introduced in v0.4.0 and corrected in v0.5.0; these
       observations do not establish broad model performance or automatic discovery.
 
 - [ ] Apply the source-refresh process when upstream commands, APIs, notices or host
       specifications change; review diffs rather than silently tracking moving main.
   - [x] Prepare the [Dexpot v0.8.1 guide correction](docs/published-upstream-refresh.md)
         in current source, with released-source parity, version/pin/notice consistency
-        and explicit separation from published SkillPot v0.4.1. No new collection
+        and explicit separation from published SkillPot v0.5.0. No new collection
         release or runtime qualification is implied.
 - [x] Review the [claim-check proposal](docs/claim-check-proposal.md) and its authored
       draft/source/review packet; design accepted in [#46](https://github.com/tugrulguner/skillpot/issues/46).
 - [x] Implement the original [claim-check bundle](skills/claim-check/SKILL.md) as a
-      current-source, unreleased working artifact. Source checks and authored examples
+      published in v0.5.0 working artifact. Source checks and authored examples
       do not establish task efficacy; publication remains separate.
 - [x] Implement original `change-impact`: evidence-linked `impact.md` and
       `verification.md`, read-only default, an authored change packet, selective
@@ -139,7 +139,7 @@ bounded skill at a time; further ordering depends on evidence readiness and expl
 Names and output filenames for remaining backlog items remain provisional until reviewed.
 These entries do not claim completed evaluations or authorize implementation.
 
-- [x] Implement `benchmark-audit` in source only: review whether a performance claim is supported
+- [x] Implement `benchmark-audit` in published in v0.5.0: review whether a performance claim is supported
       by raw trials, matched workloads/contracts, source and environment identities,
       complete comparison cells, errors and retained losses. Produce
       `benchmark-audit.md` with claim-level verdicts and evidence gaps;

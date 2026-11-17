@@ -16,7 +16,7 @@ class BenchmarkAuditDistributionTests(unittest.TestCase):
             for token in ('benchmark-audit', 'benchmark-audit-first-use.md', 'benchmark-audit.md'):
                 with self.subTest(path=name, token=token):
                     self.assertIn(token, text)
-        self.assertIn('Published v0.4.1 contains ten skills', (ROOT / 'README.md').read_text())
+        self.assertIn('Published v0.5.0 contains seventeen skills', (ROOT / 'README.md').read_text())
 
     def test_complete_public_install_record_matches_current_bundle_bytes(self):
         record = json.loads((ROOT / 'docs/benchmark-audit-distribution.json').read_text())
@@ -37,7 +37,7 @@ class BenchmarkAuditDistributionTests(unittest.TestCase):
         self.assertIsNotNone(first)
         assert first is not None
         self.assertEqual(first[1], 'npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/'
-                         + record['source_commit'] + ' --skill benchmark-audit')
+                         + '044213fd00343e94b4d389c3ca2c0f2909feb79f' + ' --skill benchmark-audit')
 
     def test_first_use_is_complete_and_does_not_authorize_benchmarks(self):
         text = (ROOT / 'docs/benchmark-audit-first-use.md').read_text()

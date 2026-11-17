@@ -4,7 +4,7 @@ import hashlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-COMMIT = "79284b3faa928dc556a9032aa9dbeb059b4ee915"
+COMMIT = "044213fd00343e94b4d389c3ca2c0f2909feb79f"
 
 
 class PublishedDefaultsTests(unittest.TestCase):
@@ -33,10 +33,10 @@ class PublishedDefaultsTests(unittest.TestCase):
     def test_website_names_live_excerpt_and_stable_release_separately(self):
         excerpt = (ROOT / "website/src/components/SkillExcerpt.astro").read_text()
         self.assertIn("current source", excerpt)
-        self.assertIn("v0.4.1", excerpt)
+        self.assertIn("v0.5.0", excerpt)
         home = (ROOT / "website/src/content/docs/index.mdx").read_text()
-        self.assertIn("npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check", home)
-        self.assertIn("releases/tag/v0.4.1", home)
+        self.assertIn("npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check", home)
+        self.assertIn("releases/tag/v0.5.0", home)
 
     def test_publication_labels_do_not_change_released_instruction_bodies(self):
         # Frozen from the approved v0.4.1 commit, excluding YAML frontmatter only.
@@ -50,13 +50,13 @@ class PublishedDefaultsTests(unittest.TestCase):
 
     def test_current_discovery_retains_correct_versions_count_and_discussion(self):
         readme = (ROOT / "README.md").read_text()
-        self.assertIn("discussions/43", readme)
+        self.assertIn("discussions/68", readme)
         self.assertNotIn("discussions/34", readme)
         setup = (ROOT / "docs/quickstart.md").read_text()
         self.assertIn("`decision-brief` version 0.1.1", setup)
         self.assertIn("`document-actions` version 0.1.2", setup)
         home = (ROOT / "website/src/content/docs/index.mdx").read_text()
-        self.assertIn("Published v0.4.1 has ten skills", home)
+        self.assertIn("Published v0.5.0 contains seventeen skills", home)
         self.assertNotIn("published collection has eight skills", home)
         for name, version in [("decision-brief", "0.1.1"), ("document-actions", "0.1.2")]:
             compatibility = (ROOT / f"skills/{name}/compatibility.md").read_text()

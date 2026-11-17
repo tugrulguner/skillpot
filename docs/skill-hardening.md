@@ -2,7 +2,7 @@
 
 This pass reviews all fourteen existing skills and hardens their construction,
 standalone resources and worked examples. It adds no new skill or collection release.
-Published v0.4.1 remains its immutable ten-skill snapshot; these changes are current
+Published v0.5.0 is the immutable seventeen-skill snapshot; these changes are current
 source, not an update applied to existing installations.
 
 ## Install one reviewed current-source bundle
@@ -10,7 +10,7 @@ source, not an update applied to existing installations.
 With Node.js 22.20+ and Git, run in the project where you use your agent:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check
 ```
 
 Replace only the skill name to select another bundle listed below. Keep the full
@@ -27,7 +27,7 @@ refusal is a task rule, not a guarantee about installer update behavior.
 
 The [public distribution record](skill-hardening-distribution.json) binds all 89
 current bundle files across fourteen individually tested skills to this source pin.
-Its scope is actual public add/list/remove, selected-only placement,
+The record retains its original fourteen-skill source pin; the current selection above uses byte-identical bundles from the published release. Its scope is actual public add/list/remove, selected-only placement,
 canonical files, agent links, source lock, unrelated project/global sibling
 preservation and standalone inline resource destinations. The exercised installer
 runtime is Node 22.23.4 with Skills CLI 1.7.6. These checks do not establish native

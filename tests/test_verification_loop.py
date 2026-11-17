@@ -107,7 +107,7 @@ class VerificationLoopContractTests(unittest.TestCase):
         self.assertTrue(record["selected_removal_verified"])
         self.assertFalse(record["client_or_model_launched"])
         guide = (ROOT / "docs/verification-loop-first-use.md").read_text()
-        self.assertIn("/tree/" + record["pin"] + " --skill verification-loop", guide)
+        self.assertIn("/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill verification-loop", guide)
         self.assertNotIn("<FULL_COMMIT>", guide)
 
     def test_historical_distribution_record_is_preserved(self):
@@ -126,7 +126,7 @@ class VerificationLoopContractTests(unittest.TestCase):
         self.assertEqual(count, 17)
         readme = (ROOT / "README.md").read_text()
         self.assertIn("seventeen workflows", readme)
-        self.assertIn("ten-skill published collection", readme)
+        self.assertIn("seventeen-skill published collection", readme)
         source_catalog = json.loads((ROOT / "catalog/modepot-sources.json").read_text())
         self.assertEqual(len(source_catalog["skills"]), 7)
 

@@ -83,7 +83,7 @@ class ExperimentDesignBundleTests(unittest.TestCase):
         guide = (ROOT / "docs/experiment-design-first-use.md").read_text()
         import json
         record = json.loads((ROOT / "evaluations/experiment-design/distribution-001/summary.json").read_text())
-        self.assertIn("/tree/" + record["pin"] + " --skill experiment-design", guide)
+        self.assertIn("/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill experiment-design", guide)
         self.assertNotIn("SOURCE_COMMIT", guide)
         actual = {p.relative_to(BUNDLE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                   for p in BUNDLE.rglob("*") if p.is_file()}
@@ -98,7 +98,7 @@ class ExperimentDesignBundleTests(unittest.TestCase):
         discovery = (ROOT / "website/public/llms.txt").read_text()
         self.assertIn("seventeen bundles", discovery)
         self.assertIn("experiment-design-first-use.md", discovery)
-        self.assertIn("seven unreleased working artifacts", discovery)
+        self.assertIn("seven additions", discovery)
 
 
 if __name__ == "__main__":

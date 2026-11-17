@@ -1,7 +1,9 @@
 # Change-impact: one-command installation
 
-`change-impact` 0.1.0 is current-source instruction work, **not included in published SkillPot v0.4.1**.
-The published ten-skill collection remains unchanged. This skill maps the consequences
+This workflow was not included in published SkillPot v0.4.1. It is included in v0.5.0. Earlier distribution records keep their original pins; the selected release contains byte-identical bundles. Bundle metadata and compatibility/provenance notices retain their construction-time publication labels; collection publication status here and in the Release is authoritative.
+
+`change-impact` 0.1.0 is published SkillPot v0.5.0 instruction workflow.
+The published seventeen-skill collection remains unchanged. This skill maps the consequences
 of a particular change; repository-readiness instead checks a repository against a delivery goal.
 Neither workflow certifies correctness, security or merge readiness.
 
@@ -10,7 +12,7 @@ Neither workflow certifies correctness, security or merge readiness.
 With Node.js 22.20+ and Git, run this in your owned project:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/f953f4f5dd97b21e76d403a29b32ac2cb8c8da7f --skill change-impact
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill change-impact
 ```
 
 The standard Skills CLI installs the complete selected directory and records its source

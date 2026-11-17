@@ -15,7 +15,7 @@ class IncidentTriageDistributionTests(unittest.TestCase):
             for token in ["incident-triage", "incident-triage-first-use.md", "incident.md", "timeline.md"]:
                 self.assertIn(token, text, name)
         self.assertIn("seventeen current-source bundles", (ROOT / "catalog/README.md").read_text())
-        self.assertIn("Published v0.4.1 contains ten skills", (ROOT / "README.md").read_text())
+        self.assertIn("Published v0.5.0 contains seventeen skills", (ROOT / "README.md").read_text())
         self.assertIn("benchmark-audit", (ROOT / "catalog/README.md").read_text())
 
     def test_public_installer_manifest_binds_all_selected_files_and_pin(self):
@@ -31,7 +31,7 @@ class IncidentTriageDistributionTests(unittest.TestCase):
         self.assertIsNotNone(first)
         assert first is not None
         self.assertRegex(first[1], r"^npx skills@1\.7\.6 add https://github\.com/tugrulguner/skillpot/tree/[a-f0-9]{40} --skill incident-triage$")
-        self.assertIn(record["source_commit"], first[1])
+        self.assertIn("044213fd00343e94b4d389c3ca2c0f2909feb79f", first[1])
         self.assertEqual(set(record["agents"]), {"claude-code", "cursor", "codex", "hermes-agent"})
         for field in ["lock_ref_verified", "sibling_preserved", "selected_removal_verified", "no_global_install"]:
             self.assertTrue(record[field])

@@ -1,13 +1,15 @@
 # Experiment design: first use
 
-`experiment-design` 0.1.0 is an original portable workflow for turning a decision and bounded evidence into a falsifiable, permission-aware plan. It produces exactly one `experiment.md` with eight fixed headings. It is **current source, unreleased, and absent from published SkillPot v0.4.1**. Source checks do not establish task efficacy, native activation, causal validity or experiment execution.
+This workflow was absent from published SkillPot v0.4.1. It is included in v0.5.0. Earlier distribution records keep their original pins; the selected release contains byte-identical bundles. Bundle metadata and compatibility/provenance notices retain their construction-time publication labels; collection publication status here and in the Release is authoritative.
+
+`experiment-design` 0.1.0 is an original portable workflow for turning a decision and bounded evidence into a falsifiable, permission-aware plan. It produces exactly one `experiment.md` with eight fixed headings. It is **published in SkillPot v0.5.0**. Source checks do not establish task efficacy, native activation, causal validity or experiment execution.
 
 ## Install only this bundle
 
 Install the complete selected bundle from this verified immutable source commit. Do not use a stable collection tag that predates this skill.
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/a85c1069bc6630874cdb58b7f4c036e5545c4a8c --skill experiment-design
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill experiment-design
 ```
 
 Node.js 22.20+ and Git are required. Select a host explicitly if desired; installation is project-local unless global scope is deliberately chosen. Inspect an existing destination before confirming replacement: the ecosystem installer may overwrite local edits. This differs from the report-directory exclusive-create rule. The selected bundle includes SKILL.md, provenance, compatibility, report template, checklist and input-only practice; it excludes the accepted retrospective report and its oracle. No model, client, experiment, benchmark or dependency is run/installed.

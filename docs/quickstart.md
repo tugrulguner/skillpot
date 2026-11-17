@@ -11,26 +11,25 @@ may require its own Python environment, dependencies or credentials.
 With Node.js 22.20+ and Git available, run this in the project where you use your agent:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/v0.4.1 --skill decision-brief
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/v0.5.0 --skill decision-brief
 ```
 
 This selects decision-brief; replace its name for another published skill.
 Choose the target agent if prompted. The existing skills CLI handles the
 complete bundle and agent directories automatically. No repository clone or manual
-file placement is required. This selects the published ten-skill collection; newer
-source-only workflows need their separately documented source URL.
+file placement is required. This selects the published seventeen-skill collection, including the seven additional workflows.
 
 For one selected skill and host without selection prompts:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/v0.4.1 --skill decision-brief --agent claude-code -y
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/v0.5.0 --skill decision-brief --agent claude-code -y
 ```
 
 Use `cursor`, `codex` or `hermes-agent` instead of `claude-code`, or pass several
 agent names. Default scope is the current project. Add `--global` only when you want
-user-wide installation. The CLI records the source in `skills-lock.json`, keeps one
-canonical bundle and links agent locations to it. `--copy` selects independent copies
-when needed. No agent client or model is launched by `skills add`.
+user-wide installation. The CLI records the source in `skills-lock.json`, keeps a
+canonical bundle and creates host placements as copies or links. Inspect the actual
+placement before making assumptions about edits or updates. No agent client or model is launched by `skills add`.
 
 Inspect installed skills with `npx skills@1.7.6 list`. Remove a selected project skill
 with `npx skills@1.7.6 remove decision-brief --agent claude-code` and inspect the plan.
@@ -64,19 +63,19 @@ In a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-source &&
-git -C skillpot-source checkout --detach 79284b3faa928dc556a9032aa9dbeb059b4ee915 &&
+git -C skillpot-source checkout --detach 044213fd00343e94b4d389c3ca2c0f2909feb79f &&
 cd skillpot-source
 ```
 
-That immutable public revision is the published `v0.4.1` collection and includes all
-ten skills, including decision-brief and document-actions, and their worked examples. Examples retain their
+That immutable public revision is the published `v0.5.0` collection and includes all
+seventeen skills, including decision-brief and document-actions, and their worked examples. Examples retain their
 own historical product pins; they are not new runtime evidence for these guides.
 You may choose a newer reviewed published revision, but record its exact commit; do
 not silently refresh instructions. Read the chosen `SKILL.md`, provenance, compatibility
 and complete license before granting access or running commands.
 
-The immutable v0.4.1 archive retains v0.4.0 setup examples and prepublication metadata.
-Keep this selected v0.4.1 checkout when following the current guide; do not rerun older
+The immutable v0.5.0 archive retains older setup commands that select v0.4.1 and prepublication metadata.
+Keep this selected v0.5.0 checkout when following the current guide; do not rerun older
 checkout commands from tagged documentation. The verified Release supplies the same
 new-tag override. Current-source publication labels do not rewrite the archive.
 
@@ -201,7 +200,7 @@ remain separate records, not prerequisites for using the documented integrations
 
 ## Try document-actions from pinned source
 
-`document-actions` version 0.1.2 is **included in published v0.4.1**.
+`document-actions` version 0.1.2 is **included in published v0.5.0**.
 The stable checkout above already contains it. If starting separately, these POSIX
 shell steps select the same release commit and copy instructions and fictional input documents only.
 They do not launch a client, install dependencies or create external tasks.
@@ -210,7 +209,7 @@ From a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-actions-source &&
-git -C skillpot-actions-source checkout --detach 79284b3faa928dc556a9032aa9dbeb059b4ee915 &&
+git -C skillpot-actions-source checkout --detach 044213fd00343e94b4d389c3ca2c0f2909feb79f &&
 cd skillpot-actions-source
 ```
 
@@ -298,7 +297,7 @@ client or model trial is required to inspect or copy the bundle.
 
 ## Try decision-brief from reviewed source
 
-`decision-brief` version 0.1.1 is **included in published v0.4.1**.
+`decision-brief` version 0.1.1 is **included in published v0.5.0**.
 The stable instructions above already select this collection. If starting separately,
 use the same immutable release revision below. These POSIX shell steps
 copy instructions and example inputs only; they do not launch an agent, install
@@ -310,11 +309,11 @@ From a new source location you own:
 
 ```sh
 git clone https://github.com/tugrulguner/skillpot.git skillpot-decision-source &&
-git -C skillpot-decision-source checkout --detach 79284b3faa928dc556a9032aa9dbeb059b4ee915 &&
+git -C skillpot-decision-source checkout --detach 044213fd00343e94b4d389c3ca2c0f2909feb79f &&
 cd skillpot-decision-source
 ```
 
-This is the published v0.4.1 snapshot, shared with the stable checkout above.
+This is the published v0.5.0 snapshot, shared with the stable checkout above.
 Do not replace the commit with moving `main` or an older source checkout
 before copying this skill. Inspect [the procedure](../skills/decision-brief/SKILL.md),
 its linked templates, provenance, compatibility and both complete notices first.

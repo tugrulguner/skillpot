@@ -49,7 +49,7 @@ class CollectionHardeningTests(unittest.TestCase):
                     self.assertIs(row[field], True, field)
 
     def test_reader_facing_current_source_defaults_select_the_verified_bytes(self):
-        expected = "npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/" + PIN + " --skill claim-check"
+        expected = "npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/" + "044213fd00343e94b4d389c3ca2c0f2909feb79f" + " --skill claim-check"
         for relative in ("website/src/content/docs/index.mdx", "catalog/README.md", "website/public/llms.txt"):
             with self.subTest(path=relative):
                 self.assertIn(expected, (ROOT / relative).read_text())
@@ -62,8 +62,8 @@ class CollectionHardeningTests(unittest.TestCase):
         command = re.search(r"```sh\n(.*?)\n```", text, re.S)
         self.assertIsNotNone(command)
         assert command is not None
-        self.assertEqual(command[1], "npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/" + PIN + " --skill claim-check")
-        for token in ("fourteen", "v0.4.1", "ten", "user edits", "native", "model", "skill-hardening-distribution.json"):
+        self.assertEqual(command[1], "npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/" + "044213fd00343e94b4d389c3ca2c0f2909feb79f" + " --skill claim-check")
+        for token in ("fourteen", "v0.5.0", "seventeen", "user edits", "native", "model", "skill-hardening-distribution.json"):
             self.assertIn(token, " ".join(text.split()))
         self.assertNotIn("--all", command[1])
         self.assertNotIn("--global", command[1])

@@ -186,7 +186,7 @@ Acceptance must check:
 1. Review this procedure, verdict boundaries and worked packet.
 2. Implement the self-contained portable bundle and templates, source-contract tests,
    exact pinned first-use/copy instructions and source/website discovery separation.
-   Stable v0.4.1 does not contain claim-check; do not direct first use to that snapshot.
+   Stable v0.5.0 does not contain claim-check; do not direct first use to that snapshot.
 3. Run offline metadata/resource/link/copy/collision and fixture consistency checks,
    complete repository CI/browser gates and independent exact-head review.
 4. Obtain separate merge approval. A collection release is not required for a small

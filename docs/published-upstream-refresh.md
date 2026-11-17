@@ -1,3 +1,7 @@
+# Publication update
+
+Published SkillPot v0.5.0 includes Dexpot instruction 0.3.0 with the v0.8.1 prerequisite described below. Current stable setup selects `044213fd00343e94b4d389c3ca2c0f2909feb79f`. The following refresh-preparation record is historical and describes its original v0.4.1 comparison, not current availability. No product runtime qualification is implied.
+
 # Published upstream-guide correction
 
 ## Current-source scope
