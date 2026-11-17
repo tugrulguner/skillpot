@@ -30,7 +30,7 @@ class CollectionHardeningTests(unittest.TestCase):
                        for p in added_package.rglob("*") if p.is_file()}
         self.assertEqual(addition["source_files"], added_files)
         self.assertEqual(addition["files_verified"], len(added_files))
-        self.assertEqual(previous_names | {"benchmark-audit"}, names)
+        self.assertEqual(previous_names | {"benchmark-audit", "verification-loop"}, names)
         self.assertTrue(addition["lock_ref_verified"])
         self.assertTrue(addition["sibling_preserved"])
         self.assertTrue(addition["selected_removal_verified"])

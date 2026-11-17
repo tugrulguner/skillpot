@@ -1,0 +1,3 @@
+# Provenance
+
+This is an original SkillPot procedure, authored under the repository MIT license. Its conceptual inspiration is Addy Osmani, [“How the Claude Code team thinks about verification”](https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/) (Nov. 16, 2026), and [related X post](https://x.com/addyosmani/status/2122590683055993308). The bundle restates general verification ideas in original language and workflow structure; it does not reproduce article prose, code, images, or third-party assets. It is not official Claude Code/Anthropic material. Maintained with SkillPot source.

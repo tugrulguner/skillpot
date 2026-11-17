@@ -1,0 +1,18 @@
+{
+  "skill": "verification-loop",
+  "pin": "a483d6c2d7207f2ffb66b5c9b2bb712c6efcdec7",
+  "source_files": {
+    "provenance.md": "8f6d5eb77969966567150be970bdd2aaced0e8321e43c72915bb407a8911a18a",
+    "SKILL.md": "d69d31679ee9e6f79be8957cd81af75c1853efec41d63486735ff43b30652fe5",
+    "compatibility.md": "97e607af8e9e080aa263214a3615cd2a80f6d20f9ee523d9afa894b373431e3c",
+    "assets/example-input.md": "2e2ded8da7f7fa546ddf848cf46348c111716564eeae85221c8c6512a305118a",
+    "assets/verification-report.md": "0304347461313dfef24cbd7f17dc1c042297261cdc26f97534578752cf322709",
+    "assets/verification-checklist.md": "ccd7382e95185ca18b08266300a8227be002c532a936169de136c4bd6700b17f"
+  },
+  "files_verified": 6,
+  "lock_ref_verified": true,
+  "sibling_preserved": true,
+  "selected_removal_verified": true,
+  "agent_links": [".claude/skills", ".hermes/skills"],
+  "client_or_model_launched": false
+}
