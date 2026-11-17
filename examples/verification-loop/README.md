@@ -8,6 +8,8 @@ Subprocess streams are captured as bytes. The `.stdout`/`.stderr` receipt files 
 
 Decoded JSON is bounded to 64 nested containers (root included) before semantic comparison/report insertion. Excess depth or a decoder `RecursionError` becomes `OUTPUT_LIMIT`, retaining exact output and reports without changing Python's recursion limit. This is an inspection limit, not proof that the candidate violated the round-trip contract. Shallow accepted outputs still receive semantic assertions. The interpreter's own decoder may refuse an output before the explicit depth check; it receives the same non-passing limit classification.
 
+Non-standard numeric constants (`NaN`, `Infinity`, `-Infinity`) are `INVALID_OUTPUT`; a syntactically numeric value overflowing the interpreter's finite floating-point range is `OUTPUT_LIMIT`. Finite numeric controls remain accepted for semantic checking. Normalized output never inserts nonfinite numbers into the machine-readable reports, which are serialized as strict JSON; exact original responses stay in binary/base64 receipts.
+
 From the repository root, provide a **new** output directory outside this example bundle:
 
 ```sh

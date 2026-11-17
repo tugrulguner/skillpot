@@ -343,6 +343,35 @@ class VerificationLoopExampleTests(unittest.TestCase):
             module.normalized(rejected)
         self.assertEqual(sys.getrecursionlimit(), before)
 
+    def test_nonfinite_output_does_not_poison_json_reports(self):
+        import shutil
+
+        def reject_constant(value):
+            raise ValueError(value)
+
+        variants = (("NaN", "INVALID_OUTPUT"), ("Infinity", "INVALID_OUTPUT"),
+                    ("-Infinity", "INVALID_OUTPUT"), ("1e999", "OUTPUT_LIMIT"), ("1e100", "OK"))
+        for number, expected in variants:
+            with self.subTest(number=number), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp).resolve()
+                target = root / "target" / "examples" / "verification-loop"
+                shutil.copytree(ROOT, target)
+                payload = '{"value":' + number + '}'
+                (target / "candidate.py").write_text("import sys\nsys.stdout.write(" + repr(payload) + ")\n")
+                output = root / "receipts"
+                process = subprocess.run([sys.executable, str(target / "replay.py"), "--output", str(output)],
+                                         text=True, capture_output=True, timeout=30, check=False)
+                self.assertEqual(process.returncode, 1, process.stderr)
+                try:
+                    report = json.loads((output / "result.json").read_text(), parse_constant=reject_constant)
+                    json.loads(process.stdout, parse_constant=reject_constant)
+                except ValueError as exc:
+                    self.fail(f"report must remain strict JSON: {exc}")
+                for case in report["results"]:
+                    self.assertEqual(case["runs"]["candidate"]["classification"], expected)
+                    self.assertEqual((output / f"case-{case['case_index']}-candidate.stdout").read_bytes(), payload.encode())
+                self.assertTrue((output / "verification.md").is_file())
+
     def test_stale_source_identity_is_not_current(self):
         module = load_replay()
         self.assertEqual(module.identity_status({"candidate": "old"}, {"candidate": "new"}), "STALE")

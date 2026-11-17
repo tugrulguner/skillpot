@@ -1,6 +1,7 @@
 import base64
 import hashlib
 import json
+import math
 from pathlib import Path
 import random
 import subprocess
@@ -14,11 +15,15 @@ MAX_JSON_DEPTH = 64
 
 
 class OutputLimitError(ValueError):
-    """The teaching fixture cannot safely inspect this output depth."""
+    """The teaching fixture cannot safely inspect this output representation."""
+
+
+def reject_json_constant(value):
+    raise ValueError(f"non-standard JSON numeric constant: {value}")
 
 
 def normalized(stdout):
-    value = json.loads(stdout)
+    value = json.loads(stdout, parse_constant=reject_json_constant)
     pending = [(value, 1)]
     while pending:
         item, depth = pending.pop()
@@ -27,6 +32,8 @@ def normalized(stdout):
                 raise OutputLimitError(f"JSON nesting exceeds the fixture limit of {MAX_JSON_DEPTH}")
             children = item.values() if isinstance(item, dict) else item
             pending.extend((child, depth + 1) for child in children)
+        elif isinstance(item, float) and not math.isfinite(item):
+            raise OutputLimitError("JSON number exceeds the fixture's finite floating-point range")
     return value
 
 
@@ -212,7 +219,7 @@ def main():
     if status != "CURRENT":
         for result in results:
             result["verdict"] = "NO_CURRENT_VERDICT_STALE_SOURCE"
-    (destination / "result.json").write_text(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=True) + "\n", encoding="utf-8")
+    (destination / "result.json").write_text(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=True, allow_nan=False) + "\n", encoding="utf-8")
     lines = ["# Verification results", "", f"Seed: `{GENERATOR_SEED}`; generated cases: **{len(generated)}**.",
              "Each subprocess receipt (stdout and stderr) is retained per case under its exact case index.", ""]
     lines.extend(f"- Case {i} (`{r['input']['id']}`, {r['case_kind']}): **{r['verdict']}**; full-input contract baseline={r['runs']['baseline'].get('semantic_assertion', 'N/A')}, candidate={r['runs']['candidate'].get('semantic_assertion', 'N/A')}; differential_equal={r['differential_equal']}; receipts: `case-{i}-baseline.stdout`, `case-{i}-candidate.stdout`." for i, r in enumerate(results))
@@ -221,7 +228,7 @@ def main():
               "Missing/unreadable identity diagnostics: `initial_identity_errors` and `post_execution_identity_errors` in result.json; unavailable digests are null, not invented hashes.",
               "Detailed per-case JSON and subprocess receipts: [`result.json`](result.json)."]
     (destination / "verification.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=True))
+    print(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=True, allow_nan=False))
     if (status != "CURRENT" or not summary["baseline_trustworthy"]
             or not summary["named_controls_match_expected"]
             or not summary["candidate_detected_regression"] or counterexample is None):
