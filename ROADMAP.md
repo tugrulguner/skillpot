@@ -120,6 +120,11 @@ family discovery deploys independently and each alignment change needs merge app
       and `timeline.md`, observed impact and supporting/contradicting hypotheses,
       inspection-only default, a source-derived historical CI example and selective
       installation. No automatic diagnostics, remediation or task-efficacy claim.
+- [x] Implement original `verification-loop`: map a specific code change to user-visible
+      acceptance criteria and exact-head, evidence-producing checks; provide a practical
+      report/checklist and an authored runnable example. Inspection/planning is default;
+      execution and bounded repairs require explicit authorization. This is not a release
+      audit or task-efficacy claim; see [first use](docs/verification-loop-first-use.md).
 
 ### Pending skill backlog
 

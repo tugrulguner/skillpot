@@ -6,6 +6,18 @@ import test from 'node:test';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '../..');
 
+test('verification-loop remains source-only with acceptance-linked evidence', async () => {
+  const files = ['src/content/docs/index.mdx', 'src/content/docs/catalogue.md', 'public/llms.txt'];
+  for (const file of files) {
+    const text = await readFile(join(root, file), 'utf8');
+    assert.match(text, /verification-loop/);
+    assert.match(text, /verification-loop-first-use\.md/);
+    assert.match(text, /verification\.md/);
+    assert.match(text, /v0\.4\.1/);
+    assert.match(text, /permission/);
+  }
+});
+
 test('canonical guides link to product-owned routes as absolute URLs', async () => {
   const files = ['quickstart.md', 'catalogue.md', 'host-setup.md', 'authoring.md', 'provenance-refresh.md', 'limits.md'];
   for (const file of files) {
@@ -26,7 +38,7 @@ test('claim-check is current-source and unreleased, separate from the stable rel
     assert.match(text, /claim-check-first-use\.md/);
   }
   assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check/);
-  assert.match(catalogue, /fifteen current-source bundles/);
+  assert.match(catalogue, /sixteen current-source bundles/);
   assert.match(catalogue, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check/);
   assert.match(map, /claim-check-first-use\.md/);
   assert.match(map, /Published v0\.4\.1 contains ten skills/);
@@ -46,8 +58,8 @@ test('benchmark-audit is a source-only inspection workflow, separate from stable
     assert.match(text, /inspection-only/i);
     assert.match(text, /does not run benchmarks|without benchmark or model execution/i);
   }
-  assert.match(home, /fifteen skills/);
-  assert.match(catalogue, /fifteen current-source bundles/);
+  assert.match(home, /sixteen skills/);
+  assert.match(catalogue, /sixteen current-source bundles/);
   assert.match(map, /Published v0\.4\.1 contains ten skills/);
 });
 
