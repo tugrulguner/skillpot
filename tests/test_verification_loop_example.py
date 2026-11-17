@@ -11,36 +11,68 @@ ROOT = Path(__file__).resolve().parents[1] / "examples" / "verification-loop"
 REPLAY = ROOT / "replay.py"
 
 
+def load_replay(name="verification_loop_replay_test"):
+    spec = importlib.util.spec_from_file_location(name, REPLAY)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 class VerificationLoopExampleTests(unittest.TestCase):
     def run_replay(self, destination):
         return subprocess.run([sys.executable, str(REPLAY), "--output", str(destination)], text=True,
-                              capture_output=True, timeout=15, check=False)
+                              capture_output=True, timeout=30, check=False)
 
-    def test_real_baseline_and_candidate_expose_field_loss_end_to_end(self):
+    def test_generated_cases_are_seed_reproducible_varied_and_bounded(self):
+        module = load_replay()
+        first = module.generated_records(1234, 24)
+        self.assertEqual(first, module.generated_records(1234, 24))
+        self.assertNotEqual(first, module.generated_records(1235, 24))
+        self.assertEqual(len({json.dumps(record, sort_keys=True) for record in first}), 24)
+        self.assertTrue(any("" in record.values() for record in first))
+        self.assertTrue(any("雪" in json.dumps(record, ensure_ascii=False) for record in first))
+        self.assertTrue(any(0 in record.values() for record in first))
+        self.assertTrue(any(False in record.values() for record in first))
+        self.assertTrue(any(None in record.values() for record in first))
+        self.assertTrue(any(isinstance(value, (dict, list)) for record in first for value in record.values()))
+        self.assertTrue(any(len(record) > 3 for record in first))
+        with self.assertRaises(ValueError):
+            module.generated_records(1, 129)
+
+    def test_real_baseline_candidate_and_per_case_receipts_end_to_end(self):
         with tempfile.TemporaryDirectory() as temp:
             output = Path(temp).resolve() / "receipts"
             process = self.run_replay(output)
             self.assertEqual(process.returncode, 0, process.stderr)
             report = json.loads((output / "result.json").read_text())
-            self.assertTrue(report["summary"]["baseline_trustworthy"])
+            summary = report["summary"]
+            self.assertTrue(summary["baseline_trustworthy"])
             self.assertEqual(report["identity_status"], "CURRENT")
-            self.assertEqual(report["results"][0]["runs"]["baseline"]["semantic_assertion"], "PASS")
-            self.assertEqual(report["results"][0]["runs"]["candidate"]["semantic_assertion"], "FAIL")
+            self.assertEqual(report["generator"]["seed"], 20261117)
+            self.assertEqual(summary["generated_cases"], 24)
+            self.assertEqual(summary["cases"], 26)
+            self.assertIsNotNone(summary["generated_counterexample_case_index"])
+            self.assertTrue(summary["candidate_detected_regression"])
             self.assertEqual(report["results"][0]["verdict"], "FAIL")
             self.assertEqual(report["results"][1]["verdict"], "PASS")
-            self.assertEqual(report["results"][2]["verdict"], "FAIL")
-            self.assertTrue(report["summary"]["invariant_generated_control_failed"])
+            generated = report["results"][2:]
+            self.assertTrue(all(case["case_kind"] == "generated-invariant" for case in generated))
+            self.assertTrue(all(case["runs"]["baseline"]["semantic_assertion"] == "PASS" for case in generated))
+            counter = next(case for case in generated if case["case_index"] == summary["generated_counterexample_case_index"])
+            self.assertEqual(counter["runs"]["candidate"]["semantic_assertion"], "FAIL")
+            self.assertFalse(counter["differential_equal"])
+            self.assertEqual(counter["verdict"], "FAIL")
             for name in ("baseline", "candidate"):
                 digest = hashlib.sha256((ROOT / f"{name}.py").read_bytes()).hexdigest()
                 self.assertEqual(report["source_sha256"][name], digest)
-            self.assertTrue((output / "case-0-candidate.stdout").exists())
-            self.assertIn('"extension"', (output / "case-0-baseline.stdout").read_text())
-            self.assertNotIn('"extension"', (output / "case-0-candidate.stdout").read_text())
+            for case in report["results"]:
+                for name in ("baseline", "candidate"):
+                    self.assertTrue((output / f"case-{case['case_index']}-{name}.stdout").is_file())
+                    self.assertTrue((output / f"case-{case['case_index']}-{name}.stderr").is_file())
+            self.assertIn("not proof", (output / "verification.md").read_text())
 
     def test_stale_source_identity_is_not_current(self):
-        spec = importlib.util.spec_from_file_location("verification_loop_replay", REPLAY)
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
+        module = load_replay()
         self.assertEqual(module.identity_status({"candidate": "old"}, {"candidate": "new"}), "STALE")
         self.assertEqual(module.identity_status({"candidate": "same"}, {"candidate": "same"}), "CURRENT")
 
@@ -48,9 +80,7 @@ class VerificationLoopExampleTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             slow = Path(temp) / "slow.py"
             slow.write_text("import sys, time; print('partial', flush=True); print('err', file=sys.stderr, flush=True); time.sleep(1)\n")
-            spec = importlib.util.spec_from_file_location("verification_loop_replay_timeout", REPLAY)
-            module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
+            module = load_replay("verification_loop_replay_timeout")
             module.TIMEOUT_SECONDS = 0.1
             run = module.invoke(slow, {})
             self.assertEqual(run["classification"], "TIMEOUT")
@@ -60,6 +90,7 @@ class VerificationLoopExampleTests(unittest.TestCase):
             broken.write_text("raise SystemExit(7)\n")
             run = module.invoke(broken, {})
             self.assertEqual(run["exit_code"], 7)
+            self.assertEqual(run["classification"], "SETUP_OR_EXECUTION_ERROR")
 
     def test_ancestor_symlink_cannot_redirect_output(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -95,16 +126,19 @@ class VerificationLoopExampleTests(unittest.TestCase):
             self.assertEqual(sentinel.read_text(), "preserve me")
 
     def test_wrong_valid_baseline_is_not_trusted_or_passed(self):
-        spec = importlib.util.spec_from_file_location("verification_loop_replay_semantic", REPLAY)
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
+        module = load_replay("verification_loop_replay_semantic")
         self.assertFalse(module.baseline_trustworthy({"classification": "OK", "semantic_assertion": "FAIL"}))
 
     def test_timeout_bytes_are_safe_and_launch_error_is_distinct(self):
-        spec = importlib.util.spec_from_file_location("verification_loop_replay_timeout_bytes", REPLAY)
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
+        module = load_replay("verification_loop_replay_timeout_bytes")
         self.assertEqual(module.safe_text(b"partial"), "partial")
+        interpreter = module.sys.executable
+        try:
+            module.sys.executable = "/definitely/missing/python-interpreter"
+            run = module.invoke(REPLAY, {})
+        finally:
+            module.sys.executable = interpreter
+        self.assertEqual(run["classification"], "LAUNCH_ERROR")
 
     def test_missing_parent_and_symlink_parent_are_refused(self):
         with tempfile.TemporaryDirectory() as temp:

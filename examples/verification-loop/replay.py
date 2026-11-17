@@ -1,11 +1,14 @@
 import hashlib
 import json
 from pathlib import Path
+import random
 import subprocess
 import sys
 
 HERE = Path(__file__).resolve().parent
 TIMEOUT_SECONDS = 3
+GENERATOR_SEED = 20261117
+GENERATED_CASE_COUNT = 24
 
 
 def normalized(stdout):
@@ -26,6 +29,34 @@ def safe_text(value):
 
 def baseline_trustworthy(run):
     return run.get("classification") == "OK" and run.get("semantic_assertion") == "PASS"
+
+
+def generated_records(seed=GENERATOR_SEED, count=GENERATED_CASE_COUNT):
+    """Produce bounded, repeatable JSON objects spanning values and schemas."""
+    if not isinstance(count, int) or not 1 <= count <= 128:
+        raise ValueError("generated case count must be between 1 and 128")
+    rng = random.Random(seed)
+    values = ["", "雪☃", 0, False, None, [], {}, {"inside": [None, False, 0, "λ"]}, [0, False, None, "é"]]
+    keys = ["extra", "metadata", "nested", "zero", "unicode_雪", "flag", "nullable", "items"]
+    records = []
+    for index in range(count):
+        record = {"id": f"generated-{index:02d}",
+                  "name": rng.choice(["", "generated", "Δ-record", f"case-{index}"]),
+                  "enabled": rng.choice([True, False])}
+        for key in rng.sample(keys, rng.randint(1, len(keys))):
+            record[key] = rng.choice(values)
+        if index % 4 == 0:
+            record["nested"] = {"children": [None, {"value": rng.choice(values)}, False]}
+        if index % 5 == 0:
+            record["zero"] = 0
+        if index % 6 == 0:
+            record["flag"] = False
+        if index % 7 == 0:
+            record["nullable"] = None
+        if index % 8 == 0:
+            record["unicode_雪"] = "雪☃ café"
+        records.append(record)
+    return records
 
 
 def invoke(source, value, cwd=None):
@@ -61,8 +92,7 @@ def main():
     if len(sys.argv) != 3 or sys.argv[1] != "--output":
         raise SystemExit("usage: replay.py --output FRESH_OUTPUT_DIRECTORY")
     destination = Path(sys.argv[2]).absolute()
-    parent = destination.parent
-    if (not parent.is_dir() or destination.exists()
+    if (not destination.parent.is_dir() or destination.exists()
             or any(component.is_symlink() for component in (destination, *destination.parents))
             or destination.resolve().is_relative_to(HERE.parents[1])):
         raise SystemExit(f"refusing unsafe, missing-parent, existing, internal or symlink destination: {destination}")
@@ -70,50 +100,74 @@ def main():
         destination.mkdir()
     except OSError as exc:
         raise SystemExit(f"refusing destination: {exc}")
+
     sources = {name: HERE / f"{name}.py" for name in ("baseline", "candidate")}
     hashes = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in sources.items()}
-    records = [
-        {"id": "known-extension", "name": "primary", "enabled": True, "extension": {"vendor": "example", "flags": ["x", 4]}},
+    controls = [
+        {"id": "known-extension", "name": "primary", "enabled": True,
+         "extension": {"vendor": "example", "flags": ["x", 4]}},
         {"id": "minimal", "name": "secondary", "enabled": False},
-        {"id": "generated-invariant", "name": "generated", "enabled": True, "extra": {"nested": [None, False, 19], "tag": "control"}},
     ]
+    records = [("named-control", value) for value in controls]
+    records.extend(("generated-invariant", value) for value in generated_records())
     results = []
-    for idx, value in enumerate(records):
-        result = {"input": value, "input_sha256": hashlib.sha256(json.dumps(value, sort_keys=True).encode()).hexdigest(), "runs": {}}
+    for idx, (kind, value) in enumerate(records):
+        result = {"case_index": idx, "case_kind": kind, "input": value,
+                  "input_sha256": hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode()).hexdigest(),
+                  "runs": {}}
         for name, source in sources.items():
             run = invoke(source, value, HERE)
             if run["classification"] == "OK":
                 run["semantic_assertion"] = "PASS" if run["normalized"] == value else "FAIL"
             result["runs"][name] = run
         old, new = result["runs"]["baseline"], result["runs"]["candidate"]
+        result["differential_equal"] = (old.get("classification") == new.get("classification") == "OK"
+                                         and old.get("normalized") == new.get("normalized"))
         if not baseline_trustworthy(old):
             result["verdict"] = "BASELINE_NOT_TRUSTWORTHY"
         elif new["classification"] != "OK":
             result["verdict"] = new["classification"]
+        elif new.get("semantic_assertion") != "PASS":
+            result["verdict"] = "FAIL"
         else:
-            result["verdict"] = "PASS" if old["normalized"] == new["normalized"] else "FAIL"
+            result["verdict"] = "PASS" if result["differential_equal"] else "FAIL"
         results.append(result)
+
     current = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in sources.items()}
     status = identity_status(hashes, current)
-    answer = {"example": "serialization-export-roundtrip", "normalization": "Parse JSON and compare complete values; ignore only JSON key order and whitespace.",
+    generated = [r for r in results if r["case_kind"] == "generated-invariant"]
+    counterexample = next((r["case_index"] for r in generated if r["verdict"] == "FAIL"), None)
+    summary = {"cases": len(results), "generated_cases": len(generated),
+               "baseline_trustworthy": all(baseline_trustworthy(r["runs"]["baseline"]) for r in results),
+               "candidate_detected_regression": any(r["verdict"] == "FAIL" for r in results),
+               "generated_counterexample_case_index": counterexample,
+               "generated_pass_count": sum(r["verdict"] == "PASS" for r in generated),
+               "generated_fail_count": sum(r["verdict"] == "FAIL" for r in generated)}
+    answer = {"example": "serialization-export-roundtrip",
+              "contract": "For every JSON object input, parsed subprocess output equals the entire input value (including every field/value); key order and insignificant whitespace alone are ignored.",
+              "generator": {"seed": GENERATOR_SEED, "generated_case_count": len(generated),
+                            "finite_testing_limit": "This bounded deterministic sample is evidence for these cases, not proof of the invariant for all JSON inputs."},
               "source_sha256": hashes, "post_execution_sha256": current, "identity_status": status,
-              "timeout_seconds": TIMEOUT_SECONDS, "results": results,
-              "summary": {"cases": len(results), "baseline_trustworthy": all(baseline_trustworthy(r["runs"]["baseline"]) for r in results),
-                          "candidate_detected_regression": any(r["verdict"] == "FAIL" for r in results),
-                          "invariant_generated_control_failed": results[-1]["verdict"] == "FAIL"}}
+              "timeout_seconds": TIMEOUT_SECONDS, "results": results, "summary": summary}
     if status != "CURRENT":
         for result in results:
             result["verdict"] = "NO_CURRENT_VERDICT_STALE_SOURCE"
-    (destination / "result.json").write_text(json.dumps(answer, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    (destination / "result.json").write_text(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
     for index, result in enumerate(results):
         for name, run in result["runs"].items():
             (destination / f"case-{index}-{name}.stdout").write_text(run.get("raw_stdout", ""), encoding="utf-8")
             (destination / f"case-{index}-{name}.stderr").write_text(run.get("raw_stderr", ""), encoding="utf-8")
-    verification = "# Verification results\n\n" + "\n".join(f"- Case {i} (`{r['input']['id']}`): **{r['verdict']}**; baseline semantic assertion {r['runs']['baseline'].get('semantic_assertion', 'N/A')}. Receipts: `case-{i}-baseline.stdout`, `case-{i}-candidate.stdout`." for i, r in enumerate(results)) + f"\n\nSource identity: **{status}**. Baseline trustworthy: **{answer['summary']['baseline_trustworthy']}**. Candidate regression detected: **{answer['summary']['candidate_detected_regression']}**. Detailed evidence: [`result.json`](result.json).\n"
-    (destination / "verification.md").write_text(verification, encoding="utf-8")
-    print(json.dumps(answer, indent=2, sort_keys=True))
-    if status != "CURRENT" or not answer["summary"]["baseline_trustworthy"] or not answer["summary"]["candidate_detected_regression"]:
+    lines = ["# Verification results", "", f"Seed: `{GENERATOR_SEED}`; generated cases: **{len(generated)}**.",
+             "Each subprocess receipt (stdout and stderr) is retained per case under its exact case index.", ""]
+    lines.extend(f"- Case {i} (`{r['input']['id']}`, {r['case_kind']}): **{r['verdict']}**; full-input contract baseline={r['runs']['baseline'].get('semantic_assertion', 'N/A')}, candidate={r['runs']['candidate'].get('semantic_assertion', 'N/A')}; differential_equal={r['differential_equal']}; receipts: `case-{i}-baseline.stdout`, `case-{i}-candidate.stdout`." for i, r in enumerate(results))
+    lines += ["", f"Generated counterexample case index: **{counterexample}**. This finite sample is not proof of the universal invariant.",
+              f"Source identity: **{status}**. Baseline trustworthy: **{summary['baseline_trustworthy']}**. Candidate regression detected: **{summary['candidate_detected_regression']}**.",
+              "Detailed per-case JSON and subprocess receipts: [`result.json`](result.json)."]
+    (destination / "verification.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(json.dumps(answer, indent=2, sort_keys=True, ensure_ascii=False))
+    if status != "CURRENT" or not summary["baseline_trustworthy"] or not summary["candidate_detected_regression"] or counterexample is None:
         raise SystemExit(1)
+
 
 if __name__ == "__main__":
     main()

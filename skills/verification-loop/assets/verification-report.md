@@ -8,6 +8,9 @@
 - Final identity recheck; affected stale evidence:
 
 ## Permission and scope
+- Mode: authorized verification / inspection-only / project recipe setup; existing authorization applied:
+- Discovered project commands/recipe, inspected side effects, applicable diff triggers and selection reasons:
+- Optional recipe/rule-candidate paths, version, qualification/owner status and evidence (or not requested):
 - Approved fresh external report directory and collision/ownership check:
 - Allowed inspection/read budget; unread or truncated material:
 - Checks, execution, dependencies, services and costs authorized:

@@ -9,7 +9,7 @@ for (const width of [1280, 390]) {
     await page.goto('/');
     const paragraph = page.locator('p').filter({ hasText: 'Current-source verification-loop' });
     await expect(paragraph).toContainText('verification.md');
-    await expect(paragraph).toContainText('plans by default');
+    await expect(paragraph).toContainText('Without execution permission it plans only');
     await expect(paragraph).toContainText('repairs require permission');
     const link = page.getByRole('link', { name: 'verification-loop first-use guide', exact: true });
     const destination = 'https://github.com/tugrulguner/skillpot/blob/main/docs/verification-loop-first-use.md';

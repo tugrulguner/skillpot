@@ -149,11 +149,12 @@ are separate from the installed bundle's input-only practice. See the
 
 ## Verification loop — current source, unreleased
 
-The original [verification-loop](../skills/verification-loop/SKILL.md) bundle maps a
-specific code change to user-visible acceptance criteria and exact-head evidence. It
-provides `verification.md`, a checklist, and an input-only practice task. Authored
-worked examples are separate. Inspection/planning is default; execution and repair need explicit
-permission. It is one of seventeen current-source bundles and not in published v0.4.1.
+The original [verification-loop](../skills/verification-loop/SKILL.md) 0.2.0 bundle runs
+criterion-linked checks within existing authorization and produces `verification.md`
+with actual-byte evidence. It discovers project commands, plans when execution is not
+authorized, and offers optional qualified project recipes and owner-reviewed diff-triggered
+rule candidates. Input-only practice stays separate from authored generated-input worked
+examples. It is one of seventeen current-source bundles and not in published v0.4.1.
 See the [first-use guide](../docs/verification-loop-first-use.md). Source checks do not
 establish native activation or task efficacy.
 

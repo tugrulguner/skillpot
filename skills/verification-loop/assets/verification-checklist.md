@@ -1,5 +1,7 @@
 # Change verification checklist
 
+- [ ] Select authorized-verification, inspection-only or optional recipe-setup mode; apply existing permission without redundant approval.
+- [ ] Discover and inspect documented project commands/recipe, then select checks using criteria and diff triggers.
 - [ ] Confirm the requested change, acceptance criteria and explicit permissions.
 - [ ] Agree fresh external output directory; refuse existing paths/live or dangling symlinks and preserve partial work.
 - [ ] Record base, exact candidate HEAD, actual source/input/check hashes, dirty state, diff and changed paths.
@@ -12,4 +14,6 @@
 - [ ] Preserve failures; classify setup, flaky, blocked, not-run and stale separately.
 - [ ] After any code edit, rerun affected checks against the new exact head.
 - [ ] Repair only with explicit authorization; never weaken/bypass checks; stop after at most three rounds.
+- [ ] If recipe setup was requested and authorized, retain healthy/seeded-fault receipts, final hashes, observed duration and repeat command; otherwise do not claim qualification.
+- [ ] For recurring misses propose incident-backed diff-triggered rule candidates with healthy/non-trigger controls and owner approval, without installing policy.
 - [ ] Complete `verification.md`; state remaining uncertainty and human decision needed.

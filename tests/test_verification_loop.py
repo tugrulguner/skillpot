@@ -18,7 +18,8 @@ class VerificationLoopContractTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         for required in ("provenance.md", "compatibility.md",
                          "assets/verification-report.md", "assets/verification-checklist.md",
-                         "assets/example-input.md"):
+                         "assets/example-input.md", "assets/project-verification-recipe.md",
+                         "assets/reliability-rule-candidate.md"):
             self.assertTrue((bundle / required).is_file(), required)
         text = (bundle / "SKILL.md").read_text()
         metadata = runpy.run_path(str(SCRIPT))["check_entrypoint"](bundle, "verification-loop")[0]
@@ -26,6 +27,19 @@ class VerificationLoopContractTests(unittest.TestCase):
         self.assertTrue(all(isinstance(v, str) for v in metadata["metadata"].values()))
         self.assertIn("assets/verification-report.md", text)
         self.assertIn("assets/verification-checklist.md", text)
+
+    def test_article_workflow_modes_and_reusable_resources(self):
+        bundle = ROOT / "skills/verification-loop"
+        procedure = (bundle / "SKILL.md").read_text()
+        guide = (ROOT / "docs/verification-loop-first-use.md").read_text()
+        for phrase in ("Authorized verification", "Project recipe setup", "existing authorization",
+                       "discover", "diff trigger", "non-trigger", "owner approval"):
+            self.assertIn(phrase.lower(), (procedure + guide).lower())
+        for resource in ("project-verification-recipe.md", "reliability-rule-candidate.md"):
+            self.assertIn("](assets/" + resource + ")", procedure)
+            self.assertTrue((bundle / "assets" / resource).is_file())
+        self.assertIn("## Bounded authorized verification", guide)
+        self.assertIn("## Optional project recipe setup", guide)
 
     def test_description_over_limit_rejected(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -82,7 +96,7 @@ class VerificationLoopContractTests(unittest.TestCase):
     def test_distribution_record_binds_complete_bundle(self):
         import hashlib
 
-        record = json.loads((ROOT / "evaluations/verification-loop/distribution-001/summary.json").read_text())
+        record = json.loads((ROOT / "evaluations/verification-loop/distribution-002/summary.json").read_text())
         bundle = ROOT / "skills/verification-loop"
         actual = {p.relative_to(bundle).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                   for p in bundle.rglob("*") if p.is_file()}
@@ -95,6 +109,17 @@ class VerificationLoopContractTests(unittest.TestCase):
         guide = (ROOT / "docs/verification-loop-first-use.md").read_text()
         self.assertIn("/tree/" + record["pin"] + " --skill verification-loop", guide)
         self.assertNotIn("<FULL_COMMIT>", guide)
+
+    def test_historical_distribution_record_is_preserved(self):
+        import hashlib
+
+        old = ROOT / "evaluations/verification-loop/distribution-001/summary.json"
+        self.assertEqual(hashlib.sha256(old.read_bytes()).hexdigest(),
+                         "f94e8b208101782d3e9e04de3de6b80698f3c05f09f93b0e2e2b61d7f0cfeadc")
+        record = json.loads(old.read_text())
+        self.assertEqual(record["pin"], "a483d6c2d7207f2ffb66b5c9b2bb712c6efcdec7")
+        self.assertEqual(record["files_verified"], len(record["source_files"]))
+        self.assertEqual(record["files_verified"], 6)
 
     def test_discovery_counts_and_historical_collection_count(self):
         count = sum(1 for _ in (ROOT / "skills").glob("*/SKILL.md"))

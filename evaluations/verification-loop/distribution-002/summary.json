@@ -1,0 +1,20 @@
+{
+  "skill": "verification-loop",
+  "pin": "9180e667ccfef7a16ce7c8dc28577bef8a900d24",
+  "source_files": {
+    "provenance.md": "8f6d5eb77969966567150be970bdd2aaced0e8321e43c72915bb407a8911a18a",
+    "SKILL.md": "2c711a7d68d41bafff89fd799abce772ad6086c361ebeb8069ff347d59da0a6b",
+    "compatibility.md": "97e607af8e9e080aa263214a3615cd2a80f6d20f9ee523d9afa894b373431e3c",
+    "assets/example-input.md": "2e2ded8da7f7fa546ddf848cf46348c111716564eeae85221c8c6512a305118a",
+    "assets/project-verification-recipe.md": "aef9ee90a800875956f7b42a9565ad34649fa553bac5b0544ba1bca7f3cb5944",
+    "assets/verification-report.md": "572d428b1b1caf4b13d8f8d4235d22b8483bfb5f49ed77c36b961b37b105f87d",
+    "assets/reliability-rule-candidate.md": "88317a1463b1984c01796eb72629f6e25bc52b6a3d3751ff23e010e0a041e165",
+    "assets/verification-checklist.md": "c88b19338d49b37264ac6b049b9ffe55240db73cffd2897c4ac85f08cd73b76b"
+  },
+  "files_verified": 8,
+  "lock_ref_verified": true,
+  "sibling_preserved": true,
+  "selected_removal_verified": true,
+  "agent_links": [".claude/skills", ".hermes/skills"],
+  "client_or_model_launched": false
+}
