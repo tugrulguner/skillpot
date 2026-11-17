@@ -1,0 +1,9 @@
+# Optional input-only practice task
+
+**Authored fictional exercise.** No expected report or answer oracle is supplied with this skill. Do not infer missing facts. This is not an experiment authorization.
+
+A service owner says: “We are considering a request-cache change. I want to know whether it is safe and worthwhile for our interactive workload.” The owner has not supplied the cache implementation/revision, a baseline identity, workload trace or population definition, semantic/correctness criteria, a meaningful minimum benefit, acceptable resource ceiling, total time budget, permitted commands, or an execution approval. No measurements are provided. The only supplied file is this task. The owner approves read-only planning of this task text, but has not approved inspecting a repository, collecting data, running code, installing anything, or spending resources.
+
+Prepare a draft `experiment.md` plan or report that it is blocked. State which missing decisions prevent a meaningful comparison, distinguish prerequisites from questions that could change design, identify plausible competing explanations and what evidence would discriminate them, and provide the smallest useful permission-aware handoff. Do not invent workload, thresholds, candidate identity, control values, repetitions, budgets, results, owner roles, or permission. Explicitly state no experiment was run. If the plan lacks enough information to populate the full eight-section contract, preserve those sections and mark affected items blocked/unknown.
+
+The input authorizes no filesystem writes. If trying the skill in practice, separately obtain an approved fresh external output directory and permission to create exactly `experiment.md` there. Keep the skill's resources and any review oracle outside that destination.
