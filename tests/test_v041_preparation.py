@@ -21,10 +21,10 @@ class V041PreparationTests(unittest.TestCase):
                        "ten skills", "assisted", "not a controlled comparison",
                        "only after the tag and public archives exist", "Do not rerun"]:
             self.assertIn(phrase, text)
-        self.assertIn("git clone --branch v0.4.1", (ROOT / "README.md").read_text())
+        self.assertIn("git clone --branch v0.5.0", (ROOT / "README.md").read_text())
         setup = (ROOT / "docs/quickstart.md").read_text()
-        self.assertIn(RELEASE, setup)
-        self.assertIn("v0.4.1", setup)
+        self.assertIn("044213fd00343e94b4d389c3ca2c0f2909feb79f", setup)
+        self.assertIn("v0.5.0", setup)
         for name in ["decision-brief", "document-actions"]:
             self.assertIn('status: "published"', (ROOT / "skills" / name / "SKILL.md").read_text())
 

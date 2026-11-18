@@ -1,7 +1,9 @@
 # Bug-repro: one-command installation
 
-`bug-repro` 0.1.0 is current-source instruction work, **not included in published SkillPot v0.4.1**.
-The stable ten-skill collection remains unchanged. This workflow turns a reported
+This workflow was not included in published SkillPot v0.4.1. It is included in v0.5.0. Earlier distribution records keep their original pins; the selected release contains byte-identical bundles. Bundle metadata and compatibility/provenance notices retain their construction-time publication labels; collection publication status here and in the Release is authoritative.
+
+`bug-repro` 0.1.0 is published SkillPot v0.5.0 instruction workflow.
+The stable seventeen-skill collection remains unchanged. This workflow turns a reported
 failure into a minimized runnable reproducer, a regression test and `repro.md` with
 actual command evidence—or an honest Not reproduced / Blocked handoff.
 
@@ -10,7 +12,7 @@ actual command evidence—or an honest Not reproduced / Blocked handoff.
 With Node.js 22.20+ and Git available, run this in your owned project:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/92810a72540247e3f481fa1c11e3064678b93aa8 --skill bug-repro
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill bug-repro
 ```
 
 Select your agent, or append `--agent claude-code`, `--agent cursor`, `--agent codex`

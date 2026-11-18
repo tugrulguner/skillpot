@@ -4,10 +4,10 @@ for (const width of [1280, 390]) {
   test(`experiment-design source-only discovery and keyboard navigation ${width}`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/catalogue/');
-    await expect(page.getByRole('heading', { name: 'Experiment design — current source, unreleased', exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Experiment design — published in v0.5.0', exact: true })).toBeVisible();
     await expect(page.locator('body')).toContainText('seventeen current-source bundles');
     await page.goto('/');
-    const paragraph = page.locator('p').filter({ hasText: 'Current-source experiment-design' });
+    const paragraph = page.locator('p').filter({ hasText: 'Published experiment-design' });
     await expect(paragraph).toContainText('experiment.md');
     await expect(paragraph).toContainText('Inspection/planning only');
     await expect(paragraph).toContainText('No experiments, benchmarks or models are run');

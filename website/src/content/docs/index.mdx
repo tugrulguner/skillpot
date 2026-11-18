@@ -15,13 +15,13 @@ import SkillExcerpt from '../../components/SkillExcerpt.astro';
 
 ## Install one skill
 
-Published v0.4.1 has ten skills: seven public project/contributor packages, the original experimental repository-readiness workflow, decision-brief 0.1.1 and document-actions 0.1.2. Current source has seventeen skills, including the original **claim-check**, **change-impact**, **bug-repro**, **incident-triage**, **benchmark-audit**, **verification-loop** and **experiment-design** bundles. Claim-check is instruction version 0.1.1; verification-loop is 0.2.0; the other five are 0.1.0. These seven workflows are unreleased and not in that ten-skill release. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
+Published v0.5.0 contains seventeen skills: ten retained workflows and seven additions—claim-check 0.1.1, verification-loop 0.2.0 and five workflows at 0.1.0. Each keeps its existing task permissions and maturity boundaries; publication is not an efficacy claim. Choose one task from the [catalogue](/catalogue/). Claude Code, Cursor, Codex and Hermes are example hosts, not SkillPot dependencies.
 
-<div className="install"><strong>Install one current-source skill</strong><code>{'npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check'}</code><a href="https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md">Claim-check first-use guide →</a></div>
+<div className="install"><strong>Install one published skill</strong><code>{'npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check'}</code><a href="https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md">Claim-check first-use guide →</a></div>
 
-This installs only claim-check from an immutable current-source revision using the standard Skills CLI; Node.js 22.20.0+ and Git are required. It is a working source artifact, not a published v0.4.1 skill or an efficacy claim. For the stable ten-skill release, see [v0.4.1](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.1) and the [quick start](/quickstart/). Installation does not install product dependencies. Use the host's existing permissions and ask before dependencies, paid services or publication.
+This installs only claim-check from the immutable v0.5.0 release using the standard Skills CLI; Node.js 22.20+ and Git are required. Publication does not establish task efficacy. For the stable release, see [v0.5.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.5.0) and the [quick start](/quickstart/). Installation does not install product dependencies. Use the host's existing permissions and ask before dependencies, paid services or publication.
 
-Current-source **benchmark-audit** reviews existing benchmark evidence into `benchmark-audit.md`, with four claim-level verdicts and explicit evidence boundaries. Inspection-only; it does not run benchmarks or models. See the [benchmark-audit first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/benchmark-audit-first-use.md); source availability is not task-efficacy evidence.
+Published **benchmark-audit** reviews existing benchmark evidence into `benchmark-audit.md`, with four claim-level verdicts and explicit evidence boundaries. Inspection-only; it does not run benchmarks or models. See the [benchmark-audit first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/benchmark-audit-first-use.md); source availability is not task-efficacy evidence.
 
 ## How a skill works
 
@@ -37,26 +37,26 @@ The entry point describes when the workflow applies, its prerequisites, procedur
 - **Refpot:** the embedded database preview, with explicit data and durability limits.
 - **Repository readiness:** an experimental, cited delivery audit without implicit target changes.
 
-Published v0.4.1 includes **decision-brief**. It produces a proposed recommendation and evidence ledger from a bounded source packet; it does not implement the decision. See the [catalogue entry](/catalogue/) and its worked example. The stable v0.4.1 quick start covers all ten published skills.
+Published v0.5.0 includes **decision-brief**. It produces a proposed recommendation and evidence ledger from a bounded source packet; it does not implement the decision. See the [catalogue entry](/catalogue/) and its worked example. The stable v0.5.0 quick start covers all seventeen published skills.
 
-Published v0.4.1 also includes **document-actions**. It extracts stated actions into `actions.md` and unresolved questions into `questions.md`, keeping proposals and historical items separate and missing owners or dates explicit. See the [catalogue and release-pinned first-use steps](/catalogue/); it does not assign work, create tickets or send messages.
+Published v0.5.0 also includes **document-actions**. It extracts stated actions into `actions.md` and unresolved questions into `questions.md`, keeping proposals and historical items separate and missing owners or dates explicit. See the [catalogue and release-pinned first-use steps](/catalogue/); it does not assign work, create tickets or send messages.
 
-Current-source **change-impact** maps a specified code change to evidenced callers, contracts and focused checks, producing `impact.md` and `verification.md`. It does not modify code or run tests without authorization. See its [one-command first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/change-impact-first-use.md); static links are not runtime-reachability proof.
+Published **change-impact** maps a specified code change to evidenced callers, contracts and focused checks, producing `impact.md` and `verification.md`. It does not modify code or run tests without authorization. See its [one-command first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/change-impact-first-use.md); static links are not runtime-reachability proof.
 
-Current-source **bug-repro** turns an authorized bug investigation into a minimal runnable reproducer, a regression test and `repro.md` with actual evidence. It does not execute unapproved code or silently fix the product. See its [bug-repro first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/bug-repro-first-use.md); Not reproduced and Blocked remain valid outcomes.
+Published **bug-repro** turns an authorized bug investigation into a minimal runnable reproducer, a regression test and `repro.md` with actual evidence. It does not execute unapproved code or silently fix the product. See its [bug-repro first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/bug-repro-first-use.md); Not reproduced and Blocked remain valid outcomes.
 
-Current-source **incident-triage** turns bounded symptoms and logs into `incident.md` and `timeline.md`, separating observed impact, source-linked events, hypotheses and next checks. It is inspection-only by default, without automatic diagnostics or remediation. See the [incident-triage first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/incident-triage-first-use.md); a passing retry does not establish a fixed cause.
+Published **incident-triage** turns bounded symptoms and logs into `incident.md` and `timeline.md`, separating observed impact, source-linked events, hypotheses and next checks. It is inspection-only by default, without automatic diagnostics or remediation. See the [incident-triage first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/incident-triage-first-use.md); a passing retry does not establish a fixed cause.
 
-Current-source **verification-loop** 0.2.0 runs checks within existing local authorization and produces evidence-linked `verification.md`. Without execution permission it plans only; repairs require permission. Optional setup qualifies reusable project recipes, and recurring misses become owner-reviewed diff-triggered rule candidates. See the [verification-loop first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/verification-loop-first-use.md). Authored generated-input examples and source checks do not establish agent efficacy.
+Published **verification-loop** 0.2.0 runs checks within existing local authorization and produces evidence-linked `verification.md`. Without execution permission it plans only; repairs require permission. Optional setup qualifies reusable project recipes, and recurring misses become owner-reviewed diff-triggered rule candidates. See the [verification-loop first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/verification-loop-first-use.md). Authored generated-input examples and source checks do not establish agent efficacy.
 
-Current-source **experiment-design** turns a bounded decision into a falsifiable,
+Published **experiment-design** turns a bounded decision into a falsifiable,
 prospective `experiment.md` with competing explanations, controls, unit/repetition
 rationale, a frozen full schedule and permission-aware handoff. Inspection/planning
 only; blocked and no-new-experiment are valid outcomes. No experiments, benchmarks or
 models are run. The accepted retrospective fixture and expected oracle stay outside
 installed practice inputs. See the [experiment-design first-use guide](https://github.com/tugrulguner/skillpot/blob/main/docs/experiment-design-first-use.md).
 
-[Browse the ten published skills and seven source-only workflows](/catalogue/) or read the [host setup](/host-setup/).
+[Browse all seventeen published skills](/catalogue/) or read the [host setup](/host-setup/).
 
 ## Original workflow design
 

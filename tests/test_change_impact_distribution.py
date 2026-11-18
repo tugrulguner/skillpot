@@ -34,7 +34,7 @@ class ChangeImpactDistributionTests(unittest.TestCase):
         self.assertEqual(actual, record["source_files"])
         self.assertEqual(len(actual), record["files_verified"])
         self.assertEqual(len(actual), 7)
-        self.assertIn("/tree/" + record["source_commit"] + " --skill change-impact",
+        self.assertIn("/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill change-impact",
                       (ROOT / "docs/change-impact-first-use.md").read_text())
         for field in ["lock_ref_verified", "selected_removal_verified", "sibling_preserved", "no_global_install"]:
             self.assertTrue(record[field])
@@ -51,7 +51,7 @@ class ChangeImpactDistributionTests(unittest.TestCase):
             text = (ROOT / name).read_text()
             for value in ["change-impact", "change-impact-first-use.md", "impact.md", "verification.md"]:
                 self.assertIn(value, text, name)
-        self.assertIn("Published v0.4.1 contains ten skills", (ROOT / "README.md").read_text())
+        self.assertIn("Published v0.5.0 contains seventeen skills", (ROOT / "README.md").read_text())
 
 
 if __name__ == "__main__":

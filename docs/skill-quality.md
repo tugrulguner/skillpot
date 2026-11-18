@@ -19,7 +19,7 @@ it adds no skills, agent runtime, installer, required model service or release.
 
 The existing [construction/distribution record](skill-hardening.md) remains separate.
 All installable bundle bytes are unchanged by these validation and evaluation
-records. Stable v0.4.1 and its ten-skill inventory remain unchanged; current source
+records. Stable v0.5.0 and its seventeen-skill inventory remain unchanged; current source
 contains fourteen skills. No collection release is required for this work.
 
 ## Actual task study

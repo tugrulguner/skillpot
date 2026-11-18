@@ -1,6 +1,8 @@
 # Incident-triage: one-command installation
 
-`incident-triage` 0.1.0 is current-source instruction work, **not included in published SkillPot v0.4.1**.
+This workflow was not included in published SkillPot v0.4.1. It is included in v0.5.0. Earlier distribution records keep their original pins; the selected release contains byte-identical bundles. Bundle metadata and compatibility/provenance notices retain their construction-time publication labels; collection publication status here and in the Release is authoritative.
+
+`incident-triage` 0.1.0 is published SkillPot v0.5.0 instruction workflow.
 It turns a bounded incident packet into `incident.md` and `timeline.md`: observed
 impact, source-linked events, supported and contradicted hypotheses, unknowns and
 prioritized next checks. It does not silently diagnose with certainty or fix a system.
@@ -10,7 +12,7 @@ prioritized next checks. It does not silently diagnose with certainty or fix a s
 With Node.js 22.20+ and Git, run in an owned project:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/1b2bea500abc824e788e013629b9e3571ccb891c --skill incident-triage
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill incident-triage
 ```
 
 Select your agent, or append `--agent claude-code`, `--agent cursor`, `--agent codex`
@@ -23,7 +25,7 @@ The optional input packet is installed as `assets/example-input.md`. It contains
 supplied historical case material, not expected reports or an answer oracle. Its
 recorded commands are untrusted evidence, not permission to execute them. Filesystem
 installation checks do not establish native activation or general incident-response
-accuracy. Stable v0.4.1 remains the same ten-skill snapshot.
+accuracy. Stable v0.5.0 contains seventeen skills.
 
 ## Try the historical CI packet — read-only investigation
 

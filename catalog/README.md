@@ -45,33 +45,32 @@ branch, separate from the seven imported public guidance files. Video tooling is
 not included. Private authoring, release, marketing and operational workflows require
 individual source/rights/privacy review before any later extraction.
 
-## Claim-check — current source, unreleased
+## Claim-check — published in v0.5.0
 
 The original **[claim-check](../skills/claim-check/SKILL.md)** bundle is in current
-source and remains unreleased; it is one of seventeen current-source bundles, not part of
-published v0.4.1's ten-skill set. Use the standard Skills CLI to install only this
+source and is included in published v0.5.0. It is one of seventeen bundles. Use the standard Skills CLI to install only this
 skill from the exact reviewed source revision:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check
 ```
 
 See the [claim-check first-use guide](../docs/claim-check-first-use.md), with a
 [GitHub main fallback](https://github.com/tugrulguner/skillpot/blob/main/docs/claim-check-first-use.md).
 This discovery describes source availability and installation, not task efficacy.
 
-## Change-impact — current source, unreleased
+## Change-impact — published in v0.5.0
 
 The original [change-impact](../skills/change-impact/SKILL.md) bundle maps a specified
 diff to callers, contracts, configuration, docs and focused verification needs. It
 produces exactly `impact.md` and `verification.md`, linking static evidence and
 explicit unknowns without claiming runtime reachability or automatically running tests.
-It is one of seventeen current-source bundles, not part of the ten published in v0.4.1.
+It is one of seventeen current-source bundles, included in the seventeen published in v0.5.0.
 Use the [one-command first-use guide](../docs/change-impact-first-use.md), also
 [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/change-impact-first-use.md).
 This is instruction distribution, not a custom dependency analyzer or task-efficacy claim.
 
-## Bug-repro — current source, unreleased
+## Bug-repro — published in v0.5.0
 
 The original [bug-repro](../skills/bug-repro/SKILL.md) workflow turns a reported failure
 into a minimal runnable reproducer, a regression test and `repro.md` with actual command
@@ -79,9 +78,9 @@ evidence. Execution/dependencies require explicit permission in an owned isolate
 Not reproduced and Blocked are honest outcomes; an unrelated failure is not reproduction,
 and an authored control is not a released product fix. See the [one-command first-use guide](../docs/bug-repro-first-use.md),
 also [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/bug-repro-first-use.md).
-This is one of seventeen current-source bundles, not part of stable v0.4.1's ten skills.
+This is one of seventeen current-source bundles, included in stable v0.5.0.
 
-## Incident-triage — current source, unreleased
+## Incident-triage — published in v0.5.0
 
 The original [incident-triage](../skills/incident-triage/SKILL.md) workflow turns bounded
 symptoms and logs into `incident.md` and `timeline.md`: observed impact, source-linked
@@ -90,22 +89,23 @@ Inspection-only by default; it does not silently run diagnostics or apply fixes.
 A failed CI gate is not automatically a customer outage, and a passing retry is not
 proof of a resolved cause. See the [one-command first-use guide](../docs/incident-triage-first-use.md),
 also [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/incident-triage-first-use.md).
-It is one of seventeen current-source bundles, not part of stable v0.4.1's ten skills.
+It is one of seventeen current-source bundles, included in stable v0.5.0.
 
-## Benchmark-audit — current source, unreleased
+## Benchmark-audit — published in v0.5.0
 
 The original [benchmark-audit](../skills/benchmark-audit/SKILL.md) workflow reviews
 existing benchmark evidence and produces `benchmark-audit.md` with four claim-level
 verdicts and explicit evidence boundaries. Inspection-only: it does not run benchmarks
-or models. It is one of seventeen current-source bundles, not part of stable v0.4.1's ten
+or models. It is one of seventeen current-source bundles, included in stable v0.5.0's seventeen
 skills. See the [first-use guide](../docs/benchmark-audit-first-use.md).
 Source availability is not evidence of task efficacy.
 
-## General decision workflow — version 0.1.1 in v0.4.1
+## General decision workflow — version 0.1.1 in v0.5.0
 
-Published v0.4.1 contains ten skills. They are also present in current source: the seven imported public guidance files,
-experimental repository-readiness, **[decision-brief](../skills/decision-brief/SKILL.md)**
-and **[document-actions](../skills/document-actions/SKILL.md)**.
+Published v0.5.0 contains seventeen skills. Ten retained workflows are the seven imported
+public guides, experimental repository-readiness, **[decision-brief](../skills/decision-brief/SKILL.md)**
+and **[document-actions](../skills/document-actions/SKILL.md)**. Seven additional workflows
+are described in their own sections above and below.
 The stable quickstart selects that published release. Current-source
 [field-consistency patches](../docs/field-consistency.md) for both original workflows
 are included in that release; current-source publication labels do not rewrite its
@@ -123,38 +123,38 @@ archives three actual, bounded attempts without claiming broad reliability or ga
 Its [provenance](../skills/decision-brief/provenance.md) records narrow public-source
 use and exclusions; the seven-package upstream catalogue remains unchanged.
 
-## Document actions — version 0.1.2 in v0.4.1
+## Document actions — version 0.1.2 in v0.5.0
 
 Use [document-actions](../skills/document-actions/SKILL.md) to extract source-stated
 assignments and requirements, separate proposals and historical items, preserve exact
 deadline wording, and expose conflicting or missing fields without inventing commitments.
 It produces `actions.md` and `questions.md`; it creates no tickets or messages.
-This workflow is included in v0.4.1. Follow the
+This workflow is included in v0.5.0. Follow the
 [document-actions first-use guide](../docs/quickstart.md#try-document-actions-from-pinned-source)
 for a pinned source checkout, complete selected bundle, bounded input packet and prompt.
 The [worked example](../examples/document-actions/README.md) and executable offline checks
 validate authored fixtures and setup, not semantic extraction quality or native activation.
 
-## Experiment design — current source, unreleased
+## Experiment design — published in v0.5.0
 
 The original [experiment-design](../skills/experiment-design/SKILL.md) workflow turns a
 bounded decision question and evidence into a prospective, falsifiable `experiment.md`.
 It names competing explanations, contrasts, controls, invariants, units, repetitions,
 full schedule/budget, frozen analysis and a permission-aware handoff. It is inspection
 and planning only: no experiment, benchmark, model or client runs. It permits blocked
-and no-new-experiment outcomes. It is one of seventeen current-source bundles, not part
-of published v0.4.1. The accepted retrospective fixture and its expected report/oracle
+and no-new-experiment outcomes. It is one of seventeen current-source bundles, included
+in published v0.5.0. The accepted retrospective fixture and its expected report/oracle
 are separate from the installed bundle's input-only practice. See the
 [experiment-design first-use guide](../docs/experiment-design-first-use.md).
 
-## Verification loop — current source, unreleased
+## Verification loop — published in v0.5.0
 
 The original [verification-loop](../skills/verification-loop/SKILL.md) 0.2.0 bundle runs
 criterion-linked checks within existing authorization and produces `verification.md`
 with actual-byte evidence. It discovers project commands, plans when execution is not
 authorized, and offers optional qualified project recipes and owner-reviewed diff-triggered
 rule candidates. Input-only practice stays separate from authored generated-input worked
-examples. It is one of seventeen current-source bundles and not in published v0.4.1.
+examples. It is one of seventeen current-source bundles and included in published v0.5.0.
 See the [first-use guide](../docs/verification-loop-first-use.md). Source checks do not
 establish native activation or task efficacy.
 
@@ -187,16 +187,16 @@ these are not baseline comparisons or broad compatibility results.
 ## Maintenance
 
 The [current published-guide correction](../docs/published-upstream-refresh.md) selects
-Dexpot v0.8.1 for current-source instruction 0.3.0 only. Published SkillPot v0.4.1
-keeps the earlier Dexpot package; its stable install command is unchanged. The other
-six imported packages and three original bundles are not refreshed.
+Dexpot v0.8.1 for instruction 0.3.0, included in published SkillPot v0.5.0.
+The earlier v0.4.1 archive keeps instruction 0.2.0. Other imported guide pins are
+unchanged; existing installations are not automatically updated.
 
 The historical [public-guide refresh audit](../docs/public-guide-refresh.md) records four
 changed consumer guides and three unchanged imported guides. The refreshed source
 packages are included in published SkillPot v0.3.0; v0.2.0 retains its older
-snapshots. Published v0.4.0 added the two original workflows; v0.4.1 retains those
-guide snapshots and distributes bounded corrections to the two originals.
-The stable quickstart selects v0.4.1. Each package distinguishes published upstream
+snapshots. Published v0.4.0 added the two original workflows; v0.4.1 distributed bounded
+corrections to those workflows. v0.5.0 retains those corrections and adds seven workflows.
+The stable quickstart selects v0.5.0. Each package distinguishes published upstream
 features from newer-main-only instructions. Historical examples remain at their
 original pins rather than becoming fresh execution evidence.
 

@@ -10,7 +10,7 @@ These are agent instructions, not the underlying Python products. Install only t
 task you need; product dependencies, listeners, credentials, data changes, code pushes
 and public review publication remain separate authorization decisions.
 
-The published collection is v0.4.1 at `79284b3faa928dc556a9032aa9dbeb059b4ee915`.
+The published collection is v0.5.0 at `044213fd00343e94b4d389c3ca2c0f2909feb79f`.
 Start from that inspected release checkout using the quickstart, so installing or
 updating your agent does not silently follow moving `main`. A merge alone is not
 another versioned or generally qualified release.
@@ -21,8 +21,8 @@ Hermes' established installer fetches a SKILL.md and its explicitly referenced s
 files. See the [official skills documentation](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills#8-direct-url-url).
 No custom SkillPot installer or registry account is needed.
 
-From the inspected v0.4.1 release checkout (confirm `git rev-parse HEAD` is
-`79284b3faa928dc556a9032aa9dbeb059b4ee915`):
+From the inspected v0.5.0 release checkout (confirm `git rev-parse HEAD` is
+`044213fd00343e94b4d389c3ca2c0f2909feb79f`):
 
 ```sh
 REV=$(git rev-parse HEAD)

@@ -1,7 +1,9 @@
 # Claim-check: one-command installation
 
-`claim-check` 0.1.1 is available from the exact current-source revision below. It is
-**not included in published SkillPot v0.4.1**. The stable collection remains unchanged;
+This workflow was not included in published SkillPot v0.4.1. It is included in v0.5.0. Earlier distribution records keep their original pins; the selected release contains byte-identical bundles. Bundle metadata and compatibility/provenance notices retain their construction-time publication labels; collection publication status here and in the Release is authoritative.
+
+`claim-check` 0.1.1 is available from the exact published v0.5.0 source below. It is
+**not included in published SkillPot v0.5.0**. The stable collection remains unchanged;
 this is selective source installation, not a new collection release.
 
 ## Install the selected skill
@@ -10,7 +12,7 @@ With Node.js 22.20+ and Git available, run this directly in the project where yo
 your agent. No repository clone, folder management or manual input copying is needed:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check
 ```
 
 Select your agent in the installer if prompted. The installer may detect the invoking
@@ -27,7 +29,7 @@ source in `skills-lock.json`. The two optional fictional example inputs arrive w
 the bundle. There is no custom SkillPot installer or required service.
 
 The literal source pin contains the procedure, templates, checklist and both example
-inputs together. The [current-source installer matrix](skill-hardening-distribution.json)
+inputs together. The [historical current-source installer matrix](skill-hardening-distribution.json)
 verified all eight files against that
 Git commit, the recorded source ref, four agent target locations, an unrelated sibling
 and selected removal. It used Node 22.23.4 and skills CLI 1.7.6 in an owned isolated

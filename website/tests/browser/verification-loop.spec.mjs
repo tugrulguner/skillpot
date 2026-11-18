@@ -4,10 +4,10 @@ for (const width of [1280, 390]) {
   test(`verification-loop source-only discovery and keyboard navigation ${width}`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/catalogue/');
-    await expect(page.getByRole('heading', { name: 'Verification loop — current source, unreleased', exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Verification loop — published in v0.5.0', exact: true })).toBeVisible();
     await expect(page.locator('body')).toContainText('seventeen current-source bundles');
     await page.goto('/');
-    const paragraph = page.locator('p').filter({ hasText: 'Current-source verification-loop' });
+    const paragraph = page.locator('p').filter({ hasText: 'Published verification-loop' });
     await expect(paragraph).toContainText('verification.md');
     await expect(paragraph).toContainText('Without execution permission it plans only');
     await expect(paragraph).toContainText('repairs require permission');

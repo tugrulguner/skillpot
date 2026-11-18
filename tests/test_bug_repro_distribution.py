@@ -31,7 +31,7 @@ class BugReproDistributionTests(unittest.TestCase):
             text = (ROOT / file).read_text()
             self.assertIn("bug-repro", text, file)
             self.assertIn("bug-repro-first-use.md", text, file)
-        self.assertIn("Published v0.4.1 contains ten skills", (ROOT / "README.md").read_text())
+        self.assertIn("Published v0.5.0 contains seventeen skills", (ROOT / "README.md").read_text())
 
     def test_public_installer_manifest_binds_the_complete_selected_bundle(self):
         path = ROOT / "docs/bug-repro-distribution.json"
@@ -42,7 +42,7 @@ class BugReproDistributionTests(unittest.TestCase):
                   for p in package.rglob("*") if p.is_file()}
         self.assertEqual(actual, report["source_files"])
         self.assertEqual(len(actual), report["files_verified"])
-        self.assertIn("/tree/" + report["source_commit"] + " --skill bug-repro",
+        self.assertIn("/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill bug-repro",
                       (ROOT / "docs/bug-repro-first-use.md").read_text())
         for key in ["lock_ref_verified", "sibling_preserved", "selected_removal_verified", "no_global_install"]:
             self.assertTrue(report[key])

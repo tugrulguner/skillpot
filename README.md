@@ -31,17 +31,17 @@
 
 ## Quick start
 
-The published collection is **[v0.4.1](https://github.com/tugrulguner/skillpot/releases/tag/v0.4.1)**,
-with corrections to decision briefs and document action extraction in the same ten-skill collection.
-Its immutable release commit is `79284b3faa928dc556a9032aa9dbeb059b4ee915`.
+The published collection is **[v0.5.0](https://github.com/tugrulguner/skillpot/releases/tag/v0.5.0)**,
+adding seven workflows to the ten-skill v0.4.1 collection.
+Its immutable release commit is `044213fd00343e94b4d389c3ca2c0f2909feb79f`.
 Per-package prerequisites and upstream unreleased-feature boundaries still apply.
-See the [release Discussion](https://github.com/tugrulguner/skillpot/discussions/43)
-and [preparation/publication record](docs/releases/v0.4.1.md).
+See the [release Discussion](https://github.com/tugrulguner/skillpot/discussions/68)
+and [preparation/publication record](docs/releases/v0.5.0.md).
 
 Install one skill with one command (Node.js 22.20+ and Git):
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/v0.4.1 --skill decision-brief
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/v0.5.0 --skill decision-brief
 ```
 
 The existing open-source skills CLI downloads the selected complete bundle, creates
@@ -62,7 +62,7 @@ project scope and the published collection. Run it from a new source location yo
 ```sh
 (
   set -eu
-  git clone --branch v0.4.1 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source
+  git clone --branch v0.5.0 --depth 1 https://github.com/tugrulguner/skillpot.git skillpot-source
   cd skillpot-source
   # Replace with an existing project you own.
   SKILL_ROOT="/absolute/owned-project/.claude/skills"
@@ -73,8 +73,8 @@ project scope and the published collection. Run it from a new source location yo
 ```
 
 The plain `mkdir` refuses an existing destination, including a same-name symlink.
-The immutable v0.4.1 archive retains older v0.4.0 setup examples and prepublication
-metadata. Keep the selected v0.4.1 checkout; use this current host guide or the Release's
+The immutable v0.5.0 archive retains older setup commands that select v0.4.1 and
+prepublication metadata. Keep the selected v0.5.0 checkout; use this current host guide or the Release's
 setup override instead of rerunning an older checkout command from tagged docs.
 Preserve local edits rather than merging over them. The selected bundle includes
 `SKILL.md`, its pinned upstream guide and complete license notices; downloading the
@@ -96,9 +96,8 @@ instructions grants no additional authority.
 
 ## Choose a workflow
 
-Published v0.4.1 contains ten skills, including `decision-brief` and
-`document-actions`. Current source contains seventeen workflows; v0.4.1 remains the
-ten-skill published collection. The original `verification-loop` 0.2.0 bundle runs
+Published v0.5.0 contains seventeen skills, including `decision-brief` and
+`document-actions`. Current source and the v0.5.0 release each contain seventeen workflows. This is the seventeen-skill published collection. The bundles retain their construction-time publication labels so their bytes match the immutable release; collection availability is recorded here and in the Release. The original `verification-loop` 0.2.0 bundle runs
 acceptance-linked checks within existing local authorization, producing `verification.md`
 and actual-byte evidence. Without execution permission it plans only. Optional setup
 qualifies reusable project recipes; recurring misses become owner-reviewed diff-triggered
@@ -106,13 +105,12 @@ rule candidates. An input-only practice packet is included; authored example exe
 is not task-efficacy evidence. See the
 [verification-loop first-use guide](docs/verification-loop-first-use.md).
 
-Existing source-only workflows are described in their individual first-use guides:
+Published workflows are described in their individual first-use guides:
 [claim-check](docs/claim-check-first-use.md), [change-impact](docs/change-impact-first-use.md),
 [bug-repro](docs/bug-repro-first-use.md), [incident-triage](docs/incident-triage-first-use.md),
 and [benchmark-audit](docs/benchmark-audit-first-use.md). Benchmark-audit produces
 `benchmark-audit.md` with four claim-level verdicts, and reviews existing evidence
-without running benchmarks or models. The stable release does not contain these
-source-only workflows.
+without running benchmarks or models. The stable v0.5.0 release contains these workflows.
 The original two workflows retain
 [published field-consistency corrections](docs/field-consistency.md) to those two
 skills. The stable clone above selects their published snapshot; the first-use guides
@@ -129,13 +127,13 @@ See the [experiment-design first-use guide](docs/experiment-design-first-use.md)
 The [current-source hardening guide](docs/skill-hardening.md) records a review of all
 fourteen bundles at the historical snapshot it records, corrected standalone references
 and worked-output consistency, and a fresh individual-installation matrix for every
-bundle at that snapshot. Current source now has seventeen bundles; the published ten-skill
+bundle at that snapshot. Current source now has seventeen bundles; the published seventeen-skill
 release remains unchanged.
 
 Current source also contains a [Dexpot-only published-guide refresh](docs/published-upstream-refresh.md):
-instruction version 0.3.0 targets Dexpot v0.8.1's path-annotation correction. It is not
-in the v0.4.1 collection selected above, which retains Dexpot instruction 0.2.0 and
-its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
+instruction version 0.3.0 targets Dexpot v0.8.1's path-annotation correction and is included
+in v0.5.0. The earlier v0.4.1 archive retains instruction 0.2.0 and its v0.8.0 pin.
+Existing installations are not automatically updated.
 
 | Task | Skill |
 | --- | --- |
@@ -146,15 +144,15 @@ its v0.8.0 pin. Existing installations and the other nine bundles are unchanged.
 | Use the embedded database preview with explicit limits | [refpot-database](skills/refpot-database/SKILL.md) |
 | Prepare/review changes specifically in Summonpot | [summonpot-pr-review](skills/summonpot-pr-review/SKILL.md), [summonpot-code-review](skills/summonpot-code-review/SKILL.md) |
 | Audit a repository against an exact delivery goal | [repository-readiness](skills/repository-readiness/SKILL.md), experimental |
-| Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md) 0.1.2, included in v0.4.1; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
-| Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md) 0.1.1, included in v0.4.1 |
-| Triage symptoms and logs into an evidence-backed investigation handoff | [incident-triage](skills/incident-triage/SKILL.md) 0.1.0, source only; `incident.md` and `timeline.md`; [one-command setup](docs/incident-triage-first-use.md); inspection-only by default |
-| Minimize a reported failure into a runnable reproducer and regression test | [bug-repro](skills/bug-repro/SKILL.md) 0.1.0, source only; [one-command setup](docs/bug-repro-first-use.md); execution requires explicit permission |
-| Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, current source only; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
-| Audit a performance claim against existing benchmark evidence, without rerunning trials | [benchmark-audit](skills/benchmark-audit/SKILL.md) 0.1.0, source only; inspection-only; [first-use guide](docs/benchmark-audit-first-use.md) |
-| Plan a falsifiable, permission-aware experiment before new observations | [experiment-design](skills/experiment-design/SKILL.md) 0.1.0, original source only; `experiment.md`; [first-use guide](docs/experiment-design-first-use.md); no execution by default |
-| Verify a code change against user-visible criteria | [verification-loop](skills/verification-loop/SKILL.md) 0.2.0, original source only; `verification.md`, optional qualified recipe and rule candidates; executes within authorization, plans otherwise; [first-use guide](docs/verification-loop-first-use.md) |
-| Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.1, current source only; [one-command setup](docs/claim-check-first-use.md) |
+| Extract stated actions and unresolved questions from documents | [document-actions](skills/document-actions/SKILL.md) 0.1.2, included in v0.5.0; [first-use steps](docs/quickstart.md#try-document-actions-from-pinned-source) |
+| Compare alternatives against a bounded evidence packet | [decision-brief](skills/decision-brief/SKILL.md) 0.1.1, included in v0.5.0 |
+| Triage symptoms and logs into an evidence-backed investigation handoff | [incident-triage](skills/incident-triage/SKILL.md) 0.1.0, published in v0.5.0; `incident.md` and `timeline.md`; [one-command setup](docs/incident-triage-first-use.md); inspection-only by default |
+| Minimize a reported failure into a runnable reproducer and regression test | [bug-repro](skills/bug-repro/SKILL.md) 0.1.0, published in v0.5.0; [one-command setup](docs/bug-repro-first-use.md); execution requires explicit permission |
+| Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, published in v0.5.0; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
+| Audit a performance claim against existing benchmark evidence, without rerunning trials | [benchmark-audit](skills/benchmark-audit/SKILL.md) 0.1.0, published in v0.5.0; inspection-only; [first-use guide](docs/benchmark-audit-first-use.md) |
+| Plan a falsifiable, permission-aware experiment before new observations | [experiment-design](skills/experiment-design/SKILL.md) 0.1.0, published in v0.5.0; `experiment.md`; [first-use guide](docs/experiment-design-first-use.md); no execution by default |
+| Verify a code change against user-visible criteria | [verification-loop](skills/verification-loop/SKILL.md) 0.2.0, published in v0.5.0; `verification.md`, optional qualified recipe and rule candidates; executes within authorization, plans otherwise; [first-use guide](docs/verification-loop-first-use.md) |
+| Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.1, published in v0.5.0; [one-command setup](docs/claim-check-first-use.md) |
 
 Consumer guidance and contributor policies are separate choices. Summonpot's review
 policies do not govern unrelated projects or authorize a merge. See the
@@ -189,8 +187,8 @@ requirement to produce videos. The catalogue above describes what is available n
 
 ## Examples and reference
 
-- [Document actions worked example](examples/document-actions/README.md): fictional documents, expected classifications and offline acceptance checks. These are authored fixtures, not observed agent extractions. Included in v0.4.1.
-- [Decision brief worked example](examples/decision-brief/README.md): a parent-authored CSV/SQLite comparison, pinned documentation excerpts and four failure cases. Its offline checker validates artifact integrity, not agent performance. Included in v0.4.1.
+- [Document actions worked example](examples/document-actions/README.md): fictional documents, expected classifications and offline acceptance checks. These are authored fixtures, not observed agent extractions. Included in v0.5.0.
+- [Decision brief worked example](examples/decision-brief/README.md): a parent-authored CSV/SQLite comparison, pinned documentation excerpts and four failure cases. Its offline checker validates artifact integrity, not agent performance. Included in v0.5.0.
 - [Product consumer examples](examples/modepot-project-skills/README.md): actual sources,
   setup, expected checks and explicit product pins. v0.14.0 Intpot provenance examples
   are distinguished from older runtime records.

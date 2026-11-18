@@ -13,7 +13,7 @@ test('verification-loop remains source-only with acceptance-linked evidence', as
     assert.match(text, /verification-loop/);
     assert.match(text, /verification-loop-first-use\.md/);
     assert.match(text, /verification\.md/);
-    assert.match(text, /v0\.4\.1/);
+    assert.match(text, /v0\.5\.0/);
     assert.match(text, /permission/);
   }
 });
@@ -34,15 +34,15 @@ test('claim-check is current-source and unreleased, separate from the stable rel
   ]);
   for (const text of [home, catalogue, map]) {
     assert.match(text, /claim-check/);
-    assert.match(text, /unreleased/i);
+    assert.match(text, /published/i);
     assert.match(text, /claim-check-first-use\.md/);
   }
-  assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check/);
+  assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check/);
   assert.match(catalogue, /seventeen current-source bundles/);
-  assert.match(catalogue, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check/);
+  assert.match(catalogue, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check/);
   assert.match(map, /claim-check-first-use\.md/);
-  assert.match(map, /Published v0\.4\.1 contains ten skills/);
-  assert.doesNotMatch(map, /Published v0\.4\.1 contains eleven skills/);
+  assert.match(map, /Published v0\.5\.0 contains seventeen skills/);
+  assert.doesNotMatch(map, /Published v0\.5\.0 contains eleven skills/);
 });
 
 test('benchmark-audit is a source-only inspection workflow, separate from stable ten', async () => {
@@ -60,23 +60,23 @@ test('benchmark-audit is a source-only inspection workflow, separate from stable
   }
   assert.match(home, /seventeen skills/);
   assert.match(catalogue, /seventeen current-source bundles/);
-  assert.match(map, /Published v0\.4\.1 contains ten skills/);
+  assert.match(map, /Published v0\.5\.0 contains seventeen skills/);
 });
 
-test('released decision brief is discoverable with the v0.4.1 clone', async () => {
+test('released decision brief is discoverable with the v0.5.0 clone', async () => {
   const [home, catalogue] = await Promise.all(['index.mdx', 'catalogue.md'].map((f) => readFile(join(root, 'src/content/docs', f), 'utf8')));
-  assert.match(home, /Published v0\.4\.1 includes \*\*decision-brief/);
+  assert.match(home, /Published v0\.5\.0 includes \*\*decision-brief/);
   assert.match(catalogue, /decision-brief/);
-  assert.match(catalogue, /Published v0\.4\.1 contains ten skills/);
+  assert.match(catalogue, /Published v0\.5\.0 contains seventeen skills/);
   assert.doesNotMatch(catalogue, /reviewed, unreleased/);
-  assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check/);
+  assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check/);
 });
 
 test('agent map selects the latest published ten-skill snapshot', async () => {
   const map = await readFile(join(root, 'public/llms.txt'), 'utf8');
-  assert.match(map, /releases\/tag\/v0\.4\.1/);
+  assert.match(map, /releases\/tag\/v0\.5\.0/);
   assert.match(map, /decision-brief/);
-  assert.match(map, /Published v0\.4\.1 contains ten skills/);
+  assert.match(map, /Published v0\.5\.0 contains seventeen skills/);
   assert.doesNotMatch(map, /v0\.3\.0|v0\.2\.0/);
 });
 
@@ -88,16 +88,16 @@ test('document actions uses the published release across discovery', async () =>
   ]);
   for (const text of [home, catalogue, map]) {
     assert.match(text, /document-actions/);
-    assert.match(text, /v0\.4\.1/);
+    assert.match(text, /v0\.5\.0/);
     assert.doesNotMatch(text, /not included in published v0\.3\.0/);
   }
-  assert.match(catalogue, /Published v0\.4\.1 contains ten skills/);
-  assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check/);
+  assert.match(catalogue, /Published v0\.5\.0 contains seventeen skills/);
+  assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check/);
 });
 
 test('docs preserve experimental scope and runtime boundaries after publication', async () => {
   const [home, catalogue, limits] = await Promise.all(['index.mdx', 'catalogue.md', 'limits.md'].map((f) => readFile(join(root, 'src/content/docs', f), 'utf8')));
-  assert.match(home, /v0\.4\.1/);
+  assert.match(home, /v0\.5\.0/);
   assert.match(home, /experimental/);
   assert.match(catalogue, /seven imported public guidance files/);
   assert.match(limits, /not an agent runtime/);

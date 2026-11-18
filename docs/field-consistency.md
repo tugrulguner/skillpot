@@ -1,3 +1,7 @@
+# Current collection selection
+
+The corrections below were first published in v0.4.1 and are retained in published v0.5.0 at `044213fd00343e94b4d389c3ca2c0f2909feb79f`. Current stable setup selects v0.5.0. The following v0.4.1 record is historical; its checkout descriptions do not override current setup.
+
 # Field-consistency corrections in current source
 
 These corrections to `decision-brief` **0.1.1** and `document-actions` **0.1.2**

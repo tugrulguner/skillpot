@@ -1,13 +1,15 @@
 # Verification loop: first use
 
-`verification-loop` is an original portable workflow for running a bounded verification loop against user-visible criteria. It can also prepare an inspection-only plan or, when requested, qualify a reusable project recipe. It is **source-only, absent from published v0.4.1**. Conceptually inspired by Addy Osmani's [verification article](https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/), independently authored and not an official Anthropic skill.
+This workflow was not included in published SkillPot v0.4.1. It is included in v0.5.0. Earlier distribution records keep their original pins; the selected release contains byte-identical bundles. Bundle metadata and compatibility/provenance notices retain their construction-time publication labels; collection publication status here and in the Release is authoritative.
+
+`verification-loop` is an original portable workflow for running a bounded verification loop against user-visible criteria. It can also prepare an inspection-only plan or, when requested, qualify a reusable project recipe. It is **included in published v0.5.0**. Conceptually inspired by Addy Osmani's [verification article](https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/), independently authored and not an official Anthropic skill.
 
 ## Install only this bundle
 
 With Node.js 22.20+ and Git, run in your owned project:
 
 ```sh
-npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/9180e667ccfef7a16ce7c8dc28577bef8a900d24 --skill verification-loop
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill verification-loop
 ```
 
 Choose a host, optionally adding `--agent claude-code`, `--agent cursor`, `--agent codex` or `--agent hermes-agent`. Installation is project-local unless deliberately global. Inspect existing destinations before confirmation: installer updates may overwrite edits. This differs from the procedure's fresh-report collision guard. The complete bundle has linked report, checklist, input-only practice, project recipe and rule-candidate assets; it installs no target, answer oracle or runner. Source/placement checks do not prove native loading or better task outcomes.

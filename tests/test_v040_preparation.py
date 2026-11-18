@@ -29,8 +29,8 @@ class V040PreparationTests(unittest.TestCase):
         self.assertIn("only after the tag and public archives exist", text)
         self.assertIn("Do not rerun", text)
         self.assertIn("2b8040fece04dc159a44e72e909e376f5d0583a3", text)
-        self.assertIn("git clone --branch v0.4.1", (ROOT / "README.md").read_text())
-        self.assertIn("checkout --detach 79284b3faa928dc556a9032aa9dbeb059b4ee915",
+        self.assertIn("git clone --branch v0.5.0", (ROOT / "README.md").read_text())
+        self.assertIn("checkout --detach 044213fd00343e94b4d389c3ca2c0f2909feb79f",
                       (ROOT / "docs/quickstart.md").read_text())
         current = (ROOT / "skills/document-actions/SKILL.md").read_text()
         self.assertIn('status: "published"', current)

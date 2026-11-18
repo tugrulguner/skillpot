@@ -1,17 +1,17 @@
 import { test, expect } from '@playwright/test';
 
-test('released decision workflow uses v0.4.1 across discovery and downloads', async ({ page, request }, info) => {
+test('released decision workflow uses v0.5.0 across discovery and downloads', async ({ page, request }, info) => {
   await page.goto('/');
   await expect(page.locator('.overview')).toContainText('decision-brief');
-  await expect(page.locator('.overview')).toContainText('Published v0.4.1 includes');
-  await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/66bad57a0a42a4aec2c5d54feee1df8fb242e166 --skill claim-check');
-  await expect(page.locator('.overview')).toContainText('Published v0.4.1 has ten skills');
-  await expect(page.locator('.overview').getByRole('link', { name: 'v0.4.1', exact: true })).toHaveAttribute('href', 'https://github.com/tugrulguner/skillpot/releases/tag/v0.4.1');
+  await expect(page.locator('.overview')).toContainText('Published v0.5.0 includes');
+  await expect(page.locator('.install code')).toHaveText('npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check');
+  await expect(page.locator('.overview')).toContainText('Published v0.5.0 contains seventeen skills');
+  await expect(page.locator('.overview').getByRole('link', { name: 'v0.5.0', exact: true })).toHaveAttribute('href', 'https://github.com/tugrulguner/skillpot/releases/tag/v0.5.0');
   await page.goto('/catalogue/');
   const body = page.locator('.sl-markdown-content');
-  await expect(body).toContainText('Published v0.4.1 contains ten skills');
+  await expect(body).toContainText('Published v0.5.0 contains seventeen skills');
   await expect(body).not.toContainText('reviewed, unreleased');
-  await expect(body).toContainText('version 0.1.1 in v0.4.1');
+  await expect(body).toContainText('version 0.1.1 in v0.5.0');
   await expect(body.getByRole('link', { name: 'decision-brief', exact: true })).toHaveAttribute('href', 'https://github.com/tugrulguner/skillpot/blob/main/skills/decision-brief/SKILL.md');
   for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 900 });
@@ -21,12 +21,12 @@ test('released decision workflow uses v0.4.1 across discovery and downloads', as
   }
   const markdown = await request.get('/downloads/catalogue.md');
   expect(markdown.ok()).toBe(true);
-  expect(await markdown.text()).toContain('Published v0.4.1 contains ten skills');
+  expect(await markdown.text()).toContain('Published v0.5.0 contains seventeen skills');
   const map = await request.get('/llms.txt');
   expect(map.ok()).toBe(true);
   const text = await map.text();
   expect(text).toContain('decision-brief');
-  expect(text).toContain('releases/tag/v0.4.1');
+  expect(text).toContain('releases/tag/v0.5.0');
   expect(text).not.toContain('v0.2.0');
 });
 
@@ -40,9 +40,9 @@ test('catalogue opens the release-pinned first-use steps', async ({ page }, info
     await expect(page).toHaveURL(/\/host-setup\/#try-decision-brief-from-reviewed-source$/);
     await expect(page.getByRole('heading', { name: 'Try decision-brief from reviewed source', exact: true })).toBeVisible();
     const content = page.locator('.sl-markdown-content');
-    await expect(content).toContainText('79284b3faa928dc556a9032aa9dbeb059b4ee915');
+    await expect(content).toContainText('044213fd00343e94b4d389c3ca2c0f2909feb79f');
     await expect(content).toContainText('decision-brief-output/evidence.md');
-    await expect(content).toContainText('included in published v0.4.1');
+    await expect(content).toContainText('included in published v0.5.0');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.screenshot({ path: info.outputPath(`decision-first-use-${width}.png`) });
   }

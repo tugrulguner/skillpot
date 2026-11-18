@@ -4,7 +4,7 @@ for (const width of [1280, 390]) {
   test(`benchmark-audit source-only discovery and keyboard navigation ${width}`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
-    const paragraph = page.locator('p').filter({ hasText: 'Current-source benchmark-audit' });
+    const paragraph = page.locator('p').filter({ hasText: 'Published benchmark-audit' });
     await expect(paragraph).toContainText('benchmark-audit.md');
     await expect(paragraph).toContainText('Inspection-only');
     await expect(paragraph).toContainText('does not run benchmarks or models');
