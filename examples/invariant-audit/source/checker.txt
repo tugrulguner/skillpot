@@ -1,0 +1,10 @@
+# Authored inert verifier qualification sketch. No execution receipts supplied.
+# Expected dispositions/reason codes come from the guarantee, not classifier output.
+for each required case:
+    require actual disposition == independently expected disposition
+    require actual reason identifies the challenged condition
+require healthy-control remains CURRENT
+require all required cases are accounted for exactly once
+# A rejected negative case does not qualify a verifier if the control fails,
+# the rejection came from setup failure, or the stated reason concerns another role.
+# This sketch is not evidence that an actual verifier implements these checks.

@@ -159,6 +159,9 @@ These entries do not claim completed evaluations or authorize implementation.
       to source paths, independent expected outcomes, observations, counterexamples
       and proposed negative tests in `invariant-audit.md`. Distinguish source review
       from executed tests; finite checks do not establish formal verification.
+      The [proposal and authored worked packet](docs/invariant-audit-proposal.md)
+      define the inspection-first procedure, report contract and acceptance cases.
+      This is design work only, not an installable skill or implementation approval.
 - [ ] Implement `performance-investigation`: use a measured symptom, comparable
       baseline and permitted traces to produce `investigation.md`, separating
       observations, eliminated hypotheses, supported mechanisms and remaining
