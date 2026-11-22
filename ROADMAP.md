@@ -155,13 +155,13 @@ These entries do not claim completed evaluations or authorize implementation.
       report/oracle are excluded from installation. Offline tests check bundle and
       fixture integrity, not experiment execution, causal validity or task efficacy.
       See [first use](docs/experiment-design-first-use.md).
-- [ ] Implement `invariant-audit`: map a named technical guarantee and failure model
-      to source paths, independent expected outcomes, observations, counterexamples
-      and proposed negative tests in `invariant-audit.md`. Distinguish source review
-      from executed tests; finite checks do not establish formal verification.
-      The [proposal and authored worked packet](docs/invariant-audit-proposal.md)
-      define the inspection-first procedure, report contract and acceptance cases.
-      This is design work only, not an installable skill or implementation approval.
+- [x] Implement source-only `invariant-audit` 0.1.0: inspect a named technical guarantee
+      against bounded source/observations; produce `invariant-audit.md` with seven report
+      sections, independent expected outcomes, counterexamples and a permission-aware
+      handoff. The [accepted proposal](docs/invariant-audit-proposal.md) remains unchanged.
+      First use selects a separately qualified immutable source pin; the complete nine-file
+      bundle passed isolated installer/hash/lock/list/removal/sibling checks. No formal
+      proof, target execution, task-efficacy or native-runtime claim. See [first use](docs/invariant-audit-first-use.md).
 - [ ] Implement `performance-investigation`: use a measured symptom, comparable
       baseline and permitted traces to produce `investigation.md`, separating
       observations, eliminated hypotheses, supported mechanisms and remaining

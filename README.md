@@ -97,7 +97,9 @@ instructions grants no additional authority.
 ## Choose a workflow
 
 Published v0.5.0 contains seventeen skills, including `decision-brief` and
-`document-actions`. Current source and the v0.5.0 release each contain seventeen workflows. This is the seventeen-skill published collection. The bundles retain their construction-time publication labels so their bytes match the immutable release; collection availability is recorded here and in the Release. The original `verification-loop` 0.2.0 bundle runs
+`document-actions`. Current source also contains the separately implemented, source-only
+`invariant-audit` 0.1.0; it is not in the stable release, does not update existing
+installations, and is not an automatic update. The bundles retain their construction-time publication labels so their bytes match the immutable release; collection availability is recorded here and in the Release. The original `verification-loop` 0.2.0 bundle runs
 acceptance-linked checks within existing local authorization, producing `verification.md`
 and actual-byte evidence. Without execution permission it plans only. Optional setup
 qualifies reusable project recipes; recurring misses become owner-reviewed diff-triggered
@@ -124,11 +126,20 @@ Inspection/planning only; no experiment, model or benchmark is run. Its accepted
 retrospective fixture and its expected oracle remain outside the installed input-only practice.
 See the [experiment-design first-use guide](docs/experiment-design-first-use.md).
 
+Current-source `invariant-audit` 0.1.0 reviews one named technical guarantee against
+bounded source/observations and produces seven-section `invariant-audit.md`. Inspection-
+first, not formal proof; use existing bounded execution permission only after inspecting
+commands and side effects, otherwise propose the smallest next check. It is not in stable
+v0.5.0 and does not update existing installs. Its complete nine-file installation, exact source lock, listing and selected removal were verified in an isolated project; see the [first-use guide](docs/invariant-audit-first-use.md).
+
+```sh
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/81eddb5bf8c8a0d7e667033af98a546ff6a516cc --skill invariant-audit
+```
+
 The [current-source hardening guide](docs/skill-hardening.md) records a review of all
 fourteen bundles at the historical snapshot it records, corrected standalone references
 and worked-output consistency, and a fresh individual-installation matrix for every
-bundle at that snapshot. Current source now has seventeen bundles; the published seventeen-skill
-release remains unchanged.
+bundle at that snapshot. Current source now has eighteen bundles, including source-only `invariant-audit`; the published seventeen-skill release remains unchanged.
 
 Current source also contains a [Dexpot-only published-guide refresh](docs/published-upstream-refresh.md):
 instruction version 0.3.0 targets Dexpot v0.8.1's path-annotation correction and is included
@@ -150,6 +161,7 @@ Existing installations are not automatically updated.
 | Minimize a reported failure into a runnable reproducer and regression test | [bug-repro](skills/bug-repro/SKILL.md) 0.1.0, published in v0.5.0; [one-command setup](docs/bug-repro-first-use.md); execution requires explicit permission |
 | Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, published in v0.5.0; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
 | Audit a performance claim against existing benchmark evidence, without rerunning trials | [benchmark-audit](skills/benchmark-audit/SKILL.md) 0.1.0, published in v0.5.0; inspection-only; [first-use guide](docs/benchmark-audit-first-use.md) |
+| Audit a named technical guarantee against bounded source and observations | [invariant-audit](skills/invariant-audit/SKILL.md) 0.1.0, current source-only (not in v0.5.0); produces `invariant-audit.md`; inspection-first; [first-use guide](docs/invariant-audit-first-use.md) |
 | Plan a falsifiable, permission-aware experiment before new observations | [experiment-design](skills/experiment-design/SKILL.md) 0.1.0, published in v0.5.0; `experiment.md`; [first-use guide](docs/experiment-design-first-use.md); no execution by default |
 | Verify a code change against user-visible criteria | [verification-loop](skills/verification-loop/SKILL.md) 0.2.0, published in v0.5.0; `verification.md`, optional qualified recipe and rule candidates; executes within authorization, plans otherwise; [first-use guide](docs/verification-loop-first-use.md) |
 | Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.1, published in v0.5.0; [one-command setup](docs/claim-check-first-use.md) |

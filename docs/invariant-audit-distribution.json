@@ -1,0 +1,106 @@
+{
+  "source_commit": "81eddb5bf8c8a0d7e667033af98a546ff6a516cc",
+  "skill": "invariant-audit",
+  "node": "v22.23.4",
+  "installer": "1.7.6",
+  "source_files": {
+    "SKILL.md": "d1016a2669438ef9e9115e6e7d11b87897b4f52a9346af3e9e1f79e383406ff9",
+    "assets/practice/README.md": "b31e80abe85610d2385147cca8740a86c3bc3fb514b51265125d9809c901a897",
+    "assets/practice/source/baseline.txt": "fab1de117040c3a4ba84d0b749155d63738afb74578d76d9dfa53d6dc08ef442",
+    "assets/practice/source/candidate.txt": "556a05079f718a58735ff24c8cf44913e76d148e6739cdfd4151041d69ee12f2",
+    "assets/practice/source/checker.txt": "1fac75fd65862946c7751a2a629bd8b050bd67b14697b4337e2c08759c60be6b",
+    "assets/report-template.md": "f2aa50c444851d938270bbe207b82d5764da704d3cd08623622810154228c2a0",
+    "assets/review-checklist.md": "2e0da817363311b701a7cadbf97af6a14493f365147e7bc6b6f34ebfb26b6a39",
+    "compatibility.md": "b8a14817ac2ab192219e53188fc1eb23812dfbc1a637cc3060d9b842df413cfd",
+    "provenance.md": "e68eeaccab217b458c94d3d2b443df9667034c5657a2869597e9afba2c96e39c"
+  },
+  "installed_files": {
+    "provenance.md": "e68eeaccab217b458c94d3d2b443df9667034c5657a2869597e9afba2c96e39c",
+    "SKILL.md": "d1016a2669438ef9e9115e6e7d11b87897b4f52a9346af3e9e1f79e383406ff9",
+    "compatibility.md": "b8a14817ac2ab192219e53188fc1eb23812dfbc1a637cc3060d9b842df413cfd",
+    "assets/review-checklist.md": "2e0da817363311b701a7cadbf97af6a14493f365147e7bc6b6f34ebfb26b6a39",
+    "assets/report-template.md": "f2aa50c444851d938270bbe207b82d5764da704d3cd08623622810154228c2a0",
+    "assets/practice/README.md": "b31e80abe85610d2385147cca8740a86c3bc3fb514b51265125d9809c901a897",
+    "assets/practice/source/baseline.txt": "fab1de117040c3a4ba84d0b749155d63738afb74578d76d9dfa53d6dc08ef442",
+    "assets/practice/source/checker.txt": "1fac75fd65862946c7751a2a629bd8b050bd67b14697b4337e2c08759c60be6b",
+    "assets/practice/source/candidate.txt": "556a05079f718a58735ff24c8cf44913e76d148e6739cdfd4151041d69ee12f2"
+  },
+  "placement": {
+    "agent_is_symlink": false,
+    "canonical_exists": false
+  },
+  "passed": true,
+  "selected_only": true,
+  "lock_ref_verified": true,
+  "list_verified": true,
+  "selected_removal_verified": true,
+  "sibling_preserved": true,
+  "agent": "claude-code",
+  "scope": "project-local isolated filesystem qualification; no native client or model launched",
+  "commands": [
+    [
+      "node",
+      "--version"
+    ],
+    [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=skills@1.7.6",
+      "--",
+      "skills",
+      "--version"
+    ],
+    [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=skills@1.7.6",
+      "--",
+      "skills",
+      "add",
+      "https://github.com/tugrulguner/skillpot/tree/81eddb5bf8c8a0d7e667033af98a546ff6a516cc",
+      "--skill",
+      "invariant-audit",
+      "--agent",
+      "claude-code",
+      "-y"
+    ],
+    [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=skills@1.7.6",
+      "--",
+      "skills",
+      "list",
+      "--json"
+    ],
+    [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=skills@1.7.6",
+      "--",
+      "skills",
+      "remove",
+      "invariant-audit",
+      "--agent",
+      "claude-code",
+      "-y"
+    ]
+  ],
+  "lock": {
+    "version": 1,
+    "skills": {
+      "invariant-audit": {
+        "source": "tugrulguner/skillpot",
+        "ref": "81eddb5bf8c8a0d7e667033af98a546ff6a516cc",
+        "sourceType": "github",
+        "skillPath": "skills/invariant-audit/SKILL.md",
+        "computedHash": "1f94095016a347aa2f6f90ad46a68a7540357f85c204c817dae299cc1c189e7e"
+      }
+    }
+  },
+  "bundle_files": 9
+}

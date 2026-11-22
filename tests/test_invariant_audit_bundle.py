@@ -1,5 +1,6 @@
 """Portable invariant-audit bundle contract and input-only parity checks."""
 import hashlib
+import json
 import re
 import unittest
 from pathlib import Path
@@ -60,6 +61,36 @@ class InvariantAuditBundleTests(unittest.TestCase):
         for term in ("Unknown/missing identities", "snapshots alone do not prove continuity",
                      "ancestor symlinks", "Preserve partial output", "Reuse existing authorization"):
             self.assertIn(term, body)
+
+    def test_current_bundle_is_the_complete_publicly_qualified_selection(self):
+        record = json.loads((ROOT / "docs/invariant-audit-distribution.json").read_text())
+        pin = record["source_commit"]
+        self.assertEqual(pin, "81eddb5bf8c8a0d7e667033af98a546ff6a516cc")
+        self.assertEqual(record["skill"], "invariant-audit")
+        expected_names = {"SKILL.md", "provenance.md", "compatibility.md",
+                          "assets/report-template.md", "assets/review-checklist.md",
+                          "assets/practice/README.md"} | {
+                              "assets/practice/source/" + name for name in
+                              ("baseline.txt", "candidate.txt", "checker.txt")}
+        actual = {p.relative_to(BUNDLE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                  for p in BUNDLE.rglob("*") if p.is_file()}
+        self.assertEqual(set(actual), expected_names)
+        self.assertEqual(actual, record["source_files"])
+        self.assertEqual(actual, record["installed_files"])
+        self.assertEqual(record["bundle_files"], len(actual))
+        for key in ("passed", "selected_only", "lock_ref_verified", "list_verified",
+                    "selected_removal_verified", "sibling_preserved"):
+            self.assertIs(record[key], True, key)
+        self.assertEqual(set(record["lock"]["skills"]), {"invariant-audit"})
+        entry = record["lock"]["skills"]["invariant-audit"]
+        self.assertEqual(entry["ref"], pin)
+        self.assertEqual(entry["source"], "tugrulguner/skillpot")
+        self.assertEqual(entry["skillPath"], "skills/invariant-audit/SKILL.md")
+        guide = (ROOT / "docs/invariant-audit-first-use.md").read_text()
+        self.assertIn("tree/" + pin + " --skill invariant-audit", guide)
+        self.assertNotIn("SOURCE_PIN_PENDING", guide)
+        self.assertNotIn("tree/v0.5.0 --skill invariant-audit", guide)
+        self.assertNotIn("/Users/", json.dumps(record))
 
     def test_practice_is_input_only_and_byte_identical_to_proposal_assets(self):
         readme = (PRACTICE / "README.md").read_text().lower()
