@@ -19,7 +19,10 @@ class V050PublicationTests(unittest.TestCase):
         self.assertEqual(summary["unique_names"], 17)
         names = [row["name"] for row in record["skills"]]
         self.assertEqual(len(names), len(set(names)))
-        self.assertEqual(set(names), {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")})
+        current_names = {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}
+        # Source-only additions do not rewrite the frozen seventeen-skill release.
+        self.assertEqual(set(names), current_names - {"invariant-audit"})
+        self.assertNotIn("invariant-audit", names)
         count = 0
         for row in record["skills"]:
             directory = ROOT / "skills" / row["name"]

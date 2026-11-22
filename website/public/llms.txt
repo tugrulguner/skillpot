@@ -7,6 +7,7 @@ Published v0.5.0 contains seventeen skills: seven pinned public project/contribu
 
 - [Experiment-design published first use](https://github.com/tugrulguner/skillpot/blob/main/docs/experiment-design-first-use.md): prospective, permission-aware experiment.md with causal contrasts and frozen schedule/analysis; no execution by default.
 - [Verification-loop published first use](https://github.com/tugrulguner/skillpot/blob/main/docs/verification-loop-first-use.md): version 0.2.0 executes within existing local authorization, discovers documented commands and produces acceptance-linked verification.md. It plans without execution permission, offers optional qualified project recipes and incident-backed diff-triggered rule candidates, and requires separate repair/policy approval.
+- [Invariant-audit current source-only first use](https://github.com/tugrulguner/skillpot/blob/main/docs/invariant-audit-first-use.md): 0.1.0 inspects one named guarantee against bounded source/observations and produces seven-section invariant-audit.md; inspection-first, not formal proof or execution evidence. Not in stable v0.5.0; separately pinned nine-file installation, exact lock/list/removal and sibling preservation verified; not native activation or task efficacy.
 - [Quick start](https://skillpot.modepot.io/quickstart/)
 - [Catalogue](https://skillpot.modepot.io/catalogue/)
 - [Host setup](https://skillpot.modepot.io/host-setup/)

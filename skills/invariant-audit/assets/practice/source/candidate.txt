@@ -1,0 +1,11 @@
+# Authored alternative pseudocode, not an implemented or executed repair.
+# Toy identity domain: nonblank strings; these labels are not Git IDs or hashes.
+function classify(expected, actual, read_errors):
+    if read_errors is not empty: return NOT_CURRENT
+    for role in [baseline, candidate, checker]:
+        if role absent from expected or actual: return NOT_CURRENT
+        if expected[role] is not a nonblank string: return NOT_CURRENT
+        if actual[role] is not a nonblank string: return NOT_CURRENT
+        if actual[role] != expected[role]: return NOT_CURRENT
+    return CURRENT
+# This establishes only a snapshot classification, never interval continuity.
