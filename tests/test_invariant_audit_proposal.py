@@ -78,7 +78,7 @@ class InvariantAuditProposalTests(unittest.TestCase):
                 self.assertNotEqual(wrong_report, self.report)
                 self.assertFalse(packet_matches(self.packet, wrong_report))
 
-    def test_omission_duplicate_orphan_and_wrong_location_are_rejected(self):
+    def test_omission_duplicate_and_orphan_are_rejected(self):
         for case in self.packet["cases"]:
             row = next(line for line in self.report.splitlines()
                        if line.startswith(f"| {case['id']} |"))
