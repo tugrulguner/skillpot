@@ -1,0 +1,9 @@
+# Authored inert pseudocode. Do not execute as target code.
+# expected is the recorded identity at capture; actual is the later snapshot.
+# Required roles: baseline, candidate, checker. A read failure can produce null.
+function classify(expected, actual, read_errors):
+    if every role in [baseline, candidate, checker] has actual[role] == expected[role]:
+        return CURRENT
+    return NOT_CURRENT
+# Defect under the stated contract: two null values compare equal.
+# read_errors and validity of the captured expected identities are ignored.
