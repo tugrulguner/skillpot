@@ -1,0 +1,219 @@
+{
+  "fixture_status": "authored expected outcomes, not execution results",
+  "valid_expected_ids": {
+    "baseline": "base-7",
+    "candidate": "cand-9",
+    "checker": "check-3"
+  },
+  "cases": [
+    {
+      "id": "healthy-control",
+      "read_errors": [],
+      "expected": "CURRENT",
+      "reason": "all three known identities match their valid expectations",
+      "actual": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "captured": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      }
+    },
+    {
+      "id": "baseline-deleted",
+      "read_errors": [
+        "baseline missing"
+      ],
+      "expected": "NOT_CURRENT",
+      "reason": "baseline identity unavailable",
+      "actual": {
+        "baseline": null,
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "captured": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      }
+    },
+    {
+      "id": "baseline-directory-read-error",
+      "read_errors": [
+        "baseline path is a directory; identity read failed"
+      ],
+      "expected": "NOT_CURRENT",
+      "reason": "record read error and unavailable identity; do not compare nulls as equal",
+      "actual": {
+        "baseline": null,
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "captured": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      }
+    },
+    {
+      "id": "checker-changed",
+      "read_errors": [],
+      "expected": "NOT_CURRENT",
+      "reason": "checker differs from valid expected identity",
+      "actual": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-4"
+      },
+      "captured": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      }
+    },
+    {
+      "id": "source-changed",
+      "read_errors": [],
+      "expected": "NOT_CURRENT",
+      "reason": "candidate/source identity differs from expected",
+      "actual": {
+        "baseline": "base-7",
+        "candidate": "cand-10",
+        "checker": "check-3"
+      },
+      "captured": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      }
+    },
+    {
+      "id": "both-unavailable",
+      "read_errors": [
+        "baseline unavailable",
+        "candidate unavailable"
+      ],
+      "expected": "NOT_CURRENT",
+      "reason": "two unknown identities do not equal a valid identity or each other for CURRENT",
+      "actual": {
+        "baseline": null,
+        "candidate": null,
+        "checker": "check-3"
+      },
+      "captured": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      }
+    },
+    {
+      "id": "missing-coverage",
+      "read_errors": [
+        "checker identity not recorded"
+      ],
+      "expected": "NOT_CURRENT",
+      "reason": "all required identities must be known and covered",
+      "actual": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": null
+      },
+      "captured": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      }
+    },
+    {
+      "id": "changed-between-snapshots",
+      "initial": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "final": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "continuity_observed": false,
+      "expected": "CONTINUITY_UNPROVEN",
+      "reason": "matching endpoint snapshots do not establish identity continuity"
+    },
+    {
+      "id": "unknown-at-both-snapshots",
+      "captured": {
+        "baseline": null,
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "actual": {
+        "baseline": null,
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "read_errors": [],
+      "expected": "NOT_CURRENT",
+      "reason": "unknown captured identity is invalid even when later identity is also null"
+    },
+    {
+      "id": "malformed-checker",
+      "captured": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "actual": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": false
+      },
+      "read_errors": [],
+      "expected": "NOT_CURRENT",
+      "reason": "boolean is not a valid identity string"
+    },
+    {
+      "id": "read-error-with-retained-value",
+      "captured": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "actual": {
+        "baseline": "base-7",
+        "candidate": "cand-9",
+        "checker": "check-3"
+      },
+      "read_errors": [
+        "baseline read failed; stale value retained"
+      ],
+      "expected": "NOT_CURRENT",
+      "reason": "recorded read failure overrides equal cached identity values"
+    }
+  ],
+  "verifier_quality_cases": [
+    {
+      "id": "wrong-reason",
+      "scenario": "verifier rejects checker-changed as 'baseline missing'",
+      "expected": "REJECT_AS_INVALID_VERIFIER_RESULT",
+      "why": "rejecting for the wrong reason does not establish the required identity rule"
+    },
+    {
+      "id": "control-failure",
+      "scenario": "verifier rejects healthy-control",
+      "expected": "REJECT_AS_INVALID_VERIFIER_RESULT",
+      "why": "a failed healthy control prevents qualification"
+    }
+  ],
+  "transfer_case": {
+    "id": "unrelated-output-path-guarantee",
+    "guarantee": "an approved report writer refuses an already existing destination rather than overwriting it",
+    "failure_model": "destination file already exists or resolves through a symlink to an existing file",
+    "independent_expected": "refuse before write; original bytes remain unchanged",
+    "counterexample": "writer truncates the existing file before refusing",
+    "handoff": "propose a disposable isolated path-control test; execution requires explicit permission; do not edit target or install a hook"
+  }
+}
