@@ -90,6 +90,37 @@ class PerformanceInvestigationBundleTests(unittest.TestCase):
         self.assertNotIn("expected/investigation.md", " ".join(names))
         self.assertIn("complete upstream MIT `LICENSE` notice", (BUNDLE / "provenance.md").read_text())
 
+    def test_current_public_selection_has_exact_complete_hashes_and_strict_receipts(self):
+        record = json.loads((ROOT / "docs/performance-investigation-distribution.json").read_text())
+        pin = "ca4246d4c2eabdb22da5d75af7adafbc230d06c2"
+        self.assertEqual(record["source_commit"], pin)
+        self.assertEqual(record["skill"], "performance-investigation")
+        expected_names = {"SKILL.md", "provenance.md", "compatibility.md",
+                          "assets/report-template.md", "assets/checklist.md",
+                          "assets/practice/README.md", "assets/practice/request.md",
+                          "assets/practice/provenance.json"} | {
+                              "assets/practice/sources/" + name for name in FILES}
+        actual = {p.relative_to(BUNDLE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                  for p in BUNDLE.rglob("*") if p.is_file()}
+        self.assertEqual(set(actual), expected_names)
+        self.assertEqual(len(actual), 11)
+        self.assertEqual(record["bundle_files"], 11)
+        self.assertEqual(actual, record["source_files"])
+        self.assertEqual(actual, record["installed_files"])
+        for flag in ("passed", "selected_only", "lock_ref_verified", "list_verified",
+                     "selected_removal_verified", "sibling_preserved"):
+            self.assertIs(record[flag], True, flag)
+        self.assertEqual(set(record["lock"]["skills"]), {"performance-investigation"})
+        entry = record["lock"]["skills"]["performance-investigation"]
+        self.assertEqual(entry["ref"], pin)
+        self.assertEqual(entry["source"], "tugrulguner/skillpot")
+        self.assertEqual(entry["skillPath"], "skills/performance-investigation/SKILL.md")
+        guide = (ROOT / "docs/performance-investigation-first-use.md").read_text()
+        self.assertIn("tree/" + pin + " --skill performance-investigation", guide)
+        self.assertNotIn("SOURCE_PIN_PENDING", guide)
+        self.assertNotIn("tree/v0.5.0 --skill performance-investigation", guide)
+        self.assertNotIn("/Users/", json.dumps(record))
+
     def test_h1_contrast_has_competing_predictions_and_ambiguity(self):
         text = (BUNDLE / "assets/checklist.md").read_text().lower()
         for phrase in ("projection-on/off ablation", "artifact and contract", "healthy response/error",

@@ -14,7 +14,7 @@ for (const width of [1280, 390]) {
     await page.evaluate(() => document.fonts.ready);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await paragraph.screenshot({ path: testInfo.outputPath(`invariant-audit-${width}.png`) });
-    const link = page.getByRole('link', { name: 'first-use guide', exact: true });
+    const link = paragraph.getByRole('link', { name: 'first-use guide', exact: true });
     await expect(link).toHaveAttribute('href', 'https://github.com/tugrulguner/skillpot/blob/main/docs/invariant-audit-first-use.md');
     await page.goto('/catalogue/');
     const heading = page.getByRole('heading', { name: 'Invariant-audit — current source only', exact: true });

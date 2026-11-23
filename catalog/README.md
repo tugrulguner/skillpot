@@ -65,7 +65,7 @@ The original [change-impact](../skills/change-impact/SKILL.md) bundle maps a spe
 diff to callers, contracts, configuration, docs and focused verification needs. It
 produces exactly `impact.md` and `verification.md`, linking static evidence and
 explicit unknowns without claiming runtime reachability or automatically running tests.
-It is one of seventeen bundles included in published v0.5.0; current source has eighteen bundles.
+It is one of seventeen bundles included in published v0.5.0; current source has nineteen bundles.
 Use the [one-command first-use guide](../docs/change-impact-first-use.md), also
 [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/change-impact-first-use.md).
 This is instruction distribution, not a custom dependency analyzer or task-efficacy claim.
@@ -78,7 +78,7 @@ evidence. Execution/dependencies require explicit permission in an owned isolate
 Not reproduced and Blocked are honest outcomes; an unrelated failure is not reproduction,
 and an authored control is not a released product fix. See the [one-command first-use guide](../docs/bug-repro-first-use.md),
 also [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/bug-repro-first-use.md).
-It is one of seventeen bundles included in stable v0.5.0; current source has eighteen bundles.
+It is one of seventeen bundles included in stable v0.5.0; current source has nineteen bundles.
 
 ## Incident-triage — published in v0.5.0
 
@@ -89,14 +89,14 @@ Inspection-only by default; it does not silently run diagnostics or apply fixes.
 A failed CI gate is not automatically a customer outage, and a passing retry is not
 proof of a resolved cause. See the [one-command first-use guide](../docs/incident-triage-first-use.md),
 also [available on GitHub](https://github.com/tugrulguner/skillpot/blob/main/docs/incident-triage-first-use.md).
-It is one of seventeen bundles included in stable v0.5.0; current source has eighteen bundles.
+It is one of seventeen bundles included in stable v0.5.0; current source has nineteen bundles.
 
 ## Benchmark-audit — published in v0.5.0
 
 The original [benchmark-audit](../skills/benchmark-audit/SKILL.md) workflow reviews
 existing benchmark evidence and produces `benchmark-audit.md` with four claim-level
 verdicts and explicit evidence boundaries. Inspection-only: it does not run benchmarks
-or models. It is one of seventeen bundles included in stable v0.5.0; current source has eighteen bundles.
+or models. It is one of seventeen bundles included in stable v0.5.0; current source has nineteen bundles.
 See the [first-use guide](../docs/benchmark-audit-first-use.md).
 Source availability is not evidence of task efficacy.
 
@@ -143,7 +143,7 @@ It names competing explanations, contrasts, controls, invariants, units, repetit
 full schedule/budget, frozen analysis and a permission-aware handoff. It is inspection
 and planning only: no experiment, benchmark, model or client runs. It permits blocked
 and no-new-experiment outcomes. It is one of seventeen bundles included in published
-v0.5.0; current source has eighteen bundles. The accepted retrospective fixture and its expected report/oracle
+v0.5.0; current source has nineteen bundles. The accepted retrospective fixture and its expected report/oracle
 are separate from the installed bundle's input-only practice. See the
 [experiment-design first-use guide](../docs/experiment-design-first-use.md).
 
@@ -154,7 +154,7 @@ criterion-linked checks within existing authorization and produces `verification
 with actual-byte evidence. It discovers project commands, plans when execution is not
 authorized, and offers optional qualified project recipes and owner-reviewed diff-triggered
 rule candidates. Input-only practice stays separate from authored generated-input worked
-examples. It is one of seventeen bundles included in published v0.5.0; current source has eighteen bundles.
+examples. It is one of seventeen bundles included in published v0.5.0; current source has nineteen bundles.
 See the [first-use guide](../docs/verification-loop-first-use.md). Source checks do not
 establish native activation or task efficacy.
 
@@ -173,6 +173,17 @@ selected removal and sibling-preservation checks. See the
 [invariant-audit first-use guide](../docs/invariant-audit-first-use.md) and
 [distribution record](../docs/invariant-audit-distribution.json). These are filesystem
 checks, not native activation or task-efficacy evidence.
+
+## Performance-investigation — current source only
+
+The original [performance-investigation](../skills/performance-investigation/SKILL.md)
+0.1.0 workflow investigates one measured symptom, producing seven-section
+`investigation.md` with competing explanations, discriminating checks, known and
+unresolved findings, and a prioritized permission-aware handoff. It is distinct from
+benchmark-audit: it diagnoses a bottleneck rather than auditing whether a performance
+claim is supported. Inspection-first; diagnostic execution requires bounded authority and does not authorize optimization or target edits.
+Current source only, not included in stable v0.5.0's seventeen skills, and not an
+automatic update. Its separately pinned eleven-file bundle passed isolated installation, hash, source-lock, listing, selected-removal and sibling-preservation checks. See the [first-use guide](../docs/performance-investigation-first-use.md) and [distribution record](../docs/performance-investigation-distribution.json). Filesystem qualification is not native activation or task-efficacy evidence.
 
 ## Selective installation
 

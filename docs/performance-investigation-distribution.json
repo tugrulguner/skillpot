@@ -1,0 +1,58 @@
+{
+  "source_commit": "ca4246d4c2eabdb22da5d75af7adafbc230d06c2",
+  "skill": "performance-investigation",
+  "node": "v22.23.4",
+  "installer": "1.7.6",
+  "source_files": {
+    "SKILL.md": "ada8e1b494e6c6aa3d7f7c0bf549c8173e54c3a009d4dcaf1f0a9e813187e7b0",
+    "assets/checklist.md": "6a3b31d45df8eb49f9e5c6c4a57a03bb6f3f864335c01045a4f0a1dfa54565e8",
+    "assets/practice/README.md": "50fba359610af079795d870db4c3834f0d77adfe50cbddc8cd149a5297077769",
+    "assets/practice/provenance.json": "bc09b29bd8287bce0c7c621d31a7a48f4edbd27e964fb30a56001b3e2faf4b3e",
+    "assets/practice/request.md": "8dfbc8b1658ac9abd378332003a9b09cefc4c77d935630e50976440c353e596a",
+    "assets/practice/sources/DEXPOT-LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+    "assets/practice/sources/candidate-scalar-response.py.txt": "428066da516d10bd43e76f22146e31976340cb02dd3715162aac6b46a51f87fb",
+    "assets/practice/sources/linux-screen.json": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+    "assets/report-template.md": "9d01d32e804f49467d8185d6105f6cca0be7d7297ef3ee4f5e155bdd26b4c1c3",
+    "compatibility.md": "602c38b33a01fc9c4c48f3f539b357fc2da141d5be4f11bcc8a2d90e3b58f8f9",
+    "provenance.md": "73ea6b0a7ff890fd83c08931dca50aa75a08d60f7fee7ab3d3fa3dc17abcdfce"
+  },
+  "installed_files": {
+    "provenance.md": "73ea6b0a7ff890fd83c08931dca50aa75a08d60f7fee7ab3d3fa3dc17abcdfce",
+    "SKILL.md": "ada8e1b494e6c6aa3d7f7c0bf549c8173e54c3a009d4dcaf1f0a9e813187e7b0",
+    "compatibility.md": "602c38b33a01fc9c4c48f3f539b357fc2da141d5be4f11bcc8a2d90e3b58f8f9",
+    "assets/report-template.md": "9d01d32e804f49467d8185d6105f6cca0be7d7297ef3ee4f5e155bdd26b4c1c3",
+    "assets/checklist.md": "6a3b31d45df8eb49f9e5c6c4a57a03bb6f3f864335c01045a4f0a1dfa54565e8",
+    "assets/practice/provenance.json": "bc09b29bd8287bce0c7c621d31a7a48f4edbd27e964fb30a56001b3e2faf4b3e",
+    "assets/practice/README.md": "50fba359610af079795d870db4c3834f0d77adfe50cbddc8cd149a5297077769",
+    "assets/practice/request.md": "8dfbc8b1658ac9abd378332003a9b09cefc4c77d935630e50976440c353e596a",
+    "assets/practice/sources/linux-screen.json": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+    "assets/practice/sources/candidate-scalar-response.py.txt": "428066da516d10bd43e76f22146e31976340cb02dd3715162aac6b46a51f87fb",
+    "assets/practice/sources/DEXPOT-LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958"
+  },
+  "placement": {
+    "agent_is_symlink": false,
+    "canonical_exists": false
+  },
+  "lock": {
+    "version": 1,
+    "skills": {
+      "performance-investigation": {
+        "source": "tugrulguner/skillpot",
+        "ref": "ca4246d4c2eabdb22da5d75af7adafbc230d06c2",
+        "sourceType": "github",
+        "skillPath": "skills/performance-investigation/SKILL.md",
+        "computedHash": "7bc7b9a696ac519977fd550b99748893071dddd520b55b6ab424849132d4c4a3"
+      }
+    }
+  },
+  "passed": true,
+  "selected_only": true,
+  "lock_ref_verified": true,
+  "list_verified": true,
+  "selected_removal_verified": true,
+  "sibling_preserved": true,
+  "schema": 1,
+  "bundle_files": 11,
+  "agent": "claude-code",
+  "scope": "Actual isolated project-local selected filesystem installation, list, lock, removal and sibling-preservation; no native client/model/target execution or task-efficacy claim"
+}

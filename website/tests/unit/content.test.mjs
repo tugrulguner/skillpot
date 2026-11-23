@@ -38,7 +38,7 @@ test('claim-check is current-source and unreleased, separate from the stable rel
     assert.match(text, /claim-check-first-use\.md/);
   }
   assert.match(home, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check/);
-  assert.match(catalogue, /current source has eighteen bundles/);
+  assert.match(catalogue, /current source has nineteen bundles/);
   assert.match(catalogue, /npx skills@1\.7\.6 add https:\/\/github\.com\/tugrulguner\/skillpot\/tree\/044213fd00343e94b4d389c3ca2c0f2909feb79f --skill claim-check/);
   assert.match(map, /claim-check-first-use\.md/);
   assert.match(map, /Published v0\.5\.0 contains seventeen skills/);
@@ -59,7 +59,7 @@ test('benchmark-audit is a source-only inspection workflow, separate from stable
     assert.match(text, /does not run benchmarks|without benchmark or model execution/i);
   }
   assert.match(home, /seventeen skills/);
-  assert.match(catalogue, /current source has eighteen bundles/);
+  assert.match(catalogue, /current source has nineteen bundles/);
   assert.match(map, /Published v0\.5\.0 contains seventeen skills/);
 });
 

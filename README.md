@@ -136,10 +136,27 @@ v0.5.0 and does not update existing installs. Its complete nine-file installatio
 npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/81eddb5bf8c8a0d7e667033af98a546ff6a516cc --skill invariant-audit
 ```
 
+Current source also includes **performance-investigation 0.1.0**, a source-only
+inspection-first workflow for diagnosing one measured symptom. It produces a
+seven-section `investigation.md` with competing hypotheses, discriminators, known
+and unresolved findings, and a smallest permission-aware follow-up. It is distinct
+from benchmark-claim auditing and does not optimize systems. Stable v0.5.0 remains
+at its original seventeen skills; this source-only bundle is not an automatic update.
+See the [performance-investigation first-use guide](docs/performance-investigation-first-use.md).
+
+```sh
+npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/ca4246d4c2eabdb22da5d75af7adafbc230d06c2 --skill performance-investigation
+```
+
+The immutable source pin above contains the complete eleven-file bundle; stable
+v0.5.0 does not contain this workflow. Its isolated installation, exact eleven-file hashes, source lock, listing, removal and sibling preservation were verified; see the first-use guide.
+Inspect existing installation destinations before confirming: installation may
+replace local edits, and existing copies are not automatically updated.
+
 The [current-source hardening guide](docs/skill-hardening.md) records a review of all
 fourteen bundles at the historical snapshot it records, corrected standalone references
 and worked-output consistency, and a fresh individual-installation matrix for every
-bundle at that snapshot. Current source now has eighteen bundles, including source-only `invariant-audit`; the published seventeen-skill release remains unchanged.
+bundle at that snapshot. Current source now has nineteen bundles, including source-only `invariant-audit` and `performance-investigation`; the published seventeen-skill release remains unchanged.
 
 Current source also contains a [Dexpot-only published-guide refresh](docs/published-upstream-refresh.md):
 instruction version 0.3.0 targets Dexpot v0.8.1's path-annotation correction and is included
@@ -162,6 +179,7 @@ Existing installations are not automatically updated.
 | Map a code change to evidenced impacts and focused checks | [change-impact](skills/change-impact/SKILL.md) 0.1.0, published in v0.5.0; produces `impact.md` and `verification.md`; [one-command setup](docs/change-impact-first-use.md) |
 | Audit a performance claim against existing benchmark evidence, without rerunning trials | [benchmark-audit](skills/benchmark-audit/SKILL.md) 0.1.0, published in v0.5.0; inspection-only; [first-use guide](docs/benchmark-audit-first-use.md) |
 | Audit a named technical guarantee against bounded source and observations | [invariant-audit](skills/invariant-audit/SKILL.md) 0.1.0, current source-only (not in v0.5.0); produces `invariant-audit.md`; inspection-first; [first-use guide](docs/invariant-audit-first-use.md) |
+| Diagnose one measured performance symptom and distinguish plausible causes | [performance-investigation](skills/performance-investigation/SKILL.md) 0.1.0, current source-only (not in v0.5.0); produces seven-section `investigation.md`; [first-use guide](docs/performance-investigation-first-use.md) |
 | Plan a falsifiable, permission-aware experiment before new observations | [experiment-design](skills/experiment-design/SKILL.md) 0.1.0, published in v0.5.0; `experiment.md`; [first-use guide](docs/experiment-design-first-use.md); no execution by default |
 | Verify a code change against user-visible criteria | [verification-loop](skills/verification-loop/SKILL.md) 0.2.0, published in v0.5.0; `verification.md`, optional qualified recipe and rule candidates; executes within authorization, plans otherwise; [first-use guide](docs/verification-loop-first-use.md) |
 | Review a draft's factual claims against bounded evidence | [claim-check](skills/claim-check/SKILL.md) 0.1.1, published in v0.5.0; [one-command setup](docs/claim-check-first-use.md) |
