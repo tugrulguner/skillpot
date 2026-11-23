@@ -1,0 +1,34 @@
+{
+  "kind": "proposal-source-packet-not-new-benchmark",
+  "repository": "https://github.com/tugrulguner/dexpot",
+  "source_commit": "798c449fd1337404c388abb2a177c0302ba35fc0",
+  "source_status": "Published summary receipts; original per-trial client streams, histograms and wheel bytes are not supplied. Recorded validity/identity flags remain attributed, not independently reproduced.",
+  "files": [
+    {
+      "local_path": "sources/linux-screen.json",
+      "upstream_path": "benchmarks/scalar_response/linux-screen.json",
+      "url": "https://github.com/tugrulguner/dexpot/blob/798c449fd1337404c388abb2a177c0302ba35fc0/benchmarks/scalar_response/linux-screen.json",
+      "file_sha256": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+      "bytes": 33073,
+      "adaptation": "none; fetched exact public snapshot"
+    },
+    {
+      "local_path": "sources/DEXPOT-LICENSE",
+      "upstream_path": "LICENSE",
+      "url": "https://github.com/tugrulguner/dexpot/blob/798c449fd1337404c388abb2a177c0302ba35fc0/LICENSE",
+      "file_sha256": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+      "bytes": 1069,
+      "adaptation": "none; fetched exact public snapshot"
+    },
+    {
+      "local_path": "sources/candidate-scalar-response.py.txt",
+      "upstream_path": "src/dexpot/_scalar_response.py",
+      "source_commit": "92e8561aa96f7e799279b89c9c9453834f9e0cda",
+      "url": "https://github.com/tugrulguner/dexpot/blob/92e8561aa96f7e799279b89c9c9453834f9e0cda/src/dexpot/_scalar_response.py",
+      "file_sha256": "428066da516d10bd43e76f22146e31976340cb02dd3715162aac6b46a51f87fb",
+      "bytes": 3879,
+      "adaptation": "none; inert text filename only; inspect without importing or executing"
+    }
+  ],
+  "license_parity": "Full public MIT notice at both source commits is byte-identical to sources/DEXPOT-LICENSE"
+}

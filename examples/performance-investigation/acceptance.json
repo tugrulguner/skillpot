@@ -1,0 +1,54 @@
+{
+  "kind": "authored retrospective fixed-packet acceptance; not benchmark runs or arbitrary-report grading",
+  "cause": "UNRESOLVED",
+  "target_executed": false,
+  "raw_streams_supplied": false,
+  "goodput_ratio": 0.9686205521773416,
+  "p99_ratio": 1.296943231441048,
+  "invalid_cells": {
+    "item-1-candidate": 6,
+    "fallback-control": 2
+  },
+  "hypotheses": {
+    "H1": "UNRESOLVED",
+    "H2": "UNRESOLVED",
+    "H3": "UNRESOLVED",
+    "H4": "CONTRADICTED_AT_RECORDED_ENDPOINTS"
+  },
+  "reviewed_report_sha256": "6cd867809ffcc0581115ec342f49fb6f47c81ad5a861353dd752d92fe6b7debd",
+  "acceptance_cases": [
+    {
+      "id": "recorded-slowdown",
+      "expectation": "Recompute goodput from successful replies and duration_us for item-2; retain ratios below one for goodput and above one for adjusted closed-loop p99. One pair is a recorded observation, not a repeated causal regression."
+    },
+    {
+      "id": "competing-explanations",
+      "expectation": "H1 projection-path cost, H2 run/order/environment variation and H3 observer effects remain unresolved; each needs a discriminating contrast, counterevidence and stated limits. H4 is contradicted only by recorded endpoint states, not eliminated continuously or promoted to a proven cause."
+    },
+    {
+      "id": "invalid-comparison",
+      "expectation": "Reject a selected pair with mismatched workload/connections/duration or reported errors/invalid flags. Preserve all eight summary cells, both timeout-invalid cells and failed-screen verdict."
+    },
+    {
+      "id": "missing-identity",
+      "expectation": "Missing or mismatched selected wheel identities cannot qualify the selected observation; declared wheel/source identities and raw-record digests do not authenticate absent bytes."
+    },
+    {
+      "id": "measurement-boundary",
+      "expectation": "Keep adjusted closed-loop capacity percentiles separate from scheduled-arrival latency budgets; do not infer waiting from percentile subtraction or generalize to other workloads."
+    },
+    {
+      "id": "healthy-control-failure",
+      "expectation": "A failed response/transport/runtime/activation control invalidates the diagnostic contrast even when its other labels pass; an unrelated setup failure is not evidence for a proposed mechanism."
+    },
+    {
+      "id": "permission-budget",
+      "expectation": "Inspect supplied records/code only and create a fresh external report. Any new profiler, repeated comparison, ablation, optimization or source/configuration change remains proposed without additional authority."
+    },
+    {
+      "id": "source-is-not-profile",
+      "expectation": "The inert candidate source shows eligibility guards, generated projection and per-thread binding; it supplies no elapsed-time profile, proves no hot path and does not establish which wheel bytes actually executed."
+    }
+  ],
+  "test_limits": "Fixed record/ratio/identity mutations, bounded containing-section/row checks and a parent-reviewed report identity seal are separate from semantic source review. The seal fixes this authored artifact, not arbitrary report truth. No causal engine, native agent trial, held-out rubric, raw execution authentication or efficacy result."
+}

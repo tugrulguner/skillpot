@@ -1,0 +1,7 @@
+# Worked performance investigation packet
+
+This standalone packet is a retrospective investigation of the measured item-2 candidate/control pair from a focused Linux ARM64 Docker-loopback free-threaded scalar-response screen. It asks what might explain the lower recorded goodput and higher tail latency, and what check should come next. It is not a benchmark-audit verdict, new run, causal finding, optimization recommendation, or broad performance claim.
+
+Read `request.md` for the bounded task. The owner supplies a fresh external output directory; the task produces `investigation.md` there and excludes the expected report and acceptance file from its inputs. `expected/investigation.md` is a separately authored review artifact for readers evaluating this proposal, not the task's write destination or answer lookup. `sources/` contains the exact public source snapshot, inert source-code text, and MIT license; `provenance.json` identifies their public origins and limits. The retained source packet contains no private repository paths. The source-code text is for inspection only; do not import or execute it.
+
+The report retains all eight screen cells, including the timeout-invalid item-1 candidate and fallback-control trials. The screen failed; item-2 is the only complete valid screen pair and cannot by itself establish the cause of its observed difference. No benchmark, profiler, client, server, or embedded command was run to prepare this packet.

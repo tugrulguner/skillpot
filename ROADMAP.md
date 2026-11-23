@@ -166,6 +166,9 @@ These entries do not claim completed evaluations or authorize implementation.
       baseline and permitted traces to produce `investigation.md`, separating
       observations, eliminated hypotheses, supported mechanisms and remaining
       qualification. Diagnosis does not silently authorize optimization or system changes.
+      The [proposal and worked packet](docs/performance-investigation-proposal.md) define
+      the diagnostic procedure, seven-section report and bounded integrity checks.
+      Design review remains pending; this does not authorize implementation.
 - [ ] Implement `release-verification`: produce `release-verification.md` binding
       applicable source/build/install/consumer/CI/publication/deployment gates to
       exact candidate identities and explicit gaps. Verify the package's actual
