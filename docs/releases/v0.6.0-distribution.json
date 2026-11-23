@@ -1,0 +1,883 @@
+{
+  "schema_version": 1,
+  "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+  "passed": true,
+  "bundle_files": 133,
+  "skills": {
+    "benchmark-audit": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "benchmark-audit",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "456ba21ddb88449279e8a495aacdfa64763397744ddcb09afed68148d0c52629",
+        "assets/benchmark-audit-template.md": "ad7190aa3a704045b9ce0adef66bee358f4abfa1d519602b09efb54f06c37a2a",
+        "assets/practice/DEXPOT-LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "assets/practice/claims.md": "ef032f669cca8a19ec32ecf7514140683881733157de0d321e9faea725205fdb",
+        "assets/practice/linux-screen.json": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+        "assets/practice/linux-screen.provenance.json": "3c8808a35b5d2c19f2dbd4f6a2faa767b22c8bcf14762abebafacb4183d9d28b",
+        "assets/practice/provenance.md": "2e5ceaa7a8e07ba2efbbe6e4f285a702f1fc7907def83760e29ad5f382160a88",
+        "compatibility.md": "b5a1df332b62047f5545b18469c18a49cb359c381e606c88ccda489644a934a2",
+        "provenance.md": "fffee25f8892e720ab9c1742cd255403d6d765a0a559c30cd023404d9d76e7e6",
+        "references/evidence-checklist.md": "4d1aa595e616d1a04aa258f055c81d0d445e905fdf321a61941fbe573cbcf8e9"
+      },
+      "installed_files": {
+        "provenance.md": "fffee25f8892e720ab9c1742cd255403d6d765a0a559c30cd023404d9d76e7e6",
+        "SKILL.md": "456ba21ddb88449279e8a495aacdfa64763397744ddcb09afed68148d0c52629",
+        "compatibility.md": "b5a1df332b62047f5545b18469c18a49cb359c381e606c88ccda489644a934a2",
+        "references/evidence-checklist.md": "4d1aa595e616d1a04aa258f055c81d0d445e905fdf321a61941fbe573cbcf8e9",
+        "assets/benchmark-audit-template.md": "ad7190aa3a704045b9ce0adef66bee358f4abfa1d519602b09efb54f06c37a2a",
+        "assets/practice/linux-screen.json": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+        "assets/practice/provenance.md": "2e5ceaa7a8e07ba2efbbe6e4f285a702f1fc7907def83760e29ad5f382160a88",
+        "assets/practice/linux-screen.provenance.json": "3c8808a35b5d2c19f2dbd4f6a2faa767b22c8bcf14762abebafacb4183d9d28b",
+        "assets/practice/DEXPOT-LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "assets/practice/claims.md": "ef032f669cca8a19ec32ecf7514140683881733157de0d321e9faea725205fdb"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "benchmark-audit": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/benchmark-audit/SKILL.md",
+            "computedHash": "35949c81fe56dede798f03d9fa94bfa9150cc2f449c7434f7a81a0da426e9e45"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "bug-repro": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "bug-repro",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "eab2c460355a22ae0c4c88083a1c74d573c168066eca8cefe73b9dc0e4c5bf9b",
+        "assets/example-input.md": "d1450ec349bcd4ca6fde15bdad2a0fa19b11ace7ede3d86d0f043d0986006880",
+        "assets/reduction-log-template.md": "6ed2d5f8a4a9711dd7692b78c023801c9a39eec5db925ad56f0378d9b38fcd6c",
+        "assets/repro-template.md": "8e307167615de89c51c60b71d86b7789c59250d52961fb4d4ac3d362696f7324",
+        "assets/review-checklist.md": "8ee4c684e022f16a6eda2051e6927aa33000be9bff08509c61510056dd0fc67a",
+        "compatibility.md": "013d4562c166386fe0be3efe87e522aae7c3f5e432ce850cf4d314a34bf9674a",
+        "provenance.md": "44839291949a4d27ad9cf5d67503c44939bab97766cd85c177a443d99ec7d393"
+      },
+      "installed_files": {
+        "provenance.md": "44839291949a4d27ad9cf5d67503c44939bab97766cd85c177a443d99ec7d393",
+        "SKILL.md": "eab2c460355a22ae0c4c88083a1c74d573c168066eca8cefe73b9dc0e4c5bf9b",
+        "compatibility.md": "013d4562c166386fe0be3efe87e522aae7c3f5e432ce850cf4d314a34bf9674a",
+        "assets/example-input.md": "d1450ec349bcd4ca6fde15bdad2a0fa19b11ace7ede3d86d0f043d0986006880",
+        "assets/review-checklist.md": "8ee4c684e022f16a6eda2051e6927aa33000be9bff08509c61510056dd0fc67a",
+        "assets/reduction-log-template.md": "6ed2d5f8a4a9711dd7692b78c023801c9a39eec5db925ad56f0378d9b38fcd6c",
+        "assets/repro-template.md": "8e307167615de89c51c60b71d86b7789c59250d52961fb4d4ac3d362696f7324"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "bug-repro": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/bug-repro/SKILL.md",
+            "computedHash": "5d11aafca116fff16d672856c1cb4e12c9e2191ca30c54a01b3c23d65fdf2e1d"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "change-impact": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "change-impact",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "e131e0a344ff15523bdd0161ac5520caacf4ff24031e7ac04ee37e056e5e4758",
+        "assets/example-input.md": "5212791b8938487131bae845e13a50b53ca6dd26aa21b3c516053513cc04d6d2",
+        "assets/impact-template.md": "4fa28403f5af33f8eba8fb9416b513f70978794526b4afe24d321db009b0ff8c",
+        "assets/review-checklist.md": "6ca0420b3efda946f85f0a2d8d58cc230f4d19c747357eab0f264ff9ec6f9b6f",
+        "assets/verification-template.md": "42c9f24f804e6c8512b0ad43218f089eca31c31a358097853bda597c6daa5f01",
+        "compatibility.md": "d41ab9b1d3667a6014be40bfd3c3428fae6012263f01bbe8b314932e95e3db04",
+        "provenance.md": "4e4daa7bdb4cb17d058ac8949f09df35faa86f6cd39e0829ef8dace58b74a391"
+      },
+      "installed_files": {
+        "provenance.md": "4e4daa7bdb4cb17d058ac8949f09df35faa86f6cd39e0829ef8dace58b74a391",
+        "SKILL.md": "e131e0a344ff15523bdd0161ac5520caacf4ff24031e7ac04ee37e056e5e4758",
+        "compatibility.md": "d41ab9b1d3667a6014be40bfd3c3428fae6012263f01bbe8b314932e95e3db04",
+        "assets/example-input.md": "5212791b8938487131bae845e13a50b53ca6dd26aa21b3c516053513cc04d6d2",
+        "assets/review-checklist.md": "6ca0420b3efda946f85f0a2d8d58cc230f4d19c747357eab0f264ff9ec6f9b6f",
+        "assets/impact-template.md": "4fa28403f5af33f8eba8fb9416b513f70978794526b4afe24d321db009b0ff8c",
+        "assets/verification-template.md": "42c9f24f804e6c8512b0ad43218f089eca31c31a358097853bda597c6daa5f01"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "change-impact": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/change-impact/SKILL.md",
+            "computedHash": "395abb4a1f4ef31671f41b152809ac27c5a9ef2465e23ed951e207af82d46bcd"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "claim-check": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "claim-check",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "be7e21d97464e19a0f4bf213d22dae00dbb14aae659e90d9bda77ef644446b2d",
+        "assets/claims-template.md": "072afe092aff81fef1fb520447d4e9f13ab1112a5200679a4886186f2e4144a9",
+        "assets/example-draft.md": "212af375e8425cf9785d6d546eb099dbd173df74119c76c094b4ea4fa9de72a9",
+        "assets/example-sources.md": "119d9f657b1f8eb270c8450194efe042543163570c4948b57221bd8f4fa4d68e",
+        "assets/review-checklist.md": "84432659ac3343549896524742e71f4e818e6ae2d0e43a73b66ee238dcc2895a",
+        "assets/review-template.md": "34c8327ccd39feae65b526949316ac9e83e2e0e1dbbfeb344318f1edca98d33a",
+        "compatibility.md": "5fa434e27593326c56a05c48dfb4705bd98a19527f423bebd5d9864e9092f6f3",
+        "provenance.md": "39a9c1385f17b01da9a0253465a0fb39ac4465b56abfed95f811d0c323d020ad"
+      },
+      "installed_files": {
+        "provenance.md": "39a9c1385f17b01da9a0253465a0fb39ac4465b56abfed95f811d0c323d020ad",
+        "SKILL.md": "be7e21d97464e19a0f4bf213d22dae00dbb14aae659e90d9bda77ef644446b2d",
+        "compatibility.md": "5fa434e27593326c56a05c48dfb4705bd98a19527f423bebd5d9864e9092f6f3",
+        "assets/review-checklist.md": "84432659ac3343549896524742e71f4e818e6ae2d0e43a73b66ee238dcc2895a",
+        "assets/example-draft.md": "212af375e8425cf9785d6d546eb099dbd173df74119c76c094b4ea4fa9de72a9",
+        "assets/review-template.md": "34c8327ccd39feae65b526949316ac9e83e2e0e1dbbfeb344318f1edca98d33a",
+        "assets/example-sources.md": "119d9f657b1f8eb270c8450194efe042543163570c4948b57221bd8f4fa4d68e",
+        "assets/claims-template.md": "072afe092aff81fef1fb520447d4e9f13ab1112a5200679a4886186f2e4144a9"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "claim-check": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/claim-check/SKILL.md",
+            "computedHash": "4b39f9e7fb456588c9288c87d6f2f661faefa7d946eaaa5381f0c1921c81774b"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "decision-brief": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "decision-brief",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "LICENSES/github-spec-kit-MIT.txt": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+        "SKILL.md": "6bd65553068a852714b57fd877751a9fa6b8418b944a8ce7c2733e07eb0bb869",
+        "assets/brief-template.md": "1df6e7c25ec27a1da17d8f9daade1c02d38892a7e7b0fe181fe81f6f38969e16",
+        "assets/evidence-template.md": "b4cc3d4fee14655e66f4b0538656fa4b9b3c429c8409bf53b4da8164d38cd3bd",
+        "compatibility.md": "4756f6dee4b35a0c59fac4c38e834c79773d2aa59c90ef20d6e9fb2a22d961dc",
+        "provenance.md": "9590715dae6f78e652ce3da00ff6ea0b6c96f06a65292588fb0f1cf046221ab7"
+      },
+      "installed_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "9590715dae6f78e652ce3da00ff6ea0b6c96f06a65292588fb0f1cf046221ab7",
+        "SKILL.md": "6bd65553068a852714b57fd877751a9fa6b8418b944a8ce7c2733e07eb0bb869",
+        "compatibility.md": "4756f6dee4b35a0c59fac4c38e834c79773d2aa59c90ef20d6e9fb2a22d961dc",
+        "LICENSES/github-spec-kit-MIT.txt": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+        "assets/evidence-template.md": "b4cc3d4fee14655e66f4b0538656fa4b9b3c429c8409bf53b4da8164d38cd3bd",
+        "assets/brief-template.md": "1df6e7c25ec27a1da17d8f9daade1c02d38892a7e7b0fe181fe81f6f38969e16"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "decision-brief": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/decision-brief/SKILL.md",
+            "computedHash": "66ff75195c27182e6ba7ccd9d00401ea0b6ee51a85b1c863c7381fdeb0278dea"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "dexpot": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "dexpot",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "SKILL.md": "616462a22b628b3cd7232d9258bda6c6f322ce15cc842b2c0a5c5b033dbf887f",
+        "compatibility.md": "679c86991d4542a32f7b267e198a4523a44e5c0a5886e07a866cf45c1b4eb892",
+        "provenance.md": "1d99dd11a6f0e83ea50bbd26516e0f0ec7c9089813505802d6a3ee2d6bb8b129",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "064792cb9897483af66fa1199cbcf4be97cc3e26417533dbb87a36e471a3fa0d"
+      },
+      "installed_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "1d99dd11a6f0e83ea50bbd26516e0f0ec7c9089813505802d6a3ee2d6bb8b129",
+        "SKILL.md": "616462a22b628b3cd7232d9258bda6c6f322ce15cc842b2c0a5c5b033dbf887f",
+        "compatibility.md": "679c86991d4542a32f7b267e198a4523a44e5c0a5886e07a866cf45c1b4eb892",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "064792cb9897483af66fa1199cbcf4be97cc3e26417533dbb87a36e471a3fa0d"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "dexpot": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/dexpot/SKILL.md",
+            "computedHash": "eb04852cad598760742f4da6e0bc9367c3a65f702158c0b0b114eba9c6a878cc"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "document-actions": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "document-actions",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "8478eadf571e4562ac5c0a8f7fd0b14f4cdc3d4cc2190abf5ccc76032da0e59c",
+        "assets/actions-template.md": "8b1f7e51f314770284c127d5febc758ad6943803c9b6159e3db79dbba9b50654",
+        "assets/questions-template.md": "8551efeeecec0c6b0010776379e533d80471d10b490dd6f08c757cced089d66f",
+        "assets/review-checklist.md": "f7984192de83e49453dcd9a9b0dbaa2a6defc648ff4ec0584a2c663b021b7fc4",
+        "compatibility.md": "20b52566be980db342559261f02c86d77d39406dbcc51563f95836c8750c2c14",
+        "provenance.md": "98e3d3cfdf987b41f09a35ed13aa61ddb7cacd4c6d320d45b9ca9216578674da"
+      },
+      "installed_files": {
+        "provenance.md": "98e3d3cfdf987b41f09a35ed13aa61ddb7cacd4c6d320d45b9ca9216578674da",
+        "SKILL.md": "8478eadf571e4562ac5c0a8f7fd0b14f4cdc3d4cc2190abf5ccc76032da0e59c",
+        "compatibility.md": "20b52566be980db342559261f02c86d77d39406dbcc51563f95836c8750c2c14",
+        "assets/review-checklist.md": "f7984192de83e49453dcd9a9b0dbaa2a6defc648ff4ec0584a2c663b021b7fc4",
+        "assets/questions-template.md": "8551efeeecec0c6b0010776379e533d80471d10b490dd6f08c757cced089d66f",
+        "assets/actions-template.md": "8b1f7e51f314770284c127d5febc758ad6943803c9b6159e3db79dbba9b50654"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "document-actions": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/document-actions/SKILL.md",
+            "computedHash": "cfa8424b36efe6a97f216a3706a78b014ccdf7bafc47a78ef553d88e335572c7"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "experiment-design": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "experiment-design",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "660f23aff759b04ea90e473c0a5775d12ed136cbd91c328f42482169de78e78f",
+        "assets/checklist.md": "ef69f74f778d57398caa883568375c25c0c95e154b48d373a66ba69605d7bd2b",
+        "assets/practice-input.md": "f5a3bc669b8ed24724790536fd2e6f88c6248bc64d0ab9bea2691114253989c9",
+        "assets/report-template.md": "e09ac20fbb941cb9818cadc27adcd4d54fd483c9657e2299006e809abd732cdd",
+        "compatibility.md": "c911a1d912e892cb6e8a97e8ec6f7c01b9b8ba6f2b794aae212846cae27f5fd4",
+        "provenance.md": "cde55a43dceff0a77c35de0e490e4adf3b15483b75d9c463c6ed55600fc30507"
+      },
+      "installed_files": {
+        "provenance.md": "cde55a43dceff0a77c35de0e490e4adf3b15483b75d9c463c6ed55600fc30507",
+        "SKILL.md": "660f23aff759b04ea90e473c0a5775d12ed136cbd91c328f42482169de78e78f",
+        "compatibility.md": "c911a1d912e892cb6e8a97e8ec6f7c01b9b8ba6f2b794aae212846cae27f5fd4",
+        "assets/report-template.md": "e09ac20fbb941cb9818cadc27adcd4d54fd483c9657e2299006e809abd732cdd",
+        "assets/checklist.md": "ef69f74f778d57398caa883568375c25c0c95e154b48d373a66ba69605d7bd2b",
+        "assets/practice-input.md": "f5a3bc669b8ed24724790536fd2e6f88c6248bc64d0ab9bea2691114253989c9"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "experiment-design": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/experiment-design/SKILL.md",
+            "computedHash": "d7a09483ada107b72dca2e61ce5952d80164f74b45394e41154229fc92302faf"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "incident-triage": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "incident-triage",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "aca3dac2be9c1d11e4e1b6bb51dd23f4718dae68007bbfce435d7696c23f8f99",
+        "assets/example-input.md": "2610dd5498f059821a15a04e48b26d77bcf0f9693b1741c4e2e63d3f421f465f",
+        "assets/incident-template.md": "e98417a44dd03af471d123245e0303d5994b5e8042e23b0d94a0222cb9f4b543",
+        "assets/review-checklist.md": "a1227788a427bf9e96e363d90f5d1ebf58a138423df8d1c0e734527b2444a599",
+        "assets/timeline-template.md": "398e81d85797f562f5eaef6adc3806c59ffb151133922d15954a2f11163ca476",
+        "compatibility.md": "b018af279671b3a357e7d8810b175f9267c5972f00c57668c2d9ef3b4296c02e",
+        "provenance.md": "a2721a60be807704ffcf581537cc217cd28228010488a35b6c86a637dcf79582"
+      },
+      "installed_files": {
+        "provenance.md": "a2721a60be807704ffcf581537cc217cd28228010488a35b6c86a637dcf79582",
+        "SKILL.md": "aca3dac2be9c1d11e4e1b6bb51dd23f4718dae68007bbfce435d7696c23f8f99",
+        "compatibility.md": "b018af279671b3a357e7d8810b175f9267c5972f00c57668c2d9ef3b4296c02e",
+        "assets/example-input.md": "2610dd5498f059821a15a04e48b26d77bcf0f9693b1741c4e2e63d3f421f465f",
+        "assets/review-checklist.md": "a1227788a427bf9e96e363d90f5d1ebf58a138423df8d1c0e734527b2444a599",
+        "assets/incident-template.md": "e98417a44dd03af471d123245e0303d5994b5e8042e23b0d94a0222cb9f4b543",
+        "assets/timeline-template.md": "398e81d85797f562f5eaef6adc3806c59ffb151133922d15954a2f11163ca476"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "incident-triage": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/incident-triage/SKILL.md",
+            "computedHash": "a4c7b9c7634c8f61ecaac3c64da01de3e08a1246ed22cbfb17ddeb94d9fed315"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "intpot-cli": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "intpot-cli",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "LICENSE": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "SKILL.md": "faeac043de555677ab7da6ffc298d0afc63d28e9c448e10d6074b4e65617aaa2",
+        "compatibility.md": "30c47095e455d8dd35898584d17b85b0a24102ca51f2808edb26016e44dfd860",
+        "provenance.md": "e0c5b25898893336ff59d5413fbff3abfa9e21b0d4bc198e87ee2ff6d453dac1",
+        "references/LICENSE.md": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "references/upstream.md": "adc110824726faea7d78bf5552962033f3ebc4263c54f8296bd9227c8dcf56a0"
+      },
+      "installed_files": {
+        "LICENSE": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "provenance.md": "e0c5b25898893336ff59d5413fbff3abfa9e21b0d4bc198e87ee2ff6d453dac1",
+        "SKILL.md": "faeac043de555677ab7da6ffc298d0afc63d28e9c448e10d6074b4e65617aaa2",
+        "compatibility.md": "30c47095e455d8dd35898584d17b85b0a24102ca51f2808edb26016e44dfd860",
+        "references/LICENSE.md": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "references/upstream.md": "adc110824726faea7d78bf5552962033f3ebc4263c54f8296bd9227c8dcf56a0"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "intpot-cli": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/intpot-cli/SKILL.md",
+            "computedHash": "16f419eecc1ef548000a947b7aac26f799db0f093b4d0daa559e84eac0b3b5a5"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "intpot-python": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "intpot-python",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "LICENSE": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "SKILL.md": "0b1f24bba23e5813a1ecdf142a4e4dd43e90f0550e15e4aaa703d58f5b3eedaf",
+        "compatibility.md": "9d5101e5150f2a6b02e97c57e3635e26b3cfb26066f6c5c68e0b435e168f8eaf",
+        "provenance.md": "a807f5152ce4d2de24455b55e8df66aa1884da91b53b299c8ddc24968c03d53e",
+        "references/LICENSE.md": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "references/upstream.md": "12d34072bb1fc6e2e50a750e50fddf036e83c8fc261f3b2ae3e168dd0b319c01"
+      },
+      "installed_files": {
+        "LICENSE": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "provenance.md": "a807f5152ce4d2de24455b55e8df66aa1884da91b53b299c8ddc24968c03d53e",
+        "SKILL.md": "0b1f24bba23e5813a1ecdf142a4e4dd43e90f0550e15e4aaa703d58f5b3eedaf",
+        "compatibility.md": "9d5101e5150f2a6b02e97c57e3635e26b3cfb26066f6c5c68e0b435e168f8eaf",
+        "references/LICENSE.md": "55bed0650003d5599eaebb636373bf83b27e73cd75bac6b1fa513f3b74b7eb7b",
+        "references/upstream.md": "12d34072bb1fc6e2e50a750e50fddf036e83c8fc261f3b2ae3e168dd0b319c01"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "intpot-python": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/intpot-python/SKILL.md",
+            "computedHash": "5060c41fc8f53b21dee3c102bc95a52844b104666a3bd16c2132d68b18ada36b"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "invariant-audit": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "invariant-audit",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "d1016a2669438ef9e9115e6e7d11b87897b4f52a9346af3e9e1f79e383406ff9",
+        "assets/practice/README.md": "b31e80abe85610d2385147cca8740a86c3bc3fb514b51265125d9809c901a897",
+        "assets/practice/source/baseline.txt": "fab1de117040c3a4ba84d0b749155d63738afb74578d76d9dfa53d6dc08ef442",
+        "assets/practice/source/candidate.txt": "556a05079f718a58735ff24c8cf44913e76d148e6739cdfd4151041d69ee12f2",
+        "assets/practice/source/checker.txt": "1fac75fd65862946c7751a2a629bd8b050bd67b14697b4337e2c08759c60be6b",
+        "assets/report-template.md": "f2aa50c444851d938270bbe207b82d5764da704d3cd08623622810154228c2a0",
+        "assets/review-checklist.md": "2e0da817363311b701a7cadbf97af6a14493f365147e7bc6b6f34ebfb26b6a39",
+        "compatibility.md": "b8a14817ac2ab192219e53188fc1eb23812dfbc1a637cc3060d9b842df413cfd",
+        "provenance.md": "e68eeaccab217b458c94d3d2b443df9667034c5657a2869597e9afba2c96e39c"
+      },
+      "installed_files": {
+        "provenance.md": "e68eeaccab217b458c94d3d2b443df9667034c5657a2869597e9afba2c96e39c",
+        "SKILL.md": "d1016a2669438ef9e9115e6e7d11b87897b4f52a9346af3e9e1f79e383406ff9",
+        "compatibility.md": "b8a14817ac2ab192219e53188fc1eb23812dfbc1a637cc3060d9b842df413cfd",
+        "assets/review-checklist.md": "2e0da817363311b701a7cadbf97af6a14493f365147e7bc6b6f34ebfb26b6a39",
+        "assets/report-template.md": "f2aa50c444851d938270bbe207b82d5764da704d3cd08623622810154228c2a0",
+        "assets/practice/README.md": "b31e80abe85610d2385147cca8740a86c3bc3fb514b51265125d9809c901a897",
+        "assets/practice/source/baseline.txt": "fab1de117040c3a4ba84d0b749155d63738afb74578d76d9dfa53d6dc08ef442",
+        "assets/practice/source/checker.txt": "1fac75fd65862946c7751a2a629bd8b050bd67b14697b4337e2c08759c60be6b",
+        "assets/practice/source/candidate.txt": "556a05079f718a58735ff24c8cf44913e76d148e6739cdfd4151041d69ee12f2"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "invariant-audit": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/invariant-audit/SKILL.md",
+            "computedHash": "1f94095016a347aa2f6f90ad46a68a7540357f85c204c817dae299cc1c189e7e"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "performance-investigation": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "performance-investigation",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "ada8e1b494e6c6aa3d7f7c0bf549c8173e54c3a009d4dcaf1f0a9e813187e7b0",
+        "assets/checklist.md": "6a3b31d45df8eb49f9e5c6c4a57a03bb6f3f864335c01045a4f0a1dfa54565e8",
+        "assets/practice/README.md": "50fba359610af079795d870db4c3834f0d77adfe50cbddc8cd149a5297077769",
+        "assets/practice/provenance.json": "bc09b29bd8287bce0c7c621d31a7a48f4edbd27e964fb30a56001b3e2faf4b3e",
+        "assets/practice/request.md": "8dfbc8b1658ac9abd378332003a9b09cefc4c77d935630e50976440c353e596a",
+        "assets/practice/sources/DEXPOT-LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "assets/practice/sources/candidate-scalar-response.py.txt": "428066da516d10bd43e76f22146e31976340cb02dd3715162aac6b46a51f87fb",
+        "assets/practice/sources/linux-screen.json": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+        "assets/report-template.md": "9d01d32e804f49467d8185d6105f6cca0be7d7297ef3ee4f5e155bdd26b4c1c3",
+        "compatibility.md": "602c38b33a01fc9c4c48f3f539b357fc2da141d5be4f11bcc8a2d90e3b58f8f9",
+        "provenance.md": "73ea6b0a7ff890fd83c08931dca50aa75a08d60f7fee7ab3d3fa3dc17abcdfce"
+      },
+      "installed_files": {
+        "provenance.md": "73ea6b0a7ff890fd83c08931dca50aa75a08d60f7fee7ab3d3fa3dc17abcdfce",
+        "SKILL.md": "ada8e1b494e6c6aa3d7f7c0bf549c8173e54c3a009d4dcaf1f0a9e813187e7b0",
+        "compatibility.md": "602c38b33a01fc9c4c48f3f539b357fc2da141d5be4f11bcc8a2d90e3b58f8f9",
+        "assets/report-template.md": "9d01d32e804f49467d8185d6105f6cca0be7d7297ef3ee4f5e155bdd26b4c1c3",
+        "assets/checklist.md": "6a3b31d45df8eb49f9e5c6c4a57a03bb6f3f864335c01045a4f0a1dfa54565e8",
+        "assets/practice/provenance.json": "bc09b29bd8287bce0c7c621d31a7a48f4edbd27e964fb30a56001b3e2faf4b3e",
+        "assets/practice/README.md": "50fba359610af079795d870db4c3834f0d77adfe50cbddc8cd149a5297077769",
+        "assets/practice/request.md": "8dfbc8b1658ac9abd378332003a9b09cefc4c77d935630e50976440c353e596a",
+        "assets/practice/sources/linux-screen.json": "6537c1aeb85abe9afd5bdcdcf69dd1013ee12f3100efe6523094838599b06f9c",
+        "assets/practice/sources/candidate-scalar-response.py.txt": "428066da516d10bd43e76f22146e31976340cb02dd3715162aac6b46a51f87fb",
+        "assets/practice/sources/DEXPOT-LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "performance-investigation": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/performance-investigation/SKILL.md",
+            "computedHash": "7bc7b9a696ac519977fd550b99748893071dddd520b55b6ab424849132d4c4a3"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "refpot-database": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "refpot-database",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "SKILL.md": "fa31d409a9c5503a88a51d91e3e3e69e5666049ab0f3be2888c2b31f30299fea",
+        "compatibility.md": "9d1475569a6f859db17876b4b54c34e5b7e8a4f911c5de5dfd1240c93d1366fa",
+        "provenance.md": "9452b5ed5c1f77e967a5a2ece5eddb4bd677422676f270fe883a1703e4ddef31",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "573ec7a855392ed58d89b5e139348af9b6f1bd4a915043aebff9bf473d307df8"
+      },
+      "installed_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "9452b5ed5c1f77e967a5a2ece5eddb4bd677422676f270fe883a1703e4ddef31",
+        "SKILL.md": "fa31d409a9c5503a88a51d91e3e3e69e5666049ab0f3be2888c2b31f30299fea",
+        "compatibility.md": "9d1475569a6f859db17876b4b54c34e5b7e8a4f911c5de5dfd1240c93d1366fa",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "573ec7a855392ed58d89b5e139348af9b6f1bd4a915043aebff9bf473d307df8"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "refpot-database": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/refpot-database/SKILL.md",
+            "computedHash": "8c1af349a76df11a94c09ffcc7ffbc73e11d208e97894180a23756ec2352340a"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "repository-readiness": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "repository-readiness",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "712edafad95e7eedf9c5bc5c02ce61f39949f4e3d8c3086beda04e473c05ac6f",
+        "assets/report.md": "2198d77985b4db851ac46f56fbdb3dd7ff3ec02b8e3ff910111b99ea4411ab10",
+        "compatibility.md": "3d8bb1e4289023ff6b98c99c02697a0a79041b3dafc7dfb060c9a05231fda095",
+        "provenance.md": "b0c64f1becf5d9638235b4cf958a206444e0d8e733c43b3e5cd2ff1c6711a485",
+        "scripts/record_check.py": "26225988ad80c97a45e295f3413239f3b56fe989fe242240bea37b882044f6a8"
+      },
+      "installed_files": {
+        "provenance.md": "b0c64f1becf5d9638235b4cf958a206444e0d8e733c43b3e5cd2ff1c6711a485",
+        "SKILL.md": "712edafad95e7eedf9c5bc5c02ce61f39949f4e3d8c3086beda04e473c05ac6f",
+        "compatibility.md": "3d8bb1e4289023ff6b98c99c02697a0a79041b3dafc7dfb060c9a05231fda095",
+        "scripts/record_check.py": "26225988ad80c97a45e295f3413239f3b56fe989fe242240bea37b882044f6a8",
+        "assets/report.md": "2198d77985b4db851ac46f56fbdb3dd7ff3ec02b8e3ff910111b99ea4411ab10"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "repository-readiness": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/repository-readiness/SKILL.md",
+            "computedHash": "9420dfe72f450e51672d3c6c3d4b3e0a23888a70bcf29afc8845eab354895186"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "summonpot": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "summonpot",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "SKILL.md": "0a23d0cc039919f26355bfa3586e3f1741dca48e12c8f931077fdb2ab881704b",
+        "compatibility.md": "5e3b2ed8baf2cb22e5441e8d8030b92e374a1596e7232e9f4b9086f7df615533",
+        "provenance.md": "310e9843b6b87412cdef566ad740212597352bcd7dba2919e9cf3113b6bdab2a",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "6854fdfc73876d0f27fd8bbd06dfafc0c874402c03806c822f9df6a6d2345e8a"
+      },
+      "installed_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "310e9843b6b87412cdef566ad740212597352bcd7dba2919e9cf3113b6bdab2a",
+        "SKILL.md": "0a23d0cc039919f26355bfa3586e3f1741dca48e12c8f931077fdb2ab881704b",
+        "compatibility.md": "5e3b2ed8baf2cb22e5441e8d8030b92e374a1596e7232e9f4b9086f7df615533",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "6854fdfc73876d0f27fd8bbd06dfafc0c874402c03806c822f9df6a6d2345e8a"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "summonpot": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/summonpot/SKILL.md",
+            "computedHash": "8f4e2508fbc9220315d9741a8ec8d11f69dcf56da9c41675b9ab10ba21763dc6"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "summonpot-code-review": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "summonpot-code-review",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "SKILL.md": "1ba4c81c1f6c86953698a2b02f4709cf97ea4875a13229771a3ef07567eae137",
+        "compatibility.md": "d0e1e4110c5b931abb9ed1fb1f5e19d208ad49a907d3adb85814331ece4f1ea0",
+        "provenance.md": "e1b3d1cca34674d0ad86c4b9e2c34543d1a59a386556d1e75d8ee53bc0a7b341",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "e1d954a394747da05642d376a7f12c926822f8e13c6b38d60560d0cc78e13958"
+      },
+      "installed_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "e1b3d1cca34674d0ad86c4b9e2c34543d1a59a386556d1e75d8ee53bc0a7b341",
+        "SKILL.md": "1ba4c81c1f6c86953698a2b02f4709cf97ea4875a13229771a3ef07567eae137",
+        "compatibility.md": "d0e1e4110c5b931abb9ed1fb1f5e19d208ad49a907d3adb85814331ece4f1ea0",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "e1d954a394747da05642d376a7f12c926822f8e13c6b38d60560d0cc78e13958"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "summonpot-code-review": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/summonpot-code-review/SKILL.md",
+            "computedHash": "17959384a59d54a3b9f750f1a4abb1e5fc5f9ef3d2538a2c7a66f1603ff7dbfa"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "summonpot-pr-review": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "summonpot-pr-review",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "SKILL.md": "eed4bcb5810fea503020c97b516c2ec3e2af22eba8c23bfa01512cf84bca342c",
+        "compatibility.md": "51bc54d49e302c4c90009cc6247bd3739b98c1bfbdbf2231eb13efda71a4aa16",
+        "provenance.md": "5ef5da3ec4b3499d3a1ac06be2045a6de1441e0eb7e178efd7b36c6b9b447d5e",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "9b3f55cd03bb1caace2843659a502c23434b239196a884d395fbc88239143bda"
+      },
+      "installed_files": {
+        "LICENSE": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "provenance.md": "5ef5da3ec4b3499d3a1ac06be2045a6de1441e0eb7e178efd7b36c6b9b447d5e",
+        "SKILL.md": "eed4bcb5810fea503020c97b516c2ec3e2af22eba8c23bfa01512cf84bca342c",
+        "compatibility.md": "51bc54d49e302c4c90009cc6247bd3739b98c1bfbdbf2231eb13efda71a4aa16",
+        "references/LICENSE.md": "44c84c4f83c7c902b4d7d96ae40b395b4a9c943c1a145e7db92928ba2f21c958",
+        "references/upstream.md": "9b3f55cd03bb1caace2843659a502c23434b239196a884d395fbc88239143bda"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "summonpot-pr-review": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/summonpot-pr-review/SKILL.md",
+            "computedHash": "7922577a4eaaa2f925f52ad98b2e359b89c5bf02c6e9f9e60b5ab7032ac7af66"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    },
+    "verification-loop": {
+      "source_commit": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+      "skill": "verification-loop",
+      "node": "v22.23.4",
+      "installer": "1.7.6",
+      "source_files": {
+        "SKILL.md": "2c711a7d68d41bafff89fd799abce772ad6086c361ebeb8069ff347d59da0a6b",
+        "assets/example-input.md": "2e2ded8da7f7fa546ddf848cf46348c111716564eeae85221c8c6512a305118a",
+        "assets/project-verification-recipe.md": "aef9ee90a800875956f7b42a9565ad34649fa553bac5b0544ba1bca7f3cb5944",
+        "assets/reliability-rule-candidate.md": "88317a1463b1984c01796eb72629f6e25bc52b6a3d3751ff23e010e0a041e165",
+        "assets/verification-checklist.md": "c88b19338d49b37264ac6b049b9ffe55240db73cffd2897c4ac85f08cd73b76b",
+        "assets/verification-report.md": "572d428b1b1caf4b13d8f8d4235d22b8483bfb5f49ed77c36b961b37b105f87d",
+        "compatibility.md": "97e607af8e9e080aa263214a3615cd2a80f6d20f9ee523d9afa894b373431e3c",
+        "provenance.md": "8f6d5eb77969966567150be970bdd2aaced0e8321e43c72915bb407a8911a18a"
+      },
+      "installed_files": {
+        "provenance.md": "8f6d5eb77969966567150be970bdd2aaced0e8321e43c72915bb407a8911a18a",
+        "SKILL.md": "2c711a7d68d41bafff89fd799abce772ad6086c361ebeb8069ff347d59da0a6b",
+        "compatibility.md": "97e607af8e9e080aa263214a3615cd2a80f6d20f9ee523d9afa894b373431e3c",
+        "assets/example-input.md": "2e2ded8da7f7fa546ddf848cf46348c111716564eeae85221c8c6512a305118a",
+        "assets/project-verification-recipe.md": "aef9ee90a800875956f7b42a9565ad34649fa553bac5b0544ba1bca7f3cb5944",
+        "assets/verification-report.md": "572d428b1b1caf4b13d8f8d4235d22b8483bfb5f49ed77c36b961b37b105f87d",
+        "assets/reliability-rule-candidate.md": "88317a1463b1984c01796eb72629f6e25bc52b6a3d3751ff23e010e0a041e165",
+        "assets/verification-checklist.md": "c88b19338d49b37264ac6b049b9ffe55240db73cffd2897c4ac85f08cd73b76b"
+      },
+      "placement": {
+        "agent_is_symlink": false,
+        "canonical_exists": false
+      },
+      "lock": {
+        "version": 1,
+        "skills": {
+          "verification-loop": {
+            "source": "tugrulguner/skillpot",
+            "ref": "d91297f4d388a5c98a069e70dc3d7e7ea752479f",
+            "sourceType": "github",
+            "skillPath": "skills/verification-loop/SKILL.md",
+            "computedHash": "cc297578f9213652b533fbb456cc5cd6f19f64eb799dd39733d1b0cee090a6e5"
+          }
+        }
+      },
+      "passed": true,
+      "selected_only": true,
+      "lock_ref_verified": true,
+      "list_verified": true,
+      "selected_removal_verified": true,
+      "sibling_preserved": true
+    }
+  },
+  "scope": "19 isolated selected filesystem installations; exact Git/source/installed bytes, lock/list/removal/sibling preservation. No agent/native-client/model tasks, benchmarks or efficacy claim. Preparation baseline, not a published v0.6.0 tag."
+}
