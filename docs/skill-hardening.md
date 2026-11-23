@@ -5,6 +5,12 @@ standalone resources and worked examples. It adds no new skill or collection rel
 Published v0.5.0 is the immutable seventeen-skill snapshot; these changes are current
 source, not an update applied to existing installations.
 
+Current source now contains nineteen bundles. The fourteen-bundle record below
+retains its original scope; later additions are `benchmark-audit`, `verification-loop`,
+`experiment-design`, `invariant-audit` and `performance-investigation`. The last two
+remain separately pinned source-only skills, absent from stable v0.5.0. Their individual
+first-use guides distinguish installation qualification from this historical record.
+
 ## Install one reviewed current-source bundle
 
 With Node.js 22.20+ and Git, run in the project where you use your agent:

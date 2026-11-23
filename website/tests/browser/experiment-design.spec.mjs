@@ -5,7 +5,7 @@ for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/catalogue/');
     await expect(page.getByRole('heading', { name: 'Experiment design — published in v0.5.0', exact: true })).toBeVisible();
-    await expect(page.locator('body')).toContainText('current source has eighteen bundles');
+    await expect(page.locator('body')).toContainText('current source has nineteen bundles');
     await page.goto('/');
     const paragraph = page.locator('p').filter({ hasText: 'Published experiment-design' });
     await expect(paragraph).toContainText('experiment.md');

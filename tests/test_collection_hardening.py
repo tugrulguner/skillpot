@@ -30,7 +30,7 @@ class CollectionHardeningTests(unittest.TestCase):
                        for p in added_package.rglob("*") if p.is_file()}
         self.assertEqual(addition["source_files"], added_files)
         self.assertEqual(addition["files_verified"], len(added_files))
-        self.assertEqual(previous_names | {"benchmark-audit", "verification-loop", "experiment-design", "invariant-audit"}, names)
+        self.assertEqual(previous_names | {"benchmark-audit", "verification-loop", "experiment-design", "invariant-audit", "performance-investigation"}, names)
         self.assertTrue(addition["lock_ref_verified"])
         self.assertTrue(addition["sibling_preserved"])
         self.assertTrue(addition["selected_removal_verified"])
@@ -63,7 +63,7 @@ class CollectionHardeningTests(unittest.TestCase):
         self.assertIsNotNone(command)
         assert command is not None
         self.assertEqual(command[1], "npx skills@1.7.6 add https://github.com/tugrulguner/skillpot/tree/" + "044213fd00343e94b4d389c3ca2c0f2909feb79f" + " --skill claim-check")
-        for token in ("fourteen", "v0.5.0", "seventeen", "user edits", "native", "model", "skill-hardening-distribution.json"):
+        for token in ("fourteen", "v0.5.0", "seventeen", "nineteen", "user edits", "native", "model", "skill-hardening-distribution.json"):
             self.assertIn(token, " ".join(text.split()))
         self.assertNotIn("--all", command[1])
         self.assertNotIn("--global", command[1])

@@ -162,13 +162,14 @@ These entries do not claim completed evaluations or authorize implementation.
       First use selects a separately qualified immutable source pin; the complete nine-file
       bundle passed isolated installer/hash/lock/list/removal/sibling checks. No formal
       proof, target execution, task-efficacy or native-runtime claim. See [first use](docs/invariant-audit-first-use.md).
-- [ ] Implement `performance-investigation`: use a measured symptom, comparable
+- [x] Implement source-only `performance-investigation` 0.1.0: use a measured symptom, comparable
       baseline and permitted traces to produce `investigation.md`, separating
       observations, eliminated hypotheses, supported mechanisms and remaining
       qualification. Diagnosis does not silently authorize optimization or system changes.
       The [proposal and worked packet](docs/performance-investigation-proposal.md) define
-      the diagnostic procedure, seven-section report and bounded integrity checks.
-      Design review remains pending; this does not authorize implementation.
+      the diagnostic procedure, seven-section report and bounded integrity checks. The
+      [first-use guide](docs/performance-investigation-first-use.md) documents source discovery;
+      its separately pinned eleven-file bundle passed isolated install/hash/lock/list/removal and sibling-preservation checks. Stable v0.5.0 is unchanged.
 - [ ] Implement `release-verification`: produce `release-verification.md` binding
       applicable source/build/install/consumer/CI/publication/deployment gates to
       exact candidate identities and explicit gaps. Verify the package's actual

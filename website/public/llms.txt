@@ -13,6 +13,8 @@ Published v0.5.0 contains seventeen skills: seven pinned public project/contribu
 - [Host setup](https://skillpot.modepot.io/host-setup/)
 - [Document-actions release-pinned first use](https://skillpot.modepot.io/host-setup/#try-document-actions-from-pinned-source)
 
+- [Performance-investigation current-source first use](https://github.com/tugrulguner/skillpot/blob/main/docs/performance-investigation-first-use.md): 0.1.0 investigates one measured symptom into seven-section investigation.md; distinguishes causal diagnosis from benchmark-claim audit, separates known from unresolved findings, and proposes the smallest permission-aware follow-up. Current source only, not stable v0.5.0; separately pinned eleven-file installation/hash/lock/list/removal and sibling preservation verified; no default execution, native activation or efficacy claim.
+
 ## Learn and maintain
 - [Authoring contract overview](https://skillpot.modepot.io/authoring/)
 - [Provenance and refresh](https://skillpot.modepot.io/provenance-refresh/)
