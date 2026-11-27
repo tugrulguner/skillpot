@@ -191,6 +191,16 @@ These entries do not claim completed evaluations or authorize implementation.
       failures from regressions, and name coverage gaps. Execution, dependency changes
       and external-service access require explicit scope; example presence alone does
       not establish coverage or a passing regression check.
+- [ ] Implement `change-qualification`: agree on scope, baseline, and ship/no-ship
+      criteria before implementation. For authorized work, compare exact baseline
+      and candidate builds with independent correctness checks, relevant failure
+      cases, controlled experiments, and repeated paired benchmarks. Measure the
+      full workflow as well as the targeted operation; retain raw results, losing
+      cases, and costs shifted elsewhere. Produce `change-qualification.md` with
+      the decision, decisive evidence, and limits. Open and verify a pull request
+      only for a qualified change and when authorized; otherwise report an
+      evidence-backed no-ship decision or an explicit blocker, not a placeholder
+      pull request. Merge and release require separate approval.
 - [ ] Evaluate `control-evidence-map` as a later, conditional extension: first select
       an exact framework/customer checklist, version, applicability scope, owners and
       assessment period, and review authoritative requirements. Produce `control-map.md`
